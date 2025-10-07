@@ -1,0 +1,16 @@
+# robots.txt for Ravonics - Defense Technology Contractor
+# https://ravonics.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ravonics.com/sitemap.xml
+
+# Disallow template and development directories
+Disallow: /template/
+Disallow: /_*
+Disallow: /.git/
+
+# Crawl-delay for politeness
+Crawl-delay: 1
