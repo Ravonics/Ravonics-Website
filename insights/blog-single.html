@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Implementing Real-Time AI Decision Systems - Ravonics</title>
+    <link rel="icon" href="../images/icon.webp" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="Technical deep-dive on implementing real-time AI decision systems for defense missions. Learn tactical edge deployment, latency optimization (INT8 quantization, model pruning), explainable AI for operators, DDIL resilience, security-first ML pipelines, and MLS data fusion with NSA-approved cross-domain solutions." name="description" >
+    <meta content="real-time AI decision systems, tactical edge deployment, latency optimization AI, INT8 quantization defense, explainable AI operators, DDIL resilience, adversarial training defense, MLS data fusion, NSA cross-domain solutions, human-machine teaming, defense AI pipeline" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/blog-single.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/blog-single.html">
+    <meta property="og:title" content="Implementing Real-Time AI Decision Systems - Ravonics">
+    <meta property="og:description" content="Technical deep-dive: real-time AI for defense missions. Tactical edge deployment, latency optimization, explainable AI, DDIL resilience, MLS data fusion.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/blog-single.html">
+    <meta property="twitter:title" content="Implementing Real-Time AI Decision Systems - Ravonics">
+    <meta property="twitter:description" content="Real-time AI for defense: edge deployment, latency optimization, explainable AI, DDIL resilience, MLS data fusion.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Implementing Real-Time AI Decision Systems",
+      "description": "Technical deep-dive on implementing real-time AI decision systems for defense missions. Learn tactical edge deployment, latency optimization (INT8 quantization, model pruning), explainable AI for operators, DDIL resilience, security-first ML pipelines, and MLS data fusion with NSA-approved cross-domain solutions.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ravonics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ravonics.com/images/logo/logo.svg"
+        }
+      },
+      "datePublished": "2025-10-01",
+      "dateModified": "2025-10-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/blog-single.html"
+      }
+    }
+    </script>
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+        
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="#">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoD</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/about.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Case Studies & Success Stories</a></li>
+                                            <li><a href="../insights/innovation.html">Innovation Lab Updates</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">Client Testimonials</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
+                                    <span id="menu-btn"></span>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/4.webp) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Implementing Real-Time AI Decision Systems for Multi-Domain Operations</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Insights</a></li>
+                                <li><a href="blog.html">Technical Publications</a></li>
+                                <li class="active">Real-Time AI Decision Systems</li>
+                            </ul>   
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>By Dr. Sarah Chen, Principal AI Architect</em>
+                                </p>
+
+                                <p>
+                                    Modern military operations require decision-making at machine speed across interconnected domains. Implementing AI systems that can process multi-source intelligence, predict adversary actions, and recommend courses of action in real-time represents one of the most challenging technical problems in defense today.
+
+                                    After deploying multiple AI decision systems across DoD and intelligence community programs, we've identified critical implementation patterns that separate successful deployments from those that fail to achieve operational readiness. Here are the key technical considerations:
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>Latency-Optimized Architecture Design</h4>
+                                    <p>
+                                      Multi-domain operations demand sub-second inference times. Implement model quantization,
+                                      pruning, and knowledge distillation to reduce neural network size without sacrificing
+                                      accuracy. Our recent deployment achieved 40ms inference on tactical edge hardware through
+                                      INT8 quantization and custom CUDA kernels.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Resilient Data Pipeline Engineering</h4>
+                                    <p>
+                                      Design for denied, degraded, intermittent, and limited (DDIL) environments.
+                                      Implement local caching, predictive pre-fetching, and graceful degradation when
+                                      connectivity is lost. Use message queues with persistent storage to ensure no
+                                      intelligence data is dropped during network disruptions.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Explainable AI for Operator Trust</h4>
+                                    <p>
+                                      Warfighters need to understand why the AI recommends specific actions. Integrate
+                                      attention visualization, SHAP values, and counterfactual explanations into the
+                                      user interface. Include confidence scores and highlight which intelligence sources
+                                      drove each recommendation.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Continuous Model Monitoring and Drift Detection</h4>
+                                    <p>
+                                      Adversaries adapt tactics constantly. Implement statistical process control to
+                                      detect distribution shifts in input data and degradation in model performance.
+                                      Trigger automatic retraining workflows when concept drift exceeds thresholds,
+                                      with human-in-the-loop approval before deployment.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Security-First ML Pipeline</h4>
+                                    <p>
+                                      Protect models from adversarial attacks and data poisoning. Implement input
+                                      validation, adversarial training, and model watermarking. Ensure training data
+                                      provenance tracking and cryptographic signing of model artifacts. All inference
+                                      must occur within accredited security boundaries.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Multi-Level Security (MLS) Data Fusion</h4>
+                                    <p>
+                                      Integrate intelligence across classification levels while maintaining separation.
+                                      Use one-way data guards and cross-domain solutions that have received NSA approval.
+                                      Design inference workflows that can operate at multiple classification levels
+                                      simultaneously without cross-contamination.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Human-Machine Teaming Interfaces</h4>
+                                    <p>
+                                      Design for augmentation, not automation. Provide operators with adjustable
+                                      automation levels, manual override capabilities, and clear handoff protocols.
+                                      The AI should enhance human decision-making speed and quality while preserving
+                                      operator authority and accountability.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/misc/l1.webp" class="w-100 rounded-1" alt="">
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="blog-comment">
+                                <h4>Comments (5)</h4>
+
+                                <div class="spacer-half"></div>
+
+                                <ol>
+                                    <li>
+                                        <div class="avatar">
+                                            <img src="../images/testimonial/1.webp" alt="" >
+                                        </div>
+                                        <div class="comment-info">
+                                            <span class="c_name">Merrill Rayos</span>
+                                            <span class="c_date id-color">2 days ago</span>
+                                            <span class="c_reply"><a href="#">Reply</a></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                        <div class="comment">
+                                            Excellent overview of real-time AI implementation challenges. The latency optimization techniques you mentioned—especially INT8 quantization—helped us achieve our performance targets on resource-constrained platforms.
+                                        </div>
+                                        <ol>
+                                            <li>
+                                                <div class="avatar">
+                                                    <img src="../images/testimonial/2.webp" alt="" >
+                                                </div>
+                                                <div class="comment-info">
+                                                    <span class="c_name">Jackqueline Sprang</span>
+                                                    <span class="c_date id-color">2 days ago</span>
+                                                    <span class="c_reply"><a href="#">Reply</a></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="comment">
+                                                    Agreed. The explainable AI section is critical—we learned the hard way that operators won't trust black-box recommendations, no matter how accurate. Transparency builds confidence in human-machine teams.
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </li>
+
+                                    <li>
+                                        <div class="avatar">
+                                            <img src="../images/testimonial/3.webp" alt="" >
+                                        </div>
+                                        <div class="comment-info">
+                                            <span class="c_name">Sanford Crowley</span>
+                                            <span class="c_date id-color">2 days ago</span>
+                                            <span class="c_reply"><a href="#">Reply</a></span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="comment">
+                                            The section on DDIL environments resonates with our operational experience. Resilient pipeline design isn't optional—it's mission-critical when connectivity is unreliable. Great technical depth here.
+                                        </div>
+                                        <ol>
+                                            <li>
+                                                <div class="avatar">
+                                                    <img src="../images/testimonial/4.webp" alt="" >
+                                                </div>
+                                                <div class="comment-info">
+                                                    <span class="c_name">Lyndon Pocekay</span>
+                                                    <span class="c_date id-color">2 days ago</span>
+                                                    <span class="c_reply"><a href="#">Reply</a></span>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="comment">
+                                                    Model drift detection saved our deployment from performance degradation. Adversary tactics evolve rapidly, and continuous monitoring is essential for maintaining decision quality over time.
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </li>
+
+                                    <li>
+                                        <div class="avatar">
+                                            <img src="../images/testimonial/5.webp" alt="" >
+                                        </div>
+                                        <div class="comment-info">
+                                            <span class="c_name">Aleen Crigger</span>
+                                            <span class="c_date id-color">2 days ago</span>
+                                            <span class="c_reply"><a href="#">Reply</a></span>
+
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="comment">
+                                            Appreciate the emphasis on security-first ML pipelines. Adversarial robustness and data provenance are often afterthoughts, but they're fundamental to deploying AI in contested environments. Well articulated.
+                                        </div>
+                                    </li>
+                                </ol>
+
+                                <div class="spacer-single"></div>
+
+                                <div id="comment-form-wrapper">
+                                    <h4>Leave a Comment</h4>
+                                    <div class="comment_form_holder">
+                                        <form id="contact_form" name="form1" class="form-border" method="post" action="#">
+
+                                            <label>Name</label>
+                                            <input type="text" name="name" id="name" class="form-control" >
+
+                                            <label>Email <span class="req">*</span></label>
+                                            <input type="text" name="email" id="email" class="form-control" >
+                                            <div id="error_email" class="error">Please check your email</div>
+
+                                            <label>Message <span class="req">*</span></label>
+                                            <textarea cols="10" rows="10" name="message" id="message" class="form-control"></textarea>
+                                            <div id="error_message" class="error">Please check your message</div>
+                                            <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
+                                            <div id="mail_failed" class="error">Error, email not sent</div>
+
+                                            <p id="btnsubmit">
+                                                <input type="submit" id="send" value="Send" class="btn-main" >
+                                            </p>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Popular Posts</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/1.webp" alt="">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>Neural Network Optimization for Battlefield AI</h4>
+                                      </a>
+                                      <div class="d-date">10 Jan 2025</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/2.webp" alt="">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>JADC2 Integration Architecture Patterns</h4>
+                                      </a>
+                                      <div class="d-date">22 Feb 2025</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/3.webp" alt="">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>Edge Computing at Tactical Scale</h4>
+                                      </a>
+                                      <div class="d-date">05 Mar 2025</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/4.webp" alt="">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>Zero Trust for Classified Networks</h4>
+                                      </a>
+                                      <div class="d-date">12 Mar 2025</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/5.webp" alt="">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>Autonomous Platform Swarm Intelligence</h4>
+                                      </a>
+                                      <div class="d-date">28 Apr 2025</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/6.webp" alt="">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>Post-Quantum Cryptography Implementation</h4>
+                                      </a>
+                                      <div class="d-date">03 May 2025</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                            </div>
+                            
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Ready to Deploy Advanced AI Decision Systems?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Request Consultation</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="social-icons mb-sm-30 text-center">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>1847 Defense Technology Way</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2025 Ravonics - Advanced Technology Consulting
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->        
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Advanced Robotics</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics delivers elite technology solutions for federal defense and intelligence missions. Led by award-winning scientists from Silicon Valley, we build next-generation AI platforms, autonomous systems, and secure communications infrastructure that give warfighters decisive advantage.</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js"></script>
+    <script src="../js/designesia.js"></script>
+    <script src="../js/swiper.js"></script>
+    <script src="../js/custom-swiper-1.js"></script>
+
+</body>
+
+</html>
