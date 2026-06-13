@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Capability Statement | Ravonics LLC — Federal Small Business</title>
+    <link rel="icon" href="../images/icon.webp" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta content="Ravonics LLC federal capability statement. UEI: YCBDVKN1A9G7. CAGE: 20DS8. SAM.gov registered (Active). Small business, HUBZone application submitted. Primary NAICS 541512. AI, DevSecOps, zero-trust, multi-domain situational awareness." name="description" >
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/company/capability-statement.html" >
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+    <style>
+        /* ============================================================
+           Screen styles — matches site design system
+        ============================================================ */
+        .cap-stmt-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .cap-header {
+            border-bottom: 3px solid var(--color-2, #0a3880);
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.75rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cap-header .brand-block img {
+            max-height: 48px;
+            width: auto;
+        }
+
+        .cap-header .id-block {
+            text-align: right;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .cap-header .id-block .id-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            color: #888;
+            display: block;
+        }
+
+        .cap-header .id-block .id-value {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #111;
+        }
+
+        .cap-section-title {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-2, #0a3880);
+            border-bottom: 1px solid #dde3ed;
+            padding-bottom: 4px;
+            margin-bottom: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        .id-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem 1.5rem;
+        }
+
+        .id-grid-item .lbl {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #888;
+            font-weight: 700;
+        }
+
+        .id-grid-item .val {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #111;
+        }
+
+        .id-grid-item .val.status-active {
+            color: #155724;
+        }
+
+        .id-grid-item .val.status-pending {
+            color: #856404;
+        }
+
+        .naics-list, .psc-list {
+            font-size: 0.83rem;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .naics-list li, .psc-list li {
+            margin-bottom: 0.15rem;
+        }
+
+        .naics-list .primary-naics {
+            font-weight: 700;
+            color: var(--color-2, #0a3880);
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .pillar-item {
+            background: #f4f7fb;
+            border-left: 3px solid var(--color-2, #0a3880);
+            border-radius: 0 4px 4px 0;
+            padding: 0.65rem 0.85rem;
+        }
+
+        .pillar-item .pillar-name {
+            font-weight: 700;
+            font-size: 0.83rem;
+            color: #1a1a2e;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .pillar-item .pillar-desc {
+            font-size: 0.76rem;
+            color: #555;
+            line-height: 1.45;
+        }
+
+        .diff-list li {
+            font-size: 0.84rem;
+            margin-bottom: 0.35rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .diff-list li strong {
+            color: #111;
+        }
+
+        .cap-footer {
+            margin-top: 2rem;
+            padding-top: 1.25rem;
+            border-top: 2px solid var(--color-2, #0a3880);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cap-footer .poc-block .poc-label {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .cap-footer .poc-block .poc-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #111;
+        }
+
+        .cap-footer .poc-block .poc-contact {
+            font-size: 0.82rem;
+            color: #333;
+        }
+
+        .cap-footer .legal-note {
+            font-size: 0.7rem;
+            color: #999;
+            text-align: right;
+            max-width: 320px;
+        }
+
+        .print-btn-row {
+            text-align: center;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        /* ============================================================
+           Print stylesheet — clean one-page output
+        ============================================================ */
+        @media print {
+            /* Hide site chrome */
+            header,
+            footer,
+            #de-loader,
+            #back-to-top,
+            #extra-wrap,
+            .print-btn-row,
+            #content > section:not(.cap-stmt-section) {
+                display: none !important;
+            }
+
+            body, html {
+                margin: 0;
+                padding: 0;
+                background: #fff;
+                color: #000;
+                font-size: 9pt;
+                line-height: 1.4;
+            }
+
+            .cap-stmt-wrap {
+                max-width: 100%;
+                padding: 0.4in 0.5in;
+                margin: 0;
+            }
+
+            .cap-header {
+                border-bottom: 2pt solid #0a3880;
+                padding-bottom: 6pt;
+                margin-bottom: 10pt;
+            }
+
+            .cap-section-title {
+                font-size: 7pt;
+                border-bottom: 0.5pt solid #aabbcc;
+                padding-bottom: 2pt;
+                margin-top: 10pt;
+                margin-bottom: 5pt;
+            }
+
+            .pillar-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4pt;
+            }
+
+            .pillar-item {
+                padding: 4pt 6pt;
+                border-left: 2pt solid #0a3880;
+                background: #f4f7fb;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .pillar-item .pillar-name {
+                font-size: 8pt;
+            }
+
+            .pillar-item .pillar-desc {
+                font-size: 7pt;
+            }
+
+            .id-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2pt 10pt;
+            }
+
+            .id-grid-item .lbl {
+                font-size: 6pt;
+            }
+
+            .id-grid-item .val {
+                font-size: 8pt;
+            }
+
+            .diff-list li {
+                font-size: 8pt;
+                margin-bottom: 2pt;
+            }
+
+            .naics-list, .psc-list {
+                font-size: 8pt;
+            }
+
+            .cap-footer {
+                margin-top: 10pt;
+                padding-top: 6pt;
+                border-top: 1.5pt solid #0a3880;
+            }
+
+            .cap-footer .poc-block .poc-name {
+                font-size: 9pt;
+            }
+
+            .cap-footer .poc-block .poc-contact {
+                font-size: 8pt;
+            }
+
+            .cap-footer .legal-note {
+                font-size: 6.5pt;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            /* Prevent page breaks inside key sections */
+            .pillar-grid, .id-grid, .cap-footer {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics LLC Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics LLC Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics LLC Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="#">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision &amp; Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence &amp; Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography &amp; Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering &amp; Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud &amp; Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization &amp; HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense &amp; DoD</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research &amp; Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security &amp; Compliance Roadmap</a></li>
+                                            <li><a href="../company/partnerships.html">Partner Ecosystem</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Case Studies</a></li>
+                                            <li><a href="../insights/innovation.html">Innovation Lab Updates</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../contact.html" class="btn-main btn-line fx-slide"><span>Get in Touch</span></a>
+                                    <span id="menu-btn"></span>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>
+
+            <!-- Print button row (hidden on print) -->
+            <div class="print-btn-row mt-5 pt-4">
+                <button class="btn-main" onclick="window.print()">Print / Save as PDF</button>
+                <a href="../company/about.html" class="btn-main btn-line ms-3">Back to About</a>
+            </div>
+
+            <!-- ============================================================
+                 CAPABILITY STATEMENT — one-pager
+            ============================================================ -->
+            <section class="cap-stmt-section">
+                <div class="cap-stmt-wrap">
+
+                    <!-- Header: Logo + Identifiers -->
+                    <div class="cap-header">
+                        <div class="brand-block">
+                            <img src="../images/logo/logo.svg" alt="Ravonics LLC">
+                            <div style="font-size:0.7rem;color:#888;margin-top:4px;letter-spacing:0.05em;">CAPABILITY STATEMENT</div>
+                        </div>
+                        <div class="id-block">
+                            <div class="mb-1">
+                                <span class="id-label">UEI (SAM)</span>
+                                <span class="id-value">YCBDVKN1A9G7</span>
+                            </div>
+                            <div class="mb-1">
+                                <span class="id-label">CAGE Code</span>
+                                <span class="id-value">20DS8</span>
+                            </div>
+                            <div class="mb-1">
+                                <span class="id-label">SAM.gov Status</span>
+                                <span class="id-value" style="color:#155724;">Registered (Active)</span>
+                            </div>
+                            <div>
+                                <span class="id-label">Website</span>
+                                <span class="id-value">ravonics.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Overview -->
+                    <div class="cap-section-title">Company Overview</div>
+                    <div class="id-grid mb-3">
+                        <div class="id-grid-item">
+                            <div class="lbl">Legal Name</div>
+                            <div class="val">Ravonics LLC</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Established</div>
+                            <div class="val">2026 — West Virginia LLC</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Headquarters</div>
+                            <div class="val">313 Walnut St, Ravenswood, WV 26164</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Congressional District</div>
+                            <div class="val">WV-01</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Business Size</div>
+                            <div class="val">Small Business</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">HUBZone Status</div>
+                            <div class="val status-pending">Application Submitted — Pending</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Set-Aside Certifications</div>
+                            <div class="val">None currently held</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Contact</div>
+                            <div class="val">contact@ravonics.com</div>
+                        </div>
+                        <div class="id-grid-item">
+                            <div class="lbl">Entity Type</div>
+                            <div class="val">For-Profit, LLC</div>
+                        </div>
+                    </div>
+
+                    <!-- NAICS & PSC -->
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="cap-section-title">NAICS Codes</div>
+                            <ul class="naics-list list-unstyled">
+                                <li class="primary-naics">541512 — Computer Systems Design Services <span style="font-weight:400;color:#555;">(Primary)</span></li>
+                                <li>518210 — Computing Infrastructure Providers, Data Processing</li>
+                                <li>541330 — Engineering Services</li>
+                                <li>541511 — Custom Computer Programming Services</li>
+                                <li>541513 — Computer Facilities Management Services</li>
+                                <li>541519 — Other Computer Related Services</li>
+                                <li>541690 — Other Scientific &amp; Technical Consulting</li>
+                                <li>611420 — Computer Training</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="cap-section-title">PSC Codes</div>
+                            <ul class="psc-list list-unstyled">
+                                <li>AC11 — DoD R&amp;D: Basic Research (Defense)</li>
+                                <li>AC12 — DoD R&amp;D: Applied Research (Defense)</li>
+                                <li>DA10 — IT &amp; Telecommunications — Planning</li>
+                                <li>DG10 — IT &amp; Telecommunications — Systems Development</li>
+                                <li>DJ10 — IT &amp; Telecommunications — Technical Support</li>
+                                <li>DK10 — IT &amp; Telecommunications — Integrated Services</li>
+                                <li>R408 — Support — Professional: Program Management</li>
+                                <li>R425 — Support — Professional: Engineering/Technical</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Core Competencies -->
+                    <div class="cap-section-title">Core Competencies</div>
+                    <div class="pillar-grid">
+                        <div class="pillar-item">
+                            <span class="pillar-name">Software Delivery &amp; Compliance</span>
+                            <span class="pillar-desc">Secure software supply-chain automation. 150+ NIST 800-53 controls. Signed artifacts (SBOM &amp; attestation). Continuous cATO evidence generation. Policy-as-code enforcement.</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-name">Operations &amp; Visibility</span>
+                            <span class="pillar-desc">Unified multi-cluster operations dashboard. Real-time health, security posture, incident, and SLO signals for mission-critical environments.</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-name">AI-Assisted &amp; Agentic Delivery</span>
+                            <span class="pillar-desc">Autonomous pipeline from requirement through architecture, code, and deployment with decision audit trails. Hierarchical agent orchestration.</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-name">Capture &amp; Proposal Automation</span>
+                            <span class="pillar-desc">Federal opportunity intake, Pwin scoring, compliance-matrix generation, proposal drafting, and pricing strategy support.</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-name">Inference &amp; Model Optimization</span>
+                            <span class="pillar-desc">Federated GPU inference (local + cloud overflow, OpenAI-compatible API). Mixture-of-Experts compression for edge and on-premises deployment.</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-name">Situational Awareness &amp; Intelligence</span>
+                            <span class="pillar-desc">Multi-domain 3D operational picture fusing AIS, ADS-B, satellite, weather, and hazard feeds. AI-driven object detection for field and ISR operations.</span>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="pillar-name">Zero-Trust Infrastructure &amp; Research</span>
+                            <span class="pillar-desc">Immutable Kubernetes, zero-trust networking overlay, GitOps, encrypted secrets management. Applied-physics R&amp;D via INSTAR Lab (affiliated research partner).</span>
+                        </div>
+                    </div>
+
+                    <!-- Differentiators -->
+                    <div class="cap-section-title">Differentiators</div>
+                    <ul class="diff-list list-unstyled">
+                        <li><strong>HUBZone Location:</strong> Headquartered in Ravenswood, WV — a designated SBA HUBZone area. HUBZone certification application submitted; pending award. Supports small business set-aside and price-evaluation preference once awarded.</li>
+                        <li><strong>Applied Physics Research Bench:</strong> Through our affiliated research partner INSTAR Lab Inc (501(c)(3)), Ravonics has access to PhD-credentialed researchers in condensed-matter physics, materials science, and post-quantum cryptography — enabling SBIR/STTR-eligible proposals at a depth most small businesses cannot support independently.</li>
+                        <li><strong>Founder's Federal AI Track Record:</strong> Sean Hackney, Founder and Chief AI Officer, brings 30+ years in computer science and 20+ years in AI/ML. Career highlights (attributed to his individual career across prior roles, not to Ravonics as a company): co-authored $36M+ in federal prime contract wins as key personnel (2025); DoD CDAO Tradewinds "Awardable" status; TechStars #1 AI app; Gartner Magic Quadrant-recognized enterprise AI product leadership.</li>
+                        <li><strong>Partner Ecosystem:</strong> Ravonics is the federal go-to-market bridge for an affiliated ecosystem spanning DevSecOps, capture automation, multi-domain situational awareness, and zero-trust infrastructure — providing prime contractor-grade depth through a small business contracting vehicle.</li>
+                        <li><strong>Post-Quantum Readiness:</strong> On-staff PQC expertise aligned to NIST FIPS 203 (ML-KEM), FIPS 204 (ML-DSA), and FIPS 205 (SLH-DSA) — supporting agencies beginning cryptographic migration planning ahead of federal mandates.</li>
+                        <li><strong>Compliance-First Design:</strong> All delivery practices are designed to align with CMMC, NIST 800-171, and continuous ATO frameworks — building compliance in from the start, not as a retrofit.</li>
+                    </ul>
+
+                    <!-- Footer: POC + Legal -->
+                    <div class="cap-footer">
+                        <div class="poc-block">
+                            <div class="poc-label">Point of Contact</div>
+                            <div class="poc-name">Sean Hackney — Founder &amp; Chief AI Officer</div>
+                            <div class="poc-contact">
+                                <a href="mailto:sean@ravonics.com">sean@ravonics.com</a><br>
+                                General inquiries: <a href="mailto:contact@ravonics.com">contact@ravonics.com</a><br>
+                                313 Walnut St, Ravenswood, WV 26164 &nbsp;|&nbsp; ravonics.com
+                            </div>
+                        </div>
+                        <div class="legal-note">
+                            Ravonics LLC &nbsp;|&nbsp; UEI: YCBDVKN1A9G7 &nbsp;|&nbsp; CAGE: 20DS8 &nbsp;|&nbsp; SAM.gov registered (Active)<br>
+                            Small Business &nbsp;|&nbsp; Primary NAICS 541512 &nbsp;|&nbsp; WV-01<br>
+                            SBA HUBZone certification application submitted — pending award. No set-aside certifications are currently held. All career highlights attributed to Sean Hackney individually are from prior roles and do not represent Ravonics LLC corporate past performance.
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+        <!-- content close -->
+
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics LLC Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision &amp; Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence &amp; Decision Systems</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering &amp; Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Security &amp; Compliance Roadmap</a></li>
+                                        <li><a href="../company/partnerships.html">Partner Ecosystem</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../company/capability-statement.html">Capability Statement</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-icons mb-sm-30 text-center">
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                        </div>
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+                            <div class="spacer-20"></div>
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+                            <div class="spacer-20"></div>
+                            <div class="op-5 fs-15">SAM.gov</div>
+                            <p class="mb-0">UEI: YCBDVKN1A9G7 &nbsp;|&nbsp; CAGE: 20DS8</p>
+                            <p>SAM.gov registered (Active)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            &copy; 2026 Ravonics LLC &nbsp;|&nbsp; UEI: YCBDVKN1A9G7 &nbsp;|&nbsp; CAGE: 20DS8 &nbsp;|&nbsp; 313 Walnut St, Ravenswood, WV 26164 &nbsp;|&nbsp; SAM.gov registered (Active) &nbsp;|&nbsp; contact@ravonics.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics LLC Logo">
+            <div class="spacer-30-line"></div>
+            <h5>Capability Statement</h5>
+            <p>UEI: YCBDVKN1A9G7 &nbsp;|&nbsp; CAGE: 20DS8<br>SAM.gov registered (Active)<br>313 Walnut St, Ravenswood, WV 26164</p>
+            <div class="spacer-30-line"></div>
+            <h5>Contact</h5>
+            <div><i class="icofont-location-pin me-2 op-5"></i>313 Walnut St, Ravenswood, WV 26164</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+            <div class="social-icons mt-3">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- overlay content end -->
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js"></script>
+    <script src="../js/designesia.js"></script>
+
+</body>
+
+</html>
