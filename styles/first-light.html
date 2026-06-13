@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravonics — First Light Brand Direction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/raven-first-light-32.png">
+  <link rel="apple-touch-icon" href="favicon/raven-first-light-180.png">
+
+  <!-- Base site CSS (relative from styles/ up to site root) -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/plugins.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/coloring.css" rel="stylesheet">
+  <!-- Scheme override: loads LAST as id="colors" per site convention -->
+  <link id="colors" href="css/scheme-first-light.css" rel="stylesheet">
+  <!-- Guide shared layout -->
+  <link href="css/guide.css" rel="stylesheet">
+
+  <!-- Google Fonts: Manrope (already in style.css, but safe to double) -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome for component icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* First Light treatment: elegant, slightly tracked headings */
+    h1, h2, h3, h4, h5, h6 {
+      letter-spacing: var(--heading-letter-spacing);
+      font-weight: var(--heading-weight);
+      text-transform: var(--heading-transform);
+    }
+    .g-eyebrow { margin-bottom: .75rem; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(var(--primary-color-rgb), .15);
+      color: var(--primary-color);
+      border: 1px solid rgba(var(--primary-color-rgb), .3);
+      border-radius: 100px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      margin-bottom: 1.5rem;
+    }
+    /* First Light: warm cream hero overlay strip */
+    .g-hero { background: linear-gradient(135deg, var(--ink) 60%, #2b1418 100%); }
+    .first-light-divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent));
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────────────────── -->
+<header class="g-demo-header">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html">
+        <img src="../images/logo/logo-white.svg" alt="Ravonics" height="36">
+      </a>
+      <nav class="d-none d-md-flex gap-4">
+        <a href="#" class="nav-link">Capabilities</a>
+        <a href="#" class="nav-link">Solutions</a>
+        <a href="#" class="nav-link">Industries</a>
+        <a href="#" class="nav-link">Company</a>
+        <a href="#" class="nav-link">Insights</a>
+      </nav>
+      <a href="#" class="btn btn-main btn-sm px-3">Request Consultation</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="g-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-badge">Department of War Contractor · HUBZone · SAM.gov Registered</div>
+        <div class="g-hero-accent-bar"></div>
+        <span class="g-eyebrow" style="color:var(--secondary-color);">Mission-Critical Technology</span>
+        <h1 class="display-4 fw-semibold mb-4" style="color:#fff; line-height:1.15;">
+          Mission-Ready Technology<br>for the Department of War
+        </h1>
+        <p class="lead mb-5" style="color:rgba(255,255,255,.78); max-width:520px;">
+          Ravonics delivers AI platforms, JADC2-compatible integration, autonomous systems, and post-quantum cryptography for the U.S. DoW and Intelligence Community — engineered at the tactical edge, proven at scale.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#" class="btn btn-main btn-lg px-4">Request Consultation</a>
+          <a href="#" class="btn btn-line btn-lg px-4" style="border-color:rgba(255,255,255,.45); color:#fff;">View Capabilities</a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-flex justify-content-end">
+        <div style="width:320px; height:240px; background:rgba(var(--primary-color-rgb),.18); border:1px solid rgba(var(--primary-color-rgb),.3); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+          <i class="fa fa-shield-halved" style="font-size:5rem; color:rgba(var(--primary-color-rgb),.45);"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="first-light-divider"></div>
+
+<!-- ── PALETTE STRIP ─────────────────────────────────────────── -->
+<section class="g-section g-bg-paper">
+  <div class="container">
+    <p class="g-section-label">Brand Palette — First Light</p>
+    <div class="g-palette-strip">
+      <div class="g-swatch" style="background:#93242A; color:#fff;">
+        <span class="g-swatch-role">Primary</span>
+        <span class="g-swatch-hex">#93242A</span>
+        <span class="g-swatch-name">Command Maroon</span>
+      </div>
+      <div class="g-swatch" style="background:#D98F4E; color:#fff;">
+        <span class="g-swatch-role">Secondary</span>
+        <span class="g-swatch-hex">#D98F4E</span>
+        <span class="g-swatch-name">First Light Amber</span>
+      </div>
+      <div class="g-swatch" style="background:#1A1416; color:#fff;">
+        <span class="g-swatch-role">Ink</span>
+        <span class="g-swatch-hex">#1A1416</span>
+        <span class="g-swatch-name">Blackout</span>
+      </div>
+      <div class="g-swatch" style="background:#F7F1EA; color:#1A1416; border:1px solid #e5ddd5;">
+        <span class="g-swatch-role">Paper</span>
+        <span class="g-swatch-hex">#F7F1EA</span>
+        <span class="g-swatch-name">Warm Linen</span>
+      </div>
+      <div class="g-swatch" style="background:#5E6B70; color:#fff;">
+        <span class="g-swatch-role">Accent</span>
+        <span class="g-swatch-hex">#5E6B70</span>
+        <span class="g-swatch-name">Steel Slate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TYPOGRAPHY SPECIMEN ───────────────────────────────────── -->
+<section class="g-section g-bg-paper g-type-section">
+  <div class="container">
+    <p class="g-section-label">Typography — First Light (Manrope · Elegant, Slightly Tracked)</p>
+    <div class="row">
+      <div class="col-lg-7">
+        <span class="g-eyebrow">Eyebrow / Label</span>
+        <h1>H1 · Sovereign Capability at Scale</h1>
+        <h2>H2 · JADC2-Compatible Integration</h2>
+        <h3>H3 · Post-Quantum Cryptography</h3>
+        <h4>H4 · Autonomous Systems at the Tactical Edge</h4>
+        <h5>H5 · Zero Trust Architecture</h5>
+        <h6>H6 · AI-Driven Decision Support</h6>
+        <hr class="my-4">
+        <p class="lead">Ravonics is a West Virginia small business delivering mission-critical technology to the Department of War, the Intelligence Community, and federal agencies nationwide.</p>
+        <p>Our engineers operate at the intersection of AI, autonomous systems, and warfighter readiness — building platforms that perform under the conditions that matter most: contested environments, degraded networks, and zero-margin-for-error operations.</p>
+        <blockquote class="g-quote">"Technology does not win wars. Decisive advantage, delivered at the moment of need, does."</blockquote>
+      </div>
+      <div class="col-lg-5">
+        <div class="p-4 rounded" style="background:#fff; border:1px solid rgba(0,0,0,.08);">
+          <p class="g-section-label mb-3">Font Weights</p>
+          <p style="font-weight:300; font-size:1.1rem; letter-spacing:.02em;">300 Light — Ancillary body text</p>
+          <p style="font-weight:400; font-size:1.1rem; letter-spacing:.02em;">400 Regular — Standard body copy</p>
+          <p style="font-weight:500; font-size:1.1rem; letter-spacing:.02em;">500 Medium — UI labels and captions</p>
+          <p style="font-weight:600; font-size:1.1rem; letter-spacing:.02em;">600 SemiBold — Subheadings</p>
+          <p style="font-weight:700; font-size:1.1rem; letter-spacing:.02em;">700 Bold — Section headings</p>
+          <p style="font-weight:800; font-size:1.1rem; letter-spacing:.02em; margin-bottom:0;">800 ExtraBold — Display / hero</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPONENTS ────────────────────────────────────────────── -->
+<section class="g-section g-component-section" style="background:#fff;">
+  <div class="container">
+    <p class="g-section-label">Components</p>
+
+    <!-- Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="feature-box f-boxed h-100 p-4">
+          <i class="fa fa-shield-halved id-color fa-2x mb-3 d-block"></i>
+          <h5>Zero Trust Security</h5>
+          <p class="mb-0">End-to-end identity verification and micro-segmentation aligned to NIST 800-171 and CMMC 2.0 requirements for DoW environments.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box f-boxed h-100 p-4">
+          <i class="fa fa-microchip id-color fa-2x mb-3 d-block"></i>
+          <h5>Mission AI Platforms</h5>
+          <p class="mb-0">Deployable AI stacks — from edge inference nodes to cloud-scale analytics — designed for contested, disconnected, and degraded (C2D2) environments.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box f-boxed h-100 p-4">
+          <i class="fa fa-network-wired id-color fa-2x mb-3 d-block"></i>
+          <h5>JADC2 Integration</h5>
+          <p class="mb-0">Joint All-Domain Command and Control architecture enabling cross-domain data sharing, sensor fusion, and kill-chain acceleration.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <p class="g-section-label">Buttons &amp; Controls</p>
+    <div class="d-flex flex-wrap gap-3 mb-4">
+      <a href="#" class="btn btn-main">Primary Action</a>
+      <a href="#" class="btn btn-main btn-sm">Primary SM</a>
+      <a href="#" class="btn btn-line">Outline Button</a>
+      <a href="#" class="btn btn-line btn-sm">Outline SM</a>
+      <a href="#" class="btn btn-main" style="opacity:.55; pointer-events:none;">Disabled State</a>
+    </div>
+
+    <!-- Form -->
+    <p class="g-section-label">Form Elements</p>
+    <div class="row g-3 mb-4" style="max-width:560px;">
+      <div class="col-8">
+        <input type="email" class="form-control" placeholder="agency@mail.mil">
+      </div>
+      <div class="col-4">
+        <button class="btn btn-main w-100">Subscribe</button>
+      </div>
+      <div class="col-12">
+        <select class="form-select">
+          <option>Select capability area</option>
+          <option>AI &amp; Autonomous Systems</option>
+          <option>JADC2 Integration</option>
+          <option>Quantum Technologies</option>
+          <option>Zero Trust / Cybersecurity</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Badges / text -->
+    <p class="g-section-label">Inline Elements</p>
+    <div class="d-flex flex-wrap gap-2 mb-3">
+      <span class="badge" style="background:var(--primary-color);">DoW Contractor</span>
+      <span class="badge" style="background:var(--secondary-color); color:#fff;">HUBZone</span>
+      <span class="badge" style="background:var(--accent); color:#fff;">SAM.gov</span>
+    </div>
+    <p>Learn more about our <a href="#" class="id-color fw-600">JADC2-compatible systems</a>, <a href="#" class="id-color fw-600">post-quantum readiness</a>, and <a href="#" class="id-color fw-600">zero trust architecture</a> capabilities.</p>
+  </div>
+</section>
+
+<!-- ── CTA BAND ───────────────────────────────────────────────── -->
+<section class="g-cta-band">
+  <div class="container">
+    <span class="g-eyebrow" style="color:rgba(255,255,255,.6);">Ravenswood, West Virginia</span>
+    <h2 class="display-5 fw-semibold mb-3" style="color:#fff;">Ready to Advance Your Mission?</h2>
+    <p style="color:rgba(255,255,255,.75); font-size:1.1rem; max-width:540px; margin:0 auto 2rem;">
+      Speak with a Ravonics technical advisor about AI platforms, JADC2 integration, or post-quantum readiness for your agency.
+    </p>
+    <a href="#" class="btn btn-outline-light btn-lg px-5">Request Consultation</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="g-footer">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <img src="../images/logo/logo-white.svg" alt="Ravonics" height="28" style="opacity:.8;">
+        <p class="mt-2 mb-0" style="font-size:.78rem;">Mission-ready technology from Ravenswood, WV.</p>
+      </div>
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <span class="g-footer-accent" style="background:var(--primary-color);"></span>
+        <span style="color:var(--primary-color);">#93242A</span>
+        &nbsp;&nbsp;
+        <span class="g-footer-accent" style="background:#D98F4E;"></span>
+        <span style="color:#D98F4E;">#D98F4E</span>
+        &nbsp;&nbsp;
+        <span class="g-footer-accent" style="background:#5E6B70;"></span>
+        <span style="color:#9AA5AA;">#5E6B70</span>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <span style="opacity:.5; font-size:.75rem;">Brand Direction · First Light · Not for production</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

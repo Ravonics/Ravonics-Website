@@ -1,0 +1,20 @@
+/* Ravonics Brand — First Light
+   Warm maroon + amber gold; photojournalistic, dawn-lit command presence */
+:root {
+  --primary-color:          #93242A;
+  --primary-color-rgb:      147, 36, 42;
+  --secondary-color:        #D98F4E;
+  --secondary-color-rgb:    217, 143, 78;
+  --ink:                    #1A1416;
+  --paper:                  #F7F1EA;
+  --accent:                 #5E6B70;
+
+  /* Typography treatment — elegant, slightly tracked */
+  --heading-letter-spacing: 0.02em;
+  --heading-weight:         600;
+  --heading-transform:      none;
+  --eyebrow-size:           0.7rem;
+  --eyebrow-spacing:        0.18em;
+  --eyebrow-weight:         500;
+  --eyebrow-transform:      uppercase;
+}

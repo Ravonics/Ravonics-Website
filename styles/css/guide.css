@@ -1,0 +1,250 @@
+/* Ravonics Brand Style Guide — Shared Layout
+   Loaded after a scheme file so all vars are already resolved.
+   Applies ONLY inside /styles/ pages — zero bleed to the live site. */
+
+/* ── Reset / base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--paper, #f8f8f8);
+  color: var(--ink, #111);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scheme-driven overrides for site component classes ─────── */
+.btn-main,
+a.btn-main {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+.btn-main:hover,
+a.btn-main:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 80%, black) !important;
+  border-color:     color-mix(in srgb, var(--primary-color) 80%, black) !important;
+}
+
+.btn-line,
+a.btn-line {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background: transparent !important;
+}
+.btn-line:hover,
+a.btn-line:hover {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+.id-color        { color: var(--primary-color) !important; }
+.bg-color        { background-color: var(--primary-color) !important; }
+.secondary-color { color: var(--secondary-color) !important; }
+.accent-color    { color: var(--accent) !important; }
+
+.feature-box,
+.d-card {
+  border-top: 3px solid var(--primary-color);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.feature-box:hover,
+.d-card:hover {
+  box-shadow: 0 8px 32px rgba(var(--primary-color-rgb), .15);
+  transform: translateY(-3px);
+}
+
+/* ── Guide-only sections ────────────────────────────────────── */
+
+/* Palette strip */
+.g-palette-strip {
+  display: flex;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.12);
+}
+.g-swatch {
+  flex: 1;
+  padding: 2rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+}
+.g-swatch-role {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+.g-swatch-hex {
+  font-size: .78rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .04em;
+}
+.g-swatch-name {
+  font-size: .65rem;
+  opacity: .65;
+  text-align: center;
+}
+
+/* Typography specimen */
+.g-type-section { padding: 3rem 0; }
+.g-type-section h1,
+.g-type-section h2,
+.g-type-section h3,
+.g-type-section h4,
+.g-type-section h5,
+.g-type-section h6 {
+  letter-spacing: var(--heading-letter-spacing, 0);
+  font-weight:    var(--heading-weight, 700);
+  text-transform: var(--heading-transform, none);
+  color: var(--ink);
+  margin-bottom: .4em;
+}
+.g-eyebrow {
+  font-size:      var(--eyebrow-size, .7rem);
+  letter-spacing: var(--eyebrow-spacing, .15em);
+  font-weight:    var(--eyebrow-weight, 600);
+  text-transform: var(--eyebrow-transform, uppercase);
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: .6rem;
+}
+.g-quote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.25rem;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--ink);
+  opacity: .8;
+  margin: 1.5rem 0;
+}
+
+/* Component showcase */
+.g-component-section { padding: 2.5rem 0; }
+.g-component-section .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 .2rem rgba(var(--primary-color-rgb), .2);
+}
+
+/* CTA band */
+.g-cta-band {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+.g-cta-band h2 {
+  color: #fff;
+  font-weight: var(--heading-weight, 700);
+  letter-spacing: var(--heading-letter-spacing, 0);
+  text-transform: var(--heading-transform, none);
+}
+.g-cta-band .btn-outline-light {
+  border-width: 2px;
+}
+.g-cta-band .btn-outline-light:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+
+/* Guide index cards */
+.g-option-card {
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow .2s ease, transform .2s ease;
+  background: #fff;
+}
+.g-option-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,.13);
+  transform: translateY(-4px);
+}
+.g-option-card .g-card-header {
+  padding: 1.5rem 1.5rem 1rem;
+}
+.g-option-card .g-card-body {
+  padding: 0 1.5rem 1.5rem;
+}
+.g-mini-palette {
+  display: flex;
+  height: 28px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: .75rem;
+}
+.g-mini-swatch { flex: 1; }
+
+/* Section labels */
+.g-section-label {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent, #666);
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+/* Header override for demo pages */
+.g-demo-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--ink);
+  padding: .85rem 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,.25);
+}
+.g-demo-header .nav-link {
+  color: rgba(255,255,255,.75) !important;
+  font-size: .85rem;
+  font-weight: 500;
+  transition: color .15s;
+}
+.g-demo-header .nav-link:hover { color: #fff !important; }
+
+/* Hero */
+.g-hero {
+  background-color: var(--ink);
+  color: #fff;
+  padding: 7rem 0 5rem;
+}
+.g-hero h1 {
+  color: #fff;
+  letter-spacing: var(--heading-letter-spacing, 0);
+  font-weight: var(--heading-weight, 700);
+  text-transform: var(--heading-transform, none);
+}
+.g-hero .lead { color: rgba(255,255,255,.8); }
+.g-hero-accent-bar {
+  width: 48px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Footer */
+.g-footer {
+  background-color: var(--ink);
+  color: rgba(255,255,255,.65);
+  padding: 2.5rem 0;
+  font-size: .85rem;
+}
+.g-footer .g-footer-accent {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .3rem;
+  vertical-align: middle;
+}
+
+/* Utilities */
+.g-section { padding: 4rem 0; }
+.g-bg-paper { background-color: var(--paper); }
+.g-bg-ink   { background-color: var(--ink); color: #fff; }

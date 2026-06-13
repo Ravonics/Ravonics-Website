@@ -1,0 +1,20 @@
+/* Ravonics Brand — Burgundy Command
+   Deep burgundy + forest teal; editorial gravitas, strategic leadership */
+:root {
+  --primary-color:          #7E1F2A;
+  --primary-color-rgb:      126, 31, 42;
+  --secondary-color:        #1E7E70;
+  --secondary-color-rgb:    30, 126, 112;
+  --ink:                    #14100F;
+  --paper:                  #ECE3D6;
+  --accent:                 #B5683B;
+
+  /* Typography treatment — editorial medium weight */
+  --heading-letter-spacing: 0.01em;
+  --heading-weight:         700;
+  --heading-transform:      none;
+  --eyebrow-size:           0.72rem;
+  --eyebrow-spacing:        0.12em;
+  --eyebrow-weight:         600;
+  --eyebrow-transform:      uppercase;
+}
