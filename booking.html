@@ -163,7 +163,7 @@
                 <div class="container">
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-8">
-                            <form name="consultationBookingForm" id="consultation_booking_form" class="position-relative z1000" method="post" action="booking.php">
+                            <form name="consultationBookingForm" id="consultation_booking_form" class="position-relative z1000" method="post" action="#">
                                 <div class="row g-4 gy-2">
 
                                     <!-- Organization Information -->
@@ -352,12 +352,14 @@
                                 </div>
                             </form>
 
-                            <div id="success_message" class='success'>
-                                Your message has been sent successfully. Refresh this page if you want to send more messages.
+                            <!-- Submission status messages (shown/hidden via JS) -->
+                            <div id="success_message" class="alert alert-success mt-4" style="display:none;">
+                                <strong>Request received.</strong> Our federal engagement team will contact you within 1 business day.
                             </div>
-                            <div id="error_message" class='error'>
-                                Sorry there was an error sending your form.
+                            <div id="error_message" class="alert alert-danger mt-4" style="display:none;">
+                                <strong>Submission failed.</strong> Please email us directly at <a href="mailto:contact@ravonics.com">contact@ravonics.com</a> to schedule your consultation.
                             </div>
+                            <div id="validation_message" class="alert alert-warning mt-4" style="display:none;"></div>
                             
                         </div>
                     </div>
@@ -508,7 +510,209 @@
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
-    <script src="js/validation-booking.js"></script>
+    <!-- NOTE: js/validation-booking.js removed — it targeted #logistics_booking_form (wrong id)
+         and is replaced by the D365 Logic App submit handler below. -->
+
+    <script>
+    /**
+     * Ravonics Consultation Booking — D365 Lead Intake
+     *
+     * POSTs a flat JSON payload to the Azure Logic App trigger URL.
+     * The Logic App maps fields to a Dataverse lead and returns HTTP 200
+     * {"status":"received"} on success.
+     *
+     * Required fields validated client-side before dispatch:
+     *   org_name, org_email, org_phone, contact_first_name, contact_last_name,
+     *   contact_department, contact_position, area_of_interest, budget_range,
+     *   agree_terms (must be checked)
+     */
+    (function () {
+        'use strict';
+
+        // Logic App trigger URL (public callback with embedded sig — intentional, per org pattern)
+        var CALLBACK_URL = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=nddrAcETE_6jbSNRZ_tFONLr5iIH_fiCsCvZ4I-QnEM';
+
+        // Required field ids and friendly labels for validation messaging
+        var REQUIRED_FIELDS = [
+            { id: 'org_name',            label: 'Organization Name' },
+            { id: 'org_email',           label: 'Email' },
+            { id: 'org_phone',           label: 'Phone' },
+            { id: 'contact_first_name',  label: 'First Name' },
+            { id: 'contact_last_name',   label: 'Last Name' },
+            { id: 'contact_department',  label: 'Department / Agency' },
+            { id: 'contact_position',    label: 'Position / Title' },
+            { id: 'area_of_interest',    label: 'Area of Interest' },
+            { id: 'budget_range',        label: 'Estimated Budget Range' }
+        ];
+
+        function getEl(id) { return document.getElementById(id); }
+
+        function showMessage(type, text) {
+            // Hide all status messages first
+            getEl('success_message').style.display = 'none';
+            getEl('error_message').style.display   = 'none';
+            getEl('validation_message').style.display = 'none';
+
+            if (type === 'success') {
+                getEl('success_message').style.display = 'block';
+            } else if (type === 'error') {
+                getEl('error_message').style.display = 'block';
+            } else if (type === 'validation') {
+                var el = getEl('validation_message');
+                el.innerHTML = text;
+                el.style.display = 'block';
+            }
+        }
+
+        function hideMessages() {
+            getEl('success_message').style.display  = 'none';
+            getEl('error_message').style.display    = 'none';
+            getEl('validation_message').style.display = 'none';
+        }
+
+        function buildPayload(form) {
+            // Collect all scalar fields by name
+            var payload = {};
+            var scalarFields = [
+                'org_name', 'org_email', 'org_phone', 'org_location',
+                'contact_first_name', 'contact_last_name', 'contact_department', 'contact_position',
+                'area_of_interest', 'classification_level', 'budget_range',
+                'engagement_type', 'timeline', 'clearance_required',
+                'consultation_date', 'consultation_time', 'notes'
+            ];
+
+            scalarFields.forEach(function (name) {
+                var el = form.querySelector('[name="' + name + '"]');
+                if (!el) {
+                    // Radio groups: querySelector returns first; use checked value
+                    var checked = form.querySelector('[name="' + name + '"]:checked');
+                    payload[name] = checked ? checked.value : '';
+                } else if (el.type === 'radio') {
+                    var checkedRadio = form.querySelector('[name="' + name + '"]:checked');
+                    payload[name] = checkedRadio ? checkedRadio.value : '';
+                } else {
+                    payload[name] = el.value.trim();
+                }
+            });
+
+            // Radio field clearance_required needs special handling (querySelector returns first radio)
+            var clearanceChecked = form.querySelector('[name="clearance_required"]:checked');
+            payload['clearance_required'] = clearanceChecked ? clearanceChecked.value : '';
+
+            // Checkboxes: requirements[] — join checked values into comma-separated string
+            var requirementBoxes = form.querySelectorAll('[name="requirements[]"]:checked');
+            var reqValues = [];
+            requirementBoxes.forEach(function (cb) { reqValues.push(cb.value); });
+            payload['requirements'] = reqValues.join(', ');
+
+            // agree_terms checkbox
+            var termsEl = form.querySelector('[name="agree_terms"]');
+            payload['agree_terms'] = (termsEl && termsEl.checked) ? 'Yes' : 'No';
+
+            return payload;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = getEl('consultation_booking_form');
+            if (!form) { return; }
+
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var originalBtnText = submitBtn ? submitBtn.textContent.trim() : 'Submit Consultation Request';
+
+            // Clear validation highlights when user edits a field
+            form.addEventListener('input', function (e) {
+                if (e.target.classList.contains('is-invalid')) {
+                    e.target.classList.remove('is-invalid');
+                }
+                hideMessages();
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                hideMessages();
+
+                // ── Client-side validation ──────────────────────────────────
+                var missing = [];
+                REQUIRED_FIELDS.forEach(function (f) {
+                    var el = getEl(f.id);
+                    var val = el ? el.value.trim() : '';
+                    if (!val) {
+                        missing.push(f.label);
+                        if (el) { el.classList.add('is-invalid'); }
+                    } else {
+                        if (el) { el.classList.remove('is-invalid'); }
+                    }
+                });
+
+                // Email format sanity check
+                var emailEl = getEl('org_email');
+                if (emailEl && emailEl.value.trim() && emailEl.value.indexOf('@') === -1) {
+                    missing.push('Email (invalid format)');
+                    emailEl.classList.add('is-invalid');
+                }
+
+                // Terms checkbox
+                var termsEl = getEl('agree_terms');
+                if (!termsEl || !termsEl.checked) {
+                    missing.push('Terms &amp; Conditions (must be accepted)');
+                }
+
+                if (missing.length > 0) {
+                    showMessage('validation',
+                        '<strong>Please complete the following required fields:</strong><ul style="margin:6px 0 0 0;padding-left:20px;">' +
+                        missing.map(function (m) { return '<li>' + m + '</li>'; }).join('') +
+                        '</ul>'
+                    );
+                    // Scroll to the first invalid field or the message
+                    var firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+                    return;
+                }
+
+                // ── Build payload ───────────────────────────────────────────
+                var payload = buildPayload(form);
+
+                // ── In-flight state ─────────────────────────────────────────
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting…';
+                }
+
+                // ── POST to D365 Logic App ──────────────────────────────────
+                fetch(CALLBACK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(function (res) {
+                    if (res.ok) {
+                        // Success — show confirmation, reset form
+                        showMessage('success');
+                        form.reset();
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = originalBtnText;
+                        }
+                        // Scroll to success message
+                        getEl('success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        // Non-2xx HTTP response
+                        throw new Error('HTTP ' + res.status);
+                    }
+                })
+                .catch(function (err) {
+                    console.error('Consultation form submission error:', err);
+                    showMessage('error');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    }
+                    getEl('error_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        });
+    }());
+    </script>
 
 </body>
 
