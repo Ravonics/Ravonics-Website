@@ -1,0 +1,10 @@
+[PREAMBLE]
+Every generated photo must read as a real editorial/photojournalistic photograph, not concept art, not a render, not obviously AI. The tonal anchor is warm golden-hour / first-light: cool teal-blue shadows, rich amber/gold highlights, soft atmospheric haze, fine film grain, gentle lens flare, shallow depth-of-field. Low camera angle preferred. Practical ambient light only (no studio strobes). Understated, confident, federal-appropriate.
+
+Preferred subjects: real hardware (antennas, server racks, circuit boards at macro, optical instruments, cables, lab equipment), real environments (server rooms, outdoor operations, waterways, lab benches, fog-lit runways, open skies), human craft moments (hands adjusting equipment, operator at a simple terminal, technician at a workbench). Motion blur acceptable. Negative space valued. Never fabricate human faces.
+
+[CINEMATIC_SUFFIX]
+cinematic color grade, anamorphic lens character, high dynamic range, crisp fine detail, professional editorial photojournalism, warm amber highlights, cool teal shadows, fine 35mm film grain, gentle lens flare, shallow depth-of-field
+
+[NEGATIVE_SUFFIX]
+No faces or recognizable people. No text or watermarks. No holographic HUD overlays, no glowing-blue neural brains, no circuit-board macro fills, no hexagon overlays, no robot dogs, no quantum-chandelier CGI, no floating atom spheres, no satellite dishes at night with star trails, no generic soldier silhouettes, no anthropomorphic AI faces.
