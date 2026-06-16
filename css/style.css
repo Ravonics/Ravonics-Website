@@ -13524,3 +13524,42 @@ img {
 @media (max-width: 340px) {
   .abs.bottom-0.end-0 .fs-16.lh-1-5 { font-size: 12px !important; }
 }
+
+
+/* ============================================================
+   READABILITY OVERRIDES — scoped overlays only
+   Approved by CEO 2026-06-16. CSS-only; no DOM changes.
+   ============================================================ */
+
+/* GROUP 1: Capability-page feature-image caption bar
+   Targets ONLY the floating caption (.bg-color.abs.bottom-0) that
+   sits inside a .relative container (feature photo wrappers on
+   capabilities/*.html).  Does NOT affect other .bg-color buttons,
+   nav items, or badge elements elsewhere on the site.
+   Replaces opaque maroon (#93242A) with a dark translucent scrim
+   + backdrop-blur for legibility over busy warm photo backgrounds. */
+.relative > .bg-color.abs.bottom-0 {
+  background: linear-gradient(0deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.74) 100%) !important;
+  -webkit-backdrop-filter: blur(6px);
+  -moz-backdrop-filter: blur(6px);
+  -o-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Slightly tighten the caption paragraph to match the narrower visual
+   weight of the scrim vs the solid brand block. Stays within ±15%
+   character-budget intent of the original layout. */
+.relative > .bg-color.abs.bottom-0 p {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* GROUP 2: Homepage hero slider overlay
+   The hero slides use .sw-overlay.op-4 which sets opacity to 0.4,
+   making the dark gradient too translucent on bright dawn/daytime
+   frames.  This scoped rule raises the opacity for ONLY the hero
+   .swiper-slide context; it does NOT affect .sw-overlay.op-7
+   subheader banners (different context, different selector). */
+.swiper-slide .sw-overlay.op-4 {
+  opacity: 0.65 !important;
+}
