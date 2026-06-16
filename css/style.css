@@ -13536,19 +13536,26 @@ img {
    sits inside a .relative container (feature photo wrappers on
    capabilities/*.html).  Does NOT affect other .bg-color buttons,
    nav items, or badge elements elsewhere on the site.
-   Replaces opaque maroon (#93242A) with a dark translucent scrim
-   + backdrop-blur for legibility over busy warm photo backgrounds. */
+   CEO decision 2026-06-16: move caption BELOW the photo (static flow)
+   rather than overlaying it, so the photo is fully unobstructed. */
 .relative > .bg-color.abs.bottom-0 {
-  background: linear-gradient(0deg, rgba(16,16,16,.55) 0%, rgba(16,16,16,.30) 100%) !important;
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  position: static !important;        /* drop out of absolute overlay */
+  inset: auto !important;
+  margin: 1rem 0 0 0 !important;      /* small gap under the photo, full width */
+  background: var(--primary-color) !important;  /* solid brand caption card */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
 }
 
-/* Slightly tighten the caption paragraph to match the narrower visual
-   weight of the scrim vs the solid brand block. Stays within ±15%
-   character-budget intent of the original layout. */
+/* .sm-hide hides the caption at max-width:992px (template breakpoint).
+   Now that the caption sits below the photo it fits at all widths — restore it. */
+@media only screen and (max-width: 992px) {
+  .relative > .bg-color.abs.bottom-0.sm-hide {
+    display: block !important;
+  }
+}
+
+/* Tighten caption paragraph — unchanged from prior version. */
 .relative > .bg-color.abs.bottom-0 p {
   font-size: 0.9em;
   line-height: 1.5;
