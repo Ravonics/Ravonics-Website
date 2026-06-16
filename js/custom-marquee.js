@@ -1,4 +1,5 @@
 $(function(){
+    if (typeof $.fn.marquee !== 'function') return;
     $('.de-marquee-list-1').marquee({
         direction: 'right',
         duration: 60000,
