@@ -7594,7 +7594,7 @@ footer .tiny-border span {
 .fs-60{font-size: 60px;}
 .fs-64{font-size: 64px;}
 .fs-72{font-size: 72px;}
-.fs-84{font-size: 84px;}
+.fs-84{font-size: 84px;line-height:1.1;}
 .fs-96{font-size: 96px;}
 .fs-120{font-size: 120px;}
 .fs-150{font-size: 150px;}
@@ -13512,3 +13512,15 @@ img {
 
 /* Skip-to-content link (WCAG accessibility) */
 .skip-link{position:absolute;left:-9999px;top:0;z-index:100000;padding:8px 16px;background:#fff;color:#000}.skip-link:focus{left:0}
+
+/* Stat-counter: prevent number+suffix from splitting across lines */
+.de_count h3 { white-space: nowrap; }
+
+/* Stat-counter badge: keep label single-line on narrow phones (about.html overlay) */
+@media (max-width: 575px) {
+  .abs.bottom-0.end-0.m-5 { margin: 2px !important; }
+  .abs.bottom-0.end-0 .fs-16.lh-1-5 { font-size: 14px !important; }
+}
+@media (max-width: 340px) {
+  .abs.bottom-0.end-0 .fs-16.lh-1-5 { font-size: 12px !important; }
+}
