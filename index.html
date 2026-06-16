@@ -466,28 +466,16 @@
                                 <div class="subtitle wow fadeInUp" data-wow-delay=".2s">Start the Conversation</div>
                                 <h2 class="split" data-wow-delay=".4s">Request a Consultation</h2>
 
-                                <p class="wow fadeInUp" data-wow-delay=".6s">Tell us about your mission requirement and we will schedule a discovery session — unclassified or working toward classified — to assess technical feasibility and outline an approach tailored to your program needs.</p>
+                                <p class="wow fadeInUp" data-wow-delay=".5s">Bring us your hardest mission requirement. In a focused discovery session — unclassified or working toward classified — our team assesses technical feasibility and lays out a deployable, compliance-ready path tailored to your program. Here is what we bring to yours.</p>
 
-                                <form id="homepage_intake_form" action="#" method="post" class="mt-4">
-                                    <div class="row g-3 align-items-center">
-                                        <div class="col-md-12">
-                                            <div class="hover-underline">
-                                                <input class="form-underline mb-0 no-border fs-18" id="intake_email" name="intake_email" placeholder="your work email" type="email" autocomplete="email">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8 col-sm-8">
-                                            <div class="hover-underline">
-                                                <input class="form-underline mb-0 no-border fs-18" id="intake_message" name="intake_message" placeholder="describe your mission challenge..." type="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4">
-                                            <button class="btn-main bg-white text-dark fx-slide w-100" type="submit" id="intake_submit"><span>Get Started</span></button>
-                                        </div>
-                                    </div>
-                                </form>
+                                <ul class="ul-check white mb-4 wow fadeInUp" data-wow-delay=".6s">
+                                    <li>Decades of AI/ML, enterprise architecture, and federal systems leadership</li>
+                                    <li>An applied-physics research bench through INSTAR Lab</li>
+                                    <li>NIST 800-171-aligned delivery, engineered for federal compliance</li>
+                                    <li>Mature, proven platforms drawn from our partner ecosystem</li>
+                                </ul>
 
-                                <div id="intake_success" class="mt-4" style="display:none;">Thank you — your request has reached our team and we will follow up shortly. Need to share more detail? <a class="text-light fw-bold" href="booking.html">Open the full consultation form</a>.</div>
-                                <div id="intake_error" class="mt-4" style="display:none;">We could not send your request just now. Please <a class="text-light fw-bold" href="booking.html">use the full consultation form</a> or email contact@ravonics.com.</div>
+                                <a class="btn-main bg-white text-dark fx-slide wow fadeInUp" data-wow-delay=".7s" href="booking.html"><span>Request a Consultation</span></a>
                             </div>
                         </div>
 
@@ -988,70 +976,6 @@
     <script src="js/custom-swiper-1.js" defer></script>
     <script src="js/custom-marquee.js" defer></script>
 
-    <!-- Homepage consultation CTA → same D365 Logic App intake as booking.html / contact.html -->
-    <script>
-    (function () {
-        var form = document.getElementById('homepage_intake_form');
-        if (!form) { return; }
-
-        // Same Logic App as booking.html / contact.html; subject differentiates the source.
-        var CALLBACK_URL = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs';
-
-        var emailEl = document.getElementById('intake_email');
-        var msgEl   = document.getElementById('intake_message');
-        var btn     = document.getElementById('intake_submit');
-        var okEl    = document.getElementById('intake_success');
-        var errEl   = document.getElementById('intake_error');
-        var btnHtml = btn ? btn.innerHTML : '';
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            if (okEl)  { okEl.style.display  = 'none'; }
-            if (errEl) { errEl.style.display = 'none'; }
-
-            var email = emailEl ? emailEl.value.trim() : '';
-            if (!email || email.indexOf('@') === -1) {
-                if (emailEl) { emailEl.classList.add('is-invalid'); emailEl.focus(); }
-                return;
-            }
-            if (emailEl) { emailEl.classList.remove('is-invalid'); }
-
-            var message = msgEl ? msgEl.value.trim() : '';
-            var payload = {
-                subject:        'Website Homepage Consultation Request',
-                firstname:      '',
-                lastname:       '(Website Visitor)',
-                emailaddress1:  email,
-                telephone1:     '',
-                description:    message || '(No message provided — submitted from homepage consultation CTA.)',
-                leadsourcecode: 'Website Homepage',
-                org_name:       '',
-                org_email:      email,
-                org_phone:      ''
-            };
-
-            if (btn) { btn.disabled = true; btn.innerHTML = '<span>Sending&hellip;</span>'; }
-
-            fetch(CALLBACK_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(function (res) {
-                if (!res.ok) { throw new Error('HTTP ' + res.status); }
-                form.reset();
-                if (okEl) { okEl.style.display = 'block'; }
-            })
-            .catch(function (err) {
-                console.error('Homepage consultation submission error:', err);
-                if (errEl) { errEl.style.display = 'block'; }
-            })
-            .finally(function () {
-                if (btn) { btn.disabled = false; btn.innerHTML = btnHtml; }
-            });
-        });
-    }());
-    </script>
 
 </body>
 
