@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Ravonics LLC is a Ravenswood, West Virginia small business delivering AI platforms, post-quantum readiness, JADC2 integration, and autonomous systems for the U.S. Department of War (DoW), the Intelligence Community, and federal agencies. SAM.gov registered; HUBZone application pending." name="description" >
     <meta content="federal AI contractor, federal AI platform, JADC2 integration, defense technology consulting, DoW contractor, intelligence community solutions, post-quantum cryptography, autonomous systems, NIST 800-171 alignment, HUBZone small business, zero trust architecture, mission AI platforms, tactical edge computing, West Virginia federal contractor" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -89,6 +91,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
         
@@ -115,7 +118,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -174,7 +177,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -189,7 +192,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
@@ -259,7 +262,7 @@
                                         <div class="row gx-5 align-items-center justify-content-between">
                                             <div class="col-lg-6"> 
                                                 <div class="sw-text-wrapper">
-                                                    <h1 class="animated text-uppercase anim-order-1">Intelligence Systems That See Tomorrow Today</h1>
+                                                    <h2 class="animated text-uppercase anim-order-1" style="font-size:var(--h1-font-size);font-weight:var(--h1-font-weight);letter-spacing:var(--h1-letter-spacing);line-height:var(--h1-line-height);margin-bottom:var(--h1-margin-bottom)">Intelligence Systems That See Tomorrow Today</h2>
 
                                                     <div class="animated anim-order-2">
                                                         <p>Multi-domain situational awareness powered by AI that learns, adapts, and predicts. From autonomous platforms coordinating in contested environments to intelligence fusion across all domains—Ravonics builds systems that turn information superiority into operational dominance.</p>
@@ -327,7 +330,7 @@
                                         <h3 class="border-top pt-3">Advanced AI Platforms</h3>
                                         <p class="mb-0 hover-mh-60">Mission-Ready Intelligence</p>
                                     </div>
-                                    <img src="images/misc/s1.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0s" alt="AI platform rack at first light — Ravonics federal AI systems">
+                                    <img src="images/misc/s1.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0s" alt="AI platform rack at first light — Ravonics federal AI systems" width="1080" height="1080">
                                     <div class="gradient-edge-bottom h-50 op-5"></div>
                                 </div>
                             </a>
@@ -339,7 +342,7 @@
                                 <div class="hover rounded-1 relative overflow-hidden text-light wow zoomIn" data-wow-delay="0.2s">
                                     <div class="abs p-4 m-1 z-2">
                                         <div class="p-4 mb-4 bg-color text-light rounded-1 text-center wow fadeInRight" data-wow-delay="0.2s">
-                                            <h1 class="fs-84 mb-1">5</h1>
+                                            <div class="fs-84 mb-1">5</div>
                                             <div class="fs-16 lh-1-5">Partner Companies</div>
                                         </div>
                                     </div>
@@ -347,7 +350,7 @@
                                         <h3 class="border-top pt-3">Elite Engineering</h3>
                                         <p class="mb-0 hover-mh-60">Enterprise Architecture Excellence</p>
                                     </div>
-                                    <img src="images/misc/s2.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0.2s" alt="Enterprise engineering environment — Ravonics systems integration">
+                                    <img src="images/misc/s2.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0.2s" alt="Enterprise engineering environment — Ravonics systems integration" loading="lazy" width="1080" height="1080">
                                     <div class="gradient-edge-bottom h-50 op-5"></div>
                                 </div>
                             </a>
@@ -361,7 +364,7 @@
                                         <h3 class="border-top pt-3">Autonomous Systems for Extreme Environments</h3>
                                         <p class="mb-0 hover-mh-60">Robotics & Unmanned Platforms</p>
                                     </div>
-                                    <img src="images/misc/s3.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0.4s" alt="Autonomous systems platform — Ravonics multi-domain operations">
+                                    <img src="images/misc/s3.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0.4s" alt="Autonomous systems platform — Ravonics multi-domain operations" loading="lazy" width="1000" height="1000">
                                     <div class="gradient-edge-bottom h-50 op-5"></div>
                                 </div>
                             </a>
@@ -385,7 +388,7 @@
                     <div class="row g-4 gx-5">
                         <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0s">
                             <a href="capabilities/ai.html" class="d-block hover relative">
-                                <img src="images/icons-maroon/1.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="images/icons-maroon/1.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Advanced Artificial Intelligence</h4>
                                 <p>Production AI systems that predict, adapt, and deliver—from neural networks for battlefield awareness to foundation models engineered for decision-support missions.</p>
                             </a>
@@ -393,7 +396,7 @@
 
                         <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".15s">
                             <a href="capabilities/robotics.html" class="d-block hover relative">
-                                <img src="images/icons-maroon/2.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="images/icons-maroon/2.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Autonomous & Robotic Systems</h4>
                                 <p>Autonomous platforms engineered for extreme environments—swarm coordination, human-robot teaming, and unmanned systems that operate where humans cannot.</p>
                             </a>
@@ -401,7 +404,7 @@
 
                         <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".3s">
                             <a href="capabilities/intelligence.html" class="d-block hover relative">
-                                <img src="images/icons-maroon/3.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="images/icons-maroon/3.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Intelligence & Decision Systems</h4>
                                 <p>Multi-domain intelligence fusion, computer vision for threat detection, and analytics platforms that turn petabytes into precision.</p>
                             </a>
@@ -409,7 +412,7 @@
 
                         <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".45s">
                             <a href="capabilities/cryptography.html" class="d-block hover relative">
-                                <img src="images/icons-maroon/4.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="images/icons-maroon/4.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Secure Communications & Cryptography</h4>
                                 <p>Post-quantum encryption, resilient tactical networks, and communication systems built for zero-trust environments and contested operations.</p>
                             </a>
@@ -417,7 +420,7 @@
 
                         <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".6s">
                             <a href="capabilities/computing.html" class="d-block hover relative">
-                                <img src="images/icons-maroon/1.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="images/icons-maroon/1.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>High-Performance Computing</h4>
                                 <p>From quantum computing for optimization to edge AI processors for disconnected ops—computational power where and when it matters most.</p>
                             </a>
@@ -425,7 +428,7 @@
 
                         <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".75s">
                             <a href="capabilities/integration.html" class="d-block hover relative">
-                                <img src="images/icons-maroon/2.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="images/icons-maroon/2.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Systems Engineering & Integration</h4>
                                 <p>Enterprise cloud platforms, zero trust implementation, DevSecOps pipelines, and end-to-end system integration—commercial-grade engineering meets federal compliance.</p>
                             </a>
@@ -446,7 +449,7 @@
                                         <div class="player bg-dark border-0 circle wow fadeInUp"><span></span></div>
                                     </div> 
                                     <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/background/1.avif" class="w-100 hover-scale-1-1" alt="" loading="lazy" decoding="async">
+                                    <img src="images/background/1.avif" class="w-100 hover-scale-1-1" alt="" loading="lazy" decoding="async" width="1920" height="800">
                                 </div>
                             </a>
                         </div>
@@ -460,25 +463,25 @@
                         <div class="col-lg-6">
                             <div class="h-100 relative bg-color p-5 text-light rounded-1">
 
-                                <div class="subtitle wow fadeInUp" data-wow-delay=".2s">Client Portal</div>
-                                <h2 class="split" data-wow-delay=".4s">Program Portal</h2>
+                                <div class="subtitle wow fadeInUp" data-wow-delay=".2s">Start the Conversation</div>
+                                <h2 class="split" data-wow-delay=".4s">Request a Consultation</h2>
 
                                 <div class="row align-items-center justify-content-end">
                                     <div class="col-md-9 col-sm-8">
                                         <div class="hover-underline">
-                                            <input class="form-underline mb-0 no-border fs-18" id='order_id' name='order_id' placeholder="enter your clearance code..." type='text'>
+                                            <input class="form-underline mb-0 no-border fs-18" id='order_id' name='order_id' placeholder="describe your mission challenge..." type='text'>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-sm-4">
-                                        <a class="btn-main bg-white text-dark fx-slide w-100" href="track-result.html"><span>Enter Portal</span></a>
+                                        <a class="btn-main bg-white text-dark fx-slide w-100" href="booking.html"><span>Get Started</span></a>
                                     </div>
                                 </div>
 
                                 <div class="abs col-lg-6 pos-sm-relative bottom-0 mb-5">
-                                    <p class="wow fadeInUp" data-wow-delay=".6s">Real-time visibility into your active programs. Track milestones, review technical deliverables, and communicate with our engineering teams through AES-256 encrypted channels that meet federal security standards.</p>
+                                    <p class="wow fadeInUp" data-wow-delay=".6s">Tell us about your mission requirement and we will schedule a discovery session — unclassified or working toward classified — to assess technical feasibility and outline an approach tailored to your program needs.</p>
                                 </div>
 
-                                <img src="images/misc/c2.webp" class="w-50 abs bottom-0 end-0 wow scaleIn" data-wow-duration="2s" alt="" loading="lazy" decoding="async">
+                                <img src="images/misc/c2.webp" class="w-50 abs bottom-0 end-0 wow scaleIn" data-wow-duration="2s" alt="" loading="lazy" decoding="async" width="351" height="352">
                             </div>
                         </div>
 
@@ -489,7 +492,7 @@
 
                                     <div class="d-flex align-items-center">
                                         <div>
-                                            <img src="images/testimonial/2.webp" class="w-40px h-auto me-4 circle" alt="Ravonics computer vision and data fusion capability">
+                                            <img src="images/testimonial/2.webp" class="w-40px h-auto me-4 circle" alt="Ravonics computer vision and data fusion capability" loading="lazy" width="230" height="230">
                                         </div>
                                         <div class="lh-1-5">
                                             <div class="fw-600">Computer Vision &amp; Data Fusion</div>
@@ -503,7 +506,7 @@
                                 </div>
                                                                                
                                 <div class="bg-light relative overflow-hidden rounded-1">
-                                    <img src="images/misc/s4.webp" class="w-100 wow scaleIn" data-wow-duration="2s" alt="" loading="lazy" decoding="async">
+                                    <img src="images/misc/s4.webp" class="w-100 wow scaleIn" data-wow-duration="2s" alt="EO/IR optic sensor assembly at first light — Ravonics advanced sensor fusion" loading="lazy" decoding="async" width="1000" height="1000">
                                 </div>
 
                             </div>               
@@ -607,7 +610,7 @@
                                                     <h3>Autonomous Systems Integration</h3>
                                                     <p class="mb-0 hover-mh-60">Defense Applications</p>
                                                 </div>
-                                                <img src="images/misc/l1.avif" class="w-100 hover-scale-1-2" alt="" loading="lazy" decoding="async">
+                                                <img src="images/misc/l1.avif" class="w-100 hover-scale-1-2" alt="Unmanned autonomous platform at dawn — Ravonics defense systems integration" loading="lazy" decoding="async" width="2000" height="1271">
                                                 <div class="gradient-edge-bottom h-50 op-5"></div>
                                             </div>
                                         </a>
@@ -622,7 +625,7 @@
                                                     <h3>Quantum Cryptography Solutions</h3>
                                                     <p class="mb-0 hover-mh-60">Secure Communications</p>
                                                 </div>
-                                                <img src="images/misc/l2.avif" class="w-100 hover-scale-1-2" alt="" loading="lazy" decoding="async">
+                                                <img src="images/misc/l2.avif" class="w-100 hover-scale-1-2" alt="Secure communications hardware at first light — Ravonics quantum cryptography solutions" loading="lazy" decoding="async" width="2000" height="1271">
                                                 <div class="gradient-edge-bottom h-50 op-5"></div>
                                             </div>
                                         </a>
@@ -637,7 +640,7 @@
                                                     <h3>AI-Powered Threat Detection</h3>
                                                     <p class="mb-0 hover-mh-60">Intelligence Analysis</p>
                                                 </div>
-                                                <img src="images/misc/l3.avif" class="w-100 hover-scale-1-2" alt="" loading="lazy" decoding="async">
+                                                <img src="images/misc/l3.avif" class="w-100 hover-scale-1-2" alt="Intelligence analyst workstation at first light — Ravonics AI-powered threat detection" loading="lazy" decoding="async" width="2000" height="1271">
                                                 <div class="gradient-edge-bottom h-50 op-5"></div>
                                             </div>
                                         </a>
@@ -812,7 +815,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <img src="images/misc/c1.avif" class="w-100 wow fadeInUp" alt="" loading="lazy" decoding="async">
+                            <img src="images/misc/c1.avif" class="w-100 wow fadeInUp" alt="Federal technology briefing in a secure conference environment — Ravonics mission capability" loading="lazy" decoding="async" width="1899" height="315">
                         </div>
                     </div>
                 </div>
@@ -875,18 +878,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -914,7 +917,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -971,11 +974,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -983,11 +986,11 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/designesia.js"></script>
-    <script src="js/swiper.js"></script>
-    <script src="js/custom-swiper-1.js"></script>
-    <script src="js/custom-marquee.js"></script>
+    <script src="js/plugins.js" defer></script>
+    <script src="js/designesia.js" defer></script>
+    <script src="js/swiper.js" defer></script>
+    <script src="js/custom-swiper-1.js" defer></script>
+    <script src="js/custom-marquee.js" defer></script>
 
 </body>
 

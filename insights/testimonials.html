@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Ravonics capability strengths, partner ecosystem maturity, and leadership track record. Honest validation of our AI, autonomous systems, and federal-compliance approach — a credible new small business with a deeply experienced leadership bench and a real physics research bench." name="description" >
     <meta content="Ravonics capabilities, defense AI strengths, partner ecosystem, INSTAR Lab research bench, federal compliance readiness, HUBZone pending, leadership track record, small business defense technology, Ravenswood WV, SAM.gov UEI YCBDVKN1A9G7" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -40,6 +42,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
         
@@ -65,7 +68,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -124,7 +127,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -139,11 +142,11 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/testimonials.avif) center">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/testimonials.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
@@ -167,7 +170,6 @@
                             <div class="border-gray rounded-1 p-30">
                                 <div class="d-flex justify-content-between mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img class="w-40px circle me-3" alt="" src="../images/testimonial/1.webp">
                                         <div class="mt-2">
                                             <div class="text-dark fw-bold lh-1">
                                                 Ravonics AI Capability
@@ -177,17 +179,6 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <img src="../images/misc/google-icon.svg" class="w-30px" alt="">
-                                </div>
-                                <div class="de-rating-ext mb-2">
-                                    <span class="d-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span class="ms-2 text-white"></span>
                                 </div>
                                 <p>30+ years in computer science and 20+ years in AI/ML give Sean Hackney a personal career foundation that spans production-grade AI pipelines long before Ravonics was founded in 2026.</p>
                             </div>
@@ -197,7 +188,6 @@
                             <div class="border-gray rounded-1 p-30">
                                 <div class="d-flex justify-content-between mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img class="w-40px circle me-3" alt="" src="../images/testimonial/2.webp">
                                         <div class="mt-2">
                                             <div class="text-dark fw-bold lh-1">
                                                 Partner Product Maturity
@@ -207,17 +197,6 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <img src="../images/misc/google-icon.svg" class="w-30px" alt="">
-                                </div>
-                                <div class="de-rating-ext mb-2">
-                                    <span class="d-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span class="ms-2 text-white"></span>
                                 </div>
                                 <p>Viper Dynamics brings production-hardened autonomous platform software to Ravonics engagements — enabling multi-domain coordination capabilities without starting from scratch.</p>
                             </div>
@@ -227,7 +206,6 @@
                             <div class="border-gray rounded-1 p-30">
                                 <div class="d-flex justify-content-between mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img class="w-40px circle me-3" alt="" src="../images/testimonial/3.webp">
                                         <div class="mt-2">
                                             <div class="text-dark fw-bold lh-1">
                                                 INSTAR Lab Bench
@@ -237,17 +215,6 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <img src="../images/misc/google-icon.svg" class="w-30px" alt="">
-                                </div>
-                                <div class="de-rating-ext mb-2">
-                                    <span class="d-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span class="ms-2 text-white"></span>
                                 </div>
                                 <p>INSTAR Lab's 501(c)(3) research bench — including PhD and MS physicists in material sciences — provides a credible R&D foundation for SBIR/STTR pursuit and sensor-fusion intelligence work.</p>
                             </div>
@@ -257,7 +224,6 @@
                             <div class="border-gray rounded-1 p-30">
                                 <div class="d-flex justify-content-between mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img class="w-40px circle me-3" alt="" src="../images/testimonial/4.webp">
                                         <div class="mt-2">
                                             <div class="text-dark fw-bold lh-1">
                                                 Federal Compliance Posture
@@ -267,17 +233,6 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <img src="../images/misc/google-icon.svg" class="w-30px" alt="">
-                                </div>
-                                <div class="de-rating-ext mb-2">
-                                    <span class="d-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span class="ms-2 text-white"></span>
                                 </div>
                                 <p>Ravonics serves as the federal-compliance and CMMC-readiness bridge for its partner ecosystem — handling the SAM.gov, CUI, and NIST 800-171 alignment pathways that sibling product companies don't navigate alone.</p>
                             </div>
@@ -287,7 +242,6 @@
                             <div class="border-gray rounded-1 p-30">
                                 <div class="d-flex justify-content-between mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img class="w-40px circle me-3" alt="" src="../images/testimonial/5.webp">
                                         <div class="mt-2">
                                             <div class="text-dark fw-bold lh-1">
                                                 HUBZone Community Value
@@ -297,17 +251,6 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <img src="../images/misc/google-icon.svg" class="w-30px" alt="">
-                                </div>
-                                <div class="de-rating-ext mb-2">
-                                    <span class="d-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span class="ms-2 text-white"></span>
                                 </div>
                                 <p>Headquartered at 313 Walnut St, Ravenswood, WV — a designated HUBZone area. HUBZone certification application is pending; once designated, this provides set-aside procurement advantages for federal buyers.</p>
                             </div>
@@ -317,7 +260,6 @@
                             <div class="border-gray rounded-1 p-30">
                                 <div class="d-flex justify-content-between mb-3">
                                     <div class="d-flex align-items-center">
-                                        <img class="w-40px circle me-3" alt="" src="../images/testimonial/6.webp">
                                         <div class="mt-2">
                                             <div class="text-dark fw-bold lh-1">
                                                 Partner Ecosystem Strength
@@ -327,17 +269,6 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <img src="../images/misc/google-icon.svg" class="w-30px" alt="">
-                                </div>
-                                <div class="de-rating-ext mb-2">
-                                    <span class="d-stars">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span class="ms-2 text-white"></span>
                                 </div>
                                 <p>Dream Limited, Droid Ops Inc, and Viper Dynamics bring production-grade CI/CD, DevSecOps, and systems tooling. Ravonics integrates and federalizes this stack for JADC2-aligned and cloud-native government programs.</p>
                             </div>
@@ -355,7 +286,7 @@
                       <!-- Image -->
                       <div class="col-lg-6 position-lg-absolute left-half h-100">
                         <div class="triangle-bottomright-dark"></div>
-                        <div class="image" data-bgimage="url(images/sections/testimonials-panel.avif) center"></div>
+                        <div class="image" data-bgimage="url(../images/sections/testimonials-panel.avif) center"></div>
                       </div>
                       <!-- Text -->
                       <div class="col-lg-5 offset-lg-7">
@@ -429,7 +360,7 @@
                             <h3 class="mb-0 fs-32 split">Ready to Explore How Ravonics Can Support Your Mission?</h3>
                         </div>
                         <div class="col-lg-3 text-lg-end">
-                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="booking.html"><span>Request Consultation</span></a>
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Request Consultation</span></a>
                         </div>
                     </div>
                 </div>
@@ -478,18 +409,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -517,7 +448,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -563,11 +503,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -576,10 +516,10 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="../js/plugins.js"></script>
-    <script src="../js/designesia.js"></script>
-    <script src="../js/swiper.js"></script>
-    <script src="../js/custom-swiper-1.js"></script>
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
 
 </body>
 

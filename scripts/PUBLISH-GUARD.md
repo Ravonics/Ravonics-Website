@@ -1,0 +1,153 @@
+# Ravonics gh-pages Publish Guard
+
+## What this guard checks
+
+`verify-ghpages-clean.sh` is a pre-push safety gate for the Ravonics.com public site.
+It must be run against the gh-pages worktree **after** the scrubbed overlay is applied
+and **before** `git push github gh-pages`.
+
+It exits non-zero (FAIL) if any of the following are detected in the target tree:
+
+### Section 1 — Forbidden files and directories
+
+These are internal/tooling files that are git-tracked on the `demo` branch
+but must never appear on `gh-pages`:
+
+| Pattern | Reason |
+|---|---|
+| `CLAUDE.md` | AI agent instructions; internal |
+| `.copy-rewrite-protocol.md` | Internal copywriting protocol |
+| `.copy-reframe-kit.md` | Internal copywriting kit |
+| `.build-spec.md` | Contains founder legal name PII + fabricated-identifier list |
+| `.image-plan.md` | Image generation strategy; internal |
+| `.image-progress.md` | Image generation state; internal |
+| `.gitlab-ci.yml` | Internal CI config; no value on public branch |
+| `image-manifest.csv` | Internal image ledger |
+| `style.txt` | Internal style notes |
+| `website-strategy-recommendations.html` | Internal strategy doc |
+| `.image-runner.log` | Internal runtime log |
+| `README.md` | Internal repo readme |
+| `SEO-*.md` | Internal SEO working docs |
+| `_preview-*.html` | Color scheme experiments; not production |
+| `*.md` (any Markdown) | Public site ships no Markdown; any .md is an internal leak |
+| `.claude/` directory | AI agent state and settings |
+| `styles/` directory | Color scheme experiments |
+| `template/` directory | Pristine vendor template; never the live site |
+| `scripts/` directory | This tooling directory; internal only |
+
+### Section 2 — Forbidden content strings
+
+The script greps across all HTML, JS, CSS, JSON, XML, CSV, and text files for:
+
+| String / Pattern | Reason |
+|---|---|
+| `Matthew` | Founder legal name PII (published name is "Sean Hackney") |
+| SAM expiration date pattern | Policy: do not publish the SAM.gov expiration date publicly |
+| `F7K9M2P4N8Q6` | Fabricated/old UEI — must not reappear |
+| `8R4T5` | Fabricated/old CAGE code — must not reappear |
+| `07-845-9321` | Fabricated DUNS — retired standard, must not reappear |
+
+### Section 3 — Belt-and-suspenders Markdown check
+
+Any `.md` file at any depth triggers FAIL. The public site is pure HTML;
+Markdown files are always internal documents.
+
+---
+
+## Exact publish sequence
+
+Wire the guard into the standard scrubbed-overlay publish sequence immediately
+before the push step:
+
+```bash
+# 1. Create an isolated gh-pages worktree (non-destructive)
+git worktree add /tmp/ghpages-publish -B gh-pages github/gh-pages
+
+# 2. Overlay ONLY live content from the demo branch
+git -C /tmp/ghpages-publish checkout demo -- \
+  index.html contact.html booking.html \
+  capabilities solutions industries company insights \
+  css js images fonts \
+  CNAME robots.txt sitemap.xml
+
+# 3. Remove any pre-existing leaked internal files
+#    (enumerate the full exclude list from the memory runbook)
+git -C /tmp/ghpages-publish rm -f --ignore-unmatch \
+  CLAUDE.md .copy-rewrite-protocol.md .copy-reframe-kit.md \
+  .build-spec.md .image-plan.md .image-progress.md \
+  .gitlab-ci.yml image-manifest.csv style.txt \
+  website-strategy-recommendations.html .image-runner.log \
+  README.md 'SEO-*.md' '_preview-*.html'
+git -C /tmp/ghpages-publish rm -rf --ignore-unmatch \
+  .claude/ styles/ template/ scripts/
+
+# 4. Ensure .nojekyll is present
+touch /tmp/ghpages-publish/.nojekyll
+git -C /tmp/ghpages-publish add .nojekyll
+
+# 5. *** RUN THE SAFETY GUARD — abort if it fails ***
+/home/mrh/repos/ravonics/Ravonics-Website/scripts/verify-ghpages-clean.sh \
+  /tmp/ghpages-publish
+
+# Guard exits non-zero on any violation — the shell will abort here if set -e
+# is active, or check the exit code explicitly:
+# if ! ./scripts/verify-ghpages-clean.sh /tmp/ghpages-publish; then
+#   echo "PUBLISH ABORTED: safety guard failed. Fix violations and retry."
+#   exit 1
+# fi
+
+# 6. Commit and push ONLY after a clean PASS
+git -C /tmp/ghpages-publish add -A
+git -C /tmp/ghpages-publish commit -m "chore(gh-pages): publish scrubbed overlay $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+git -C /tmp/ghpages-publish push github gh-pages
+
+# 7. Clean up
+git worktree remove /tmp/ghpages-publish
+```
+
+**The guard is the gate.** If it exits non-zero, the push must not proceed.
+Fix the violations (remove the offending file, strip the forbidden string),
+then re-run the guard until it returns PASS.
+
+---
+
+## Note on scripts/ exclusion
+
+The `scripts/` directory itself is tooling-only and must be added to the
+gh-pages exclude list. It is listed in the forbidden directories section of
+the guard above. The publish sequence step 3 includes `rm -rf scripts/`.
+Never include `scripts/` in the `git checkout demo --` overlay step.
+
+---
+
+## What a PASS looks like
+
+```
+==========================================
+  Ravonics gh-pages publish safety guard
+  Target: /tmp/ghpages-publish
+==========================================
+
+  PASS — tree is clean; no forbidden files, dirs, or content found.
+
+  Safe to run: git push github gh-pages
+```
+
+## What a FAIL looks like
+
+```
+==========================================
+  Ravonics gh-pages publish safety guard
+  Target: /tmp/ghpages-publish
+==========================================
+
+  FAIL — violations found. DO NOT push to gh-pages.
+
+  Violations:
+    FORBIDDEN FILE: /tmp/ghpages-publish/CLAUDE.md
+    FORBIDDEN CONTENT (founder PII: 'Matthew'): /tmp/ghpages-publish/.build-spec.md
+    MARKDOWN FILE (public site ships none): /tmp/ghpages-publish/SEO-BATCH-UPDATE-GUIDE.md
+
+  Remedy: remove or exclude all listed items from the gh-pages
+  worktree, then re-run this script until it returns PASS.
+```

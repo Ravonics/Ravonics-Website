@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Intelligence Community technology: multi-INT fusion platforms, signals intelligence (SIGINT), imagery intelligence (IMINT), advanced analytics & AI. Secure communications, data classification management, counterintelligence systems, HUMINT tools — Public Trust held by leadership; clearable team available." name="description" >
     <meta content="intelligence community technology partner, IC solutions, SIGINT signals intelligence, IMINT imagery intelligence, multi-INT fusion, clearable team IC, secure communications, classification management, counterintelligence systems, HUMINT tools, HUBZone small business contractor" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -40,6 +42,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
         
@@ -65,7 +68,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -124,7 +127,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -139,11 +142,11 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/ind-intelligence.avif) center">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/ind-intelligence.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
@@ -165,7 +168,7 @@
                     <div class="row g-4 gx-5">
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/1.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/1.png" class="w-70px mb-3 hover-jello infinite" alt="" width="512" height="512">
                                 <h4>Multi-INT Fusion Platforms</h4>
                                 <p>Integrated intelligence fusion combining SIGINT, IMINT, HUMINT for comprehensive threat assessment.</p>
                             </a>
@@ -173,7 +176,7 @@
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".2s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/2.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/2.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Signals Intelligence (SIGINT)</h4>
                                 <p>Advanced electronic surveillance and signal processing systems for global monitoring operations.</p>
                             </a>
@@ -181,7 +184,7 @@
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".4s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/3.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/3.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Imagery Intelligence (IMINT)</h4>
                                 <p>Satellite and aerial imagery analysis platforms with automated feature extraction capabilities.</p>
                             </a>
@@ -189,7 +192,7 @@
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".6s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/4.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/4.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Advanced Analytics & AI</h4>
                                 <p>Machine learning systems for pattern discovery, anomaly detection, and predictive intelligence.</p>
                             </a>
@@ -198,7 +201,7 @@
                         <!-- New services -->
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/5.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/5.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Covert Communications</h4>
                                 <p>Secure, low-observable communication systems designed for clandestine operational environments.</p>
                             </a>
@@ -206,7 +209,7 @@
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".2s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/6.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/6.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Classification Management</h4>
                                 <p>Automated classification systems ensuring proper handling of sensitive compartmented information.</p>
                             </a>
@@ -214,7 +217,7 @@
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".4s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/7.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/7.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Counterintelligence Systems</h4>
                                 <p>Threat detection and mitigation platforms protecting against foreign intelligence operations.</p>
                             </a>
@@ -222,7 +225,7 @@
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".6s">
                             <a href="#" class="d-block hover relative">
-                                <img src="../images/icons-maroon/8.png" class="w-70px mb-3 hover-jello infinite" alt="">
+                                <img src="../images/icons-maroon/8.png" class="w-70px mb-3 hover-jello infinite" alt="" loading="lazy" width="512" height="512">
                                 <h4>Human Intelligence (HUMINT) Tools</h4>
                                 <p>Source management and analysis platforms supporting human intelligence collection workflows.</p>
                             </a>
@@ -240,7 +243,7 @@
                       <!-- Image -->
                       <div class="col-lg-6 position-lg-absolute overflow-hidden left-half h-100">
                         <div class="triangle-bottomright-dark"></div>
-                        <div class="image wow scaleIn" data-bgimage="url(images/sections/ind-intelligence-panel.avif) center"></div>
+                        <div class="image wow scaleIn" data-bgimage="url(../images/sections/ind-intelligence-panel.avif) center"></div>
                       </div>
                       <!-- Text -->
                       <div class="col-lg-5 offset-lg-7">
@@ -363,18 +366,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -402,7 +405,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -448,11 +460,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -461,10 +473,10 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="../js/plugins.js"></script>
-    <script src="../js/designesia.js"></script>
-    <script src="../js/swiper.js"></script>
-    <script src="../js/custom-swiper-1.js"></script>
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
 
 </body>
 

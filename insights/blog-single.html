@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="White paper abstract: real-time AI decision systems for federal missions. Topics include tactical edge deployment, latency optimization, explainable AI for operators, DDIL resilience, security-first ML pipelines, and multi-level data fusion. Full paper forthcoming from Ravonics." name="description" >
     <meta content="real-time AI decision systems, tactical edge deployment, latency optimization, explainable AI, DDIL resilience, adversarial robustness, multi-level data fusion, human-machine teaming, federal AI pipeline, Ravonics white paper" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -68,6 +70,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
         
@@ -93,7 +96,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -152,7 +155,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -167,11 +170,11 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/blog-single.avif) center">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/blog-single.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
@@ -272,7 +275,7 @@
                                   </li>
                                 </ol>
 
-                                <img src="../images/sections/blog-single-article.avif" class="w-100 rounded-1" alt="Hand-drawn system architecture diagram on a whiteboard — Ravonics engineering insights">
+                                <img src="../images/sections/blog-single-article.avif" class="w-100 rounded-1" alt="Hand-drawn system architecture diagram on a whiteboard — Ravonics engineering insights" width="2000" height="1271">
 
                             </div>
 
@@ -286,7 +289,7 @@
                                 <ol>
                                     <li>
                                         <div class="avatar">
-                                            <img src="../images/testimonial/1.webp" alt="" >
+                                            <img src="../images/testimonial/1.webp" alt=""  loading="lazy" width="230" height="230">
                                         </div>
                                         <div class="comment-info">
                                             <span class="c_name">Federal Technologist</span>
@@ -301,7 +304,7 @@
                                         <ol>
                                             <li>
                                                 <div class="avatar">
-                                                    <img src="../images/testimonial/2.webp" alt="" >
+                                                    <img src="../images/testimonial/2.webp" alt=""  loading="lazy" width="230" height="230">
                                                 </div>
                                                 <div class="comment-info">
                                                     <span class="c_name">Systems Integrator</span>
@@ -318,7 +321,7 @@
 
                                     <li>
                                         <div class="avatar">
-                                            <img src="../images/testimonial/3.webp" alt="" >
+                                            <img src="../images/testimonial/3.webp" alt=""  loading="lazy" width="230" height="230">
                                         </div>
                                         <div class="comment-info">
                                             <span class="c_name">Defense Architect</span>
@@ -332,7 +335,7 @@
                                         <ol>
                                             <li>
                                                 <div class="avatar">
-                                                    <img src="../images/testimonial/4.webp" alt="" >
+                                                    <img src="../images/testimonial/4.webp" alt=""  loading="lazy" width="230" height="230">
                                                 </div>
                                                 <div class="comment-info">
                                                     <span class="c_name">ML Program Manager</span>
@@ -349,7 +352,7 @@
 
                                     <li>
                                         <div class="avatar">
-                                            <img src="../images/testimonial/5.webp" alt="" >
+                                            <img src="../images/testimonial/5.webp" alt=""  loading="lazy" width="230" height="230">
                                         </div>
                                         <div class="comment-info">
                                             <span class="c_name">Security Practitioner</span>
@@ -402,7 +405,7 @@
                                 <ul class="de-bloglist-type-1">
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/1.webp" alt="">
+                                      <img src="../images/blog/1.webp" alt="Neural network optimization for tactical edge AI" loading="lazy" width="563" height="563">
                                     </div>
                                     <div class="d-content">
                                       <a href="blog-single.html">
@@ -414,7 +417,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/2.webp" alt="">
+                                      <img src="../images/blog/2.webp" alt="JADC2 integration architecture patterns for multi-domain C2" loading="lazy" width="563" height="563">
                                     </div>
                                     <div class="d-content">
                                       <a href="blog-single.html">
@@ -426,7 +429,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/3.webp" alt="">
+                                      <img src="../images/blog/3.webp" alt="Edge computing at tactical scale — denied environment architecture" loading="lazy" width="563" height="563">
                                     </div>
                                     <div class="d-content">
                                       <a href="blog-single.html">
@@ -438,7 +441,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/4.webp" alt="">
+                                      <img src="../images/blog/4.webp" alt="Zero trust security framework for classified federal networks" loading="lazy" width="563" height="563">
                                     </div>
                                     <div class="d-content">
                                       <a href="blog-single.html">
@@ -450,7 +453,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/5.webp" alt="">
+                                      <img src="../images/blog/5.webp" alt="Autonomous platform swarm intelligence concepts for multi-domain operations" loading="lazy" width="563" height="563">
                                     </div>
                                     <div class="d-content">
                                       <a href="blog-single.html">
@@ -462,7 +465,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/6.webp" alt="">
+                                      <img src="../images/blog/6.webp" alt="Post-quantum cryptography implementation for federal communications" loading="lazy" width="563" height="563">
                                     </div>
                                     <div class="d-content">
                                       <a href="blog-single.html">
@@ -555,18 +558,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -594,7 +597,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -640,11 +652,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -653,10 +665,10 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="../js/plugins.js"></script>
-    <script src="../js/designesia.js"></script>
-    <script src="../js/swiper.js"></script>
-    <script src="../js/custom-swiper-1.js"></script>
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
 
 </body>
 

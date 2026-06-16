@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Battle-hardened robotic platforms for DoW: EOD ground robots, ISR UAVs, underwater AUVs, dexterous manipulation systems. Human-robot teaming, extreme environment ops (Arctic to desert), modular payloads. IP67+ ruggedized for contested battlespaces." name="description" >
     <meta content="military robotics DoW, EOD robots explosive ordnance, ISR UAV platforms, human-robot teaming defense, ruggedized unmanned systems, tactical ground robots, dexterous manipulation EOD, multi-domain unmanned platforms, extreme environment robotics, modular payload systems" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -37,9 +39,36 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Advanced Robotics",
+      "description": "Ruggedized robotic platforms and human-machine teaming for U.S. federal and defense operational environments. Capabilities include multi-domain unmanned platforms, advanced manipulation systems, human-robot teaming, extreme environment operations, modular payload integration, and advanced mobility systems.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Ravonics LLC",
+        "url": "https://ravonics.com",
+        "identifier": "YCBDVKN1A9G7"
+      },
+      "serviceType": "Defense Technology Consulting",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "U.S. Federal Agencies and Defense Programs"
+      },
+      "url": "https://ravonics.com/capabilities/robotics.html"
+    }
+    </script>
+
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
 
@@ -65,7 +94,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -124,7 +153,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -139,11 +168,11 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/cap-robotics.avif) center">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/cap-robotics.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
@@ -187,7 +216,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="relative">
-                                        <img src="../images/sections/cap-robotics-feature.avif" class="img-fluid rounded-1 wow fadeInUp" alt="Robotic two-finger gripper holding an electronic module over a workbench — Ravonics robotics">
+                                        <img src="../images/sections/cap-robotics-feature.avif" class="img-fluid rounded-1 wow fadeInUp" alt="Robotic two-finger gripper holding an electronic module over a workbench — Ravonics robotics" width="1000" height="1000">
                                         <div class="bg-color text-light p-4 abs m-4 bottom-0 rounded-1 sm-hide">
                                             <div class="row g-4 align-items-center">
                                                 <div class="col-lg-12">
@@ -316,18 +345,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -355,7 +384,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -401,11 +439,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -414,10 +452,10 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="../js/plugins.js"></script>
-    <script src="../js/designesia.js"></script>
-    <script src="../js/swiper.js"></script>
-    <script src="../js/custom-swiper-1.js"></script>
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
 
 </body>
 

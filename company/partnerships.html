@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="../images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Ravonics partner ecosystem: Dream Limited (Dream Pilot), Droid Ops Inc (Launch Sequence CI/CD), Viper Dynamics, INSTAR Lab (501c3 R&D), FocusApiary. Ravonics serves as the federal sales, compliance, and integration bridge for the ecosystem." name="description" >
     <meta content="defense partner ecosystem, Dream Limited Dream Pilot, Droid Ops Launch Sequence, Viper Dynamics, INSTAR Lab 501c3, FocusApiary, federal compliance bridge, small business teaming, SBIR STTR partnerships, Ravonics ecosystem" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -40,6 +42,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
 
@@ -65,7 +68,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -124,7 +127,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -139,11 +142,11 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(images/background/partnerships.avif) center">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/partnerships.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
@@ -168,7 +171,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="relative">
-                                <img src="../images/sections/partnerships-feature.avif" class="img-fluid rounded-1 wow fadeInUp" alt="Labeled multi-vendor cables organized in a network patch panel — Ravonics partner integration">
+                                <img src="../images/sections/partnerships-feature.avif" class="img-fluid rounded-1 wow fadeInUp" alt="Labeled multi-vendor cables organized in a network patch panel — Ravonics partner integration" width="1000" height="1000">
                             </div>
                         </div>
                     </div>
@@ -430,7 +433,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -450,8 +453,8 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="../js/plugins.js"></script>
-    <script src="../js/designesia.js"></script>
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
 
 </body>
 </html>

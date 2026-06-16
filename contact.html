@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Contact Ravonics for NIST 800-171-aligned AI, JADC2 integration, and quantum computing solutions. Public Trust leadership team serving DoW and the Intelligence Community. Ravenswood, WV headquarters." name="description" >
     <meta content="contact defense contractor, federal AI consultation, JADC2 integration quote, NIST 800-171 contractor contact, DoW technology consulting, federal mission support, HUBZone small business, Ravenswood WV defense, federal technology RFP" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -40,6 +42,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
         
@@ -65,7 +68,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -124,7 +127,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -139,7 +142,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
@@ -176,7 +179,7 @@
                                     <i class="abs fs-28 p-3 bg-color text-light rounded-1 icofont-location-pin"></i>
                                     <div class="ms-80px">
                                         <h4 class="mb-0">Office Location</h4>
-                                        Ravenswood, WV
+                                        313 Walnut St, Ravenswood, WV 26164
                                     </div>
                                 </div>
 
@@ -195,8 +198,33 @@
                                         +1 (304) 927-2600
                                     </div>
                                 </div>
-                                
+
                             </div>
+                        </div>
+
+                        <div class="spacer-single"></div>
+
+                        <!-- Contracting officer / buyer entity verification block -->
+                        <div class="de-box rounded-1 p-4" style="background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08);">
+                            <h4 class="mb-3 fs-16">Entity Verification</h4>
+                            <table style="font-size:13px;line-height:1.9;width:100%;border-collapse:collapse;">
+                                <tr><td style="width:42%;color:#666;padding-right:8px;">Legal Name</td><td><strong>Ravonics LLC</strong></td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">SAM.gov Status</td><td>Registered &amp; Active</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">UEI</td><td>YCBDVKN1A9G7</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">CAGE Code</td><td>20DS8</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">NAICS</td><td>541512 · 541330 · 541715<br>518210 · 541511 · 541513<br>541519 · 541690 · 611420</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">PSC</td><td>AC11 · AC12 · DA10 · DG10<br>DJ10 · DK10 · R408 · R425</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">Business Size</td><td>Small Business</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">HUBZone</td><td>Application submitted (pending)</td></tr>
+                            </table>
+                        </div>
+
+                        <div class="mt-3">
+                            <a href="Ravonics-Capability-Statement.pdf" target="_blank" rel="noopener"
+                               class="btn-main btn-line fx-slide"
+                               aria-label="Download Ravonics Capability Statement PDF for contracting officers">
+                                <span>Download Capability Statement (PDF)</span>
+                            </a>
                         </div>
 
                     </div>
@@ -210,33 +238,34 @@
                                     <p>Have a question, suggestion, or just want to say hi? Fill out the form below and we’ll get back to you soon.</p>
 
                                     <div class="field-set">
-                                        <input type="text" name="name" id="name" class="form-control mb-4" placeholder="Your Name" required>
+                                        <input type="text" name="name" id="name" class="form-control mb-4" placeholder="Your Name" aria-label="Your name" required>
                                     </div>
 
                                     <div class="field-set">
-                                        <input type="text" name="email" id="email" class="form-control mb-4" placeholder="Your Email" required>
+                                        <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Your Email" aria-label="Your email address" required>
                                     </div>
 
                                     <div class="field-set">
-                                        <input type="text" name="phone" id="phone" class="form-control mb-4" placeholder="Your Phone" required>
+                                        <input type="tel" name="phone" id="phone" class="form-control mb-4" placeholder="Your Phone" aria-label="Your phone number" required>
                                     </div>
 
                                     <div class="field-set">
-                                        <textarea name="message" id="message" class="form-control mb-4 h-100px" placeholder="Your Message" required></textarea>
+                                        <textarea name="message" id="message" class="form-control mb-4 h-100px" placeholder="Your Message" aria-label="Your message" required></textarea>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div id='submit' class="mt-3">
-                                <input type='submit' id='send_message' value='Send Message' class="btn-main">
+
+                            <div id=’submit’ class="mt-3">
+                                <input type=’submit’ id=’send_message’ value=’Send Message’ class="btn-main">
                             </div>
 
-                            <div id="success_message" class='success'>
-                                Your message has been sent successfully. Refresh this page if you want to send more messages.
+                            <div id="contact_success_message" class=’success’ role="status" aria-live="polite" style="display:none;">
+                                Thank you — your message has been received. Our team will respond within 1 business day.
                             </div>
-                            <div id="error_message" class='error'>
-                                Sorry there was an error sending your form.
+                            <div id="contact_error_message" class=’error’ role="alert" aria-live="assertive" style="display:none;">
+                                Submission failed. Please email us directly at <a href="mailto:contact@ravonics.com">contact@ravonics.com</a>.
                             </div>
+                            <div id="contact_validation_message" class=’error’ role="alert" aria-live="assertive" style="display:none;"></div>
                         </form>
                         </div>
                     </div>
@@ -374,18 +403,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -413,7 +442,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -459,11 +497,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -472,9 +510,202 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/designesia.js"></script>
-    <script src="js/validation-contact.js"></script>
+    <script src="js/plugins.js" defer></script>
+    <script src="js/designesia.js" defer></script>
+
+    <script>
+    /**
+     * Ravonics Contact Form — D365 Lead Intake
+     *
+     * Mirrors the booking.html integration pattern.
+     * POSTs a flat JSON payload to the Azure Logic App trigger URL.
+     * Maps name/email/phone/message to a Dataverse lead record.
+     * The Logic App returns HTTP 200 {"status":"received"} on success.
+     */
+    (function () {
+        'use strict';
+
+        // Same Logic App as booking.html; subject differentiates intake source
+        var CALLBACK_URL = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs';
+
+        function getEl(id) { return document.getElementById(id); }
+
+        function showContactMessage(type, html) {
+            getEl('contact_success_message').style.display    = 'none';
+            getEl('contact_error_message').style.display      = 'none';
+            getEl('contact_validation_message').style.display = 'none';
+
+            if (type === 'success') {
+                getEl('contact_success_message').style.display = 'block';
+            } else if (type === 'error') {
+                getEl('contact_error_message').style.display = 'block';
+            } else if (type === 'validation') {
+                var el = getEl('contact_validation_message');
+                el.innerHTML = html;
+                el.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = getEl('contact_form');
+            if (!form) { return; }
+
+            var submitBtn = getEl('send_message');
+            var originalValue = submitBtn ? submitBtn.value : 'Send Message';
+
+            // Clear error styling on input
+            form.addEventListener('input', function (e) {
+                if (e.target.classList.contains('is-invalid')) {
+                    e.target.classList.remove('is-invalid');
+                }
+                getEl('contact_success_message').style.display    = 'none';
+                getEl('contact_error_message').style.display      = 'none';
+                getEl('contact_validation_message').style.display = 'none';
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // ── Client-side validation ─────────────────────────────────
+                var nameEl    = getEl('name');
+                var emailEl   = getEl('email');
+                var phoneEl   = getEl('phone');
+                var messageEl = getEl('message');
+
+                var missing = [];
+
+                if (!nameEl.value.trim()) {
+                    missing.push('Your Name');
+                    nameEl.classList.add('is-invalid');
+                } else { nameEl.classList.remove('is-invalid'); }
+
+                if (!emailEl.value.trim() || emailEl.value.indexOf('@') === -1) {
+                    missing.push('Your Email');
+                    emailEl.classList.add('is-invalid');
+                } else { emailEl.classList.remove('is-invalid'); }
+
+                if (!phoneEl.value.trim()) {
+                    missing.push('Your Phone');
+                    phoneEl.classList.add('is-invalid');
+                } else { phoneEl.classList.remove('is-invalid'); }
+
+                if (!messageEl.value.trim()) {
+                    missing.push('Your Message');
+                    messageEl.classList.add('is-invalid');
+                } else { messageEl.classList.remove('is-invalid'); }
+
+                if (missing.length > 0) {
+                    showContactMessage('validation',
+                        '<strong>Please complete the following required fields:</strong>' +
+                        '<ul style="margin:6px 0 0 0;padding-left:20px;">' +
+                        missing.map(function (m) { return '<li>' + m + '</li>'; }).join('') +
+                        '</ul>'
+                    );
+                    var firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+                    return;
+                }
+
+                // ── Split name into first/last for Dataverse lead ──────────
+                var nameParts = nameEl.value.trim().split(/\s+/);
+                var firstName = nameParts.shift();
+                var lastName  = nameParts.join(' ') || '';
+
+                // ── Build payload ──────────────────────────────────────────
+                var payload = {
+                    subject:          'Website Contact Form',
+                    firstname:        firstName,
+                    lastname:         lastName,
+                    emailaddress1:    emailEl.value.trim(),
+                    telephone1:       phoneEl.value.trim(),
+                    description:      messageEl.value.trim(),
+                    leadsourcecode:   'Website Contact',
+                    org_name:         '',
+                    org_email:        emailEl.value.trim(),
+                    org_phone:        phoneEl.value.trim()
+                };
+
+                // ── In-flight state ────────────────────────────────────────
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.value    = 'Sending…';
+                }
+
+                // ── POST to D365 Logic App ─────────────────────────────────
+                fetch(CALLBACK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(function (res) {
+                    if (res.ok) {
+                        showContactMessage('success');
+                        form.reset();
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.value    = originalValue;
+                        }
+                        getEl('contact_success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('HTTP ' + res.status);
+                    }
+                })
+                .catch(function (err) {
+                    console.error('Contact form submission error:', err);
+                    showContactMessage('error');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.value    = originalValue;
+                    }
+                    getEl('contact_error_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        });
+    }());
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ravonics LLC",
+        "url": "https://ravonics.com",
+        "email": "contact@ravonics.com",
+        "telephone": "+13049272600",
+        "foundingDate": "2026",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "313 Walnut St",
+            "addressLocality": "Ravenswood",
+            "addressRegion": "WV",
+            "postalCode": "26164",
+            "addressCountry": "US"
+        },
+        "identifier": [
+            { "@type": "PropertyValue", "name": "SAM.gov UEI", "value": "YCBDVKN1A9G7" },
+            { "@type": "PropertyValue", "name": "CAGE Code",   "value": "20DS8" }
+        ],
+        "knowsAbout": [
+            "NAICS 541512 — Custom Computer Programming Services",
+            "NAICS 541330 — Engineering Services",
+            "NAICS 541715 — Research and Development in Physical, Engineering, and Life Sciences",
+            "Artificial Intelligence", "Autonomous Systems", "JADC2 Integration",
+            "NIST 800-171", "Zero Trust Security", "Quantum Technologies"
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Sean Hackney",
+            "jobTitle": "Founder, President & Chief AI Officer"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "federal sales and consulting inquiries",
+            "email": "contact@ravonics.com",
+            "telephone": "+13049272600",
+            "areaServed": "US"
+        }
+    }
+    </script>
 
 </body>
 

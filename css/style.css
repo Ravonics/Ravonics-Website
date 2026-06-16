@@ -13508,3 +13508,7 @@ img {
     width: auto;
   }
 }
+
+
+/* Skip-to-content link (WCAG accessibility) */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:100000;padding:8px 16px;background:#fff;color:#000}.skip-link:focus{left:0}

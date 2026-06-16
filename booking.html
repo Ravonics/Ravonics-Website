@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://*.logic.azure.com; frame-ancestors 'self'; base-uri 'self'">
     <meta content="Request consultation with Ravonics defense technology experts. Public Trust leadership team ready to assess your AI, JADC2, quantum, and autonomous systems requirements. NIST 800-171-aligned small business serving DoW, IC, and federal agencies." name="description" >
     <meta content="request defense consultation, federal technology assessment, DoW contractor consultation, JADC2 integration quote, NIST 800-171 contractor contact, federal mission briefing, HUBZone small business, federal AI consultation, defense technology RFP, schedule DoW briefing" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -40,6 +42,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
         
@@ -65,7 +68,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu">
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
                                     <li><a class="menu-item" href="#">Capabilities</a>
                                         <ul>
                                             <li><a href="capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -124,7 +127,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
-                                    <span id="menu-btn"></span>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
                                 <div id="btn-extra">
@@ -139,7 +142,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content">
+        <div class="no-bottom no-top" id="content" role="main">
 
             <div id="top"></div>
 
@@ -172,20 +175,20 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5>Organization Name</h5>
-                                        <input type="text" name="org_name" id="org_name" class="form-control" placeholder="Organization Name" required>
+                                        <h5 id="lbl_org_name">Organization Name</h5>
+                                        <input type="text" name="org_name" id="org_name" class="form-control" placeholder="Organization Name" aria-labelledby="lbl_org_name" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Email</h5>
-                                        <input type="email" name="org_email" id="org_email" class="form-control" placeholder="Email" required>
+                                        <h5 id="lbl_org_email">Email</h5>
+                                        <input type="email" name="org_email" id="org_email" class="form-control" placeholder="Email" aria-labelledby="lbl_org_email" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Phone</h5>
-                                        <input type="text" name="org_phone" id="org_phone" class="form-control" placeholder="Phone" required>
+                                        <h5 id="lbl_org_phone">Phone</h5>
+                                        <input type="text" name="org_phone" id="org_phone" class="form-control" placeholder="Phone" aria-labelledby="lbl_org_phone" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Primary Location</h5>
-                                        <input type="text" name="org_location" id="org_location" class="form-control" placeholder="Primary Location">
+                                        <h5 id="lbl_org_location">Primary Location</h5>
+                                        <input type="text" name="org_location" id="org_location" class="form-control" placeholder="Primary Location" aria-labelledby="lbl_org_location">
                                     </div>
 
                                     <div class="spacer-single"></div>
@@ -196,20 +199,20 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5>First Name</h5>
-                                        <input type="text" name="contact_first_name" id="contact_first_name" class="form-control" placeholder="First Name" required>
+                                        <h5 id="lbl_contact_first_name">First Name</h5>
+                                        <input type="text" name="contact_first_name" id="contact_first_name" class="form-control" placeholder="First Name" aria-labelledby="lbl_contact_first_name" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Last Name</h5>
-                                        <input type="text" name="contact_last_name" id="contact_last_name" class="form-control" placeholder="Last Name" required>
+                                        <h5 id="lbl_contact_last_name">Last Name</h5>
+                                        <input type="text" name="contact_last_name" id="contact_last_name" class="form-control" placeholder="Last Name" aria-labelledby="lbl_contact_last_name" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Department / Agency</h5>
-                                        <input type="text" name="contact_department" id="contact_department" class="form-control" placeholder="Department / Agency" required>
+                                        <h5 id="lbl_contact_department">Department / Agency</h5>
+                                        <input type="text" name="contact_department" id="contact_department" class="form-control" placeholder="Department / Agency" aria-labelledby="lbl_contact_department" required>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Position / Title</h5>
-                                        <input type="text" name="contact_position" id="contact_position" class="form-control" placeholder="Position / Title" required>
+                                        <h5 id="lbl_contact_position">Position / Title</h5>
+                                        <input type="text" name="contact_position" id="contact_position" class="form-control" placeholder="Position / Title" aria-labelledby="lbl_contact_position" required>
                                     </div>
 
                                     <div class="spacer-single"></div>
@@ -220,8 +223,8 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5>Area of Interest</h5>
-                                        <select name="area_of_interest" id="area_of_interest" class="form-control">
+                                        <h5 id="lbl_area_of_interest">Area of Interest</h5>
+                                        <select name="area_of_interest" id="area_of_interest" class="form-control" aria-labelledby="lbl_area_of_interest">
                                             <option value="Advanced AI">Advanced AI</option>
                                             <option value="Autonomous Systems">Autonomous Systems</option>
                                             <option value="Intelligence & Decision Systems">Intelligence & Decision Systems</option>
@@ -232,8 +235,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Classification Level</h5>
-                                        <select name="classification_level" id="classification_level" class="form-control">
+                                        <h5 id="lbl_classification_level">Classification Level</h5>
+                                        <select name="classification_level" id="classification_level" class="form-control" aria-labelledby="lbl_classification_level">
                                             <option value="Unclassified">Unclassified</option>
                                             <option value="Confidential">Confidential</option>
                                             <option value="Secret">Secret</option>
@@ -242,8 +245,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Estimated Budget Range</h5>
-                                        <select name="budget_range" id="budget_range" class="form-control">
+                                        <h5 id="lbl_budget_range">Estimated Budget Range</h5>
+                                        <select name="budget_range" id="budget_range" class="form-control" aria-labelledby="lbl_budget_range">
                                             <option value="$50M-$100M" selected>$50M–$100M</option>
                                             <option value="$100M-$200M">$100M–$200M</option>
                                             <option value="$200M-$300M">$200M–$300M</option>
@@ -264,8 +267,8 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5>Engagement Type</h5>
-                                        <select name="engagement_type" id="engagement_type" class="form-control">
+                                        <h5 id="lbl_engagement_type">Engagement Type</h5>
+                                        <select name="engagement_type" id="engagement_type" class="form-control" aria-labelledby="lbl_engagement_type">
                                             <option value="Proof of Concept">Proof of Concept</option>
                                             <option value="Pilot Program">Pilot Program</option>
                                             <option value="Full Deployment">Full Deployment</option>
@@ -273,8 +276,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Timeline</h5>
-                                        <select name="timeline" id="timeline" class="form-control">
+                                        <h5 id="lbl_timeline">Timeline</h5>
+                                        <select name="timeline" id="timeline" class="form-control" aria-labelledby="lbl_timeline">
                                             <option value="Immediate (0-3 months)">Immediate (0-3 months)</option>
                                             <option value="Near-term (3-12 months)">Near-term (3-12 months)</option>
                                             <option value="Long-term (12+ months)">Long-term (12+ months)</option>
@@ -320,20 +323,20 @@
                                         <h3>Preferred Meeting Schedule</h3>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Preferred Consultation Date</h5>
-                                        <input type="date" name="consultation_date" id="consultation_date" class="form-control">
+                                        <h5 id="lbl_consultation_date">Preferred Consultation Date</h5>
+                                        <input type="date" name="consultation_date" id="consultation_date" class="form-control" aria-labelledby="lbl_consultation_date">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5>Preferred Time</h5>
-                                        <input type="time" name="consultation_time" id="consultation_time" class="form-control">
+                                        <h5 id="lbl_consultation_time">Preferred Time</h5>
+                                        <input type="time" name="consultation_time" id="consultation_time" class="form-control" aria-labelledby="lbl_consultation_time">
                                     </div>
 
                                     <div class="spacer-single"></div>
 
                                     <!-- Confirmation -->
                                     <div class="col-md-12 mt-3">
-                                        <h5>Additional Notes</h5>
-                                        <textarea name="notes" id="notes" class="form-control" placeholder="Enter any special instructions..."></textarea>
+                                        <h5 id="lbl_notes">Additional Notes</h5>
+                                        <textarea name="notes" id="notes" class="form-control" placeholder="Enter any special instructions..." aria-labelledby="lbl_notes"></textarea>
                                     </div>
 
                                     <div class="col-md-12">
@@ -359,7 +362,7 @@
                             <div id="error_message" class="alert alert-danger mt-4" style="display:none;">
                                 <strong>Submission failed.</strong> Please email us directly at <a href="mailto:contact@ravonics.com">contact@ravonics.com</a> to schedule your consultation.
                             </div>
-                            <div id="validation_message" class="alert alert-warning mt-4" style="display:none;"></div>
+                            <div id="validation_message" class="alert alert-warning mt-4" role="alert" aria-live="assertive" style="display:none;"></div>
                             
                         </div>
                     </div>
@@ -410,18 +413,18 @@
 
 
                         <div class="social-icons mb-sm-30 text-center">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon">
+                            <img src="images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -449,7 +452,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-            Copyright 2026 Ravonics - Advanced Technology Consulting
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -495,11 +507,11 @@
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -508,8 +520,8 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/designesia.js"></script>
+    <script src="js/plugins.js" defer></script>
+    <script src="js/designesia.js" defer></script>
     <!-- NOTE: js/validation-booking.js removed — it targeted #logistics_booking_form (wrong id)
          and is replaced by the D365 Logic App submit handler below. -->
 
