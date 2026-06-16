@@ -13539,11 +13539,11 @@ img {
    Replaces opaque maroon (#93242A) with a dark translucent scrim
    + backdrop-blur for legibility over busy warm photo backgrounds. */
 .relative > .bg-color.abs.bottom-0 {
-  background: linear-gradient(0deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.74) 100%) !important;
-  -webkit-backdrop-filter: blur(6px);
-  -moz-backdrop-filter: blur(6px);
-  -o-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(0deg, rgba(16,16,16,.55) 0%, rgba(16,16,16,.30) 100%) !important;
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 /* Slightly tighten the caption paragraph to match the narrower visual
