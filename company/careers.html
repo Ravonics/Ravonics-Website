@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Senior AI/ML Engineer — Federal Applications"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -194,7 +194,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Robotics Engineer - Autonomous Systems"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -209,7 +209,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Systems Architect - JADC2 Integration"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -224,7 +224,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Cybersecurity Engineer - Zero Trust Architecture"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -239,7 +239,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Intelligence Analyst - Multi-INT Fusion"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -254,7 +254,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="DevSecOps Engineer - CI/CD Pipelines"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -269,7 +269,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Research Scientist - Quantum Computing"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -284,7 +284,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Computer Vision Scientist - Imagery Analysis"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -299,7 +299,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Senior Cryptographer - Post-Quantum Security"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -314,7 +314,7 @@
                                 </div>
                                 <div class="mb-5 d-lg-none d-sm-block"></div>
                                 <div class="abs abs-middle end-0 p-sm-relative">
-                                    <a class="btn-main fx-slide" href="#"><span>Apply Now</span></a>
+                                    <a class="btn-main fx-slide" href="#" data-bs-toggle="modal" data-bs-target="#careers_apply_modal" data-role="Software Integration Engineer - Mission Systems"><span>Apply Now</span></a>
                                 </div>
                             </div>
 
@@ -473,6 +473,75 @@
     </div>
     <!-- overlay content end -->    </div>
 
+    <!-- ── Careers Application Modal ──────────────────────────────────────── -->
+    <div class="modal fade" id="careers_apply_modal" tabindex="-1" aria-labelledby="careers_apply_modal_label" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="careers_apply_modal_label">Apply — <span id="careers_modal_role_title">Position</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close application form"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="careers_apply_form" novalidate>
+                        <input type="hidden" id="careers_role_hidden" name="role" value="">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="careers_firstname" class="form-label">First Name <span aria-hidden="true">*</span></label>
+                                <input type="text" id="careers_firstname" name="careers_firstname" class="form-control" placeholder="First name" autocomplete="given-name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="careers_lastname" class="form-label">Last Name <span aria-hidden="true">*</span></label>
+                                <input type="text" id="careers_lastname" name="careers_lastname" class="form-control" placeholder="Last name" autocomplete="family-name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="careers_email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                                <input type="email" id="careers_email" name="careers_email" class="form-control" placeholder="your@email.com" autocomplete="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="careers_phone" class="form-label">Phone</label>
+                                <input type="tel" id="careers_phone" name="careers_phone" class="form-control" placeholder="+1 (000) 000-0000" autocomplete="tel">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="careers_position_display" class="form-label">Position Applied For</label>
+                                <input type="text" id="careers_position_display" name="careers_position_display" class="form-control" readonly aria-readonly="true">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="careers_linkedin" class="form-label">LinkedIn Profile or CV / Portfolio URL</label>
+                                <input type="url" id="careers_linkedin" name="careers_linkedin" class="form-control" placeholder="https://linkedin.com/in/yourprofile">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="careers_coverletter" class="form-label">Cover Letter / Message <span aria-hidden="true">*</span></label>
+                                <textarea id="careers_coverletter" name="careers_coverletter" class="form-control" rows="6" placeholder="Tell us about your background and why you're interested in this role." required></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="careers_consent" name="careers_consent" required>
+                                    <label class="form-check-label" for="careers_consent">
+                                        I consent to Ravonics LLC retaining my application data for hiring purposes and agree to the <a href="../privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. <span aria-hidden="true">*</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div><!-- /.row -->
+
+                        <div class="mt-4">
+                            <button type="submit" id="careers_submit" class="btn-main">Submit Application</button>
+                        </div>
+
+                        <div id="careers_validation_message" class="error mt-3" role="alert" aria-live="assertive" style="display:none;"></div>
+                        <div id="careers_success_message" class="success mt-3" role="status" aria-live="polite" style="display:none;">
+                            Application received — thank you. Our team will review your submission and reach out within a few business days. You should also receive a confirmation at the email address provided.
+                        </div>
+                        <div id="careers_error_message" class="error mt-3" role="alert" aria-live="assertive" style="display:none;">
+                            Submission failed. Your application has been prepared as an email draft — please send it to <a href="mailto:contact@ravonics.com">contact@ravonics.com</a> to ensure it is received. We apologise for the inconvenience.
+                        </div>
+                    </form>
+                </div><!-- /.modal-body -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <!-- ── /Careers Application Modal ─────────────────────────────────────── -->
+
 
     <!-- Javascript Files
     ================================================== -->
@@ -480,6 +549,227 @@
     <script src="../js/designesia.js" defer></script>
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
+
+    <script>
+    /**
+     * Ravonics Careers Application Form — D365 Lead Intake
+     *
+     * Mirrors the booking.html / contact.html integration pattern.
+     * POSTs a flat JSON payload to the Azure Logic App trigger URL.
+     * The Logic App maps fields to a Dataverse lead record and returns
+     * HTTP 200 {"status":"received"} on success.
+     *
+     * Applicant routing is differentiated from consultation leads via:
+     *   subject:        'Website Careers Application'
+     *   leadsourcecode: 'Website Careers'
+     *   caseType:       'career-application'
+     *   source:         'ravonics.com/careers'
+     *   jobtitle:       <role selected>
+     *
+     * On network failure the form falls back to a pre-filled mailto: so no
+     * application is silently lost.
+     */
+    (function () {
+        'use strict';
+
+        // Same Logic App as booking.html / contact.html; subject + caseType tag routes applicants
+        var CAREERS_ENDPOINT = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs';
+
+        function getEl(id) { return document.getElementById(id); }
+
+        function showMsg(type, html) {
+            getEl('careers_validation_message').style.display = 'none';
+            getEl('careers_success_message').style.display    = 'none';
+            getEl('careers_error_message').style.display      = 'none';
+            if (type === 'validation') {
+                var el = getEl('careers_validation_message');
+                el.innerHTML = html;
+                el.style.display = 'block';
+            } else if (type === 'success') {
+                getEl('careers_success_message').style.display = 'block';
+            } else if (type === 'error') {
+                getEl('careers_error_message').style.display = 'block';
+            }
+        }
+
+        function hideMsg() {
+            getEl('careers_validation_message').style.display = 'none';
+            getEl('careers_success_message').style.display    = 'none';
+            getEl('careers_error_message').style.display      = 'none';
+        }
+
+        // ── Role pre-population: intercept modal show event ─────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            var modalEl = getEl('careers_apply_modal');
+            if (modalEl) {
+                modalEl.addEventListener('show.bs.modal', function (event) {
+                    var trigger = event.relatedTarget;
+                    var role    = trigger ? (trigger.getAttribute('data-role') || '') : '';
+                    getEl('careers_modal_role_title').textContent  = role || 'Open Position';
+                    getEl('careers_role_hidden').value             = role;
+                    getEl('careers_position_display').value        = role;
+                    // Clear any prior submission state each time the modal opens
+                    var form = getEl('careers_apply_form');
+                    if (form) {
+                        form.reset();
+                        // Restore role after reset (reset clears it)
+                        getEl('careers_role_hidden').value    = role;
+                        getEl('careers_position_display').value = role;
+                        // Clear any is-invalid highlights
+                        form.querySelectorAll('.is-invalid').forEach(function (el) {
+                            el.classList.remove('is-invalid');
+                        });
+                    }
+                    hideMsg();
+                });
+            }
+
+            // ── Form submission ─────────────────────────────────────────────
+            var form = getEl('careers_apply_form');
+            if (!form) { return; }
+
+            var submitBtn = getEl('careers_submit');
+
+            form.addEventListener('input', function (e) {
+                if (e.target.classList.contains('is-invalid')) {
+                    e.target.classList.remove('is-invalid');
+                }
+                hideMsg();
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                hideMsg();
+
+                // ── Client-side validation ──────────────────────────────────
+                var firstnameEl    = getEl('careers_firstname');
+                var lastnameEl     = getEl('careers_lastname');
+                var emailEl        = getEl('careers_email');
+                var coverletterEl  = getEl('careers_coverletter');
+                var consentEl      = getEl('careers_consent');
+
+                var missing = [];
+
+                if (!firstnameEl.value.trim()) {
+                    missing.push('First Name');
+                    firstnameEl.classList.add('is-invalid');
+                } else { firstnameEl.classList.remove('is-invalid'); }
+
+                if (!lastnameEl.value.trim()) {
+                    missing.push('Last Name');
+                    lastnameEl.classList.add('is-invalid');
+                } else { lastnameEl.classList.remove('is-invalid'); }
+
+                if (!emailEl.value.trim() || emailEl.value.indexOf('@') === -1) {
+                    missing.push('Email (valid address required)');
+                    emailEl.classList.add('is-invalid');
+                } else { emailEl.classList.remove('is-invalid'); }
+
+                if (!coverletterEl.value.trim()) {
+                    missing.push('Cover Letter / Message');
+                    coverletterEl.classList.add('is-invalid');
+                } else { coverletterEl.classList.remove('is-invalid'); }
+
+                if (!consentEl.checked) {
+                    missing.push('Privacy consent (checkbox must be ticked)');
+                }
+
+                if (missing.length > 0) {
+                    showMsg('validation',
+                        '<strong>Please complete the following required fields:</strong>' +
+                        '<ul style="margin:6px 0 0 0;padding-left:20px;">' +
+                        missing.map(function (m) { return '<li>' + m + '</li>'; }).join('') +
+                        '</ul>'
+                    );
+                    var firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) { firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+                    return;
+                }
+
+                // ── Collect values ──────────────────────────────────────────
+                var firstname    = firstnameEl.value.trim();
+                var lastname     = lastnameEl.value.trim();
+                var email        = emailEl.value.trim();
+                var phone        = getEl('careers_phone').value.trim();
+                var role         = getEl('careers_role_hidden').value.trim();
+                var linkedin     = getEl('careers_linkedin').value.trim();
+                var coverletter  = coverletterEl.value.trim();
+
+                // Build description: cover letter + optional profile/CV link
+                var descriptionParts = ['Position applied for: ' + (role || '(not specified)'), '', coverletter];
+                if (linkedin) { descriptionParts.push('', 'LinkedIn / CV: ' + linkedin); }
+                var description = descriptionParts.join('\n');
+
+                // ── Build D365 lead payload ─────────────────────────────────
+                var payload = {
+                    subject:        'Website Careers Application',
+                    leadsourcecode: 'Website Careers',
+                    source:         'ravonics.com/careers',
+                    caseType:       'career-application',
+                    submittedAt:    new Date().toISOString(),
+                    firstname:      firstname,
+                    lastname:       lastname,
+                    emailaddress1:  email,
+                    telephone1:     phone,
+                    jobtitle:       role,
+                    description:    description
+                };
+
+                // ── In-flight state ─────────────────────────────────────────
+                if (submitBtn) {
+                    submitBtn.disabled    = true;
+                    submitBtn.textContent = 'Submitting…';
+                }
+
+                // ── POST to D365 Logic App ──────────────────────────────────
+                fetch(CAREERS_ENDPOINT, {
+                    method:  'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body:    JSON.stringify(payload)
+                })
+                .then(function (res) {
+                    if (res.ok) {
+                        showMsg('success');
+                        form.reset();
+                        if (submitBtn) {
+                            submitBtn.disabled    = false;
+                            submitBtn.textContent = 'Submit Application';
+                        }
+                        getEl('careers_success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('HTTP ' + res.status);
+                    }
+                })
+                .catch(function (err) {
+                    console.error('Careers application submission error:', err);
+
+                    // ── Mailto fallback: pre-fill an email so no application is lost ──
+                    try {
+                        var subject  = encodeURIComponent('Job Application: ' + (role || 'Open Position'));
+                        var body     = encodeURIComponent(
+                            'Name: ' + firstname + ' ' + lastname + '\n' +
+                            'Email: ' + email + '\n' +
+                            (phone ? 'Phone: ' + phone + '\n' : '') +
+                            'Position: ' + (role || '') + '\n' +
+                            (linkedin ? 'LinkedIn / CV: ' + linkedin + '\n' : '') +
+                            '\n' + coverletter
+                        );
+                        window.location.href = 'mailto:contact@ravonics.com?subject=' + subject + '&body=' + body;
+                    } catch (mailtoErr) {
+                        console.error('Mailto fallback failed:', mailtoErr);
+                    }
+
+                    showMsg('error');
+                    if (submitBtn) {
+                        submitBtn.disabled    = false;
+                        submitBtn.textContent = 'Submit Application';
+                    }
+                    getEl('careers_error_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        });
+    }());
+    </script>
 
 </body>
 
