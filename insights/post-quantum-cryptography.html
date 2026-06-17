@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Technical Publications - Defense AI, Quantum Computing, JADC2 Research | Ravonics</title>
+    <title>Post-Quantum Cryptography: Preparing Federal Communications | Ravonics</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
@@ -11,32 +11,36 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="Defense technology white-paper teasers from Ravonics: AI platform architectures, JADC2 integration patterns, zero-trust frameworks, autonomous systems, post-quantum cryptography, and tactical edge computing — from the Ravonics leadership team and INSTAR Lab collaborators." name="description" >
-    <meta content="defense technology publications, AI platform architecture, JADC2 integration, zero-trust framework, autonomous systems, post-quantum cryptography, tactical edge computing, federal technology insights, Ravonics white papers, INSTAR Lab research" name="keywords">
+    <meta content="Why federal systems should begin migrating now — the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer." name="description" >
+    <meta content="post-quantum cryptography, PQC, NIST FIPS 203, ML-KEM, ML-DSA, SLH-DSA, cryptographic agility, harvest now decrypt later, hybrid cryptography, federal communications, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
-    <link rel="canonical" href="https://ravonics.com/insights/blog.html" >
+    <link rel="canonical" href="https://ravonics.com/insights/post-quantum-cryptography.html" >
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ravonics.com/insights/blog.html">
-    <meta property="og:title" content="Technical Publications - Defense Technology Research | Ravonics">
-    <meta property="og:description" content="Defense technology white-paper teasers from Ravonics on AI architectures, JADC2 integration, zero-trust, autonomous systems, and post-quantum cryptography.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/post-quantum-cryptography.html">
+    <meta property="og:title" content="Post-Quantum Cryptography: Preparing Federal Communications | Ravonics">
+    <meta property="og:description" content="The harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards, cryptographic agility, and a phased hybrid transition for federal communications. A Ravonics primer.">
     <meta property="og:image" content="https://ravonics.com/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ravonics.com/insights/blog.html">
-    <meta property="twitter:title" content="Technical Publications - Defense Technology Research | Ravonics">
-    <meta property="twitter:description" content="Defense tech white-paper teasers: AI, JADC2, zero-trust, autonomous systems, post-quantum cryptography from Ravonics.">
+    <meta property="twitter:url" content="https://ravonics.com/insights/post-quantum-cryptography.html">
+    <meta property="twitter:title" content="Post-Quantum Cryptography: Preparing Federal Communications | Ravonics">
+    <meta property="twitter:description" content="The harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards, cryptographic agility, and a phased hybrid transition for federal communications. A Ravonics primer.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.jpg">
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Ravonics Technical Publications",
-      "description": "Forthcoming defense technology white papers from Ravonics: AI platform architectures, JADC2 integration patterns, zero-trust frameworks, autonomous systems, and post-quantum cryptography.",
-      "url": "https://ravonics.com/insights/blog.html",
+      "@type": "TechArticle",
+      "headline": "Post-Quantum Cryptography: Preparing Federal Communications",
+      "description": "Why federal systems should begin migrating now — the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
       "publisher": {
         "@type": "Organization",
         "name": "Ravonics",
@@ -44,6 +48,10 @@
           "@type": "ImageObject",
           "url": "https://ravonics.com/images/logo/logo.svg"
         }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/post-quantum-cryptography.html"
       }
     }
     </script>
@@ -63,7 +71,7 @@
     <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
-        
+
         <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
@@ -164,15 +172,16 @@
 
             <div id="top"></div>
 
-            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/blog.avif) center">
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/post-quantum-cryptography.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
-                            <h1 class="split">Technical Publications</h1>
+                            <h1 class="split">Post-Quantum Cryptography: Preparing Federal Communications</h1>
                             <ul class="crumb wow fadeInUp">
                                 <li><a href="../index.html">Insights</a></li>
-                                <li class="active">Technical Publications</li>
-                            </ul>   
+                                <li><a href="blog.html">Technical Publications</a></li>
+                                <li class="active">Post-Quantum Cryptography</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -182,107 +191,210 @@
 
             <section>
                 <div class="container">
-                    <div class="row g-4 gy-5">
-                        <div class="col-lg-4 col-md-6 mb10">
-                            <div class="hover">
-                                <div class="post-image rounded-1 mb-2 overflow-hidden">
-                                    <a href="tactical-edge-ai.html">
-                                        <img alt="Neural network architecture diagram — tactical edge AI optimization research" src="../images/blog/posts/tactical-edge-ai.avif" class="hover-scale-1-1">
-                                    </a>
-                                </div>
-                                <div class="pt-2 h-100">
-                                    <div class="mb-2"><span class="badge bg-color">Edge AI Architecture</span></div>
-                                    <h4><a class="text-dark" href="tactical-edge-ai.html">Neural Network Optimization for Tactical Edge AI</a></h4>
-                                    <p class="mb-3">Model quantization, pruning, and knowledge distillation techniques for resource-constrained edge hardware in denied-connectivity environments — architectural considerations from the Ravonics engineering team.</p>
-                                </div>
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>A Ravonics architectural primer on protecting today's secrets against tomorrow's quantum adversary</em>
+                                </p>
+
+                                <p>
+                                    The public-key cryptography securing federal communications today rests on mathematical problems that classical computers cannot solve in any practical time. A sufficiently capable quantum computer changes that calculus: Shor's algorithm would break the RSA and elliptic-curve schemes underpinning TLS, VPNs, code signing, and key exchange across nearly every federal system. The timeline for such a machine remains uncertain — but the risk window has already opened.
+
+                                    The reason is a threat model called "harvest now, decrypt later." A capable adversary does not need a quantum computer today to benefit from one tomorrow. They need only to capture encrypted traffic now and store it. When a cryptographically relevant quantum computer arrives, that archived traffic is retroactively exposed. For federal communications — diplomatic cables, intelligence reporting, weapons-program data, and personnel records with decades-long sensitivity — the secret you transmit today may still demand protection long after quantum decryption becomes feasible. That mismatch is why the migration must begin now, not when the threat fully materializes.
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>The Harvest-Now-Decrypt-Later Threat</h4>
+                                    <p>
+                                      Adversaries are already recording encrypted federal traffic and archiving it against a future
+                                      decryption capability. The governing question is not when a quantum computer arrives, but how
+                                      long your data must stay secret. Where that lifetime exceeds the migration window plus the
+                                      adversary's likely time-to-capability, the secret is effectively at risk today — and waiting only
+                                      widens the exposure.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>The New NIST Standards</h4>
+                                    <p>
+                                      In 2024 NIST finalized its first post-quantum standards: FIPS 203 specifies ML-KEM (formerly
+                                      Kyber) for key encapsulation, FIPS 204 specifies ML-DSA (formerly Dilithium) for digital
+                                      signatures, and FIPS 205 specifies SLH-DSA (formerly SPHINCS+), a stateless hash-based signature
+                                      with conservative security assumptions. These lattice- and hash-based schemes resist known
+                                      quantum attacks and form the foundation for compliant federal migration.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Cryptographic Inventory & Dependency Mapping</h4>
+                                    <p>
+                                      You cannot migrate what you cannot see. The first practical step is a thorough inventory of every
+                                      place cryptography lives — protocols, libraries, certificates, hardware modules, embedded
+                                      firmware, and third-party services. Mapping these dependencies surfaces hidden uses, quantifies
+                                      data sensitivity and lifetime, and produces the prioritized, risk-ranked basis for any credible
+                                      transition plan.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Cryptographic Agility</h4>
+                                    <p>
+                                      Hard-coding a single algorithm is what made the current transition so painful. Cryptographic
+                                      agility abstracts algorithms behind stable interfaces, so primitives can be swapped through
+                                      configuration and policy rather than re-engineering. Designing for agility now means the next
+                                      standard — or an emergency response to a broken scheme — becomes a managed change rather than a
+                                      multi-year forklift across the enterprise.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Hybrid / Phased Transition</h4>
+                                    <p>
+                                      Federal migration favors hybrid schemes that run a classical algorithm and a post-quantum
+                                      algorithm in parallel, combining both into a single key exchange. The session stays secure as
+                                      long as either holds, hedging against an immature PQC implementation while delivering quantum
+                                      resistance immediately. A phased rollout — beginning with the highest-sensitivity, longest-lived
+                                      channels — contains risk and builds operational confidence.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Governance, Testing & Roadmap Alignment</h4>
+                                    <p>
+                                      Migration is a governance program, not a one-time patch. Align planning with NSA's CNSA 2.0
+                                      timelines and federal guidance, establish interoperability and regression testing for hybrid
+                                      stacks, and validate against the standardized parameter sets. Clear ownership, measurable
+                                      milestones, and a maintained roadmap keep the effort on track as standards mature and agency
+                                      mandates take effect.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/blog/posts/post-quantum-cryptography.avif" class="w-100 rounded-1" alt="A precision vault mechanism in warm light — a timeless metaphor for cryptographic key protection">
+
                             </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="discuss-cta" class="border-gray rounded-1 p-30">
+                                <h4>Want to discuss post-quantum readiness for your program?</h4>
+                                <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS AI platform, or designing a new edge compute stack — we engage at the technical level.</p>
+                                <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
+                            </div>
+
+
                         </div>
 
-                        <div class="col-lg-4 col-md-6 mb10">
-                            <div class="hover">
-                                <div class="post-image rounded-1 mb-2 overflow-hidden">
-                                    <a href="jadc2-integration.html">
-                                        <img alt="Multi-domain command and control architecture diagram — JADC2 integration research" src="../images/blog/posts/jadc2-integration.avif" class="hover-scale-1-1" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="pt-2 h-100">
-                                    <div class="mb-2"><span class="badge bg-color">Systems Integration</span></div>
-                                    <h4><a class="text-dark" href="jadc2-integration.html">JADC2 Integration: Multi-Domain C2 Architecture Patterns</a></h4>
-                                    <p class="mb-3">Design patterns for JADC2-compatible systems enabling data exchange across air, land, sea, space, and cyber domains — drawing on Ravonics' systems integration background and partner-ecosystem experience.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Related Perspectives</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural network optimization for tactical edge AI" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="tactical-edge-ai.html">
+                                        <h4>Neural Network Optimization for Tactical Edge AI</h4>
+                                      </a>
+                                      <div class="d-date">Edge AI Architecture</div>
+                                    </div>
+                                  </li>
 
-                        <div class="col-lg-4 col-md-6 mb10">
-                            <div class="hover">
-                                <div class="post-image rounded-1 mb-2 overflow-hidden">
-                                    <a href="edge-computing-tactical.html">
-                                        <img alt="Tactical edge computing hardware deployed in field environment" src="../images/blog/posts/edge-computing-tactical.avif" class="hover-scale-1-1" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="pt-2 h-100">
-                                    <div class="mb-2"><span class="badge bg-color">Tactical Computing</span></div>
-                                    <h4><a class="text-dark" href="edge-computing-tactical.html">Edge Computing at Tactical Scale: Architecture Considerations</a></h4>
-                                    <p class="mb-3">Hardware selection, power management, and resilience design for edge AI systems operating in denied, degraded, and intermittent connectivity environments — a Ravonics architectural perspective.</p>
-                                </div>
-                            </div>
-                        </div>
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 integration architecture patterns for multi-domain C2" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="jadc2-integration.html">
+                                        <h4>JADC2 Integration: Multi-Domain C2 Patterns</h4>
+                                      </a>
+                                      <div class="d-date">Systems Integration</div>
+                                    </div>
+                                  </li>
 
-                        <div class="col-lg-4 col-md-6 mb10">
-                            <div class="hover">
-                                <div class="post-image rounded-1 mb-2 overflow-hidden">
-                                    <a href="zero-trust-federal.html">
-                                        <img alt="Zero trust security architecture diagram for federal network environments" src="../images/blog/posts/zero-trust-federal.avif" class="hover-scale-1-1" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="pt-2 h-100">
-                                    <div class="mb-2"><span class="badge bg-color">Zero Trust Security</span></div>
-                                    <h4><a class="text-dark" href="zero-trust-federal.html">Zero Trust Implementation for Federal Networks</a></h4>
-                                    <p class="mb-3">A framework for implementing zero trust architecture in federal environments: identity verification, micro-segmentation, and continuous authentication aligned to NIST SP 800-207 guidance.</p>
-                                </div>
-                            </div>
-                        </div>
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/edge-computing-tactical.avif" alt="Edge computing at tactical scale — denied environment architecture" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="edge-computing-tactical.html">
+                                        <h4>Edge Computing at Tactical Scale</h4>
+                                      </a>
+                                      <div class="d-date">Tactical Computing</div>
+                                    </div>
+                                  </li>
 
-                        <div class="col-lg-4 col-md-6 mb10">
-                            <div class="hover">
-                                <div class="post-image rounded-1 mb-2 overflow-hidden">
-                                    <a href="autonomous-swarm.html">
-                                        <img alt="Autonomous unmanned platforms coordinating in multi-domain environment" src="../images/blog/posts/autonomous-swarm.avif" class="hover-scale-1-1" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="pt-2 h-100">
-                                    <div class="mb-2"><span class="badge bg-color">Autonomous Systems</span></div>
-                                    <h4><a class="text-dark" href="autonomous-swarm.html">Autonomous Platform Coordination: Swarm Intelligence Concepts</a></h4>
-                                    <p class="mb-3">Distributed autonomous coordination approaches for unmanned platforms — resilient mesh communication, GPS-denied navigation, and human-on-the-loop control architectures explored by Ravonics and INSTAR Lab.</p>
-                                </div>
-                            </div>
-                        </div>
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero trust security framework for classified federal networks" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="zero-trust-federal.html">
+                                        <h4>Zero Trust Implementation for Federal Networks</h4>
+                                      </a>
+                                      <div class="d-date">Zero Trust Security</div>
+                                    </div>
+                                  </li>
 
-                        <div class="col-lg-4 col-md-6 mb10">
-                            <div class="hover">
-                                <div class="post-image rounded-1 mb-2 overflow-hidden">
-                                    <a href="post-quantum-cryptography.html">
-                                        <img alt="Post-quantum cryptography key exchange concept — federal communications security" src="../images/blog/posts/post-quantum-cryptography.avif" class="hover-scale-1-1" loading="lazy">
-                                    </a>
-                                </div>
-                                <div class="pt-2 h-100">
-                                    <div class="mb-2"><span class="badge bg-color">Cryptography</span></div>
-                                    <h4><a class="text-dark" href="post-quantum-cryptography.html">Post-Quantum Cryptography: Preparing Federal Communications</a></h4>
-                                    <p class="mb-3">NIST-standardized post-quantum algorithms and hybrid cryptographic transition strategies for federal communication systems — a Ravonics architectural primer on the long-term quantum threat horizon.</p>
-                                </div>
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/autonomous-swarm.avif" alt="Autonomous platform swarm intelligence concepts for multi-domain operations" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="autonomous-swarm.html">
+                                        <h4>Autonomous Platform Coordination</h4>
+                                      </a>
+                                      <div class="d-date">Autonomous Systems</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/sections/blog-single-article.avif" alt="Real-time AI decision systems architecture for federal missions" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="blog-single.html">
+                                        <h4>Real-Time AI Decision Systems</h4>
+                                      </a>
+                                      <div class="d-date">AI Architecture</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
                             </div>
+
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
-
                 </div>
             </section>
-
 
             <section class="bg-color text-light pt-50 pb-50">
                 <div class="container">
                     <div class="row g-4">
                         <div class="col-md-9">
-                            <h3 class="mb-0 fs-32 split">Ready to Discuss Federal Technology Challenges?</h3>
+                            <h3 class="mb-0 fs-32 split">Ready to Discuss AI Architecture for Your Federal Program?</h3>
                         </div>
                         <div class="col-lg-3 text-lg-end">
                             <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Request Consultation</span></a>
@@ -291,6 +403,7 @@
                 </div>
             </section>
         </div>
+
         <!-- content close -->
         <!-- footer begin -->
         <footer class="text-light section-dark">
@@ -388,7 +501,7 @@
                 </div>
             </div>
         </footer>
-        <!-- footer close -->        
+        <!-- footer close -->
     <!-- overlay content begin -->
     <div id="extra-wrap" class="text-light">
         <div id="btn-close">
