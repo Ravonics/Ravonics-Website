@@ -1456,11 +1456,9 @@
          custom_bg();
          menu_arrow();
          custom_elements();
-         init(); 
-         
-         new WOW().init();
+         init();
 
-         
+
          // one page navigation
          /**
           * This part causes smooth scrolling using scrollto.js
