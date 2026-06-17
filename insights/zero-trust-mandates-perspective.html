@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation | Ravonics</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
+    <meta content="OMB M-22-09 and CISA ZTMM mandate zero trust adoption across federal agencies — yet most programs stall. This perspective examines why identity and ICAM foundation must come first, and the architectural patterns that make zero trust adoption practical rather than performative." name="description" >
+    <meta content="zero trust architecture, OMB M-22-09, CISA ZTMM, ICAM, identity foundation, federal cybersecurity policy, zero trust mandates, ZTA, Ravonics" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/zero-trust-mandates-perspective.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/zero-trust-mandates-perspective.html">
+    <meta property="og:title" content="Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation | Ravonics">
+    <meta property="og:description" content="Zero trust mandates are real and deadlines are firm — but most federal programs stall when the identity and ICAM foundation isn't in place first. A Ravonics policy perspective on the architectural preconditions that make zero trust adoption practical.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/zero-trust-mandates-perspective.html">
+    <meta property="twitter:title" content="Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation | Ravonics">
+    <meta property="twitter:description" content="Zero trust mandates are real and deadlines are firm — but most federal programs stall when the identity and ICAM foundation isn't in place first. A Ravonics policy perspective on the architectural preconditions that make zero trust adoption practical.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation",
+      "description": "OMB M-22-09 and CISA ZTMM mandate zero trust adoption across federal agencies — yet most programs stall. This perspective examines why identity and ICAM foundation must come first, and the architectural patterns that make zero trust adoption practical rather than performative.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ravonics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ravonics.com/images/logo/logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/zero-trust-mandates-perspective.html"
+      }
+    }
+    </script>
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                    <li><a class="menu-item" href="#">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoW</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/partnerships.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
+                                            <li><a href="../insights/innovation.html">Research Directions</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">Why Ravonics</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content" role="main">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/zero-trust-mandates-perspective.avif) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Insights</a></li>
+                                <li><a href="perspectives.html">Industry Perspectives</a></li>
+                                <li class="active">Zero Trust Mandates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>A Ravonics cybersecurity policy perspective on why zero trust executive mandates stall when identity and ICAM foundation isn't in place first — and the architectural patterns that make adoption practical</em>
+                                </p>
+
+                                <p>
+                                    The federal zero trust mandate is unambiguous. OMB Memorandum M-22-09 set specific capability targets for federal civilian agencies. CISA's Zero Trust Maturity Model provides the five-pillar framework against which agencies are expected to measure progress. DoD has its own Zero Trust Strategy with 91 target activities. The policy signal has never been clearer, the deadlines have never been firmer, and the political will — forged in the aftermath of SolarWinds and the Log4Shell disclosure wave — has never been stronger. Yet agency programs implementing zero trust repeatedly stall, overspend, and underdeliver against their own roadmaps. The reason is almost always the same: the underlying identity and access management foundation was never built.
+                                </p>
+
+                                <p>
+                                    Zero trust is not a product. It is an architectural posture that requires a specific set of operational capabilities to exist before the posture can be meaningfully enforced. Buying a software-defined perimeter solution or a microsegmentation platform without those foundational capabilities in place does not move an agency toward zero trust — it adds expensive complexity to a perimeter-dependent environment while providing a veneer of compliance on paper. The following six dimensions trace the architectural preconditions and sequencing decisions that determine whether a zero trust adoption program achieves real posture change or generates impressive slide decks and stalled pilots.
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>Identity Is the New Perimeter — and It Must Come First</h4>
+                                    <p>
+                                      NIST SP 800-207's core zero trust principle is that no request is implicitly trusted based on network location. Trust is instead established through continuous verification of identity, device health, and context at the time of each access request. This means the identity infrastructure — authoritative identity stores, credential lifecycle management, multi-factor authentication, and the policy decision point that evaluates each access request — must be fully operational before any other zero trust pillar can function correctly. Agencies that skip identity maturation and jump to network segmentation or data tagging build a governance system with no reliable subject to govern. Identity is not one pillar among five; it is the load-bearing foundation beneath all of them.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>ICAM Modernization Is the Hardest Part of the Journey</h4>
+                                    <p>
+                                      Identity, Credential, and Access Management modernization is consistently the longest-lead element of any federal zero trust program. It requires rationalizing identity stores accumulated across decades of mergers, reorganizations, and siloed system deployments; retiring or federating legacy directories; implementing PIV/CAC enforcement for privileged access; and deploying a policy enforcement infrastructure that can evaluate rich context attributes — device compliance posture, time, location, behavior anomalies — not just username and password. Most agencies underestimate ICAM scope by a factor of two to three when they write their zero trust roadmaps. Programs that sequence ICAM first, accept the longer timeline, and resist pressure to show early "zero trust wins" through network products consistently outperform those that chase visible deliverables while ICAM remains immature.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Device Health Verification Requires a Managed Endpoint Baseline</h4>
+                                    <p>
+                                      Zero trust access policy evaluates device health as a trust signal alongside user identity. A device that fails patch compliance, lacks EDR coverage, or cannot attest its configuration state should receive degraded or denied access regardless of the user's credentials. Enforcing this requires a complete and current inventory of every managed endpoint, continuous compliance assessment, and the ability to pass device health signals to the policy decision point in real time. Agencies with fragmented endpoint management — common where IT has been federated across bureaus or components — frequently discover that they cannot enumerate their own device population before they can begin enforcing device-based access policy. Endpoint inventory and MDM consolidation are unglamorous prerequisites that block zero trust progress when they are absent.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Network Microsegmentation Follows Data Classification</h4>
+                                    <p>
+                                      Microsegmentation — dividing the network into fine-grained zones with explicit allow policies between them — is one of the most visible zero trust capabilities and one of the most frequently sequenced in the wrong order. Effective microsegmentation requires knowing what data lives where, what its sensitivity classification is, and which workloads legitimately need to communicate with which other workloads. Without data discovery and classification upstream, microsegmentation boundaries are drawn around topology rather than around data sensitivity — producing segments that are technically enforced but strategically arbitrary. The network pillar of zero trust is downstream of the data pillar, even though network products are easier to procure and demonstrate in a briefing.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Continuous Monitoring Closes the Loop Between Policy and Reality</h4>
+                                    <p>
+                                      Zero trust is not a state achieved at a point in time; it is a continuous process of evaluating context, enforcing policy, detecting anomalies, and adjusting trust levels dynamically. This requires a security operations capability that ingests telemetry from identity systems, endpoints, network flows, and application logs and correlates them against access policy in near real time. Agencies that implement zero trust controls without investing in the monitoring infrastructure to detect policy violations and anomalous access patterns have built a fence with no camera. The mandate language around continuous monitoring is frequently underweighted in program plans relative to its operational importance — it is the mechanism that makes zero trust a living posture rather than a compliance checkbox.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Compliance Theater Versus Genuine Posture Change</h4>
+                                    <p>
+                                      The most insidious failure mode in federal zero trust adoption is meeting CISA ZTMM milestone language while the underlying architecture remains implicitly trust-based. An agency can deploy a proxy that nominally enforces MFA on application access while leaving lateral movement paths wide open across a flat internal network. It can mark a capability as "advanced" on a maturity self-assessment while the policy decision point enforces static rules rather than dynamic, context-sensitive evaluation. Program offices and oversight bodies should evaluate zero trust progress against observed access behavior and red-team results, not against capability deployment checklists alone. Genuine posture change is measurable: it reduces the blast radius of a compromised credential, limits lateral movement, and accelerates detection of anomalous access. Compliance theater does none of these things.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" class="w-100 rounded-1" alt="Federal cybersecurity architect reviewing zero trust policy framework in early-morning light">
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="discuss-cta" class="border-gray rounded-1 p-30">
+                                <h4>Want to discuss zero trust architecture for your federal program?</h4>
+                                <p>Ravonics works with federal agencies and contractors to translate zero trust policy mandates into sequenced, achievable architectural roadmaps. Whether you are assessing ICAM readiness, sequencing your ZTMM milestones, or scoping a microsegmentation pilot — we engage at the technical and policy level.</p>
+                                <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Related Perspectives</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" alt="JADC2 multi-domain integration and why interoperability is the hard problem">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="jadc2-interoperability-perspective.html">
+                                        <h4>JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</h4>
+                                      </a>
+                                      <div class="d-date">Defense Strategy</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/ai-ethics-defense.avif" alt="AI ethics in defense: autonomy and human-on-the-loop accountability" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="ai-ethics-defense.html">
+                                        <h4>AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle</h4>
+                                      </a>
+                                      <div class="d-date">Defense AI Policy</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption and FedRAMP-aligned architecture requirements" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="federal-cloud-fedramp.html">
+                                        <h4>Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</h4>
+                                      </a>
+                                      <div class="d-date">Cloud Strategy</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat and why federal systems should begin PQC migration now" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="quantum-threat-pqc-migration.html">
+                                        <h4>The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</h4>
+                                      </a>
+                                      <div class="d-date">Emerging Threats</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/cmmc-first-award.avif" alt="CMMC 2.0 requirements for defense contractors before first award" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="cmmc-first-award.html">
+                                        <h4>CMMC 2.0: What Defense Contractors Must Understand Before First Award</h4>
+                                      </a>
+                                      <div class="d-date">Compliance & Policy</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero trust implementation patterns for federal networks" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="zero-trust-federal.html">
+                                        <h4>Zero Trust Implementation for Federal Networks</h4>
+                                      </a>
+                                      <div class="d-date">Zero Trust Security</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                            </div>
+
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Ready to Discuss Zero Trust Architecture for Your Federal Program?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Request Consultation</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="social-icons mb-sm-30 text-center">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Advanced Robotics</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+</body>
+
+</html>

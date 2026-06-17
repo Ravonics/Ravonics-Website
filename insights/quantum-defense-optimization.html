@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quantum Computing for Defense Optimization | Ravonics</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
+    <meta content="INSTAR Lab's quantum computing research direction — exploring QAOA, quantum annealing, and hybrid classical-quantum approaches to combinatorial optimization problems in defense logistics, sensor tasking, and mission scheduling." name="description" >
+    <meta content="quantum computing, defense optimization, QAOA, quantum annealing, NISQ, hybrid quantum classical, combinatorial optimization, defense logistics, sensor tasking, INSTAR Lab, Ravonics" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/quantum-defense-optimization.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/quantum-defense-optimization.html">
+    <meta property="og:title" content="Quantum Computing for Defense Optimization | Ravonics">
+    <meta property="og:description" content="INSTAR Lab explores QAOA, quantum annealing, and hybrid classical-quantum methods for combinatorial problems in defense logistics, scheduling, and sensor tasking — a research direction targeting future SBIR/STTR.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/quantum-defense-optimization.html">
+    <meta property="twitter:title" content="Quantum Computing for Defense Optimization | Ravonics">
+    <meta property="twitter:description" content="INSTAR Lab explores QAOA, quantum annealing, and hybrid classical-quantum methods for combinatorial problems in defense logistics, scheduling, and sensor tasking — a research direction targeting future SBIR/STTR.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.jpg">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Quantum Computing for Defense Optimization",
+      "description": "INSTAR Lab's quantum computing research direction — exploring QAOA, quantum annealing, and hybrid classical-quantum approaches to combinatorial optimization problems in defense logistics, sensor tasking, and mission scheduling.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ravonics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ravonics.com/images/logo/logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/quantum-defense-optimization.html"
+      }
+    }
+    </script>
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                    <li><a class="menu-item" href="#">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoW</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/partnerships.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="#">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
+                                            <li><a href="../insights/innovation.html">Research Directions</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">Why Ravonics</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content" role="main">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/quantum-defense-optimization.avif) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Quantum Computing for Defense Optimization</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Insights</a></li>
+                                <li><a href="innovation.html">Research Directions</a></li>
+                                <li class="active">Quantum Defense Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>An INSTAR Lab research direction: applying quantum optimization algorithms to the combinatorial scheduling, routing, and tasking problems that classical solvers find intractable at mission scale</em>
+                                </p>
+
+                                <p>
+                                    Defense planning confronts a class of problems that scales combinatorially: assigning sensor assets across a theater, sequencing logistics convoys through contested routes, scheduling maintenance windows across a distributed fleet, or allocating electromagnetic spectrum in a congested environment. Classical algorithms handle modest versions of these problems well, but operational scale — hundreds of assets, thousands of constraints, compressed time windows — drives solution times beyond what tactical decision cycles permit. Heuristics help, but they trade optimality for speed in ways that may matter when margins are tight.
+                                </p>
+
+                                <p>
+                                    Quantum computing offers a structurally different approach to this problem class. Rather than searching solution spaces sequentially, quantum algorithms exploit superposition and interference to evaluate multiple candidate solutions simultaneously. Current noisy intermediate-scale quantum (NISQ) hardware is still far from fault-tolerant at the scale needed for live operational use, but the research trajectory is clear, and the window for establishing foundational competency is now. INSTAR Lab — Ravonics' affiliated 501(c)(3) research bench — is pursuing this as a research direction targeting future SBIR/STTR engagement, not a shipping product. The sections below describe the conceptual pillars shaping that inquiry.
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>The Defense Optimization Problem Class</h4>
+                                    <p>
+                                      The problems of interest are combinatorial: they involve selecting, ordering, or assigning discrete items under constraints, with an exponentially large solution space. Canonical forms include vehicle routing problems, traveling-salesman variants, quadratic unconstrained binary optimization (QUBO), and constraint-satisfaction problems. Defense instantiations include multi-UAV waypoint planning, ISR sensor retasking, supply route deconfliction, and communications frequency assignment. Each shares the property that classical exact solvers become intractable as instance size grows, making them natural targets for quantum speedup research.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Gate-Model vs. Quantum Annealing Approaches</h4>
+                                    <p>
+                                      Two hardware paradigms are relevant. Gate-model quantum computers (IBM, Google, IonQ) execute sequences of quantum logic gates on qubits — general-purpose, but currently limited to shallow circuits by noise. Quantum annealers (D-Wave) are purpose-built for QUBO problems, mapping the cost function directly onto physical qubit couplings and allowing the system to relax toward a minimum-energy configuration. Annealers can handle larger instances today on their native problem class, but gate models promise broader applicability as hardware matures. INSTAR Lab's research evaluates both paradigms against defense-relevant problem encodings.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Quantum Approximate Optimization Algorithm (QAOA)</h4>
+                                    <p>
+                                      QAOA is the leading candidate gate-model algorithm for combinatorial optimization on near-term hardware. It encodes the optimization objective as a cost Hamiltonian and applies alternating cost and mixer unitaries, parameterized by angles that are classically tuned to steer the quantum state toward good solutions. Depth (number of rounds, denoted p) trades circuit complexity against solution quality — shallow circuits are NISQ-feasible but yield approximate results. Understanding where QAOA outperforms classical approximation algorithms, and for which problem structures, is a key open question in the research community and a focal point for INSTAR Lab's benchmarking work.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Hybrid Classical-Quantum Architectures</h4>
+                                    <p>
+                                      Full quantum solutions to large defense problems are not feasible on near-term hardware. The practical near-term model is hybrid: classical processors handle problem decomposition, parameter optimization, and result post-processing, while the quantum processor is invoked for the computationally intensive subproblem where quantum advantage is expected to emerge. Variational quantum eigensolvers and quantum-classical feedback loops exemplify this pattern. Designing effective decompositions — knowing which subproblems benefit from quantum treatment and which are better left classical — is itself a research contribution that defense-domain expertise informs directly.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>NISQ Realism and Error Considerations</h4>
+                                    <p>
+                                      Current quantum hardware is noisy: gate errors, decoherence, and readout errors accumulate with circuit depth, degrading result quality. NISQ-era research must account for this honestly. Error mitigation techniques — zero-noise extrapolation, probabilistic error cancellation, symmetry verification — extend the useful depth of near-term circuits but add classical overhead. Fault-tolerant quantum computing, which would enable deep circuits and strong guarantees, requires logical qubits built from many physical qubits and remains a medium-to-long horizon. INSTAR Lab's research posture acknowledges these constraints and targets problem formulations and circuit depths appropriate to demonstrated hardware capability.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Near-Term vs. Long-Term Research Horizon</h4>
+                                    <p>
+                                      Near-term work focuses on problem encoding, benchmark development, and hybrid architecture design — contributions that accrue regardless of when fault-tolerant hardware arrives and position the team to exploit improved hardware as it becomes available. Medium-term milestones include demonstrating quantum advantage on small, defense-relevant benchmark instances. Long-term, fault-tolerant hardware opens the door to Grover-style unstructured search and quantum speedups on constraint-satisfaction problems at operationally relevant scale. Ravonics and INSTAR Lab are building toward this trajectory through SBIR/STTR research pathways, not claiming current product capability.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/blog/posts/quantum-defense-optimization.avif" class="w-100 rounded-1" alt="Researcher studying quantum circuit diagrams in early-morning laboratory light">
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="discuss-cta" class="border-gray rounded-1 p-30">
+                                <h4>Interested in quantum optimization research for your defense program?</h4>
+                                <p>Ravonics and INSTAR Lab are developing quantum optimization research capabilities targeting SBIR/STTR pathways. If you are a program office, national laboratory, or prime contractor exploring quantum computing for scheduling, routing, or sensor tasking problems, we welcome early-stage technical dialogue.</p>
+                                <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Related Perspectives</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/swarm-coordination-concepts.avif" alt="Autonomous swarm coordination architecture concepts">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="swarm-coordination-concepts.html">
+                                        <h4>Autonomous Swarm Coordination — Architecture Concepts</h4>
+                                      </a>
+                                      <div class="d-date">Autonomous Systems</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/edge-ai-hardware-evaluation.avif" alt="Tactical edge AI hardware evaluation" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="edge-ai-hardware-evaluation.html">
+                                        <h4>Tactical Edge AI Hardware Evaluation</h4>
+                                      </a>
+                                      <div class="d-date">Hardware Innovation</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/pqc-federal-architecture.avif" alt="Post-quantum cryptography architecture for federal systems" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="pqc-federal-architecture.html">
+                                        <h4>Post-Quantum Cryptography Architecture for Federal Systems</h4>
+                                      </a>
+                                      <div class="d-date">Cryptography Research</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/hyperspectral-sensor-fusion.avif" alt="Hyperspectral imaging and sensor fusion INSTAR Lab research" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="hyperspectral-sensor-fusion.html">
+                                        <h4>Hyperspectral Imaging &amp; Sensor Fusion — INSTAR Lab Research</h4>
+                                      </a>
+                                      <div class="d-date">Sensor Technology</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/digital-twin-multidomain.avif" alt="Digital twin modeling for multi-domain operations" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="digital-twin-multidomain.html">
+                                        <h4>Digital Twin Modeling for Multi-Domain Operations</h4>
+                                      </a>
+                                      <div class="d-date">Simulation &amp; Modeling</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/post-quantum-cryptography.avif" alt="Post-quantum cryptography for federal comms" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="post-quantum-cryptography.html">
+                                        <h4>Post-Quantum Cryptography for Federal Comms</h4>
+                                      </a>
+                                      <div class="d-date">Cryptography</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                            </div>
+
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Ready to Discuss Quantum Research Pathways for Your Program?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Request Consultation</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="social-icons mb-sm-30 text-center">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | HUBZone application submitted (pending) | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone status pending)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Advanced Robotics</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+</body>
+
+</html>
