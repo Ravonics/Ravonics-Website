@@ -237,4 +237,24 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Insights Articles -->
+  <url><loc>https://ravonics.com/insights/tactical-edge-ai.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/jadc2-integration.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/edge-computing-tactical.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/zero-trust-federal.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/autonomous-swarm.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/post-quantum-cryptography.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/quantum-defense-optimization.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/swarm-coordination-concepts.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/edge-ai-hardware-evaluation.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/pqc-federal-architecture.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/hyperspectral-sensor-fusion.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/digital-twin-multidomain.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/jadc2-interoperability-perspective.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/zero-trust-mandates-perspective.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/ai-ethics-defense.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/federal-cloud-fedramp.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/quantum-threat-pqc-migration.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ravonics.com/insights/cmmc-first-award.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
 </urlset>
