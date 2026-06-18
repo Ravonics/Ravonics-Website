@@ -13570,3 +13570,241 @@ img {
 .swiper-slide .sw-overlay.op-4 {
   opacity: 0.65 !important;
 }
+
+/* ============================================================
+   RAVONICS ISSUE REVIEW FIXES — 2026-06-18
+   Scoped site fixes for approved GitHub review items.
+   ============================================================ */
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--heading-font-color);
+}
+
+.dark-scheme .form-label,
+.text-light .form-label {
+  color: #fff;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .15);
+}
+
+.homepage-feature-grid .hover {
+  height: 100%;
+  min-height: 360px;
+}
+
+.homepage-feature-grid .hover > img {
+  display: block;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.homepage-feature-grid .stat-badge {
+  min-width: 138px;
+}
+
+.homepage-feature-grid .stat-badge .fs-84 {
+  line-height: .9;
+}
+
+.why-ravonics-grid .relative {
+  min-height: 178px;
+}
+
+.why-ravonics-grid h4 {
+  min-height: 54px;
+}
+
+.ravonics-insights a {
+  color: inherit;
+}
+
+.ravonics-insight-image img {
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.company-facts .op-5.fs-15 {
+  opacity: .82;
+  color: var(--heading-font-color);
+  font-weight: 700;
+}
+
+.company-facts .fw-600 {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.certification-grid .image-popup img {
+  display: block;
+  aspect-ratio: 2253 / 1630;
+  object-fit: cover;
+}
+
+#section-gallery #gallery img {
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+#section-gallery #gallery .item {
+  margin-bottom: var(--bs-gutter-y, 1rem);
+}
+
+footer .widget > .op-5.fs-15 {
+  opacity: .82;
+  color: rgba(255, 255, 255, .84);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+footer .widget h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+footer img[src$="up-right-arrow.webp"] {
+  display: none;
+}
+
+@media (min-width: 993px) and (max-width: 1500px) {
+  header #logo img {
+    max-width: 210px;
+  }
+
+  #mainmenu > li {
+    margin-right: 7px;
+  }
+
+  #mainmenu > li > a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  #mainmenu li ul {
+    width: 280px;
+  }
+
+  header .menu_side_area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  header a.btn-main {
+    min-width: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap;
+  }
+
+  header a.btn-main span {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1180px) {
+  header .menu_side_area > a.btn-main {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  header.header-mobile #mainmenu {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: 160px !important;
+  }
+
+  header.header-mobile #mainmenu li ul a.menu-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  header.header-mobile #mainmenu li ul li {
+    padding-left: 24px;
+  }
+
+  header.header-mobile #mainmenu > li > span,
+  header.header-mobile #mainmenu li > ul > li > span {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 575px) {
+  .homepage-feature-grid .hover,
+  .homepage-feature-grid .hover > img {
+    min-height: 300px;
+  }
+
+  .homepage-feature-grid .stat-badge {
+    min-width: 112px;
+    padding: 14px 16px !important;
+  }
+
+  .homepage-feature-grid .stat-badge .fs-84 {
+    font-size: 52px;
+  }
+
+  .homepage-feature-grid .stat-badge .fs-16 {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .why-ravonics-grid .relative {
+    min-height: 0;
+  }
+
+  .why-ravonics-grid img.abs {
+    position: static !important;
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .why-ravonics-grid .ps-100.ms-4 {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .why-ravonics-grid h4 {
+    min-height: 0;
+  }
+
+  .company-facts .d-flex {
+    align-items: flex-start !important;
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .hover:hover .hover-scale-1-1,
+  .hover:hover .hover-scale-1-2,
+  .hover-scale-1-1,
+  .hover-scale-1-2 {
+    transform: none !important;
+  }
+
+  .isotope,
+  .isotope .isotope-item {
+    transition-duration: 0s !important;
+  }
+}

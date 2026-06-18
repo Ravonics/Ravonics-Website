@@ -1,0 +1,703 @@
+{
+  "source": "GitHub open issues for Ravonics/Ravonics-Website",
+  "generatedAt": "2026-06-18",
+  "selectedIssueCount": 39,
+  "savedAt": "2026-06-18T15:24:20.433Z",
+  "selectedIssues": [
+    {
+      "number": 9,
+      "title": "Security & Reputational Risk: Sensitive Information Disclosure in Public Branches",
+      "priority": "Critical",
+      "category": "Security",
+      "effort": "Large",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/9",
+      "recommendation": "Fix the hardcoded Logic App callbacks in the active pages and plan repository branch cleanup separately.",
+      "rationale": "The current source exposes Azure callback URLs with signatures in contact and booking flows. Branch purging may need GitHub admin access, but the live-code exposure is actionable.",
+      "scope": "Remove client-side secret callbacks, route submissions through a server-side handler or protected endpoint, and document branch cleanup steps for the repo owner.",
+      "decision": "modified",
+      "note": "yes, we want this without losing functionality.  so, we approve this while also wanting to maintain functionality."
+    },
+    {
+      "number": 19,
+      "title": "Critique: Flaws in 'Request Consultation' (booking.html)",
+      "priority": "Critical",
+      "category": "Form Security",
+      "effort": "Large",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/19",
+      "recommendation": "Treat this as the main booking-form hardening ticket.",
+      "rationale": "It combines exposed backend trigger risk, weak validation, non-standard labels, and lead-quality problems in the primary consultation path.",
+      "scope": "Use real labels, improve validation, revisit required date/time fields, add more inclusive budget options, and remove client-visible secrets.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 36,
+      "title": "Contact Form: Add 'No Classified Info' Warning",
+      "priority": "High",
+      "category": "Compliance",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/36",
+      "recommendation": "Add a prominent warning to all public inquiry and booking forms.",
+      "rationale": "This is a small, high-signal compliance fix for a defense contractor site.",
+      "scope": "Add concise warning copy near form entry and submit areas without making the forms feel hostile.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 48,
+      "title": "Accessibility: ADA and WCAG 2.1 Compliance Fixes",
+      "priority": "Critical",
+      "category": "Accessibility",
+      "effort": "Large",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/48",
+      "recommendation": "Start an accessibility pass focused on labels, contrast, alt text, and empty links.",
+      "rationale": "Accessibility defects are high impact and intersect with federal-contractor credibility.",
+      "scope": "Run targeted checks, repair form semantics, fix low-contrast text, add useful alt text, and remove or replace placeholder links.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 45,
+      "title": "Accessibility & Code Quality: Fix Contrast and Style Bloat in About Us Section",
+      "priority": "High",
+      "category": "Accessibility",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/45",
+      "recommendation": "Fix the low-contrast label/value pattern and reduce redundant inline styles.",
+      "rationale": "The issue is both visual and accessibility-related, and it likely affects a credibility-heavy company section.",
+      "scope": "Normalize label/value typography, raise contrast, and consolidate repeated background styling where it is safe.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 31,
+      "title": "Accessibility: Add Alt Text to Capability Graphics",
+      "priority": "High",
+      "category": "Accessibility",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/31",
+      "recommendation": "Add meaningful alt text for content images and hide purely decorative icons.",
+      "rationale": "This is straightforward and reinforces the broader WCAG fix work.",
+      "scope": "Audit capability graphics across homepage and capability pages, then add alt text or aria-hidden as appropriate.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 58,
+      "title": "Audit: Email Obfuscation Failure in Contact Details",
+      "priority": "High",
+      "category": "Contact",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/58",
+      "recommendation": "Verify the rendered contact email and remove any brittle obfuscation path.",
+      "rationale": "If visitors see [EMAIL PROTECTED], the primary contact path looks broken. The source currently contains contact@ravonics.com, so this needs browser validation before editing.",
+      "scope": "Check rendered pages, replace failing protection markup if found, and keep mailto/contact text consistent.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 57,
+      "title": "Audit: Typo in Industry Name 'Defense & DoW'",
+      "priority": "High",
+      "category": "Content QA",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/57",
+      "recommendation": "Replace Defense & DoW with Defense & DoD everywhere it appears.",
+      "rationale": "This typo appears across navigation and gallery copy and is visible to federal/defense visitors.",
+      "scope": "Update nav labels, gallery filters, captions, and any matching page copy.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 53,
+      "title": "Social Media: Broken LinkedIn Link",
+      "priority": "High",
+      "category": "Footer",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/53",
+      "recommendation": "Set the footer LinkedIn link to the official company profile or remove it until confirmed.",
+      "rationale": "The footer currently uses placeholder social links, which undermines trust.",
+      "scope": "Confirm official URL, update repeated footer markup, and use proper accessible labels.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 54,
+      "title": "Social Media: Broken X/Twitter Link",
+      "priority": "Medium",
+      "category": "Footer",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/54",
+      "recommendation": "Update or remove the X/Twitter icon depending on whether an official handle exists.",
+      "rationale": "Broken social links are user-facing defects, but the correct destination requires owner confirmation.",
+      "scope": "Replace placeholder hrefs with the official URL or remove the icon cleanly.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 55,
+      "title": "Social Media: Broken Facebook/Instagram Links",
+      "priority": "Medium",
+      "category": "Footer",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/55",
+      "recommendation": "Remove Facebook and Instagram placeholders unless official accounts are available.",
+      "rationale": "A missing social profile is better than a broken or misleading link.",
+      "scope": "Update footer social lists across templates/pages after URL confirmation.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 35,
+      "title": "Social Media: Add LinkedIn Link and Open Graph Metadata",
+      "priority": "High",
+      "category": "SEO Metadata",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/35",
+      "recommendation": "Add consistent Open Graph metadata and align it with the social-link cleanup.",
+      "rationale": "The repo already has share images, so metadata is likely a controlled improvement rather than a new asset project.",
+      "scope": "Add OG/Twitter card tags to key pages and wire LinkedIn once the official company URL is confirmed.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 50,
+      "title": "UI Bug: Scrolling Banner Nav takes up two lines",
+      "priority": "High",
+      "category": "Navigation",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/50",
+      "recommendation": "Fix sticky navigation wrapping at Linux/default zoom and high zoom levels.",
+      "rationale": "A wrapped sticky nav obscures content and makes the site feel unstable.",
+      "scope": "Audit header sizing, menu spacing, logo width, and responsive breakpoints; verify at desktop and zoomed states.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 51,
+      "title": "Bug: Footer fails to render on first load (Requires Refresh)",
+      "priority": "High",
+      "category": "Footer",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/51",
+      "recommendation": "Reproduce and fix the first-load footer render issue.",
+      "rationale": "Intermittent first-load failures usually point to script timing or layout dependencies and affect every page impression.",
+      "scope": "Check console errors, duplicate footer/mobile markup, image lazy loading, and initialization order.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 49,
+      "title": "UI Bug: Gallery images stack on refresh or zoom",
+      "priority": "High",
+      "category": "Gallery",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/49",
+      "recommendation": "Stabilize the gallery grid across refresh, zoom, and Mac rendering.",
+      "rationale": "The gallery is a visual proof section, so stacking/overlap damages the portfolio presentation.",
+      "scope": "Review grid/masonry initialization, image dimensions, loading order, and responsive CSS.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 33,
+      "title": "Mobile UX: Stack Stat Blocks Vertically",
+      "priority": "High",
+      "category": "Mobile",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/33",
+      "recommendation": "Fix stat block responsiveness on narrow screens.",
+      "rationale": "This likely overlaps with the reported number/text overlap and is a contained CSS fix.",
+      "scope": "Add mobile-specific stacking and stable dimensions for statistic tiles.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 32,
+      "title": "Mobile UX: Navigation Dropdown Length",
+      "priority": "High",
+      "category": "Mobile",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/32",
+      "recommendation": "Improve mobile menu structure for long Capabilities and Solutions lists.",
+      "rationale": "The current navigation has many deep items, making mobile browsing cumbersome.",
+      "scope": "Use nested accordion behavior or tighter grouping while keeping desktop navigation intact.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 10,
+      "title": "Audit: Number '5' overlapping 'Partner Companies' text under Elite Engineering",
+      "priority": "High",
+      "category": "Layout",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/10",
+      "recommendation": "Fix the overlapping statistic layout.",
+      "rationale": "This is a visible polish defect in a credibility section and should be handled with the mobile stat work.",
+      "scope": "Adjust stat typography, line-height, spacing, and responsive stacking.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 18,
+      "title": "UI Bug: Image overlap with c2.webp",
+      "priority": "Medium",
+      "category": "Layout",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/18",
+      "recommendation": "Reproduce the c2.webp overlap and fix the containing layout.",
+      "rationale": "Image overlap is the kind of visual defect users notice immediately, but the exact page/state needs confirmation.",
+      "scope": "Find c2.webp usage, inspect desktop/mobile layouts, and adjust image/container sizing.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 52,
+      "title": "Visual Polish: Alignment and Line-Height in 'Why Ravonics' Section",
+      "priority": "Medium",
+      "category": "Layout",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/52",
+      "recommendation": "Normalize card/title heights in the Why Ravonics section.",
+      "rationale": "Uneven rows make the grid feel less professional and should be a contained CSS/copy pass.",
+      "scope": "Set consistent title/description heights or tighten copy so the row aligns cleanly.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 22,
+      "title": "Unmatched font size in the footer",
+      "priority": "Medium",
+      "category": "Footer",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/22",
+      "recommendation": "Normalize footer font scale while touching footer links and render issues.",
+      "rationale": "The footer has several related defects, so this should be bundled with footer cleanup.",
+      "scope": "Audit footer typography across page depths and align text sizes to the site system.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 17,
+      "title": "Visual/UX Issue: Footer 'Get in Touch' Arrow Inconsistency",
+      "priority": "Medium",
+      "category": "Footer",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/17",
+      "recommendation": "Remove, restyle, or make the arrow functional as part of footer cleanup.",
+      "rationale": "A faded static navigation-style arrow sends the wrong affordance.",
+      "scope": "Make the visual a real link, replace it with a clearer decorative treatment, or remove it.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 59,
+      "title": "Audit: Missing Content Preview in 'Insights' Section",
+      "priority": "Medium",
+      "category": "Content",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/59",
+      "recommendation": "Add real recent titles/snippets to the homepage Insights section.",
+      "rationale": "The repo already contains several insight pages, so the homepage should expose actual content instead of empty categories.",
+      "scope": "Select recent or strategic insight pages, add titles/snippets, and keep links crawlable.",
+      "decision": "modified",
+      "note": "i approve this if you feel it is relevant. make sure to keep the website timeless.  we don't want to get into a cycle of haivng our homepage outdated."
+    },
+    {
+      "number": 61,
+      "title": "Audit: Spelling out Technical Acronyms (JADC2, CMMC, etc.)",
+      "priority": "Medium",
+      "category": "Content",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/61",
+      "recommendation": "Spell out technical acronyms on first use across key pages.",
+      "rationale": "This improves accessibility, clarity, and search relevance without changing the brand voice.",
+      "scope": "Audit first occurrences of JADC2, CMMC, NIST, SBIR, STTR, and similar terms.",
+      "decision": "modified",
+      "note": "not sure if this is important.. what do you think? you can decide if this is important or not"
+    },
+    {
+      "number": 30,
+      "title": "SEO: Improve Header Hierarchy (H1/H2)",
+      "priority": "Medium",
+      "category": "SEO",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/30",
+      "recommendation": "Fix heading hierarchy on the homepage and key landing pages.",
+      "rationale": "Heading structure affects accessibility and SEO, and it is safer to handle before copy expansion.",
+      "scope": "Ensure one primary H1 per page and logical H2/H3 nesting for capability sections.",
+      "decision": "modified",
+      "note": "i like the look of our main page already.  only do this if you trust yourself to maintain amazing layout and style. the look of the page is more important than following strict policies."
+    },
+    {
+      "number": 39,
+      "title": "Technical SEO: Implement JSON-LD for Government Contractor Data",
+      "priority": "Medium",
+      "category": "SEO Metadata",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/39",
+      "recommendation": "Add structured data for Ravonics contractor identity.",
+      "rationale": "Machine-readable UEI, CAGE, NAICS, location, and organization data supports government search visibility.",
+      "scope": "Add validated JSON-LD to the homepage or sitewide head include pattern.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 46,
+      "title": "Content: Rephrase Directed Energy Research for partnership specificity",
+      "priority": "Medium",
+      "category": "Content",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/46",
+      "recommendation": "Improve the research page copy without overclaiming partnerships.",
+      "rationale": "The suggested topics are useful, but wording needs to stay precise and supportable.",
+      "scope": "Rework Directed Energy copy around collaboration pathways, compliance frameworks, and research focus areas.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 38,
+      "title": "Content: Expand INSTAR Lab Section",
+      "priority": "Medium",
+      "category": "Content",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/38",
+      "recommendation": "Expand INSTAR Lab context if the relationship and claims are confirmed.",
+      "rationale": "A named research bench needs enough explanation to avoid looking like a throwaway reference.",
+      "scope": "Add a concise section describing purpose, relationship, research areas, and any claim limits.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 40,
+      "title": "Security: Implement CSP and HSTS Headers",
+      "priority": "High",
+      "category": "Security",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/40",
+      "recommendation": "Implement what the static site can control and document hosting-level requirements.",
+      "rationale": "Security posture should match the site messaging, but HSTS may require hosting configuration rather than HTML-only changes.",
+      "scope": "Add a conservative CSP where feasible, verify third-party/script requirements, and identify the deployment path for HSTS.",
+      "decision": "modified",
+      "note": "not sure what you want to do here. give more feedback to get a better decision from me.  show me exactly what you would do & why."
+    },
+    {
+      "number": 42,
+      "title": "Homepage video content is unrelated",
+      "priority": "High",
+      "category": "Media",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/42",
+      "recommendation": "Replace or remove unrelated homepage video content.",
+      "rationale": "Hero/media mismatch is a first-impression problem.",
+      "scope": "Locate the current video, decide whether replacement assets exist, and use a relevant optimized visual if no video is ready.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 44,
+      "title": "Visual Fix: Redesign Advanced Visualization & HUD Map",
+      "priority": "High",
+      "category": "Media",
+      "effort": "Large",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/44",
+      "recommendation": "Upgrade the HUD map visual to a clearer tactical-style asset.",
+      "rationale": "This is a key capability page/section and the current visual reportedly undercuts the positioning.",
+      "scope": "Use a high-contrast map or generated asset, ensure responsive cropping, and export optimized web formats.",
+      "decision": "modified",
+      "note": "approved, but we might've already done this?"
+    },
+    {
+      "number": 34,
+      "title": "Performance: Optimize Imagery for Advanced Visualization",
+      "priority": "Medium",
+      "category": "Performance",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/34",
+      "recommendation": "Bundle with the HUD visual replacement so image quality and weight are solved together.",
+      "rationale": "Replacing the asset without sizing/compression would only solve half the problem.",
+      "scope": "Confirm dimensions, encode optimized AVIF/WebP, and avoid layout shifts.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 27,
+      "title": "Visual Audit: Overwhelming background motion and large image sizes",
+      "priority": "Medium",
+      "category": "Performance",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/27",
+      "recommendation": "Reduce aggressive motion and review oversized visual assets.",
+      "rationale": "Motion and heavy images can hurt readability, performance, and perceived polish.",
+      "scope": "Tone down animations, respect reduced-motion preferences, and identify the largest visual offenders.",
+      "decision": "rejected",
+      "note": ""
+    },
+    {
+      "number": 21,
+      "title": "Audit: s1.avif image in 'Advanced AI Platforms' section is not relevant to the title or brand",
+      "priority": "Medium",
+      "category": "Media",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/21",
+      "recommendation": "Replace the homepage Advanced AI Platforms image with a more relevant asset.",
+      "rationale": "A generic server rack weakens the AI-platform claim.",
+      "scope": "Select or create a mission-ready AI visual, preserve responsive behavior, and optimize the output.",
+      "decision": "modified",
+      "note": "use the hm cli to generate something new if you feel helpful"
+    },
+    {
+      "number": 14,
+      "title": "Audit: c1.avif image is out of place on homepage",
+      "priority": "Medium",
+      "category": "Media",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/14",
+      "recommendation": "Replace or reposition c1.avif if it does not support the page message.",
+      "rationale": "Homepage imagery should communicate the company's real capability areas quickly.",
+      "scope": "Review the current section context and swap in a more relevant optimized visual.",
+      "decision": "pending",
+      "note": ""
+    },
+    {
+      "number": 15,
+      "title": "Audit: cloud-native.html header image is irrelevant to brand and page title",
+      "priority": "Medium",
+      "category": "Media",
+      "effort": "Medium",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/15",
+      "recommendation": "Replace the cloud-native hero image with an on-topic infrastructure/mission-systems visual.",
+      "rationale": "The current asset reportedly reads as generic logistics instead of cloud-native infrastructure.",
+      "scope": "Choose a relevant background, check page contrast, and update alt/metadata if needed.",
+      "decision": "pending",
+      "note": ""
+    },
+    {
+      "number": 16,
+      "title": "Audit: sw-overlay div missing background image or color on cloud-native page",
+      "priority": "Medium",
+      "category": "Media",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/16",
+      "recommendation": "Fix overlay/background treatment while replacing the cloud-native visual.",
+      "rationale": "This appears tied to the same page asset problem as #15.",
+      "scope": "Confirm the overlay element has intentional background/color behavior and does not produce blank or mismatched panels.",
+      "decision": "modified",
+      "note": "this doesn't make sense to me.  i need more context to make a decision."
+    },
+    {
+      "number": 24,
+      "title": "Audit: certifications/5.avif image size does not match other certification images",
+      "priority": "Low",
+      "category": "Media",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/24",
+      "recommendation": "Normalize the certification image dimensions.",
+      "rationale": "This is a small consistency fix on a trust-building page.",
+      "scope": "Resize/crop the asset or adjust CSS so it matches adjacent certification images.",
+      "decision": "approved",
+      "note": ""
+    },
+    {
+      "number": 26,
+      "title": "Extra apostrophe on image s4.webp",
+      "priority": "Low",
+      "category": "Media",
+      "effort": "Small",
+      "url": "https://github.com/Ravonics/Ravonics-Website/issues/26",
+      "recommendation": "Inspect and replace the image if the stray mark is baked into the asset.",
+      "rationale": "It is a minor defect, but visible image artifacts are easy to clean up.",
+      "scope": "Open the asset, confirm the artifact, then edit or replace the optimized image.",
+      "decision": "approved",
+      "note": ""
+    }
+  ],
+  "decisions": {
+    "9": {
+      "decision": "modified",
+      "note": "yes, we want this without losing functionality.  so, we approve this while also wanting to maintain functionality.",
+      "updatedAt": "2026-06-18T15:08:00.400Z"
+    },
+    "10": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:41.408Z"
+    },
+    "16": {
+      "decision": "modified",
+      "note": "this doesn't make sense to me.  i need more context to make a decision.",
+      "updatedAt": "2026-06-18T15:24:01.177Z"
+    },
+    "17": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:16:22.448Z"
+    },
+    "18": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:15:04.734Z"
+    },
+    "19": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:12:45.367Z"
+    },
+    "21": {
+      "decision": "modified",
+      "note": "use the hm cli to generate something new if you feel helpful",
+      "updatedAt": "2026-06-18T15:22:28.253Z"
+    },
+    "22": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:16:18.693Z"
+    },
+    "24": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:24:09.010Z"
+    },
+    "26": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:24:20.433Z"
+    },
+    "27": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:21:46.458Z"
+    },
+    "30": {
+      "decision": "modified",
+      "note": "i like the look of our main page already.  only do this if you trust yourself to maintain amazing layout and style. the look of the page is more important than following strict policies.",
+      "updatedAt": "2026-06-18T15:19:29.712Z"
+    },
+    "31": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:12:58.900Z"
+    },
+    "32": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:44.183Z"
+    },
+    "33": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:36.731Z"
+    },
+    "34": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:21:09.823Z"
+    },
+    "35": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:10.459Z"
+    },
+    "36": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:08:11.786Z"
+    },
+    "38": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:19:55.351Z"
+    },
+    "39": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:19:38.981Z"
+    },
+    "40": {
+      "decision": "modified",
+      "note": "not sure what you want to do here. give more feedback to get a better decision from me.  show me exactly what you would do & why.",
+      "updatedAt": "2026-06-18T15:20:39.258Z"
+    },
+    "42": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:20:50.319Z"
+    },
+    "44": {
+      "decision": "modified",
+      "note": "approved, but we might've already done this?",
+      "updatedAt": "2026-06-18T15:21:33.627Z"
+    },
+    "45": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:13:03.726Z"
+    },
+    "46": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:19:50.528Z"
+    },
+    "48": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:12:52.552Z"
+    },
+    "49": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:34.168Z"
+    },
+    "50": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:22.408Z"
+    },
+    "51": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:26.318Z"
+    },
+    "52": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:16:08.455Z"
+    },
+    "53": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:13:52.598Z"
+    },
+    "54": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:13:53.975Z"
+    },
+    "55": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:14:13.314Z"
+    },
+    "57": {
+      "decision": "rejected",
+      "note": "",
+      "updatedAt": "2026-06-18T15:13:31.576Z"
+    },
+    "58": {
+      "decision": "approved",
+      "note": "",
+      "updatedAt": "2026-06-18T15:13:22.112Z"
+    },
+    "59": {
+      "decision": "modified",
+      "note": "i approve this if you feel it is relevant. make sure to keep the website timeless.  we don't want to get into a cycle of haivng our homepage outdated.",
+      "updatedAt": "2026-06-18T15:18:40.492Z"
+    },
+    "61": {
+      "decision": "modified",
+      "note": "not sure if this is important.. what do you think? you can decide if this is important or not",
+      "updatedAt": "2026-06-18T15:18:00.322Z"
+    }
+  },
+  "serverSavedAt": "2026-06-18T15:24:20.442206+00:00"
+}

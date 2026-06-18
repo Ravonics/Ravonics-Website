@@ -236,21 +236,28 @@
                                 <div class="col-lg-12">
                                     <h3>Get In Touch</h3>
                                     <p>Have a question, suggestion, or just want to say hi? Fill out the form below and we’ll get back to you soon.</p>
-
-                                    <div class="field-set">
-                                        <input type="text" name="name" id="name" class="form-control mb-4" placeholder="Your Name" aria-label="Your name" required>
+                                    <div class="alert alert-warning mb-4" role="note">
+                                        Do not submit classified, export-controlled, or sensitive mission information through this public website form. Share only unclassified contact details and a high-level summary.
                                     </div>
 
                                     <div class="field-set">
-                                        <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Your Email" aria-label="Your email address" required>
+                                        <label for="name" class="visually-hidden">Your Name</label>
+                                        <input type="text" name="name" id="name" class="form-control mb-4" placeholder="Your Name" required autocomplete="name">
                                     </div>
 
                                     <div class="field-set">
-                                        <input type="tel" name="phone" id="phone" class="form-control mb-4" placeholder="Your Phone" aria-label="Your phone number" required>
+                                        <label for="email" class="visually-hidden">Your Email</label>
+                                        <input type="email" name="email" id="email" class="form-control mb-4" placeholder="Your Email" required autocomplete="email">
                                     </div>
 
                                     <div class="field-set">
-                                        <textarea name="message" id="message" class="form-control mb-4 h-100px" placeholder="Your Message" aria-label="Your message" required></textarea>
+                                        <label for="phone" class="visually-hidden">Your Phone</label>
+                                        <input type="tel" name="phone" id="phone" class="form-control mb-4" placeholder="Your Phone" required autocomplete="tel">
+                                    </div>
+
+                                    <div class="field-set">
+                                        <label for="message" class="visually-hidden">Your Message</label>
+                                        <textarea name="message" id="message" class="form-control mb-4 h-100px" placeholder="Your Message" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -515,20 +522,38 @@
 
     <script>
     /**
-     * Ravonics Contact Form — D365 Lead Intake
+     * Ravonics contact form.
      *
-     * Mirrors the booking.html integration pattern.
-     * POSTs a flat JSON payload to the Azure Logic App trigger URL.
-     * Maps name/email/phone/message to a Dataverse lead record.
-     * The Logic App returns HTTP 200 {"status":"received"} on success.
+     * Backend trigger signatures must not be exposed in public source. If the
+     * deployment injects window.RAVONICS_FORM_ENDPOINTS.contact, the form posts
+     * there. Otherwise it falls back to a prefilled email.
      */
     (function () {
         'use strict';
 
-        // Same Logic App as booking.html; subject differentiates intake source
-        var CALLBACK_URL = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs';
-
         function getEl(id) { return document.getElementById(id); }
+
+        function getContactEndpoint() {
+            var cfg = window.RAVONICS_FORM_ENDPOINTS || {};
+            return cfg.contact || '';
+        }
+
+        function buildContactMailto(payload) {
+            var body = [
+                'Name: ' + (payload.firstname + ' ' + payload.lastname).trim(),
+                'Email: ' + payload.emailaddress1,
+                'Phone: ' + payload.telephone1,
+                '',
+                'Message:',
+                payload.description,
+                '',
+                'Classification reminder: This message should contain unclassified information only.'
+            ].join('\n');
+
+            return 'mailto:contact@ravonics.com?subject=' +
+                encodeURIComponent(payload.subject) +
+                '&body=' + encodeURIComponent(body);
+        }
 
         function showContactMessage(type, html) {
             getEl('contact_success_message').style.display    = 'none';
@@ -536,6 +561,9 @@
             getEl('contact_validation_message').style.display = 'none';
 
             if (type === 'success') {
+                if (html) {
+                    getEl('contact_success_message').innerHTML = html;
+                }
                 getEl('contact_success_message').style.display = 'block';
             } else if (type === 'error') {
                 getEl('contact_error_message').style.display = 'block';
@@ -579,7 +607,7 @@
                     nameEl.classList.add('is-invalid');
                 } else { nameEl.classList.remove('is-invalid'); }
 
-                if (!emailEl.value.trim() || emailEl.value.indexOf('@') === -1) {
+                if (!emailEl.value.trim() || !emailEl.checkValidity()) {
                     missing.push('Your Email');
                     emailEl.classList.add('is-invalid');
                 } else { emailEl.classList.remove('is-invalid'); }
@@ -631,34 +659,42 @@
                     submitBtn.value    = 'Sending…';
                 }
 
-                // ── POST to D365 Logic App ─────────────────────────────────
-                fetch(CALLBACK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                })
-                .then(function (res) {
-                    if (res.ok) {
-                        showContactMessage('success');
+                var endpoint = getContactEndpoint();
+                var request = endpoint
+                    ? fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    })
+                    : Promise.resolve({ ok: true, mailto: buildContactMailto(payload) });
+
+                request
+                    .then(function (res) {
+                        if (!res.ok) {
+                            throw new Error('HTTP ' + res.status);
+                        }
+                        if (res.mailto) {
+                            window.location.href = res.mailto;
+                            showContactMessage('success', 'Your email client has been opened with the message details. Send that email to complete the request.');
+                        } else {
+                            showContactMessage('success');
+                        }
                         form.reset();
                         if (submitBtn) {
                             submitBtn.disabled = false;
                             submitBtn.value    = originalValue;
                         }
                         getEl('contact_success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    } else {
-                        throw new Error('HTTP ' + res.status);
-                    }
-                })
-                .catch(function (err) {
-                    console.error('Contact form submission error:', err);
-                    showContactMessage('error');
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.value    = originalValue;
-                    }
-                    getEl('contact_error_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                });
+                    })
+                    .catch(function (err) {
+                        console.error('Contact form submission error:', err);
+                        showContactMessage('error');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.value    = originalValue;
+                        }
+                        getEl('contact_error_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    });
             });
         });
     }());

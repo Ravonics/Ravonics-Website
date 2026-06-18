@@ -33,15 +33,34 @@
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Ravonics",
-      "url": "https://ravonics.com",
-      "logo": "https://ravonics.com/images/logo/logo.svg",
-      "description": "Ravonics LLC is a West Virginia small business delivering AI platforms, post-quantum readiness, JADC2 integration, and autonomous systems for the Department of War, the Intelligence Community, and federal agencies.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "313 Walnut St",
+	      "@context": "https://schema.org",
+	      "@type": "Organization",
+	      "name": "Ravonics",
+	      "legalName": "Ravonics LLC",
+	      "url": "https://ravonics.com",
+	      "logo": "https://ravonics.com/images/logo/logo.svg",
+	      "description": "Ravonics LLC is a West Virginia small business delivering AI platforms, post-quantum readiness, JADC2 integration, and autonomous systems for the Department of War, the Intelligence Community, and federal agencies.",
+	      "identifier": [
+	        {
+	          "@type": "PropertyValue",
+	          "propertyID": "SAM.gov UEI",
+	          "value": "YCBDVKN1A9G7"
+	        },
+	        {
+	          "@type": "PropertyValue",
+	          "propertyID": "CAGE Code",
+	          "value": "20DS8"
+	        },
+	        {
+	          "@type": "PropertyValue",
+	          "propertyID": "NAICS",
+	          "value": "541512, 541330, 541715"
+	        }
+	      ],
+	      "naics": "541512, 541330, 541715",
+	      "address": {
+	        "@type": "PostalAddress",
+	        "streetAddress": "313 Walnut St",
         "addressLocality": "Ravenswood",
         "addressRegion": "WV",
         "postalCode": "26164",
@@ -320,7 +339,7 @@
 
             <section class="mx-3 p-0">
                 <div class="container-fluid">
-                    <div class="row g-3">
+	                    <div class="row g-3 homepage-feature-grid">
                         
                         <!-- First Item -->
                         <div class="col-lg-4 col-md-6">
@@ -330,7 +349,7 @@
                                         <h3 class="border-top pt-3">Advanced AI Platforms</h3>
                                         <p class="mb-0 hover-mh-60">Mission-Ready Intelligence</p>
                                     </div>
-                                    <img src="images/misc/s1.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0s" alt="AI platform rack at first light — Ravonics federal AI systems">
+	                                    <img src="images/sections/sol-ai-platforms-panel.avif" class="w-100 hover-scale-1-2 wow scaleIn" data-wow-delay="0s" alt="AI mission platform interface — Ravonics federal AI systems">
                                     <div class="gradient-edge-bottom h-50 op-5"></div>
                                 </div>
                             </a>
@@ -341,7 +360,7 @@
                             <a href="capabilities/integration.html">
                                 <div class="hover rounded-1 relative overflow-hidden text-light wow zoomIn" data-wow-delay="0.2s">
                                     <div class="abs p-4 m-1 z-2">
-                                        <div class="p-4 mb-4 bg-color text-light rounded-1 text-center wow fadeInRight" data-wow-delay="0.2s">
+	                                        <div class="p-4 mb-4 bg-color text-light rounded-1 text-center wow fadeInRight stat-badge" data-wow-delay="0.2s">
                                             <div class="fs-84 mb-1">5</div>
                                             <div class="fs-16 lh-1-5">Partner Companies</div>
                                         </div>
@@ -471,7 +490,7 @@
                                 <ul class="ul-check white mb-4 wow fadeInUp" data-wow-delay=".6s">
                                     <li>Decades of AI/ML, enterprise architecture, and federal systems leadership</li>
                                     <li>An applied-physics research bench through INSTAR Lab</li>
-                                    <li>NIST 800-171-aligned delivery, engineered for federal compliance</li>
+	                                    <li>NIST (National Institute of Standards and Technology) 800-171-aligned delivery, engineered for federal compliance</li>
                                     <li>Mature, proven platforms drawn from our partner ecosystem</li>
                                     <li>Computer vision and sensor data-fusion engineered for time-critical decisions</li>
                                     <li>Federal-ready engagement — SAM.gov registered (Active), HUBZone application pending</li>
@@ -524,7 +543,7 @@
                             <p class="wow fadeInUp" data-wow-delay=".3s">We don't just consult—we build, deploy, and sustain the systems that secure America's technological superiority.</p>
                         </div>
                     </div>
-                    <div class="row g-4">
+	                    <div class="row g-4 why-ravonics-grid">
                         <div class="col-lg-4 col-md-6 wow fadeInUp">
                             <div class="relative">
                                 <img src="images/icons-maroon/keycap-home/1.avif" alt="Deep Technical Leadership" class="abs w-90px rounded-1">
@@ -550,7 +569,7 @@
                                 <img src="images/icons-maroon/keycap-home/3.avif" alt="Compliance-First by Design" class="abs w-90px rounded-1">
                                 <div class="ps-100 ms-4">
                                     <h4>Compliance-First by Design</h4>
-                                    <p>Security and compliance are built in from day one: NIST 800-171 alignment underway, CMMC assessment planned, and zero-trust architecture throughout. Public Trust held by leadership, with a clearable team—so compliance never stalls delivery.</p>
+	                                    <p>Security and compliance are built in from day one: NIST 800-171 alignment underway, CMMC (Cybersecurity Maturity Model Certification) assessment planned, and zero-trust architecture throughout. Public Trust held by leadership, with a clearable team—so compliance never stalls delivery.</p>
                                 </div>
                             </div>
                         </div>
@@ -654,8 +673,60 @@
 
             </section>
 
-            <section class="pt-0">
-                <div class="container">
+	            <section class="pt-0 ravonics-insights">
+	                <div class="container">
+	                    <div class="row g-4 justify-content-between align-items-end mb-4">
+	                        <div class="col-lg-7">
+	                            <div class="subtitle id-color">Strategic Insights</div>
+	                            <h2 class="split mb-0">Evergreen Guidance for Federal Technology Programs</h2>
+	                        </div>
+	                        <div class="col-lg-4 text-lg-end">
+	                            <a class="btn-main btn-line fx-slide" href="insights/blog.html"><span>Technical Publications</span></a>
+	                        </div>
+	                    </div>
+
+	                    <div class="row g-4">
+	                        <div class="col-lg-4 col-md-6">
+	                            <a href="insights/zero-trust-federal.html" class="d-block hover h-100">
+	                                <div class="relative overflow-hidden rounded-1 mb-3 ravonics-insight-image">
+	                                    <img src="images/blog/posts/zero-trust-federal.avif" class="w-100 hover-scale-1-1" alt="Secure federal data center corridor with controlled access" loading="lazy" decoding="async">
+	                                    <div class="gradient-edge-bottom h-50 op-5"></div>
+	                                </div>
+	                                <div class="subtitle id-color">Zero Trust</div>
+	                                <h3 class="fs-24 mb-2">Zero Trust Implementation for Federal Networks</h3>
+	                                <p class="mb-0">Identity-first architecture, micro-segmentation, and policy enforcement patterns for federal modernization efforts.</p>
+	                            </a>
+	                        </div>
+
+	                        <div class="col-lg-4 col-md-6">
+	                            <a href="insights/post-quantum-cryptography.html" class="d-block hover h-100">
+	                                <div class="relative overflow-hidden rounded-1 mb-3 ravonics-insight-image">
+	                                    <img src="images/blog/posts/post-quantum-cryptography.avif" class="w-100 hover-scale-1-1" alt="Precision vault mechanism representing cryptographic key protection" loading="lazy" decoding="async">
+	                                    <div class="gradient-edge-bottom h-50 op-5"></div>
+	                                </div>
+	                                <div class="subtitle id-color">Post-Quantum Readiness</div>
+	                                <h3 class="fs-24 mb-2">Preparing Federal Communications for PQC Migration</h3>
+	                                <p class="mb-0">Cryptographic inventory, hybrid migration, and agility planning for long-horizon national security systems.</p>
+	                            </a>
+	                        </div>
+
+	                        <div class="col-lg-4 col-md-6">
+	                            <a href="insights/jadc2-integration.html" class="d-block hover h-100">
+	                                <div class="relative overflow-hidden rounded-1 mb-3 ravonics-insight-image">
+	                                    <img src="images/blog/posts/jadc2-integration.avif" class="w-100 hover-scale-1-1" alt="Multi-domain command and control architecture mapped on a whiteboard" loading="lazy" decoding="async">
+	                                    <div class="gradient-edge-bottom h-50 op-5"></div>
+	                                </div>
+	                                <div class="subtitle id-color">JADC2 Integration</div>
+	                                <h3 class="fs-24 mb-2">Multi-Domain C2 Architecture Patterns</h3>
+	                                <p class="mb-0">Data-centric integration, open standards, semantic interoperability, and event-driven mesh design.</p>
+	                            </a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </section>
+
+	            <section class="pt-0">
+	                <div class="container">
 
                     <div class="row g-4">
                         <div class="col-lg-6">
@@ -687,7 +758,7 @@
                                                         <li class="d-flex mb-2"><i class="fa fa-check-circle id-color me-2 mt-1"></i><span><strong>Intelligence &amp; Decision Systems</strong> &mdash; multi-domain fusion, predictive analytics</span></li>
                                                         <li class="d-flex mb-2"><i class="fa fa-check-circle id-color me-2 mt-1"></i><span><strong>Secure Communications &amp; Cryptography</strong> &mdash; post-quantum encryption, resilient networks</span></li>
                                                         <li class="d-flex mb-2"><i class="fa fa-check-circle id-color me-2 mt-1"></i><span><strong>High-Performance Computing</strong> &mdash; edge computing, distributed systems</span></li>
-                                                        <li class="d-flex mb-0"><i class="fa fa-check-circle id-color me-2 mt-1"></i><span><strong>Systems Engineering &amp; Integration</strong> &mdash; JADC2-compatible architecture, enterprise solutions</span></li>
+	                                                        <li class="d-flex mb-0"><i class="fa fa-check-circle id-color me-2 mt-1"></i><span><strong>Systems Engineering &amp; Integration</strong> &mdash; Joint All-Domain Command and Control (JADC2)-compatible architecture, enterprise solutions</span></li>
                                                     </ul>
                                                 </div>
 

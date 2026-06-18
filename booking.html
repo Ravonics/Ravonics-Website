@@ -172,7 +172,10 @@
                             <div class="row g-4 mb-4">
                                 <div class="col-lg-12">
                                     <h3>Federal Capability Engagement</h3>
-                                    <p class="op-7">Use this form to submit an RFP, RFI, Sources Sought, or general capability-engagement request. Ravonics LLC — SAM.gov registered (Active), UEI YCBDVKN1A9G7, CAGE 20DS8 — reviews all submissions and responds within one business day. Upload solicitation documents or supporting materials below. All submissions are treated as Unclassified / For Official Use Only (FOUO) unless otherwise noted in your scope summary.</p>
+                                    <p class="op-7">Use this form to submit an RFP, RFI, Sources Sought, or general capability-engagement request. Ravonics LLC — SAM.gov registered (Active), UEI YCBDVKN1A9G7, CAGE 20DS8 — reviews all submissions and responds within one business day.</p>
+                                    <div class="alert alert-warning mb-0" role="note">
+                                        Do not submit classified, export-controlled, or sensitive mission information through this public website form. Keep the scope summary and attachments unclassified.
+                                    </div>
                                 </div>
                             </div>
 
@@ -185,12 +188,12 @@
                                     </div>
 
                                     <div class="col-md-8">
-                                        <h5 id="lbl_org_name">Organization / Agency Name <span aria-hidden="true">*</span></h5>
-                                        <input type="text" name="org_name" id="org_name" class="form-control" placeholder="e.g., U.S. Army Corps of Engineers" aria-labelledby="lbl_org_name" required autocomplete="organization">
+                                        <label id="lbl_org_name" for="org_name" class="form-label">Organization / Agency Name <span aria-hidden="true">*</span></label>
+                                        <input type="text" name="org_name" id="org_name" class="form-control" placeholder="e.g., U.S. Army Corps of Engineers" required autocomplete="organization">
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 id="lbl_agency_type">Agency / Org Type <span aria-hidden="true">*</span></h5>
-                                        <select name="agency_type" id="agency_type" class="form-control" aria-labelledby="lbl_agency_type" required>
+                                        <label id="lbl_agency_type" for="agency_type" class="form-label">Agency / Org Type <span aria-hidden="true">*</span></label>
+                                        <select name="agency_type" id="agency_type" class="form-control" required>
                                             <option value="">— Select —</option>
                                             <option value="Federal Civilian Agency">Federal Civilian Agency</option>
                                             <option value="DoD or Military">DoD or Military</option>
@@ -209,20 +212,20 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5 id="lbl_contact_name">Full Name <span aria-hidden="true">*</span></h5>
-                                        <input type="text" name="contact_name" id="contact_name" class="form-control" placeholder="Full Name" aria-labelledby="lbl_contact_name" required autocomplete="name">
+                                        <label id="lbl_contact_name" for="contact_name" class="form-label">Full Name <span aria-hidden="true">*</span></label>
+                                        <input type="text" name="contact_name" id="contact_name" class="form-control" placeholder="Full Name" required autocomplete="name">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_contact_position">Title / Role</h5>
-                                        <input type="text" name="contact_position" id="contact_position" class="form-control" placeholder="e.g., Contracting Officer, Program Manager" aria-labelledby="lbl_contact_position" autocomplete="organization-title">
+                                        <label id="lbl_contact_position" for="contact_position" class="form-label">Title / Role</label>
+                                        <input type="text" name="contact_position" id="contact_position" class="form-control" placeholder="e.g., Contracting Officer, Program Manager" autocomplete="organization-title">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_contact_email">Email <span aria-hidden="true">*</span></h5>
-                                        <input type="email" name="contact_email" id="contact_email" class="form-control" placeholder="Government or corporate email" aria-labelledby="lbl_contact_email" required autocomplete="email">
+                                        <label id="lbl_contact_email" for="contact_email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                                        <input type="email" name="contact_email" id="contact_email" class="form-control" placeholder="Government or corporate email" required autocomplete="email">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_contact_phone">Phone</h5>
-                                        <input type="tel" name="contact_phone" id="contact_phone" class="form-control" placeholder="Direct line" aria-labelledby="lbl_contact_phone" autocomplete="tel">
+                                        <label id="lbl_contact_phone" for="contact_phone" class="form-label">Phone</label>
+                                        <input type="tel" name="contact_phone" id="contact_phone" class="form-control" placeholder="Direct line" autocomplete="tel">
                                     </div>
 
                                     <div class="spacer-single"></div>
@@ -233,12 +236,12 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5 id="lbl_solicitation_number">Solicitation / RFP / RFI Number</h5>
-                                        <input type="text" name="solicitation_number" id="solicitation_number" class="form-control" placeholder="e.g., W911QY-26-R-0042 (leave blank if N/A)" aria-labelledby="lbl_solicitation_number">
+                                        <label id="lbl_solicitation_number" for="solicitation_number" class="form-label">Solicitation / RFP / RFI Number</label>
+                                        <input type="text" name="solicitation_number" id="solicitation_number" class="form-control" placeholder="e.g., W911QY-26-R-0042 (leave blank if N/A)">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_contract_vehicle">Contract Vehicle</h5>
-                                        <select name="contract_vehicle" id="contract_vehicle" class="form-control" aria-labelledby="lbl_contract_vehicle">
+                                        <label id="lbl_contract_vehicle" for="contract_vehicle" class="form-label">Contract Vehicle</label>
+                                        <select name="contract_vehicle" id="contract_vehicle" class="form-control">
                                             <option value="">— Select or N/A —</option>
                                             <option value="GSA Schedule">GSA Schedule</option>
                                             <option value="GWAC">GWAC</option>
@@ -251,12 +254,12 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_naics_code">NAICS Code</h5>
-                                        <input type="text" name="naics_code" id="naics_code" class="form-control" placeholder="e.g., 541512" aria-labelledby="lbl_naics_code">
+                                        <label id="lbl_naics_code" for="naics_code" class="form-label">NAICS Code</label>
+                                        <input type="text" name="naics_code" id="naics_code" class="form-control" placeholder="e.g., 541512">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_set_aside">Set-Aside Type</h5>
-                                        <select name="set_aside" id="set_aside" class="form-control" aria-labelledby="lbl_set_aside">
+                                        <label id="lbl_set_aside" for="set_aside" class="form-label">Set-Aside Type</label>
+                                        <select name="set_aside" id="set_aside" class="form-control">
                                             <option value="">— Select —</option>
                                             <option value="Full and Open Competition">Full and Open Competition</option>
                                             <option value="Small Business Set-Aside">Small Business Set-Aside</option>
@@ -344,18 +347,22 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                        <h5 id="lbl_budget_range">Estimated Contract Value <span aria-hidden="true">*</span></h5>
-                                        <select name="budget_range" id="budget_range" class="form-control" aria-labelledby="lbl_budget_range" required>
+                                        <label id="lbl_budget_range" for="budget_range" class="form-label">Estimated Contract Value <span aria-hidden="true">*</span></label>
+                                        <select name="budget_range" id="budget_range" class="form-control" required>
                                             <option value="">— Select —</option>
-                                            <option value="$0–$25M">$0 – $25M</option>
+                                            <option value="Under $250K">Under $250K</option>
+                                            <option value="$250K–$1M">$250K – $1M</option>
+                                            <option value="$1M–$5M">$1M – $5M</option>
+                                            <option value="$5M–$25M">$5M – $25M</option>
                                             <option value="$25M–$50M">$25M – $50M</option>
                                             <option value="$50M–$100M">$50M – $100M</option>
                                             <option value="$100M+">$100M+</option>
+                                            <option value="Undisclosed / TBD">Undisclosed / TBD</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 id="lbl_staffing_range">Staff / Personnel Needed</h5>
-                                        <select name="staffing_range" id="staffing_range" class="form-control" aria-labelledby="lbl_staffing_range">
+                                        <label id="lbl_staffing_range" for="staffing_range" class="form-label">Staff / Personnel Needed</label>
+                                        <select name="staffing_range" id="staffing_range" class="form-control">
                                             <option value="">— Select —</option>
                                             <option value="1–5">1 – 5</option>
                                             <option value="6–15">6 – 15</option>
@@ -365,8 +372,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <h5 id="lbl_equipment_needs">Equipment / Hardware Needs</h5>
-                                        <select name="equipment_needs" id="equipment_needs" class="form-control" aria-labelledby="lbl_equipment_needs">
+                                        <label id="lbl_equipment_needs" for="equipment_needs" class="form-label">Equipment / Hardware Needs</label>
+                                        <select name="equipment_needs" id="equipment_needs" class="form-control">
                                             <option value="">— Select —</option>
                                             <option value="None">None</option>
                                             <option value="Some">Some</option>
@@ -376,12 +383,12 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <h5 id="lbl_period_of_performance">Period of Performance / Desired Start</h5>
-                                        <input type="text" name="period_of_performance" id="period_of_performance" class="form-control" placeholder="e.g., 18 months, starting Q3 FY2026" aria-labelledby="lbl_period_of_performance">
+                                        <label id="lbl_period_of_performance" for="period_of_performance" class="form-label">Period of Performance / Desired Start</label>
+                                        <input type="text" name="period_of_performance" id="period_of_performance" class="form-control" placeholder="e.g., 18 months, starting Q3 FY2026">
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 id="lbl_proposal_due_date">Proposal / Response Due Date</h5>
-                                        <input type="date" name="proposal_due_date" id="proposal_due_date" class="form-control" aria-labelledby="lbl_proposal_due_date">
+                                        <label id="lbl_proposal_due_date" for="proposal_due_date" class="form-label">Proposal / Response Due Date</label>
+                                        <input type="date" name="proposal_due_date" id="proposal_due_date" class="form-control">
                                     </div>
 
                                     <div class="spacer-single"></div>
@@ -391,8 +398,8 @@
                                         <h3>Project / Scope Summary</h3>
                                     </div>
                                     <div class="col-md-12">
-                                        <h5 id="lbl_notes">Describe your requirement, mission context, or capability gap. <span aria-hidden="true">*</span></h5>
-                                        <textarea name="notes" id="notes" class="form-control" rows="6" placeholder="Provide a high-level description of the scope, mission need, or technical challenge. Classified details should not be included — describe the engagement at the Unclassified level." aria-labelledby="lbl_notes" required></textarea>
+                                        <label id="lbl_notes" for="notes" class="form-label">Describe your requirement, mission context, or capability gap. <span aria-hidden="true">*</span></label>
+                                        <textarea name="notes" id="notes" class="form-control" rows="6" placeholder="Provide a high-level description of the scope, mission need, or technical challenge. Classified details should not be included — describe the engagement at the Unclassified level." required></textarea>
                                     </div>
 
                                     <div class="spacer-single"></div>
@@ -404,8 +411,8 @@
                                     </div>
 
                                     <div class="col-md-12">
-                                        <h5 id="lbl_documents">Upload Documents (optional)</h5>
-                                        <input type="file" name="documents" id="documents" class="form-control" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.csv" aria-labelledby="lbl_documents" aria-describedby="doc_hint">
+                                        <label id="lbl_documents" for="documents" class="form-label">Upload Documents (optional)</label>
+                                        <input type="file" name="documents" id="documents" class="form-control" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.csv" aria-describedby="doc_hint">
                                         <div id="doc_hint" class="op-6 fs-13 mt-1">PDF, DOCX, XLSX, TXT, CSV — max 5 MB per file, 15 MB total</div>
                                         <div id="doc_file_list" class="mt-2 op-7 fs-13"></div>
                                         <div id="doc_error" class="alert alert-warning mt-2" style="display:none;"></div>
@@ -591,37 +598,21 @@
 
     <script>
     /**
-     * Ravonics RFP / RFI Intake — D365 Lead Intake via Azure Logic App
+     * Ravonics RFP / RFI Intake
      *
-     * POSTs a flat JSON payload (+ optional base64 attachments array) to the
-     * Azure Logic App trigger URL.  The Logic App maps fields to a Dataverse
-     * lead and returns HTTP 200 {"status":"received"} on success.
+     * Submits through a deployment-provided endpoint when available:
+     *   window.RAVONICS_FORM_ENDPOINTS = { booking: "https://..." }
      *
-     * CALLBACK_URL: same Logic App trigger as before — the existing lead-create
-     * path is preserved; the Logic App now also branches to create Dataverse
-     * annotation records when attachments are present.
-     *
-     * Required fields validated client-side before dispatch:
-     *   org_name, agency_type, contact_name, contact_email,
-     *   budget_range, notes, agree_contact (must be checked)
-     *
-     * File upload rules (enforced in JS):
-     *   - Each file: max 5 MB
-     *   - All files combined: max 15 MB
-     *   - Allowed types: PDF, DOC, DOCX, XLS, XLSX, TXT, CSV
-     *   - Files are base64-encoded in the browser and sent as
-     *     attachments: [{filename, contentType, contentBase64}, …]
-     *   - If encoding fails or size limit is exceeded, the user is
-     *     directed to email documents separately — submission proceeds.
+     * No endpoint secrets are embedded in this public static page. If an
+     * endpoint is not configured, the form opens a prefilled email so the
+     * intake path still works without exposing a callback signature.
      */
     (function () {
         'use strict';
 
-        // Logic App trigger URL (public callback — intentional, per org pattern)
-        var CALLBACK_URL = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs';
-
         var FILE_MAX_BYTES  = 5  * 1024 * 1024;  // 5 MB per file
         var TOTAL_MAX_BYTES = 15 * 1024 * 1024;  // 15 MB total
+        var defaultSuccessHtml = '';
 
         var ALLOWED_TYPES = [
             'application/pdf',
@@ -646,18 +637,75 @@
 
         function getEl(id) { return document.getElementById(id); }
 
-        function showMessage(type, text) {
+        function escapeHtml(value) {
+            var div = document.createElement('div');
+            div.textContent = value == null ? '' : String(value);
+            return div.innerHTML;
+        }
+
+        function getBookingEndpoint() {
+            if (window.RAVONICS_FORM_ENDPOINTS && window.RAVONICS_FORM_ENDPOINTS.booking) {
+                return String(window.RAVONICS_FORM_ENDPOINTS.booking);
+            }
+            return '';
+        }
+
+        function buildBookingMailto(payload, hasFiles) {
+            var rows = [
+                ['Organization / Agency', payload.org_name],
+                ['Agency / Org Type', payload.agency_type],
+                ['Contact Name', payload.contact_name],
+                ['Title / Role', payload.contact_position],
+                ['Email', payload.contact_email],
+                ['Phone', payload.contact_phone],
+                ['Solicitation / RFP / RFI Number', payload.solicitation_number],
+                ['Contract Vehicle', payload.contract_vehicle],
+                ['NAICS Code', payload.naics_code],
+                ['Set-Aside Type', payload.set_aside],
+                ['Areas of Interest', payload.interests],
+                ['Estimated Contract Value', payload.budget_range],
+                ['Staff / Personnel Needed', payload.staffing_range],
+                ['Equipment / Hardware Needs', payload.equipment_needs],
+                ['Period of Performance / Desired Start', payload.period_of_performance],
+                ['Proposal / Response Due Date', payload.proposal_due_date],
+                ['Project / Scope Summary', payload.notes]
+            ];
+
+            var lines = [
+                'Website RFP/RFI intake request',
+                '',
+                'Do not include classified or export-controlled details in this email.',
+                ''
+            ];
+
+            rows.forEach(function (row) {
+                lines.push(row[0] + ': ' + (row[1] || 'Not provided'));
+            });
+
+            if (hasFiles) {
+                lines.push('');
+                lines.push('Supporting documents: selected on the website. Please attach them to this email before sending.');
+            }
+
+            return 'mailto:contact@ravonics.com?subject=' +
+                encodeURIComponent('Website RFP/RFI Intake - ' + (payload.org_name || 'New Request')) +
+                '&body=' + encodeURIComponent(lines.join('\n'));
+        }
+
+        function showMessage(type, html) {
             getEl('success_message').style.display    = 'none';
             getEl('error_message').style.display      = 'none';
             getEl('validation_message').style.display = 'none';
 
             if (type === 'success') {
-                getEl('success_message').style.display = 'block';
+                var successEl = getEl('success_message');
+                successEl.innerHTML = typeof html === 'string' ? html : defaultSuccessHtml;
+                successEl.style.display = 'block';
             } else if (type === 'error') {
                 getEl('error_message').style.display = 'block';
             } else if (type === 'validation') {
                 var el = getEl('validation_message');
-                el.innerHTML = text;
+                el.innerHTML = html;
                 el.style.display = 'block';
             }
         }
@@ -697,7 +745,7 @@
                 } else if (f.size > FILE_MAX_BYTES) {
                     errors.push(f.name + ' exceeds 5 MB limit (' + sizeKb + ' KB)');
                 } else {
-                    lines.push('<span>' + f.name + ' (' + sizeKb + ' KB)</span>');
+                    lines.push('<span>' + escapeHtml(f.name) + ' (' + sizeKb + ' KB)</span>');
                 }
             }
 
@@ -709,7 +757,7 @@
 
             if (errors.length > 0) {
                 errEl.innerHTML = '<strong>File issue(s):</strong><ul style="margin:4px 0 0 0;padding-left:18px;">' +
-                    errors.map(function (e) { return '<li>' + e + '</li>'; }).join('') +
+                    errors.map(function (e) { return '<li>' + escapeHtml(e) + '</li>'; }).join('') +
                     '</ul>';
                 errEl.style.display = 'block';
                 return false;
@@ -788,6 +836,7 @@
             var submitBtn      = getEl('rfp_submit_btn');
             var originalBtnTxt = submitBtn ? submitBtn.textContent.trim() : 'Submit Engagement Request';
             var fileInput      = getEl('documents');
+            defaultSuccessHtml = getEl('success_message').innerHTML;
 
             // Live file validation feedback
             if (fileInput) {
@@ -824,7 +873,7 @@
 
                 // Email format
                 var emailEl = getEl('contact_email');
-                if (emailEl && emailEl.value.trim() && emailEl.value.indexOf('@') === -1) {
+                if (emailEl && emailEl.value.trim() && !emailEl.checkValidity()) {
                     missing.push('Email (invalid format)');
                     emailEl.classList.add('is-invalid');
                 }
@@ -845,7 +894,7 @@
                     showMessage('validation',
                         '<strong>Please complete the following required fields:</strong>' +
                         '<ul style="margin:6px 0 0 0;padding-left:20px;">' +
-                        missing.map(function (m) { return '<li>' + m + '</li>'; }).join('') +
+                        missing.map(function (m) { return '<li>' + escapeHtml(m) + '</li>'; }).join('') +
                         '</ul>'
                     );
                     var firstInvalid = form.querySelector('.is-invalid');
@@ -871,9 +920,11 @@
                     submitBtn.textContent = 'Submitting…';
                 }
 
-                // ── Encode files, then POST ─────────────────────────────────
+                // Encode files only when a configured endpoint can receive them.
+                var endpoint = getBookingEndpoint();
+                var hasFiles = !!(fileInput && fileInput.files.length > 0);
                 var filePromises = [];
-                if (fileInput && fileInput.files.length > 0) {
+                if (endpoint && hasFiles) {
                     for (var i = 0; i < fileInput.files.length; i++) {
                         filePromises.push(readFileAsBase64(fileInput.files[i]));
                     }
@@ -884,14 +935,36 @@
                         if (attachments.length > 0) {
                             payload['attachments'] = attachments;
                         }
-                        return fetch(CALLBACK_URL, {
+                        if (!endpoint) {
+                            return {
+                                ok: true,
+                                mailto: buildBookingMailto(payload, hasFiles),
+                                hasFiles: hasFiles
+                            };
+                        }
+                        return fetch(endpoint, {
                             method:  'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body:    JSON.stringify(payload)
                         });
                     })
                     .then(function (res) {
-                        if (res.ok) {
+                        if (res && res.mailto) {
+                            window.location.href = res.mailto;
+                            showMessage(
+                                'success',
+                                '<strong>Your email client has been opened.</strong> Please send the generated intake message' +
+                                (res.hasFiles ? ' and attach the selected supporting documents' : '') +
+                                '. Ravonics will respond within one business day.'
+                            );
+                            form.reset();
+                            getEl('doc_file_list').innerHTML = '';
+                            if (submitBtn) {
+                                submitBtn.disabled    = false;
+                                submitBtn.textContent = originalBtnTxt;
+                            }
+                            getEl('success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else if (res && res.ok) {
                             showMessage('success');
                             form.reset();
                             getEl('doc_file_list').innerHTML = '';
@@ -901,7 +974,7 @@
                             }
                             getEl('success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
                         } else {
-                            throw new Error('HTTP ' + res.status);
+                            throw new Error('HTTP ' + (res ? res.status : 'unknown'));
                         }
                     })
                     .catch(function (err) {

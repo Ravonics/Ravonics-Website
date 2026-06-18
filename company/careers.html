@@ -552,30 +552,46 @@
 
     <script>
     /**
-     * Ravonics Careers Application Form — D365 Lead Intake
+     * Ravonics Careers Application Form
      *
-     * Mirrors the booking.html / contact.html integration pattern.
-     * POSTs a flat JSON payload to the Azure Logic App trigger URL.
-     * The Logic App maps fields to a Dataverse lead record and returns
-     * HTTP 200 {"status":"received"} on success.
+     * Submits through a deployment-provided endpoint when available:
+     *   window.RAVONICS_FORM_ENDPOINTS = { careers: "https://..." }
      *
-     * Applicant routing is differentiated from consultation leads via:
-     *   subject:        'Website Careers Application'
-     *   leadsourcecode: 'Website Careers'
-     *   caseType:       'career-application'
-     *   source:         'ravonics.com/careers'
-     *   jobtitle:       <role selected>
-     *
-     * On network failure the form falls back to a pre-filled mailto: so no
+     * No endpoint secrets are embedded in this public static page. If an
+     * endpoint is not configured, the form opens a prefilled email so no
      * application is silently lost.
      */
     (function () {
         'use strict';
 
-        // Same Logic App as booking.html / contact.html; subject + caseType tag routes applicants
-        var CAREERS_ENDPOINT = 'https://prod-52.eastus.logic.azure.com:443/workflows/fb6f71d5a0bb4877ae442dbbcfe5b1eb/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs';
+        var defaultSuccessHtml = '';
 
         function getEl(id) { return document.getElementById(id); }
+
+        function escapeHtml(value) {
+            var div = document.createElement('div');
+            div.textContent = value == null ? '' : String(value);
+            return div.innerHTML;
+        }
+
+        function getCareersEndpoint() {
+            if (window.RAVONICS_FORM_ENDPOINTS && window.RAVONICS_FORM_ENDPOINTS.careers) {
+                return String(window.RAVONICS_FORM_ENDPOINTS.careers);
+            }
+            return '';
+        }
+
+        function buildCareersMailto(payload) {
+            var subject = encodeURIComponent('Job Application: ' + (payload.jobtitle || 'Open Position'));
+            var body = encodeURIComponent(
+                'Name: ' + payload.firstname + ' ' + payload.lastname + '\n' +
+                'Email: ' + payload.emailaddress1 + '\n' +
+                (payload.telephone1 ? 'Phone: ' + payload.telephone1 + '\n' : '') +
+                'Position: ' + (payload.jobtitle || '') + '\n' +
+                '\n' + payload.description
+            );
+            return 'mailto:contact@ravonics.com?subject=' + subject + '&body=' + body;
+        }
 
         function showMsg(type, html) {
             getEl('careers_validation_message').style.display = 'none';
@@ -586,7 +602,9 @@
                 el.innerHTML = html;
                 el.style.display = 'block';
             } else if (type === 'success') {
-                getEl('careers_success_message').style.display = 'block';
+                var successEl = getEl('careers_success_message');
+                successEl.innerHTML = typeof html === 'string' ? html : defaultSuccessHtml;
+                successEl.style.display = 'block';
             } else if (type === 'error') {
                 getEl('careers_error_message').style.display = 'block';
             }
@@ -629,6 +647,7 @@
             if (!form) { return; }
 
             var submitBtn = getEl('careers_submit');
+            defaultSuccessHtml = getEl('careers_success_message').innerHTML;
 
             form.addEventListener('input', function (e) {
                 if (e.target.classList.contains('is-invalid')) {
@@ -660,7 +679,7 @@
                     lastnameEl.classList.add('is-invalid');
                 } else { lastnameEl.classList.remove('is-invalid'); }
 
-                if (!emailEl.value.trim() || emailEl.value.indexOf('@') === -1) {
+                if (!emailEl.value.trim() || !emailEl.checkValidity()) {
                     missing.push('Email (valid address required)');
                     emailEl.classList.add('is-invalid');
                 } else { emailEl.classList.remove('is-invalid'); }
@@ -678,7 +697,7 @@
                     showMsg('validation',
                         '<strong>Please complete the following required fields:</strong>' +
                         '<ul style="margin:6px 0 0 0;padding-left:20px;">' +
-                        missing.map(function (m) { return '<li>' + m + '</li>'; }).join('') +
+                        missing.map(function (m) { return '<li>' + escapeHtml(m) + '</li>'; }).join('') +
                         '</ul>'
                     );
                     var firstInvalid = form.querySelector('.is-invalid');
@@ -721,14 +740,30 @@
                     submitBtn.textContent = 'Submitting…';
                 }
 
-                // ── POST to D365 Logic App ──────────────────────────────────
-                fetch(CAREERS_ENDPOINT, {
-                    method:  'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body:    JSON.stringify(payload)
-                })
+                var endpoint = getCareersEndpoint();
+                var request = endpoint
+                    ? fetch(endpoint, {
+                        method:  'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body:    JSON.stringify(payload)
+                    })
+                    : Promise.resolve({ ok: true, mailto: buildCareersMailto(payload) });
+
+                request
                 .then(function (res) {
-                    if (res.ok) {
+                    if (res && res.mailto) {
+                        window.location.href = res.mailto;
+                        showMsg(
+                            'success',
+                            '<strong>Your email client has been opened.</strong> Please send the generated application message so Ravonics receives it.'
+                        );
+                        form.reset();
+                        if (submitBtn) {
+                            submitBtn.disabled    = false;
+                            submitBtn.textContent = 'Submit Application';
+                        }
+                        getEl('careers_success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (res && res.ok) {
                         showMsg('success');
                         form.reset();
                         if (submitBtn) {
@@ -737,28 +772,16 @@
                         }
                         getEl('careers_success_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
                     } else {
-                        throw new Error('HTTP ' + res.status);
+                        throw new Error('HTTP ' + (res ? res.status : 'unknown'));
                     }
                 })
                 .catch(function (err) {
                     console.error('Careers application submission error:', err);
-
-                    // ── Mailto fallback: pre-fill an email so no application is lost ──
                     try {
-                        var subject  = encodeURIComponent('Job Application: ' + (role || 'Open Position'));
-                        var body     = encodeURIComponent(
-                            'Name: ' + firstname + ' ' + lastname + '\n' +
-                            'Email: ' + email + '\n' +
-                            (phone ? 'Phone: ' + phone + '\n' : '') +
-                            'Position: ' + (role || '') + '\n' +
-                            (linkedin ? 'LinkedIn / CV: ' + linkedin + '\n' : '') +
-                            '\n' + coverletter
-                        );
-                        window.location.href = 'mailto:contact@ravonics.com?subject=' + subject + '&body=' + body;
+                        window.location.href = buildCareersMailto(payload);
                     } catch (mailtoErr) {
                         console.error('Mailto fallback failed:', mailtoErr);
                     }
-
                     showMsg('error');
                     if (submitBtn) {
                         submitBtn.disabled    = false;
