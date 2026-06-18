@@ -49,6 +49,8 @@ FORBIDDEN_FILES=(
   "website-strategy-recommendations.html"
   ".image-runner.log"
   "README.md"
+  "issue-review.html"
+  "issue-review-state.json"
 )
 
 # Forbidden directory trees (any file inside these is forbidden)
