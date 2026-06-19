@@ -10,8 +10,8 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="A technical architecture guide to implementing NIST PQC standards — ML-KEM, ML-DSA, and SLH-DSA — across federal communications and data-at-rest: crypto-agility design, hybrid modes, key management, and phased migration sequencing." name="description" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="A technical architecture guide to implementing NIST PQC standards (ML-KEM, ML-DSA, and SLH-DSA) across federal communications and data-at-rest: crypto-agility design, hybrid modes, key management, and phased migration sequencing." name="description" >
     <meta content="post-quantum cryptography, PQC architecture, ML-KEM, CRYSTALS-Kyber, ML-DSA, CRYSTALS-Dilithium, SLH-DSA, crypto-agility, hybrid cryptography, federal encryption, key management, NIST FIPS 203, NIST FIPS 204, NIST FIPS 205, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/insights/pqc-federal-architecture.html" >
@@ -20,14 +20,14 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ravonics.com/insights/pqc-federal-architecture.html">
     <meta property="og:title" content="Post-Quantum Cryptography Architecture for Federal Systems | Ravonics">
-    <meta property="og:description" content="How to implement NIST PQC standards — ML-KEM, ML-DSA, SLH-DSA — across federal systems: crypto-agility design, hybrid classical+PQC modes, key management, and migration sequencing. A Ravonics implementation architecture perspective.">
+    <meta property="og:description" content="How to implement NIST PQC standards (ML-KEM, ML-DSA, SLH-DSA) across federal systems: crypto-agility design, hybrid classical+PQC modes, key management, and migration sequencing. A Ravonics implementation architecture perspective.">
     <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ravonics.com/insights/pqc-federal-architecture.html">
     <meta property="twitter:title" content="Post-Quantum Cryptography Architecture for Federal Systems | Ravonics">
-    <meta property="twitter:description" content="How to implement NIST PQC standards — ML-KEM, ML-DSA, SLH-DSA — across federal systems: crypto-agility design, hybrid classical+PQC modes, key management, and migration sequencing. A Ravonics implementation architecture perspective.">
+    <meta property="twitter:description" content="How to implement NIST PQC standards (ML-KEM, ML-DSA, SLH-DSA) across federal systems: crypto-agility design, hybrid classical+PQC modes, key management, and migration sequencing. A Ravonics implementation architecture perspective.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
 
     <!-- Schema.org Structured Data -->
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Post-Quantum Cryptography Architecture for Federal Systems",
-      "description": "A technical architecture guide to implementing NIST PQC standards — ML-KEM, ML-DSA, and SLH-DSA — across federal communications and data-at-rest: crypto-agility design, hybrid modes, key management, and phased migration sequencing.",
+      "description": "A technical architecture guide to implementing NIST PQC standards (ML-KEM, ML-DSA, and SLH-DSA) across federal communications and data-at-rest: crypto-agility design, hybrid modes, key management, and phased migration sequencing.",
       "author": {
         "@type": "Organization",
         "name": "Ravonics"
@@ -200,60 +200,60 @@
                                 </p>
 
                                 <p>
-                                    The National Institute of Standards and Technology finalized its first post-quantum cryptography standards in 2024: FIPS 203 (ML-KEM, the key encapsulation mechanism based on CRYSTALS-Kyber), FIPS 204 (ML-DSA, the digital signature scheme based on CRYSTALS-Dilithium), and FIPS 205 (SLH-DSA, a stateless hash-based signature alternative). For federal agencies and defense contractors, these publications shift the conversation from "should we prepare?" to "how do we build systems that actually implement these algorithms correctly, safely, and at scale?" The threat framing — harvest-now-decrypt-later, CRQC timeline uncertainty — is well established. What deserves focused attention now is the engineering architecture required to make PQC migration tractable.
+                                    The National Institute of Standards and Technology finalized its first post-quantum cryptography standards in 2024: FIPS 203 (ML-KEM, the key encapsulation mechanism based on CRYSTALS-Kyber), FIPS 204 (ML-DSA, the digital signature scheme based on CRYSTALS-Dilithium), and FIPS 205 (SLH-DSA, a stateless hash-based signature alternative). For federal agencies and defense contractors, these publications shift the conversation from "should we prepare?" to "how do we build systems that actually implement these algorithms correctly, safely, and at scale?" The threat framing (harvest-now-decrypt-later, CRQC timeline uncertainty) is well established. What deserves focused attention now is the engineering architecture required to make PQC migration tractable.
                                 </p>
 
                                 <p>
-                                    Federal cryptographic infrastructure spans an enormous surface: TLS sessions, VPN tunnels, code-signing pipelines, PKI hierarchies, data-at-rest encryption, hardware security modules, and embedded firmware across platforms and classification levels. Each of these has different upgrade cycles, different key-lifecycle constraints, and different tolerance for latency or bandwidth overhead. A successful PQC migration is not a library swap — it is a sequenced architectural program that must be planned and executed with care. The sections below outline the implementation architecture pillars Ravonics applies when assessing this challenge for federal programs.
+                                    Federal cryptographic infrastructure spans an enormous surface: TLS sessions, VPN tunnels, code-signing pipelines, PKI hierarchies, data-at-rest encryption, hardware security modules, and embedded firmware across platforms and classification levels. Each of these has different upgrade cycles, different key-lifecycle constraints, and different tolerance for latency or bandwidth overhead. A successful PQC migration is not a library swap; it is a sequenced architectural program that must be planned and executed with care. The sections below outline the implementation architecture pillars Ravonics applies when assessing this challenge for federal programs.
                                 </p>
 
                                 <ol class="ol-style-1">
                                   <li>
                                     <h4>Crypto-Agility by Design</h4>
                                     <p>
-                                      Crypto-agility is the property that lets a system negotiate, swap, or upgrade its cryptographic algorithms without requiring a full re-architecture of the surrounding application. Achieving it means abstracting algorithm selection behind well-defined interfaces — a key encapsulation provider, a signature provider — so that substituting ML-KEM for ECDH, or ML-DSA for ECDSA, requires changing a configuration and a library binding, not rewriting protocol handlers. Systems that hardcode algorithm identifiers into wire formats or database schemas sacrifice agility. Federal programs with long acquisition and sustainment timelines should treat crypto-agility as a first-class architectural requirement, not a retrofit, because the algorithm landscape will continue to evolve as cryptanalysis matures.
+                                      Crypto-agility is the property that lets a system negotiate, swap, or upgrade its cryptographic algorithms without requiring a full re-architecture of the surrounding application. Achieving it means abstracting algorithm selection behind well-defined interfaces (a key encapsulation provider, a signature provider) so that substituting ML-KEM for ECDH, or ML-DSA for ECDSA, requires changing a configuration and a library binding, not rewriting protocol handlers. Systems that hardcode algorithm identifiers into wire formats or database schemas sacrifice agility. Federal programs with long acquisition and sustainment timelines should treat crypto-agility as a first-class architectural requirement, not a retrofit, because the algorithm landscape will continue to evolve as cryptanalysis matures.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Hybrid Classical + PQC Modes</h4>
                                     <p>
-                                      Until ML-KEM and ML-DSA accumulate a longer field history, the recommended transition posture for high-assurance federal use is a hybrid mode: combining a classical algorithm (e.g., ECDH P-384 or X25519) with its PQC counterpart in a single key agreement, so that security is maintained if either primitive is broken. NSA's CNSA 2.0 guidance and IETF drafts for hybrid TLS and SSH both reflect this approach. The architectural implication is that protocol stacks must support composite key material — larger handshake payloads and more complex key derivation — while preserving interoperability with endpoints that cannot yet negotiate PQC. Graceful fallback logic and clear minimum-version policy are necessary to avoid silent downgrade.
+                                      Until ML-KEM and ML-DSA accumulate a longer field history, the recommended transition posture for high-assurance federal use is a hybrid mode: combining a classical algorithm (e.g., ECDH P-384 or X25519) with its PQC counterpart in a single key agreement, so that security is maintained if either primitive is broken. NSA's CNSA 2.0 guidance and IETF drafts for hybrid TLS and SSH both reflect this approach. The architectural implication is that protocol stacks must support composite key material (larger handshake payloads and more complex key derivation) while preserving interoperability with endpoints that cannot yet negotiate PQC. Graceful fallback logic and clear minimum-version policy are necessary to avoid silent downgrade.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Key Management Infrastructure</h4>
                                     <p>
-                                      ML-KEM and ML-DSA keys differ materially from their classical predecessors in size: ML-KEM-768 public keys are 1,184 bytes, ML-DSA-65 public keys are 1,952 bytes, and signatures are correspondingly larger. Key management systems — certificate authorities, HSMs, PKI directories, key vaults — must be assessed for whether they can store, distribute, and validate keys and signatures at these sizes within existing bandwidth and storage budgets. Hardware security modules require firmware or replacement if they do not support the new algorithms natively. PKI hierarchies that issue long-lived certificates must plan for re-issuance windows that align with certificate lifetimes and mission operational calendars.
+                                      ML-KEM and ML-DSA keys differ materially from their classical predecessors in size: ML-KEM-768 public keys are 1,184 bytes, ML-DSA-65 public keys are 1,952 bytes, and signatures are correspondingly larger. Key management systems (certificate authorities, HSMs, PKI directories, key vaults) must be assessed for whether they can store, distribute, and validate keys and signatures at these sizes within existing bandwidth and storage budgets. Hardware security modules require firmware or replacement if they do not support the new algorithms natively. PKI hierarchies that issue long-lived certificates must plan for re-issuance windows that align with certificate lifetimes and mission operational calendars.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Cryptographic Inventory and Asset Mapping</h4>
                                     <p>
-                                      Migration sequencing requires knowing precisely where classical public-key cryptography lives across the enterprise. An effective cryptographic inventory catalogs every system, protocol, library version, and data store that relies on RSA, ECDSA, ECDH, or Diffie-Hellman for confidentiality or integrity. Automated scanning tools can surface many uses, but embedded firmware and legacy middleware often require manual review. The inventory output — an asset map with algorithm, key length, certificate authority, and renewal cycle — becomes the migration backlog and the basis for risk-tiered sequencing. High-sensitivity data channels and long-retention encrypted archives should be prioritized; internal low-sensitivity services can follow on a slower schedule.
+                                      Migration sequencing requires knowing precisely where classical public-key cryptography lives across the enterprise. An effective cryptographic inventory catalogs every system, protocol, library version, and data store that relies on RSA, ECDSA, ECDH, or Diffie-Hellman for confidentiality or integrity. Automated scanning tools can surface many uses, but embedded firmware and legacy middleware often require manual review. The inventory output (an asset map with algorithm, key length, certificate authority, and renewal cycle) becomes the migration backlog and the basis for risk-tiered sequencing. High-sensitivity data channels and long-retention encrypted archives should be prioritized; internal low-sensitivity services can follow on a slower schedule.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Phased Migration Sequencing</h4>
                                     <p>
-                                      Attempting a simultaneous enterprise-wide cutover to PQC is not realistic for federal programs. A phased sequence — typically new internet-facing TLS endpoints first, then internal PKI, then VPN and remote-access infrastructure, then application-layer signing, then data-at-rest re-encryption — allows teams to gain operational confidence with each algorithm in low-risk contexts before applying it to high-consequence channels. Phases should be gated: each phase requires proof of HSM support, interoperability testing against partner systems, and rollback capability before proceeding. OMB and NSM-10 guidance provide policy timelines; program offices should map those timelines against their own asset inventory to produce a credible sequenced plan.
+                                      Attempting a simultaneous enterprise-wide cutover to PQC is not realistic for federal programs. A phased sequence (typically new internet-facing TLS endpoints first, then internal PKI, then VPN and remote-access infrastructure, then application-layer signing, then data-at-rest re-encryption) allows teams to gain operational confidence with each algorithm in low-risk contexts before applying it to high-consequence channels. Phases should be gated: each phase requires proof of HSM support, interoperability testing against partner systems, and rollback capability before proceeding. OMB and NSM-10 guidance provide policy timelines; program offices should map those timelines against their own asset inventory to produce a credible sequenced plan.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Performance and Overhead Characterization</h4>
                                     <p>
-                                      PQC algorithms carry meaningful performance differences relative to classical counterparts. ML-KEM is computationally efficient; SLH-DSA signing is significantly slower than RSA or ECDSA. Latency-sensitive protocols — mutual TLS handshakes under tight SLA, firmware update signing chains, real-time command authentication — must be benchmarked with actual PQC implementations on representative hardware before deployment. Embedded and resource-constrained endpoints (tactical radios, sensor nodes, embedded controllers) may require hardware acceleration or algorithm-level parameter choices that balance security and performance within platform constraints. Characterizing overhead early prevents surprises at integration and test.
+                                      PQC algorithms carry meaningful performance differences relative to classical counterparts. ML-KEM is computationally efficient; SLH-DSA signing is significantly slower than RSA or ECDSA. Latency-sensitive protocols (mutual TLS handshakes under tight SLA, firmware update signing chains, real-time command authentication) must be benchmarked with actual PQC implementations on representative hardware before deployment. Embedded and resource-constrained endpoints (tactical radios, sensor nodes, embedded controllers) may require hardware acceleration or algorithm-level parameter choices that balance security and performance within platform constraints. Characterizing overhead early prevents surprises at integration and test.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Governance, Testing, and Validation</h4>
                                     <p>
-                                      PQC migration is a program-level governance event, not a library update ticket. It requires change control integration, formal interoperability testing against NIST test vectors and partner implementations, security assessment under RMF or equivalent authority-to-operate processes, and continuous monitoring to detect algorithm misconfiguration or downgrade. Automated regression testing should verify that hybrid modes are being exercised — not silently bypassed — and that key sizes and signature parameters match the selected FIPS standard. For programs subject to CNSS or IC policy, coordination with accreditation authorities early in the design phase avoids rework at ATO time.
+                                      PQC migration is a program-level governance event, not a library update ticket. It requires change control integration, formal interoperability testing against NIST test vectors and partner implementations, security assessment under RMF or equivalent authority-to-operate processes, and continuous monitoring to detect algorithm misconfiguration or downgrade. Automated regression testing should verify that hybrid modes are being exercised (not silently bypassed) and that key sizes and signature parameters match the selected FIPS standard. For programs subject to CNSS or IC policy, coordination with accreditation authorities early in the design phase avoids rework at ATO time.
                                     </p>
                                   </li>
                                 </ol>
@@ -266,7 +266,7 @@
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
                                 <h4>Want to discuss PQC migration architecture for your federal program?</h4>
-                                <p>Ravonics works with federal program teams and systems integrators to translate NIST PQC standards into concrete implementation roadmaps — from crypto inventory and HSM assessment through hybrid-mode TLS and phased PKI migration. If you are scoping an architectural assessment or a task-order response, we engage at the technical level.</p>
+                                <p>Ravonics works with federal program teams and systems integrators to translate NIST PQC standards into concrete implementation roadmaps, from crypto inventory and HSM assessment through hybrid-mode TLS and phased PKI migration. If you are scoping an architectural assessment or a task-order response, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
 
@@ -295,7 +295,7 @@
                                     </div>
                                     <div class="d-content">
                                       <a href="swarm-coordination-concepts.html">
-                                        <h4>Autonomous Swarm Coordination — Architecture Concepts</h4>
+                                        <h4>Autonomous Swarm Coordination | Architecture Concepts</h4>
                                       </a>
                                       <div class="d-date">Autonomous Systems</div>
                                     </div>
@@ -319,7 +319,7 @@
                                     </div>
                                     <div class="d-content">
                                       <a href="hyperspectral-sensor-fusion.html">
-                                        <h4>Hyperspectral Imaging & Sensor Fusion — INSTAR Lab Research</h4>
+                                        <h4>Hyperspectral Imaging & Sensor Fusion | INSTAR Lab Research</h4>
                                       </a>
                                       <div class="d-date">Sensor Technology</div>
                                     </div>
@@ -523,7 +523,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

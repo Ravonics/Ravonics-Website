@@ -10,8 +10,8 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="How model quantization, pruning, knowledge distillation, and mixture-of-experts compression bring capable AI inference to constrained, denied-connectivity edge hardware for federal missions — a Ravonics architectural perspective." name="description" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="How model quantization, pruning, knowledge distillation, and mixture-of-experts compression bring capable AI inference to constrained, denied-connectivity edge hardware for federal missions: a Ravonics architectural perspective." name="description" >
     <meta content="tactical edge AI, neural network optimization, model quantization, pruning, knowledge distillation, mixture of experts, on-device inference, DDIL, federal AI, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/insights/tactical-edge-ai.html" >
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Neural Network Optimization for Tactical Edge AI",
-      "description": "How model quantization, pruning, knowledge distillation, and mixture-of-experts compression bring capable AI inference to constrained, denied-connectivity edge hardware for federal missions — a Ravonics architectural perspective.",
+      "description": "How model quantization, pruning, knowledge distillation, and mixture-of-experts compression bring capable AI inference to constrained, denied-connectivity edge hardware for federal missions: a Ravonics architectural perspective.",
       "author": {
         "@type": "Organization",
         "name": "Ravonics"
@@ -200,16 +200,16 @@
                                 </p>
 
                                 <p>
-                                    Federal missions increasingly demand capable AI inference at the tactical edge — on the platform, the sensor, or the dismounted device, not in a distant data center. Operators work in denied, degraded, intermittent, and limited (DDIL) conditions where the network cannot be assumed, latency budgets are unforgiving, and the decision must be made locally or not at all. The cloud-first assumptions that govern commercial machine learning simply do not hold once connectivity becomes a contested resource.
+                                    Federal missions increasingly demand capable AI inference at the tactical edge: on the platform, the sensor, or the dismounted device, not in a distant data center. Operators work in denied, degraded, intermittent, and limited (DDIL) conditions where the network cannot be assumed, latency budgets are unforgiving, and the decision must be made locally or not at all. The cloud-first assumptions that govern commercial machine learning simply do not hold once connectivity becomes a contested resource.
 
-                                    This creates a central engineering tension. The most capable models are large, power-hungry, and memory-intensive, while edge hardware offers a fixed and modest budget of compute, memory bandwidth, and watts. Closing that gap is not a matter of buying a bigger accelerator — it is a discipline of model optimization. The sections below preview the techniques Ravonics weighs when architecting inference for constrained, mission-critical environments.
+                                    This creates a central engineering tension. The most capable models are large, power-hungry, and memory-intensive, while edge hardware offers a fixed and modest budget of compute, memory bandwidth, and watts. Closing that gap is not a matter of buying a bigger accelerator; it is a discipline of model optimization. The sections below preview the techniques Ravonics weighs when architecting inference for constrained, mission-critical environments.
                                 </p>
 
                                 <ol class="ol-style-1">
                                   <li>
                                     <h4>Quantization</h4>
                                     <p>
-                                      Quantization represents weights and activations at lower numerical precision — moving
+                                      Quantization represents weights and activations at lower numerical precision, moving
                                       from 32-bit floating point toward 8-bit integers or below. The payoff is smaller models,
                                       lower memory bandwidth, and faster arithmetic on edge accelerators built for integer math.
                                       Post-training quantization is fast to apply; quantization-aware training preserves more
@@ -225,7 +225,7 @@
                                       zeroes individual weights for high theoretical sparsity, but realizing speedups requires
                                       hardware and kernels that exploit sparse computation. Structured pruning removes whole
                                       channels, filters, or attention heads, yielding dense smaller models that run faster on
-                                      commodity edge silicon without special support. The trade is granularity versus deployability —
+                                      commodity edge silicon without special support. The trade is granularity versus deployability:
                                       a choice driven by the target accelerator, not by the metric alone.
                                     </p>
                                   </li>
@@ -234,7 +234,7 @@
                                     <h4>Knowledge Distillation</h4>
                                     <p>
                                       Distillation trains a compact student model to reproduce the behavior of a larger, more
-                                      capable teacher — learning from the teacher's soft probability outputs and intermediate
+                                      capable teacher, learning from the teacher's soft probability outputs and intermediate
                                       representations rather than labels alone. A well-distilled student can retain much of the
                                       teacher's capability at a fraction of the parameter count and inference cost. For tactical
                                       edge use, distillation lets a heavyweight model developed in the rear inform a lean,
@@ -249,7 +249,7 @@
                                       of expert sub-networks per input, so compute scales with what a given inference actually
                                       needs rather than with the full parameter count. Combined with conditional and early-exit
                                       strategies that stop computation once confidence is sufficient, this delivers capacity without
-                                      paying full activation cost on every token or frame — a meaningful advantage when energy and
+                                      paying full activation cost on every token or frame: a meaningful advantage when energy and
                                       thermal headroom at the edge are strictly bounded.
                                     </p>
                                   </li>
@@ -258,7 +258,7 @@
                                     <h4>Hardware-Aware Compilation & Accelerator Targeting</h4>
                                     <p>
                                       An optimized model still underperforms if the deployment stack ignores the silicon beneath it.
-                                      Hardware-aware compilation maps operations onto the target accelerator — GPU, NPU, DSP, or FPGA —
+                                      Hardware-aware compilation maps operations onto the target accelerator (GPU, NPU, DSP, or FPGA)
                                       through graph fusion, memory-layout tuning, operator selection, and kernel specialization.
                                       The same network can vary several-fold in latency and energy depending on how it is compiled and
                                       scheduled. Treating the compiler and runtime as first-class architectural concerns is what turns
@@ -287,7 +287,7 @@
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
                                 <h4>Want to discuss edge AI architecture for your program?</h4>
-                                <p>Ravonics works directly with federal program managers and systems integrators to translate these edge-AI optimization principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS AI platform, or designing a new edge compute stack — we engage at the technical level.</p>
+                                <p>Ravonics works directly with federal program managers and systems integrators to translate these edge-AI optimization principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS AI platform, or designing a new edge compute stack, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
 
@@ -544,7 +544,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

@@ -10,8 +10,8 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="INSTAR Lab's quantum computing research direction — exploring QAOA, quantum annealing, and hybrid classical-quantum approaches to combinatorial optimization problems in defense logistics, sensor tasking, and mission scheduling." name="description" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="INSTAR Lab's quantum computing research direction: exploring QAOA, quantum annealing, and hybrid classical-quantum approaches to combinatorial optimization problems in defense logistics, sensor tasking, and mission scheduling." name="description" >
     <meta content="quantum computing, defense optimization, QAOA, quantum annealing, NISQ, hybrid quantum classical, combinatorial optimization, defense logistics, sensor tasking, INSTAR Lab, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/insights/quantum-defense-optimization.html" >
@@ -20,14 +20,14 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ravonics.com/insights/quantum-defense-optimization.html">
     <meta property="og:title" content="Quantum Computing for Defense Optimization | Ravonics">
-    <meta property="og:description" content="INSTAR Lab explores QAOA, quantum annealing, and hybrid classical-quantum methods for combinatorial problems in defense logistics, scheduling, and sensor tasking — a research direction targeting future SBIR/STTR.">
+    <meta property="og:description" content="INSTAR Lab explores QAOA, quantum annealing, and hybrid classical-quantum methods for combinatorial problems in defense logistics, scheduling, and sensor tasking: a research direction targeting future SBIR/STTR.">
     <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ravonics.com/insights/quantum-defense-optimization.html">
     <meta property="twitter:title" content="Quantum Computing for Defense Optimization | Ravonics">
-    <meta property="twitter:description" content="INSTAR Lab explores QAOA, quantum annealing, and hybrid classical-quantum methods for combinatorial problems in defense logistics, scheduling, and sensor tasking — a research direction targeting future SBIR/STTR.">
+    <meta property="twitter:description" content="INSTAR Lab explores QAOA, quantum annealing, and hybrid classical-quantum methods for combinatorial problems in defense logistics, scheduling, and sensor tasking: a research direction targeting future SBIR/STTR.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
 
     <!-- Schema.org Structured Data -->
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Quantum Computing for Defense Optimization",
-      "description": "INSTAR Lab's quantum computing research direction — exploring QAOA, quantum annealing, and hybrid classical-quantum approaches to combinatorial optimization problems in defense logistics, sensor tasking, and mission scheduling.",
+      "description": "INSTAR Lab's quantum computing research direction: exploring QAOA, quantum annealing, and hybrid classical-quantum approaches to combinatorial optimization problems in defense logistics, sensor tasking, and mission scheduling.",
       "author": {
         "@type": "Organization",
         "name": "Ravonics"
@@ -200,11 +200,11 @@
                                 </p>
 
                                 <p>
-                                    Defense planning confronts a class of problems that scales combinatorially: assigning sensor assets across a theater, sequencing logistics convoys through contested routes, scheduling maintenance windows across a distributed fleet, or allocating electromagnetic spectrum in a congested environment. Classical algorithms handle modest versions of these problems well, but operational scale — hundreds of assets, thousands of constraints, compressed time windows — drives solution times beyond what tactical decision cycles permit. Heuristics help, but they trade optimality for speed in ways that may matter when margins are tight.
+                                    Defense planning confronts a class of problems that scales combinatorially: assigning sensor assets across a theater, sequencing logistics convoys through contested routes, scheduling maintenance windows across a distributed fleet, or allocating electromagnetic spectrum in a congested environment. Classical algorithms handle modest versions of these problems well, but operational scale (hundreds of assets, thousands of constraints, compressed time windows) drives solution times beyond what tactical decision cycles permit. Heuristics help, but they trade optimality for speed in ways that may matter when margins are tight.
                                 </p>
 
                                 <p>
-                                    Quantum computing offers a structurally different approach to this problem class. Rather than searching solution spaces sequentially, quantum algorithms exploit superposition and interference to evaluate multiple candidate solutions simultaneously. Current noisy intermediate-scale quantum (NISQ) hardware is still far from fault-tolerant at the scale needed for live operational use, but the research trajectory is clear, and the window for establishing foundational competency is now. INSTAR Lab — Ravonics' affiliated 501(c)(3) research bench — is pursuing this as a research direction targeting future SBIR/STTR engagement, not a shipping product. The sections below describe the conceptual pillars shaping that inquiry.
+                                    Quantum computing offers a structurally different approach to this problem class. Rather than searching solution spaces sequentially, quantum algorithms exploit superposition and interference to evaluate multiple candidate solutions simultaneously. Current noisy intermediate-scale quantum (NISQ) hardware is still far from fault-tolerant at the scale needed for live operational use, but the research trajectory is clear, and the window for establishing foundational competency is now. INSTAR Lab (Ravonics' affiliated 501(c)(3) research bench) is pursuing this as a research direction targeting future SBIR/STTR engagement, not a shipping product. The sections below describe the conceptual pillars shaping that inquiry.
                                 </p>
 
                                 <ol class="ol-style-1">
@@ -218,35 +218,35 @@
                                   <li>
                                     <h4>Gate-Model vs. Quantum Annealing Approaches</h4>
                                     <p>
-                                      Two hardware paradigms are relevant. Gate-model quantum computers (IBM, Google, IonQ) execute sequences of quantum logic gates on qubits — general-purpose, but currently limited to shallow circuits by noise. Quantum annealers (D-Wave) are purpose-built for QUBO problems, mapping the cost function directly onto physical qubit couplings and allowing the system to relax toward a minimum-energy configuration. Annealers can handle larger instances today on their native problem class, but gate models promise broader applicability as hardware matures. INSTAR Lab's research evaluates both paradigms against defense-relevant problem encodings.
+                                      Two hardware paradigms are relevant. Gate-model quantum computers (IBM, Google, IonQ) execute sequences of quantum logic gates on qubits: general-purpose, but currently limited to shallow circuits by noise. Quantum annealers (D-Wave) are purpose-built for QUBO problems, mapping the cost function directly onto physical qubit couplings and allowing the system to relax toward a minimum-energy configuration. Annealers can handle larger instances today on their native problem class, but gate models promise broader applicability as hardware matures. INSTAR Lab's research evaluates both paradigms against defense-relevant problem encodings.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Quantum Approximate Optimization Algorithm (QAOA)</h4>
                                     <p>
-                                      QAOA is the leading candidate gate-model algorithm for combinatorial optimization on near-term hardware. It encodes the optimization objective as a cost Hamiltonian and applies alternating cost and mixer unitaries, parameterized by angles that are classically tuned to steer the quantum state toward good solutions. Depth (number of rounds, denoted p) trades circuit complexity against solution quality — shallow circuits are NISQ-feasible but yield approximate results. Understanding where QAOA outperforms classical approximation algorithms, and for which problem structures, is a key open question in the research community and a focal point for INSTAR Lab's benchmarking work.
+                                      QAOA is the leading candidate gate-model algorithm for combinatorial optimization on near-term hardware. It encodes the optimization objective as a cost Hamiltonian and applies alternating cost and mixer unitaries, parameterized by angles that are classically tuned to steer the quantum state toward good solutions. Depth (number of rounds, denoted p) trades circuit complexity against solution quality; shallow circuits are NISQ-feasible but yield approximate results. Understanding where QAOA outperforms classical approximation algorithms, and for which problem structures, is a key open question in the research community and a focal point for INSTAR Lab's benchmarking work.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Hybrid Classical-Quantum Architectures</h4>
                                     <p>
-                                      Full quantum solutions to large defense problems are not feasible on near-term hardware. The practical near-term model is hybrid: classical processors handle problem decomposition, parameter optimization, and result post-processing, while the quantum processor is invoked for the computationally intensive subproblem where quantum advantage is expected to emerge. Variational quantum eigensolvers and quantum-classical feedback loops exemplify this pattern. Designing effective decompositions — knowing which subproblems benefit from quantum treatment and which are better left classical — is itself a research contribution that defense-domain expertise informs directly.
+                                      Full quantum solutions to large defense problems are not feasible on near-term hardware. The practical near-term model is hybrid: classical processors handle problem decomposition, parameter optimization, and result post-processing, while the quantum processor is invoked for the computationally intensive subproblem where quantum advantage is expected to emerge. Variational quantum eigensolvers and quantum-classical feedback loops exemplify this pattern. Designing effective decompositions (knowing which subproblems benefit from quantum treatment and which are better left classical) is itself a research contribution that defense-domain expertise informs directly.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>NISQ Realism and Error Considerations</h4>
                                     <p>
-                                      Current quantum hardware is noisy: gate errors, decoherence, and readout errors accumulate with circuit depth, degrading result quality. NISQ-era research must account for this honestly. Error mitigation techniques — zero-noise extrapolation, probabilistic error cancellation, symmetry verification — extend the useful depth of near-term circuits but add classical overhead. Fault-tolerant quantum computing, which would enable deep circuits and strong guarantees, requires logical qubits built from many physical qubits and remains a medium-to-long horizon. INSTAR Lab's research posture acknowledges these constraints and targets problem formulations and circuit depths appropriate to demonstrated hardware capability.
+                                      Current quantum hardware is noisy: gate errors, decoherence, and readout errors accumulate with circuit depth, degrading result quality. NISQ-era research must account for this honestly. Error mitigation techniques (zero-noise extrapolation, probabilistic error cancellation, symmetry verification) extend the useful depth of near-term circuits but add classical overhead. Fault-tolerant quantum computing, which would enable deep circuits and strong guarantees, requires logical qubits built from many physical qubits and remains a medium-to-long horizon. INSTAR Lab's research posture acknowledges these constraints and targets problem formulations and circuit depths appropriate to demonstrated hardware capability.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Near-Term vs. Long-Term Research Horizon</h4>
                                     <p>
-                                      Near-term work focuses on problem encoding, benchmark development, and hybrid architecture design — contributions that accrue regardless of when fault-tolerant hardware arrives and position the team to exploit improved hardware as it becomes available. Medium-term milestones include demonstrating quantum advantage on small, defense-relevant benchmark instances. Long-term, fault-tolerant hardware opens the door to Grover-style unstructured search and quantum speedups on constraint-satisfaction problems at operationally relevant scale. Ravonics and INSTAR Lab are building toward this trajectory through SBIR/STTR research pathways, not claiming current product capability.
+                                      Near-term work focuses on problem encoding, benchmark development, and hybrid architecture design: contributions that accrue regardless of when fault-tolerant hardware arrives and position the team to exploit improved hardware as it becomes available. Medium-term milestones include demonstrating quantum advantage on small, defense-relevant benchmark instances. Long-term, fault-tolerant hardware opens the door to Grover-style unstructured search and quantum speedups on constraint-satisfaction problems at operationally relevant scale. Ravonics and INSTAR Lab are building toward this trajectory through SBIR/STTR research pathways, not claiming current product capability.
                                     </p>
                                   </li>
                                 </ol>
@@ -276,7 +276,7 @@
                                     </div>
                                     <div class="d-content">
                                       <a href="swarm-coordination-concepts.html">
-                                        <h4>Autonomous Swarm Coordination — Architecture Concepts</h4>
+                                        <h4>Autonomous Swarm Coordination | Architecture Concepts</h4>
                                       </a>
                                       <div class="d-date">Autonomous Systems</div>
                                     </div>
@@ -312,7 +312,7 @@
                                     </div>
                                     <div class="d-content">
                                       <a href="hyperspectral-sensor-fusion.html">
-                                        <h4>Hyperspectral Imaging &amp; Sensor Fusion — INSTAR Lab Research</h4>
+                                        <h4>Hyperspectral Imaging &amp; Sensor Fusion | INSTAR Lab Research</h4>
                                       </a>
                                       <div class="d-date">Sensor Technology</div>
                                     </div>
@@ -516,7 +516,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

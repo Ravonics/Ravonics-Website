@@ -10,8 +10,8 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="Why federal systems should begin migrating now — the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer." name="description" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="Why federal systems should begin migrating now: the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer." name="description" >
     <meta content="post-quantum cryptography, PQC, NIST FIPS 203, ML-KEM, ML-DSA, SLH-DSA, cryptographic agility, harvest now decrypt later, hybrid cryptography, federal communications, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/insights/post-quantum-cryptography.html" >
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Post-Quantum Cryptography: Preparing Federal Communications",
-      "description": "Why federal systems should begin migrating now — the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer.",
+      "description": "Why federal systems should begin migrating now: the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer.",
       "author": {
         "@type": "Organization",
         "name": "Ravonics"
@@ -200,9 +200,9 @@
                                 </p>
 
                                 <p>
-                                    The public-key cryptography securing federal communications today rests on mathematical problems that classical computers cannot solve in any practical time. A sufficiently capable quantum computer changes that calculus: Shor's algorithm would break the RSA and elliptic-curve schemes underpinning TLS, VPNs, code signing, and key exchange across nearly every federal system. The timeline for such a machine remains uncertain — but the risk window has already opened.
+                                    The public-key cryptography securing federal communications today rests on mathematical problems that classical computers cannot solve in any practical time. A sufficiently capable quantum computer changes that calculus: Shor's algorithm would break the RSA and elliptic-curve schemes underpinning TLS, VPNs, code signing, and key exchange across nearly every federal system. The timeline for such a machine remains uncertain, but the risk window has already opened.
 
-                                    The reason is a threat model called "harvest now, decrypt later." A capable adversary does not need a quantum computer today to benefit from one tomorrow. They need only to capture encrypted traffic now and store it. When a cryptographically relevant quantum computer arrives, that archived traffic is retroactively exposed. For federal communications — diplomatic cables, intelligence reporting, weapons-program data, and personnel records with decades-long sensitivity — the secret you transmit today may still demand protection long after quantum decryption becomes feasible. That mismatch is why the migration must begin now, not when the threat fully materializes.
+                                    The reason is a threat model called "harvest now, decrypt later." A capable adversary does not need a quantum computer today to benefit from one tomorrow. They need only to capture encrypted traffic now and store it. When a cryptographically relevant quantum computer arrives, that archived traffic is retroactively exposed. For federal communications (diplomatic cables, intelligence reporting, weapons-program data, and personnel records with decades-long sensitivity) the secret you transmit today may still demand protection long after quantum decryption becomes feasible. That mismatch is why the migration must begin now, not when the threat fully materializes.
                                 </p>
 
                                 <ol class="ol-style-1">
@@ -212,7 +212,7 @@
                                       Adversaries are already recording encrypted federal traffic and archiving it against a future
                                       decryption capability. The governing question is not when a quantum computer arrives, but how
                                       long your data must stay secret. Where that lifetime exceeds the migration window plus the
-                                      adversary's likely time-to-capability, the secret is effectively at risk today — and waiting only
+                                      adversary's likely time-to-capability, the secret is effectively at risk today, and waiting only
                                       widens the exposure.
                                     </p>
                                   </li>
@@ -232,7 +232,7 @@
                                     <h4>Cryptographic Inventory & Dependency Mapping</h4>
                                     <p>
                                       You cannot migrate what you cannot see. The first practical step is a thorough inventory of every
-                                      place cryptography lives — protocols, libraries, certificates, hardware modules, embedded
+                                      place cryptography lives: protocols, libraries, certificates, hardware modules, embedded
                                       firmware, and third-party services. Mapping these dependencies surfaces hidden uses, quantifies
                                       data sensitivity and lifetime, and produces the prioritized, risk-ranked basis for any credible
                                       transition plan.
@@ -245,7 +245,7 @@
                                       Hard-coding a single algorithm is what made the current transition so painful. Cryptographic
                                       agility abstracts algorithms behind stable interfaces, so primitives can be swapped through
                                       configuration and policy rather than re-engineering. Designing for agility now means the next
-                                      standard — or an emergency response to a broken scheme — becomes a managed change rather than a
+                                      standard (or an emergency response to a broken scheme) becomes a managed change rather than a
                                       multi-year forklift across the enterprise.
                                     </p>
                                   </li>
@@ -256,8 +256,8 @@
                                       Federal migration favors hybrid schemes that run a classical algorithm and a post-quantum
                                       algorithm in parallel, combining both into a single key exchange. The session stays secure as
                                       long as either holds, hedging against an immature PQC implementation while delivering quantum
-                                      resistance immediately. A phased rollout — beginning with the highest-sensitivity, longest-lived
-                                      channels — contains risk and builds operational confidence.
+                                      resistance immediately. A phased rollout (beginning with the highest-sensitivity, longest-lived
+                                      channels) contains risk and builds operational confidence.
                                     </p>
                                   </li>
 
@@ -273,7 +273,7 @@
                                   </li>
                                 </ol>
 
-                                <img src="../images/blog/posts/post-quantum-cryptography.avif" class="w-100 rounded-1" alt="A precision vault mechanism in warm light — a timeless metaphor for cryptographic key protection">
+                                <img src="../images/blog/posts/post-quantum-cryptography.avif" class="w-100 rounded-1" alt="A precision vault mechanism in warm light: a timeless metaphor for cryptographic key protection">
 
                             </div>
 
@@ -281,7 +281,7 @@
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
                                 <h4>Want to discuss post-quantum readiness for your program?</h4>
-                                <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS AI platform, or designing a new edge compute stack — we engage at the technical level.</p>
+                                <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS AI platform, or designing a new edge compute stack, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
 
@@ -318,7 +318,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/edge-computing-tactical.avif" alt="Edge computing at tactical scale — denied environment architecture" loading="lazy">
+                                      <img src="../images/blog/posts/edge-computing-tactical.avif" alt="Edge computing at tactical scale: denied environment architecture" loading="lazy">
                                     </div>
                                     <div class="d-content">
                                       <a href="edge-computing-tactical.html">
@@ -538,7 +538,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

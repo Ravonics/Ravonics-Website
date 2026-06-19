@@ -10,8 +10,8 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="Hardware selection, power and thermal budgets, ruggedization, and graceful degradation for edge compute operating in denied, degraded, intermittent, and limited (DDIL) environments — a Ravonics architectural primer." name="description" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="Hardware selection, power and thermal budgets, ruggedization, and graceful degradation for edge compute operating in denied, degraded, intermittent, and limited (DDIL) environments: a Ravonics architectural primer." name="description" >
     <meta content="tactical edge computing, DDIL, ruggedized hardware, power management, thermal budget, edge resilience, hybrid cloud, graceful degradation, federal edge, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/insights/edge-computing-tactical.html" >
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Edge Computing at Tactical Scale: Architecture Considerations",
-      "description": "Hardware selection, power and thermal budgets, ruggedization, and graceful degradation for edge compute operating in denied, degraded, intermittent, and limited (DDIL) environments — a Ravonics architectural primer.",
+      "description": "Hardware selection, power and thermal budgets, ruggedization, and graceful degradation for edge compute operating in denied, degraded, intermittent, and limited (DDIL) environments: a Ravonics architectural primer.",
       "author": {
         "@type": "Organization",
         "name": "Ravonics"
@@ -200,9 +200,9 @@
                                 </p>
 
                                 <p>
-                                    The tactical edge is not a smaller data center — it is a different design constraint entirely. Compute deployed forward must function in environments that are denied, degraded, intermittent, and limited (DDIL): bandwidth disappears, power is scarce, heat has nowhere to go, and the nearest rack is hundreds of miles away. The cloud-era assumptions of elastic capacity, always-on connectivity, and conditioned facilities simply do not hold.
+                                    The tactical edge is not a smaller data center; it is a different design constraint entirely. Compute deployed forward must function in environments that are denied, degraded, intermittent, and limited (DDIL): bandwidth disappears, power is scarce, heat has nowhere to go, and the nearest rack is hundreds of miles away. The cloud-era assumptions of elastic capacity, always-on connectivity, and conditioned facilities simply do not hold.
 
-                                    Architecting for these conditions means inverting the usual priorities. The following considerations outline how Ravonics approaches edge compute design — not as a checklist of products, but as a set of durable engineering principles for systems that must keep working when the network does not.
+                                    Architecting for these conditions means inverting the usual priorities. The following considerations outline how Ravonics approaches edge compute design: not as a checklist of products, but as a set of durable engineering principles for systems that must keep working when the network does not.
                                 </p>
 
                                 <ol class="ol-style-1">
@@ -220,7 +220,7 @@
                                     <h4>Power &amp; Thermal Budgets</h4>
                                     <p>
                                       Every watt consumed is a watt that must be supplied and then dissipated. Design begins
-                                      with a fixed power budget — battery, generator, or vehicle bus — and works backward to
+                                      with a fixed power budget (battery, generator, or vehicle bus) and works backward to
                                       a thermal envelope the enclosure can shed without active cooling. Sustained workloads,
                                       not burst peaks, set the real ceiling for processing at the edge.
                                     </p>
@@ -241,7 +241,7 @@
                                     <p>
                                       When connectivity cannot be assumed, data must be captured, processed, and retained on
                                       the node itself. A local-first design treats the edge as the system of record between
-                                      sync windows — with bounded storage, deliberate retention policies, and encryption at
+                                      sync windows, with bounded storage, deliberate retention policies, and encryption at
                                       rest so that a captured or lost device does not become a disclosure event.
                                     </p>
                                   </li>
@@ -251,7 +251,7 @@
                                     <p>
                                       The edge handles what must happen now; the enterprise handles what can wait. A hybrid
                                       architecture defines clear boundaries for which workloads run forward and which overflow
-                                      rearward, with sync that is opportunistic, prioritized, and tolerant of long gaps —
+                                      rearward, with sync that is opportunistic, prioritized, and tolerant of long gaps,
                                       reconciling state cleanly whenever a usable link returns, however briefly.
                                     </p>
                                   </li>
@@ -259,7 +259,7 @@
                                   <li>
                                     <h4>Graceful Degradation &amp; Autonomy</h4>
                                     <p>
-                                      A well-designed edge system does not fail when it is cut off — it degrades on purpose.
+                                      A well-designed edge system does not fail when it is cut off; it degrades on purpose.
                                       Critical functions continue at reduced fidelity, non-essential features shed first, and
                                       the node keeps operating autonomously until reconnection. The operator is never left
                                       guessing whether the system is working or simply waiting on a network that is gone.
@@ -275,7 +275,7 @@
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
                                 <h4>Want to discuss tactical edge architecture for your program?</h4>
-                                <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS edge platform, or designing a new forward compute stack — we engage at the technical level.</p>
+                                <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS edge platform, or designing a new forward compute stack, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
 
@@ -532,7 +532,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>

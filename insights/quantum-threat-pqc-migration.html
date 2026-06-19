@@ -10,8 +10,8 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com; base-uri 'self'">
-    <meta content="The harvest-now-decrypt-later threat, CRQC timeline uncertainty, NIST FIPS 203/204/205, NSA CNSA 2.0 transition timelines, and OMB/NSM-10 guidance — why federal agencies must begin post-quantum cryptography migration now, not after a quantum computer arrives." name="description" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="The harvest-now-decrypt-later threat, CRQC timeline uncertainty, NIST FIPS 203/204/205, NSA CNSA 2.0 transition timelines, and OMB/NSM-10 guidance: why federal agencies must begin post-quantum cryptography migration now, not after a quantum computer arrives." name="description" >
     <meta content="post-quantum cryptography, PQC migration, harvest now decrypt later, CRQC, NIST FIPS 203, NIST FIPS 204, NIST FIPS 205, NSA CNSA 2.0, NSM-10, quantum threat, federal cryptography, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/insights/quantum-threat-pqc-migration.html" >
@@ -20,14 +20,14 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ravonics.com/insights/quantum-threat-pqc-migration.html">
     <meta property="og:title" content="The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now | Ravonics">
-    <meta property="og:description" content="Harvest-now-decrypt-later, CRQC timelines, NIST FIPS 203/204/205, NSA CNSA 2.0, and OMB NSM-10 — the policy and threat case for starting PQC migration before a cryptographically relevant quantum computer arrives.">
+    <meta property="og:description" content="Harvest-now-decrypt-later, CRQC timelines, NIST FIPS 203/204/205, NSA CNSA 2.0, and OMB NSM-10: the policy and threat case for starting PQC migration before a cryptographically relevant quantum computer arrives.">
     <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ravonics.com/insights/quantum-threat-pqc-migration.html">
     <meta property="twitter:title" content="The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now | Ravonics">
-    <meta property="twitter:description" content="Harvest-now-decrypt-later, CRQC timelines, NIST FIPS 203/204/205, NSA CNSA 2.0, and OMB NSM-10 — the policy and threat case for starting PQC migration before a quantum computer arrives.">
+    <meta property="twitter:description" content="Harvest-now-decrypt-later, CRQC timelines, NIST FIPS 203/204/205, NSA CNSA 2.0, and OMB NSM-10: the policy and threat case for starting PQC migration before a quantum computer arrives.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
 
     <!-- Schema.org Structured Data -->
@@ -36,7 +36,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now",
-      "description": "The harvest-now-decrypt-later threat, CRQC timeline uncertainty, NIST FIPS 203/204/205, NSA CNSA 2.0 transition timelines, and OMB/NSM-10 guidance — why federal agencies must begin post-quantum cryptography migration now, not after a quantum computer arrives.",
+      "description": "The harvest-now-decrypt-later threat, CRQC timeline uncertainty, NIST FIPS 203/204/205, NSA CNSA 2.0 transition timelines, and OMB/NSM-10 guidance: why federal agencies must begin post-quantum cryptography migration now, not after a quantum computer arrives.",
       "author": {
         "@type": "Organization",
         "name": "Ravonics"
@@ -200,53 +200,53 @@
                                 </p>
 
                                 <p>
-                                    No cryptographically relevant quantum computer (CRQC) exists today. Estimates for when one might arrive range from a decade to several decades — and experts disagree sharply. That uncertainty is precisely the problem. The primary threat to federal cryptographic infrastructure is not a quantum computer that breaks encryption on the day it is switched on. The threat is adversaries collecting encrypted federal data right now, archiving it, and waiting until the compute capability to decrypt it becomes available. This is the harvest-now-decrypt-later (HNDL) model, and it converts timeline uncertainty from a reason to wait into a reason to act.
+                                    No cryptographically relevant quantum computer (CRQC) exists today. Estimates for when one might arrive range from a decade to several decades, and experts disagree sharply. That uncertainty is precisely the problem. The primary threat to federal cryptographic infrastructure is not a quantum computer that breaks encryption on the day it is switched on. The threat is adversaries collecting encrypted federal data right now, archiving it, and waiting until the compute capability to decrypt it becomes available. This is the harvest-now-decrypt-later (HNDL) model, and it converts timeline uncertainty from a reason to wait into a reason to act.
                                 </p>
 
                                 <p>
-                                    The policy signal from the federal government has been unambiguous. National Security Memorandum 10 (NSM-10, 2022) directed agencies to inventory cryptographic systems and prioritize migration to quantum-resistant algorithms. NIST finalized three post-quantum cryptography standards in 2024 — FIPS 203 (ML-KEM, key encapsulation), FIPS 204 (ML-DSA, digital signatures), and FIPS 205 (SLH-DSA, stateless hash-based signatures). NSA's Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) establishes transition timelines for National Security Systems, with deadlines that are already in progress. The question for federal programs is not whether to migrate — it is how to begin.
+                                    The policy signal from the federal government has been unambiguous. National Security Memorandum 10 (NSM-10, 2022) directed agencies to inventory cryptographic systems and prioritize migration to quantum-resistant algorithms. NIST finalized three post-quantum cryptography standards in 2024: FIPS 203 (ML-KEM, key encapsulation), FIPS 204 (ML-DSA, digital signatures), and FIPS 205 (SLH-DSA, stateless hash-based signatures). NSA's Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) establishes transition timelines for National Security Systems, with deadlines that are already in progress. The question for federal programs is not whether to migrate; it is how to begin.
                                 </p>
 
                                 <ol class="ol-style-1">
                                   <li>
                                     <h4>The Harvest-Now-Decrypt-Later Threat Model</h4>
                                     <p>
-                                      HNDL requires no quantum computer today. A sophisticated adversary needs only the ability to intercept and store ciphertext — a capability that state-level actors demonstrably possess. Data with long-term sensitivity (treaty negotiations, intelligence sources and methods, classified R&amp;D, long-lived identity credentials) encrypted under RSA-2048 or ECC P-256 today will be vulnerable the moment a CRQC becomes available. The asymmetry is stark: the cost to harvest is low and immediate; the cost to retroactively protect data that has already been collected is zero on the adversary's side. Programs that handle data whose sensitivity must survive beyond a 10-15 year horizon cannot treat CRQC timelines as someone else's problem.
+                                      HNDL requires no quantum computer today. A sophisticated adversary needs only the ability to intercept and store ciphertext: a capability that state-level actors demonstrably possess. Data with long-term sensitivity (treaty negotiations, intelligence sources and methods, classified R&amp;D, long-lived identity credentials) encrypted under RSA-2048 or ECC P-256 today will be vulnerable the moment a CRQC becomes available. The asymmetry is stark: the cost to harvest is low and immediate; the cost to retroactively protect data that has already been collected is zero on the adversary's side. Programs that handle data whose sensitivity must survive beyond a 10-15 year horizon cannot treat CRQC timelines as someone else's problem.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>CRQC Timeline Uncertainty Argues for Earlier Action</h4>
                                     <p>
-                                      Expert consensus places a fault-tolerant CRQC capable of running Shor's algorithm against RSA-2048 somewhere in the range of 10 to 30 years out — with significant variance in both directions. But migration is not instantaneous. Federal programs operate on multi-year acquisition and fielding cycles. Cryptographic libraries are embedded in firmware, hardware security modules, PKI infrastructure, and protocols that take years to update across a large installed base. A 15-year CRQC estimate combined with a 10-year migration cycle leaves very little margin. Starting when the threat is confirmed leaves no margin at all.
+                                      Expert consensus places a fault-tolerant CRQC capable of running Shor's algorithm against RSA-2048 somewhere in the range of 10 to 30 years out, with significant variance in both directions. But migration is not instantaneous. Federal programs operate on multi-year acquisition and fielding cycles. Cryptographic libraries are embedded in firmware, hardware security modules, PKI infrastructure, and protocols that take years to update across a large installed base. A 15-year CRQC estimate combined with a 10-year migration cycle leaves very little margin. Starting when the threat is confirmed leaves no margin at all.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>NIST FIPS 203, 204, and 205 — The Standardized Algorithms</h4>
+                                    <h4>NIST FIPS 203, 204, and 205: The Standardized Algorithms</h4>
                                     <p>
-                                      After an eight-year standardization process, NIST finalized three post-quantum algorithms in August 2024. ML-KEM (FIPS 203, based on CRYSTALS-Kyber) covers key encapsulation for key exchange and hybrid encryption. ML-DSA (FIPS 204, based on CRYSTALS-Dilithium) covers general-purpose digital signatures. SLH-DSA (FIPS 205, based on SPHINCS+) provides a hash-based signature alternative with different security assumptions and performance tradeoffs. These are not experimental candidates — they are published federal standards with FIPS validation on the roadmap. Agency programs should begin evaluating library support and planning integration sequencing now.
+                                      After an eight-year standardization process, NIST finalized three post-quantum algorithms in August 2024. ML-KEM (FIPS 203, based on CRYSTALS-Kyber) covers key encapsulation for key exchange and hybrid encryption. ML-DSA (FIPS 204, based on CRYSTALS-Dilithium) covers general-purpose digital signatures. SLH-DSA (FIPS 205, based on SPHINCS+) provides a hash-based signature alternative with different security assumptions and performance tradeoffs. These are not experimental candidates; they are published federal standards with FIPS validation on the roadmap. Agency programs should begin evaluating library support and planning integration sequencing now.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>NSA CNSA 2.0 and National Security System Timelines</h4>
                                     <p>
-                                      NSA's CNSA 2.0 guidance, published in 2022, establishes specific transition timelines for the National Security System (NSS) community. Software and firmware applications are expected to support CNSA 2.0 algorithms by 2025 and exclusively use them by 2030. Networking equipment, operating systems, and hardware face staggered deadlines extending to 2033. These are not aspirational targets — they are program office obligations for NSS owners. Defense contractors and systems integrators supporting NSS programs need to understand where their delivered products fall in the CNSA 2.0 timeline and plan accordingly.
+                                      NSA's CNSA 2.0 guidance, published in 2022, establishes specific transition timelines for the National Security System (NSS) community. Software and firmware applications are expected to support CNSA 2.0 algorithms by 2025 and exclusively use them by 2030. Networking equipment, operating systems, and hardware face staggered deadlines extending to 2033. These are not aspirational targets; they are program office obligations for NSS owners. Defense contractors and systems integrators supporting NSS programs need to understand where their delivered products fall in the CNSA 2.0 timeline and plan accordingly.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>NSM-10, OMB, and the Cryptographic Inventory Requirement</h4>
                                     <p>
-                                      NSM-10 directed agencies to produce a prioritized inventory of cryptographic systems by mid-2023, with particular attention to systems that protect data with long-term sensitivity. OMB followed with implementation guidance reinforcing the inventory requirement and tying it to existing FISMA reporting processes. The inventory is not the endpoint — it is the precondition for every subsequent migration decision. Programs that have not yet mapped which protocols, libraries, certificates, and key exchange mechanisms they use cannot sequence a migration, identify dependencies, or estimate cost. The inventory must come first.
+                                      NSM-10 directed agencies to produce a prioritized inventory of cryptographic systems by mid-2023, with particular attention to systems that protect data with long-term sensitivity. OMB followed with implementation guidance reinforcing the inventory requirement and tying it to existing FISMA reporting processes. The inventory is not the endpoint; it is the precondition for every subsequent migration decision. Programs that have not yet mapped which protocols, libraries, certificates, and key exchange mechanisms they use cannot sequence a migration, identify dependencies, or estimate cost. The inventory must come first.
                                     </p>
                                   </li>
 
                                   <li>
                                     <h4>Crypto-Agility as the Migration Strategy</h4>
                                     <p>
-                                      The practical migration approach most aligned with federal program realities is crypto-agility: designing systems to support algorithm negotiation and replacement without architectural rewrites. Hybrid classical-plus-PQC modes — combining, for example, X25519 with ML-KEM in a single key exchange — allow programs to maintain classical security during the transition while gaining quantum resistance, without betting everything on a single algorithm family before broader operational experience accumulates. Building agility in now means future algorithm updates become configuration and library changes rather than re-architecture. Programs that bake in specific algorithms at the protocol level today will pay a far higher migration cost when the mandate arrives.
+                                      The practical migration approach most aligned with federal program realities is crypto-agility: designing systems to support algorithm negotiation and replacement without architectural rewrites. Hybrid classical-plus-PQC modes (combining, for example, X25519 with ML-KEM in a single key exchange) allow programs to maintain classical security during the transition while gaining quantum resistance, without betting everything on a single algorithm family before broader operational experience accumulates. Building agility in now means future algorithm updates become configuration and library changes rather than re-architecture. Programs that bake in specific algorithms at the protocol level today will pay a far higher migration cost when the mandate arrives.
                                     </p>
                                   </li>
                                 </ol>
@@ -259,7 +259,7 @@
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
                                 <h4>Want to discuss quantum-threat posture and PQC planning for your program?</h4>
-                                <p>Ravonics works with federal program managers and systems integrators to translate NSM-10, NIST FIPS 203/204/205, and CNSA 2.0 requirements into actionable migration planning. Whether you are starting a cryptographic inventory, evaluating hybrid PQC modes, or assessing where your systems fall on the CNSA 2.0 timeline — we engage at the technical level.</p>
+                                <p>Ravonics works with federal program managers and systems integrators to translate NSM-10, NIST FIPS 203/204/205, and CNSA 2.0 requirements into actionable migration planning. Whether you are starting a cryptographic inventory, evaluating hybrid PQC modes, or assessing where your systems fall on the CNSA 2.0 timeline, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
 
@@ -516,7 +516,7 @@
             <div class="spacer-30-line"></div>
 
             <h5>About Us</h5>
-            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems — backed by the INSTAR Lab research bench.</p>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
