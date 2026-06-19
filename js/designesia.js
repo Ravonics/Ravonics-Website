@@ -1422,6 +1422,31 @@
          if (s.isMobile()) {
              s.destroy();
          }
+
+         // Fix: lazy-loaded carousel images initialise after skrollr sets body.style.height,
+         // leaving the footer unreachable (body height under-counted by ~447 px on index.html).
+         // Once the owl-stage-outer resizes (images loaded), clear skrollr's stale height cap
+         // and call refresh() so it re-measures the true document height.
+         (function () {
+             var stage = document.querySelector('#carousel-1 .owl-stage-outer');
+             if (!stage || stage.offsetHeight > 5) return; // already correct or element absent
+             var obs = new ResizeObserver(function (entries) {
+                 for (var i = 0; i < entries.length; i++) {
+                     if (entries[i].target.offsetHeight > 5) {
+                         obs.disconnect();
+                         setTimeout(function () {
+                             var sk = window.skrollr && window.skrollr.get();
+                             if (sk && !sk.isMobile()) {
+                                 document.body.style.height = '';
+                                 sk.refresh();
+                             }
+                         }, 50);
+                         return;
+                     }
+                 }
+             });
+             obs.observe(stage);
+         }());
          
 	         // --------------------------------------------------
 	         // navigation for mobile
