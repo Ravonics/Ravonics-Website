@@ -88,7 +88,25 @@
              mainClass: 'mfp-fade',
              removalDelay: 160,
              preloader: false,
-             fixedContentPos: false
+             fixedContentPos: false,
+             iframe: {
+                 patterns: {
+                     youtube: {
+                         index: 'youtube.com/',
+                         id: 'v=',
+                         src: 'https://www.youtube-nocookie.com/embed/%id%?autoplay=1'
+                     },
+                     vimeo: {
+                         index: 'vimeo.com/',
+                         id: '/',
+                         src: 'https://player.vimeo.com/video/%id%?autoplay=1'
+                     },
+                     gmaps: {
+                         index: '//maps.google.',
+                         src: '%id%&output=embed'
+                     }
+                 }
+             }
          });
          // Initialize popup as usual
          $('.image-popup').magnificPopup({
@@ -595,27 +613,64 @@
      /* --------------------------------------------------
       * plugin | isotope
       * --------------------------------------------------*/
-     function filter_gallery() {
-         var $container = jQuery('#gallery');
-         $container.isotope({
-             itemSelector: '.item',
-             filter: '*'
-         });
-         jQuery('#filters a').on("click", function() {
-             var $this = jQuery(this);
-             if ($this.hasClass('selected')) {
-                 return false;
-             }
-             var $optionSet = $this.parents();
-             $optionSet.find('.selected').removeClass('selected');
-             $this.addClass('selected');
-             var selector = jQuery(this).attr('data-filter');
-             $container.isotope({
-                 filter: selector
-             });
-             return false;
-         });
-     }
+	     function layoutGalleryWhenReady($container) {
+	         var images = $container.find('img').toArray();
+	         if (!images.length) {
+	             $container.isotope('layout');
+	             return;
+	         }
+
+	         var ready = images.map(function(img) {
+	             if (img.decode) {
+	                 return img.decode().catch(function() {});
+	             }
+	             if (img.complete) {
+	                 return Promise.resolve();
+	             }
+	             return new Promise(function(resolve) {
+	                 jQuery(img).one('load error', resolve);
+	             });
+	         });
+
+	         Promise.all(ready).then(function() {
+	             $container.isotope('layout');
+	         });
+	     }
+
+	     function filter_gallery() {
+	         var $container = jQuery('#gallery');
+	         if (!$container.length || typeof $container.isotope !== "function") {
+	             return;
+	         }
+
+	         $container.isotope({
+	             itemSelector: '.item',
+	             layoutMode: 'fitRows',
+	             percentPosition: true,
+	             filter: '*'
+	         });
+	         layoutGalleryWhenReady($container);
+
+	         jQuery('#filters a').off("click.ravonicsFilter").on("click.ravonicsFilter", function() {
+	             var $this = jQuery(this);
+	             if ($this.hasClass('selected')) {
+	                 return false;
+	             }
+	             var $optionSet = $this.parents();
+	             $optionSet.find('.selected').removeClass('selected');
+	             $this.addClass('selected');
+	             var selector = jQuery(this).attr('data-filter');
+	             $container.isotope({
+	                 filter: selector
+	             });
+	             layoutGalleryWhenReady($container);
+	             return false;
+	         });
+
+	         jQuery(window).off("resize.ravonicsGallery").on("resize.ravonicsGallery", function() {
+	             $container.isotope('layout');
+	         });
+	     }
 
      function masonry() {
          var $container = jQuery('.masonry');
@@ -797,33 +852,35 @@
      /* --------------------------------------------------
       * add arrow for mobile menu
       * --------------------------------------------------*/
-     function menu_arrow() {
-         // mainmenu create span
-         jQuery('#mainmenu li a').each(function() {
-             if ($(this).next("ul").length > 0) {
-                 $("<span></span>").insertAfter($(this));
-             }
-         });
-         // mainmenu arrow click
-         jQuery("#mainmenu > li > span").on("click", function() {
+	     function menu_arrow() {
+	         // mainmenu create span
+	         jQuery('#mainmenu li a').each(function() {
+	             if ($(this).next("ul").length > 0) {
+	                 $('<span role="button" tabindex="0" aria-expanded="false" aria-label="Toggle submenu"></span>').insertAfter($(this));
+	             }
+	         });
+	         // mainmenu arrow click
+	         jQuery("#mainmenu > li > span").on("click", function() {
              
              var iteration = $(this).data('iteration') || 1;
              switch (iteration) {
-                 case 1:
-                     $(this).addClass("active");
-                     $(this).parent().find("ul:first").css("height", "auto");
-                     var curHeight = $(this).parent().find("ul:first").height();
-                     $(this).parent().find("ul:first").css("height", "0");
+	                 case 1:
+	                     $(this).addClass("active");
+	                     $(this).attr("aria-expanded", "true");
+	                     $(this).parent().find("ul:first").css("height", "auto");
+	                     var curHeight = $(this).parent().find("ul:first").height();
+	                     $(this).parent().find("ul:first").css("height", "0");
                      $(this).parent().find("ul:first").animate({
                          'height': curHeight
                      }, 300, 'easeOutQuint');
                      break;
-                 case 2:
-					var curHeight = $(this).parent().find("ul:first").height();
-                     $(this).removeClass("active");
-                     $(this).parent().find("ul:first").animate({
-                         'height': "0"
-                     }, 300, 'easeOutQuint');
+	                 case 2:
+						var curHeight = $(this).parent().find("ul:first").height();
+	                     $(this).removeClass("active");
+	                     $(this).attr("aria-expanded", "false");
+	                     $(this).parent().find("ul:first").animate({
+	                         'height': "0"
+	                     }, 300, 'easeOutQuint');
                      break;
              }
              iteration++;
@@ -833,21 +890,23 @@
          jQuery("#mainmenu > li > ul > li > span").on("click", function() {
              var iteration = $(this).data('iteration') || 1;
              switch (iteration) {
-                 case 1:
-                     $(this).addClass("active");
-                     $(this).parent().find("ul:first").css("height", "auto");
-                     $(this).parent().parent().parent().find("ul:first").css("height", "auto");
-                     var curHeight = $(this).parent().find("ul:first").height();
+	                 case 1:
+	                     $(this).addClass("active");
+	                     $(this).attr("aria-expanded", "true");
+	                     $(this).parent().find("ul:first").css("height", "auto");
+	                     $(this).parent().parent().parent().find("ul:first").css("height", "auto");
+	                     var curHeight = $(this).parent().find("ul:first").height();
                      $(this).parent().find("ul:first").css("height", "0");
                      $(this).parent().find("ul:first").animate({
                          'height': curHeight
                      }, 400, 'easeInOutQuint');
                      break;
-                 case 2:
-                     $(this).removeClass("active");
-                     $(this).parent().find("ul:first").animate({
-                         'height': "0"
-                     }, 400, 'easeInOutQuint');
+	                 case 2:
+	                     $(this).removeClass("active");
+	                     $(this).attr("aria-expanded", "false");
+	                     $(this).parent().find("ul:first").animate({
+	                         'height': "0"
+	                     }, 400, 'easeInOutQuint');
                      break;
              }
              iteration++;
@@ -1043,10 +1102,16 @@
                     break;
              }
              iteration++;
-             if (iteration > 2) iteration = 1;
-             $(this).data('iteration', iteration);
-         });
-     }
+	             if (iteration > 2) iteration = 1;
+	             $(this).data('iteration', iteration);
+	         });
+	         jQuery("#mainmenu > li > span, #mainmenu > li > ul > li > span").on("keydown", function(event) {
+	             if (event.key === "Enter" || event.key === " ") {
+	                 event.preventDefault();
+	                 jQuery(this).trigger("click");
+	             }
+	         });
+	     }
 
      // selector
 
@@ -1357,33 +1422,70 @@
          if (s.isMobile()) {
              s.destroy();
          }
+
+         // Fix: lazy-loaded carousel images initialise after skrollr sets body.style.height,
+         // leaving the footer unreachable (body height under-counted by ~447 px on index.html).
+         // Once the owl-stage-outer resizes (images loaded), clear skrollr's stale height cap
+         // and call refresh() so it re-measures the true document height.
+         (function () {
+             var stage = document.querySelector('#carousel-1 .owl-stage-outer');
+             if (!stage || stage.offsetHeight > 5) return; // already correct or element absent
+             var obs = new ResizeObserver(function (entries) {
+                 for (var i = 0; i < entries.length; i++) {
+                     if (entries[i].target.offsetHeight > 5) {
+                         obs.disconnect();
+                         setTimeout(function () {
+                             var sk = window.skrollr && window.skrollr.get();
+                             if (sk && !sk.isMobile()) {
+                                 document.body.style.height = '';
+                                 sk.refresh();
+                             }
+                         }, 50);
+                         return;
+                     }
+                 }
+             });
+             obs.observe(stage);
+         }());
          
-         // --------------------------------------------------
-         // navigation for mobile
-         // --------------------------------------------------
-         jQuery('#menu-btn').on("click", function() {
+	         // --------------------------------------------------
+	         // navigation for mobile
+	         // --------------------------------------------------
+	         jQuery('#menu-btn').attr({
+	             "role": "button",
+	             "aria-label": "Open navigation",
+	             "aria-expanded": "false"
+	         });
+
+	         jQuery('#menu-btn').on("click", function() {
 
             var h = jQuery('header')[0].scrollHeight;
 			
-             if (mobile_menu_show === 0) {
-                 jQuery('header').addClass('menu-open');
-                 jQuery('header').css('height',$(window).innerHeight());
-                 mobile_menu_show = 1;
-                 jQuery(this).addClass("menu-open");
-             } else {
-                jQuery('header').removeClass('menu-open');
-                jQuery('header').css('height','auto');
-                 mobile_menu_show = 0;
-                 jQuery(this).removeClass("menu-open");
-             }
-         })
+	             if (mobile_menu_show === 0) {
+	                 jQuery('header').addClass('menu-open');
+	                 jQuery('header').css('height',$(window).innerHeight());
+	                 mobile_menu_show = 1;
+	                 jQuery(this).addClass("menu-open");
+	                 jQuery(this).attr("aria-expanded", "true");
+	                 jQuery(this).attr("aria-label", "Close navigation");
+	             } else {
+	                jQuery('header').removeClass('menu-open');
+	                jQuery('header').css('height','auto');
+	                 mobile_menu_show = 0;
+	                 jQuery(this).removeClass("menu-open");
+	                 jQuery(this).attr("aria-expanded", "false");
+	                 jQuery(this).attr("aria-label", "Open navigation");
+	             }
+	         })
 
          jQuery("#mainmenu a").on("click", function() {
             jQuery('header').removeClass('menu-open');
-            jQuery('header').css('height','auto');
-            mobile_menu_show = 0;
-            jQuery('#menu-btn').removeClass("menu-open");
-         });
+	            jQuery('header').css('height','auto');
+	            mobile_menu_show = 0;
+	            jQuery('#menu-btn').removeClass("menu-open");
+	            jQuery('#menu-btn').attr("aria-expanded", "false");
+	            jQuery('#menu-btn').attr("aria-label", "Open navigation");
+	         });
 
          jQuery("a.btn").on("click", function(evn) {
              if (this.href.indexOf('#') === -1) {
@@ -1438,11 +1540,9 @@
          custom_bg();
          menu_arrow();
          custom_elements();
-         init(); 
-         
-         new WOW().init();
+         init();
 
-         
+
          // one page navigation
          /**
           * This part causes smooth scrolling using scrollto.js
@@ -1711,14 +1811,13 @@
 		
      });
 
-    $(window).on('load', function() {
-        jQuery('#de-loader').fadeOut(500);
-        filter_gallery();
-        window.dispatchEvent(new Event('resize'));        
-         filter_gallery();
-         masonry();
+	    $(window).on('load', function() {
+	        jQuery('#de-loader').fadeOut(500);
+	        filter_gallery();
+	        window.dispatchEvent(new Event('resize'));
+	        masonry();
 
-        $('.grid').isotope({
+	        $('.grid').isotope({
             itemSelector: '.grid-item'
         });
         grid_gallery();
