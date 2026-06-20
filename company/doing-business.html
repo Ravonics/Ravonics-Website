@@ -712,14 +712,14 @@
     /**
      * Ravonics capability-update capture form (doing-business.html).
      *
-     * Posts to the same Logic App endpoint as contact.html, injected at deploy time
-     * via window.RAVONICS_FORM_ENDPOINTS.contact. The leadsourcecode field marks
-     * these submissions in Dataverse so D365 can route them to a nurture queue
-     * separate from the standard contact pipeline.
+     * Posts to a dedicated Logic App endpoint (Ravonics_CapabilityUpdate_Intake),
+     * injected at deploy time via window.RAVONICS_FORM_ENDPOINTS.capability_update.
+     * Falls back to a prefilled mailto if the key is not configured -- it does NOT
+     * fall back to the contact endpoint to avoid silently misrouting into the wrong queue.
      *
-     * Backend recommendation: configure a dedicated Logic App flow for this path
-     * (e.g., window.RAVONICS_FORM_ENDPOINTS.capability_update) so capability-update
-     * leads bypass the shared contact queue entirely.
+     * The dedicated flow creates D365 leads in the Ravonics BU and tags them with
+     * leadsourcecode = capability-updates, keeping them in their own segment
+     * separate from the booking/contact pipelines.
      */
     (function () {
         'use strict';
@@ -727,11 +727,6 @@
         var SOURCE_KEY = 'capability-updates';
 
         function getEl(id) { return document.getElementById(id); }
-
-        function getContactEndpoint() {
-            var cfg = window.RAVONICS_FORM_ENDPOINTS || {};
-            return cfg.contact || '';
-        }
 
         function buildMailtoFallback(payload) {
             var body = [
@@ -829,7 +824,7 @@
                     submitBtn.value    = 'Sending...';
                 }
 
-                var endpoint = getContactEndpoint();
+                var endpoint = (window.RAVONICS_FORM_ENDPOINTS || {}).capability_update || '';
                 var request = endpoint
                     ? fetch(endpoint, {
                         method: 'POST',
