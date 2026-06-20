@@ -155,6 +155,25 @@ grep_tree "old fabricated UEI: F7K9M2P4N8Q6" "F7K9M2P4N8Q6"
 grep_tree "old fabricated CAGE: 8R4T5" "8R4T5"
 grep_tree "old fabricated DUNS: 07-845-9321" "07-845-9321"
 
+# 2d. Logic App SAS callback URLs (signed trigger endpoints).
+# These carry a 'sig=' SAS token and must live in EXACTLY ONE deploy-time
+# generated file: js/form-endpoints.js (produced by scripts/inject-endpoints.sh).
+# Finding a signed logic.azure.com URL anywhere else means a callback signature
+# was hardcoded into source -- which is the leak we publish-time injection exists
+# to prevent. Flag every file except the one sanctioned location.
+SAS_ALLOW="${TARGET_DIR}/js/form-endpoints.js"
+while IFS= read -r f; do
+  [[ -z "${f}" ]] && continue
+  if [[ "${f}" != "${SAS_ALLOW}" ]]; then
+    violation "FORBIDDEN CONTENT (hardcoded Logic App SAS URL outside js/form-endpoints.js): ${f}"
+  fi
+done < <(grep -r -l -I \
+  --include="*.html" --include="*.htm" --include="*.txt" \
+  --include="*.xml" --include="*.json" --include="*.csv" \
+  --include="*.md" --include="*.js" --include="*.css" \
+  -E "logic\.azure\.com[^\"' ]*sig=" \
+  "${TARGET_DIR}" 2>/dev/null || true)
+
 # ---------------------------------------------------------------------------
 # Check 3 (belt-and-suspenders) — Any .md file present at all
 # The public site ships no Markdown; any .md is an internal doc leak.
