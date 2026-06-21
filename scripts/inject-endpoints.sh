@@ -7,18 +7,37 @@
 # window.RAVONICS_FORM_ENDPOINTS but deliberately ships NO endpoint secrets.
 # This script runs against the gh-pages publish WORKTREE (a derived artifact)
 # and:
-#   1. Retrieves the Azure Logic App callback URLs at runtime (never committed).
+#   1. Determines the endpoint URLs for each form (see MODES below).
 #   2. Writes <worktree>/js/form-endpoints.js defining
 #      window.RAVONICS_FORM_ENDPOINTS = { contact, booking, capability_update }.
 #   3. Injects a <script src> include before </head> in the worktree copies of
 #      contact.html, booking.html and company/doing-business.html.
 #
-# Secrets (SAS callback URLs) are ONLY written into the worktree. They are never
-# written anywhere under the demo/main source tree. scripts/ is on the gh-pages
-# publish exclude list, so this script itself never ships.
+# MODES
+# -----
+# Direct mode (default, legacy, backward-compatible):
+#   Retrieves the Azure Logic App SAS callback URLs at runtime and writes them
+#   into form-endpoints.js. This exposes the SAS sig in client JS (the original,
+#   inherent limitation). Used when no proxy is configured.
+#
+# Proxy mode (RAVONICS_USE_PROXY=1):
+#   Writes the lead-capture PROXY endpoints instead of the raw SAS URLs, so the
+#   SAS never reaches the browser. No Azure call is made; no secret is written.
+#   Requires RAVONICS_PROXY_BASE, e.g.
+#     RAVONICS_PROXY_BASE="https://ravonics-lead-proxy.azurewebsites.net/api"
+#   Each form maps to a path route: <base>/lead/<form>. The forms must also send
+#   a Cloudflare Turnstile token (cf_turnstile_token) + a company_website
+#   honeypot field; that markup is handled separately (see proxy/README.md).
+#
+# Secrets (SAS callback URLs) are ONLY ever written into the worktree, and only
+# in direct mode. scripts/ is on the gh-pages publish exclude list, so this
+# script itself never ships.
 #
 # Usage:
-#   ./scripts/inject-endpoints.sh /tmp/ghpages-work
+#   ./scripts/inject-endpoints.sh /tmp/ghpages-work                # direct (SAS)
+#   RAVONICS_USE_PROXY=1 \
+#     RAVONICS_PROXY_BASE="https://ravonics-lead-proxy.azurewebsites.net/api" \
+#     ./scripts/inject-endpoints.sh /tmp/ghpages-work              # proxy
 #
 # Exit codes:
 #   0  — success: form-endpoints.js written and includes injected
@@ -38,6 +57,10 @@ API_VERSION="2016-06-01"
 CONSULTATION_WF="Ravonics_Consultation_Intake"        # contact + booking
 CAPABILITY_WF="Ravonics_CapabilityUpdate_Intake"      # capability_update
 TRIGGER_NAME="manual"
+
+# Proxy mode toggles (see MODES in the header).
+USE_PROXY="${RAVONICS_USE_PROXY:-0}"
+PROXY_BASE="${RAVONICS_PROXY_BASE:-}"
 
 # ---------------------------------------------------------------------------
 # Arg handling
@@ -67,48 +90,74 @@ for required in "contact.html" "booking.html" "company/doing-business.html"; do
 done
 
 # ---------------------------------------------------------------------------
-# Preflight: Azure CLI must be logged in
+# Resolve endpoint URLs (proxy mode vs direct/SAS mode)
 # ---------------------------------------------------------------------------
+# Sets CONTACT_URL / BOOKING_URL / CAPABILITY_URL. In direct mode contact and
+# booking share the consultation SAS URL. In proxy mode each maps to a proxy
+# path route.
 
-if ! command -v az >/dev/null 2>&1; then
-  echo "ERROR: az CLI not found on PATH." >&2
-  exit 3
-fi
+if [[ "${USE_PROXY}" == "1" ]]; then
+  # ---- Proxy mode: no Azure call, no secret written ----
+  if [[ -z "${PROXY_BASE}" ]]; then
+    echo "ERROR: RAVONICS_USE_PROXY=1 but RAVONICS_PROXY_BASE is unset." >&2
+    echo "       e.g. RAVONICS_PROXY_BASE=https://ravonics-lead-proxy.azurewebsites.net/api" >&2
+    exit 6
+  fi
+  if [[ "${PROXY_BASE}" != https://* ]]; then
+    echo "ERROR: RAVONICS_PROXY_BASE must be an https:// URL (got '${PROXY_BASE}')." >&2
+    exit 6
+  fi
+  # Strip any trailing slash for clean concatenation.
+  PROXY_BASE="${PROXY_BASE%/}"
 
-if ! az account show >/dev/null 2>&1; then
-  echo "ERROR: az is not logged in. Run 'az login' first." >&2
-  exit 3
-fi
+  CONTACT_URL="${PROXY_BASE}/lead/contact"
+  BOOKING_URL="${PROXY_BASE}/lead/booking"
+  CAPABILITY_URL="${PROXY_BASE}/lead/capability_update"
+  echo "Proxy mode: endpoints point at ${PROXY_BASE}/lead/*" >&2
 
-# ---------------------------------------------------------------------------
-# Retrieve a Logic App callback URL (fails loudly on any problem)
-# ---------------------------------------------------------------------------
-get_callback_url() {
-  local workflow="$1"
-  local url
-  url="$(az rest \
-    --method post \
-    --url "https://management.azure.com/subscriptions/${SUBSCRIPTION}/resourceGroups/${RESOURCE_GROUP}/providers/Microsoft.Logic/workflows/${workflow}/triggers/${TRIGGER_NAME}/listCallbackUrl?api-version=${API_VERSION}" \
-    --query "value" -o tsv 2>/dev/null || true)"
+else
+  # ---- Direct mode (legacy): retrieve the SAS callback URLs from Azure ----
+  if ! command -v az >/dev/null 2>&1; then
+    echo "ERROR: az CLI not found on PATH." >&2
+    exit 3
+  fi
 
-  # Must be a real HTTPS callback URL carrying a signature.
-  if [[ "${url}" != https://*"sig="* ]]; then
-    echo "ERROR: could not retrieve a valid callback URL for ${workflow}." >&2
-    echo "       (az returned: '${url:-<empty>}')" >&2
+  if ! az account show >/dev/null 2>&1; then
+    echo "ERROR: az is not logged in. Run 'az login' first." >&2
+    exit 3
+  fi
+
+  # Retrieve a Logic App callback URL (fails loudly on any problem).
+  get_callback_url() {
+    local workflow="$1"
+    local url
+    url="$(az rest \
+      --method post \
+      --url "https://management.azure.com/subscriptions/${SUBSCRIPTION}/resourceGroups/${RESOURCE_GROUP}/providers/Microsoft.Logic/workflows/${workflow}/triggers/${TRIGGER_NAME}/listCallbackUrl?api-version=${API_VERSION}" \
+      --query "value" -o tsv 2>/dev/null || true)"
+
+    # Must be a real HTTPS callback URL carrying a signature.
+    if [[ "${url}" != https://*"sig="* ]]; then
+      echo "ERROR: could not retrieve a valid callback URL for ${workflow}." >&2
+      echo "       (az returned: '${url:-<empty>}')" >&2
+      exit 4
+    fi
+
+    printf '%s' "${url}"
+  }
+
+  echo "Retrieving Logic App callback URLs..." >&2
+  CONSULTATION_URL="$(get_callback_url "${CONSULTATION_WF}")"
+  CAPABILITY_URL="$(get_callback_url "${CAPABILITY_WF}")"
+
+  # Defense in depth: refuse to proceed if anything came back empty.
+  if [[ -z "${CONSULTATION_URL}" || -z "${CAPABILITY_URL}" ]]; then
+    echo "ERROR: one or more callback URLs are empty; refusing to write placeholders." >&2
     exit 4
   fi
 
-  printf '%s' "${url}"
-}
-
-echo "Retrieving Logic App callback URLs..." >&2
-CONSULTATION_URL="$(get_callback_url "${CONSULTATION_WF}")"
-CAPABILITY_URL="$(get_callback_url "${CAPABILITY_WF}")"
-
-# Defense in depth: refuse to proceed if anything came back empty.
-if [[ -z "${CONSULTATION_URL}" || -z "${CAPABILITY_URL}" ]]; then
-  echo "ERROR: one or more callback URLs are empty; refusing to write placeholders." >&2
-  exit 4
+  CONTACT_URL="${CONSULTATION_URL}"
+  BOOKING_URL="${CONSULTATION_URL}"
 fi
 
 # ---------------------------------------------------------------------------
@@ -125,13 +174,14 @@ cat > "${ENDPOINTS_FILE}" <<EOF
 /**
  * Ravonics form endpoints (deploy-time generated; NOT in source control).
  *
- * Injected by scripts/inject-endpoints.sh at publish time. Defines the Azure
- * Logic App callback URLs the public forms POST to. careers is intentionally
- * absent (no backend) so that form stays on its mailto fallback.
+ * Injected by scripts/inject-endpoints.sh at publish time. In proxy mode these
+ * are the lead-capture proxy paths (no SAS in the browser). In direct mode they
+ * are the Azure Logic App SAS callback URLs. careers is intentionally absent
+ * (no backend) so that form stays on its mailto fallback.
  */
 window.RAVONICS_FORM_ENDPOINTS = {
-  contact: "${CONSULTATION_URL}",
-  booking: "${CONSULTATION_URL}",
+  contact: "${CONTACT_URL}",
+  booking: "${BOOKING_URL}",
   capability_update: "${CAPABILITY_URL}"
 };
 EOF
