@@ -1,0 +1,12 @@
+scripts/
+.claude/
+*.md
+template/
+.env*
+*.pem
+*.key
+*.pfx
+secrets.*
+credentials.*
+!README.md
+!LICENSE
