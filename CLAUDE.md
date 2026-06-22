@@ -17,7 +17,7 @@ Acceptance gate: a structural fingerprint (counts of `<div`, `class=`, `<style`,
 ## Canonical facts
 
 `@.build-spec.md` is the single source of truth for all verified identifiers and claims. Use those exact values everywhere (footers, contact page, JSON-LD) — no paraphrase or abbreviation. Key compliance constraints:
-- **HUBZone**: application pending — NEVER state as "certified."
+- **HUBZone**: **SBA HUBZone certified** (June 22, 2026 - June 22, 2029).
 - **SAM.gov**: phrase as "SAM.gov registered (Active)"; do NOT print the expiration date publicly.
 - No fabricated testimonials, team faces, or `aggregateRating`. The build-spec lists fabricated identifiers (old UEI/CAGE/DUNS) that must not reappear.
 
