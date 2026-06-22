@@ -74,11 +74,14 @@ PROXY_BASE="${RAVONICS_PROXY_BASE:-https://ravonics-lead-proxy.azurewebsites.net
 #     mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs
 #   Capability (old sig):
 #     MHS-OOwgWMSCU5JTZHLec2LPfVswzvNUYBvYeRbPSl4
+#   Consultation (new sig, valid as of rotation):
+#     9EHH2cZUoFuL6jFr2sArjUFWLupAT-0Jc1g61bd7Avw
+#   Capability (new sig, valid as of rotation):
+#     PrLRSmmRSL3hnYRVaF1LHScflcQfo6Q8CR6Drfg8UQU
 #
 # Both Logic App access keys (primary) have been regenerated, permanently
 # invalidating all SAS derived from the old keys.  Direct mode retrieves
-# fresh callback URLs on-the-fly via get_callback_url().  Do NOT revert to
-# the old sig values.
+# fresh callback URLs on-the-fly via get_callback_url() if new rotation is needed again.  Do NOT revert to the old sig values.
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
