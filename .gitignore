@@ -1,12 +1,7 @@
-scripts/
-.claude/
-*.md
-template/
-.env*
-*.pem
-*.key
-*.pfx
-secrets.*
-credentials.*
-!README.md
-!LICENSE
+# transient image-runner log
+.image-runner.log
+
+# internal issue-review tooling — never track or publish
+issue-review.html
+issue-review-state.json
+scripts/issue-review-server.py
