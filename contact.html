@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://challenges.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://ravonics-lead-proxy.azurewebsites.net https://static.cloudflareinsights.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'self'">
     <meta content="Contact Ravonics for NIST 800-171-aligned AI, JADC2 integration, and quantum computing solutions. Public Trust leadership team serving DoW and the Intelligence Community. Ravenswood, WV headquarters." name="description" >
     <meta content="contact defense contractor, federal AI consultation, JADC2 integration quote, NIST 800-171 contractor contact, DoW technology consulting, federal mission support, HUBZone small business, Ravenswood WV defense, federal technology RFP" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -265,6 +265,10 @@
                             </div>
 
                             <div id="submit" class="mt-3">
+                                <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                  <input type="text" name="company_website" tabindex="-1" autocomplete="off" />
+                                </div>
+                                <div class="cf-turnstile mb-3" data-sitekey="1x00000000000000000000AA" data-callback="onTurnstileComplete"></div>
                                 <input type="submit" id="send_message" value="Send Message" class="btn-main">
                             </div>
 
@@ -530,6 +534,13 @@
      * deployment injects window.RAVONICS_FORM_ENDPOINTS.contact, the form posts
      * there. Otherwise it falls back to a prefilled email.
      */
+
+    var ravTurnstileToken = '';
+
+    function onTurnstileComplete(token) {
+        ravTurnstileToken = token;
+    }
+
     (function () {
         'use strict';
 
@@ -624,6 +635,10 @@
                     messageEl.classList.add('is-invalid');
                 } else { messageEl.classList.remove('is-invalid'); }
 
+                if (!ravTurnstileToken) {
+                    missing.push('Security check (please complete the CAPTCHA)');
+                }
+
                 if (missing.length > 0) {
                     showContactMessage('validation',
                         '<strong>Please complete the following required fields:</strong>' +
@@ -642,6 +657,7 @@
                 var lastName  = nameParts.join(' ') || '';
 
                 // ── Build payload ──────────────────────────────────────────
+                var compWebsiteEl = form.querySelector('[name="company_website"]');
                 var payload = {
                     subject:          'Website Contact Form',
                     firstname:        firstName,
@@ -652,7 +668,9 @@
                     leadsourcecode:   'Website Contact',
                     org_name:         '',
                     org_email:        emailEl.value.trim(),
-                    org_phone:        phoneEl.value.trim()
+                    org_phone:        phoneEl.value.trim(),
+                    cf_turnstile_token: ravTurnstileToken,
+                    company_website:    compWebsiteEl ? compWebsiteEl.value.trim() : ''
                 };
 
                 // ── In-flight state ────────────────────────────────────────
@@ -744,6 +762,8 @@
         }
     }
     </script>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 </body>
 
