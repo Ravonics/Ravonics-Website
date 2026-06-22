@@ -15,12 +15,12 @@
 #
 # MODES
 # -----
-# Direct mode (default, legacy, backward-compatible):
+# Direct mode (RAVONICS_USE_PROXY=0, legacy):
 #   Retrieves the Azure Logic App SAS callback URLs at runtime and writes them
 #   into form-endpoints.js. This exposes the SAS sig in client JS (the original,
 #   inherent limitation). Used when no proxy is configured.
 #
-# Proxy mode (RAVONICS_USE_PROXY=1):
+# Proxy mode (default now, since 2026-06-22):
 #   Writes the lead-capture PROXY endpoints instead of the raw SAS URLs, so the
 #   SAS never reaches the browser. No Azure call is made; no secret is written.
 #   Requires RAVONICS_PROXY_BASE, e.g.
@@ -34,10 +34,8 @@
 # script itself never ships.
 #
 # Usage:
-#   ./scripts/inject-endpoints.sh /tmp/ghpages-work                # direct (SAS)
-#   RAVONICS_USE_PROXY=1 \
-#     RAVONICS_PROXY_BASE="https://ravonics-lead-proxy.azurewebsites.net/api" \
-#     ./scripts/inject-endpoints.sh /tmp/ghpages-work              # proxy
+#   ./scripts/inject-endpoints.sh /tmp/ghpages-work                  # proxy (default)
+#   RAVONICS_USE_PROXY=0 ./scripts/inject-endpoints.sh /tmp/ghpages-work  # direct SAS
 #
 # Exit codes:
 #   0  — success: form-endpoints.js written and includes injected
@@ -59,8 +57,29 @@ CAPABILITY_WF="Ravonics_CapabilityUpdate_Intake"      # capability_update
 TRIGGER_NAME="manual"
 
 # Proxy mode toggles (see MODES in the header).
-USE_PROXY="${RAVONICS_USE_PROXY:-0}"
-PROXY_BASE="${RAVONICS_PROXY_BASE:-}"
+# Default: proxy mode.  The lead-capture proxy (ravonics-lead-proxy) keeps the
+# Logic App SAS out of the browser.  Override with RAVONICS_USE_PROXY=0 to fall
+# back to direct Azure SAS callback URLs (legacy).
+USE_PROXY="${RAVONICS_USE_PROXY:-1}"
+PROXY_BASE="${RAVONICS_PROXY_BASE:-https://ravonics-lead-proxy.azurewebsites.net/api}"
+
+# ---------------------------------------------------------------------------
+# Stale-SAS guard (2026-06-22 rotation)
+# ---------------------------------------------------------------------------
+# The old SAS signatures were burned when an earlier version of
+# form-endpoints.js was committed to a public GitHub mirror.  They were
+# rotated on 2026-06-22 via regenerateAccessKey on both Logic Apps.
+#
+#   Consultation (old sig):
+#     mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs
+#   Capability (old sig):
+#     MHS-OOwgWMSCU5JTZHLec2LPfVswzvNUYBvYeRbPSl4
+#
+# Both Logic App access keys (primary) have been regenerated, permanently
+# invalidating all SAS derived from the old keys.  Direct mode retrieves
+# fresh callback URLs on-the-fly via get_callback_url().  Do NOT revert to
+# the old sig values.
+# ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
 # Arg handling
