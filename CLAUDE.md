@@ -17,7 +17,7 @@ Acceptance gate: a structural fingerprint (counts of `<div`, `class=`, `<style`,
 ## Canonical facts
 
 `@.build-spec.md` is the single source of truth for all verified identifiers and claims. Use those exact values everywhere (footers, contact page, JSON-LD) — no paraphrase or abbreviation. Key compliance constraints:
-- **HUBZone**: **SBA HUBZone certified** (June 22, 2026 - June 22, 2029).
+- **HUBZone**: **SBA HUBZone certified** (June 22, 2026 - June 22, 2029; internal dates). PUBLIC phrasing is "SBA HUBZone Certified" with NO end date printed (same rule as SAM.gov expiration; verifiable via SAM.gov/DSBS). Keep JSON-LD validFrom; omit validThrough.
 - **SAM.gov**: phrase as "SAM.gov registered (Active)"; do NOT print the expiration date publicly.
 - No fabricated testimonials, team faces, or `aggregateRating`. The build-spec lists fabricated identifiers (old UEI/CAGE/DUNS) that must not reappear.
 
