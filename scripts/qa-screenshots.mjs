@@ -267,7 +267,22 @@ async function main() {
         });
 
         try {
-          await page.goto(url, { waitUntil: 'networkidle', timeout: 30_000 });
+          // Use networkidle for best fidelity; fall back to 'load' if third-party
+          // scripts (e.g. Cloudflare Turnstile, Azure logic apps) keep connections
+          // open and prevent networkidle from firing under localhost.
+          let networkIdleWarn = null;
+          try {
+            await page.goto(url, { waitUntil: 'networkidle', timeout: 30_000 });
+          } catch (idleErr) {
+            if (/timeout/i.test(idleErr.message)) {
+              networkIdleWarn = `networkidle timeout (third-party script) — fell back to load: ${url}`;
+              warn(`    WARN: ${networkIdleWarn}`);
+              // Page is already loaded; just wait for DOM ready
+              await page.waitForLoadState('load', { timeout: 5_000 }).catch(() => {});
+            } else {
+              throw idleErr;
+            }
+          }
           // Let lazy-loaded images settle
           await page.waitForTimeout(800);
 
