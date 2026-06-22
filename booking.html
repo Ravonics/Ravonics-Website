@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://challenges.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://ravonics-lead-proxy.azurewebsites.net https://static.cloudflareinsights.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'self'">
     <meta content="Submit an RFP, RFI, or capability-engagement request to Ravonics LLC. Federal agencies, prime contractors, and DoD organizations: tell us about your solicitation, requirements, and areas of interest." name="description">
     <meta content="federal RFP submission, RFI intake, federal contractor engagement, defense technology solicitation, DoD capability request, federal IT proposal, small business RFP, HUBZone contractor RFP" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -436,8 +436,12 @@
                                         </div>
                                     </div>
 
-                                    <!-- ── Submit ── -->
+                                    <!-- ── Turnstile + honeypot + Submit ── -->
                                     <div class="col-md-12 mt-4">
+                                        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                          <input type="text" name="company_website" tabindex="-1" autocomplete="off" />
+                                        </div>
+                                        <div class="cf-turnstile mb-3" data-sitekey="1x00000000000000000000AA" data-callback="onTurnstileComplete"></div>
                                         <button type="submit" id="rfp_submit_btn" class="btn-main">
                                             Submit Engagement Request
                                         </button>
@@ -598,6 +602,12 @@
     <script src="js/designesia.js" defer></script>
 
     <script>
+    var ravTurnstileToken = '';
+
+    function onTurnstileComplete(token) {
+        ravTurnstileToken = token;
+    }
+
     /**
      * Ravonics RFP / RFI Intake
      *
@@ -827,6 +837,11 @@
             var agreeEl = form.querySelector('[name="agree_contact"]');
             payload['agree_terms'] = (agreeEl && agreeEl.checked) ? 'Yes' : 'No';
 
+            // Anti-abuse fields for the lead-capture proxy
+            var compWebsiteEl = form.querySelector('[name="company_website"]');
+            payload['cf_turnstile_token'] = typeof ravTurnstileToken !== 'undefined' ? ravTurnstileToken : '';
+            payload['company_website']    = compWebsiteEl ? compWebsiteEl.value.trim() : '';
+
             return payload;
         }
 
@@ -889,6 +904,10 @@
                 var agreeEl = getEl('agree_contact');
                 if (!agreeEl || !agreeEl.checked) {
                     missing.push('Authorization to contact (must be accepted)');
+                }
+
+                if (!ravTurnstileToken) {
+                    missing.push('Security check (please complete the CAPTCHA)');
                 }
 
                 if (missing.length > 0) {
@@ -991,6 +1010,8 @@
         });
     }());
     </script>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 </body>
 

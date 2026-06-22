@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://challenges.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://ravonics-lead-proxy.azurewebsites.net https://static.cloudflareinsights.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; base-uri 'self'">
     <meta content="Acquisition reference for Contracting Officers and prime contractors. Ravonics LLC: UEI YCBDVKN1A9G7, CAGE 20DS8, SAM.gov registered (Active). Small business. HUBZone application submitted (pending). NAICS 541512, 541330, 541715." name="description" >
     <meta content="how to do business with Ravonics, federal acquisition, UEI YCBDVKN1A9G7, CAGE 20DS8, SAM.gov registered, small business set-aside, HUBZone pending, NAICS 541512, defense technology contractor, subcontractor teaming" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -523,6 +523,10 @@
                                     </div>
 
                                     <div id="cu_submit" class="mt-3">
+                                        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                          <input type="text" name="company_website" tabindex="-1" autocomplete="off" />
+                                        </div>
+                                        <div class="cf-turnstile mb-3" data-sitekey="1x00000000000000000000AA" data-callback="onTurnstileComplete"></div>
                                         <input type="submit" id="cu_send" value="Keep Me Informed" class="btn-main">
                                     </div>
 
@@ -709,6 +713,12 @@
     <script src="../js/designesia.js" defer></script>
 
     <script>
+    var ravTurnstileToken = '';
+
+    function onTurnstileComplete(token) {
+        ravTurnstileToken = token;
+    }
+
     /**
      * Ravonics capability-update capture form (doing-business.html).
      *
@@ -798,6 +808,10 @@
                     emailEl.classList.add('is-invalid');
                 } else { emailEl.classList.remove('is-invalid'); }
 
+                if (!ravTurnstileToken) {
+                    missing.push('Security check (please complete the CAPTCHA)');
+                }
+
                 if (missing.length > 0) {
                     show('validation',
                         '<strong>Please complete the following required fields:</strong>' +
@@ -810,13 +824,16 @@
                     return;
                 }
 
+                var compWebsiteEl = form.querySelector('[name="company_website"]');
                 var payload = {
                     subject:        'Capability Update Request',
                     firstname:      nameEl.value.trim(),
                     emailaddress1:  emailEl.value.trim(),
                     org_name:       orgEl      ? orgEl.value.trim()      : '',
                     description:    interestEl ? interestEl.value.trim() : '',
-                    leadsourcecode: SOURCE_KEY
+                    leadsourcecode: SOURCE_KEY,
+                    cf_turnstile_token: ravTurnstileToken,
+                    company_website:    compWebsiteEl ? compWebsiteEl.value.trim() : ''
                 };
 
                 if (submitBtn) {
@@ -860,6 +877,8 @@
         });
     }());
     </script>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 </body>
 
