@@ -1811,18 +1811,15 @@
 		
      });
 
-	    // Fallback: if window.load stalls (e.g. third-party script hangs), hide
-	    // the preloader after 8 s so the footer and page content are always reachable.
-	    var _deLoaderFired = false;
-	    function _deLoaderHide() {
-	        if (_deLoaderFired) return;
-	        _deLoaderFired = true;
+	    // Fallback: if window.load stalls (e.g. third-party beacon hangs), hide
+	    // the preloader after 3.5 s so the footer and page content are always reachable.
+	    var _deLoaderTimer = setTimeout(function() {
 	        jQuery('#de-loader').fadeOut(500);
-	    }
-	    setTimeout(_deLoaderHide, 8000);
+	    }, 3500);
 
 	    $(window).on('load', function() {
-	        _deLoaderHide();
+	        clearTimeout(_deLoaderTimer);
+	        jQuery('#de-loader').fadeOut(500);
 	        filter_gallery();
 	        window.dispatchEvent(new Event('resize'));
 	        masonry();
