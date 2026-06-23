@@ -59,6 +59,8 @@ FORBIDDEN_DIRS=(
   "styles"
   "template"
   "scripts"
+  "proxy"
+  "src"
 )
 
 # Forbidden globs (shell glob patterns, evaluated relative to TARGET_DIR)
