@@ -83,6 +83,19 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <style>
+    /* #69 WCAG AA text contrast (house-built acquisition page) */
+    #content { color:#444; }
+    #content section.bg-color-secondary,
+    #content section.bg-color-secondary p,
+    #content section.bg-color-secondary li,
+    #content section.bg-color-secondary h2,
+    #content section.bg-color-secondary h4,
+    #content section.bg-color-secondary h5,
+    #content section.bg-color-secondary strong,
+    #content section.bg-color-secondary .subtitle,
+    #content section.bg-color-secondary span { color:#1a1a1a; }
+    </style>
 </head>
 
 <body>
@@ -113,11 +126,11 @@
                             <div class="de-flex-col header-col-mid">
                                 <!-- mainemenu begin -->
                                 <ul id="mainmenu" role="navigation" aria-label="Primary">
-                                    <li><a class="menu-item" href="#">Capabilities</a>
+                                    <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                             <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
-                                            <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                            <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
                                             <li><a href="../capabilities/computer-vision.html">Computer Vision &amp; Sensor Fusion</a></li>
                                             <li><a href="../capabilities/intelligence.html">Intelligence &amp; Decision Systems</a></li>
                                             <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
@@ -127,7 +140,7 @@
                                             <li><a href="../capabilities/integration.html">Systems Engineering &amp; Integration</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="#">Solutions</a>
+                                    <li><a class="menu-item" href="../solutions/ai-platforms.html">Solutions</a>
                                         <ul>
                                             <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
                                             <li><a href="../solutions/cloud.html">Enterprise Cloud &amp; Data Architecture</a></li>
@@ -138,7 +151,7 @@
                                             <li><a href="../solutions/hud-systems.html">Advanced Visualization &amp; HUD</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="#">Industries</a>
+                                    <li><a class="menu-item" href="../industries/defense.html">Industries</a>
                                         <ul>
                                             <li><a href="../industries/defense.html">Defense &amp; DoW</a></li>
                                             <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
@@ -146,7 +159,7 @@
                                             <li><a href="../industries/research.html">Research &amp; Innovation Partners</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="#">Company</a>
+                                    <li><a class="menu-item" href="../company/about.html">Company</a>
                                         <ul>
                                             <li><a href="../company/about.html">About</a></li>
                                             <li><a href="../company/team.html">Leadership</a></li>
@@ -156,13 +169,13 @@
                                             <li><a href="../company/careers.html">Careers</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="#">Insights</a>
+                                    <li><a class="menu-item" href="../insights/blog.html">Insights</a>
                                         <ul>
                                             <li><a href="../insights/blog.html">Technical Publications</a></li>
                                             <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
                                             <li><a href="../insights/innovation.html">Research Directions</a></li>
                                             <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
-                                            <li><a href="../insights/testimonials.html">Why Ravonics</a></li>
+                                            <li><a href="../insights/testimonials.html">References & Validation</a></li>
                                         </ul>
                                     </li>
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
@@ -171,7 +184,7 @@
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Request Consultation</span></a>
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
                                     <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
                                 </div>
 
@@ -315,23 +328,23 @@
                             <ul class="list-unstyled">
                                 <li class="mb-3">
                                     <strong>541512</strong> -- Computer Systems Design Services (Primary)<br>
-                                    <span style="font-size:13px;color:#666;">Custom systems design, integration, and technical consulting for federal IT environments. SBA employee-based size standard applies; verify current threshold at sba.gov.</span>
+                                    <span style="font-size:13px;color:#1a1a1a;">Custom systems design, integration, and technical consulting for federal IT environments. SBA employee-based size standard applies; verify current threshold at sba.gov.</span>
                                 </li>
                                 <li class="mb-3">
                                     <strong>541330</strong> -- Engineering Services<br>
-                                    <span style="font-size:13px;color:#666;">Systems engineering, architecture design, and technical integration for defense and intelligence programs.</span>
+                                    <span style="font-size:13px;color:#1a1a1a;">Systems engineering, architecture design, and technical integration for defense and intelligence programs.</span>
                                 </li>
                                 <li class="mb-3">
                                     <strong>541715</strong> -- R&amp;D in Physical, Engineering, and Life Sciences<br>
-                                    <span style="font-size:13px;color:#666;">Applied research and development, including SBIR/STTR-eligible work conducted through our INSTAR Lab research affiliate.</span>
+                                    <span style="font-size:13px;color:#1a1a1a;">Applied research and development, including SBIR/STTR-eligible work conducted through our INSTAR Lab research affiliate.</span>
                                 </li>
                                 <li class="mb-3">
                                     <strong>518210</strong> -- Computing Infrastructure / Data Processing / Web Hosting<br>
-                                    <span style="font-size:13px;color:#666;">Cloud and data infrastructure services for federal environments.</span>
+                                    <span style="font-size:13px;color:#1a1a1a;">Cloud and data infrastructure services for federal environments.</span>
                                 </li>
                                 <li class="mb-3">
                                     <strong>541511</strong> -- Custom Computer Programming Services<br>
-                                    <span style="font-size:13px;color:#666;">Mission-software development and agentic AI delivery.</span>
+                                    <span style="font-size:13px;color:#1a1a1a;">Mission-software development and agentic AI delivery.</span>
                                 </li>
                             </ul>
                         </div>
@@ -580,7 +593,7 @@
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
-                                        <li><a href="../capabilities/robotics.html">Advanced Robotics</a></li>
+                                        <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
                                         <li><a href="../capabilities/computer-vision.html">Computer Vision &amp; Sensor Fusion</a></li>
                                         <li><a href="../capabilities/intelligence.html">Intelligence &amp; Decision Systems</a></li>
                                         <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
@@ -678,7 +691,7 @@
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
-                <li>Advanced Robotics</li>
+                <li>Autonomy Software</li>
                 <li>Computer Vision &amp; Sensor Fusion</li>
                 <li>Intelligence &amp; Decision Systems</li>
                 <li>Tactical Communications</li>

@@ -1,7 +1,0 @@
-.git*
-.vscode
-local.settings.json
-test/
-*.test.js
-README.md
-.gitignore

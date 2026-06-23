@@ -1,5 +1,0 @@
-# Never commit secrets or build artifacts.
-local.settings.json
-node_modules/
-*.zip
-.DS_Store

@@ -646,7 +646,6 @@
 	         $container.isotope({
 	             itemSelector: '.item',
 	             layoutMode: 'fitRows',
-	             percentPosition: true,
 	             filter: '*'
 	         });
 	         layoutGalleryWhenReady($container);
@@ -1811,7 +1810,14 @@
 		
      });
 
+	    // Fallback: if window.load stalls (e.g. third-party beacon hangs), hide
+	    // the preloader after 3.5 s so the footer and page content are always reachable.
+	    var _deLoaderTimer = setTimeout(function() {
+	        jQuery('#de-loader').fadeOut(500);
+	    }, 3500);
+
 	    $(window).on('load', function() {
+	        clearTimeout(_deLoaderTimer);
 	        jQuery('#de-loader').fadeOut(500);
 	        filter_gallery();
 	        window.dispatchEvent(new Event('resize'));
