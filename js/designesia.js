@@ -1811,8 +1811,18 @@
 		
      });
 
-	    $(window).on('load', function() {
+	    // Fallback: if window.load stalls (e.g. third-party script hangs), hide
+	    // the preloader after 8 s so the footer and page content are always reachable.
+	    var _deLoaderFired = false;
+	    function _deLoaderHide() {
+	        if (_deLoaderFired) return;
+	        _deLoaderFired = true;
 	        jQuery('#de-loader').fadeOut(500);
+	    }
+	    setTimeout(_deLoaderHide, 8000);
+
+	    $(window).on('load', function() {
+	        _deLoaderHide();
 	        filter_gallery();
 	        window.dispatchEvent(new Event('resize'));
 	        masonry();
