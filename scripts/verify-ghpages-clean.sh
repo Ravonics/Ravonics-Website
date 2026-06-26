@@ -142,8 +142,30 @@ grep_tree() {
   fi
 }
 
-# 2a. Founder legal name (PII)
-grep_tree "founder PII: 'Matthew'" "Matthew"
+# 2a. Founder name check.
+# "Matthew S. Hackney" and "Matthew S Hackney" are the user-approved public name
+# for the POC field. Any OTHER "Matthew..." string is unexpected PII and flagged.
+# Strip the approved variants first, then flag files where Matthew still appears.
+{
+  matthew_files=$(grep -r -l -I \
+    --include="*.html" --include="*.htm" --include="*.txt" \
+    --include="*.xml" --include="*.json" --include="*.csv" \
+    --include="*.md" --include="*.js" --include="*.css" \
+    -e "Matthew" \
+    "${TARGET_DIR}" 2>/dev/null || true)
+  if [[ -n "${matthew_files}" ]]; then
+    while IFS= read -r f; do
+      [[ -z "${f}" ]] && continue
+      # Extract lines with Matthew, strip both approved-name forms, check remainder
+      remainder=$(grep -I "Matthew" "${f}" \
+        | sed 's/Matthew S\. Hackney//g; s/Matthew S Hackney//g' \
+        || true)
+      if echo "${remainder}" | grep -q "Matthew"; then
+        violation "FORBIDDEN CONTENT (unexpected 'Matthew' — approved name is 'Matthew S. Hackney'): ${f}"
+      fi
+    done <<< "${matthew_files}"
+  fi
+}
 
 # 2b. SAM.gov expiration date pattern
 # The expiration date appears as a date string; the canonical risk is publishing
