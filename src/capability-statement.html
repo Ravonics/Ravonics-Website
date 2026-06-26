@@ -7,25 +7,27 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body {
-    width: 8.5in;
-    height: 11in;
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 7.8pt;
-    color: #1a1a1a;
-    background: #fff;
-  }
-  @page {
-    size: 8.5in 11in;
-    margin: 0.5in;
-  }
-  body { padding: 0; }
-  .page {
-    width: 100%;
-    height: 10in;
-    display: flex;
-    flex-direction: column;
-  }
+	  html, body {
+	    width: 8.5in;
+	    height: 11in;
+	    margin: 0;
+	    font-family: 'Open Sans', Arial, sans-serif;
+	    font-size: 7.8pt;
+	    color: #1a1a1a;
+	    background: #fff;
+	  }
+	  @page {
+	    size: 8.5in 11in;
+	    margin: 0;
+	  }
+	  body { padding: 0; }
+	  .page {
+	    width: 8.5in;
+	    height: 11in;
+	    padding: 0.5in 0.5in 0.35in;
+	    display: flex;
+	    flex-direction: column;
+	  }
 
   /* HEADER BAND */
   .header {
@@ -75,36 +77,36 @@
   }
 
   /* LEFT COLUMN */
-  .left-col {
-    flex: 0 0 62%;
-    padding: 10px 10px 6px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    border-right: 2px solid #D98F4E;
-    padding-right: 12px;
-  }
+	  .left-col {
+	    flex: 0 0 62%;
+	    padding: 8px 10px 6px 0;
+	    display: flex;
+	    flex-direction: column;
+	    gap: 6px;
+	    border-right: 2px solid #D98F4E;
+	    padding-right: 12px;
+	  }
 
   /* RIGHT COLUMN */
-  .right-col {
-    flex: 0 0 38%;
-    padding: 10px 0 6px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
+	  .right-col {
+	    flex: 0 0 38%;
+	    padding: 8px 0 6px 12px;
+	    display: flex;
+	    flex-direction: column;
+	    gap: 6px;
+	  }
 
   /* SECTION HEADERS */
-  .section-title {
-    font-size: 8.5pt;
+	  .section-title {
+	    font-size: 8.5pt;
     font-weight: 700;
     color: #fff;
     background: #93242A;
     padding: 3px 7px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
+	    margin-bottom: 3px;
+	  }
 
   .section-title-tan {
     font-size: 8.5pt;
@@ -114,23 +116,35 @@
     padding: 3px 7px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
+	    margin-bottom: 3px;
+	  }
+
+	  .summary-box {
+	    background: #fffaf6;
+	    border: 1px solid #ead8c8;
+	    border-left: 4px solid #D98F4E;
+	    padding: 6px 8px;
+	    line-height: 1.35;
+	  }
+	  .summary-box strong {
+	    color: #93242A;
+	    font-weight: 700;
+	  }
 
   /* BULLET LISTS */
-  ul.competencies {
+	  ul.competencies {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
-  }
+	    gap: 2px;
+	  }
   ul.competencies li {
     padding-left: 10px;
     position: relative;
-    line-height: 1.35;
-  }
+	    line-height: 1.28;
+	  }
   ul.competencies li::before {
     content: "\25B6";
     color: #D98F4E;
@@ -144,19 +158,19 @@
     font-weight: 700;
   }
 
-  ul.diff {
+	  ul.diff {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
-  }
+	    gap: 2px;
+	  }
   ul.diff li {
     padding-left: 10px;
     position: relative;
-    line-height: 1.35;
-  }
+	    line-height: 1.28;
+	  }
   ul.diff li::before {
     content: "\25CF";
     color: #93242A;
@@ -175,10 +189,10 @@
     width: 100%;
     border-collapse: collapse;
   }
-  .data-table tr td {
-    padding: 2px 4px;
-    font-size: 7.5pt;
-    line-height: 1.3;
+	  .data-table tr td {
+	    padding: 2px 4px;
+	    font-size: 7.25pt;
+	    line-height: 1.22;
     vertical-align: top;
     border-bottom: 1px solid #f0e8e0;
   }
@@ -186,13 +200,13 @@
     font-weight: 700;
     color: #93242A;
     white-space: nowrap;
-    width: 42%;
-  }
+	    width: 38%;
+	  }
 
   /* NAICS / PSC */
   .naics-block {
-    font-size: 7.3pt;
-    line-height: 1.4;
+	    font-size: 7.1pt;
+	    line-height: 1.32;
   }
   .naics-block .naics-row {
     display: flex;
@@ -206,19 +220,19 @@
   }
 
   /* PARTNER LIST */
-  ul.partners {
+	  ul.partners {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
-  }
+	    gap: 2px;
+	  }
   ul.partners li {
     padding-left: 10px;
     position: relative;
-    line-height: 1.35;
-  }
+	    line-height: 1.28;
+	  }
   ul.partners li::before {
     content: "\2022";
     color: #D98F4E;
@@ -233,19 +247,84 @@
   }
 
   /* ROADMAP */
-  ul.roadmap {
+	  ul.roadmap {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-  }
+	    gap: 1px;
+	  }
   ul.roadmap li {
     padding-left: 10px;
     position: relative;
-    line-height: 1.35;
-  }
+	    line-height: 1.28;
+	  }
+
+	  .two-col-list {
+	    display: grid;
+	    grid-template-columns: 1fr 1fr;
+	    column-gap: 10px;
+	    row-gap: 0;
+	  }
+
+	  .mini-note {
+	    font-size: 6.8pt;
+	    line-height: 1.25;
+	    color: #555;
+	    margin-top: 3px;
+	  }
+
+	  .application-kicker {
+	    color: #93242A;
+	    font-size: 6.8pt;
+	    font-weight: 700;
+	    letter-spacing: 0.25px;
+	    margin-bottom: 3px;
+	    text-transform: uppercase;
+	  }
+
+	  .application-grid {
+	    display: grid;
+	    grid-template-columns: 1fr 1fr;
+	    gap: 3px 5px;
+	    list-style: none;
+	    margin: 0;
+	    padding: 0;
+	  }
+
+	  .application-grid li {
+	    background: #fffaf6;
+	    border: 1px solid #ead8c8;
+	    border-left: 3px solid #D98F4E;
+	    min-height: 29px;
+	    padding: 3px 4px 3px 17px;
+	    position: relative;
+	    line-height: 1.16;
+	  }
+
+	  .application-grid li::before {
+	    color: #93242A;
+	    content: "\2714";
+	    font-size: 6pt;
+	    font-weight: 700;
+	    left: 5px;
+	    position: absolute;
+	    top: 5px;
+	  }
+
+	  .application-grid strong {
+	    color: #93242A;
+	    display: block;
+	    font-size: 6.9pt;
+	    line-height: 1.1;
+	  }
+
+	  .application-grid span {
+	    color: #333;
+	    display: block;
+	    font-size: 6.55pt;
+	  }
   ul.roadmap li::before {
     content: "\2714";
     color: #D98F4E;
@@ -256,17 +335,20 @@
   }
 
   /* POC BOX */
-  .poc-box {
-    background: #faf5f0;
-    border: 1px solid #D98F4E;
-    border-left: 4px solid #93242A;
-    padding: 6px 8px;
-    font-size: 7.5pt;
-    line-height: 1.5;
-  }
-  .poc-box .poc-name {
-    font-weight: 700;
-    color: #93242A;
+	  .poc-box {
+	    background: #faf5f0;
+	    border: 1px solid #D98F4E;
+	    border-left: 4px solid #93242A;
+	    padding: 5px 8px;
+	    font-size: 7.35pt;
+	    line-height: 1.38;
+	  }
+	  .poc-section {
+	    margin-top: auto;
+	  }
+	  .poc-box .poc-name {
+	    font-weight: 700;
+	    color: #93242A;
     font-size: 8.5pt;
   }
   .poc-box .poc-title {
@@ -310,95 +392,136 @@
   <!-- MAIN BODY -->
   <div class="body">
 
-    <!-- LEFT COLUMN -->
-    <div class="left-col">
+	    <!-- LEFT COLUMN -->
+	    <div class="left-col">
+
+	      <div>
+	        <div class="section-title">Federal Mission Fit</div>
+	        <div class="summary-box">
+	          <strong>Ravonics LLC</strong> is an SBA HUBZone-certified small business delivering AI/ML, autonomy software, agentic security implementation, edge computing, and applied R&amp;D for defense, intelligence, and federal civilian missions. We pair founder-led AI and federal capture experience with production-mature partner technology and the INSTAR Lab research bench to move prototypes toward compliant, deployable mission systems.
+	        </div>
+	      </div>
+
+	      <div>
+	        <div class="section-title-tan">Core Capability Clusters</div>
+	        <ul class="competencies">
+	          <li><strong>Agentic AI &amp; Responsible Decision Systems</strong> - explainable models, decision audit trails, lifecycle model governance, mission-tuned AI workflows</li>
+	          <li><strong>Edge AI, HPC &amp; GPU Orchestration</strong> - model compression, air-gapped inference, policy-driven GPU scheduling, multi-tenant hardware isolation</li>
+	          <li><strong>Computer Vision &amp; Sensor Fusion</strong> - multi-spectral detection, ISR imagery triage, LiDAR/radar/IR fusion, edge-validated perception pipelines</li>
+	          <li><strong>Autonomous Systems &amp; Robotics Software</strong> - GPS-denied SLAM, swarm coordination, adaptive mission planning, human-robot teaming frameworks</li>
+	          <li><strong>Multi-Domain Intelligence &amp; C2</strong> - common operating picture, air/space/maritime/environmental fusion, DIS interoperability, decision support</li>
+	          <li><strong>Agentic Security Solutions &amp; Implementation</strong> - full cATO support, eMASS real-time integration, ServiceNow workflows, Sovereign AI-Driven Security for enterprise and federal agencies</li>
+	          <li><strong>Post-Quantum Cryptography &amp; Applied R&amp;D</strong> - FIPS 203/204/205 readiness, key management, cryptographic agility, INSTAR physics research</li>
+	          <li><strong>Systems Engineering &amp; Integration</strong> - JADC2-compatible data exchange, legacy modernization, API/data fabric design, tactical network integration</li>
+	        </ul>
+	      </div>
+
+		      <div>
+		        <div class="section-title">Mission Applications</div>
+		        <div class="application-kicker">8 fast-fit areas for pilots, task orders, and transition work</div>
+		        <ul class="application-grid">
+		          <li><strong>Sovereign AI</strong><span>Disconnected inference and audit logs</span></li>
+		          <li><strong>Edge ISR</strong><span>Model compression and tactical exploitation</span></li>
+		          <li><strong>Autonomy</strong><span>Perception, SLAM, and sensor fusion</span></li>
+		          <li><strong>Agentic Security</strong><span>Zero-trust implementation workflows</span></li>
+		          <li><strong>cATO Ops</strong><span>eMASS and ServiceNow integration</span></li>
+		          <li><strong>PQC Readiness</strong><span>Inventory, migration, and crypto agility</span></li>
+		          <li><strong>R&amp;D Transition</strong><span>SBIR/STTR research-to-program path</span></li>
+		          <li><strong>Workforce AI</strong><span>Performance tooling and development</span></li>
+		        </ul>
+		      </div>
+
+	      <div>
+	        <div class="section-title-tan">Differentiators</div>
+		        <ul class="diff">
+		          <li><strong>Founder-led technical credibility</strong> - Sean Hackney: 30+ yrs computer science, 20+ yrs AI/ML, active U.S. Public Trust, Azure Solutions Architect Expert, AWS SA Professional</li>
+		          <li><strong>Federal capture record</strong> - co-authored $36M+ in federal prime wins as key personnel; DoD CDAO Tradewinds "Awardable" AI platform recognition (individual career)</li>
+		          <li><strong>Prototype-to-compliance bridge</strong> - converts promising technology into auditable federal delivery packages with controls, evidence, and transition planning</li>
+		          <li><strong>Applied research depth</strong> - INSTAR Lab 501(c)(3) physics and materials-science bench supports SBIR/STTR, PQC, and emerging technology R&amp;D</li>
+		          <li><strong>Integration-first delivery</strong> - API/data fabric design, GitOps patterns, control traceability, and deployment paths defined early instead of after prototype success</li>
+		        </ul>
+		      </div>
 
       <div>
-        <div class="section-title">Core Competencies</div>
-        <ul class="competencies">
-          <li><strong>Agentic AI &amp; Autonomous Systems</strong> - hierarchical agent orchestration, decision audit trails, autonomous requirement-to-deployment pipelines</li>
-          <li><strong>AI/ML Engineering &amp; Optimization</strong> - edge model compression, federated inference, physics-informed simulation, ISR data analytics</li>
-          <li><strong>Secure Software Delivery</strong> - 150+ NIST 800-53 controls, SBOM &amp; artifact attestation, continuous cATO evidence, policy-as-code</li>
-          <li><strong>Multi-Domain Situational Awareness</strong> - intelligence fusion (maritime, airspace, satellite, environmental); AI object detection for field/ISR</li>
-          <li><strong>Zero-Trust Infrastructure &amp; DevSecOps</strong> - immutable Kubernetes, zero-trust networking, GitOps, encrypted secrets management</li>
-          <li><strong>Post-Quantum Cryptography Readiness</strong> - NIST FIPS 203/204/205 (ML-KEM, ML-DSA, SLH-DSA); cryptographic agility architecture</li>
-          <li><strong>Federal Capture &amp; Proposal Automation</strong> - opportunity intake, bid/no-bid scoring, compliance-matrix gen., proposal drafting support</li>
-          <li><strong>CMMC/ATO Program Management</strong> - PII/privacy programs, CMMC alignment planning, cloud-native ATO acceleration</li>
-          <li><strong>Applied Physics R&amp;D (INSTAR Lab)</strong> - materials science, condensed-matter &amp; radiation effects research; SBIR/STTR pipeline</li>
-          <li><strong>Systems Integration</strong> - cloud and hybrid on-premises architectures to federal security requirements</li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="section-title-tan">Differentiators</div>
-        <ul class="diff">
-          <li><strong>Experienced founder</strong> - Sean Hackney: 30+ yrs CS, 20+ yrs AI/ML; co-authored $36M+ in federal prime wins; DoD CDAO Tradewinds "Awardable"; Gartner MQ-recognized AI leadership (individual career)</li>
-          <li><strong>Physics R&amp;D bench</strong> - INSTAR Lab scientists (Ph.D. &amp; M.S. Physics) for SBIR/STTR applied research</li>
-          <li><strong>Mature ecosystem</strong> - affiliated companies deliver production-grade DevSecOps, situational awareness, and zero-trust platforms under Ravonics' federal compliance umbrella</li>
-          <li><strong>Agile small business</strong> - no legacy overhead; concept through ATO-ready deployment</li>
-          <li><strong>Federal compliance bridge</strong> - CMMC planning, PII safeguards, ATO program management the IP originators lack</li>
+        <div class="section-title">Ecosystem Assets Available Through Ravonics</div>
+        <ul class="partners">
+          <li><strong>Dream Limited:</strong> capture automation, proposal workflows, opportunity operations</li>
+          <li><strong>Droid Ops Inc:</strong> agentic security implementation, DevSecOps, cATO/eMASS/ServiceNow</li>
+          <li><strong>Viper Dynamics:</strong> autonomous systems, sensor fusion, multi-domain awareness</li>
+          <li><strong>INSTAR Lab Inc:</strong> 501(c)(3) applied physics, AI/ML, SBIR/STTR R&amp;D</li>
+          <li><strong>Cloud &amp; Infrastructure:</strong> Azure Solutions Architect Expert; AWS SA Professional; zero-trust patterns</li>
         </ul>
       </div>
 
     </div>
 
-    <!-- RIGHT COLUMN -->
-    <div class="right-col">
+	    <!-- RIGHT COLUMN -->
+	    <div class="right-col">
 
-      <div>
-        <div class="section-title">Company Data</div>
-        <table class="data-table">
-          <tr><td>UEI</td><td>YCBDVKN1A9G7</td></tr>
-          <tr><td>CAGE</td><td>20DS8</td></tr>
-          <tr><td>SAM.gov</td><td>Registered (Active)</td></tr>
-          <tr><td>Entity</td><td>Ravonics LLC</td></tr>
-          <tr><td>Founded</td><td>2026, West Virginia LLC</td></tr>
-          <tr><td>Business</td><td>Small Business</td></tr>
-          <tr><td>HUBZone</td><td><strong style="color:#93242A;">SBA HUBZone Certified</strong></td></tr>
-          <tr><td>Certs held</td><td>SBA HUBZone</td></tr>
-        </table>
-      </div>
+	      <div>
+	        <div class="section-title">Company Snapshot</div>
+	        <table class="data-table">
+	          <tr><td>UEI</td><td>YCBDVKN1A9G7</td></tr>
+	          <tr><td>CAGE</td><td>20DS8</td></tr>
+	          <tr><td>SAM.gov</td><td>Registered (Active)</td></tr>
+		          <tr><td>Entity</td><td>Ravonics LLC</td></tr>
+		          <tr><td>Founded</td><td>2026, West Virginia LLC</td></tr>
+		          <tr><td>Status</td><td>Small Business; <strong style="color:#93242A;">SBA HUBZone Certified</strong></td></tr>
+		          <tr><td>Proof basis</td><td>Founder record; partner and INSTAR Lab bench</td></tr>
+	        </table>
+	      </div>
 
-      <div>
-        <div class="section-title-tan">Primary NAICS</div>
-        <div class="naics-block">
-          <div class="naics-row"><span class="naics-code">541512</span><span>Computer Systems Design Services</span></div>
-          <div class="naics-row"><span class="naics-code">541330</span><span>Engineering Services</span></div>
-          <div class="naics-row"><span class="naics-code">541715</span><span>R&amp;D in Physical, Engineering &amp; Life Sciences</span></div>
-        </div>
-        <div style="margin-top:4px; font-size:7pt;">
-          <strong style="color:#93242A;">Additional NAICS:</strong> 518210 / 541511 / 541513 / 541519 / 541690 / 611420
-        </div>
-        <div style="margin-top:3px; font-size:7pt;">
-          <strong style="color:#93242A;">PSC Codes:</strong> AC11, AC12 (DoD R&amp;D - Basic &amp; Applied Research); DA10, DG10, DJ10, DK10; R408, R425
-        </div>
-      </div>
+	      <div>
+	        <div class="section-title-tan">Acquisition Pathways</div>
+	        <ul class="roadmap">
+	          <li>HUBZone set-aside eligibility and subcontracting credit</li>
+	          <li>Prime, subcontractor, or technical team member</li>
+	          <li>SBIR/STTR Phase I/II through INSTAR Lab; Phase III transition support</li>
+	          <li>OTA rapid-prototyping and IDIQ task-order teaming</li>
+	          <li>GSA MAS and relevant IDIQs on near-term roadmap</li>
+	        </ul>
+	      </div>
 
-      <div>
-        <div class="section-title">Partner Ecosystem</div>
-        <ul class="partners">
-          <li><strong>Dream Limited</strong> - capture/proposal automation &amp; business-ops</li>
-          <li><strong>Droid Ops Inc</strong> - DevSecOps, compliance automation, secure supply-chain</li>
-          <li><strong>Viper Dynamics</strong> - multi-domain situational awareness &amp; intelligence fusion</li>
-          <li><strong>INSTAR Lab Inc</strong> - 501(c)(3) applied-physics R&amp;D; SBIR/STTR arm</li>
-          <li><strong>Cloud &amp; Infrastructure</strong> - Azure Solutions Architect Expert; AWS SA Professional; zero-trust patterns</li>
-        </ul>
-      </div>
+	      <div>
+	        <div class="section-title">NAICS / PSC Fit</div>
+	        <div class="naics-block">
+	          <div class="naics-row"><span class="naics-code">541512</span><span>Computer Systems Design Services</span></div>
+	          <div class="naics-row"><span class="naics-code">541330</span><span>Engineering Services</span></div>
+	          <div class="naics-row"><span class="naics-code">541715</span><span>R&amp;D in Physical, Engineering &amp; Life Sciences</span></div>
+	        </div>
+	        <div style="margin-top:3px; font-size:6.9pt;">
+	          <strong style="color:#93242A;">Additional:</strong> 518210 / 541511 / 541513 / 541519 / 541690 / 611420
+	        </div>
+	        <div style="margin-top:2px; font-size:6.9pt;">
+	          <strong style="color:#93242A;">PSC:</strong> AC11, AC12, DA10, DG10, DJ10, DK10, R408, R425
+	        </div>
+	      </div>
 
-      <div>
-        <div class="section-title-tan">Compliance Roadmap</div>
-        <ul class="roadmap">
-          <li>SAM.gov registered (Active) - current, verified</li>
-          <li>SBA HUBZone - certified (active)</li>
-          <li>CMMC alignment - actively pursuing</li>
-          <li>NIST 800-171 practices - building toward</li>
-          <li>Facility Clearance (FCL) sponsorship - intent to pursue</li>
-          <li>Post-quantum expertise on staff (FIPS 203/204/205)</li>
-        </ul>
-      </div>
+	      <div>
+	        <div class="section-title-tan">Security &amp; Compliance Posture</div>
+	        <ul class="roadmap">
+	          <li>NIST 800-207 zero-trust architecture patterns</li>
+	          <li>NIST 800-53 control mapping, SBOM, signed artifacts, SLSA provenance, cATO evidence</li>
+	          <li>eMASS real-time integration and ServiceNow expert implementation support</li>
+	          <li>CMMC and NIST 800-171 alignment planning</li>
+	          <li>Responsible AI: audit trails, explainability, model lifecycle governance</li>
+	          <li>Post-quantum cryptography readiness aligned to FIPS 203/204/205</li>
+	          <li>Facility Clearance sponsorship: intent to pursue when sponsored</li>
+	        </ul>
+	      </div>
 
-      <div>
-        <div class="section-title">Point of Contact</div>
+		      <div>
+		        <div class="section-title">Delivery Artifacts</div>
+		        <ul class="partners">
+		          <li><strong>Architecture package:</strong> interfaces, data flows, deployment topology, threat model</li>
+		          <li><strong>Security evidence:</strong> control mappings, SBOM, signed artifacts, SLSA provenance</li>
+		          <li><strong>AI governance:</strong> model cards, evaluation traces, audit logs, human oversight</li>
+		          <li><strong>Transition plan:</strong> pilot metrics, backlog, risk register, ATO/cATO roadmap</li>
+		        </ul>
+		      </div>
+
+	      <div class="poc-section">
+	        <div class="section-title">Point of Contact</div>
         <div class="poc-box">
           <div class="poc-name">Sean Hackney</div>
           <div class="poc-title">Founder, President &amp; Chief AI Officer</div>
