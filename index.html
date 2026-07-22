@@ -635,15 +635,36 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <a class="d-block hover popup-youtube" href="https://www.youtube.com/watch?v=FikkQTfbaOs" aria-label="Play overview video">
+                            <a class="d-block hover" href="javascript:void(0)" onclick="playHeroVideo()" aria-label="Play overview video">
                                 <div class="relative overflow-hidden">
                                     <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
                                         <div class="player bg-dark border-0 circle wow fadeInUp"><span></span></div>
-                                    </div> 
+                                    </div>
                                     <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                                    <img src="images/background/1.avif" class="w-100 hover-scale-1-1" alt="" loading="lazy" decoding="async">
+                                    <img src="images/background/1.avif" class="w-100 hover-scale-1-1" alt="" style="object-fit:cover;min-height:300px;" loading="lazy" decoding="async">
                                 </div>
                             </a>
+                            <div id="hero-video-popup" class="mfp-hide" style="max-width:960px;margin:40px auto;">
+                                <video controls preload="none" playsinline style="width:100%;height:auto;display:block;border-radius:8px;">
+                                    <source src="images/ravonics-cinematic-hero.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <script>
+                            function playHeroVideo() {
+                                $.magnificPopup.open({
+                                    type: 'inline',
+                                    items: { src: '#hero-video-popup' },
+                                    mainClass: 'mfp-fade',
+                                    removalDelay: 160,
+                                    preloader: false,
+                                    fixedContentPos: false,
+                                    callbacks: {
+                                        open: function() { var v = document.querySelector('#hero-video-popup video'); if (v) v.play(); },
+                                        close: function() { var v = document.querySelector('#hero-video-popup video'); if (v) { v.pause(); v.currentTime = 0; } }
+                                    }
+                                });
+                            }
+                            </script>
                         </div>
                     </div>
                 </div>
