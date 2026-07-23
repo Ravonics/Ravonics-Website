@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https: https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https: https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
     <meta content="Privacy Policy for Ravonics LLC. Learn how we collect, use, and protect information submitted through our website contact and consultation booking forms. Effective June 2026." name="description">
     <meta content="Ravonics privacy policy, federal contractor data handling, website privacy, contact form data, consultation form privacy" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -29,6 +29,20 @@
     <meta property="twitter:title" content="Privacy Policy | Ravonics LLC">
     <meta property="twitter:description" content="Privacy Policy for Ravonics LLC. Learn how we collect, use, and protect information submitted through our website contact and consultation booking forms.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- CSS Files
     ================================================== -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
@@ -403,13 +417,6 @@
                         </div>
 
 
-                        <div class="social-icons mb-sm-30 text-center">
-                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
                     </div>
 
                     <div class="col-md-6">
@@ -449,7 +456,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12 text-center">
                             <div class="op-6 fs-12">
-                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
                                 NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
                                 <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
                             </div>
@@ -497,13 +504,6 @@
             <h5>About Us</h5>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
         </div>
     </div>
     <!-- overlay content end -->    </div>
