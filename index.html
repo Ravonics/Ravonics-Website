@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; frame-src https://www.youtube-nocookie.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
     <meta content="Ravonics LLC is a Ravenswood, West Virginia small business delivering AI platforms, post-quantum readiness, JADC2 integration, and autonomous systems for the U.S. Department of War (DoW), the Intelligence Community, and federal agencies. SAM.gov registered; HUBZone certified (SBA)." name="description" >
     <meta content="federal AI contractor, federal AI platform, JADC2 integration, defense technology consulting, DoW contractor, intelligence community solutions, post-quantum cryptography, autonomous systems, NIST 800-171 alignment, HUBZone small business, zero trust architecture, mission AI platforms, tactical edge computing, West Virginia federal contractor, National Capital Region federal market" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -54,10 +54,10 @@
 	        {
 	          "@type": "PropertyValue",
 	          "propertyID": "NAICS",
-	          "value": "541512, 541330, 541715"
+	          "value": "541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420"
 	        }
 	      ],
-	      "naics": "541512, 541330, 541715",
+	      "naics": "541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420",
 	      "address": {
 	        "@type": "PostalAddress",
 	        "streetAddress": "313 Walnut St",
@@ -231,6 +231,20 @@
 
     <!-- Preload LCP hero image -->
     <link rel="preload" as="image" type="image/avif" href="images/slider/a1.avif" fetchpriority="high">
+
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- CSS Files
     ================================================== -->
@@ -474,42 +488,6 @@
             </section>
 
 
-            <!-- CO Snapshot: acquisition quick-facts for Contracting Officers -->
-            <section class="pt-3 pb-3">
-                <div class="container">
-                    <div class="row g-0">
-                        <div class="col-lg-12">
-                            <div class="d-flex flex-wrap align-items-center justify-content-between border-bottom pb-3 mb-0 wow fadeInUp" data-wow-delay=".1s">
-                                <div class="d-flex align-items-center me-4 mb-2">
-                                    <div class="op-5 fs-13 me-2">Status</div>
-                                    <div class="fw-600 fs-13">SAM.gov Registered (Active)</div>
-                                </div>
-                                <div class="d-flex align-items-center me-4 mb-2">
-                                    <div class="op-5 fs-13 me-2">Set-Aside</div>
-                                    <div class="fw-600 fs-13">SBA HUBZone Certified | Small Business</div>
-                                </div>
-                                <div class="d-flex align-items-center me-4 mb-2">
-                                    <div class="op-5 fs-13 me-2">UEI</div>
-                                    <div class="fw-600 fs-13">YCBDVKN1A9G7</div>
-                                </div>
-                                <div class="d-flex align-items-center me-4 mb-2">
-                                    <div class="op-5 fs-13 me-2">CAGE</div>
-                                    <div class="fw-600 fs-13">20DS8</div>
-                                </div>
-                                <div class="d-flex align-items-center me-4 mb-2">
-                                    <div class="op-5 fs-13 me-2">NAICS</div>
-                                    <div class="fw-600 fs-13">541512 &middot; 541330 &middot; 541715</div>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <a href="Ravonics-Capability-Statement.pdf" target="_blank" rel="noopener" class="btn-main btn-line fx-slide" aria-label="Download Ravonics Capability Statement PDF"><span>Capability Statement (PDF)</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
             <section class="mx-3 p-0">
                 <div class="container-fluid">
 	                    <div class="row g-3 homepage-feature-grid">
@@ -689,7 +667,7 @@
                                     <li>Computer vision and sensor data-fusion engineered for time-critical decisions</li>
                                     <li>Federal-ready engagement: SAM.gov registered (Active), SBA HUBZone certified</li>
                                     <li>Cloud architecture leadership: Azure Solutions Architect Expert and AWS Solutions Architect Professional</li>
-                                    <li>Registered under NAICS 541512, 541330, and 541715 for direct federal contract vehicles</li>
+                                    <li>Registered under NAICS 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, and 611420 for direct federal contract vehicles</li>
                                     <li>Founder Sean Hackney brings a prior-career record: Techstars "App of the Year" CTO, Gartner&#174; Magic Quadrant&#8482; CPQ product leadership, and co-developer of Tradewinds-awardable AI</li>
                                 </ul>
 
@@ -1178,7 +1156,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12 text-center">
                             <div class="op-6 fs-12">
-                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
                                 NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
                                 <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
                             </div>

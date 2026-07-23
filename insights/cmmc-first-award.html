@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
     <meta content="CMMC 2.0 explained for defense contractors: Level 1/2/3 requirements, NIST SP 800-171 alignment, self-assessment vs C3PAO, CUI handling, SPRS scoring, and POA&M. Ravonics is itself pursuing this pathway as a new small business." name="description" >
     <meta content="CMMC 2.0, CMMC Level 2, NIST SP 800-171, C3PAO, CUI, FCI, SPRS, POA&M, 48 CFR 252.204-7021, defense contracting, compliance, Ravonics" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -55,6 +55,20 @@
       }
     }
     </script>
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- CSS Files
     ================================================== -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
@@ -201,7 +215,7 @@
                                 </p>
 
                                 <p>
-                                    The Cybersecurity Maturity Model Certification (CMMC) 2.0 program became a contractual reality with the publication of the 48 CFR rule in late 2024. For defense contractors handling Federal Contract Information (FCI) or Controlled Unclassified Information (CUI), the pathway to award on DoD contracts increasingly runs through a demonstrated, documented, and in many cases independently assessed cybersecurity posture. The program is not new in intent (DFARS 252.204-7012 has required NIST SP 800-171 compliance since 2017), but CMMC 2.0 introduces formal verification requirements that self-attestation alone can no longer satisfy for higher-level contracts.
+                                    The Cybersecurity Maturity Model Certification (CMMC) 2.0 program became a contractual reality with the publication of the 48 CFR rule in late 2024. For defense contractors handling Federal Contract Information (FCI) or Controlled Unclassified Information (CUI), the pathway to award on DoW contracts increasingly runs through a demonstrated, documented, and in many cases independently assessed cybersecurity posture. The program is not new in intent (DFARS 252.204-7012 has required NIST SP 800-171 compliance since 2017), but CMMC 2.0 introduces formal verification requirements that self-attestation alone can no longer satisfy for higher-level contracts.
                                 </p>
 
                                 <p>
@@ -212,7 +226,7 @@
                                   <li>
                                     <h4>Understanding the Three Levels and Which Applies to You</h4>
                                     <p>
-                                      CMMC 2.0 collapsed the original five-level model into three. Level 1 covers 17 basic safeguarding practices from FAR 52.204-21 and applies to contractors handling only FCI (not CUI). Level 2 aligns exactly to the 110 practices in NIST SP 800-171 and applies to contractors handling CUI; most DoD contracts with CUI flow-down will require Level 2. Level 3 adds 24 practices drawn from NIST SP 800-172 for contractors on the highest-priority programs. Determining which level applies starts with whether your work involves CUI and whether any solicitation clause (notably DFARS 252.204-7021) specifies a required level. Assuming Level 1 applies to any program touching DoD data is a risk posture that warrants reassessment.
+                                      CMMC 2.0 collapsed the original five-level model into three. Level 1 covers 17 basic safeguarding practices from FAR 52.204-21 and applies to contractors handling only FCI (not CUI). Level 2 aligns exactly to the 110 practices in NIST SP 800-171 and applies to contractors handling CUI; most DoW contracts with CUI flow-down will require Level 2. Level 3 adds 24 practices drawn from NIST SP 800-172 for contractors on the highest-priority programs. Determining which level applies starts with whether your work involves CUI and whether any solicitation clause (notably DFARS 252.204-7021) specifies a required level. Assuming Level 1 applies to any program touching DoW data is a risk posture that warrants reassessment.
                                     </p>
                                   </li>
 
@@ -233,7 +247,7 @@
                                   <li>
                                     <h4>SPRS Score, POA&amp;M, and the 110-Point System</h4>
                                     <p>
-                                      SPRS (Supplier Performance Risk System) hosts a contractor's self-assessed score against the NIST SP 800-171 DoD Assessment Methodology. A perfect score is 110; each unimplemented practice carries a weighted deduction, with the most critical controls reducing the score the most steeply. A score below 110 must be accompanied by a Plan of Action and Milestones (POA&amp;M) documenting the gap, the remediation approach, and the expected completion date. The SPRS score is visible to contracting officers and is a factor in contract award decisions. Contractors who submit a score without a credible, time-bounded POA&amp;M for each gap are exposed to False Claims Act risk if the score is later found to have been submitted without a good-faith basis.
+                                      SPRS (Supplier Performance Risk System) hosts a contractor's self-assessed score against the NIST SP 800-171 DoW Assessment Methodology. A perfect score is 110; each unimplemented practice carries a weighted deduction, with the most critical controls reducing the score the most steeply. A score below 110 must be accompanied by a Plan of Action and Milestones (POA&amp;M) documenting the gap, the remediation approach, and the expected completion date. The SPRS score is visible to contracting officers and is a factor in contract award decisions. Contractors who submit a score without a credible, time-bounded POA&amp;M for each gap are exposed to False Claims Act risk if the score is later found to have been submitted without a good-faith basis.
                                     </p>
                                   </li>
 
@@ -471,7 +485,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12 text-center">
                             <div class="op-6 fs-12">
-                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715<br>
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
                                 NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
                                 <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
                             </div>
