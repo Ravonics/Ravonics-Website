@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https: https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https: https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
     <meta content="Privacy Policy for Ravonics LLC. Learn how we collect, use, and protect information submitted through our website contact and consultation booking forms. Effective June 2026." name="description">
     <meta content="Ravonics privacy policy, federal contractor data handling, website privacy, contact form data, consultation form privacy" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -29,6 +29,17 @@
     <meta property="twitter:title" content="Privacy Policy | Ravonics LLC">
     <meta property="twitter:description" content="Privacy Policy for Ravonics LLC. Learn how we collect, use, and protect information submitted through our website contact and consultation booking forms.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <!-- CSS Files
     ================================================== -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
