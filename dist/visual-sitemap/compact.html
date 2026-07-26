@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Compact Visual Sitemap</title>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <style>
+    :root { color-scheme: light; --ink:#17212b; --muted:#66717d; --line:#cbd1d8; --paper:#fff; --accent:#9d3026; --left-width:80%; --right-width:20%; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; overflow:hidden; background:#eef1f4; color:var(--ink); font:14px/1.45 system-ui,sans-serif; }
+    .app-shell { display:grid; grid-template-columns:var(--left-width) 6px var(--right-width); width:100%; height:100vh; overflow:hidden; }
+    .content { min-width:0; height:100vh; overflow-y:auto; }
+    header { padding:24px clamp(20px,4vw,54px) 20px; background:var(--paper); border-bottom:1px solid var(--line); }
+    h1 { margin:0 0 5px; font:500 clamp(27px,3.2vw,40px)/1.1 Georgia,serif; }
+    .meta { margin:0; color:var(--muted); }
+    .summary { display:flex; flex-wrap:wrap; gap:7px 20px; margin-top:12px; font-weight:650; }
+    .directory-wrap { max-height:25vh; overflow-y:auto; padding:18px clamp(20px,4vw,54px); background:#f8f9fa; border-bottom:1px solid var(--line); }
+    .directory-wrap h2 { margin:0 0 9px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .directory { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:3px 18px; margin:0; padding:0; list-style:none; }
+    .directory a { display:flex; gap:7px; color:var(--ink); text-decoration:none; }
+    .directory a:hover { color:var(--accent); text-decoration:underline; }
+    .directory span { color:var(--accent); font-variant-numeric:tabular-nums; font-weight:800; }
+    main { min-width:0; padding:18px 10px 50px clamp(20px,4vw,54px); }
+    .grid { display:grid; grid-template-columns:repeat(16,minmax(0,1fr)); align-items:start; gap:5px; }
+    .card { position:relative; min-width:0; overflow:hidden; background:var(--paper); border:1px solid var(--line); border-radius:3px; scroll-margin-top:12px; cursor:zoom-in; }
+    .card:hover,.card:focus-visible { border-color:var(--accent); outline:2px solid var(--accent); outline-offset:1px; }
+    .card.is-selected { outline:3px solid var(--accent); outline-offset:-3px; }
+    .card img { display:block; width:100%; height:auto; }
+    .number { position:absolute; z-index:1; top:2px; left:2px; min-width:19px; padding:2px 3px; border:1px solid #fff; border-radius:2px; background:var(--accent); color:#fff; box-shadow:0 1px 3px #0006; font-size:8px; font-weight:800; line-height:1; text-align:center; }
+    .error { min-height:100px; display:grid; place-content:center; padding:8px; color:#9b1c1c; text-align:center; font-size:10px; }
+    .preview-shell { min-width:0; height:100vh; padding:12px; border-left:1px solid var(--line); background:#dfe3e7; }
+    .preview { display:flex; flex-direction:column; height:100%; overflow:hidden; background:var(--paper); border:1px solid var(--line); border-radius:8px; box-shadow:0 3px 14px #1c273118; }
+    .preview-header { flex:0 0 auto; padding:12px 13px; border-bottom:1px solid var(--line); }
+    .preview-kicker { margin:0 0 3px; color:var(--accent); font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .preview-name { margin:0; font-size:14px; overflow-wrap:anywhere; }
+    .preview-title { margin:3px 0 0; color:var(--muted); font-size:11px; }
+    .preview-help { margin:8px 0 0; color:var(--muted); font-size:10px; }
+    .preview-scroll { flex:1 1 auto; min-height:0; overflow:auto; background:#dfe3e7; }
+    .preview-link { display:block; min-height:100%; }
+    .preview-image { display:block; width:100%; height:auto; }
+    .splitter { width:6px; cursor:col-resize; background:var(--line,#d8dde3); transition:background .15s; position:relative; z-index:10; height:100vh; }
+    .splitter:hover, .splitter.active { background:var(--accent,#9d3026); }
+    .loading { padding:40px; color:var(--muted); }
+    @media(max-width:1400px){.grid{grid-template-columns:repeat(12,minmax(0,1fr))}}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(8,minmax(0,1fr))}}
+    @media(max-width:680px){body{overflow:auto}.app-shell{display:block;height:auto;overflow:visible}.content{height:auto;overflow:visible}main{padding-right:20px}.grid{grid-template-columns:repeat(5,minmax(0,1fr))}.splitter{display:none}.preview-shell{height:70vh;padding:0 20px 24px;border-left:0}}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="content">
+      <header>
+        <h1>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Compact Visual Sitemap</h1>
+        <p class="meta" id="meta">Loading latest capture metadata…</p>
+        <div class="summary" id="summary"></div>
+      </header>
+      <nav class="directory-wrap" aria-label="Page directory">
+        <h2>Numbered page directory</h2>
+        <ol class="directory" id="directory"></ol>
+      </nav>
+      <main><div class="grid" id="grid"><p class="loading">Loading latest sitemap…</p></div></main>
+    </div>
+    <div class="splitter" role="separator" tabindex="0" aria-label="Resize preview pane"></div>
+    <aside class="preview-shell" aria-label="Page preview">
+      <div class="preview">
+        <div class="preview-header">
+          <p class="preview-kicker" id="preview-number">Page preview</p>
+          <h2 class="preview-name" id="preview-name">Select a page</h2>
+          <p class="preview-title" id="preview-title"></p>
+          <p class="preview-help">Click or focus a thumbnail. Click the large preview to open the full capture.</p>
+        </div>
+        <div class="preview-scroll"><a class="preview-link" id="preview-link" target="_blank" rel="noopener"><img class="preview-image" id="preview-image" alt=""></a></div>
+      </div>
+    </aside>
+  </div>
+  <script>
+    const directory = document.querySelector("#directory");
+    const grid = document.querySelector("#grid");
+    const metaLine = document.querySelector("#meta");
+    const summary = document.querySelector("#summary");
+    const previewNumber = document.querySelector("#preview-number");
+    const previewName = document.querySelector("#preview-name");
+    const previewTitle = document.querySelector("#preview-title");
+    const previewLink = document.querySelector("#preview-link");
+    const previewImage = document.querySelector("#preview-image");
+
+    function numberFor(entry, count) {
+      return String(entry.number).padStart(String(count).length, "0");
+    }
+
+    function select(entry, count, card) {
+      document.querySelectorAll(".card.is-selected").forEach((item) => item.classList.remove("is-selected"));
+      card?.classList.add("is-selected");
+      const number = numberFor(entry, count);
+      previewNumber.textContent = `Page ${number}`;
+      previewName.textContent = entry.file;
+      previewTitle.textContent = entry.title;
+      previewLink.href = entry.image || entry.url;
+      previewImage.src = entry.image || "";
+      previewImage.alt = `Full-page capture of ${entry.file}`;
+    }
+
+    Promise.all([
+      fetch("manifest.json", { cache: "no-store" }).then((response) => response.json()),
+      fetch("meta.json", { cache: "no-store" }).then((response) => response.json())
+    ]).then(([entries, metadata]) => {
+      const captured = entries.filter((entry) => entry.ok).length;
+      const redirects = entries.filter((entry) => entry.redirect).length;
+      metaLine.textContent = `Generated ${new Date(metadata.generatedAt).toLocaleString()} from ${metadata.base}`;
+      summary.replaceChildren(...[
+        `${entries.length} numbered pages`,
+        `${captured} screenshots captured`,
+        `${redirects} legacy redirects`
+      ].map((text) => Object.assign(document.createElement("span"), { textContent: text })));
+      directory.replaceChildren();
+      grid.replaceChildren();
+
+      entries.forEach((entry) => {
+        const number = numberFor(entry, entries.length);
+        const item = document.createElement("li");
+        const anchor = document.createElement("a");
+        anchor.href = `#page-${number}`;
+        const numberLabel = document.createElement("span");
+        numberLabel.textContent = number;
+        anchor.append(numberLabel, document.createTextNode(entry.file));
+        item.append(anchor);
+        directory.append(item);
+
+        const card = document.createElement("article");
+        card.className = "card";
+        card.id = `page-${number}`;
+        card.tabIndex = 0;
+        card.setAttribute("aria-label", `${number}: ${entry.file}`);
+        const badge = document.createElement("span");
+        badge.className = "number";
+        badge.textContent = number;
+        card.append(badge);
+        if (entry.ok) {
+          const image = document.createElement("img");
+          image.src = entry.image;
+          image.loading = "lazy";
+          image.alt = `Screenshot of ${entry.file}`;
+          card.append(image);
+        } else {
+          const error = document.createElement("div");
+          error.className = "error";
+          error.textContent = "Capture failed";
+          card.append(error);
+        }
+        ["click", "focus"].forEach((eventName) => card.addEventListener(eventName, () => select(entry, entries.length, card)));
+        grid.append(card);
+      });
+      if (entries.length) select(entries[0], entries.length, grid.firstElementChild);
+    }).catch((error) => {
+      const message = document.createElement("p");
+      message.className = "loading";
+      message.textContent = `Could not load the latest sitemap: ${error.message}`;
+      grid.replaceChildren(message);
+    });
+
+    // Draggable splitter
+    const splitter = document.querySelector('.splitter');
+    let isResizing = false;
+
+    splitter.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      splitter.classList.add('active');
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      const rect = document.body.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const totalWidth = rect.width;
+
+      // Left panel gets at least 50%, right panel at most 50% but at least 260px
+      const maxRightWidth = Math.max(260, totalWidth * 0.5);
+      const rightWidth = Math.max(260, Math.min(maxRightWidth, totalWidth - x));
+      const leftWidth = totalWidth - rightWidth - 6;
+
+      document.documentElement.style.setProperty('--left-width', leftWidth / totalWidth * 100 + '%');
+      document.documentElement.style.setProperty('--right-width', rightWidth / totalWidth * 100 + '%');
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isResizing) {
+        isResizing = false;
+        splitter.classList.remove('active');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+      }
+    });
+  </script>
+</body>
+</html>
