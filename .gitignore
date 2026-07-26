@@ -5,3 +5,6 @@
 issue-review.html
 issue-review-state.json
 scripts/issue-review-server.py
+
+# Playwright MCP artifacts
+.playwright-mcp/
