@@ -4,9 +4,9 @@
     "number": 1,
     "redirect": null,
     "title": "Your Font/Glyphs",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/fonts/elegant_font/HTML_CSS/index.html",
+    "image": "shots/01-fonts-elegant-font-html-css-index.jpg",
+    "ok": true,
     "url": "https://ravonics.com/fonts/elegant_font/HTML_CSS/index.html"
   },
   {
@@ -14,9 +14,9 @@
     "number": 2,
     "redirect": null,
     "title": "Your Font/Glyphs",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/fonts/et-line-font/index.html",
+    "image": "shots/02-fonts-et-line-font-index.jpg",
+    "ok": true,
     "url": "https://ravonics.com/fonts/et-line-font/index.html"
   },
   {
@@ -24,9 +24,9 @@
     "number": 3,
     "redirect": null,
     "title": "Ravonics - AI, Quantum-Readiness & JADC2 Solutions for Federal Missions",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/_preview-burgundy-command.html",
+    "image": "shots/03-preview-burgundy-command.jpg",
+    "ok": true,
     "url": "https://ravonics.com/_preview-burgundy-command.html"
   },
   {
@@ -34,9 +34,9 @@
     "number": 4,
     "redirect": null,
     "title": "Ravonics - AI, Quantum-Readiness & JADC2 Solutions for Federal Missions",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/_preview-first-light.html",
+    "image": "shots/04-preview-first-light.jpg",
+    "ok": true,
     "url": "https://ravonics.com/_preview-first-light.html"
   },
   {
@@ -44,9 +44,9 @@
     "number": 5,
     "redirect": null,
     "title": "Ravonics - AI, Quantum-Readiness & JADC2 Solutions for Federal Missions",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/_preview-stealth-maroon.html",
+    "image": "shots/05-preview-stealth-maroon.jpg",
+    "ok": true,
     "url": "https://ravonics.com/_preview-stealth-maroon.html"
   },
   {
@@ -54,9 +54,9 @@
     "number": 6,
     "redirect": null,
     "title": "Ravonics - AI, Quantum-Readiness & JADC2 Solutions for Federal Missions",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/_preview-steel-maroon.html",
+    "image": "shots/06-preview-steel-maroon.jpg",
+    "ok": true,
     "url": "https://ravonics.com/_preview-steel-maroon.html"
   },
   {
@@ -64,7 +64,7 @@
     "number": 7,
     "redirect": null,
     "title": "Submit RFP / RFI Intake | Federal Engagement | Ravonics LLC",
-    "captureUrl": null,
+    "captureUrl": "http://127.0.0.1:5500/booking.html",
     "image": null,
     "ok": false,
     "url": "https://ravonics.com/booking.html"
@@ -74,9 +74,9 @@
     "number": 8,
     "redirect": null,
     "title": "Advanced AI Platforms for Defense & Intelligence | Explainable AI, Real-Time Decision Systems",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/ai.html",
+    "image": "shots/08-capabilities-ai.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/ai.html"
   },
   {
@@ -84,9 +84,9 @@
     "number": 9,
     "redirect": null,
     "title": "Autonomous Systems - Swarm Intelligence, GPS-Denied Navigation | Multi-Domain DoW Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/autonomous-systems.html",
+    "image": "shots/09-capabilities-autonomous-systems.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/autonomous-systems.html"
   },
   {
@@ -94,9 +94,9 @@
     "number": 10,
     "redirect": null,
     "title": "Military Computer Vision & Sensor Fusion - Multi-Spectral ISR, Threat Detection | DoW AI",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/computer-vision.html",
+    "image": "shots/10-capabilities-computer-vision.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/computer-vision.html"
   },
   {
@@ -104,9 +104,9 @@
     "number": 11,
     "redirect": null,
     "title": "High-Performance Computing - Tactical Edge AI, Distributed HPC | Federal Computing Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/computing.html",
+    "image": "shots/11-capabilities-computing.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/computing.html"
   },
   {
@@ -114,9 +114,9 @@
     "number": 12,
     "redirect": null,
     "title": "Post-Quantum Cryptography & Blockchain - FIPS-Aligned HSM, Zero-Knowledge | Federal Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/cryptography.html",
+    "image": "shots/12-capabilities-cryptography.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/cryptography.html"
   },
   {
@@ -124,9 +124,9 @@
     "number": 13,
     "redirect": null,
     "title": "Defense Systems Integration - JADC2, DevSecOps, DoW Cloud Migration | Federal Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/integration.html",
+    "image": "shots/13-capabilities-integration.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/integration.html"
   },
   {
@@ -134,9 +134,9 @@
     "number": 14,
     "redirect": null,
     "title": "Intelligence Fusion & Decision Systems - Multi-INT, Predictive Analytics | IC Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/intelligence.html",
+    "image": "shots/14-capabilities-intelligence.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/intelligence.html"
   },
   {
@@ -144,9 +144,9 @@
     "number": 15,
     "redirect": null,
     "title": "Quantum Technologies - QKD, Quantum Computing, Quantum Sensing | DoW Quantum Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/quantum.html",
+    "image": "shots/15-capabilities-quantum.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/quantum.html"
   },
   {
@@ -154,9 +154,9 @@
     "number": 16,
     "redirect": null,
     "title": "Military Robotics - EOD, ISR UAVs, Human-Robot Teaming | Ruggedized DoW Platforms",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/robotics.html",
+    "image": "shots/16-capabilities-robotics.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/robotics.html"
   },
   {
@@ -164,9 +164,9 @@
     "number": 17,
     "redirect": null,
     "title": "Tactical Communications - Anti-Jam SDR, Resilient MANET, LPI Waveforms | DoW Networks",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/capabilities/tactical-comms.html",
+    "image": "shots/17-capabilities-tactical-comms.jpg",
+    "ok": true,
     "url": "https://ravonics.com/capabilities/tactical-comms.html"
   },
   {
@@ -174,9 +174,9 @@
     "number": 18,
     "redirect": null,
     "title": "About Ravonics - Federal Defense Technology Contractor | Founded 2026, Ravenswood WV",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/company/about.html",
+    "image": "shots/18-company-about.jpg",
+    "ok": true,
     "url": "https://ravonics.com/company/about.html"
   },
   {
@@ -184,9 +184,9 @@
     "number": 19,
     "redirect": null,
     "title": "Federal Technology Careers - Join Ravonics | AI, Autonomous Systems, Cybersecurity Roles",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/company/careers.html",
+    "image": "shots/19-company-careers.jpg",
+    "ok": true,
     "url": "https://ravonics.com/company/careers.html"
   },
   {
@@ -194,9 +194,9 @@
     "number": 20,
     "redirect": null,
     "title": "Security & Compliance Roadmap - NIST 800-171, CMMC Planned, HUBZone Certified | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/company/certifications.html",
+    "image": "shots/20-company-certifications.jpg",
+    "ok": true,
     "url": "https://ravonics.com/company/certifications.html"
   },
   {
@@ -204,7 +204,7 @@
     "number": 21,
     "redirect": null,
     "title": "How to Do Business With Ravonics - Acquisition Data, NAICS, Contract Vehicles | Ravonics",
-    "captureUrl": null,
+    "captureUrl": "http://127.0.0.1:5500/company/doing-business.html",
     "image": null,
     "ok": false,
     "url": "https://ravonics.com/company/doing-business.html"
@@ -214,9 +214,9 @@
     "number": 22,
     "redirect": null,
     "title": "Partner Ecosystem - Ravonics | Dream Limited, Droid Ops, Viper Dynamics, INSTAR Lab",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/company/partnerships.html",
+    "image": "shots/22-company-partnerships.jpg",
+    "ok": true,
     "url": "https://ravonics.com/company/partnerships.html"
   },
   {
@@ -224,9 +224,9 @@
     "number": 23,
     "redirect": null,
     "title": "Leadership & Research Team - Ravonics | Deep Bench, INSTAR Lab & Senior Advisors",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/company/team.html",
+    "image": "shots/23-company-team.jpg",
+    "ok": true,
     "url": "https://ravonics.com/company/team.html"
   },
   {
@@ -234,9 +234,9 @@
     "number": 24,
     "redirect": null,
     "title": "Contact Ravonics - Request Federal Defense Technology Consultation | HUBZone Small Business",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/contact.html",
+    "image": "shots/24-contact.jpg",
+    "ok": true,
     "url": "https://ravonics.com/contact.html"
   },
   {
@@ -244,9 +244,9 @@
     "number": 25,
     "redirect": null,
     "title": "Examples | IcoFont",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/fonts/icofont/demo.html",
+    "image": "shots/25-fonts-icofont-demo.jpg",
+    "ok": true,
     "url": "https://ravonics.com/fonts/icofont/demo.html"
   },
   {
@@ -254,9 +254,9 @@
     "number": 26,
     "redirect": null,
     "title": "Ravonics - AI, Quantum-Readiness & JADC2 Solutions for Federal Missions",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/index.html",
+    "image": "shots/26-index.jpg",
+    "ok": true,
     "url": "https://ravonics.com/index.html"
   },
   {
@@ -264,9 +264,9 @@
     "number": 27,
     "redirect": null,
     "title": "Defense & DoW Solutions - AI Decision Support, Autonomous Systems, ISR | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/industries/defense.html",
+    "image": "shots/27-industries-defense.jpg",
+    "ok": true,
     "url": "https://ravonics.com/industries/defense.html"
   },
   {
@@ -274,9 +274,9 @@
     "number": 28,
     "redirect": null,
     "title": "Federal Civilian Agency Solutions - Cloud Modernization, Citizen Services | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/industries/federal.html",
+    "image": "shots/28-industries-federal.jpg",
+    "ok": true,
     "url": "https://ravonics.com/industries/federal.html"
   },
   {
@@ -284,9 +284,9 @@
     "number": 29,
     "redirect": null,
     "title": "Intelligence Community Solutions - Multi-INT Fusion, AI Analytics | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/industries/intelligence.html",
+    "image": "shots/29-industries-intelligence.jpg",
+    "ok": true,
     "url": "https://ravonics.com/industries/intelligence.html"
   },
   {
@@ -294,9 +294,9 @@
     "number": 30,
     "redirect": null,
     "title": "Defense Research & Innovation - SBIR/STTR, INSTAR Lab, Emerging Tech | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/industries/research.html",
+    "image": "shots/30-industries-research.jpg",
+    "ok": true,
     "url": "https://ravonics.com/industries/research.html"
   },
   {
@@ -304,9 +304,9 @@
     "number": 31,
     "redirect": null,
     "title": "AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/ai-ethics-defense.html",
+    "image": "shots/31-insights-ai-ethics-defense.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/ai-ethics-defense.html"
   },
   {
@@ -314,9 +314,9 @@
     "number": 32,
     "redirect": null,
     "title": "Autonomous Platform Coordination: Swarm Intelligence Concepts | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/autonomous-swarm.html",
+    "image": "shots/32-insights-autonomous-swarm.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/autonomous-swarm.html"
   },
   {
@@ -324,9 +324,9 @@
     "number": 33,
     "redirect": null,
     "title": "Real-Time AI Decision Systems for Federal Missions | White Paper Abstract | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/blog-single.html",
+    "image": "shots/33-insights-blog-single.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/blog-single.html"
   },
   {
@@ -334,9 +334,9 @@
     "number": 34,
     "redirect": null,
     "title": "Technical Publications - Defense AI, Quantum Computing, JADC2 Research | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/blog.html",
+    "image": "shots/34-insights-blog.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/blog.html"
   },
   {
@@ -344,9 +344,9 @@
     "number": 35,
     "redirect": null,
     "title": "CMMC 2.0: What Defense Contractors Must Understand Before First Award | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/cmmc-first-award.html",
+    "image": "shots/35-insights-cmmc-first-award.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/cmmc-first-award.html"
   },
   {
@@ -354,9 +354,9 @@
     "number": 36,
     "redirect": null,
     "title": "Digital Twin Modeling for Multi-Domain Operations | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/digital-twin-multidomain.html",
+    "image": "shots/36-insights-digital-twin-multidomain.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/digital-twin-multidomain.html"
   },
   {
@@ -364,9 +364,9 @@
     "number": 37,
     "redirect": null,
     "title": "Tactical Edge AI Hardware Evaluation | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/edge-ai-hardware-evaluation.html",
+    "image": "shots/37-insights-edge-ai-hardware-evaluation.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/edge-ai-hardware-evaluation.html"
   },
   {
@@ -374,9 +374,9 @@
     "number": 38,
     "redirect": null,
     "title": "Edge Computing at Tactical Scale: Architecture Considerations | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/edge-computing-tactical.html",
+    "image": "shots/38-insights-edge-computing-tactical.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/edge-computing-tactical.html"
   },
   {
@@ -384,9 +384,9 @@
     "number": 39,
     "redirect": null,
     "title": "Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/federal-cloud-fedramp.html",
+    "image": "shots/39-insights-federal-cloud-fedramp.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/federal-cloud-fedramp.html"
   },
   {
@@ -394,9 +394,9 @@
     "number": 40,
     "redirect": null,
     "title": "Capability Areas & Technology Focus | Defense AI, Autonomy, Cryptography, Zero Trust | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/gallery.html",
+    "image": "shots/40-insights-gallery.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/gallery.html"
   },
   {
@@ -404,9 +404,9 @@
     "number": 41,
     "redirect": null,
     "title": "Hyperspectral Imaging & Sensor Fusion | INSTAR Lab Research | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/hyperspectral-sensor-fusion.html",
+    "image": "shots/41-insights-hyperspectral-sensor-fusion.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/hyperspectral-sensor-fusion.html"
   },
   {
@@ -414,9 +414,9 @@
     "number": 42,
     "redirect": null,
     "title": "Research Directions - INSTAR Lab R&D, Quantum Research, AI Architecture | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/innovation.html",
+    "image": "shots/42-insights-innovation.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/innovation.html"
   },
   {
@@ -424,9 +424,9 @@
     "number": 43,
     "redirect": null,
     "title": "JADC2 Integration: Multi-Domain C2 Architecture Patterns | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/jadc2-integration.html",
+    "image": "shots/43-insights-jadc2-integration.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/jadc2-integration.html"
   },
   {
@@ -434,9 +434,9 @@
     "number": 44,
     "redirect": null,
     "title": "JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/jadc2-interoperability-perspective.html",
+    "image": "shots/44-insights-jadc2-interoperability-perspective.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/jadc2-interoperability-perspective.html"
   },
   {
@@ -444,9 +444,9 @@
     "number": 45,
     "redirect": null,
     "title": "Industry Perspectives - Federal AI Policy, Defense Tech Trends, Compliance Landscape | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/perspectives.html",
+    "image": "shots/45-insights-perspectives.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/perspectives.html"
   },
   {
@@ -454,9 +454,9 @@
     "number": 46,
     "redirect": null,
     "title": "Post-Quantum Cryptography: Preparing Federal Communications | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/post-quantum-cryptography.html",
+    "image": "shots/46-insights-post-quantum-cryptography.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/post-quantum-cryptography.html"
   },
   {
@@ -464,9 +464,9 @@
     "number": 47,
     "redirect": null,
     "title": "Post-Quantum Cryptography Architecture for Federal Systems | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/pqc-federal-architecture.html",
+    "image": "shots/47-insights-pqc-federal-architecture.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/pqc-federal-architecture.html"
   },
   {
@@ -474,9 +474,9 @@
     "number": 48,
     "redirect": null,
     "title": "Quantum Computing for Defense Optimization | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/quantum-defense-optimization.html",
+    "image": "shots/48-insights-quantum-defense-optimization.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/quantum-defense-optimization.html"
   },
   {
@@ -484,9 +484,9 @@
     "number": 49,
     "redirect": null,
     "title": "The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/quantum-threat-pqc-migration.html",
+    "image": "shots/49-insights-quantum-threat-pqc-migration.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/quantum-threat-pqc-migration.html"
   },
   {
@@ -494,9 +494,9 @@
     "number": 50,
     "redirect": null,
     "title": "Autonomous Swarm Coordination | Architecture Concepts | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/swarm-coordination-concepts.html",
+    "image": "shots/50-insights-swarm-coordination-concepts.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/swarm-coordination-concepts.html"
   },
   {
@@ -504,9 +504,9 @@
     "number": 51,
     "redirect": null,
     "title": "Neural Network Optimization for Tactical Edge AI | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/tactical-edge-ai.html",
+    "image": "shots/51-insights-tactical-edge-ai.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/tactical-edge-ai.html"
   },
   {
@@ -514,9 +514,9 @@
     "number": 52,
     "redirect": null,
     "title": "References & Validation - Capability Strengths & Partner Ecosystem | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/testimonials.html",
+    "image": "shots/52-insights-testimonials.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/testimonials.html"
   },
   {
@@ -524,9 +524,9 @@
     "number": 53,
     "redirect": null,
     "title": "Zero Trust Implementation for Federal Networks | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/zero-trust-federal.html",
+    "image": "shots/53-insights-zero-trust-federal.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/zero-trust-federal.html"
   },
   {
@@ -534,9 +534,9 @@
     "number": 54,
     "redirect": null,
     "title": "Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation | Ravonics",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/insights/zero-trust-mandates-perspective.html",
+    "image": "shots/54-insights-zero-trust-mandates-perspective.jpg",
+    "ok": true,
     "url": "https://ravonics.com/insights/zero-trust-mandates-perspective.html"
   },
   {
@@ -544,9 +544,9 @@
     "number": 55,
     "redirect": null,
     "title": "Ravonics Website Issue Review",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/issue-review.html",
+    "image": "shots/55-issue-review.jpg",
+    "ok": true,
     "url": "https://ravonics.com/issue-review.html"
   },
   {
@@ -554,9 +554,9 @@
     "number": 56,
     "redirect": null,
     "title": "Privacy Policy | Ravonics LLC",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/privacy.html",
+    "image": "shots/56-privacy.jpg",
+    "ok": true,
     "url": "https://ravonics.com/privacy.html"
   },
   {
@@ -564,9 +564,9 @@
     "number": 57,
     "redirect": null,
     "title": "Mission-Ready AI Platforms - Explainable AI, Edge Deployment, Secure Processing | DoW AI",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/ai-platforms.html",
+    "image": "shots/57-solutions-ai-platforms.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/ai-platforms.html"
   },
   {
@@ -574,9 +574,9 @@
     "number": 58,
     "redirect": null,
     "title": "Cloud-Native Infrastructure - Kubernetes, GitOps, Service Mesh | DoW Container Platform",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/cloud-native.html",
+    "image": "shots/58-solutions-cloud-native.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/cloud-native.html"
   },
   {
@@ -584,9 +584,9 @@
     "number": 59,
     "redirect": null,
     "title": "Federal Cloud Architecture - Multi-Level Security, Hybrid Cloud, Data Management | DoW Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/cloud.html",
+    "image": "shots/59-solutions-cloud.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/cloud.html"
   },
   {
@@ -594,9 +594,9 @@
     "number": 60,
     "redirect": null,
     "title": "Federal Digital Transformation - Legacy Modernization, DevSecOps, Agile | DoW IT Modernization",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/digital-transformation.html",
+    "image": "shots/60-solutions-digital-transformation.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/digital-transformation.html"
   },
   {
@@ -604,9 +604,9 @@
     "number": 61,
     "redirect": null,
     "title": "Military HUD & AR/VR Systems - Tactical Displays, 3D Battlespace | Defense Visualization",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/hud-systems.html",
+    "image": "shots/61-solutions-hud-systems.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/hud-systems.html"
   },
   {
@@ -614,9 +614,9 @@
     "number": 62,
     "redirect": null,
     "title": "JADC2 Integration Solutions - Multi-Domain C2, Cross-Domain Systems | DoW Contractor",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/jadc2.html",
+    "image": "shots/62-solutions-jadc2.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/jadc2.html"
   },
   {
@@ -624,9 +624,9 @@
     "number": 63,
     "redirect": null,
     "title": "Zero Trust Security - Micro-Segmentation, Continuous Verification, SOAR | DoW Cybersecurity",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/solutions/zero-trust.html",
+    "image": "shots/63-solutions-zero-trust.jpg",
+    "ok": true,
     "url": "https://ravonics.com/solutions/zero-trust.html"
   },
   {
@@ -634,9 +634,9 @@
     "number": 64,
     "redirect": null,
     "title": "Ravonics LLC - Capability Statement",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/src/capability-statement.html",
+    "image": "shots/64-src-capability-statement.jpg",
+    "ok": true,
     "url": "https://ravonics.com/src/capability-statement.html"
   },
   {
@@ -644,9 +644,9 @@
     "number": 65,
     "redirect": null,
     "title": "Ravonics LLC - Relevant Experience",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/src/relevant-experience.html",
+    "image": "shots/65-src-relevant-experience.jpg",
+    "ok": true,
     "url": "https://ravonics.com/src/relevant-experience.html"
   },
   {
@@ -654,19 +654,19 @@
     "number": 66,
     "redirect": null,
     "title": "Terms of Use | Ravonics LLC",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "captureUrl": "http://127.0.0.1:5500/terms.html",
+    "image": "shots/66-terms.jpg",
+    "ok": true,
     "url": "https://ravonics.com/terms.html"
   },
   {
     "file": "website-strategy-recommendations.html",
     "number": 67,
     "redirect": null,
-    "title": "Ravonics — Website Strategy &amp; Remediation Plan | Stakeholder Briefing",
-    "captureUrl": null,
-    "image": null,
-    "ok": false,
+    "title": "Ravonics — Website Strategy & Remediation Plan | Stakeholder Briefing",
+    "captureUrl": "http://127.0.0.1:5500/website-strategy-recommendations.html",
+    "image": "shots/67-website-strategy-recommendations.jpg",
+    "ok": true,
     "url": "https://ravonics.com/website-strategy-recommendations.html"
   }
 ]
