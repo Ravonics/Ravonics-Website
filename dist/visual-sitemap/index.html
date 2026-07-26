@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Visual Sitemap</title>
+<style>
+  :root { --ink: #17212b; --muted: #66717d; --line: #d8dde3; --paper: #fff; --accent: #9d3026; --accent-light: #e8c8c5; --radius: 8px; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: var(--line); color: var(--ink); line-height: 1.5; padding: 1.5rem; }
+  header { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 1.5rem; }
+  h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+  header p { color: var(--muted); font-size: 0.875rem; }
+  nav.directory { background: var(--paper); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  nav.directory ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; max-height: 20vh; overflow-y: auto; }
+  nav.directory a { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.75rem; color: var(--ink); text-decoration: none; padding: 0.15rem 0.4rem; border-radius: 4px; white-space: nowrap; }
+  nav.directory a:hover { background: var(--accent); color: #fff; }
+  nav.directory a:hover .badge { background: rgba(255,255,255,0.2); color: #fff; }
+  .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 1.5em; height: 1.5em; padding: 0 0.3em; border-radius: 3px; background: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 0.7rem; }
+  .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+  .card { background: var(--paper); border-radius: var(--radius); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); position: relative; }
+  .number { position: absolute; top: 0.5rem; left: 0.5rem; z-index: 2; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.8rem; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+  .image-link { display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #f0f0f0; }
+  .image-link img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .capture-failed { display: flex; align-items: center; justify-content: center; background: #f5f5f5; }
+  .capture-failed-overlay { color: var(--muted); font-size: 0.8rem; text-align: center; padding: 2rem; }
+  .caption { padding: 0.625rem 0.75rem; }
+  .filename { font-size: 0.7rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.15rem; word-break: break-all; }
+  .title { font-size: 0.85rem; font-weight: 500; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  @media (max-width: 800px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } body { padding: 0.75rem; } }
+  @media print {
+    nav.directory { display: none; }
+    .grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+    .card { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+    .number { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { padding: 0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Visual Sitemap</h1>
+  <p>Generated Jul 26, 2026 &middot; 67 numbered pages, 0 screenshots captured</p>
+</header>
+<nav class="directory">
+  <ol>
+    <li><a href="#page-01"><span class="badge">01</span> fonts/elegant_font/HTML_CSS/index.html</a></li>
+    <li><a href="#page-02"><span class="badge">02</span> fonts/et-line-font/index.html</a></li>
+    <li><a href="#page-03"><span class="badge">03</span> _preview-burgundy-command.html</a></li>
+    <li><a href="#page-04"><span class="badge">04</span> _preview-first-light.html</a></li>
+    <li><a href="#page-05"><span class="badge">05</span> _preview-stealth-maroon.html</a></li>
+    <li><a href="#page-06"><span class="badge">06</span> _preview-steel-maroon.html</a></li>
+    <li><a href="#page-07"><span class="badge">07</span> booking.html</a></li>
+    <li><a href="#page-08"><span class="badge">08</span> capabilities/ai.html</a></li>
+    <li><a href="#page-09"><span class="badge">09</span> capabilities/autonomous-systems.html</a></li>
+    <li><a href="#page-10"><span class="badge">10</span> capabilities/computer-vision.html</a></li>
+    <li><a href="#page-11"><span class="badge">11</span> capabilities/computing.html</a></li>
+    <li><a href="#page-12"><span class="badge">12</span> capabilities/cryptography.html</a></li>
+    <li><a href="#page-13"><span class="badge">13</span> capabilities/integration.html</a></li>
+    <li><a href="#page-14"><span class="badge">14</span> capabilities/intelligence.html</a></li>
+    <li><a href="#page-15"><span class="badge">15</span> capabilities/quantum.html</a></li>
+    <li><a href="#page-16"><span class="badge">16</span> capabilities/robotics.html</a></li>
+    <li><a href="#page-17"><span class="badge">17</span> capabilities/tactical-comms.html</a></li>
+    <li><a href="#page-18"><span class="badge">18</span> company/about.html</a></li>
+    <li><a href="#page-19"><span class="badge">19</span> company/careers.html</a></li>
+    <li><a href="#page-20"><span class="badge">20</span> company/certifications.html</a></li>
+    <li><a href="#page-21"><span class="badge">21</span> company/doing-business.html</a></li>
+    <li><a href="#page-22"><span class="badge">22</span> company/partnerships.html</a></li>
+    <li><a href="#page-23"><span class="badge">23</span> company/team.html</a></li>
+    <li><a href="#page-24"><span class="badge">24</span> contact.html</a></li>
+    <li><a href="#page-25"><span class="badge">25</span> fonts/icofont/demo.html</a></li>
+    <li><a href="#page-26"><span class="badge">26</span> index.html</a></li>
+    <li><a href="#page-27"><span class="badge">27</span> industries/defense.html</a></li>
+    <li><a href="#page-28"><span class="badge">28</span> industries/federal.html</a></li>
+    <li><a href="#page-29"><span class="badge">29</span> industries/intelligence.html</a></li>
+    <li><a href="#page-30"><span class="badge">30</span> industries/research.html</a></li>
+    <li><a href="#page-31"><span class="badge">31</span> insights/ai-ethics-defense.html</a></li>
+    <li><a href="#page-32"><span class="badge">32</span> insights/autonomous-swarm.html</a></li>
+    <li><a href="#page-33"><span class="badge">33</span> insights/blog-single.html</a></li>
+    <li><a href="#page-34"><span class="badge">34</span> insights/blog.html</a></li>
+    <li><a href="#page-35"><span class="badge">35</span> insights/cmmc-first-award.html</a></li>
+    <li><a href="#page-36"><span class="badge">36</span> insights/digital-twin-multidomain.html</a></li>
+    <li><a href="#page-37"><span class="badge">37</span> insights/edge-ai-hardware-evaluation.html</a></li>
+    <li><a href="#page-38"><span class="badge">38</span> insights/edge-computing-tactical.html</a></li>
+    <li><a href="#page-39"><span class="badge">39</span> insights/federal-cloud-fedramp.html</a></li>
+    <li><a href="#page-40"><span class="badge">40</span> insights/gallery.html</a></li>
+    <li><a href="#page-41"><span class="badge">41</span> insights/hyperspectral-sensor-fusion.html</a></li>
+    <li><a href="#page-42"><span class="badge">42</span> insights/innovation.html</a></li>
+    <li><a href="#page-43"><span class="badge">43</span> insights/jadc2-integration.html</a></li>
+    <li><a href="#page-44"><span class="badge">44</span> insights/jadc2-interoperability-perspective.html</a></li>
+    <li><a href="#page-45"><span class="badge">45</span> insights/perspectives.html</a></li>
+    <li><a href="#page-46"><span class="badge">46</span> insights/post-quantum-cryptography.html</a></li>
+    <li><a href="#page-47"><span class="badge">47</span> insights/pqc-federal-architecture.html</a></li>
+    <li><a href="#page-48"><span class="badge">48</span> insights/quantum-defense-optimization.html</a></li>
+    <li><a href="#page-49"><span class="badge">49</span> insights/quantum-threat-pqc-migration.html</a></li>
+    <li><a href="#page-50"><span class="badge">50</span> insights/swarm-coordination-concepts.html</a></li>
+    <li><a href="#page-51"><span class="badge">51</span> insights/tactical-edge-ai.html</a></li>
+    <li><a href="#page-52"><span class="badge">52</span> insights/testimonials.html</a></li>
+    <li><a href="#page-53"><span class="badge">53</span> insights/zero-trust-federal.html</a></li>
+    <li><a href="#page-54"><span class="badge">54</span> insights/zero-trust-mandates-perspective.html</a></li>
+    <li><a href="#page-55"><span class="badge">55</span> issue-review.html</a></li>
+    <li><a href="#page-56"><span class="badge">56</span> privacy.html</a></li>
+    <li><a href="#page-57"><span class="badge">57</span> solutions/ai-platforms.html</a></li>
+    <li><a href="#page-58"><span class="badge">58</span> solutions/cloud-native.html</a></li>
+    <li><a href="#page-59"><span class="badge">59</span> solutions/cloud.html</a></li>
+    <li><a href="#page-60"><span class="badge">60</span> solutions/digital-transformation.html</a></li>
+    <li><a href="#page-61"><span class="badge">61</span> solutions/hud-systems.html</a></li>
+    <li><a href="#page-62"><span class="badge">62</span> solutions/jadc2.html</a></li>
+    <li><a href="#page-63"><span class="badge">63</span> solutions/zero-trust.html</a></li>
+    <li><a href="#page-64"><span class="badge">64</span> src/capability-statement.html</a></li>
+    <li><a href="#page-65"><span class="badge">65</span> src/relevant-experience.html</a></li>
+    <li><a href="#page-66"><span class="badge">66</span> terms.html</a></li>
+    <li><a href="#page-67"><span class="badge">67</span> website-strategy-recommendations.html</a></li>
+  </ol>
+</nav>
+<main class="grid">
+  <article class="card" id="page-01">
+      <div class="number">01</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">fonts/elegant_font/HTML_CSS/index.html</div>
+        <div class="title">Your Font/Glyphs</div>
+      </div>
+    </article>
+  <article class="card" id="page-02">
+      <div class="number">02</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">fonts/et-line-font/index.html</div>
+        <div class="title">Your Font/Glyphs</div>
+      </div>
+    </article>
+  <article class="card" id="page-03">
+      <div class="number">03</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">_preview-burgundy-command.html</div>
+        <div class="title">Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions</div>
+      </div>
+    </article>
+  <article class="card" id="page-04">
+      <div class="number">04</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">_preview-first-light.html</div>
+        <div class="title">Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions</div>
+      </div>
+    </article>
+  <article class="card" id="page-05">
+      <div class="number">05</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">_preview-stealth-maroon.html</div>
+        <div class="title">Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions</div>
+      </div>
+    </article>
+  <article class="card" id="page-06">
+      <div class="number">06</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">_preview-steel-maroon.html</div>
+        <div class="title">Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions</div>
+      </div>
+    </article>
+  <article class="card" id="page-07">
+      <div class="number">07</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">booking.html</div>
+        <div class="title">Submit RFP / RFI Intake | Federal Engagement | Ravonics LLC</div>
+      </div>
+    </article>
+  <article class="card" id="page-08">
+      <div class="number">08</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/ai.html</div>
+        <div class="title">Advanced AI Platforms for Defense &amp; Intelligence | Explainable AI, Real-Time Decision Systems</div>
+      </div>
+    </article>
+  <article class="card" id="page-09">
+      <div class="number">09</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/autonomous-systems.html</div>
+        <div class="title">Autonomous Systems - Swarm Intelligence, GPS-Denied Navigation | Multi-Domain DoW Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-10">
+      <div class="number">10</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/computer-vision.html</div>
+        <div class="title">Military Computer Vision &amp; Sensor Fusion - Multi-Spectral ISR, Threat Detection | DoW AI</div>
+      </div>
+    </article>
+  <article class="card" id="page-11">
+      <div class="number">11</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/computing.html</div>
+        <div class="title">High-Performance Computing - Tactical Edge AI, Distributed HPC | Federal Computing Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-12">
+      <div class="number">12</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/cryptography.html</div>
+        <div class="title">Post-Quantum Cryptography &amp; Blockchain - FIPS-Aligned HSM, Zero-Knowledge | Federal Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-13">
+      <div class="number">13</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/integration.html</div>
+        <div class="title">Defense Systems Integration - JADC2, DevSecOps, DoW Cloud Migration | Federal Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-14">
+      <div class="number">14</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/intelligence.html</div>
+        <div class="title">Intelligence Fusion &amp; Decision Systems - Multi-INT, Predictive Analytics | IC Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-15">
+      <div class="number">15</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/quantum.html</div>
+        <div class="title">Quantum Technologies - QKD, Quantum Computing, Quantum Sensing | DoW Quantum Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-16">
+      <div class="number">16</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/robotics.html</div>
+        <div class="title">Military Robotics - EOD, ISR UAVs, Human-Robot Teaming | Ruggedized DoW Platforms</div>
+      </div>
+    </article>
+  <article class="card" id="page-17">
+      <div class="number">17</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">capabilities/tactical-comms.html</div>
+        <div class="title">Tactical Communications - Anti-Jam SDR, Resilient MANET, LPI Waveforms | DoW Networks</div>
+      </div>
+    </article>
+  <article class="card" id="page-18">
+      <div class="number">18</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">company/about.html</div>
+        <div class="title">About Ravonics - Federal Defense Technology Contractor | Founded 2026, Ravenswood WV</div>
+      </div>
+    </article>
+  <article class="card" id="page-19">
+      <div class="number">19</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">company/careers.html</div>
+        <div class="title">Federal Technology Careers - Join Ravonics | AI, Autonomous Systems, Cybersecurity Roles</div>
+      </div>
+    </article>
+  <article class="card" id="page-20">
+      <div class="number">20</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">company/certifications.html</div>
+        <div class="title">Security &amp; Compliance Roadmap - NIST 800-171, CMMC Planned, HUBZone Certified | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-21">
+      <div class="number">21</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">company/doing-business.html</div>
+        <div class="title">How to Do Business With Ravonics - Acquisition Data, NAICS, Contract Vehicles | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-22">
+      <div class="number">22</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">company/partnerships.html</div>
+        <div class="title">Partner Ecosystem - Ravonics | Dream Limited, Droid Ops, Viper Dynamics, INSTAR Lab</div>
+      </div>
+    </article>
+  <article class="card" id="page-23">
+      <div class="number">23</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">company/team.html</div>
+        <div class="title">Leadership &amp; Research Team - Ravonics | Deep Bench, INSTAR Lab &amp; Senior Advisors</div>
+      </div>
+    </article>
+  <article class="card" id="page-24">
+      <div class="number">24</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">contact.html</div>
+        <div class="title">Contact Ravonics - Request Federal Defense Technology Consultation | HUBZone Small Business</div>
+      </div>
+    </article>
+  <article class="card" id="page-25">
+      <div class="number">25</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">fonts/icofont/demo.html</div>
+        <div class="title">Examples | IcoFont</div>
+      </div>
+    </article>
+  <article class="card" id="page-26">
+      <div class="number">26</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">index.html</div>
+        <div class="title">Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions</div>
+      </div>
+    </article>
+  <article class="card" id="page-27">
+      <div class="number">27</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">industries/defense.html</div>
+        <div class="title">Defense &amp; DoW Solutions - AI Decision Support, Autonomous Systems, ISR | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-28">
+      <div class="number">28</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">industries/federal.html</div>
+        <div class="title">Federal Civilian Agency Solutions - Cloud Modernization, Citizen Services | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-29">
+      <div class="number">29</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">industries/intelligence.html</div>
+        <div class="title">Intelligence Community Solutions - Multi-INT Fusion, AI Analytics | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-30">
+      <div class="number">30</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">industries/research.html</div>
+        <div class="title">Defense Research &amp; Innovation - SBIR/STTR, INSTAR Lab, Emerging Tech | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-31">
+      <div class="number">31</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/ai-ethics-defense.html</div>
+        <div class="title">AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-32">
+      <div class="number">32</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/autonomous-swarm.html</div>
+        <div class="title">Autonomous Platform Coordination: Swarm Intelligence Concepts | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-33">
+      <div class="number">33</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/blog-single.html</div>
+        <div class="title">Real-Time AI Decision Systems for Federal Missions | White Paper Abstract | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-34">
+      <div class="number">34</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/blog.html</div>
+        <div class="title">Technical Publications - Defense AI, Quantum Computing, JADC2 Research | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-35">
+      <div class="number">35</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/cmmc-first-award.html</div>
+        <div class="title">CMMC 2.0: What Defense Contractors Must Understand Before First Award | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-36">
+      <div class="number">36</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/digital-twin-multidomain.html</div>
+        <div class="title">Digital Twin Modeling for Multi-Domain Operations | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-37">
+      <div class="number">37</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/edge-ai-hardware-evaluation.html</div>
+        <div class="title">Tactical Edge AI Hardware Evaluation | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-38">
+      <div class="number">38</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/edge-computing-tactical.html</div>
+        <div class="title">Edge Computing at Tactical Scale: Architecture Considerations | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-39">
+      <div class="number">39</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/federal-cloud-fedramp.html</div>
+        <div class="title">Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-40">
+      <div class="number">40</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/gallery.html</div>
+        <div class="title">Capability Areas &amp; Technology Focus | Defense AI, Autonomy, Cryptography, Zero Trust | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-41">
+      <div class="number">41</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/hyperspectral-sensor-fusion.html</div>
+        <div class="title">Hyperspectral Imaging &amp; Sensor Fusion | INSTAR Lab Research | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-42">
+      <div class="number">42</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/innovation.html</div>
+        <div class="title">Research Directions - INSTAR Lab R&amp;D, Quantum Research, AI Architecture | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-43">
+      <div class="number">43</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/jadc2-integration.html</div>
+        <div class="title">JADC2 Integration: Multi-Domain C2 Architecture Patterns | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-44">
+      <div class="number">44</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/jadc2-interoperability-perspective.html</div>
+        <div class="title">JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-45">
+      <div class="number">45</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/perspectives.html</div>
+        <div class="title">Industry Perspectives - Federal AI Policy, Defense Tech Trends, Compliance Landscape | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-46">
+      <div class="number">46</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/post-quantum-cryptography.html</div>
+        <div class="title">Post-Quantum Cryptography: Preparing Federal Communications | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-47">
+      <div class="number">47</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/pqc-federal-architecture.html</div>
+        <div class="title">Post-Quantum Cryptography Architecture for Federal Systems | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-48">
+      <div class="number">48</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/quantum-defense-optimization.html</div>
+        <div class="title">Quantum Computing for Defense Optimization | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-49">
+      <div class="number">49</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/quantum-threat-pqc-migration.html</div>
+        <div class="title">The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-50">
+      <div class="number">50</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/swarm-coordination-concepts.html</div>
+        <div class="title">Autonomous Swarm Coordination | Architecture Concepts | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-51">
+      <div class="number">51</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/tactical-edge-ai.html</div>
+        <div class="title">Neural Network Optimization for Tactical Edge AI | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-52">
+      <div class="number">52</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/testimonials.html</div>
+        <div class="title">References &amp; Validation - Capability Strengths &amp; Partner Ecosystem | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-53">
+      <div class="number">53</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/zero-trust-federal.html</div>
+        <div class="title">Zero Trust Implementation for Federal Networks | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-54">
+      <div class="number">54</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">insights/zero-trust-mandates-perspective.html</div>
+        <div class="title">Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation | Ravonics</div>
+      </div>
+    </article>
+  <article class="card" id="page-55">
+      <div class="number">55</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">issue-review.html</div>
+        <div class="title">Ravonics Website Issue Review</div>
+      </div>
+    </article>
+  <article class="card" id="page-56">
+      <div class="number">56</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">privacy.html</div>
+        <div class="title">Privacy Policy | Ravonics LLC</div>
+      </div>
+    </article>
+  <article class="card" id="page-57">
+      <div class="number">57</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/ai-platforms.html</div>
+        <div class="title">Mission-Ready AI Platforms - Explainable AI, Edge Deployment, Secure Processing | DoW AI</div>
+      </div>
+    </article>
+  <article class="card" id="page-58">
+      <div class="number">58</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/cloud-native.html</div>
+        <div class="title">Cloud-Native Infrastructure - Kubernetes, GitOps, Service Mesh | DoW Container Platform</div>
+      </div>
+    </article>
+  <article class="card" id="page-59">
+      <div class="number">59</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/cloud.html</div>
+        <div class="title">Federal Cloud Architecture - Multi-Level Security, Hybrid Cloud, Data Management | DoW Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-60">
+      <div class="number">60</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/digital-transformation.html</div>
+        <div class="title">Federal Digital Transformation - Legacy Modernization, DevSecOps, Agile | DoW IT Modernization</div>
+      </div>
+    </article>
+  <article class="card" id="page-61">
+      <div class="number">61</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/hud-systems.html</div>
+        <div class="title">Military HUD &amp; AR/VR Systems - Tactical Displays, 3D Battlespace | Defense Visualization</div>
+      </div>
+    </article>
+  <article class="card" id="page-62">
+      <div class="number">62</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/jadc2.html</div>
+        <div class="title">JADC2 Integration Solutions - Multi-Domain C2, Cross-Domain Systems | DoW Contractor</div>
+      </div>
+    </article>
+  <article class="card" id="page-63">
+      <div class="number">63</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">solutions/zero-trust.html</div>
+        <div class="title">Zero Trust Security - Micro-Segmentation, Continuous Verification, SOAR | DoW Cybersecurity</div>
+      </div>
+    </article>
+  <article class="card" id="page-64">
+      <div class="number">64</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">src/capability-statement.html</div>
+        <div class="title">Ravonics LLC - Capability Statement</div>
+      </div>
+    </article>
+  <article class="card" id="page-65">
+      <div class="number">65</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">src/relevant-experience.html</div>
+        <div class="title">Ravonics LLC - Relevant Experience</div>
+      </div>
+    </article>
+  <article class="card" id="page-66">
+      <div class="number">66</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">terms.html</div>
+        <div class="title">Terms of Use | Ravonics LLC</div>
+      </div>
+    </article>
+  <article class="card" id="page-67">
+      <div class="number">67</div>
+      <div class="image-link capture-failed"><div class="capture-failed-overlay"><span>Capture failed</span></div></div>
+      <div class="caption">
+        <div class="filename">website-strategy-recommendations.html</div>
+        <div class="title">Ravonics — Website Strategy &amp;amp; Remediation Plan | Stakeholder Briefing</div>
+      </div>
+    </article>
+</main>
+</body>
+</html>

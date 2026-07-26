@@ -1,266 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Core Pages -->
   <url>
-    <loc>https://ravonics.com/</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://ravonics.com/fonts/elegant_font/HTML_CSS/index.html</loc>
+    <lastmod>2026-07-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/contact.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://ravonics.com/fonts/et-line-font/index.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/_preview-burgundy-command.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/_preview-first-light.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/_preview-stealth-maroon.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/_preview-steel-maroon.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ravonics.com/booking.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://ravonics.com/privacy.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/terms.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Company Pages -->
-  <url>
-    <loc>https://ravonics.com/company/doing-business.html</loc>
-    <lastmod>2026-06-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-26</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://ravonics.com/company/about.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/company/team.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/company/certifications.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/company/careers.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/company/partnerships.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Capabilities Pages -->
   <url>
     <loc>https://ravonics.com/capabilities/ai.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/capabilities/autonomous-systems.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/capabilities/robotics.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/capabilities/computer-vision.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/capabilities/intelligence.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/capabilities/tactical-comms.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/capabilities/quantum.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/capabilities/cryptography.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/capabilities/computing.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/capabilities/cryptography.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/capabilities/integration.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Solutions Pages -->
-  <url>
-    <loc>https://ravonics.com/solutions/jadc2.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/solutions/ai-platforms.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://ravonics.com/capabilities/intelligence.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/solutions/cloud.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://ravonics.com/capabilities/quantum.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/capabilities/robotics.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/capabilities/tactical-comms.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/company/about.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/company/careers.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/company/certifications.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/company/doing-business.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/company/partnerships.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/company/team.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/contact.html</loc>
+    <lastmod>2026-07-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/solutions/cloud-native.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://ravonics.com/fonts/icofont/demo.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/solutions/zero-trust.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://ravonics.com/index.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://ravonics.com/solutions/digital-transformation.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/solutions/hud-systems.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Industries Pages -->
   <url>
     <loc>https://ravonics.com/industries/defense.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/industries/intelligence.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/industries/federal.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/industries/intelligence.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/industries/research.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Insights Pages -->
-  <url>
-    <loc>https://ravonics.com/insights/testimonials.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/insights/blog.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://ravonics.com/insights/ai-ethics-defense.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/autonomous-swarm.html</loc>
+    <lastmod>2026-07-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/insights/blog-single.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/blog.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/cmmc-first-award.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/digital-twin-multidomain.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/edge-ai-hardware-evaluation.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/edge-computing-tactical.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/federal-cloud-fedramp.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/insights/gallery.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/hyperspectral-sensor-fusion.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/insights/innovation.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/jadc2-integration.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/jadc2-interoperability-perspective.html</loc>
+    <lastmod>2026-07-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/insights/perspectives.html</loc>
-    <lastmod>2026-06-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-26</lastmod>
     <priority>0.6</priority>
   </url>
-
-  <!-- Insights Articles -->
-  <url><loc>https://ravonics.com/insights/tactical-edge-ai.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/jadc2-integration.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/edge-computing-tactical.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/zero-trust-federal.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/autonomous-swarm.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/post-quantum-cryptography.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/quantum-defense-optimization.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/swarm-coordination-concepts.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/edge-ai-hardware-evaluation.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/pqc-federal-architecture.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/hyperspectral-sensor-fusion.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/digital-twin-multidomain.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/jadc2-interoperability-perspective.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/zero-trust-mandates-perspective.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/ai-ethics-defense.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/federal-cloud-fedramp.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/quantum-threat-pqc-migration.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ravonics.com/insights/cmmc-first-award.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
+  <url>
+    <loc>https://ravonics.com/insights/post-quantum-cryptography.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/pqc-federal-architecture.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/quantum-defense-optimization.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/quantum-threat-pqc-migration.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/swarm-coordination-concepts.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/tactical-edge-ai.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/testimonials.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/zero-trust-federal.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/zero-trust-mandates-perspective.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/issue-review.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/privacy.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/ai-platforms.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/cloud-native.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/cloud.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/digital-transformation.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/hud-systems.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/jadc2.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/solutions/zero-trust.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/src/capability-statement.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/src/relevant-experience.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/terms.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ravonics.com/website-strategy-recommendations.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

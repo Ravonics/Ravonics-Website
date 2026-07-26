@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Visual Sitemap — Compact</title>
+<style>
+  :root { --ink: #17212b; --muted: #66717d; --line: #d8dde3; --paper: #fff; --accent: #9d3026; --accent-light: #e8c8c5; --radius: 6px; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: var(--line); color: var(--ink); line-height: 1.5; display: grid; grid-template-columns: minmax(0, 80%) minmax(260px, 20%); }
+  .left-panel { overflow-y: auto; padding: 1.25rem; height: 100vh; }
+  .right-panel { overflow-y: auto; padding: 1.25rem; background: var(--paper); border-left: 1px solid var(--line); height: 100vh; position: sticky; top: 0; }
+  h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 0.15rem; }
+  .header-stats { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+  .directory { max-height: 25vh; overflow-y: auto; margin-bottom: 1rem; background: var(--paper); border-radius: var(--radius); padding: 0.5rem; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+  .directory ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.15rem 0.35rem; }
+  .directory a { display: inline-flex; align-items: center; gap: 0.2rem; font-size: 0.65rem; color: var(--ink); text-decoration: none; padding: 0.1rem 0.35rem; border-radius: 3px; cursor: pointer; white-space: nowrap; }
+  .directory a:hover { background: var(--accent); color: #fff; }
+  .directory a:hover .badge { background: rgba(255,255,255,0.2); color: #fff; }
+  .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 1.3em; height: 1.3em; padding: 0 0.25em; border-radius: 2px; background: var(--accent-light); color: var(--accent); font-weight: 600; font-size: 0.6rem; }
+  .grid { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); gap: 0.5rem; }
+  .card { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); position: relative; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.06); background: var(--paper); border: 2px solid transparent; transition: border-color 0.15s, box-shadow 0.15s; }
+  .card:hover { border-color: var(--accent); box-shadow: 0 2px 6px rgba(157,48,38,0.2); }
+  .card.is-selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+  .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card .card-number { position: absolute; top: 2px; left: 2px; background: var(--accent); color: #fff; font-size: 0.55rem; font-weight: 700; width: 1.2rem; height: 1.2rem; display: flex; align-items: center; justify-content: center; border-radius: 2px; opacity: 0.9; }
+  .card.capture-failed { display: flex; align-items: center; justify-content: center; background: #f0f0f0; }
+  .card.capture-failed span { font-size: 0.55rem; color: var(--muted); text-align: center; padding: 0.25rem; }
+  .preview-shell { }
+  .preview-shell .kicker { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.25rem; }
+  .preview-shell .preview-filename { font-size: 0.8rem; color: var(--muted); word-break: break-all; margin-bottom: 0.15rem; }
+  .preview-shell .preview-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .preview-shell .preview-image { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); background: #f0f0f0; margin-bottom: 0.5rem; }
+  .preview-shell .preview-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .preview-shell .preview-image a { display: block; width: 100%; height: 100%; }
+  .preview-shell .preview-link { font-size: 0.75rem; }
+  .preview-shell .preview-link a { color: var(--accent); text-decoration: none; word-break: break-all; }
+  .preview-shell .preview-link a:hover { text-decoration: underline; }
+  .empty-preview { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60%; text-align: center; color: var(--muted); }
+  .empty-preview p { font-size: 0.85rem; }
+  .error-state { color: var(--accent); padding: 2rem; text-align: center; }
+  @media (max-width: 680px) { body { grid-template-columns: 1fr; } .right-panel { display: none; } .left-panel { height: auto; } .grid { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
+</style>
+</head>
+<body>
+<div class="left-panel">
+  <h1>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Visual Sitemap</h1>
+  <div class="header-stats" id="header-stats">Loading...</div>
+  <div class="directory" id="directory"><ol></ol></div>
+  <div class="grid" id="grid"></div>
+</div>
+<aside class="right-panel">
+  <div class="preview-shell" id="preview">
+    <div class="empty-preview" id="empty-preview">
+      <p>Select a page to preview</p>
+    </div>
+    <div id="preview-content" style="display:none;">
+      <div class="kicker" id="preview-kicker"></div>
+      <div class="preview-filename" id="preview-filename"></div>
+      <div class="preview-title" id="preview-title"></div>
+      <div class="preview-image" id="preview-image"></div>
+      <div class="preview-link" id="preview-link"></div>
+    </div>
+  </div>
+</aside>
+<script>
+(async function() {
+  const grid = document.getElementById('grid');
+  const dirList = document.querySelector('#directory ol');
+  const headerStats = document.getElementById('header-stats');
+  const previewKicker = document.getElementById('preview-kicker');
+  const previewFilename = document.getElementById('preview-filename');
+  const previewTitle = document.getElementById('preview-title');
+  const previewImage = document.getElementById('preview-image');
+  const previewLink = document.getElementById('preview-link');
+  const previewContent = document.getElementById('preview-content');
+  const emptyPreview = document.getElementById('empty-preview');
+  var data = [];
+  var meta = {};
+
+  function select(number) {
+    const item = data.find(function(d) { return d.number === number; });
+    if (!item) return;
+
+    document.querySelectorAll('.card.is-selected').forEach(function(el) {
+      el.classList.remove('is-selected');
+    });
+    const card = document.getElementById('card-' + String(number).padStart(2, '0'));
+    if (card) card.classList.add('is-selected');
+
+    emptyPreview.style.display = 'none';
+    previewContent.style.display = 'block';
+    previewKicker.textContent = 'Page ' + String(number).padStart(2, '0');
+    previewFilename.textContent = item.file;
+    previewTitle.textContent = item.title || item.file;
+    previewImage.innerHTML = '';
+    if (item.ok && item.image) {
+      var a = document.createElement('a');
+      a.href = item.image;
+      a.target = '_blank';
+      var img = document.createElement('img');
+      img.src = item.image;
+      img.alt = 'Screenshot of ' + (item.title || item.file);
+      img.loading = 'lazy';
+      a.appendChild(img);
+      previewImage.appendChild(a);
+    } else {
+      previewImage.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--muted);font-size:0.8rem;">Capture failed</div>';
+    }
+    previewLink.innerHTML = '<a href="' + escapeAttr(item.url) + '" target="_blank">' + escapeAttr(item.url) + '</a>';
+  }
+
+  try {
+    var metaResp = await fetch('meta.json');
+    meta = await metaResp.json();
+    var manifestResp = await fetch('manifest.json');
+    data = await manifestResp.json();
+
+    headerStats.textContent = 'Generated ' + new Date(meta.generatedAt).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' }) + ' \u00b7 ' + meta.pageCount + ' pages, ' + meta.successfulCaptures + ' screenshots';
+
+    var dirHtml = '';
+    var gridHtml = '';
+    data.forEach(function(item) {
+      var n = String(item.number).padStart(2, '0');
+      dirHtml += '<li><a data-number="' + item.number + '"><span class="badge">' + n + '</span> ' + escapeAttr(item.file) + '</a></li>';
+      var imgHtml = item.ok && item.image
+        ? '<img src="' + escapeAttr(item.image) + '" alt="Screenshot of ' + escapeAttr(item.title || item.file) + '" loading="lazy">'
+        : '<span>Capture failed</span>';
+      gridHtml += '<div class="card' + (item.ok ? '' : ' capture-failed') + '" id="card-' + n + '" data-number="' + item.number + '"><div class="card-number">' + n + '</div>' + imgHtml + '</div>';
+    });
+    dirList.innerHTML = dirHtml;
+    grid.innerHTML = gridHtml;
+
+    // Attach events
+    document.querySelectorAll('.directory a').forEach(function(el) {
+      el.addEventListener('click', function(e) { select(parseInt(this.dataset.number)); });
+      el.addEventListener('mouseenter', function(e) { select(parseInt(this.dataset.number)); });
+    });
+    document.querySelectorAll('.card').forEach(function(el) {
+      el.addEventListener('click', function(e) { select(parseInt(this.dataset.number)); });
+      el.addEventListener('mouseenter', function(e) { select(parseInt(this.dataset.number)); });
+    });
+
+    // Select first
+    if (data.length > 0) select(data[0].number);
+
+  } catch (err) {
+    headerStats.textContent = 'Failed to load sitemap data';
+    grid.innerHTML = '<div class="error-state"><p>Failed to load manifest. Ensure manifest.json and meta.json are present in the visual-sitemap directory.</p></div>';
+  }
+
+  function escapeAttr(s) {
+    if (typeof s !== 'string') return '';
+    return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+})();
+</script>
+</body>
+</html>
