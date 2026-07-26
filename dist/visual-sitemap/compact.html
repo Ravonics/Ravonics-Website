@@ -35,6 +35,10 @@
     .preview-header { flex:0 0 auto; padding:12px 13px; border-bottom:1px solid var(--line); }
     .preview-kicker { margin:0 0 3px; color:var(--accent); font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
     .preview-name { margin:0; font-size:14px; overflow-wrap:anywhere; }
+    .preview-name a,
+    .preview-title a { color:inherit; text-decoration:none; }
+    .preview-name a:hover,
+    .preview-title a:hover { text-decoration:underline; color:var(--accent,#9d3026); }
     .preview-title { margin:3px 0 0; color:var(--muted); font-size:11px; }
     .preview-help { margin:8px 0 0; color:var(--muted); font-size:10px; }
     .preview-scroll { flex:1 1 auto; min-height:0; overflow:auto; background:#dfe3e7; }
@@ -95,8 +99,20 @@
       card?.classList.add("is-selected");
       const number = numberFor(entry, count);
       previewNumber.textContent = `Page ${number}`;
-      previewName.textContent = entry.file;
-      previewTitle.textContent = entry.title;
+      previewName.innerHTML = '';
+      const nameLink = document.createElement('a');
+      nameLink.href = entry.url;
+      nameLink.textContent = entry.file;
+      nameLink.target = '_blank';
+      nameLink.rel = 'noopener';
+      previewName.appendChild(nameLink);
+      previewTitle.innerHTML = '';
+      const titleLink = document.createElement('a');
+      titleLink.href = entry.url;
+      titleLink.textContent = entry.title || 'Untitled';
+      titleLink.target = '_blank';
+      titleLink.rel = 'noopener';
+      previewTitle.appendChild(titleLink);
       previewLink.href = entry.image || entry.url;
       previewImage.src = entry.image || "";
       previewImage.alt = `Full-page capture of ${entry.file}`;
