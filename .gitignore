@@ -8,3 +8,4 @@ scripts/issue-review-server.py
 
 # Playwright MCP artifacts
 .playwright-mcp/
+node_modules/

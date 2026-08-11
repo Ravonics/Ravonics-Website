@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ravonics.com/fonts/elegant_font/HTML_CSS/index.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/fonts/et-line-font/index.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/_preview-burgundy-command.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/_preview-first-light.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/_preview-stealth-maroon.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/_preview-steel-maroon.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ravonics.com/booking.html</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.8</priority>
@@ -119,11 +89,6 @@
     <loc>https://ravonics.com/contact.html</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/fonts/icofont/demo.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ravonics.com/index.html</loc>
@@ -271,11 +236,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ravonics.com/issue-review.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ravonics.com/privacy.html</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.4</priority>
@@ -329,10 +289,5 @@
     <loc>https://ravonics.com/terms.html</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://ravonics.com/website-strategy-recommendations.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.8</priority>
   </url>
 </urlset>
