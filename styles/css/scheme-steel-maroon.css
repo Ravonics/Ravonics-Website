@@ -1,0 +1,20 @@
+/* Ravonics Brand — Steel Maroon
+   Maroon + slate blue; bold tactical authority, defense contractor clarity */
+:root {
+  --primary-color:          #93242A;
+  --primary-color-rgb:      147, 36, 42;
+  --secondary-color:        #4F7CA3;
+  --secondary-color-rgb:    79, 124, 163;
+  --ink:                    #161A1F;
+  --paper:                  #EEF1F4;
+  --accent:                 #C7A35B;
+
+  /* Typography treatment — bold tight uppercase eyebrows */
+  --heading-letter-spacing: -0.01em;
+  --heading-weight:         800;
+  --heading-transform:      none;
+  --eyebrow-size:           0.65rem;
+  --eyebrow-spacing:        0.25em;
+  --eyebrow-weight:         700;
+  --eyebrow-transform:      uppercase;
+}

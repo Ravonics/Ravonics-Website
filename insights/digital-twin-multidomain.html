@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Digital Twin Modeling for Multi-Domain Operations | Ravonics</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta content="Architecture patterns for digital twin modeling in multi-domain operational simulation: model-telemetry synchronization, fidelity levels, validation and verification, and federal program applications: a Ravonics research perspective." name="description" >
+    <meta content="digital twin, multi-domain operations, operational simulation, model synchronization, fidelity levels, verification and validation, MBSE, defense modeling, JADC2 simulation, Ravonics" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/digital-twin-multidomain.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/digital-twin-multidomain.html">
+    <meta property="og:title" content="Digital Twin Modeling for Multi-Domain Operations | Ravonics">
+    <meta property="og:description" content="Architecture patterns for digital twin modeling in multi-domain operational simulation: model-telemetry synchronization, fidelity levels, verification and validation, and federal program applications: a Ravonics research perspective.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/digital-twin-multidomain.html">
+    <meta property="twitter:title" content="Digital Twin Modeling for Multi-Domain Operations | Ravonics">
+    <meta property="twitter:description" content="Architecture patterns for digital twin modeling in multi-domain operational simulation: model-telemetry synchronization, fidelity levels, verification and validation, and federal program applications: a Ravonics research perspective.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Digital Twin Modeling for Multi-Domain Operations",
+      "description": "Architecture patterns for digital twin modeling in multi-domain operational simulation: model-telemetry synchronization, fidelity levels, verification and validation, and federal program applications: a Ravonics research perspective.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ravonics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ravonics.com/images/logo/logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/digital-twin-multidomain.html"
+      }
+    }
+    </script>
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                    <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../solutions/ai-platforms.html">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../industries/defense.html">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoW</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../company/about.html">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/partnerships.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/doing-business.html">Doing Business</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../insights/blog.html">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
+                                            <li><a href="../insights/innovation.html">Research Directions</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">References & Validation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content" role="main">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/digital-twin-multidomain.avif) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Digital Twin Modeling for Multi-Domain Operations</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Insights</a></li>
+                                <li><a href="innovation.html">Research Directions</a></li>
+                                <li class="active">Digital Twin Multi-Domain</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>A Ravonics architectural perspective on digital twin patterns for multi-domain operational simulation: model synchronization, fidelity management, and verification approaches for federal programs</em>
+                                </p>
+
+                                <p>
+                                    The term "digital twin" has accumulated significant marketing weight across industries, but for defense and federal programs its technical meaning is precise: a continuously synchronized virtual representation of a physical system, environment, or operational construct, updated from live telemetry and capable of supporting simulation, analysis, prediction, and decision support. In multi-domain operations, where land, sea, air, space, and cyber activities must be coordinated as an integrated whole, the need for authoritative, synchronized virtual representations of force disposition, system state, and environmental conditions is acute. The alternative is fragmented situational awareness spread across domain-specific tools with incompatible data models.
+                                </p>
+
+                                <p>
+                                    Building digital twins for multi-domain operational contexts is architecturally distinct from industrial IoT applications. The heterogeneity is extreme: platforms span ship combat systems, airborne sensors, ground vehicles, space assets, and cyber terrain. Update rates vary from milliseconds (fire control) to hours (logistics and sustainment status). Classification levels and network separation add additional complexity to data movement. And unlike a manufacturing floor where the physical system is fully owned and instrumented, military platforms are fielded independently by service programs with their own data models and interface standards. The sections below outline the architecture pillars that shape a credible approach.
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>Model Architecture and Domain Scope</h4>
+                                    <p>
+                                      A multi-domain digital twin is not a single monolithic model; it is a federation of domain-specific models (land force disposition, maritime picture, air tracks, space situational awareness, cyber terrain) composed through a shared data fabric and a common operational picture layer. Each domain model owns the authoritative representation of its assets, publishing state updates through well-defined interfaces. The federation layer resolves cross-domain dependencies: a strike package model must reference air, space (for GPS and ISR), and cyber (for network-enabled weapons) simultaneously. Defining the decomposition boundaries (which information lives in which domain model) is an architecture decision that shapes maintainability for the life of the program.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Model-Telemetry Synchronization</h4>
+                                    <p>
+                                      The defining property of a digital twin is synchronization with its physical counterpart. In multi-domain operations, telemetry arrives from heterogeneous sources: tactical data links (Link 16, VMF, JREAP), space tracking networks, cyber sensor feeds, and logistics systems. Synchronization architecture must handle variable latency, message loss, and conflicting reports of the same entity from different sources. A track management layer (analogous to the common operational picture fusion engines used in C2 systems) maintains entity state by reconciling multiple inbound updates using confidence weights, recency, and source authority rules. Divergence between the virtual model and the physical state must be detectable and flagged, not silently tolerated.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Fidelity Levels and Computational Scaling</h4>
+                                    <p>
+                                      Not every component of an operational digital twin requires the same level of physical fidelity. High-fidelity simulation of individual platform subsystems (propulsion, sensors, weapons employment) is computationally expensive and appropriate for engineering analysis or specific engagement modeling. Operational-level twins that support course-of-action analysis and logistics planning operate at a higher level of abstraction: entities, capabilities, and constraint envelopes rather than physics-based subsystem simulation. Architecturally, fidelity levels should be selectable at runtime, allowing the same twin to serve both detailed engineering queries and rapid operational planning without maintaining two separate systems. Adaptive resolution (increasing fidelity in a geographic or functional area of interest while holding the surrounding context at low fidelity) is a key capability for computational tractability.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Verification and Validation</h4>
+                                    <p>
+                                      A digital twin whose outputs are not validated against real-world behavior is a simulation, not a twin. Verification establishes that the model correctly implements its specification; validation establishes that the model's outputs match observed physical reality within acceptable bounds. For multi-domain operational twins, validation is challenging because the physical system (a military operation) cannot be exhaustively exercised under controlled conditions. Approaches include back-testing against historical exercise telemetry, comparison against independent simulation tools, unit testing of domain model components against known analytical solutions, and red-team challenges that attempt to surface failure modes. Continuous validation (comparing twin predictions against observed outcomes as operations proceed) is the gold standard and requires an instrumentation and feedback loop that must be designed in from the start.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Cross-Domain Data Movement and Security Architecture</h4>
+                                    <p>
+                                      Multi-domain operational data spans multiple classification levels and network enclaves. A digital twin federation that aggregates space, cyber, and conventional force data must navigate data transfer authorities, cross-domain solutions, and need-to-know boundaries. Architecturally, this argues for domain models that are enclave-resident and publish only the authorized subset of their state to the federation layer: a push model with explicit release decisions, not a pull model where the federation queries any field it wants. Zero Trust principles (continuous verification of requestor identity and entitlement before each data access) are appropriate for the federation's API layer, consistent with the broader federal mandate for ZT adoption.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Course-of-Action Analysis and Decision Support</h4>
+                                    <p>
+                                      The decision-support value of a digital twin emerges when it can run ahead of real time: projecting force states under alternative courses of action, identifying logistics shortfalls before they become operational constraints, and evaluating how adversary actions in one domain propagate to others. This requires a simulation execution layer that can branch from the current synchronized state, run multiple COA variants concurrently, and return ranked outcomes within a planning timescale. The synchronization discipline established in normal operations is what makes COA branching credible; a twin that has drifted from physical reality produces misleading projections. Maintaining synchronization fidelity is therefore not just an operational requirement; it is a prerequisite for the analytic value the twin is meant to deliver.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/blog/posts/digital-twin-multidomain.avif" class="w-100 rounded-1" alt="Digital twin operational simulation display showing multi-domain force disposition in early-morning command center light">
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="discuss-cta" class="border-gray rounded-1 p-30">
+                                <h4>Want to discuss digital twin architecture for your multi-domain program?</h4>
+                                <p>Ravonics works with federal program offices and systems integrators on the architecture and data modeling foundations for operational digital twins, from synchronization design and fidelity planning through cross-domain security and COA analysis capability. If your program is scoping a modeling and simulation initiative, we engage at the technical level.</p>
+                                <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Related Perspectives</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/quantum-defense-optimization.avif" alt="Quantum computing for defense optimization research">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="quantum-defense-optimization.html">
+                                        <h4>Quantum Computing for Defense Optimization</h4>
+                                      </a>
+                                      <div class="d-date">Quantum Computing</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/swarm-coordination-concepts.avif" alt="Autonomous swarm coordination architecture concepts" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="swarm-coordination-concepts.html">
+                                        <h4>Autonomous Swarm Coordination | Architecture Concepts</h4>
+                                      </a>
+                                      <div class="d-date">Autonomous Systems</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/edge-ai-hardware-evaluation.avif" alt="Tactical edge AI hardware evaluation and benchmarking" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="edge-ai-hardware-evaluation.html">
+                                        <h4>Tactical Edge AI Hardware Evaluation</h4>
+                                      </a>
+                                      <div class="d-date">Hardware Innovation</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/pqc-federal-architecture.avif" alt="Post-quantum cryptography architecture for federal systems" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="pqc-federal-architecture.html">
+                                        <h4>Post-Quantum Cryptography Architecture for Federal Systems</h4>
+                                      </a>
+                                      <div class="d-date">Cryptography Research</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/hyperspectral-sensor-fusion.avif" alt="Hyperspectral imaging and sensor fusion research" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="hyperspectral-sensor-fusion.html">
+                                        <h4>Hyperspectral Imaging & Sensor Fusion | INSTAR Lab Research</h4>
+                                      </a>
+                                      <div class="d-date">Sensor Technology</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 integration: multi-domain C2 patterns" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="jadc2-integration.html">
+                                        <h4>JADC2 Integration: Multi-Domain C2 Patterns</h4>
+                                      </a>
+                                      <div class="d-date">Systems Integration</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                            </div>
+
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Ready to Discuss Digital Twin Architecture for Your Federal Program?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Submit RFP / RFI</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Autonomy Software</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
+
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "ravonics-lead-proxy",
+  "version": "1.0.0",
+  "description": "Thin Azure Functions proxy in front of the Ravonics D365 Logic App intake flows. Keeps the Logic App SAS callback URLs server-side, verifies Cloudflare Turnstile, rate-limits per IP, and filters obvious spam before forwarding leads.",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

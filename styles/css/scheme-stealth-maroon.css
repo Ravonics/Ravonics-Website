@@ -1,0 +1,20 @@
+/* Ravonics Brand — Stealth Maroon
+   Maroon + deep rose; thin-tracked, restrained, classified-document aesthetic */
+:root {
+  --primary-color:          #93242A;
+  --primary-color-rgb:      147, 36, 42;
+  --secondary-color:        #6E2E33;
+  --secondary-color-rgb:    110, 46, 51;
+  --ink:                    #0E0C0C;
+  --paper:                  #F4F0EE;
+  --accent:                 #9A9088;
+
+  /* Typography treatment — thin uppercase, wide tracking, restrained */
+  --heading-letter-spacing: 0.06em;
+  --heading-weight:         300;
+  --heading-transform:      uppercase;
+  --eyebrow-size:           0.6rem;
+  --eyebrow-spacing:        0.35em;
+  --eyebrow-weight:         400;
+  --eyebrow-transform:      uppercase;
+}

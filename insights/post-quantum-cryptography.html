@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Post-Quantum Cryptography: Preparing Federal Communications | Ravonics</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta content="Why federal systems should begin migrating now: the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer." name="description" >
+    <meta content="post-quantum cryptography, PQC, NIST FIPS 203, ML-KEM, ML-DSA, SLH-DSA, cryptographic agility, harvest now decrypt later, hybrid cryptography, federal communications, Ravonics" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/post-quantum-cryptography.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/post-quantum-cryptography.html">
+    <meta property="og:title" content="Post-Quantum Cryptography: Preparing Federal Communications | Ravonics">
+    <meta property="og:description" content="The harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards, cryptographic agility, and a phased hybrid transition for federal communications. A Ravonics primer.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/post-quantum-cryptography.html">
+    <meta property="twitter:title" content="Post-Quantum Cryptography: Preparing Federal Communications | Ravonics">
+    <meta property="twitter:description" content="The harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards, cryptographic agility, and a phased hybrid transition for federal communications. A Ravonics primer.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Post-Quantum Cryptography: Preparing Federal Communications",
+      "description": "Why federal systems should begin migrating now: the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ravonics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ravonics.com/images/logo/logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/post-quantum-cryptography.html"
+      }
+    }
+    </script>
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                    <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../solutions/ai-platforms.html">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../industries/defense.html">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoW</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../company/about.html">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/partnerships.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/doing-business.html">Doing Business</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../insights/blog.html">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
+                                            <li><a href="../insights/innovation.html">Research Directions</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">References & Validation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content" role="main">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/post-quantum-cryptography.avif) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Post-Quantum Cryptography: Preparing Federal Communications</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Insights</a></li>
+                                <li><a href="blog.html">Technical Publications</a></li>
+                                <li class="active">Post-Quantum Cryptography</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>A Ravonics architectural primer on protecting today's secrets against tomorrow's quantum adversary</em>
+                                </p>
+
+                                <p>
+                                    The public-key cryptography securing federal communications today rests on mathematical problems that classical computers cannot solve in any practical time. A sufficiently capable quantum computer changes that calculus: Shor's algorithm would break the RSA and elliptic-curve schemes underpinning TLS, VPNs, code signing, and key exchange across nearly every federal system. The timeline for such a machine remains uncertain, but the risk window has already opened.
+                                </p>
+
+                                <p>
+                                    The reason is a threat model called "harvest now, decrypt later." A capable adversary does not need a quantum computer today to benefit from one tomorrow. They need only to capture encrypted traffic now and store it. When a cryptographically relevant quantum computer arrives, that archived traffic is retroactively exposed. For federal communications (diplomatic cables, intelligence reporting, classified program data, and personnel records with decades-long sensitivity) the secret you transmit today may still demand protection long after quantum decryption becomes feasible. That mismatch is why the migration must begin now, not when the threat fully materializes.
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>The Harvest-Now-Decrypt-Later Threat</h4>
+                                    <p>
+                                      Adversaries are already recording encrypted federal traffic and archiving it against a future
+                                      decryption capability. The governing question is not when a quantum computer arrives, but how
+                                      long your data must stay secret. Where that lifetime exceeds the migration window plus the
+                                      adversary's likely time-to-capability, the secret is effectively at risk today, and waiting only
+                                      widens the exposure.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>The New NIST Standards</h4>
+                                    <p>
+                                      In 2024 NIST finalized its first post-quantum standards: FIPS 203 specifies ML-KEM (formerly
+                                      Kyber) for key encapsulation, FIPS 204 specifies ML-DSA (formerly Dilithium) for digital
+                                      signatures, and FIPS 205 specifies SLH-DSA (formerly SPHINCS+), a stateless hash-based signature
+                                      with conservative security assumptions. These lattice- and hash-based schemes resist known
+                                      quantum attacks and form the foundation for compliant federal migration.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Cryptographic Inventory & Dependency Mapping</h4>
+                                    <p>
+                                      You cannot migrate what you cannot see. The first practical step is a thorough inventory of every
+                                      place cryptography lives: protocols, libraries, certificates, hardware modules, embedded
+                                      firmware, and third-party services. Mapping these dependencies surfaces hidden uses, quantifies
+                                      data sensitivity and lifetime, and produces the prioritized, risk-ranked basis for any credible
+                                      transition plan.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Cryptographic Agility</h4>
+                                    <p>
+                                      Hard-coding a single algorithm is what made the current transition so painful. Cryptographic
+                                      agility abstracts algorithms behind stable interfaces, so primitives can be swapped through
+                                      configuration and policy rather than re-engineering. Designing for agility now means the next
+                                      standard (or an emergency response to a broken scheme) becomes a managed change rather than a
+                                      multi-year forklift across the enterprise.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Hybrid / Phased Transition</h4>
+                                    <p>
+                                      Federal migration favors hybrid schemes that run a classical algorithm and a post-quantum
+                                      algorithm in parallel, combining both into a single key exchange. The session stays secure as
+                                      long as either holds, hedging against an immature PQC implementation while delivering quantum
+                                      resistance immediately. A phased rollout (beginning with the highest-sensitivity, longest-lived
+                                      channels) contains risk and builds operational confidence.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Governance, Testing & Roadmap Alignment</h4>
+                                    <p>
+                                      Migration is a governance program, not a one-time patch. Align planning with NSA's CNSA 2.0
+                                      timelines and federal guidance, establish interoperability and regression testing for hybrid
+                                      stacks, and validate against the standardized parameter sets. Clear ownership, measurable
+                                      milestones, and a maintained roadmap keep the effort on track as standards mature and agency
+                                      mandates take effect.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/blog/posts/post-quantum-cryptography.avif" class="w-100 rounded-1" alt="A precision vault mechanism in warm light: a timeless metaphor for cryptographic key protection">
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="discuss-cta" class="border-gray rounded-1 p-30">
+                                <h4>Want to discuss post-quantum readiness for your program?</h4>
+                                <p>Ravonics is built to help federal program managers and systems integrators translate these architectural principles into acquisition-ready solutions. Whether you are scoping an IDIQ task order, evaluating a COTS AI platform, or designing a new edge compute stack, we engage at the technical level.</p>
+                                <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Related Perspectives</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural network optimization for tactical edge AI" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="tactical-edge-ai.html">
+                                        <h4>Neural Network Optimization for Tactical Edge AI</h4>
+                                      </a>
+                                      <div class="d-date">Edge AI Architecture</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 integration architecture patterns for multi-domain C2" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="jadc2-integration.html">
+                                        <h4>JADC2 Integration: Multi-Domain C2 Patterns</h4>
+                                      </a>
+                                      <div class="d-date">Systems Integration</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/edge-computing-tactical.avif" alt="Edge computing at tactical scale: denied environment architecture" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="edge-computing-tactical.html">
+                                        <h4>Edge Computing at Tactical Scale</h4>
+                                      </a>
+                                      <div class="d-date">Tactical Computing</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero trust security framework for classified federal networks" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="zero-trust-federal.html">
+                                        <h4>Zero Trust Implementation for Federal Networks</h4>
+                                      </a>
+                                      <div class="d-date">Zero Trust Security</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/autonomous-swarm.avif" alt="Autonomous platform swarm intelligence concepts for multi-domain operations" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="autonomous-swarm.html">
+                                        <h4>Autonomous Platform Coordination</h4>
+                                      </a>
+                                      <div class="d-date">Autonomous Systems</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="Quantum threat timeline driving PQC migration" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="quantum-threat-pqc-migration.html">
+                                        <h4>The Quantum Threat: Why to Migrate Now</h4>
+                                      </a>
+                                      <div class="d-date">Emerging Threats</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                            </div>
+
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Ready to Begin Your Post-Quantum Migration?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Submit RFP / RFI</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Autonomy Software</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
+
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+</body>
+
+</html>

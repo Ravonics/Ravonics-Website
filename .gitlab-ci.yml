@@ -1,0 +1,7 @@
+include:
+  - project: 'DroidOpsInc/launch-sequence'
+    ref: v0.2.5
+    file: '/pipelines/static-site.yml'
+variables:
+  GITHUB_REPO: "Ravonics/Ravonics-Website"
+  SITE_DIR: "."

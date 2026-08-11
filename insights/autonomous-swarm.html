@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Autonomous Platform Coordination: Swarm Intelligence Concepts | Ravonics</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta content="Decentralized coordination for unmanned platforms: emergent behavior, resilient mesh communication, GPS-denied navigation, and human-on-the-loop accountability. A Ravonics and INSTAR Lab architectural perspective." name="description" >
+    <meta content="swarm intelligence, autonomous systems, decentralized coordination, emergent behavior, resilient mesh, GPS-denied navigation, human on the loop, multi-domain autonomy, Ravonics, INSTAR Lab" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/autonomous-swarm.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ravonics.com/insights/autonomous-swarm.html">
+    <meta property="og:title" content="Autonomous Platform Coordination: Swarm Intelligence Concepts | Ravonics">
+    <meta property="og:description" content="Emergent behavior, resilient mesh communication, GPS-denied navigation, and human-on-the-loop accountability for unmanned platform coordination. A Ravonics & INSTAR Lab perspective.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/autonomous-swarm.html">
+    <meta property="twitter:title" content="Autonomous Platform Coordination: Swarm Intelligence Concepts | Ravonics">
+    <meta property="twitter:description" content="Emergent behavior, resilient mesh communication, GPS-denied navigation, and human-on-the-loop accountability for unmanned platform coordination. A Ravonics & INSTAR Lab perspective.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Autonomous Platform Coordination: Swarm Intelligence Concepts",
+      "description": "Decentralized coordination for unmanned platforms: emergent behavior, resilient mesh communication, GPS-denied navigation, and human-on-the-loop accountability. A Ravonics and INSTAR Lab architectural perspective.",
+      "author": {
+        "@type": "Organization",
+        "name": "Ravonics"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ravonics",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ravonics.com/images/logo/logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ravonics.com/insights/autonomous-swarm.html"
+      }
+    }
+    </script>
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                    <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../solutions/ai-platforms.html">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../industries/defense.html">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoW</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../company/about.html">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/partnerships.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/doing-business.html">Doing Business</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../insights/blog.html">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
+                                            <li><a href="../insights/innovation.html">Research Directions</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">References & Validation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content" role="main">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/autonomous-swarm.avif) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Autonomous Platform Coordination: Swarm Intelligence Concepts</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Insights</a></li>
+                                <li><a href="blog.html">Technical Publications</a></li>
+                                <li class="active">Autonomous Platform Coordination</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-8">
+                            <div class="blog-read">
+
+                                <p class="mb-4">
+                                    <em>A Ravonics and INSTAR Lab perspective on coordination that emerges from simple local rules, not central command</em>
+                                </p>
+
+                                <p>
+                                    Watch a murmuration of starlings at dusk and you witness thousands of birds producing one coherent, fluid shape, turning, folding, and reforming without a leader, a controller, or a master plan. Each bird follows only a few simple rules about its nearest neighbors: stay close, match heading, avoid collision. Coherent global behavior emerges from purely local interaction. Nature solved decentralized coordination long before we tried to engineer it.
+                                </p>
+
+                                <p>
+                                    That observation reframes how we think about coordinating unmanned platforms. A centralized controller is elegant on a whiteboard and brittle in the field: jam the link, knock out the node, and the whole formation degrades. Swarm-inspired design instead distributes intelligence across many attritable platforms, each acting on local information. The result is autonomy that bends rather than breaks, keeping a human firmly in command of intent. The pillars below outline how we approach that design space.
+                                </p>
+
+                                <ol class="ol-style-1">
+                                  <li>
+                                    <h4>Emergent Behavior from Local Rules</h4>
+                                    <p>
+                                      Sophisticated group behavior need not be centrally programmed. A small set of local
+                                      rules (separation, alignment, cohesion) can produce search, screening, and coverage
+                                      patterns at the formation level. We treat these rules as a design vocabulary: tune the
+                                      simple interactions, and the useful global behavior follows, without a single platform
+                                      ever needing the full picture.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Decentralized Control & No Single Point of Failure</h4>
+                                    <p>
+                                      When no node is in charge, no node is indispensable. Authority and computation are spread
+                                      across the formation so that losing platforms degrades capability gracefully rather than
+                                      collapsing it. Attrition becomes a tolerable cost rather than a catastrophic one: a
+                                      property that matters profoundly in contested environments where individual platforms
+                                      are expected to be lost.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Resilient Mesh Communication</h4>
+                                    <p>
+                                      Coordination depends on platforms exchanging just enough state to stay coherent. A
+                                      self-healing mesh, where each node relays for its neighbors, removes the central radio
+                                      as a target and reroutes around jamming or loss. We favor terse, frequent local updates
+                                      over heavy centralized telemetry, so the network stays useful even when bandwidth is
+                                      scarce and links are intermittent.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>GPS-Denied / Contested-Environment Navigation</h4>
+                                    <p>
+                                      Coordination cannot assume a satellite fix. Platforms must hold formation using
+                                      relative positioning, inertial sensing, visual and terrain cues, and peer-to-peer
+                                      ranging. By navigating relative to one another rather than to an external grid, a
+                                      formation can remain coherent and purposeful through spoofing and denial of the
+                                      signals adversaries most expect us to rely on.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Distributed Sensing & Consensus</h4>
+                                    <p>
+                                      Many modest sensors, fused across a formation, can outperform one exquisite platform.
+                                      The architectural challenge is consensus: reconciling partial, noisy, sometimes
+                                      conflicting observations into a shared picture without a central arbiter. Lightweight
+                                      agreement protocols let the group converge on what it collectively believes while
+                                      tolerating dropouts, disagreement, and degraded individual sensors.
+                                    </p>
+                                  </li>
+
+                                  <li>
+                                    <h4>Human-on-the-Loop Control & Accountability</h4>
+                                    <p>
+                                      Decentralization governs how platforms coordinate, never whether a human remains
+                                      accountable. The operator sets intent, constraints, and rules of engagement, monitors
+                                      the formation, and retains authority to redirect or recall it through explicit handoff
+                                      protocols. We design for meaningful human judgment over consequential actions, with
+                                      ethical and legal constraints encoded as boundaries the system cannot cross on its own.
+                                    </p>
+                                  </li>
+                                </ol>
+
+                                <img src="../images/blog/posts/autonomous-swarm.avif" class="w-100 rounded-1" alt="A starling murmuration forming an emergent shape at dawn: a natural model of decentralized coordination">
+
+                            </div>
+
+                            <div class="spacer-single"></div>
+
+                            <div id="discuss-cta" class="border-gray rounded-1 p-30">
+                                <h4>Want to discuss autonomous coordination for your program?</h4>
+                                <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating an unmanned platform concept, or designing a decentralized autonomy stack, we engage at the technical level.</p>
+                                <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="widget widget-post">
+                                <h4>Related Perspectives</h4>
+                                <ul class="de-bloglist-type-1">
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural network optimization for tactical edge AI" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="tactical-edge-ai.html">
+                                        <h4>Neural Network Optimization for Tactical Edge AI</h4>
+                                      </a>
+                                      <div class="d-date">Edge AI Architecture</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 integration multi-domain C2 patterns" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="jadc2-integration.html">
+                                        <h4>JADC2 Integration: Multi-Domain C2 Patterns</h4>
+                                      </a>
+                                      <div class="d-date">Systems Integration</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/edge-computing-tactical.avif" alt="Edge computing at tactical scale: denied environment architecture" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="edge-computing-tactical.html">
+                                        <h4>Edge Computing at Tactical Scale</h4>
+                                      </a>
+                                      <div class="d-date">Tactical Computing</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero trust implementation for federal networks" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="zero-trust-federal.html">
+                                        <h4>Zero Trust Implementation for Federal Networks</h4>
+                                      </a>
+                                      <div class="d-date">Zero Trust Security</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/post-quantum-cryptography.avif" alt="Post-quantum cryptography for federal communications" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="post-quantum-cryptography.html">
+                                        <h4>Post-Quantum Cryptography for Federal Comms</h4>
+                                      </a>
+                                      <div class="d-date">Cryptography</div>
+                                    </div>
+                                  </li>
+
+                                  <li>
+                                    <div class="d-image">
+                                      <img src="../images/blog/posts/swarm-coordination-concepts.avif" alt="Autonomous swarm coordination concepts in GPS-denied settings" loading="lazy">
+                                    </div>
+                                    <div class="d-content">
+                                      <a href="swarm-coordination-concepts.html">
+                                        <h4>Autonomous Swarm Coordination | Architecture Concepts</h4>
+                                      </a>
+                                      <div class="d-date">Autonomous Systems</div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                            </div>
+
+                            <div class="widget widget_tags">
+                                <h4>Popular Tags</h4>
+                                <ul>
+                                    <li><a href="#link">AI & Machine Learning</a></li>
+                                    <li><a href="#link">Autonomous Systems</a></li>
+                                    <li><a href="#link">Cybersecurity</a></li>
+                                    <li><a href="#link">Systems Integration</a></li>
+                                    <li><a href="#link">Emerging Technologies</a></li>
+                                    <li><a href="#link">Real-Time Processing</a></li>
+                                    <li><a href="#link">Mission Critical</a></li>
+                                    <li><a href="#link">Defense Technology</a></li>
+                                    <li><a href="#link">Edge Computing</a></li>
+                                    <li><a href="#link">JADC2</a></li>
+                                    <li><a href="#link">Zero Trust</a></li>
+                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Ready to Coordinate Autonomous Platforms at Scale?</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Submit RFP / RFI</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Autonomy Software</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
+
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravonics Brand Style Guide — Choose a Direction</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/raven-first-light-32.png">
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/plugins.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/coloring.css" rel="stylesheet">
+  <!-- Default to first-light for the chooser itself -->
+  <link id="colors" href="css/scheme-first-light.css" rel="stylesheet">
+  <link href="css/guide.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body { background-color: var(--paper); }
+
+    .chooser-header {
+      background: var(--ink);
+      padding: 2rem 0 1.75rem;
+    }
+    .chooser-header h1 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .chooser-header .subtitle {
+      color: rgba(255,255,255,.55);
+      font-size: .82rem;
+      margin-top: .35rem;
+    }
+
+    .inspiration-block {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.09);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .inspiration-block img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+    .inspiration-meta {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .inspiration-swatch {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      background: #932429;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+
+    /* Option cards */
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .option-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.09);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow .2s ease, transform .2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .option-card:hover {
+      box-shadow: 0 10px 40px rgba(0,0,0,.13);
+      transform: translateY(-4px);
+    }
+    .option-card-top {
+      height: 8px;
+    }
+    .option-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .option-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: .3rem;
+    }
+    .option-mood {
+      font-size: .8rem;
+      color: rgba(0,0,0,.5);
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+    .mini-palette {
+      display: flex;
+      height: 32px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,.1);
+    }
+    .mini-swatch { flex: 1; }
+    .raven-preview {
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .raven-preview img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      background: transparent;
+    }
+    .raven-preview span {
+      display: block;
+      font-size: .65rem;
+      color: rgba(0,0,0,.4);
+      margin-top: .4rem;
+      letter-spacing: .08em;
+    }
+    .option-hex-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-bottom: 1.25rem;
+    }
+    .option-hex {
+      font-size: .65rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      padding: .15rem .5rem;
+      border-radius: 3px;
+      background: rgba(0,0,0,.05);
+      color: rgba(0,0,0,.6);
+    }
+    .view-btn {
+      display: block;
+      text-align: center;
+      padding: .75rem 1rem;
+      border-radius: 6px;
+      font-size: .82rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      transition: opacity .15s;
+      margin-top: auto;
+    }
+    .view-btn:hover { opacity: .88; color: #fff; }
+
+    /* How-to block */
+    .howto-block {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+    }
+    .howto-block ol li {
+      margin-bottom: .6rem;
+      font-size: .9rem;
+      line-height: 1.65;
+    }
+    .howto-block code {
+      background: rgba(0,0,0,.06);
+      padding: .1rem .4rem;
+      border-radius: 3px;
+      font-size: .82rem;
+    }
+
+    /* Rationale table */
+    .rationale-table th {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      background: rgba(0,0,0,.04);
+      white-space: nowrap;
+    }
+    .rationale-table td { font-size: .85rem; vertical-align: middle; }
+    .rt-swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-right: .4rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────────────────── -->
+<header class="chooser-header">
+  <div class="container">
+    <div class="d-flex align-items-center gap-3">
+      <img src="../images/logo/logo-white.svg" alt="Ravonics" height="30" style="opacity:.85;">
+      <div>
+        <h1>Ravonics Brand Style Guide</h1>
+        <p class="subtitle mb-0">Four maroon-primary directions — open each, then delete the ones you don't want.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container py-5">
+
+  <!-- ── INSPIRATION ─────────────────────────────────────────── -->
+  <p class="g-section-label">Palette Inspiration</p>
+  <div class="row mb-5">
+    <div class="col-lg-8">
+      <div class="inspiration-block">
+        <img src="assets/inspiration.webp" alt="Maroon building facade — palette inspiration">
+        <div class="inspiration-meta">
+          <div class="inspiration-swatch" title="#932429"></div>
+          <div>
+            <div style="font-weight:700; font-size:.95rem; margin-bottom:.2rem;">Sampled primary: <span style="color:#932429;">#932429</span></div>
+            <div style="font-size:.83rem; color:rgba(0,0,0,.55); line-height:1.6;">
+              The maroon cladding of this building — warm, authoritative, and distinctly American — anchors all four palette directions below.
+              Each option takes this maroon as its primary and pairs it with a different supporting palette to establish a unique brand mood.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OPTION CARDS ────────────────────────────────────────── -->
+  <p class="g-section-label">Choose a Direction</p>
+  <div class="option-grid mb-5">
+
+    <!-- FIRST LIGHT -->
+    <div class="option-card">
+      <div class="option-card-top" style="background: linear-gradient(90deg, #93242A, #D98F4E);"></div>
+      <div class="option-card-body">
+        <div class="option-name">First Light</div>
+        <div class="option-mood">Warm maroon + amber gold — photojournalistic, dawn-lit command presence</div>
+        <div class="mini-palette">
+          <div class="mini-swatch" style="background:#93242A;" title="Primary #93242A"></div>
+          <div class="mini-swatch" style="background:#D98F4E;" title="Secondary #D98F4E"></div>
+          <div class="mini-swatch" style="background:#1A1416;" title="Ink #1A1416"></div>
+          <div class="mini-swatch" style="background:#F7F1EA;" title="Paper #F7F1EA"></div>
+          <div class="mini-swatch" style="background:#5E6B70;" title="Accent #5E6B70"></div>
+        </div>
+        <div class="raven-preview">
+          <img src="favicon/raven-first-light-180.png" alt="Brand mark — First Light">
+          <span>Brand mark in First Light maroon</span>
+        </div>
+        <div class="option-hex-list">
+          <span class="option-hex">#93242A</span>
+          <span class="option-hex">#D98F4E</span>
+          <span class="option-hex">#1A1416</span>
+          <span class="option-hex">#F7F1EA</span>
+          <span class="option-hex">#5E6B70</span>
+        </div>
+        <a href="first-light.html" class="view-btn" style="background:#93242A;">View First Light &rarr;</a>
+      </div>
+    </div>
+
+    <!-- STEEL MAROON -->
+    <div class="option-card">
+      <div class="option-card-top" style="background: linear-gradient(90deg, #93242A, #4F7CA3);"></div>
+      <div class="option-card-body">
+        <div class="option-name">Steel Maroon</div>
+        <div class="option-mood">Maroon + slate blue — bold tactical authority, defense contractor clarity</div>
+        <div class="mini-palette">
+          <div class="mini-swatch" style="background:#93242A;" title="Primary #93242A"></div>
+          <div class="mini-swatch" style="background:#4F7CA3;" title="Secondary #4F7CA3"></div>
+          <div class="mini-swatch" style="background:#161A1F;" title="Ink #161A1F"></div>
+          <div class="mini-swatch" style="background:#EEF1F4;" title="Paper #EEF1F4"></div>
+          <div class="mini-swatch" style="background:#C7A35B;" title="Accent #C7A35B"></div>
+        </div>
+        <div class="raven-preview">
+          <img src="favicon/raven-steel-maroon-180.png" alt="Brand mark — Steel Maroon">
+          <span>Brand mark in Steel Maroon</span>
+        </div>
+        <div class="option-hex-list">
+          <span class="option-hex">#93242A</span>
+          <span class="option-hex">#4F7CA3</span>
+          <span class="option-hex">#161A1F</span>
+          <span class="option-hex">#EEF1F4</span>
+          <span class="option-hex">#C7A35B</span>
+        </div>
+        <a href="steel-maroon.html" class="view-btn" style="background:#93242A;">View Steel Maroon &rarr;</a>
+      </div>
+    </div>
+
+    <!-- BURGUNDY COMMAND -->
+    <div class="option-card">
+      <div class="option-card-top" style="background: linear-gradient(90deg, #7E1F2A, #1E7E70);"></div>
+      <div class="option-card-body">
+        <div class="option-name">Burgundy Command</div>
+        <div class="option-mood">Deep burgundy + forest teal — editorial gravitas, strategic leadership</div>
+        <div class="mini-palette">
+          <div class="mini-swatch" style="background:#7E1F2A;" title="Primary #7E1F2A"></div>
+          <div class="mini-swatch" style="background:#1E7E70;" title="Secondary #1E7E70"></div>
+          <div class="mini-swatch" style="background:#14100F;" title="Ink #14100F"></div>
+          <div class="mini-swatch" style="background:#ECE3D6;" title="Paper #ECE3D6"></div>
+          <div class="mini-swatch" style="background:#B5683B;" title="Accent #B5683B"></div>
+        </div>
+        <div class="raven-preview">
+          <img src="favicon/raven-burgundy-command-180.png" alt="Brand mark — Burgundy Command">
+          <span>Brand mark in Burgundy Command</span>
+        </div>
+        <div class="option-hex-list">
+          <span class="option-hex">#7E1F2A</span>
+          <span class="option-hex">#1E7E70</span>
+          <span class="option-hex">#14100F</span>
+          <span class="option-hex">#ECE3D6</span>
+          <span class="option-hex">#B5683B</span>
+        </div>
+        <a href="burgundy-command.html" class="view-btn" style="background:#7E1F2A;">View Burgundy Command &rarr;</a>
+      </div>
+    </div>
+
+    <!-- STEALTH MAROON -->
+    <div class="option-card">
+      <div class="option-card-top" style="background: linear-gradient(90deg, #93242A, #6E2E33);"></div>
+      <div class="option-card-body">
+        <div class="option-name">Stealth Maroon</div>
+        <div class="option-mood">Maroon + deep rose — thin-tracked, restrained, classified-document aesthetic</div>
+        <div class="mini-palette">
+          <div class="mini-swatch" style="background:#93242A;" title="Primary #93242A"></div>
+          <div class="mini-swatch" style="background:#6E2E33;" title="Secondary #6E2E33"></div>
+          <div class="mini-swatch" style="background:#0E0C0C;" title="Ink #0E0C0C"></div>
+          <div class="mini-swatch" style="background:#F4F0EE;" title="Paper #F4F0EE"></div>
+          <div class="mini-swatch" style="background:#9A9088;" title="Accent #9A9088"></div>
+        </div>
+        <div class="raven-preview">
+          <img src="favicon/raven-stealth-maroon-180.png" alt="Brand mark — Stealth Maroon">
+          <span>Brand mark in Stealth Maroon</span>
+        </div>
+        <div class="option-hex-list">
+          <span class="option-hex">#93242A</span>
+          <span class="option-hex">#6E2E33</span>
+          <span class="option-hex">#0E0C0C</span>
+          <span class="option-hex">#F4F0EE</span>
+          <span class="option-hex">#9A9088</span>
+        </div>
+        <a href="stealth-maroon.html" class="view-btn" style="background:#93242A;">View Stealth Maroon &rarr;</a>
+      </div>
+    </div>
+
+  </div><!-- /option-grid -->
+
+  <!-- ── HOW TO USE ──────────────────────────────────────────── -->
+  <p class="g-section-label">How to Use This Guide</p>
+  <div class="howto-block mb-5">
+    <ol>
+      <li>Open each direction's page via the buttons above. Check the browser tab — each shows the brand mark recolored in that direction's primary maroon.</li>
+      <li>Review the full page: hero, palette strip, typography specimen, component showcase, CTA band, and footer.</li>
+      <li>For any direction you want to <strong>reject</strong>, delete its three files:
+        <ul class="mt-2">
+          <li><code>styles/&lt;slug&gt;.html</code></li>
+          <li><code>styles/css/scheme-&lt;slug&gt;.css</code></li>
+          <li><code>styles/favicon/raven-&lt;slug&gt;-*.png</code> and <code>raven-&lt;slug&gt;.ico</code></li>
+        </ul>
+      </li>
+      <li>The live site is <strong>completely untouched</strong> — all files live under <code>/styles/</code> and are not linked from any production page. Nothing ships until you choose a winner and give the go-ahead.</li>
+    </ol>
+  </div>
+
+  <!-- ── PALETTE RATIONALE ───────────────────────────────────── -->
+  <p class="g-section-label">Primary Palette Rationale</p>
+  <div class="mb-4" style="font-size:.9rem; line-height:1.75; max-width:780px;">
+    <p>All four directions share a <strong>maroon primary</strong> sampled from the inspiration photograph — an authoritative, warm red-brown that reads as serious, American, and mission-focused without the aggression of a pure red. Three of the four options use <strong>#93242A</strong>; Burgundy Command deepens to <strong>#7E1F2A</strong> for greater gravitas and contrast against its teal secondary.</p>
+    <p>The <strong>secondary colors</strong> are chosen to establish distinct emotional registers: First Light pairs warm amber for a dawn-patrol, photojournalistic warmth; Steel Maroon uses slate blue for the clean, technical clarity of aerospace and defense documentation; Burgundy Command reaches for forest teal to create an editorial complement that signals depth and international presence; Stealth Maroon uses a close deep rose secondary to keep the palette monochromatic and classified-document austere.</p>
+    <p>Each palette adds three support colors — <strong>Ink</strong> (near-black with a warm or cool cast matching the mood), <strong>Paper</strong> (off-white with the same warmth/coolness), and <strong>Accent</strong> (a tertiary for badges, micro-UI, and decorative rules).</p>
+  </div>
+
+  <div class="table-responsive mb-5">
+    <table class="table rationale-table table-bordered">
+      <thead>
+        <tr>
+          <th>Direction</th>
+          <th>Primary</th>
+          <th>Secondary</th>
+          <th>Ink</th>
+          <th>Paper</th>
+          <th>Accent</th>
+          <th>Mood</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>First Light</strong></td>
+          <td><span class="rt-swatch" style="background:#93242A;"></span>#93242A</td>
+          <td><span class="rt-swatch" style="background:#D98F4E;"></span>#D98F4E Amber</td>
+          <td><span class="rt-swatch" style="background:#1A1416; border:1px solid #ccc;"></span>#1A1416</td>
+          <td><span class="rt-swatch" style="background:#F7F1EA; border:1px solid #ccc;"></span>#F7F1EA</td>
+          <td><span class="rt-swatch" style="background:#5E6B70;"></span>#5E6B70</td>
+          <td style="font-size:.8rem;">Warm, photojournalistic, elegant</td>
+        </tr>
+        <tr>
+          <td><strong>Steel Maroon</strong></td>
+          <td><span class="rt-swatch" style="background:#93242A;"></span>#93242A</td>
+          <td><span class="rt-swatch" style="background:#4F7CA3;"></span>#4F7CA3 Slate Blue</td>
+          <td><span class="rt-swatch" style="background:#161A1F; border:1px solid #ccc;"></span>#161A1F</td>
+          <td><span class="rt-swatch" style="background:#EEF1F4; border:1px solid #ccc;"></span>#EEF1F4</td>
+          <td><span class="rt-swatch" style="background:#C7A35B;"></span>#C7A35B</td>
+          <td style="font-size:.8rem;">Bold, tactical, contractor authority</td>
+        </tr>
+        <tr>
+          <td><strong>Burgundy Command</strong></td>
+          <td><span class="rt-swatch" style="background:#7E1F2A;"></span>#7E1F2A</td>
+          <td><span class="rt-swatch" style="background:#1E7E70;"></span>#1E7E70 Forest Teal</td>
+          <td><span class="rt-swatch" style="background:#14100F; border:1px solid #ccc;"></span>#14100F</td>
+          <td><span class="rt-swatch" style="background:#ECE3D6; border:1px solid #ccc;"></span>#ECE3D6</td>
+          <td><span class="rt-swatch" style="background:#B5683B;"></span>#B5683B</td>
+          <td style="font-size:.8rem;">Editorial, gravitas, leadership</td>
+        </tr>
+        <tr>
+          <td><strong>Stealth Maroon</strong></td>
+          <td><span class="rt-swatch" style="background:#93242A;"></span>#93242A</td>
+          <td><span class="rt-swatch" style="background:#6E2E33;"></span>#6E2E33 Deep Rose</td>
+          <td><span class="rt-swatch" style="background:#0E0C0C; border:1px solid #ccc;"></span>#0E0C0C</td>
+          <td><span class="rt-swatch" style="background:#F4F0EE; border:1px solid #ccc;"></span>#F4F0EE</td>
+          <td><span class="rt-swatch" style="background:#9A9088;"></span>#9A9088</td>
+          <td style="font-size:.8rem;">Restrained, classified, austere</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer class="g-footer">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <img src="../images/logo/logo-white.svg" alt="Ravonics" height="24" style="opacity:.6;">
+      <span style="opacity:.35; font-size:.75rem;">Brand Style Guide · Internal Use Only · Live site untouched</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

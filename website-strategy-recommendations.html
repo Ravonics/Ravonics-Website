@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravonics — Website Strategy &amp; Remediation Plan | Stakeholder Briefing</title>
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="shortcut icon" href="images/favicon.ico">
+<style>
+  :root{
+    --navy:#0a1628;
+    --navy-2:#0f2238;
+    --slate:#1c2e44;
+    --steel:#5b7290;
+    --line:#23364f;
+    --paper:#f6f8fb;
+    --ink:#13202f;
+    --muted:#5d6b7d;
+    --accent:#c0392b;        /* mission red */
+    --accent-2:#d4a23a;      /* brass */
+    --teal:#2f9e8f;
+    --crit:#c0392b;
+    --high:#d97706;
+    --med:#2f9e8f;
+    --ok:#2f9e8f;
+    --shadow:0 10px 40px rgba(10,22,40,.10);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{line-height:1.2;font-weight:700;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,22,40,.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;gap:24px;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.04em;font-size:18px;text-decoration:none;white-space:nowrap}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(192,57,43,.25)}
+  nav.links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+  nav.links a{
+    color:#aebfd2;text-decoration:none;font-size:13px;font-weight:600;
+    padding:7px 11px;border-radius:8px;transition:.15s;white-space:nowrap;
+  }
+  nav.links a:hover{color:#fff;background:rgba(255,255,255,.07)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 400px at 80% -10%, rgba(192,57,43,.18), transparent 60%),
+      radial-gradient(700px 500px at 0% 0%, rgba(47,158,143,.12), transparent 55%),
+      linear-gradient(180deg,var(--navy),var(--navy-2));
+    color:#eaf1fa;padding:78px 0 64px;border-bottom:1px solid var(--line);
+  }
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);font-weight:700;margin-bottom:18px}
+  .hero h1{font-size:clamp(30px,5vw,52px);color:#fff;margin:0 0 18px;max-width:18ch}
+  .hero p.lede{font-size:clamp(16px,2vw,20px);color:#b9c8da;max-width:62ch;margin:0 0 28px}
+  .hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  .hero .meta div span{display:block}
+  .hero .meta .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:4px}
+  .hero .meta .v{font-size:15px;color:#dde7f2;font-weight:600}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0;border-bottom:1px solid #e3e9f1}
+  section:nth-of-type(even){background:#fff}
+  .sec-head{margin-bottom:34px}
+  .sec-num{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.16em}
+  .sec-head h2{font-size:clamp(24px,3.4vw,34px);margin:8px 0 12px;color:var(--ink)}
+  .sec-head p{font-size:17px;color:var(--muted);max-width:72ch;margin:0}
+
+  .grid{display:grid;gap:20px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
+
+  .card{background:#fff;border:1px solid #e1e8f0;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  section:nth-of-type(even) .card{background:var(--paper)}
+  .card h3{font-size:18px;margin:0 0 8px}
+  .card p{margin:0 0 10px;color:#41506180;color:#3a4858}
+  .card p:last-child{margin-bottom:0}
+
+  /* badges */
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;color:#fff}
+  .b-crit{background:var(--crit)}
+  .b-high{background:var(--high)}
+  .b-med{background:var(--med)}
+  .b-new{background:var(--navy)}
+  .b-ok{background:var(--ok)}
+
+  /* risk row */
+  .risk{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start;padding:22px 0;border-bottom:1px solid #e6ecf3}
+  .risk:last-child{border-bottom:none}
+  @media(max-width:680px){.risk{grid-template-columns:1fr;gap:8px}}
+  .risk .sev{padding-top:2px}
+  .risk h3{font-size:17px;margin:0 0 6px}
+  .risk .where{font-size:12.5px;color:var(--steel)}
+  .risk blockquote{margin:10px 0;padding:12px 16px;background:#fff5f4;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:14px;color:#7a2b22;font-style:italic}
+  section:nth-of-type(even) .risk blockquote{background:#fff}
+  .risk .fix{font-size:14.5px;color:#1f3a2e;background:#eef8f4;border-left:3px solid var(--teal);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:8px}
+  .risk .fix b{color:#15402f}
+
+  /* before/after */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #e1e8f0;border-radius:var(--radius);overflow:hidden}
+  @media(max-width:680px){.ba{grid-template-columns:1fr}}
+  .ba .col{padding:20px 22px}
+  .ba .before{background:#fbf0ef;border-right:1px solid #e1e8f0}
+  .ba .after{background:#eef8f4}
+  .ba .lab{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+  .ba .before .lab{color:var(--accent)}
+  .ba .after .lab{color:var(--teal)}
+  .ba ul{margin:0;padding-left:18px}
+  .ba li{margin:6px 0;font-size:14.5px}
+
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{position:relative;padding:8px 0 8px 28px;font-size:15px;border-bottom:1px solid #eef2f7}
+  ul.clean li:last-child{border-bottom:none}
+  ul.clean li::before{content:"";position:absolute;left:4px;top:15px;width:8px;height:8px;border-radius:2px;background:var(--accent)}
+
+  .pill{display:inline-block;font-size:12.5px;font-weight:600;padding:6px 12px;border:1px solid #d3dde8;border-radius:999px;margin:4px 6px 4px 0;background:#fff;color:var(--slate)}
+
+  /* image placeholder */
+  .imgholder{border:2px dashed #b9c8da;border-radius:var(--radius);background:linear-gradient(135deg,#eef3f9,#e3ebf4);padding:40px 24px;text-align:center;color:var(--steel)}
+  .imgholder .ic{font-size:34px}
+  .imgholder b{display:block;color:var(--slate);font-size:15px;margin:10px 0 4px}
+
+  /* roadmap */
+  .phase{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #e6ecf3}
+  .phase:last-child{border:none}
+  .phase .n{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#fff;background:var(--navy)}
+  .phase:nth-child(1) .n{background:var(--accent)}
+  .phase:nth-child(2) .n{background:var(--high)}
+  .phase:nth-child(3) .n{background:var(--teal)}
+  .phase h3{margin:0 0 4px}
+  .phase .when{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);font-weight:700;margin-bottom:8px}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid #eef2f7}
+  th{background:var(--navy);color:#dce6f2;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  tbody tr:last-child td{border-bottom:none}
+  td .badge{font-size:10px}
+
+  .callout{background:linear-gradient(135deg,var(--navy),var(--slate));color:#eaf1fa;border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow)}
+  .callout h3{color:#fff;margin-top:0}
+  .callout p{color:#bccadb}
+
+  footer.foot{background:var(--navy);color:#93a6bd;padding:48px 0;font-size:14px}
+  footer.foot strong{color:#fff}
+  .tag{font-size:12px;color:var(--steel);margin-top:8px}
+  .lead-stat{font-size:40px;font-weight:800;color:var(--accent);line-height:1}
+  .lead-stat + p{margin-top:6px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="dot"></span>RAVONICS</a>
+    <nav class="links">
+      <a href="#summary">Summary</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#credibility">Credibility</a>
+      <a href="#hubzone">HUBZone</a>
+      <a href="#team">Team &amp; Science</a>
+      <a href="#capture">Win Strategy</a>
+      <a href="#structure">Site Changes</a>
+      <a href="#technical">Technical</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<a id="top"></a>
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Stakeholder Briefing &mdash; For Approval</span>
+    <h1>Website Strategy &amp; Remediation Plan</h1>
+    <p class="lede">A complete audit of the current Ravonics website and a decisive, prioritized plan to make it compliant, credible, and built to win federal contracts as a HUBZone small business. Every item below is a recommendation we are ready to execute on your approval.</p>
+    <div class="meta">
+      <div><span class="k">Prepared for</span><span class="v">Ravonics Stakeholders</span></div>
+      <div><span class="k">Scope</span><span class="v">Full site &mdash; 30+ pages audited</span></div>
+      <div><span class="k">Priority 1</span><span class="v">Compliance remediation</span></div>
+      <div><span class="k">Status</span><span class="v">Awaiting go / no-go</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. EXECUTIVE SUMMARY -->
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 &mdash; EXECUTIVE SUMMARY</div>
+      <h2>Where we are, and what has to change</h2>
+      <p>The current site looks polished, but it was built with <strong>fabricated content</strong> — invented testimonials from named DoD officers, certifications we don't hold, and a past-performance record that doesn't exist yet. For a brand-new company pursuing federal work, that isn't a marketing problem — it's legal and reputational exposure. The plan below removes that liability first, then rebuilds on what is actually true and impressive: a real UEI, a HUBZone footprint, and genuine PhD-level scientific talent.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <div class="lead-stat">11</div>
+        <p>Distinct compliance risks identified, including fabricated federal-official testimonials and unverifiable certifications.</p>
+      </div>
+      <div class="card">
+        <div class="lead-stat">3</div>
+        <p>Real, defensible assets to lead with: active UEI, HUBZone-located HQ, and credentialed PhD/physics staff.</p>
+      </div>
+      <div class="card">
+        <div class="lead-stat">3</div>
+        <p>Execution phases: remediate the legal risk, rebuild credibility on truth, then add capture assets that win bids.</p>
+      </div>
+    </div>
+    <div style="margin-top:24px" class="callout">
+      <h3>The core principle for everything that follows</h3>
+      <p>A new federal contractor wins on <strong>credibility, niche expertise, and verifiable status</strong> — not on inflated claims. We will say less, but everything we say will be true and provable. Honesty is not a weakness here; for a HUBZone small business with real PhDs, it is the strongest position we have.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. COMPLIANCE -->
+<section id="compliance">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02 &mdash; CRITICAL: COMPLIANCE REMEDIATION</div>
+      <h2>Remove the legal landmines — immediately</h2>
+      <p>These are not stylistic notes. Misrepresenting endorsements by federal officials and claiming certifications you don't hold can trigger False Claims Act liability, SAM.gov suspension/debarment, and instant loss of trust with any contracting officer who verifies. <strong>Our recommendation: take the site to a "coming soon" holding page or pull these elements today, before any further outreach.</strong></p>
+    </div>
+
+    <div class="card" style="padding:8px 24px">
+      <div class="risk">
+        <div class="sev"><span class="badge b-crit">Critical</span></div>
+        <div>
+          <h3>Fabricated testimonials from named DoD officials</h3>
+          <div class="where">index.html (lines 502–511), company/team.html (288–334), insights/testimonials.html (163–410)</div>
+          <blockquote>"…reduced our threat identification time by 87%. In this field, those seconds save lives." — <b>Colonel Marcus Chen, Program Director, DoD</b></blockquote>
+          <div class="fix"><b>Action:</b> Delete every quote attributed to a named or titled government official (DoD, DARPA, SOCOM, USAF, GSA, IC). These people do not exist and DoD does not endorse vendors. <b>Remove the entire testimonials page</b> until we have real, written, releasable references.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><span class="badge b-crit">Critical</span></div>
+        <div>
+          <h3>Placeholder credentials presented as real</h3>
+          <div class="where">index.html footer (lines 929–931) — UEI, CAGE, DUNS, GSA Schedule 70</div>
+          <blockquote>SAM.gov UEI: F7K9M2P4N8Q6 | CAGE Code: 8R4T5 | DUNS: 07-845-9321 … (Placeholder credentials — SAM.gov registration in progress)</blockquote>
+          <div class="fix"><b>Action:</b> Remove all fake identifiers now. Replace ONLY with our <b>real, newly issued UEI</b>. Do not display CAGE, DUNS, or "GSA Schedule 70" until each is genuinely held. A single fake UEI checked against SAM.gov ends a CO's interest instantly.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><span class="badge b-crit">Critical</span></div>
+        <div>
+          <h3>False past performance &amp; track-record claims</h3>
+          <div class="where">index.html (574–575, 803), company/about.html (316)</div>
+          <blockquote>"Perfect past performance ratings. Zero failed audits… briefed Congress, deployed to combatant commands." / "15+ Years of Excellence," "150+ Deployments," "45+ Federal Clients."</blockquote>
+          <div class="fix"><b>Action:</b> Strip all of it. The company is new — there is no CPARS record, no 15-year history, no federal client count. Replace with honest framing: the <b>decades of combined prior experience our staff bring from Silicon Valley and federal programs</b> (attributed to individuals/teams, not to Ravonics as an entity).</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><span class="badge b-high">High</span></div>
+        <div>
+          <h3>Unverifiable certifications &amp; clearances</h3>
+          <div class="where">company/certifications.html (173–245), index.html</div>
+          <blockquote>"CMMC Level 3 Certified," "FedRAMP In Process," "ITAR Registered," "AS9100D Certified," "TS/SCI cleared workforce," "SCIF-capable facilities."</blockquote>
+          <div class="fix"><b>Action:</b> Remove any certification or clearance we don't currently hold with a verifiable number. Reframe as a <b>compliance roadmap</b> ("pursuing CMMC Level 2," "SAM.gov registered, FCL sponsorship targeted") — aspirational status stated as aspiration is fine; stated as fact is fraud.</div>
+        </div>
+      </div>
+      <div class="risk">
+        <div class="sev"><span class="badge b-high">High</span></div>
+        <div>
+          <h3>Fabricated leadership team &amp; fake aggregate rating</h3>
+          <div class="where">company/team.html (163–266), index.html structured data (AggregateRating 5.0 / 150 reviews)</div>
+          <blockquote>Eight "Dr." executives with stock photos and no bios; Schema.org AggregateRating claiming 150 reviews.</blockquote>
+          <div class="fix"><b>Action:</b> Replace invented executives with our <b>real founders and PhD hires</b> (see §05). Remove the fake AggregateRating from structured data entirely — fabricated review markup violates Google's policies and can de-index the site.</div>
+        </div>
+      </div>
+    </div>
+    <p class="tag">Full line-by-line remediation list is maintained internally; the items above are the highest-severity findings driving immediate action.</p>
+  </div>
+</section>
+
+<!-- 3. CREDIBILITY REBUILD -->
+<section id="credibility">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03 &mdash; FOUNDATIONAL CREDIBILITY REBUILD</div>
+      <h2>Replace fiction with verifiable truth</h2>
+      <p>Once the fabricated content is gone, the site needs an honest backbone. The good news: what is actually true is genuinely compelling for a federal buyer. Here is exactly how each fabricated element is replaced.</p>
+    </div>
+    <div class="ba">
+      <div class="col before">
+        <div class="lab">✕ Remove (fabricated)</div>
+        <ul>
+          <li>Named DoD officer quotes &amp; fake Google reviews</li>
+          <li>Placeholder UEI / CAGE / DUNS</li>
+          <li>"15+ years," "150+ deployments," "45+ clients"</li>
+          <li>CMMC L3 / FedRAMP / ITAR "certified"</li>
+          <li>Eight invented PhD executives</li>
+          <li>"Award-winning" with no named award</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <div class="lab">✓ Replace with (verifiable)</div>
+        <ul>
+          <li>Our <b>real, issued UEI</b> + SAM.gov "registered" status</li>
+          <li>Honest founding story — new company, deep individual pedigree</li>
+          <li>Named PhDs in physics &amp; emerging tech with real credentials</li>
+          <li>HUBZone location &amp; pending HUBZone certification</li>
+          <li>Named nonprofit / research-institute partnerships</li>
+          <li>A compliance <b>roadmap</b> framed as forward intent</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+      <div class="card">
+        <h3>Lead with the real UEI</h3>
+        <p>Now that the UEI is issued, surface it cleanly in the footer and on a proper capability statement. It signals "we are real and registered to do business with the government" — the single most important credibility marker for a new entrant.</p>
+      </div>
+      <div class="card">
+        <h3>Reframe experience honestly</h3>
+        <p>The team's prior work for Silicon Valley and federal agencies is a strength — stated correctly. Attribute it to <b>individuals' careers</b>, not to the company's record: "Our team has previously delivered…" rather than "Ravonics has delivered…"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. HUBZONE -->
+<section id="hubzone">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04 &mdash; HUBZONE POSITIONING</div>
+      <h2>Make the HUBZone footprint a centerpiece</h2>
+      <p>HUBZone status is a powerful, set-aside-eligible differentiator — agencies have statutory goals to award 3% of contract dollars to HUBZone firms, and far fewer firms compete for them. We will build the narrative now so it's ready the moment certification lands, while being scrupulously accurate about current status.</p>
+    </div>
+    <div class="grid g2">
+      <div>
+        <div class="imgholder">
+          <div class="ic">🛰️</div>
+          <b>Recommended: aerial / drone hero image of Ravenswood, WV</b>
+          A wide aerial shot of the town establishes the HUBZone story visually and humanizes the company's roots. We recommend commissioning a licensed drone photo (or licensing stock aerial of the Jackson County / Ohio River area) for the homepage and a dedicated "Our Community" band.
+        </div>
+      </div>
+      <div>
+        <ul class="clean">
+          <li><b>New "HUBZone &amp; Community" section</b> on the homepage and About page, anchored by the aerial image.</li>
+          <li><b>Accurate status line:</b> "Headquartered in a designated HUBZone — SBA HUBZone certification application submitted." We do <em>not</em> claim certified status until awarded.</li>
+          <li><b>Set-aside messaging</b> for COs: position Ravonics for HUBZone set-aside and sole-source opportunities once certified.</li>
+          <li><b>Economic-impact framing:</b> jobs and advanced-tech investment in an underutilized community — a story agencies and primes value.</li>
+          <li><b>Ready-to-flip badge:</b> design a "Certified HUBZone Small Business" badge now, dark until the award, then activate site-wide.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:24px">
+      <h3>Recommendation: build the HUBZone story before the certificate arrives</h3>
+      <p>Stand up the content and imagery now with accurate "application submitted" language. The day certification is granted, we flip a single status flag and the entire positioning goes live — no scramble, no delay competing for set-asides.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TEAM & SCIENCE -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05 &mdash; TEAM &amp; SCIENTIFIC EXPERTISE</div>
+      <h2>Put the real PhDs and physicists front and center</h2>
+      <p>Genuine doctoral-level talent in physics and emerging technology is exactly what wins R&amp;D, SBIR/STTR, and solution-architecture work. This replaces the eight invented executives with a credible, verifiable team — the single biggest credibility upgrade available to us.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Real leadership &amp; science bios</h3>
+        <p>Rebuild the Team page with <b>actual people</b>: name, degree, field, institution, and a short, truthful bio. Link to real LinkedIn / Google Scholar / ORCID profiles. No stock photos standing in for fake doctors.</p>
+      </div>
+      <div class="card">
+        <h3>A dedicated "Research &amp; Science" capability</h3>
+        <p>Add a page positioning the PhD/physics bench as a core differentiator: applied physics, modeling &amp; simulation, algorithm development. This is the hook for research-agency and SBIR buyers.</p>
+      </div>
+      <div class="card">
+        <h3>Publications &amp; credentials, honestly cited</h3>
+        <p>If staff have <b>real</b> peer-reviewed publications, list them with citations and DOIs. Replace the unsubstantiated "published in Nature" line with actual, linkable papers — or remove it.</p>
+      </div>
+      <div class="card">
+        <h3>Nonprofit / research-institute partnerships</h3>
+        <p>Feature the genuine research-institute relationships (with their permission). Named, real partnerships are credibility multipliers and open teaming and STTR pathways — far more valuable than the invented "Palantir alliance" currently on the site.</p>
+      </div>
+    </div>
+    <p class="tag">Recommendation: any partner logo or named individual appears on the site only with documented permission and a verifiable basis.</p>
+  </div>
+</section>
+
+<!-- 6. WIN STRATEGY / CAPTURE -->
+<section id="capture">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06 &mdash; CAPTURE &amp; GO-TO-MARKET ASSETS</div>
+      <h2>The assets that actually win contracts</h2>
+      <p>A website alone doesn't win federal work. These are the supporting assets we recommend building and linking from the site — the toolkit a contracting officer, prime, or evaluator expects to find.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <h3>1. Capability Statement (PDF)</h3>
+        <p>The #1 must-have. A one-page PDF with UEI, NAICS codes, core competencies, differentiators (HUBZone, PhD bench), and contact. Downloadable from every page.</p>
+      </div>
+      <div class="card">
+        <h3>2. GSA Schedule (MAS) pathway</h3>
+        <p>Pursue a GSA Multiple Award Schedule listing under our IT/professional-services SINs. Once awarded, link the contract number and GSA Advantage! page directly from the site.</p>
+      </div>
+      <div class="card">
+        <h3>3. SAM.gov &amp; registrations</h3>
+        <p>Complete and surface SAM.gov registration, confirm NAICS/PSC codes, and pursue relevant set-aside certifications (HUBZone first; evaluate 8(a), SDVOSB, WOSB eligibility).</p>
+      </div>
+      <div class="card">
+        <h3>4. White papers &amp; tech briefs</h3>
+        <p>Publish 2–3 authoritative white papers authored by our PhDs (e.g., applied AI for mission systems, post-quantum readiness). Demonstrates thought leadership and feeds SBIR/BAA responses.</p>
+      </div>
+      <div class="card">
+        <h3>5. SBIR / STTR positioning</h3>
+        <p>A page targeting SBIR/STTR — the ideal entry vehicle for a research-strong small business with no prime past performance. Tie directly to the science team and institute partnerships.</p>
+      </div>
+      <div class="card">
+        <h3>6. Teaming &amp; subcontracting</h3>
+        <p>An honest "Teaming" page inviting primes to partner with a HUBZone small business — how primes meet small-business goals by teaming with us. Replaces the fabricated partner claims.</p>
+      </div>
+      <div class="card">
+        <h3>7. Past performance — built deliberately</h3>
+        <p>Start the record now: pursue a first subcontract or SBIR Phase I, then document it as real, citable past performance. No more invented projects.</p>
+      </div>
+      <div class="card">
+        <h3>8. Compliance roadmap page</h3>
+        <p>Turn the certifications page into an honest roadmap (CMMC, FCL sponsorship, FedRAMP) showing trajectory. Buyers respect a credible plan over false claims.</p>
+      </div>
+      <div class="card">
+        <h3>9. Insights / publications hub</h3>
+        <p>Repurpose the existing blog/insights pages into a real publications and news hub — white papers, awards (real ones), and contract announcements as they happen.</p>
+      </div>
+    </div>
+    <div style="margin-top:22px">
+      <span class="pill">UEI ✓ issued</span>
+      <span class="pill">HUBZone — applied</span>
+      <span class="pill">SAM.gov — complete &amp; verify</span>
+      <span class="pill">GSA MAS — pursue</span>
+      <span class="pill">Capability Statement — build</span>
+      <span class="pill">SBIR/STTR — target</span>
+      <span class="pill">CMMC — roadmap</span>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SITE STRUCTURE -->
+<section id="structure">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">07 &mdash; PAGE-BY-PAGE SITE CHANGES</div>
+      <h2>What changes, page by page</h2>
+      <p>The site's design and engineering are strong — modern, responsive, fast (AVIF/WebP). The problem is content integrity, not the build. We keep the shell and fix the substance.</p>
+    </div>
+    <table>
+      <thead><tr><th>Page</th><th>Recommended action</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Homepage</td><td>Remove fake testimonial &amp; credentials; add HUBZone band + aerial image; honest hero copy; real UEI in footer.</td><td><span class="badge b-crit">Now</span></td></tr>
+        <tr><td>insights/testimonials.html</td><td><b>Unpublish entirely</b> until real, releasable references exist.</td><td><span class="badge b-crit">Now</span></td></tr>
+        <tr><td>company/team.html</td><td>Replace invented executives with real founders + PhD/physics bios and verifiable profile links.</td><td><span class="badge b-crit">Now</span></td></tr>
+        <tr><td>company/certifications.html</td><td>Convert to an honest "Compliance Roadmap"; remove unheld certs/clearances.</td><td><span class="badge b-crit">Now</span></td></tr>
+        <tr><td>company/about.html</td><td>Rewrite history honestly; remove "15+ years / 150+ deployments"; add founding story + HUBZone + UEI.</td><td><span class="badge b-high">High</span></td></tr>
+        <tr><td>company/partnerships.html</td><td>Replace fabricated vendor alliances with real, permissioned partners + teaming invitation.</td><td><span class="badge b-high">High</span></td></tr>
+        <tr><td>capabilities/* (10)</td><td>Keep structure; scrub unverifiable metrics; align claims to what the team can actually deliver.</td><td><span class="badge b-med">Medium</span></td></tr>
+        <tr><td>solutions/* &amp; industries/*</td><td>Tighten to honest, capability-based language; remove implied existing-customer claims.</td><td><span class="badge b-med">Medium</span></td></tr>
+        <tr><td>insights/blog &amp; perspectives</td><td>Relaunch as real publications/white-paper hub authored by named staff.</td><td><span class="badge b-med">Medium</span></td></tr>
+        <tr><td>NEW: Capability Statement</td><td>Add downloadable PDF + landing section.</td><td><span class="badge b-high">High</span></td></tr>
+        <tr><td>NEW: HUBZone &amp; Community</td><td>Aerial imagery + accurate status + economic-impact story.</td><td><span class="badge b-high">High</span></td></tr>
+        <tr><td>NEW: SBIR/STTR &amp; Research</td><td>Position the science bench for research/innovation awards.</td><td><span class="badge b-high">High</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 8. TECHNICAL -->
+<section id="technical">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">08 &mdash; TECHNICAL &amp; SEO HYGIENE</div>
+      <h2>Keep what's good; fix what's risky</h2>
+      <p>The engineering is largely sound. A few targeted fixes protect us from search penalties and reflect a real federal-grade operation.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3 style="color:var(--teal)">✓ Keep as-is</h3>
+        <ul class="clean">
+          <li>Static HTML + Bootstrap 5 — fast, secure, low-maintenance</li>
+          <li>AVIF/WebP images &amp; lazy loading — strong performance</li>
+          <li>Clean meta tags, Open Graph, canonical URLs</li>
+          <li>Responsive, accessible base structure</li>
+          <li>launch-sequence CI/CD pipeline for deploys</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent)">✕ Fix or add</h3>
+        <ul class="clean">
+          <li>Remove fake AggregateRating structured data (policy violation)</li>
+          <li>Update Organization schema with the real UEI &amp; address</li>
+          <li>Add robots.txt + sitemap.xml</li>
+          <li>Add Section 508 / WCAG 2.1 AA accessibility pass — expected for federal-facing sites</li>
+          <li>Add a privacy policy &amp; accurate contact details</li>
+          <li>Verify the HQ address is real before it appears in schema</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">09 &mdash; EXECUTION ROADMAP</div>
+      <h2>How we'll deliver this</h2>
+      <p>Three clean phases. Phase 1 is non-negotiable and starts the moment you approve. The site goes to a holding state if needed so no fabricated content is live while we rebuild.</p>
+    </div>
+    <div class="card" style="padding:8px 24px">
+      <div class="phase">
+        <div class="n">1</div>
+        <div>
+          <div class="when">Immediate &mdash; days</div>
+          <h3>Compliance triage</h3>
+          <p>Strip all fabricated testimonials, fake credentials, false past performance, and unheld certifications. Remove fake review schema. Insert real UEI. The site becomes <b>honest and safe</b> — nothing live that could harm us with a contracting officer.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="n">2</div>
+        <div>
+          <div class="when">Near term &mdash; 2–4 weeks</div>
+          <h3>Credibility rebuild</h3>
+          <p>Real team &amp; science bios, HUBZone section with aerial imagery, honest About/partnerships, compliance roadmap, and the downloadable capability statement. The site now tells our true, compelling story.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="n">3</div>
+        <div>
+          <div class="when">Ongoing &mdash; 30–90 days</div>
+          <h3>Capture engine</h3>
+          <p>GSA Schedule pursuit, SBIR/STTR positioning, white papers and publications hub, teaming page, and live activation of HUBZone certification and first past-performance entries as they land.</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:28px">
+      <h3>The decision in front of stakeholders</h3>
+      <p>Approve Phase 1 to remove the legal exposure immediately, and greenlight Phases 2–3 to rebuild Ravonics' web presence into a genuine competitive advantage for a HUBZone small business with real scientific talent. On your approval, we begin.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>RAVONICS</strong> — Website Strategy &amp; Remediation Briefing</p>
+    <p>This document is an internal recommendation prepared for stakeholder review and approval. All proposed content is contingent on verification; no claim will be published unless it is true and provable.</p>
+    <p class="tag">Confidential — for internal stakeholder use only.</p>
+  </div>
+</footer>
+
+</body>
+</html>

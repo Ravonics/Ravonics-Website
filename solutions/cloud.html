@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Federal Cloud Architecture - Multi-Level Security, Hybrid Cloud, Data Management | DoW Contractor</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta content="Secure cloud infrastructure for federal missions: FedRAMP-aligned architecture, multi-level security, enterprise data lakes, hybrid cloud integration. Container orchestration, secure API gateways, cloud-native development with disaster recovery for DoW and IC." name="description" >
+    <meta content="FedRAMP-aligned cloud, federal cloud architecture, multi-level security DoW, hybrid cloud federal, enterprise data lakes defense, container orchestration government, secure API gateways, cloud-native federal development, disaster recovery DoW, secure federal cloud infrastructure" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/solutions/cloud.html" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ravonics.com/solutions/cloud.html">
+    <meta property="og:title" content="Federal Cloud Architecture - Multi-Level Security, Hybrid Cloud - Ravonics">
+    <meta property="og:description" content="Secure cloud for federal missions: FedRAMP-aligned architecture, multi-level security, hybrid cloud, data lakes. Container orchestration and disaster recovery.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/solutions/cloud.html">
+    <meta property="twitter:title" content="Federal Cloud Architecture - Multi-Level Security, Hybrid Cloud - Ravonics">
+    <meta property="twitter:description" content="Federal cloud: FedRAMP-aligned architecture, multi-level security, hybrid integration. Secure mission infrastructure for DoW/IC.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
+    <!-- Google tag (gtag.js) - Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Enterprise Cloud & Data Architecture",
+      "description": "FedRAMP-aligned cloud architecture, multi-level security environments, enterprise data lakes, hybrid cloud integration, container orchestration, secure API gateways, and disaster recovery for federal mission systems.",
+      "serviceType": "Cloud Infrastructure Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Ravonics LLC",
+        "url": "https://ravonics.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "313 Walnut St",
+          "addressLocality": "Ravenswood",
+          "addressRegion": "WV",
+          "postalCode": "26164",
+          "addressCountry": "US"
+        }
+      },
+      "areaServed": "US",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Federal defense and intelligence agencies"
+      }
+    }
+    </script>
+
+</head>
+
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+        
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="header-static transparent mt-lg-4 pt-lg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="../index.html">
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainemenu begin -->
+                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                    <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
+                                        <ul>
+                                            <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                            <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                            <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                            <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                            <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                            <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                            <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                            <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                            <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                            <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../solutions/ai-platforms.html">Solutions</a>
+                                        <ul>
+                                            <li><a href="../solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
+                                            <li><a href="../solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
+                                            <li><a href="../solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
+                                            <li><a href="../solutions/zero-trust.html">Zero Trust Security Framework</a></li>
+                                            <li><a href="../solutions/jadc2.html">JADC2-Compatible Integration</a></li>
+                                            <li><a href="../solutions/digital-transformation.html">Digital Transformation Services</a></li>
+                                            <li><a href="../solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../industries/defense.html">Industries</a>
+                                        <ul>
+                                            <li><a href="../industries/defense.html">Defense & DoW</a></li>
+                                            <li><a href="../industries/intelligence.html">Intelligence Community</a></li>
+                                            <li><a href="../industries/federal.html">Federal Civilian Agencies</a></li>
+                                            <li><a href="../industries/research.html">Research & Innovation Partners</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../company/about.html">Company</a>
+                                        <ul>
+                                            <li><a href="../company/about.html">About</a></li>
+                                            <li><a href="../company/team.html">Leadership</a></li>
+                                            <li><a href="../company/certifications.html">Security Clearances & Compliance</a></li>
+                                            <li><a href="../company/partnerships.html">Partnerships & Alliances</a></li>
+                                            <li><a href="../company/doing-business.html">Doing Business</a></li>
+                                            <li><a href="../company/careers.html">Careers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../insights/blog.html">Insights</a>
+                                        <ul>
+                                            <li><a href="../insights/blog.html">Technical Publications</a></li>
+                                            <li><a href="../insights/gallery.html">Technology Focus Areas</a></li>
+                                            <li><a href="../insights/innovation.html">Research Directions</a></li>
+                                            <li><a href="../insights/perspectives.html">Industry Perspectives</a></li>
+                                            <li><a href="../insights/testimonials.html">References & Validation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="menu-item" href="../contact.html">Contact</a></li>
+                                </ul>
+                                <!-- mainmenu end -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
+                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                </div>
+
+                                <div id="btn-extra">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content" role="main">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/background/sol-cloud.avif) center">
+                <div class="container relative z-2">
+                    <div class="row gy-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <h1 class="split">Secure Cloud Infrastructure for Federal Mission Systems</h1>
+                            <ul class="crumb wow fadeInUp">
+                                <li><a href="../index.html">Solutions</a></li>
+                                <li class="active">Enterprise Cloud & Data Architecture</li>
+                            </ul>   
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-edge-bottom color op-7 h-80"></div>
+                <div class="sw-overlay op-7"></div>
+            </section>
+
+            <section>
+                <div class="container">
+
+                    <div class="row g-4 gx-5">
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/1.avif" class="w-70px mb-3 hover-jello infinite" alt="FedRAMP cloud eagle emblem">
+                                <h4>FedRAMP-Aligned Cloud Architecture</h4>
+                                <p>Infrastructure designed to meet federal security controls, supporting continuous monitoring and ATO evidence generation.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".2s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/2.avif" class="w-70px mb-3 hover-jello infinite" alt="Multi-level security stacked shields emblem" loading="lazy">
+                                <h4>Multi-Level Security Architecture</h4>
+                                <p>Compartmentalized cloud environments supporting multiple classification levels with mandatory access controls.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".4s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/3.avif" class="w-70px mb-3 hover-jello infinite" alt="Data lake cylindrical storage emblem" loading="lazy">
+                                <h4>Enterprise Data Lakes</h4>
+                                <p>Petabyte-scale storage with real-time ingestion pipelines and governed access for intelligence workflows.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".6s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/4.avif" class="w-70px mb-3 hover-jello infinite" alt="Hybrid cloud interlocking circles bridge emblem" loading="lazy">
+                                <h4>Hybrid Cloud Integration</h4>
+                                <p>Seamless connectivity between on-premises systems and cloud infrastructure with secure data synchronization.</p>
+                            </a>
+                        </div>
+
+                        <!-- New services -->
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/5.avif" class="w-70px mb-3 hover-jello infinite" alt="Secure API gateway archway lock emblem" loading="lazy">
+                                <h4>Secure API Gateways</h4>
+                                <p>Hardened interfaces with certificate-based authentication and encrypted channels for service integration.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".2s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/6.avif" class="w-70px mb-3 hover-jello infinite" alt="Container orchestration hexagonal cluster emblem" loading="lazy">
+                                <h4>Container Orchestration</h4>
+                                <p>Kubernetes clusters with automated scaling, health monitoring, and zero-downtime deployment capabilities.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".4s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/7.avif" class="w-70px mb-3 hover-jello infinite" alt="Cloud-native development code brackets gear emblem" loading="lazy">
+                                <h4>Cloud-Native Development</h4>
+                                <p>Microservices architecture with serverless functions and event-driven designs for rapid iteration cycles.</p>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".6s">
+                            <a href="../capabilities/computing.html" class="d-block hover relative">
+                                <img src="../images/icons-maroon/cloud/8.avif" class="w-70px mb-3 hover-jello infinite" alt="Disaster recovery mirrored servers failover emblem" loading="lazy">
+                                <h4>Disaster Recovery Systems</h4>
+                                <p>Geographic redundancy with automated failover ensuring mission continuity during regional outages or attacks.</p>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <section class="text-light bg-dark no-top no-bottom overflow-hidden mx-3 mb-3 rounded-1">
+                <div class="container-fluid position-relative half-fluid">
+                  <div class="container">
+                    <div class="row">
+                      <!-- Image -->
+                      <div class="col-lg-6 position-lg-absolute overflow-hidden left-half h-100">
+                        <div class="triangle-bottomright-dark"></div>
+                        <div class="image wow scaleIn" data-bgimage="url(../images/sections/sol-cloud-panel.avif) center"></div>
+                      </div>
+                      <!-- Text -->
+                      <div class="col-lg-5 offset-lg-7">
+                            <div class="me-lg-3">
+                                <div class="py-5 my-5">
+                                    <div class="owl-single-dots owl-carousel owl-theme">
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">FedRAMP-aligned architecture provides a documented security baseline and continuous monitoring posture that accelerates agency Authority to Operate reviews.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Multi-level security architecture isolates workloads by sensitivity tier, giving agencies compartmentalized cloud environments with mandatory access controls enforced at the infrastructure layer.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Petabyte-scale enterprise data lakes with governed access pipelines allow intelligence workflows to ingest, catalog, and query large datasets without sacrificing audit accountability.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Hybrid cloud integration bridges legacy on-premises systems with modern cloud services, preserving existing investments while enabling incremental modernization at agency-controlled pace.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Mature cloud-native platform components from our partner ecosystem, proven in production federal and commercial environments, are delivered to government customers through Ravonics' compliance bridge.</h3>
+                                            <span class="wow fadeInUp">Partner Ecosystem</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Hardened API gateways with certificate-based mutual authentication provide the integration fabric that connects mission systems without exposing sensitive service endpoints.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Kubernetes container orchestration with automated scaling and zero-downtime deployment capabilities allows federal workloads to adapt in real time without operator intervention, drawing on our partner ecosystem's production-deployed platform running 20+ applications on live clusters.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
+                                            <h3 class="mb-4 wow fadeInUp fs-32">Geographic redundancy with automated failover ensures mission continuity even during regional outages, maintaining operational availability for time-sensitive federal workloads.</h3>
+                                            <span class="wow fadeInUp">Ravonics Capability</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <section class="bg-color text-light pt-50 pb-50">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-md-9">
+                            <h3 class="mb-0 fs-32 split">Modernize Your Cloud Infrastructure</h3>
+                        </div>
+                        <div class="col-lg-3 text-lg-end">
+                            <a class="btn-main fx-slide btn-line wow fadeInRight" data-wow-delay=".2s" href="../booking.html"><span>Submit RFP / RFI</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Capabilities</h5>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3>contact@ravonics.com</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->        
+    <!-- overlay content begin -->
+    <div id="extra-wrap" class="text-light">
+        <div id="btn-close">
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Core Capabilities</h5>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Autonomy Software</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
+            </ul>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>Contact Us</h5>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+
+            <div class="spacer-30-line"></div>
+
+            <h5>About Us</h5>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
+
+        </div>
+    </div>
+    <!-- overlay content end -->    </div>
+
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+</body>
+
+</html>
