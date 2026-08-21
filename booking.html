@@ -396,8 +396,8 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label id="lbl_budget_range" for="budget_range" class="form-label">Estimated Contract Value <span aria-hidden="true">*</span></label>
-                                        <select name="budget_range" id="budget_range" class="form-control" required>
+                                        <label id="lbl_budget_range" for="budget_range" class="form-label">Estimated Contract Value (optional)</label>
+                                        <select name="budget_range" id="budget_range" class="form-control">
                                             <option value="">- Select -</option>
                                             <option value="Under $250K">Under $250K</option>
                                             <option value="$250K–$1M">$250K – $1M</option>
@@ -407,6 +407,7 @@
                                             <option value="$50M–$100M">$50M – $100M</option>
                                             <option value="$100M+">$100M+</option>
                                             <option value="Undisclosed / TBD">Undisclosed / TBD</option>
+                                            <option value="Not yet determined / RFI stage">Not yet determined / RFI stage</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
@@ -467,7 +468,7 @@
                                         <div id="doc_error" class="alert alert-warning mt-2" style="display:none;"></div>
                                         <div class="mt-2 op-6 fs-13">
                                             If you prefer to send documents separately, email them to
-                                            <a href="mailto:contact@ravonics.com?subject=RFP%20Documents%20-%20%5BYour%20Org%20Name%5D">contact@ravonics.com</a>
+                                            <!--email_off--><a href="mailto:contact@ravonics.com?subject=RFP%20Documents%20-%20%5BYour%20Org%20Name%5D">contact@ravonics.com</a><!--/email_off-->
                                             with your organization name in the subject line.
                                         </div>
                                     </div>
@@ -500,10 +501,10 @@
 
                             <!-- Submission status messages (shown/hidden via JS) -->
                             <div id="success_message" class="alert alert-success mt-4" style="display:none;" role="alert" aria-live="assertive">
-                                <strong>Engagement request received.</strong> A member of the Ravonics federal team will review your submission and respond within one business day. If you attached documents, they have been included with your intake. For immediate assistance, contact <a href="mailto:contact@ravonics.com">contact@ravonics.com</a>.
+                                <strong>Engagement request received.</strong> A member of the Ravonics federal team will review your submission and respond within one business day. If you attached documents, they have been included with your intake. For immediate assistance, contact <!--email_off--><a href="mailto:contact@ravonics.com">contact@ravonics.com</a><!--/email_off-->.
                             </div>
                             <div id="error_message" class="alert alert-danger mt-4" style="display:none;" role="alert" aria-live="assertive">
-                                <strong>Submission failed.</strong> Please email your intake directly to <a href="mailto:contact@ravonics.com?subject=RFP%20Intake%20Request">contact@ravonics.com</a> and attach any solicitation documents. We will respond within one business day.
+                                <strong>Submission failed.</strong> Please email your intake directly to <!--email_off--><a href="mailto:contact@ravonics.com?subject=RFP%20Intake%20Request">contact@ravonics.com</a><!--/email_off--> and attach any solicitation documents. We will respond within one business day.
                             </div>
                             <div id="validation_message" class="alert alert-warning mt-4" role="alert" aria-live="assertive" style="display:none;"></div>
 
@@ -561,7 +562,7 @@
                         </div>
                         <div class="widget">
                             <div class="op-5 fs-15">Email</div>
-                            <h3>contact@ravonics.com</h3>
+                            <h3><!--email_off-->contact@ravonics.com<!--/email_off--></h3>
                             <div class="spacer-20"></div>
                             <div class="op-5 fs-15">Phone</div>
                             <h3>+1 (304) 927-2600</h3>
@@ -621,7 +622,7 @@
             <h5>Contact Us</h5>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+            <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
             <div class="spacer-30-line"></div>
             <h5>About Us</h5>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
@@ -676,7 +677,6 @@
             { id: 'agency_type',    label: 'Agency / Org Type' },
             { id: 'contact_name',   label: 'Full Name' },
             { id: 'contact_email',  label: 'Email' },
-            { id: 'budget_range',   label: 'Estimated Contract Value' },
             { id: 'notes',          label: 'Project / Scope Summary' }
         ];
 
