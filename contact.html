@@ -202,7 +202,7 @@
                                     <i class="abs fs-28 p-3 bg-color text-light rounded-1 icofont-envelope"></i>
                                     <div class="ms-80px">
                                         <h4 class="mb-0">Send a Message</h4>
-                                        contact@ravonics.com
+                                        <!--email_off--><a href="mailto:contact@ravonics.com">contact@ravonics.com</a><!--/email_off-->
                                     </div>
                                 </div>
 
@@ -225,9 +225,9 @@
                             <table style="font-size:13px;line-height:1.9;width:100%;border-collapse:collapse;">
                                 <tr><td style="width:42%;color:#666;padding-right:8px;">Legal Name</td><td><strong>Ravonics LLC</strong></td></tr>
                                 <tr><td style="color:#666;padding-right:8px;">SAM.gov Status</td><td>Registered &amp; Active</td></tr>
-                                <tr><td style="color:#666;padding-right:8px;">UEI</td><td>YCBDVKN1A9G7</td></tr>
-                                <tr><td style="color:#666;padding-right:8px;">CAGE Code</td><td>20DS8</td></tr>
-                                <tr><td style="color:#666;padding-right:8px;">NAICS</td><td>541512 · 541330 · 541715<br>518210 · 541511 · 541513<br>541519 · 541690 · 611420</td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">UEI</td><td><strong>YCBDVKN1A9G7</strong> <button type="button" class="btn btn-sm btn-outline-secondary ms-2 copy-id" data-copy-value="YCBDVKN1A9G7" aria-label="Copy UEI to clipboard">Copy</button> <span class="copy-status ms-2" role="status" aria-live="polite"></span></td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">CAGE Code</td><td><strong>20DS8</strong> <button type="button" class="btn btn-sm btn-outline-secondary ms-2 copy-id" data-copy-value="20DS8" aria-label="Copy CAGE code to clipboard">Copy</button> <span class="copy-status ms-2" role="status" aria-live="polite"></span></td></tr>
+                                <tr><td style="color:#666;padding-right:8px;">NAICS</td><td>541512 · 541330 · 541715<br>518210 · 541511 · 541513<br>541519 · 541690 · 611420 <button type="button" class="btn btn-sm btn-outline-secondary ms-2" data-copy-value="541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420" aria-label="Copy NAICS codes to clipboard">Copy</button> <span class="copy-status ms-2" role="status" aria-live="polite"></span></td></tr>
                                 <tr><td style="color:#666;padding-right:8px;">PSC</td><td>AC11 · AC12 · DA10 · DG10<br>DJ10 · DK10 · R408 · R425</td></tr>
                                 <tr><td style="color:#666;padding-right:8px;">Business Size</td><td>Small Business</td></tr>
                                 <tr><td style="color:#666;padding-right:8px;">HUBZone</td><td>Certified (SBA)</td></tr>
@@ -289,7 +289,7 @@
                                 Thank you, your message has been received. Our team will respond within 1 business day.
                             </div>
                             <div id="contact_error_message" class="error" role="alert" aria-live="assertive" style="display:none;">
-                                Submission failed. Please email us directly at <a href="mailto:contact@ravonics.com">contact@ravonics.com</a>.
+                                Submission failed. Please email us directly at <!--email_off--><a href="mailto:contact@ravonics.com">contact@ravonics.com</a><!--/email_off-->.
                             </div>
                             <div id="contact_validation_message" class="error" role="alert" aria-live="assertive" style="display:none;"></div>
                         </form>
@@ -438,7 +438,7 @@
 
                         <div class="widget">
                             <div class="op-5 fs-15">Email</div>
-                            <h3>contact@ravonics.com</h3>
+                            <h3><!--email_off-->contact@ravonics.com<!--/email_off--></h3>
 
                             <div class="spacer-20"></div>
 
@@ -508,7 +508,7 @@
             <h5>Contact Us</h5>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@ravonics.com</div>
+            <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
@@ -714,6 +714,54 @@
                         }
                         getEl('contact_error_message').scrollIntoView({ behavior: 'smooth', block: 'center' });
                     });
+            });
+        });
+    }());
+    </script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function fallbackCopy(value) {
+            var previousActiveElement = document.activeElement;
+            var textarea = document.createElement('textarea');
+            textarea.value = value;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            var copied = false;
+            try { copied = document.execCommand('copy'); } catch (err) { copied = false; }
+            document.body.removeChild(textarea);
+            if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                previousActiveElement.focus();
+            }
+            return copied;
+        }
+
+        function copyValue(value) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(value).then(function () { return true; }).catch(function () {
+                    return fallbackCopy(value);
+                });
+            }
+            return Promise.resolve(fallbackCopy(value));
+        }
+
+        document.addEventListener('click', function (event) {
+            var button = event.target.closest('[data-copy-value]');
+            if (!button) { return; }
+            event.preventDefault();
+            var status = button.parentElement.querySelector('.copy-status');
+            copyValue(button.getAttribute('data-copy-value')).then(function (copied) {
+                if (status) { status.textContent = copied ? 'Copied' : 'Copy failed — select manually'; }
+                button.setAttribute('aria-label', copied ? 'Copied to clipboard' : 'Copy failed; select the value manually');
+                window.setTimeout(function () {
+                    if (status) { status.textContent = ''; }
+                    button.setAttribute('aria-label', button.getAttribute('data-copy-value') === 'YCBDVKN1A9G7' ? 'Copy UEI to clipboard' : button.getAttribute('data-copy-value') === '20DS8' ? 'Copy CAGE code to clipboard' : 'Copy NAICS codes to clipboard');
+                }, 2500);
             });
         });
     }());
