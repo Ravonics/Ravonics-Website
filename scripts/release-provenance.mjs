@@ -9,6 +9,10 @@ async function listFiles(directory, prefix = '') {
   const entries = await fs.readdir(directory, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
+    // A git worktree contains a .git metadata file (or directory in a normal
+    // checkout). It is not part of the public artifact and must not affect
+    // the digest when the final gh-pages worktree is verified.
+    if (entry.name === '.git') continue;
     const relative = path.join(prefix, entry.name);
     if (entry.isDirectory()) {
       files.push(...(await listFiles(path.join(directory, entry.name), relative)));
