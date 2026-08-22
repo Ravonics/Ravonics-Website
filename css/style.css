@@ -40,7 +40,7 @@ Table of content:
   /* body font */
   --body-font: "Manrope", Helvetica, Arial, sans-serif;
   --body-font-size: 16px;
-  --body-font-color: #888;
+  --body-font-color: #5d6371;
   --body-font-color-bg-dark: rgba(255, 255, 255, .75);
   --body-font-weight: 500;
   /* heading font */
@@ -13628,6 +13628,84 @@ img {
   display: block;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+
+/* Keep text links distinguishable without changing the navigation or button
+   treatment. This satisfies WCAG 1.4.1 for prose, legal, and data-table links. */
+main p a:not(.btn),
+main li a:not(.btn),
+main td a:not(.btn),
+main dd a:not(.btn),
+footer .subfooter a:not(.btn) {
+  text-decoration: underline !important;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.08em;
+}
+
+/* Opacity utilities are useful for imagery, but they make informational text
+   fail contrast when applied to paragraphs and form controls. Keep the legacy
+   layout and restore full-opacity text in the content region. */
+#content p.op-4,
+#content p.op-5,
+#content p.op-6,
+#content p.op-7,
+#content li.op-4,
+#content li.op-5,
+#content li.op-6,
+#content li.op-7,
+#content span.op-4.fs-11,
+#content .form-label,
+#content .form-check-label,
+#content td,
+#content th {
+  opacity: 1;
+  color: var(--body-font-color);
+}
+
+/* The dialog is inert while closed; this declaration also protects keyboard
+   users before the shared script has initialized. */
+#extra-wrap[inert] {
+  pointer-events: none;
+}
+
+#back-to-top-region {
+  position: static;
+}
+
+.overlay-black-6 .fs-14.op-6 {
+  opacity: 1;
+}
+
+#content .op-6.fs-13,
+#content .op-7.fs-13 {
+  opacity: 1;
+  color: var(--body-font-color);
+}
+
+#content .d-block.hover.relative > p {
+  opacity: 1 !important;
+  color: var(--body-font-color) !important;
+}
+
+#content a[href^="mailto:"] {
+  text-decoration: underline !important;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.08em;
+}
+
+.btn-outline-secondary {
+  color: #495057;
+  border-color: #495057;
+}
+
+footer .subfooter .op-6.fs-12 {
+  opacity: 1;
+  color: rgba(255, 255, 255, .92);
+}
+
+footer .subfooter .op-4.fs-11 {
+  opacity: 1;
+  color: rgba(255, 255, 255, .92);
 }
 
 .company-facts .op-5.fs-15 {
