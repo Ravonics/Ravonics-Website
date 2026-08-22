@@ -1,10 +1,10 @@
 /**
  * Ravonics form endpoints (deploy-time generated; NOT in source control).
  *
- * Injected by scripts/inject-endpoints.sh at publish time. In proxy mode these
- * are the lead-capture proxy paths (no SAS in the browser). In direct mode they
- * are the Azure Logic App SAS callback URLs. careers is intentionally absent
- * (no backend) so that form stays on its mailto fallback.
+ * Injected by scripts/inject-endpoints.sh at publish time. These are the
+ * lead-capture proxy paths; Logic App credentials never reach the browser.
+ * careers is intentionally absent (no backend) so that form stays on its
+ * mailto fallback.
  */
 window.RAVONICS_FORM_ENDPOINTS = {
   contact: "https://ravonics-lead-proxy.azurewebsites.net/api/lead/contact",

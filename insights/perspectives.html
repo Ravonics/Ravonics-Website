@@ -71,6 +71,7 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -91,16 +92,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -156,17 +157,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -175,7 +176,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -203,12 +204,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="jadc2-interoperability-perspective.html">
-                                        <img alt="Multi-domain command and control integration: JADC2 implementation perspective" src="../images/blog/posts/jadc2-interoperability-perspective.avif" class="hover-scale-1-1">
+                                        <img alt="Multi-domain command and control integration: JADC2 implementation perspective" src="../images/blog/posts/jadc2-interoperability-perspective.avif" class="hover-scale-1-1" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color text-white">Defense Strategy</span></div>
-                                    <h4><a class="text-dark" href="jadc2-interoperability-perspective.html">JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="jadc2-interoperability-perspective.html">JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</a></h2>
                                     <p class="mb-3">JADC2 implementation challenges facing DoW programs run deeper than bandwidth, exposing data-model mismatches across services and domain silos. An architectural perspective from Ravonics' systems integration background.</p>
                                 </div>
                             </div>
@@ -218,12 +219,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="zero-trust-mandates-perspective.html">
-                                        <img alt="Zero trust architecture framework: federal implementation barriers and solutions" src="../images/blog/posts/zero-trust-mandates-perspective.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Zero trust architecture framework: federal implementation barriers and solutions" src="../images/blog/posts/zero-trust-mandates-perspective.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color text-white">Cybersecurity Policy</span></div>
-                                    <h4><a class="text-dark" href="zero-trust-mandates-perspective.html">Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="zero-trust-mandates-perspective.html">Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</a></h2>
                                     <p class="mb-3">Zero trust mandates face organizational and technical friction in federal environments when identity infrastructure isn't in place first. A Ravonics perspective on the architectural patterns that make adoption practical.</p>
                                 </div>
                             </div>
@@ -233,12 +234,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="ai-ethics-defense.html">
-                                        <img alt="Human-on-the-loop AI ethics framework: autonomy and accountability in defense systems" src="../images/blog/posts/ai-ethics-defense.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Human-on-the-loop AI ethics framework: autonomy and accountability in defense systems" src="../images/blog/posts/ai-ethics-defense.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color text-white">Defense AI Policy</span></div>
-                                    <h4><a class="text-dark" href="ai-ethics-defense.html">AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="ai-ethics-defense.html">AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle</a></h2>
                                     <p class="mb-3">Responsible AI in defense isn't just ethics posture; it's acquisition policy. An examination of human-on-the-loop requirements, accountability chains, and the policy landscape shaping autonomous system procurement.</p>
                                 </div>
                             </div>
@@ -248,12 +249,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="federal-cloud-fedramp.html">
-                                        <img alt="FedRAMP-aligned cloud architecture diagram for federal agencies" src="../images/blog/posts/federal-cloud-fedramp.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="FedRAMP-aligned cloud architecture diagram for federal agencies" src="../images/blog/posts/federal-cloud-fedramp.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color text-white">Cloud Strategy</span></div>
-                                    <h4><a class="text-dark" href="federal-cloud-fedramp.html">Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="federal-cloud-fedramp.html">Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</a></h2>
                                     <p class="mb-3">What federal agencies and contractors need to understand about FedRAMP-aligned cloud architecture: from a design-first standpoint, not a claimed authorization. Ravonics holds no FedRAMP authorization.</p>
                                 </div>
                             </div>
@@ -263,12 +264,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="quantum-threat-pqc-migration.html">
-                                        <img alt="Quantum threat timeline analysis: post-quantum cryptography migration for federal systems" src="../images/blog/posts/quantum-threat-pqc-migration.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Quantum threat timeline analysis: post-quantum cryptography migration for federal systems" src="../images/blog/posts/quantum-threat-pqc-migration.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color text-white">Emerging Threats</span></div>
-                                    <h4><a class="text-dark" href="quantum-threat-pqc-migration.html">The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="quantum-threat-pqc-migration.html">The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</a></h2>
                                     <p class="mb-3">The case for beginning post-quantum cryptography migration before cryptographically-relevant quantum computers arrive, referencing NIST PQC standards and NSA CNSA 2.0 guidance on transition timelines.</p>
                                 </div>
                             </div>
@@ -278,12 +279,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="cmmc-first-award.html">
-                                        <img alt="CMMC 2.0 compliance framework overview for defense contractors" src="../images/blog/posts/cmmc-first-award.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="CMMC 2.0 compliance framework overview for defense contractors" src="../images/blog/posts/cmmc-first-award.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color text-white">Compliance & Policy</span></div>
-                                    <h4><a class="text-dark" href="cmmc-first-award.html">CMMC 2.0: What Defense Contractors Must Understand Before First Award</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="cmmc-first-award.html">CMMC 2.0: What Defense Contractors Must Understand Before First Award</a></h2>
                                     <p class="mb-3">CMMC 2.0 requirements for defense contractors: NIST 800-171 alignment, assessment preparation, and CUI handling obligations. Ravonics is itself pursuing this compliance pathway as a new small business.</p>
                                 </div>
                             </div>
@@ -306,19 +307,19 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
         <!-- content close -->
         <!-- footer begin -->
         <footer class="text-light section-dark">
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -336,7 +337,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -354,7 +355,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -399,18 +400,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -426,14 +427,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -448,6 +449,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

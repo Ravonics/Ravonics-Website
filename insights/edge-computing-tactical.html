@@ -79,6 +79,7 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -99,16 +100,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -164,17 +165,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -208,7 +209,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-8">
-                            <div class="blog-read">
+                            <article class="blog-read" aria-label="Article content">
 
                                 <p class="mb-4">
                                     <em>A Ravonics architectural perspective on building compute for the environment you will actually operate in</em>
@@ -224,7 +225,7 @@
 
                                 <ol class="ol-style-1">
                                   <li>
-                                    <h4>Hardware Selection &amp; SWaP</h4>
+                                    <h2 class="legacy-h4 h4">Hardware Selection &amp; SWaP</h2>
                                     <p>
                                       Size, weight, and power (SWaP) drive every forward deployment. The right node balances
                                       compute density against what a vehicle, dismounted operator, or small platform can
@@ -234,7 +235,7 @@
                                   </li>
 
                                   <li>
-                                    <h4>Power &amp; Thermal Budgets</h4>
+                                    <h2 class="legacy-h4 h4">Power &amp; Thermal Budgets</h2>
                                     <p>
                                       Every watt consumed is a watt that must be supplied and then dissipated. Design begins
                                       with a fixed power budget (battery, generator, or vehicle bus) and works backward to
@@ -244,7 +245,7 @@
                                   </li>
 
                                   <li>
-                                    <h4>Ruggedization &amp; Environmental Resilience</h4>
+                                    <h2 class="legacy-h4 h4">Ruggedization &amp; Environmental Resilience</h2>
                                     <p>
                                       Field hardware faces shock, vibration, dust, moisture, and temperature swings that
                                       bench prototypes never see. Conformance to environmental and ingress standards is a
@@ -254,7 +255,7 @@
                                   </li>
 
                                   <li>
-                                    <h4>Local-First Data &amp; Storage</h4>
+                                    <h2 class="legacy-h4 h4">Local-First Data &amp; Storage</h2>
                                     <p>
                                       When connectivity cannot be assumed, data must be captured, processed, and retained on
                                       the node itself. A local-first design treats the edge as the system of record between
@@ -264,7 +265,7 @@
                                   </li>
 
                                   <li>
-                                    <h4>Hybrid Edge-to-Cloud Overflow</h4>
+                                    <h2 class="legacy-h4 h4">Hybrid Edge-to-Cloud Overflow</h2>
                                     <p>
                                       The edge handles what must happen now; the enterprise handles what can wait. A hybrid
                                       architecture defines clear boundaries for which workloads run forward and which overflow
@@ -274,7 +275,7 @@
                                   </li>
 
                                   <li>
-                                    <h4>Graceful Degradation &amp; Autonomy</h4>
+                                    <h2 class="legacy-h4 h4">Graceful Degradation &amp; Autonomy</h2>
                                     <p>
                                       A well-designed edge system does not fail when it is cut off; it degrades on purpose.
                                       Critical functions continue at reduced fidelity, non-essential features shed first, and
@@ -284,14 +285,14 @@
                                   </li>
                                 </ol>
 
-                                <img src="../images/blog/posts/edge-computing-tactical.avif" class="w-100 rounded-1" alt="Ruggedized field computer operating in a denied-connectivity environment at first light">
+                                <img src="../images/blog/posts/edge-computing-tactical.avif" class="w-100 rounded-1" alt="Ruggedized field computer operating in a denied-connectivity environment at first light" width="1920" height="1080">
 
-                            </div>
+                            </article>
 
                             <div class="spacer-single"></div>
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
-                                <h4>Want to discuss tactical edge architecture for your program?</h4>
+                                <h2 class="legacy-h4 h4">Want to discuss tactical edge architecture for your program?</h2>
                                 <p>Ravonics works directly with federal program managers and systems integrators to translate these architectural principles into acquisition-ready solutions. Whether you're scoping an IDIQ task order, evaluating a COTS edge platform, or designing a new forward compute stack, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
@@ -301,15 +302,15 @@
 
                         <div class="col-lg-4">
                             <div class="widget widget-post">
-                                <h4>Related Perspectives</h4>
+                                <h2 class="legacy-h4 h4">Related Perspectives</h2>
                                 <ul class="de-bloglist-type-1">
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural Network Optimization for Tactical Edge AI" loading="lazy">
+                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural Network Optimization for Tactical Edge AI" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="tactical-edge-ai.html">
-                                        <h4>Neural Network Optimization for Tactical Edge AI</h4>
+                                        <h2 class="legacy-h4 h4">Neural Network Optimization for Tactical Edge AI</h2>
                                       </a>
                                       <div class="d-date">Edge AI Architecture</div>
                                     </div>
@@ -317,11 +318,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 Integration: Multi-Domain C2 Patterns" loading="lazy">
+                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 Integration: Multi-Domain C2 Patterns" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="jadc2-integration.html">
-                                        <h4>JADC2 Integration: Multi-Domain C2 Patterns</h4>
+                                        <h2 class="legacy-h4 h4">JADC2 Integration: Multi-Domain C2 Patterns</h2>
                                       </a>
                                       <div class="d-date">Systems Integration</div>
                                     </div>
@@ -329,11 +330,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero Trust Implementation for Federal Networks" loading="lazy">
+                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero Trust Implementation for Federal Networks" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="zero-trust-federal.html">
-                                        <h4>Zero Trust Implementation for Federal Networks</h4>
+                                        <h2 class="legacy-h4 h4">Zero Trust Implementation for Federal Networks</h2>
                                       </a>
                                       <div class="d-date">Zero Trust Security</div>
                                     </div>
@@ -341,11 +342,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/autonomous-swarm.avif" alt="Autonomous Platform Coordination" loading="lazy">
+                                      <img src="../images/blog/posts/autonomous-swarm.avif" alt="Autonomous Platform Coordination" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="autonomous-swarm.html">
-                                        <h4>Autonomous Platform Coordination</h4>
+                                        <h2 class="legacy-h4 h4">Autonomous Platform Coordination</h2>
                                       </a>
                                       <div class="d-date">Autonomous Systems</div>
                                     </div>
@@ -353,11 +354,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/post-quantum-cryptography.avif" alt="Post-Quantum Cryptography for Federal Comms" loading="lazy">
+                                      <img src="../images/blog/posts/post-quantum-cryptography.avif" alt="Post-Quantum Cryptography for Federal Comms" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="post-quantum-cryptography.html">
-                                        <h4>Post-Quantum Cryptography for Federal Comms</h4>
+                                        <h2 class="legacy-h4 h4">Post-Quantum Cryptography for Federal Comms</h2>
                                       </a>
                                       <div class="d-date">Cryptography</div>
                                     </div>
@@ -365,11 +366,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/digital-twin-multidomain.avif" alt="Digital twin simulation for multi-domain operations" loading="lazy">
+                                      <img src="../images/blog/posts/digital-twin-multidomain.avif" alt="Digital twin simulation for multi-domain operations" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="digital-twin-multidomain.html">
-                                        <h4>Digital Twin Modeling for Multi-Domain Operations</h4>
+                                        <h2 class="legacy-h4 h4">Digital Twin Modeling for Multi-Domain Operations</h2>
                                       </a>
                                       <div class="d-date">Simulation & Modeling</div>
                                     </div>
@@ -379,7 +380,7 @@
                             </div>
 
                             <div class="widget widget_tags">
-                                <h4>Popular Tags</h4>
+                                <h2 class="legacy-h4 h4">Popular Tags</h2>
                                 <ul>
                                     <li><a href="#link">AI & Machine Learning</a></li>
                                     <li><a href="#link">Autonomous Systems</a></li>
@@ -413,7 +414,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
 
         <!-- content close -->
         <!-- footer begin -->
@@ -421,12 +422,12 @@
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -444,7 +445,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -462,7 +463,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -507,18 +508,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -534,14 +535,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -556,6 +557,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

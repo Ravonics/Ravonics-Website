@@ -1,7 +1,0 @@
-# transient image-runner log
-.image-runner.log
-
-# internal issue-review tooling — never track or publish
-issue-review.html
-issue-review-state.json
-scripts/issue-review-server.py

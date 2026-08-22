@@ -79,6 +79,7 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -99,16 +100,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -164,17 +165,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -208,7 +209,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-8">
-                            <div class="blog-read">
+                            <article class="blog-read" aria-label="Article content">
 
                                 <p class="mb-4">
                                     <em>A Ravonics defense AI policy perspective on how DoW's ethical AI framework and the human-on-the-loop principle are reshaping what responsible AI procurement actually requires</em>
@@ -224,56 +225,56 @@
 
                                 <ol class="ol-style-1">
                                   <li>
-                                    <h4>Human-on-the-Loop vs. Human-in-the-Loop: The Distinction That Matters</h4>
+                                    <h2 class="legacy-h4 h4">Human-on-the-Loop vs. Human-in-the-Loop: The Distinction That Matters</h2>
                                     <p>
                                       The distinction between human-in-the-loop and human-on-the-loop control is not semantic; it is the organizing axis of DoW's autonomy policy. Human-in-the-loop means a human must affirmatively authorize each consequential action; the system cannot act without that authorization in the decision cycle. Human-on-the-loop means the system can act autonomously within defined parameters, but a human retains the ability to monitor, intervene, and override. DoW Directive 3000.09 governs which category applies to which class of autonomous and semi-autonomous weapon systems, and the classification has direct implications for what legal review, operational concept approval, and commander accountability a program requires. Blurring this distinction in program documentation (describing a human-on-the-loop system as having "human oversight" without specifying the actual control architecture) is the single most common source of friction at 3000.09 legal and policy reviews.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>DoW's Five Ethical AI Principles as Acquisition Requirements</h4>
+                                    <h2 class="legacy-h4 h4">DoW's Five Ethical AI Principles as Acquisition Requirements</h2>
                                     <p>
                                       DoW's ethical AI principles are not aspirational statements; they translate into testable acquisition requirements when a program team is serious about them. "Responsible" requires that a designated human be accountable for AI development and employment decisions. "Equitable" requires testing for bias across the populations and operating conditions the system will encounter. "Traceable" requires that the system's methodology be auditable and its outputs explicable to the humans relying on them. "Reliable" requires that the system perform within defined boundaries under expected and unexpected conditions. "Governable" requires that the system can be deactivated, adjusted, or overridden. Each of these generates specific test and evaluation requirements that must be scoped into a program's T&E strategy well before milestone B if they are not to become schedule-breaking late discoveries.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Accountability Chains Cannot Be Diffused by Algorithmic Complexity</h4>
+                                    <h2 class="legacy-h4 h4">Accountability Chains Cannot Be Diffused by Algorithmic Complexity</h2>
                                     <p>
                                       A persistent challenge in defense AI acquisition is the tendency for accountability to become diffuse when a machine learning model sits between a human decision-maker and an outcome. Vendors sometimes implicitly rely on algorithmic opacity to limit their liability exposure. Program offices sometimes accept this opacity because it makes oversight easier to defer. Neither posture is legally or operationally sustainable. The law of armed conflict imposes accountability on commanders for actions taken by systems under their control. That accountability cannot be delegated to an algorithm. Programs that design accountability chains from the outset (who is responsible for training data quality, who approves the operational parameters, who has authority to suspend the system) are better positioned at legal reviews and better equipped to investigate and learn from incidents in the field.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Test and Evaluation Must Include Adversarial and Out-of-Distribution Conditions</h4>
+                                    <h2 class="legacy-h4 h4">Test and Evaluation Must Include Adversarial and Out-of-Distribution Conditions</h2>
                                     <p>
                                       Machine learning systems can perform with high measured accuracy on evaluation datasets while failing in ways that are unexpected and potentially consequential when they encounter inputs outside their training distribution. Defense operating environments are specifically designed by adversaries to create out-of-distribution conditions: sensor spoofing, environmental camouflage, electronic warfare, novel platform signatures. A T&E strategy for a defense AI system that evaluates only nominal performance against representative datasets is providing false confidence. The Responsible AI (RAI) guidelines from CDAO and the operational test and evaluation community increasingly expect programs to demonstrate adversarial robustness, failure mode characterization, and performance bounds across the full operational envelope, not just the favorable test conditions that maximize reported accuracy.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Traceability and Explainability Are Not the Same Requirement</h4>
+                                    <h2 class="legacy-h4 h4">Traceability and Explainability Are Not the Same Requirement</h2>
                                     <p>
                                       DoW's principle of traceability addresses two related but distinct needs that programs often conflate. Audit traceability means being able to reconstruct what data the model was trained on, what parameters were set, what version was deployed, and what inputs produced a specific output: the forensic record needed to investigate a decision after the fact. Explainability addresses the real-time need: can a human decision-maker understand why the system produced a recommendation well enough to exercise informed judgment about whether to act on it? These requirements differ in who needs them (auditors versus operators), when they are needed (post-hoc versus real-time), and what technical investment they require. Programs that design only for audit traceability while leaving operators without actionable explanations of system outputs are not meeting the intent of the principle.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Responsible AI Is Becoming a Competitive Differentiator in Defense Procurement</h4>
+                                    <h2 class="legacy-h4 h4">Responsible AI Is Becoming a Competitive Differentiator in Defense Procurement</h2>
                                     <p>
                                       Congressional attention to autonomous systems, CDAO's expanding role in AI governance, and the growing sophistication of program executive offices in evaluating AI vendor claims are collectively raising the bar for what responsible AI means in a defense procurement context. Vendors who can demonstrate mature responsible AI practices (documented accountability chains, adversarial T&E results, explainability tooling appropriate to operator cognitive loads, and credible human control architectures) are increasingly distinguishable from those offering capable models without governance substance. For a new small business like Ravonics, positioning on responsible AI practice is not a hedge against capability claims; it is an honest reflection of the architectural discipline that federal AI programs actually require from solution providers.
                                     </p>
                                   </li>
                                 </ol>
 
-                                <img src="../images/blog/posts/ai-ethics-defense.avif" class="w-100 rounded-1" alt="Defense policy analyst reviewing AI ethics framework documentation in early-morning light">
+                                <img src="../images/blog/posts/ai-ethics-defense.avif" class="w-100 rounded-1" alt="Defense policy analyst reviewing AI ethics framework documentation in early-morning light" width="1920" height="1080">
 
-                            </div>
+                            </article>
 
                             <div class="spacer-single"></div>
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
-                                <h4>Want to discuss responsible AI architecture for your defense program?</h4>
+                                <h2 class="legacy-h4 h4">Want to discuss responsible AI architecture for your defense program?</h2>
                                 <p>Ravonics works with defense program offices and prime contractors to translate responsible AI policy requirements into testable acquisition specifications. Whether you are scoping a 3000.09 review package, designing a T&E strategy for an AI-enabled system, or developing an accountability framework, we engage at the technical and policy level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
@@ -283,15 +284,15 @@
 
                         <div class="col-lg-4">
                             <div class="widget widget-post">
-                                <h4>Related Perspectives</h4>
+                                <h2 class="legacy-h4 h4">Related Perspectives</h2>
                                 <ul class="de-bloglist-type-1">
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" alt="JADC2 multi-domain integration and why interoperability is the hard problem">
+                                      <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" alt="JADC2 multi-domain integration and why interoperability is the hard problem" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="jadc2-interoperability-perspective.html">
-                                        <h4>JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</h4>
+                                        <h2 class="legacy-h4 h4">JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</h2>
                                       </a>
                                       <div class="d-date">Defense Strategy</div>
                                     </div>
@@ -299,11 +300,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" alt="Zero trust mandates and architectural foundation for federal programs" loading="lazy">
+                                      <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" alt="Zero trust mandates and architectural foundation for federal programs" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="zero-trust-mandates-perspective.html">
-                                        <h4>Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</h4>
+                                        <h2 class="legacy-h4 h4">Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</h2>
                                       </a>
                                       <div class="d-date">Cybersecurity Policy</div>
                                     </div>
@@ -311,11 +312,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption and FedRAMP-aligned architecture requirements" loading="lazy">
+                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption and FedRAMP-aligned architecture requirements" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="federal-cloud-fedramp.html">
-                                        <h4>Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</h4>
+                                        <h2 class="legacy-h4 h4">Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</h2>
                                       </a>
                                       <div class="d-date">Cloud Strategy</div>
                                     </div>
@@ -323,11 +324,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat and why federal systems should begin PQC migration now" loading="lazy">
+                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat and why federal systems should begin PQC migration now" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="quantum-threat-pqc-migration.html">
-                                        <h4>The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</h4>
+                                        <h2 class="legacy-h4 h4">The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</h2>
                                       </a>
                                       <div class="d-date">Emerging Threats</div>
                                     </div>
@@ -335,11 +336,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/cmmc-first-award.avif" alt="CMMC 2.0 requirements for defense contractors before first award" loading="lazy">
+                                      <img src="../images/blog/posts/cmmc-first-award.avif" alt="CMMC 2.0 requirements for defense contractors before first award" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="cmmc-first-award.html">
-                                        <h4>CMMC 2.0: What Defense Contractors Must Understand Before First Award</h4>
+                                        <h2 class="legacy-h4 h4">CMMC 2.0: What Defense Contractors Must Understand Before First Award</h2>
                                       </a>
                                       <div class="d-date">Compliance & Policy</div>
                                     </div>
@@ -347,11 +348,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural network optimization for tactical edge AI" loading="lazy">
+                                      <img src="../images/blog/posts/tactical-edge-ai.avif" alt="Neural network optimization for tactical edge AI" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="tactical-edge-ai.html">
-                                        <h4>Neural Network Optimization for Tactical Edge AI</h4>
+                                        <h2 class="legacy-h4 h4">Neural Network Optimization for Tactical Edge AI</h2>
                                       </a>
                                       <div class="d-date">AI Architecture</div>
                                     </div>
@@ -361,7 +362,7 @@
                             </div>
 
                             <div class="widget widget_tags">
-                                <h4>Popular Tags</h4>
+                                <h2 class="legacy-h4 h4">Popular Tags</h2>
                                 <ul>
                                     <li><a href="#link">AI & Machine Learning</a></li>
                                     <li><a href="#link">Autonomous Systems</a></li>
@@ -395,7 +396,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
 
         <!-- content close -->
         <!-- footer begin -->
@@ -403,12 +404,12 @@
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -426,7 +427,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -444,7 +445,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -489,18 +490,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -516,14 +517,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -538,6 +539,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

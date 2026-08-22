@@ -71,6 +71,7 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -91,16 +92,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -156,17 +157,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -175,7 +176,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -203,12 +204,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="quantum-defense-optimization.html">
-                                        <img alt="Quantum computing circuit visualization: defense optimization research direction" src="../images/blog/posts/quantum-defense-optimization.avif" class="hover-scale-1-1">
+                                        <img alt="Quantum computing circuit visualization: defense optimization research direction" src="../images/blog/posts/quantum-defense-optimization.avif" class="hover-scale-1-1" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color">Quantum Computing</span></div>
-                                    <h4><a class="text-dark" href="quantum-defense-optimization.html">Quantum Computing for Defense Optimization</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="quantum-defense-optimization.html">Quantum Computing for Defense Optimization</a></h2>
                                     <p class="mb-3">INSTAR Lab is exploring quantum algorithm applicability for combinatorial optimization problems relevant to defense logistics and routing: a research direction targeting future SBIR/STTR proposals.</p>
                                 </div>
                             </div>
@@ -218,12 +219,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="swarm-coordination-concepts.html">
-                                        <img alt="Autonomous swarm coordination concept: GPS-denied multi-platform architecture" src="../images/blog/posts/swarm-coordination-concepts.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Autonomous swarm coordination concept: GPS-denied multi-platform architecture" src="../images/blog/posts/swarm-coordination-concepts.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color">Autonomous Systems</span></div>
-                                    <h4><a class="text-dark" href="swarm-coordination-concepts.html">Autonomous Swarm Coordination | Architecture Concepts</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="swarm-coordination-concepts.html">Autonomous Swarm Coordination | Architecture Concepts</a></h2>
                                     <p class="mb-3">Ravonics is developing architectural concepts for AI-driven swarm coordination in GPS-denied environments, drawing on partner-ecosystem autonomous platform software and INSTAR Lab sensor research.</p>
                                 </div>
                             </div>
@@ -233,12 +234,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="edge-ai-hardware-evaluation.html">
-                                        <img alt="AI accelerator hardware for SWaP-constrained tactical edge deployment" src="../images/blog/posts/edge-ai-hardware-evaluation.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="AI accelerator hardware for SWaP-constrained tactical edge deployment" src="../images/blog/posts/edge-ai-hardware-evaluation.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color">Hardware Innovation</span></div>
-                                    <h4><a class="text-dark" href="edge-ai-hardware-evaluation.html">Tactical Edge AI Hardware Evaluation</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="edge-ai-hardware-evaluation.html">Tactical Edge AI Hardware Evaluation</a></h2>
                                     <p class="mb-3">Ravonics is evaluating commercial AI accelerator silicon options for SWaP-constrained tactical deployments, with a focus on inference performance per watt for edge-resident model architectures.</p>
                                 </div>
                             </div>
@@ -248,12 +249,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="pqc-federal-architecture.html">
-                                        <img alt="Post-quantum cryptography implementation architecture for federal systems" src="../images/blog/posts/pqc-federal-architecture.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Post-quantum cryptography implementation architecture for federal systems" src="../images/blog/posts/pqc-federal-architecture.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color">Cryptography Research</span></div>
-                                    <h4><a class="text-dark" href="pqc-federal-architecture.html">Post-Quantum Cryptography Architecture for Federal Systems</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="pqc-federal-architecture.html">Post-Quantum Cryptography Architecture for Federal Systems</a></h2>
                                     <p class="mb-3">Ravonics is designing implementation architectures around NIST-standardized post-quantum algorithms (CRYSTALS-Kyber, CRYSTALS-Dilithium) for federal communication and data-at-rest use cases.</p>
                                 </div>
                             </div>
@@ -263,12 +264,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="hyperspectral-sensor-fusion.html">
-                                        <img alt="Hyperspectral imaging sensor array: INSTAR Lab physics research bench" src="../images/blog/posts/hyperspectral-sensor-fusion.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Hyperspectral imaging sensor array: INSTAR Lab physics research bench" src="../images/blog/posts/hyperspectral-sensor-fusion.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color">Sensor Technology</span></div>
-                                    <h4><a class="text-dark" href="hyperspectral-sensor-fusion.html">Hyperspectral Imaging & Sensor Fusion | INSTAR Lab Research</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="hyperspectral-sensor-fusion.html">Hyperspectral Imaging & Sensor Fusion | INSTAR Lab Research</a></h2>
                                     <p class="mb-3">INSTAR Lab's physics bench is exploring hyperspectral imaging combined with deep learning for object classification, supporting SBIR/STTR proposals in sensor-fusion and detection domains.</p>
                                 </div>
                             </div>
@@ -278,12 +279,12 @@
                             <div class="hover">
                                 <div class="post-image rounded-1 mb-2 overflow-hidden">
                                     <a href="digital-twin-multidomain.html">
-                                        <img alt="Digital twin modeling for multi-domain operational simulation architecture" src="../images/blog/posts/digital-twin-multidomain.avif" class="hover-scale-1-1" loading="lazy">
+                                        <img alt="Digital twin modeling for multi-domain operational simulation architecture" src="../images/blog/posts/digital-twin-multidomain.avif" class="hover-scale-1-1" loading="lazy" width="1920" height="1080">
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
                                     <div class="mb-2"><span class="badge bg-color">Simulation & Modeling</span></div>
-                                    <h4><a class="text-dark" href="digital-twin-multidomain.html">Digital Twin Modeling for Multi-Domain Operations</a></h4>
+                                    <h2 class="legacy-h4 h4"><a class="text-dark" href="digital-twin-multidomain.html">Digital Twin Modeling for Multi-Domain Operations</a></h2>
                                     <p class="mb-3">Ravonics is scoping digital twin architecture patterns for multi-domain operational simulation, examining synchronization requirements between virtual models and physical system telemetry for federal programs.</p>
                                 </div>
                             </div>
@@ -306,19 +307,19 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
         <!-- content close -->
         <!-- footer begin -->
         <footer class="text-light section-dark">
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -336,7 +337,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -354,7 +355,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -399,18 +400,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -426,14 +427,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -448,6 +449,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

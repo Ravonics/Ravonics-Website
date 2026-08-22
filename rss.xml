@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Ravonics Insights</title>
+    <link>https://ravonics.com</link>
+    <description>Technical perspectives on federal AI, autonomy, cryptography, cloud, and systems engineering.</description>
+    <language>en-us</language>
+    <item>
+      <title>AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle | Ravonics</title>
+      <link>https://ravonics.com/insights/ai-ethics-defense.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/ai-ethics-defense.html</guid>
+      <description>How DoW</description>
+    </item>
+    <item>
+      <title>Autonomous Platform Coordination: Swarm Intelligence Concepts | Ravonics</title>
+      <link>https://ravonics.com/insights/autonomous-swarm.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/autonomous-swarm.html</guid>
+      <description>Decentralized coordination for unmanned platforms: emergent behavior, resilient mesh communication, GPS-denied navigation, and human-on-the-loop accountability. A Ravonics and INSTAR Lab architectural perspective.</description>
+    </item>
+    <item>
+      <title>Real-Time AI Decision Systems for Federal Missions | White Paper Abstract | Ravonics</title>
+      <link>https://ravonics.com/insights/blog-single.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/blog-single.html</guid>
+      <description>White paper abstract: real-time AI decision systems for federal missions. Topics include tactical edge deployment, latency optimization, explainable AI for operators, DDIL resilience, security-first ML pipelines, and multi-level data fusion. Full paper forthcoming from Ravonics.</description>
+    </item>
+    <item>
+      <title>Technical Publications - Defense AI, Quantum Computing, JADC2 Research | Ravonics</title>
+      <link>https://ravonics.com/insights/blog.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/blog.html</guid>
+      <description>Defense technology white-paper teasers from Ravonics: AI platform architectures, JADC2 integration patterns, zero-trust frameworks, autonomous systems, post-quantum cryptography, and tactical edge computing, from the Ravonics leadership team and INSTAR Lab collaborators.</description>
+    </item>
+    <item>
+      <title>CMMC 2.0: What Defense Contractors Must Understand Before First Award | Ravonics</title>
+      <link>https://ravonics.com/insights/cmmc-first-award.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/cmmc-first-award.html</guid>
+      <description>CMMC 2.0 explained for defense contractors: Level 1/2/3 requirements, NIST SP 800-171 alignment, self-assessment vs C3PAO, CUI handling, SPRS scoring, and POA&amp;M. Ravonics is itself pursuing this pathway as a new small business.</description>
+    </item>
+    <item>
+      <title>Digital Twin Modeling for Multi-Domain Operations | Ravonics</title>
+      <link>https://ravonics.com/insights/digital-twin-multidomain.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/digital-twin-multidomain.html</guid>
+      <description>Architecture patterns for digital twin modeling in multi-domain operational simulation: model-telemetry synchronization, fidelity levels, validation and verification, and federal program applications: a Ravonics research perspective.</description>
+    </item>
+    <item>
+      <title>Tactical Edge AI Hardware Evaluation | Ravonics</title>
+      <link>https://ravonics.com/insights/edge-ai-hardware-evaluation.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/edge-ai-hardware-evaluation.html</guid>
+      <description>Evaluating COTS AI accelerator silicon (GPU, NPU, FPGA, DSP, and ASIC) for SWaP-constrained tactical edge deployment: performance-per-watt benchmarking, thermal management, ruggedization, and supply-chain considerations.</description>
+    </item>
+    <item>
+      <title>Edge Computing at Tactical Scale: Architecture Considerations | Ravonics</title>
+      <link>https://ravonics.com/insights/edge-computing-tactical.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/edge-computing-tactical.html</guid>
+      <description>Hardware selection, power and thermal budgets, ruggedization, and graceful degradation for edge compute operating in denied, degraded, intermittent, and limited (DDIL) environments: a Ravonics architectural primer.</description>
+    </item>
+    <item>
+      <title>Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires | Ravonics</title>
+      <link>https://ravonics.com/insights/federal-cloud-fedramp.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/federal-cloud-fedramp.html</guid>
+      <description>What FedRAMP-aligned architecture actually requires: authorization boundary definition, control inheritance, impact level selection, and continuous monitoring: a design-first perspective from Ravonics. Note: Ravonics holds no FedRAMP authorization.</description>
+    </item>
+    <item>
+      <title>Capability Areas &amp; Technology Focus | Defense AI, Autonomy, Cryptography, Zero Trust | Ravonics</title>
+      <link>https://ravonics.com/insights/gallery.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/gallery.html</guid>
+      <description>Ravonics capability areas and technology focus: AI platforms, autonomous systems, zero-trust architecture, JADC2-compatible integration, quantum-resistant cryptography, and signal processing: illustrated through representative federal technology domains.</description>
+    </item>
+    <item>
+      <title>Hyperspectral Imaging &amp; Sensor Fusion | INSTAR Lab Research | Ravonics</title>
+      <link>https://ravonics.com/insights/hyperspectral-sensor-fusion.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/hyperspectral-sensor-fusion.html</guid>
+      <description>INSTAR Lab explores hyperspectral imaging combined with deep-learning classification and multi-sensor fusion for defense and research applications: a research direction targeting future SBIR/STTR opportunities.</description>
+    </item>
+    <item>
+      <title>Research Directions - INSTAR Lab R&amp;D, Quantum Research, AI Architecture | Ravonics</title>
+      <link>https://ravonics.com/insights/innovation.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/innovation.html</guid>
+      <description>Ravonics research directions: INSTAR Lab physics bench, quantum algorithm exploration, autonomous coordination concepts, post-quantum cryptography architecture, and digital twin modeling: durable R&amp;D areas supporting SBIR/STTR pathways and federal mission technology.</description>
+    </item>
+    <item>
+      <title>JADC2 Integration: Multi-Domain C2 Architecture Patterns | Ravonics</title>
+      <link>https://ravonics.com/insights/jadc2-integration.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/jadc2-integration.html</guid>
+      <description>Design patterns for JADC2-aligned systems (data-centric architecture, open standards, semantic interoperability, and event-driven mesh) that move data across air, land, sea, space, and cyber. A Ravonics integration perspective.</description>
+    </item>
+    <item>
+      <title>JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics</title>
+      <link>https://ravonics.com/insights/jadc2-interoperability-perspective.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/jadc2-interoperability-perspective.html</guid>
+      <description>Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.</description>
+    </item>
+    <item>
+      <title>Industry Perspectives - Federal AI Policy, Defense Tech Trends, Compliance Landscape | Ravonics</title>
+      <link>https://ravonics.com/insights/perspectives.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/perspectives.html</guid>
+      <description>Ravonics perspectives on federal technology trends: federal AI policy, CMMC compliance pathways, JADC2 implementation challenges, zero-trust architecture, and quantum threat timelines: honest analysis from a team with deep CS, AI/ML, and federal experience.</description>
+    </item>
+    <item>
+      <title>Post-Quantum Cryptography: Preparing Federal Communications | Ravonics</title>
+      <link>https://ravonics.com/insights/post-quantum-cryptography.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/post-quantum-cryptography.html</guid>
+      <description>Why federal systems should begin migrating now: the harvest-now-decrypt-later threat, NIST FIPS 203/204/205 standards (ML-KEM, ML-DSA, SLH-DSA), cryptographic agility, and a phased hybrid transition. A Ravonics architectural primer.</description>
+    </item>
+    <item>
+      <title>Post-Quantum Cryptography Architecture for Federal Systems | Ravonics</title>
+      <link>https://ravonics.com/insights/pqc-federal-architecture.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/pqc-federal-architecture.html</guid>
+      <description>A technical architecture guide to implementing NIST PQC standards (ML-KEM, ML-DSA, and SLH-DSA) across federal communications and data-at-rest: crypto-agility design, hybrid modes, key management, and phased migration sequencing.</description>
+    </item>
+    <item>
+      <title>Quantum Computing for Defense Optimization | Ravonics</title>
+      <link>https://ravonics.com/insights/quantum-defense-optimization.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/quantum-defense-optimization.html</guid>
+      <description>INSTAR Lab</description>
+    </item>
+    <item>
+      <title>The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now | Ravonics</title>
+      <link>https://ravonics.com/insights/quantum-threat-pqc-migration.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/quantum-threat-pqc-migration.html</guid>
+      <description>The harvest-now-decrypt-later threat, CRQC timeline uncertainty, NIST FIPS 203/204/205, NSA CNSA 2.0 transition timelines, and OMB/NSM-10 guidance: why federal agencies must begin post-quantum cryptography migration now, not after a quantum computer arrives.</description>
+    </item>
+    <item>
+      <title>Autonomous Swarm Coordination | Architecture Concepts | Ravonics</title>
+      <link>https://ravonics.com/insights/swarm-coordination-concepts.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/swarm-coordination-concepts.html</guid>
+      <description>Architectural concepts for AI-driven multi-platform swarm coordination in GPS-denied environments: decentralized control, consensus protocols, resilient PNT, comms-degraded behavior, and inter-platform deconfliction.</description>
+    </item>
+    <item>
+      <title>Neural Network Optimization for Tactical Edge AI | Ravonics</title>
+      <link>https://ravonics.com/insights/tactical-edge-ai.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/tactical-edge-ai.html</guid>
+      <description>How model quantization, pruning, knowledge distillation, and mixture-of-experts compression bring capable AI inference to constrained, denied-connectivity edge hardware for federal missions: a Ravonics architectural perspective.</description>
+    </item>
+    <item>
+      <title>References &amp; Validation - Capability Strengths &amp; Partner Ecosystem | Ravonics</title>
+      <link>https://ravonics.com/insights/testimonials.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/testimonials.html</guid>
+      <description>Ravonics capability strengths, partner ecosystem maturity, and leadership track record. Honest validation of our AI, autonomous systems, and federal-compliance approach: a credible new small business with a deeply experienced leadership bench and a real physics research bench.</description>
+    </item>
+    <item>
+      <title>Zero Trust Implementation for Federal Networks | Ravonics</title>
+      <link>https://ravonics.com/insights/zero-trust-federal.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/zero-trust-federal.html</guid>
+      <description>A practical framework for zero trust in federal environments: identity, micro-segmentation, continuous verification, and policy-as-code aligned to NIST SP 800-207, with immutable infrastructure and GitOps as enablers. A Ravonics perspective.</description>
+    </item>
+    <item>
+      <title>Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation | Ravonics</title>
+      <link>https://ravonics.com/insights/zero-trust-mandates-perspective.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/zero-trust-mandates-perspective.html</guid>
+      <description>OMB M-22-09 and CISA ZTMM mandate zero trust adoption across federal agencies, yet most programs stall. This perspective examines why identity and ICAM foundation must come first, and the architectural patterns that make zero trust adoption practical rather than performative.</description>
+    </item>
+  </channel>
+</rss>
