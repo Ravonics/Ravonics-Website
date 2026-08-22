@@ -32,9 +32,12 @@ test.describe('published route contract', () => {
 
       const axeResults = await new AxeBuilder({ page }).analyze();
       const blockingViolations = axeResults.violations.filter(
-        (violation) => violation.impact === 'critical' || violation.impact === 'serious'
+        (violation) =>
+          violation.impact === 'critical' || violation.impact === 'serious' || violation.impact === 'moderate'
       );
-      expect(blockingViolations, `${route.route} critical/serious accessibility violations`).toEqual([]);
+      expect(blockingViolations, `${route.route} critical/serious/moderate accessibility violations`).toEqual(
+        []
+      );
     });
   }
 

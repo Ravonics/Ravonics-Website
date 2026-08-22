@@ -137,6 +137,22 @@ test('handleLead: rejects malformed JSON before configuration or network access'
   assert.strictEqual(result.jsonBody.error, 'invalid_json');
 });
 
+test('handleLead: rejects untrusted browser origins before parsing or forwarding', async function () {
+  const request = new Request('https://example.test/api/lead/contact', {
+    method: 'POST',
+    headers: {
+      origin: 'https://example.invalid',
+      'content-type': 'application/json'
+    },
+    body: '{'
+  });
+  const result = await handleLead('contact', request, testContext());
+
+  assert.strictEqual(result.status, 403);
+  assert.strictEqual(result.jsonBody.error, 'origin_not_allowed');
+  assert.strictEqual(result.headers['Access-Control-Allow-Origin'], undefined);
+});
+
 test('handleLead: rejects unknown body form without network access', async function () {
   const request = new Request('https://example.test/api/lead', {
     method: 'POST',

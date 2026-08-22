@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "node scripts/build-site.mjs",
+    "release:check": "node scripts/verify-release-provenance.mjs",
     "build:astro": "astro build",
     "check": "astro check && tsc --noEmit",
     "format:check": "prettier --check \"astro.config.mjs\" \"eslint.config.mjs\" \"scripts/**/*.mjs\" \"src/**/*.astro\" \"src/**/*.ts\" \"tests/**/*.ts\" \"*.{json,mjs,ts}\"",

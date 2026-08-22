@@ -55,19 +55,19 @@ const CONFIG = {
   turnstileSecret: process.env.TURNSTILE_SECRET || '',
   // When true, requests missing/failing Turnstile are rejected. When the secret
   // is unset we fail-closed in production-like config; see verifyTurnstile().
-  turnstileRequired:
-    String(process.env.TURNSTILE_REQUIRED || 'true').toLowerCase() !== 'false',
+  turnstileRequired: String(process.env.TURNSTILE_REQUIRED || 'true').toLowerCase() !== 'false',
 
   // Abuse controls.
   maxBodyBytes: parseInt(process.env.MAX_BODY_BYTES || String(20 * 1024 * 1024), 10), // 20 MB (booking allows ~15 MB of base64 attachments)
-  rateLimitMax: parseInt(process.env.RATE_LIMIT_MAX || '5', 10),       // requests
+  rateLimitMax: parseInt(process.env.RATE_LIMIT_MAX || '5', 10), // requests
   rateLimitWindowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || '60000', 10), // per window (default 60s)
 
   // CORS: comma-separated allowed origins. Default to the production site.
-  allowedOrigins: (process.env.ALLOWED_ORIGINS ||
-    'https://ravonics.com,https://www.ravonics.com')
+  allowedOrigins: (process.env.ALLOWED_ORIGINS || 'https://ravonics.com,https://www.ravonics.com')
     .split(',')
-    .map(function (s) { return s.trim(); })
+    .map(function (s) {
+      return s.trim();
+    })
     .filter(Boolean)
 };
 
@@ -114,7 +114,9 @@ function checkRateLimit(ip, now) {
 
 // Opportunistically prune stale IP entries so the map cannot grow unbounded.
 function pruneRateState(now) {
-  if (rateState.size < 5000) { return; }
+  if (rateState.size < 5000) {
+    return;
+  }
   const cutoff = now - CONFIG.rateLimitWindowMs;
   for (const [ip, hits] of rateState) {
     if (!hits.length || hits[hits.length - 1] < cutoff) {
@@ -144,7 +146,7 @@ function corsHeaders(origin) {
     'Content-Type': 'application/json',
     'Cache-Control': 'no-store',
     'X-Content-Type-Options': 'nosniff',
-    'Vary': 'Origin'
+    Vary: 'Origin'
   };
   if (origin && CONFIG.allowedOrigins.indexOf(origin) !== -1) {
     headers['Access-Control-Allow-Origin'] = origin;
@@ -192,7 +194,9 @@ async function verifyTurnstile(token, ip, context) {
 
   try {
     const controller = new AbortController();
-    const timer = setTimeout(function () { controller.abort(); }, 8000);
+    const timer = setTimeout(function () {
+      controller.abort();
+    }, 8000);
     let resp;
     try {
       resp = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -265,7 +269,9 @@ function looksLikeSpam(payload) {
 async function forwardToLogicApp(url, payload, context) {
   try {
     const controller = new AbortController();
-    const timer = setTimeout(function () { controller.abort(); }, 25000);
+    const timer = setTimeout(function () {
+      controller.abort();
+    }, 25000);
     let resp;
     try {
       resp = await fetch(url, {
@@ -302,6 +308,19 @@ async function handleLead(formFromRoute, request, context) {
     return { status: 204, headers: corsHeaders(origin) };
   }
 
+  // CORS prevents untrusted browsers from reading responses, but it does not
+  // stop a cross-site POST from reaching the function. Reject browser-origin
+  // requests outside the allowlist before parsing or forwarding any payload;
+  // requests without Origin remain available for trusted server-side callers.
+  if (origin && CONFIG.allowedOrigins.indexOf(origin) === -1) {
+    context.warn('Rejected request from untrusted origin: ' + origin);
+    return jsonResponse(
+      403,
+      { ok: false, error: 'origin_not_allowed', message: 'Origin is not allowed.' },
+      origin
+    );
+  }
+
   const now = Date.now();
   const ip = clientIp(request);
   pruneRateState(now);
@@ -310,8 +329,15 @@ async function handleLead(formFromRoute, request, context) {
   const contentLength = parseInt(request.headers.get('content-length') || '0', 10);
   if (contentLength && contentLength > CONFIG.maxBodyBytes) {
     context.warn('Rejected oversized payload from ' + ip + ': ' + contentLength + ' bytes');
-    return jsonResponse(413, { ok: false, error: 'payload_too_large',
-      message: 'The submission is too large. Please reduce attachment size and try again.' }, origin);
+    return jsonResponse(
+      413,
+      {
+        ok: false,
+        error: 'payload_too_large',
+        message: 'The submission is too large. Please reduce attachment size and try again.'
+      },
+      origin
+    );
   }
 
   // --- Parse body ----------------------------------------------------------
@@ -320,42 +346,64 @@ async function handleLead(formFromRoute, request, context) {
     raw = await request.text();
   } catch (err) {
     context.error('Failed to read request body: ' + err.message);
-    return jsonResponse(400, { ok: false, error: 'bad_request',
-      message: 'Could not read the submission.' }, origin);
+    return jsonResponse(
+      400,
+      { ok: false, error: 'bad_request', message: 'Could not read the submission.' },
+      origin
+    );
   }
 
   // Enforce the cap again against the actual bytes (Content-Length can lie).
   if (Buffer.byteLength(raw, 'utf8') > CONFIG.maxBodyBytes) {
     context.warn('Rejected oversized payload (actual) from ' + ip);
-    return jsonResponse(413, { ok: false, error: 'payload_too_large',
-      message: 'The submission is too large. Please reduce attachment size and try again.' }, origin);
+    return jsonResponse(
+      413,
+      {
+        ok: false,
+        error: 'payload_too_large',
+        message: 'The submission is too large. Please reduce attachment size and try again.'
+      },
+      origin
+    );
   }
 
   let payload;
   try {
     payload = JSON.parse(raw || '{}');
   } catch (err) {
-    return jsonResponse(400, { ok: false, error: 'invalid_json',
-      message: 'The submission was malformed.' }, origin);
+    return jsonResponse(
+      400,
+      { ok: false, error: 'invalid_json', message: 'The submission was malformed.' },
+      origin
+    );
   }
   if (payload === null || typeof payload !== 'object' || Array.isArray(payload)) {
-    return jsonResponse(400, { ok: false, error: 'invalid_payload',
-      message: 'The submission was malformed.' }, origin);
+    return jsonResponse(
+      400,
+      { ok: false, error: 'invalid_payload', message: 'The submission was malformed.' },
+      origin
+    );
   }
 
   // --- Resolve the target form --------------------------------------------
   let form = formFromRoute || payload.form || '';
   form = String(form).toLowerCase();
   if (VALID_FORMS.indexOf(form) === -1) {
-    return jsonResponse(400, { ok: false, error: 'unknown_form',
-      message: 'Unknown form target.' }, origin);
+    return jsonResponse(400, { ok: false, error: 'unknown_form', message: 'Unknown form target.' }, origin);
   }
 
   const targetUrl = CONFIG.urls[form];
   if (!targetUrl) {
     context.error('No Logic App URL configured for form "' + form + '". Check App Settings.');
-    return jsonResponse(500, { ok: false, error: 'not_configured',
-      message: 'The submission service is temporarily unavailable. Please email us directly.' }, origin);
+    return jsonResponse(
+      500,
+      {
+        ok: false,
+        error: 'not_configured',
+        message: 'The submission service is temporarily unavailable. Please email us directly.'
+      },
+      origin
+    );
   }
 
   // --- Honeypot ------------------------------------------------------------
@@ -370,8 +418,16 @@ async function handleLead(formFromRoute, request, context) {
   if (spamReason) {
     context.warn('Spam heuristic (' + spamReason + ') from ' + ip + ' on form ' + form + '; dropping.');
     // Return a generic validation error rather than revealing the heuristic.
-    return jsonResponse(422, { ok: false, error: 'rejected',
-      message: 'Your message could not be accepted. Please remove links and try again, or email us directly.' }, origin);
+    return jsonResponse(
+      422,
+      {
+        ok: false,
+        error: 'rejected',
+        message:
+          'Your message could not be accepted. Please remove links and try again, or email us directly.'
+      },
+      origin
+    );
   }
 
   // --- Rate limit ----------------------------------------------------------
@@ -381,9 +437,12 @@ async function handleLead(formFromRoute, request, context) {
     return {
       status: 429,
       headers: Object.assign(corsHeaders(origin), { 'Retry-After': String(rl.retryAfterSec) }),
-      jsonBody: { ok: false, error: 'rate_limited',
+      jsonBody: {
+        ok: false,
+        error: 'rate_limited',
         message: 'Too many submissions. Please wait a moment and try again.',
-        retry_after: rl.retryAfterSec }
+        retry_after: rl.retryAfterSec
+      }
     };
   }
 
@@ -391,12 +450,22 @@ async function handleLead(formFromRoute, request, context) {
   const token = payload.cf_turnstile_token || payload.turnstile_token || '';
   const captcha = await verifyTurnstile(token, ip, context);
   if (!captcha.ok) {
-    const status = (captcha.reason === 'captcha_verify_unreachable' || captcha.reason === 'captcha_misconfigured')
-      ? 503 : 403;
-    return jsonResponse(status, { ok: false, error: captcha.reason,
-      message: status === 503
-        ? 'We could not verify the security check right now. Please try again shortly, or email us directly.'
-        : 'Security check failed. Please complete the challenge and try again.' }, origin);
+    const status =
+      captcha.reason === 'captcha_verify_unreachable' || captcha.reason === 'captcha_misconfigured'
+        ? 503
+        : 403;
+    return jsonResponse(
+      status,
+      {
+        ok: false,
+        error: captcha.reason,
+        message:
+          status === 503
+            ? 'We could not verify the security check right now. Please try again shortly, or email us directly.'
+            : 'Security check failed. Please complete the challenge and try again.'
+      },
+      origin
+    );
   }
 
   // --- Build the forwarded payload ----------------------------------------
@@ -421,8 +490,15 @@ async function handleLead(formFromRoute, request, context) {
 
   // Upstream failure. Surface a clean error; the frontend keeps its mailto
   // fallback so the lead is never silently lost.
-  return jsonResponse(502, { ok: false, error: 'upstream_failed',
-    message: 'We could not submit your request right now. Please email us directly at contact@ravonics.com.' }, origin);
+  return jsonResponse(
+    502,
+    {
+      ok: false,
+      error: 'upstream_failed',
+      message: 'We could not submit your request right now. Please email us directly at contact@ravonics.com.'
+    },
+    origin
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -465,7 +541,9 @@ app.http('health', {
         service: 'ravonics-lead-proxy',
         version: SERVICE_VERSION,
         runtime: process.versions.node,
-        forms_configured: VALID_FORMS.filter(function (f) { return !!CONFIG.urls[f]; }),
+        forms_configured: VALID_FORMS.filter(function (f) {
+          return !!CONFIG.urls[f];
+        }),
         turnstile: CONFIG.turnstileSecret ? 'configured' : 'absent',
         turnstile_required: CONFIG.turnstileRequired
       }

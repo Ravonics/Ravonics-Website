@@ -13,41 +13,41 @@ It exits non-zero (FAIL) if any of the following are detected in the target tree
 These are internal/tooling files that are git-tracked on the `demo` branch
 but must never appear on `gh-pages`:
 
-| Pattern | Reason |
-|---|---|
-| `CLAUDE.md` | AI agent instructions; internal |
-| `.copy-rewrite-protocol.md` | Internal copywriting protocol |
-| `.copy-reframe-kit.md` | Internal copywriting kit |
-| `.build-spec.md` | Contains founder legal name PII + fabricated-identifier list |
-| `.image-plan.md` | Image generation strategy; internal |
-| `.image-progress.md` | Image generation state; internal |
-| `.gitlab-ci.yml` | Internal CI config; no value on public branch |
-| `image-manifest.csv` | Internal image ledger |
-| `style.txt` | Internal style notes |
-| `website-strategy-recommendations.html` | Internal strategy doc |
-| `.image-runner.log` | Internal runtime log |
-| `README.md` | Internal repo readme |
-| `SEO-*.md` | Internal SEO working docs |
-| `_preview-*.html` | Color scheme experiments; not production |
-| `*.md` (any Markdown) | Public site ships no Markdown; any .md is an internal leak |
-| `.claude/` directory | AI agent state and settings |
-| `.astro/`, `.vite/` directories | Build caches; internal |
-| `build/`, `dist/` directories | Build output and artifacts; publish only the scrubbed site root |
-| `styles/` directory | Color scheme experiments |
-| `template/` directory | Pristine vendor template; never the live site |
-| `scripts/` directory | This tooling directory; internal only |
+| Pattern                                 | Reason                                                          |
+| --------------------------------------- | --------------------------------------------------------------- |
+| `CLAUDE.md`                             | AI agent instructions; internal                                 |
+| `.copy-rewrite-protocol.md`             | Internal copywriting protocol                                   |
+| `.copy-reframe-kit.md`                  | Internal copywriting kit                                        |
+| `.build-spec.md`                        | Contains founder legal name PII + fabricated-identifier list    |
+| `.image-plan.md`                        | Image generation strategy; internal                             |
+| `.image-progress.md`                    | Image generation state; internal                                |
+| `.gitlab-ci.yml`                        | Internal CI config; no value on public branch                   |
+| `image-manifest.csv`                    | Internal image ledger                                           |
+| `style.txt`                             | Internal style notes                                            |
+| `website-strategy-recommendations.html` | Internal strategy doc                                           |
+| `.image-runner.log`                     | Internal runtime log                                            |
+| `README.md`                             | Internal repo readme                                            |
+| `SEO-*.md`                              | Internal SEO working docs                                       |
+| `_preview-*.html`                       | Color scheme experiments; not production                        |
+| `*.md` (any Markdown)                   | Public site ships no Markdown; any .md is an internal leak      |
+| `.claude/` directory                    | AI agent state and settings                                     |
+| `.astro/`, `.vite/` directories         | Build caches; internal                                          |
+| `build/`, `dist/` directories           | Build output and artifacts; publish only the scrubbed site root |
+| `styles/` directory                     | Color scheme experiments                                        |
+| `template/` directory                   | Pristine vendor template; never the live site                   |
+| `scripts/` directory                    | This tooling directory; internal only                           |
 
 ### Section 2 — Forbidden content strings
 
 The script greps across all HTML, JS, CSS, JSON, XML, CSV, and text files for:
 
-| String / Pattern | Reason |
-|---|---|
-| `Matthew` | Founder legal name PII (published name is "Sean Hackney") |
+| String / Pattern            | Reason                                                      |
+| --------------------------- | ----------------------------------------------------------- |
+| `Matthew`                   | Founder legal name PII (published name is "Sean Hackney")   |
 | SAM expiration date pattern | Policy: do not publish the SAM.gov expiration date publicly |
-| `F7K9M2P4N8Q6` | Fabricated/old UEI — must not reappear |
-| `8R4T5` | Fabricated/old CAGE code — must not reappear |
-| `07-845-9321` | Fabricated DUNS — retired standard, must not reappear |
+| `F7K9M2P4N8Q6`              | Fabricated/old UEI — must not reappear                      |
+| `8R4T5`                     | Fabricated/old CAGE code — must not reappear                |
+| `07-845-9321`               | Fabricated DUNS — retired standard, must not reappear       |
 
 ### Section 3 — Belt-and-suspenders Markdown check
 
@@ -61,6 +61,9 @@ Markdown files are always internal documents.
 The tested `build/site` artifact is the only source for publication. Do not
 overlay files from `demo` or another source branch: that can silently publish
 stale markup, omit the RSS feed, or bypass the Astro build checks.
+Each build also publishes `.well-known/ravonics-release.json`, which records the
+source commit and a deterministic SHA-256 tree digest for independent release
+provenance verification.
 
 ```bash
 # 1. Build and validate the exact artifact that will be published
@@ -68,6 +71,7 @@ npm ci
 npm ci --prefix proxy
 npm run test:all
 ./scripts/verify-ghpages-clean.sh build/site
+npm run release:check
 
 # 2. Create an isolated gh-pages worktree (non-destructive to the source tree)
 git fetch github gh-pages

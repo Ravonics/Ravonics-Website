@@ -4,10 +4,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { ROOT } from './site-routes.mjs';
+import { artifactDigest, currentSourceCommit, RELEASE_MANIFEST_PATH } from './release-provenance.mjs';
 
 const output = path.join(ROOT, 'build', 'site');
 const buildRoot = path.dirname(output);
 const lockPath = path.join(buildRoot, '.site-build.lock');
+const sitePackage = JSON.parse(await fs.readFile(path.join(ROOT, 'package.json'), 'utf8'));
 const fontAssets = [
   'elegant_font/HTML_CSS/style.css',
   'elegant_font/HTML_CSS/fonts',
@@ -127,6 +129,16 @@ try {
     }
   });
   await fs.writeFile(path.join(staging, '.nojekyll'), '');
+
+  const releaseManifest = {
+    schemaVersion: 1,
+    siteVersion: sitePackage.version,
+    sourceCommit: currentSourceCommit(ROOT),
+    artifactSha256: await artifactDigest(staging)
+  };
+  const releaseManifestFile = path.join(staging, RELEASE_MANIFEST_PATH);
+  await fs.mkdir(path.dirname(releaseManifestFile), { recursive: true });
+  await fs.writeFile(releaseManifestFile, `${JSON.stringify(releaseManifest, null, 2)}\n`);
 
   const forbidden = ['CLAUDE.md', 'README.md', 'scripts', 'proxy', 'src', 'template', 'styles', 'dist'];
   for (const entry of forbidden) {

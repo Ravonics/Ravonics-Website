@@ -79,6 +79,18 @@ if (untrustedPreflight.headers.has('access-control-allow-origin')) {
   fail('preflight (untrusted): unexpected allow origin header');
 }
 
+const untrustedPost = await fetch(`${base}/lead/contact`, {
+  method: 'POST',
+  headers: {
+    Origin: 'https://example.invalid',
+    'Content-Type': 'application/json'
+  },
+  body: '{'
+});
+if (untrustedPost.status !== 403) {
+  fail(`post (untrusted): expected 403, received ${untrustedPost.status}`);
+}
+
 const malformed = await fetch(`${base}/lead/contact`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json', Origin: 'https://ravonics.com' },
@@ -96,7 +108,13 @@ console.log(
       version: healthBody.version,
       runtime: healthBody.runtime,
       forms: healthBody.forms_configured,
-      checks: ['health', 'cors-preflight-both-origins', 'cors-rejects-untrusted', 'malformed-json']
+      checks: [
+        'health',
+        'cors-preflight-both-origins',
+        'cors-rejects-untrusted-preflight',
+        'cors-rejects-untrusted-post',
+        'malformed-json'
+      ]
     },
     null,
     2
