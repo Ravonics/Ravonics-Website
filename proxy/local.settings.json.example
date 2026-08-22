@@ -4,6 +4,7 @@
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "FUNCTIONS_EXTENSION_VERSION": "~4",
     "SERVICE_VERSION": "2026.08.22",
+    "SERVICE_COMMIT": "local",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
 
     "_comment_secrets": "The two values below are SECRETS. Never commit a real local.settings.json. In Azure these live in App Settings (see README).",

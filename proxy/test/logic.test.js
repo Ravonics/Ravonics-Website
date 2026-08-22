@@ -23,7 +23,8 @@ const CONFIG_ENV_KEYS = [
   'RATE_LIMIT_MAX',
   'RATE_LIMIT_WINDOW_MS',
   'ALLOWED_ORIGINS',
-  'SERVICE_VERSION'
+  'SERVICE_VERSION',
+  'SERVICE_COMMIT'
 ];
 const originalEnvironment = new Map();
 for (const key of CONFIG_ENV_KEYS) {

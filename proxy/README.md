@@ -80,6 +80,7 @@ their existing `mailto:` fallback.
 | `RATE_LIMIT_WINDOW_MS`      | `60000`                                                      |
 | `ALLOWED_ORIGINS`           | `https://ravonics.com,https://www.ravonics.com`             |
 | `SERVICE_VERSION`            | deployed release identifier (non-secret)                    |
+| `SERVICE_COMMIT`             | immutable source commit deployed (non-secret)               |
 
 Never commit a real `local.settings.json`. Use `local.settings.json.example` as
 a template for local runs (`func start`). On Flex Consumption, the Node runtime
@@ -111,6 +112,8 @@ az functionapp create -n "$APP" -g "$RG" \
   --functions-version 4
 
 # Secrets + config (replace REDACTED with real values retrieved via listCallbackUrl).
+# Bind the running proxy to the source commit being deployed.
+GIT_COMMIT="$(git rev-parse HEAD)"
 az functionapp config appsettings set -n "$APP" -g "$RG" --settings \
   "LOGICAPP_URL_CONSULTATION=<consultation-callback-url>" \
   "LOGICAPP_URL_CAPABILITY=<capability-callback-url>" \
@@ -119,7 +122,9 @@ az functionapp config appsettings set -n "$APP" -g "$RG" --settings \
   "MAX_BODY_BYTES=20971520" \
   "RATE_LIMIT_MAX=5" \
   "RATE_LIMIT_WINDOW_MS=60000" \
-  "ALLOWED_ORIGINS=https://ravonics.com,https://www.ravonics.com"
+  "ALLOWED_ORIGINS=https://ravonics.com,https://www.ravonics.com" \
+  "SERVICE_VERSION=2026.08.22" \
+  "SERVICE_COMMIT=$GIT_COMMIT"
 
 # Configure Azure's site-level CORS policy as well as the proxy response
 # headers. This is required for browser preflight requests on the live forms.
@@ -131,6 +136,12 @@ node --version
 npm ci --omit=dev
 zip -r ../ravonics-lead-proxy.zip . -x 'test/*' '*.test.js' 'local.settings.json' '.git*' 'README.md' >/dev/null
 az functionapp deployment source config-zip -n "$APP" -g "$RG" --src ../ravonics-lead-proxy.zip
+
+# Safe live contract: this exercises health, both trusted preflights, rejection
+# of untrusted origins, and malformed JSON without creating a lead record.
+RAVONICS_EXPECTED_VERSION=2026.08.22 \
+RAVONICS_EXPECTED_PROXY_COMMIT="$GIT_COMMIT" \
+npm run proxy:smoke
 ```
 
 If Flex Consumption or Node 24 is unavailable in the target subscription or

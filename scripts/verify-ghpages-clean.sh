@@ -27,6 +27,7 @@ TARGET_DIR="${1:-.}"
 
 # Resolve to an absolute path so messages are unambiguous
 TARGET_DIR="$(cd "${TARGET_DIR}" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 FAIL=0
 VIOLATIONS=()
@@ -205,6 +206,18 @@ done < <(grep -r -l -I \
 while IFS= read -r hit; do
   [[ -n "${hit}" ]] && violation "MARKDOWN FILE (public site ships none): ${hit}"
 done < <(find "${TARGET_DIR}" -name "*.md" -not -path "*/.git/*" 2>/dev/null)
+
+# ---------------------------------------------------------------------------
+# Check 4 — Release provenance
+# The final publish worktree must still be the exact artifact produced from
+# the current source commit. This prevents a clean-but-stale overlay from
+# passing the content scrub and being published.
+# ---------------------------------------------------------------------------
+PROVENANCE_ERROR=""
+if ! PROVENANCE_ERROR="$(node "${SCRIPT_DIR}/verify-release-provenance.mjs" "${TARGET_DIR}" 2>&1 >/dev/null)"; then
+  PROVENANCE_ERROR="${PROVENANCE_ERROR//$'\n'/ }"
+  violation "RELEASE PROVENANCE: ${PROVENANCE_ERROR}"
+fi
 
 # ---------------------------------------------------------------------------
 # Result

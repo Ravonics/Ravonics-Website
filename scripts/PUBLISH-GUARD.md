@@ -4,7 +4,8 @@
 
 `verify-ghpages-clean.sh` is a pre-push safety gate for the Ravonics.com public site.
 It must be run against the gh-pages worktree **after** the scrubbed overlay is applied
-and **before** `git push github gh-pages`.
+and **before** `git push github gh-pages`. In addition to the content scrub, the guard
+verifies the final worktree's release manifest and deterministic artifact digest.
 
 It exits non-zero (FAIL) if any of the following are detected in the target tree:
 
@@ -98,6 +99,7 @@ touch /tmp/ghpages-publish/.nojekyll
 git -C /tmp/ghpages-publish add .nojekyll
 
 # 6. *** RUN THE SAFETY GUARD — abort if it fails ***
+#    This also verifies the final worktree's source commit and artifact digest.
 /home/mrh/repos/ravonics/Ravonics-Website/scripts/verify-ghpages-clean.sh \
   /tmp/ghpages-publish
 

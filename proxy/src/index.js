@@ -37,6 +37,7 @@ const { app } = require('@azure/functions');
 
 const packageVersion = require('../package.json').version;
 const SERVICE_VERSION = process.env.SERVICE_VERSION || packageVersion || 'dev';
+const SERVICE_COMMIT = process.env.SERVICE_COMMIT || 'unknown';
 
 // ---------------------------------------------------------------------------
 // Configuration (all from App Settings / environment)
@@ -540,6 +541,7 @@ app.http('health', {
         ok: true,
         service: 'ravonics-lead-proxy',
         version: SERVICE_VERSION,
+        source_commit: SERVICE_COMMIT,
         runtime: process.versions.node,
         forms_configured: VALID_FORMS.filter(function (f) {
           return !!CONFIG.urls[f];

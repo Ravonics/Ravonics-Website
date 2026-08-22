@@ -3,6 +3,7 @@ const base = (process.env.RAVONICS_PROXY_BASE || 'https://ravonics-lead-proxy.az
   ''
 );
 const expectedVersion = process.env.RAVONICS_EXPECTED_VERSION || '';
+const expectedCommit = process.env.RAVONICS_EXPECTED_PROXY_COMMIT || '';
 
 function fail(message) {
   throw new Error(message);
@@ -36,6 +37,9 @@ if (healthBody.turnstile !== 'configured' || healthBody.turnstile_required !== t
 }
 if (expectedVersion && healthBody.version !== expectedVersion) {
   fail(`health: expected version ${expectedVersion}, received ${healthBody.version}`);
+}
+if (expectedCommit && healthBody.source_commit !== expectedCommit) {
+  fail(`health: expected source commit ${expectedCommit}, received ${healthBody.source_commit}`);
 }
 
 for (const origin of ['https://ravonics.com', 'https://www.ravonics.com']) {
@@ -106,6 +110,7 @@ console.log(
       ok: true,
       base,
       version: healthBody.version,
+      sourceCommit: healthBody.source_commit,
       runtime: healthBody.runtime,
       forms: healthBody.forms_configured,
       checks: [
