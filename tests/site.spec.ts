@@ -7,6 +7,9 @@ const routes = collectLiveRoutes();
 test.describe('published route contract', () => {
   for (const route of routes) {
     test(route.route, async ({ page }) => {
+      // Accessibility assertions should inspect the settled document, not a
+      // partially transparent animation frame from the legacy theme.
+      await page.emulateMedia({ reducedMotion: 'reduce' });
       const response = await page.goto(route.route, { waitUntil: 'domcontentloaded' });
       expect(response?.status(), `${route.route} response`).toBe(200);
       await expect(page).toHaveTitle(/\S+/);
@@ -28,8 +31,10 @@ test.describe('published route contract', () => {
       expect(hasHorizontalOverflow, `${route.route} horizontal overflow`).toBe(false);
 
       const axeResults = await new AxeBuilder({ page }).analyze();
-      const criticalViolations = axeResults.violations.filter((violation) => violation.impact === 'critical');
-      expect(criticalViolations, `${route.route} critical accessibility violations`).toEqual([]);
+      const blockingViolations = axeResults.violations.filter(
+        (violation) => violation.impact === 'critical' || violation.impact === 'serious'
+      );
+      expect(blockingViolations, `${route.route} critical/serious accessibility violations`).toEqual([]);
     });
   }
 
@@ -54,5 +59,17 @@ test.describe('published route contract', () => {
     await page.keyboard.press('Escape');
     await expect(dialog).toHaveAttribute('aria-hidden', 'true');
     await expect(trigger).toBeFocused();
+  });
+
+  test('conversion forms expose a no-JavaScript contact path', async ({ browser }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    for (const route of ['/contact.html', '/booking.html', '/company/doing-business.html']) {
+      const page = await context.newPage();
+      await page.goto(route, { waitUntil: 'domcontentloaded' });
+      await expect(page.locator('.no-js-fallback')).toBeVisible();
+      await expect(page.locator('.no-js-fallback a[href^="mailto:"]')).toHaveCount(1);
+      await page.close();
+    }
+    await context.close();
   });
 });

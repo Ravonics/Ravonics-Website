@@ -6,6 +6,8 @@ import { spawnSync } from 'node:child_process';
 import { ROOT } from './site-routes.mjs';
 
 const output = path.join(ROOT, 'build', 'site');
+const buildRoot = path.dirname(output);
+const lockPath = path.join(buildRoot, '.site-build.lock');
 const fontAssets = [
   'elegant_font/HTML_CSS/style.css',
   'elegant_font/HTML_CSS/fonts',
@@ -50,11 +52,51 @@ async function copyFontAssets(staging) {
   }
 }
 
-await fs.mkdir(path.dirname(output), { recursive: true });
-let staging = await fs.mkdtemp(path.join(path.dirname(output), '.site-staging-'));
+async function acquireBuildLock() {
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const handle = await fs.open(lockPath, 'wx');
+      await handle.writeFile(`${process.pid}\n`);
+      return handle;
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+
+      const owner = await fs.readFile(lockPath, 'utf8').catch(() => '');
+      const pid = Number.parseInt(owner, 10);
+      if (pid && pid !== process.pid) {
+        try {
+          process.kill(pid, 0);
+        } catch (probeError) {
+          if (probeError.code === 'ESRCH') {
+            await fs.unlink(lockPath).catch((unlinkError) => {
+              if (unlinkError.code !== 'ENOENT') throw unlinkError;
+            });
+            continue;
+          }
+        }
+      }
+      throw new Error(`Another site build is already running (lock: ${lockPath}).`);
+    }
+  }
+  throw new Error(`Could not acquire site build lock: ${lockPath}`);
+}
+
+async function releaseBuildLock(handle) {
+  if (!handle) return;
+  await handle.close();
+  await fs.unlink(lockPath).catch((error) => {
+    if (error.code !== 'ENOENT') throw error;
+  });
+}
+
+await fs.mkdir(buildRoot, { recursive: true });
+let lockHandle = null;
+let staging = null;
 let previous = null;
 
 try {
+  lockHandle = await acquireBuildLock();
+  staging = await fs.mkdtemp(path.join(buildRoot, '.site-staging-'));
   // Build into an invocation-specific directory so another build cannot delete
   // the tree currently being served by Playwright or a local preview process.
   run(process.platform === 'win32' ? 'npx.cmd' : 'npx', ['astro', 'build', '--outDir', staging]);
@@ -104,7 +146,8 @@ try {
   }
 
   // Replace the previous complete tree only after the new tree has passed all
-  // checks. Unique backup names let overlapping builds finish last-writer-wins.
+  // checks. The lock makes this promotion a single-writer operation, so a
+  // failed build cannot delete or restore over a concurrent successful build.
   previous = `${output}.previous-${process.pid}-${Date.now()}`;
   try {
     await fs.rename(output, previous);
@@ -126,7 +169,11 @@ try {
   }
   throw error;
 } finally {
-  if (staging) await fs.rm(staging, { recursive: true, force: true });
+  try {
+    if (staging) await fs.rm(staging, { recursive: true, force: true });
+  } finally {
+    await releaseBuildLock(lockHandle);
+  }
 }
 
 console.log(`Static site built at ${output}`);

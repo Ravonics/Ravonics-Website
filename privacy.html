@@ -11,7 +11,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https: https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
-    <meta content="Privacy Policy for Ravonics LLC. Learn how we collect, use, and protect information submitted through our website contact and consultation booking forms. Effective June 2026." name="description">
+    <meta content="Privacy Policy for Ravonics LLC. Learn how we collect, use, and protect information submitted through our three website forms. Effective August 22, 2026." name="description">
     <meta content="Ravonics privacy policy, federal contractor data handling, website privacy, contact form data, consultation form privacy" name="keywords">
     <meta content="RAVONICS" name="author">
     <link rel="canonical" href="https://ravonics.com/privacy.html">
@@ -99,7 +99,11 @@
 <body>
     <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
-        <a href="#" id="back-to-top"></a>
+        <div id="back-to-top-region" role="region" aria-label="Page navigation">
+
+          <a href="#" id="back-to-top" aria-label="Back to top"></a>
+
+        </div>
 
         <!-- page preloader begin -->
         <div id="de-loader"></div>
@@ -225,14 +229,14 @@
 
                             <div class="subtitle">Legal</div>
                             <h2 class="wow fadeInUp">Privacy Policy</h2>
-                            <p class="lead"><strong>Effective Date: June 25, 2026</strong></p>
+                            <p class="lead"><strong>Effective Date: August 22, 2026</strong></p>
                             <p>Ravonics LLC ("Ravonics," "we," "us," or "our") operates the website at <strong>ravonics.com</strong> (the "Site"). This Privacy Policy explains what information we collect through the Site, how we use it, and your choices regarding that information. By using the Site or submitting information through our forms, you agree to the practices described here.</p>
 
                             <div class="spacer-20"></div>
 
                             <h3>1. Information We Collect</h3>
                             <p>The Site is an informational marketing website. We do not collect personal information through passive browsing: no tracking cookies or third-party advertising scripts are deployed on this Site (see Section 4).</p>
-                            <p>We collect information only when you voluntarily submit one of our two website forms:</p>
+                            <p>We collect information only when you voluntarily submit one of our three website forms:</p>
 
                             <h2 class="legacy-h4 h4">Contact Form (contact.html)</h2>
                             <p>The general contact form collects:</p>
@@ -257,7 +261,15 @@
                                 <li>Supporting documents attached to the submission (unclassified only)</li>
                                 <li>Free-text project and scope summary (unclassified)</li>
                             </ul>
-                            <p>All fields collected through both forms relate exclusively to professional and business inquiries. We do not request sensitive personal information (e.g., Social Security numbers, financial account details, health information).</p>
+                            <h2 class="legacy-h4 h4">Capability Update Form (company/doing-business.html)</h2>
+                            <p>The capability update form collects:</p>
+                            <ul>
+                                <li>Name</li>
+                                <li>Work email address</li>
+                                <li>Agency or organization (optional)</li>
+                                <li>Primary area of interest (optional)</li>
+                            </ul>
+                            <p>All fields collected through these forms relate exclusively to professional and business inquiries. We do not request sensitive personal information (e.g., Social Security numbers, financial account details, health information).</p>
 
                             <div class="spacer-20"></div>
 
@@ -269,7 +281,7 @@
                                 <li>Evaluate whether and how Ravonics may be able to assist with your requirement</li>
                                 <li>Maintain a record of business-development contacts consistent with federal-contractor relationship management practices</li>
                             </ul>
-                            <p>We do not use your information for automated decision-making, profiling, or marketing campaigns.</p>
+                            <p>We do not use your information for automated decision-making or profiling. If you use the capability update form, we may use the contact details you provide to send the requested business and capability updates; you may ask us to stop at any time.</p>
 
                             <div class="spacer-20"></div>
 
@@ -468,7 +480,7 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" inert id="extra-wrap" class="text-light">
         <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>

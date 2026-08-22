@@ -38,13 +38,45 @@ if (expectedVersion && healthBody.version !== expectedVersion) {
   fail(`health: expected version ${expectedVersion}, received ${healthBody.version}`);
 }
 
-const preflight = await fetch(`${base}/lead/contact`, {
+for (const origin of ['https://ravonics.com', 'https://www.ravonics.com']) {
+  const preflight = await fetch(`${base}/lead/contact`, {
+    method: 'OPTIONS',
+    headers: {
+      Origin: origin,
+      'Access-Control-Request-Method': 'POST',
+      'Access-Control-Request-Headers': 'content-type'
+    }
+  });
+  if (preflight.status !== 204) fail(`preflight (${origin}): expected 204, received ${preflight.status}`);
+  if (preflight.headers.get('access-control-allow-origin') !== origin) {
+    fail(`preflight (${origin}): origin was not allowlisted`);
+  }
+  if (preflight.headers.get('access-control-allow-methods')?.split(/,\s*/).includes('POST') !== true) {
+    fail(`preflight (${origin}): POST was not allowlisted`);
+  }
+  if (
+    preflight.headers
+      .get('access-control-allow-headers')
+      ?.toLowerCase()
+      .split(/,\s*/)
+      .includes('content-type') !== true
+  ) {
+    fail(`preflight (${origin}): Content-Type was not allowlisted`);
+  }
+}
+
+const untrustedPreflight = await fetch(`${base}/lead/contact`, {
   method: 'OPTIONS',
-  headers: { Origin: 'https://ravonics.com' }
+  headers: {
+    Origin: 'https://example.invalid',
+    'Access-Control-Request-Method': 'POST',
+    'Access-Control-Request-Headers': 'content-type'
+  }
 });
-if (preflight.status !== 204) fail(`preflight: expected 204, received ${preflight.status}`);
-if (preflight.headers.get('access-control-allow-origin') !== 'https://ravonics.com') {
-  fail('preflight: production origin was not allowlisted');
+if (untrustedPreflight.status !== 204)
+  fail(`preflight (untrusted): expected 204, received ${untrustedPreflight.status}`);
+if (untrustedPreflight.headers.has('access-control-allow-origin')) {
+  fail('preflight (untrusted): unexpected allow origin header');
 }
 
 const malformed = await fetch(`${base}/lead/contact`, {
@@ -64,7 +96,7 @@ console.log(
       version: healthBody.version,
       runtime: healthBody.runtime,
       forms: healthBody.forms_configured,
-      checks: ['health', 'cors-preflight', 'malformed-json']
+      checks: ['health', 'cors-preflight-both-origins', 'cors-rejects-untrusted', 'malformed-json']
     },
     null,
     2

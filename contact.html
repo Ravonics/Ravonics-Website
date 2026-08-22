@@ -59,7 +59,11 @@
 <body>
     <a class="skip-link" href="#content">Skip to main content</a>
     <div id="wrapper">
-        <a href="#" id="back-to-top"></a>
+        <div id="back-to-top-region" role="region" aria-label="Page navigation">
+
+          <a href="#" id="back-to-top" aria-label="Back to top"></a>
+
+        </div>
         
         <!-- page preloader begin -->
         <div id="de-loader"></div>
@@ -248,6 +252,12 @@
                     <div class="col-lg-6">
                         <div class="bg-light rounded-1 p-60 relative">
                             <form name="contactForm" id="contact_form" method="post" action="#">
+                            <noscript>
+                                <div class="alert alert-warning no-js-fallback" role="note">
+                                    JavaScript is disabled. Please email your unclassified inquiry directly to
+                                    <!--email_off--><a href="mailto:contact@ravonics.com?subject=Ravonics%20Website%20Inquiry">contact@ravonics.com</a><!--/email_off-->.
+                                </div>
+                            </noscript>
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <h3>Get In Touch</h3>
@@ -479,7 +489,7 @@
         </footer>
         <!-- footer close -->        
     <!-- overlay content begin -->
-    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" inert id="extra-wrap" class="text-light">
         <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>

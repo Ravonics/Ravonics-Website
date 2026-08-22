@@ -27,6 +27,11 @@
     if (!wrap) return;
     wrap.setAttribute('aria-hidden', open ? 'false' : 'true');
     if (open) {
+      wrap.removeAttribute('inert');
+    } else {
+      wrap.setAttribute('inert', '');
+    }
+    if (open) {
       window.setTimeout(function () {
         var close = document.getElementById('btn-close');
         if (close && typeof close.focus === 'function') close.focus();
@@ -48,6 +53,7 @@
     var closeButton = document.getElementById('btn-close');
     var dialog = document.getElementById('extra-wrap');
     if (!dialog) return;
+    setPanelState(false);
 
     var lastTrigger = null;
     if (openButton) {

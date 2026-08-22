@@ -110,7 +110,11 @@ test('checkRateLimit: window slides so old hits expire', function () {
 test('handleLead: allows CORS preflight without network access', async function () {
   const request = new Request('https://example.test/api/lead/contact', {
     method: 'OPTIONS',
-    headers: { origin: 'https://ravonics.com' }
+    headers: {
+      origin: 'https://ravonics.com',
+      'access-control-request-method': 'POST',
+      'access-control-request-headers': 'content-type'
+    }
   });
   const result = await handleLead('contact', request, testContext());
 
@@ -160,8 +164,12 @@ test('handleLead: reports missing upstream configuration without forwarding', as
 test('verifyTurnstile: missing secret fails closed without network access', async function () {
   const messages = [];
   const result = await verifyTurnstile('test-token', 'unknown', {
-    warn(message) { messages.push(message); },
-    error(message) { messages.push(message); }
+    warn(message) {
+      messages.push(message);
+    },
+    error(message) {
+      messages.push(message);
+    }
   });
 
   assert.deepStrictEqual(result, { ok: false, reason: 'captcha_misconfigured' });

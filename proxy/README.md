@@ -121,6 +121,11 @@ az functionapp config appsettings set -n "$APP" -g "$RG" --settings \
   "RATE_LIMIT_WINDOW_MS=60000" \
   "ALLOWED_ORIGINS=https://ravonics.com,https://www.ravonics.com"
 
+# Configure Azure's site-level CORS policy as well as the proxy response
+# headers. This is required for browser preflight requests on the live forms.
+az functionapp cors add -n "$APP" -g "$RG" \
+  --allowed-origins https://ravonics.com https://www.ravonics.com
+
 # From proxy/, use Node 24.x to build the deploy zip (production deps only) and push it.
 node --version
 npm ci --omit=dev

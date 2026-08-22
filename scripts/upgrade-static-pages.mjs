@@ -144,7 +144,19 @@ function improveStructure(html, route) {
   );
   output = output.replace(
     /<div\s+id=["']extra-wrap["']([^>]*)>/gi,
-    '<div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap"$1>'
+    '<div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" inert id="extra-wrap"$1>'
+  );
+  output = output.replace(
+    /(<div\s+role=["']dialog["'][^>]*\baria-hidden=["']true["'])(\s+)(id=["']extra-wrap["'])/gi,
+    '$1 inert$2$3'
+  );
+  output = output.replace(
+    /<a\s+href=["']#["']\s+id=["']back-to-top["'](?![^>]*\baria-label=)([^>]*)>/gi,
+    '<a href="#" id="back-to-top" aria-label="Back to top"$1>'
+  );
+  output = output.replace(
+    /(\s*)<a(\s+href=["']#["']\s+id=["']back-to-top["'][^>]*)><\/a>/gi,
+    '$1<div id="back-to-top-region" role="region" aria-label="Page navigation">\n$1  <a$2></a>\n$1</div>'
   );
   output = output.replace(
     /<div\s+role=["']dialog["']\s+aria-modal=["']true["']\s+aria-label=["']Additional navigation["']\s+tabindex=["']-1["']\s+aria-hidden=["']true["']\s+id=["']extra-content["']/gi,
