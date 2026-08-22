@@ -9,16 +9,17 @@ permissions:
 
 jobs:
   quality:
+    name: Node 26 quality and customer journeys
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Check out source
         uses: actions/checkout@v7
 
-      - name: Set up Node.js 24
+      - name: Set up Node.js 26
         uses: actions/setup-node@v7
         with:
-          node-version: 24
+          node-version: 26
           cache: npm
 
       - name: Install dependencies
@@ -33,21 +34,24 @@ jobs:
       - name: Run site quality suite
         run: npm run test:all
 
+      - name: Verify the publish artifact is clean and provenance-bound
+        run: ./scripts/verify-ghpages-clean.sh build/site
+
       - name: Verify release provenance
         run: npm run release:check
 
-  node-26-compatibility:
-    name: Node 26 compatibility
+  node-24-production:
+    name: Node 24 production compatibility
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Check out source
         uses: actions/checkout@v7
 
-      - name: Set up Node.js 26 compatibility lane
+      - name: Set up Node.js 24 production lane
         uses: actions/setup-node@v7
         with:
-          node-version: 26
+          node-version: 24
           cache: npm
 
       - name: Install site dependencies
@@ -56,8 +60,8 @@ jobs:
       - name: Install proxy dependencies
         run: npm ci --prefix proxy
 
-      - name: Check and build with Node 26
+      - name: Check and build with Node 24
         run: npm run check && npm run build && npm run release:check && ./scripts/verify-ghpages-clean.sh build/site
 
-      - name: Run proxy tests with Node 26
+      - name: Run proxy tests with Node 24
         run: npm run test:proxy

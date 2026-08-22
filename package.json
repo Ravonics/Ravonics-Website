@@ -22,6 +22,7 @@
     "test": "npm run test:proxy",
     "test:proxy": "npm --prefix proxy test",
     "test:browser": "playwright test",
+    "test:journeys": "playwright test tests/customer-journeys.spec.ts",
     "test:all": "npm run check && npm run lint && npm run format:check && npm run routes:check && npm run media:check && npm test && npm run site:check && npm run test:browser"
   },
   "dependencies": {

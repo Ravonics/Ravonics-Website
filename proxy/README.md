@@ -159,12 +159,22 @@ az rest --method post --url \
 # ...and Ravonics_CapabilityUpdate_Intake the same way.
 ```
 
-The proxy base URL is then `https://<APP>.azurewebsites.net/api`.
+The production website uses the dedicated taodoor Front Door API endpoint as
+its public proxy base, not the Function App hostname:
+`https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api`. The Function App
+hostname remains useful for origin-only health checks and deployment smoke
+tests.
 
-### Optional hardening: Key Vault references
+### Key Vault references
 
-Instead of plaintext App Settings, store the two URLs + Turnstile secret in a
-Key Vault and reference them:
+Production uses the private
+[Ravonics-Infrastructure](https://github.com/Ravonics/Ravonics-Infrastructure)
+repository to provision the vault, managed identity role, and diagnostic
+settings. Run its one-time `scripts/migrate-secrets.sh` migration after the
+infrastructure deployment. It copies the existing values without printing
+them and replaces the three application settings with Key Vault references.
+
+For a separate environment, the equivalent pattern is:
 
 ```bash
 az functionapp identity assign -n "$APP" -g "$RG"          # enable MSI
@@ -186,7 +196,7 @@ Use a `ZZZ TEST` company prefix and delete the resulting D365 lead afterward.
 ## Frontend cutover
 
 `scripts/inject-endpoints.sh` (repo root) writes `js/form-endpoints.js`. With
-`RAVONICS_USE_PROXY=1` and `RAVONICS_PROXY_BASE=https://<APP>.azurewebsites.net/api`
+`RAVONICS_USE_PROXY=1` and `RAVONICS_PROXY_BASE=https://<FRONT-DOOR-API-ENDPOINT>.azurefd.net/api`
 it points the forms at the proxy paths instead of the raw SAS URLs. The forms
 must also render a Turnstile widget and send `cf_turnstile_token` + the
 `company_website` honeypot; that markup touches page structure and is handled via

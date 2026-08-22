@@ -126,6 +126,19 @@ test('handleLead: allows CORS preflight without network access', async function 
   assert.strictEqual(result.headers['X-Content-Type-Options'], 'nosniff');
 });
 
+test('handleLead: preserves a safe correlation ID in the response', async function () {
+  const request = new Request('https://example.test/api/lead/contact', {
+    method: 'OPTIONS',
+    headers: {
+      origin: 'https://ravonics.com',
+      'x-correlation-id': 'journey-check-123'
+    }
+  });
+  const result = await handleLead('contact', request, testContext());
+
+  assert.strictEqual(result.headers['X-Correlation-ID'], 'journey-check-123');
+});
+
 test('handleLead: rejects malformed JSON before configuration or network access', async function () {
   const request = new Request('https://example.test/api/lead/contact', {
     method: 'POST',

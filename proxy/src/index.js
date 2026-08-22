@@ -34,6 +34,7 @@
  */
 
 const { app } = require('@azure/functions');
+const { randomUUID } = require('node:crypto');
 
 const packageVersion = require('../package.json').version;
 const SERVICE_VERSION = process.env.SERVICE_VERSION || packageVersion || 'dev';
@@ -142,7 +143,7 @@ function clientIp(request) {
   return request.headers.get('x-client-ip') || 'unknown';
 }
 
-function corsHeaders(origin) {
+function corsHeaders(origin, correlationId) {
   const headers = {
     'Content-Type': 'application/json',
     'Cache-Control': 'no-store',
@@ -155,13 +156,36 @@ function corsHeaders(origin) {
     headers['Access-Control-Allow-Headers'] = 'Content-Type';
     headers['Access-Control-Max-Age'] = '86400';
   }
+  if (correlationId) {
+    headers['X-Correlation-ID'] = correlationId;
+  }
   return headers;
 }
 
-function jsonResponse(status, bodyObj, origin) {
+function correlationIdFor(request) {
+  const supplied = request.headers.get('x-correlation-id') || '';
+  if (/^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/.test(supplied)) {
+    return supplied;
+  }
+  return randomUUID();
+}
+
+function logEvent(context, event, fields) {
+  if (!context || typeof context.log !== 'function') {
+    return;
+  }
+  context.log(
+    JSON.stringify({
+      event: 'ravonics.' + event,
+      ...fields
+    })
+  );
+}
+
+function jsonResponse(status, bodyObj, origin, correlationId) {
   return {
     status: status,
-    headers: corsHeaders(origin),
+    headers: corsHeaders(origin, correlationId),
     jsonBody: bodyObj
   };
 }
@@ -303,10 +327,15 @@ async function forwardToLogicApp(url, payload, context) {
 
 async function handleLead(formFromRoute, request, context) {
   const origin = request.headers.get('origin') || '';
+  const correlationId = correlationIdFor(request);
+  const respond = function (status, bodyObj) {
+    return jsonResponse(status, bodyObj, origin, correlationId);
+  };
 
   // Preflight.
   if (request.method === 'OPTIONS') {
-    return { status: 204, headers: corsHeaders(origin) };
+    logEvent(context, 'lead.preflight', { correlation_id: correlationId });
+    return { status: 204, headers: corsHeaders(origin, correlationId) };
   }
 
   // CORS prevents untrusted browsers from reading responses, but it does not
@@ -315,10 +344,9 @@ async function handleLead(formFromRoute, request, context) {
   // requests without Origin remain available for trusted server-side callers.
   if (origin && CONFIG.allowedOrigins.indexOf(origin) === -1) {
     context.warn('Rejected request from untrusted origin: ' + origin);
-    return jsonResponse(
+    return respond(
       403,
-      { ok: false, error: 'origin_not_allowed', message: 'Origin is not allowed.' },
-      origin
+      { ok: false, error: 'origin_not_allowed', message: 'Origin is not allowed.' }
     );
   }
 
@@ -330,14 +358,13 @@ async function handleLead(formFromRoute, request, context) {
   const contentLength = parseInt(request.headers.get('content-length') || '0', 10);
   if (contentLength && contentLength > CONFIG.maxBodyBytes) {
     context.warn('Rejected oversized payload from ' + ip + ': ' + contentLength + ' bytes');
-    return jsonResponse(
+    return respond(
       413,
       {
         ok: false,
         error: 'payload_too_large',
         message: 'The submission is too large. Please reduce attachment size and try again.'
-      },
-      origin
+      }
     );
   }
 
@@ -347,24 +374,22 @@ async function handleLead(formFromRoute, request, context) {
     raw = await request.text();
   } catch (err) {
     context.error('Failed to read request body: ' + err.message);
-    return jsonResponse(
+    return respond(
       400,
-      { ok: false, error: 'bad_request', message: 'Could not read the submission.' },
-      origin
+      { ok: false, error: 'bad_request', message: 'Could not read the submission.' }
     );
   }
 
   // Enforce the cap again against the actual bytes (Content-Length can lie).
   if (Buffer.byteLength(raw, 'utf8') > CONFIG.maxBodyBytes) {
     context.warn('Rejected oversized payload (actual) from ' + ip);
-    return jsonResponse(
+    return respond(
       413,
       {
         ok: false,
         error: 'payload_too_large',
         message: 'The submission is too large. Please reduce attachment size and try again.'
-      },
-      origin
+      }
     );
   }
 
@@ -372,17 +397,15 @@ async function handleLead(formFromRoute, request, context) {
   try {
     payload = JSON.parse(raw || '{}');
   } catch (err) {
-    return jsonResponse(
+    return respond(
       400,
-      { ok: false, error: 'invalid_json', message: 'The submission was malformed.' },
-      origin
+      { ok: false, error: 'invalid_json', message: 'The submission was malformed.' }
     );
   }
   if (payload === null || typeof payload !== 'object' || Array.isArray(payload)) {
-    return jsonResponse(
+    return respond(
       400,
-      { ok: false, error: 'invalid_payload', message: 'The submission was malformed.' },
-      origin
+      { ok: false, error: 'invalid_payload', message: 'The submission was malformed.' }
     );
   }
 
@@ -390,20 +413,25 @@ async function handleLead(formFromRoute, request, context) {
   let form = formFromRoute || payload.form || '';
   form = String(form).toLowerCase();
   if (VALID_FORMS.indexOf(form) === -1) {
-    return jsonResponse(400, { ok: false, error: 'unknown_form', message: 'Unknown form target.' }, origin);
+    return respond(400, { ok: false, error: 'unknown_form', message: 'Unknown form target.' });
   }
+
+  logEvent(context, 'lead.received', {
+    correlation_id: correlationId,
+    form,
+    method: request.method
+  });
 
   const targetUrl = CONFIG.urls[form];
   if (!targetUrl) {
     context.error('No Logic App URL configured for form "' + form + '". Check App Settings.');
-    return jsonResponse(
+    return respond(
       500,
       {
         ok: false,
         error: 'not_configured',
         message: 'The submission service is temporarily unavailable. Please email us directly.'
-      },
-      origin
+      }
     );
   }
 
@@ -411,7 +439,8 @@ async function handleLead(formFromRoute, request, context) {
   if (payload[HONEYPOT_FIELD]) {
     // Silently accept (200) so bots get no signal, but do not forward.
     context.warn('Honeypot tripped from ' + ip + ' on form ' + form + '; dropping.');
-    return jsonResponse(200, { ok: true, accepted: true }, origin);
+    logEvent(context, 'lead.completed', { correlation_id: correlationId, form, outcome: 'honeypot' });
+    return respond(200, { ok: true, accepted: true });
   }
 
   // --- Spam heuristic ------------------------------------------------------
@@ -419,15 +448,14 @@ async function handleLead(formFromRoute, request, context) {
   if (spamReason) {
     context.warn('Spam heuristic (' + spamReason + ') from ' + ip + ' on form ' + form + '; dropping.');
     // Return a generic validation error rather than revealing the heuristic.
-    return jsonResponse(
+    return respond(
       422,
       {
         ok: false,
         error: 'rejected',
         message:
           'Your message could not be accepted. Please remove links and try again, or email us directly.'
-      },
-      origin
+      }
     );
   }
 
@@ -435,9 +463,10 @@ async function handleLead(formFromRoute, request, context) {
   const rl = checkRateLimit(ip, now);
   if (!rl.allowed) {
     context.warn('Rate limit hit for ' + ip + ' on form ' + form);
+    logEvent(context, 'lead.completed', { correlation_id: correlationId, form, outcome: 'rate_limited' });
     return {
       status: 429,
-      headers: Object.assign(corsHeaders(origin), { 'Retry-After': String(rl.retryAfterSec) }),
+      headers: Object.assign(corsHeaders(origin, correlationId), { 'Retry-After': String(rl.retryAfterSec) }),
       jsonBody: {
         ok: false,
         error: 'rate_limited',
@@ -455,7 +484,7 @@ async function handleLead(formFromRoute, request, context) {
       captcha.reason === 'captcha_verify_unreachable' || captcha.reason === 'captcha_misconfigured'
         ? 503
         : 403;
-    return jsonResponse(
+    return respond(
       status,
       {
         ok: false,
@@ -464,8 +493,7 @@ async function handleLead(formFromRoute, request, context) {
           status === 503
             ? 'We could not verify the security check right now. Please try again shortly, or email us directly.'
             : 'Security check failed. Please complete the challenge and try again.'
-      },
-      origin
+      }
     );
   }
 
@@ -486,19 +514,20 @@ async function handleLead(formFromRoute, request, context) {
   // --- Forward -------------------------------------------------------------
   const result = await forwardToLogicApp(targetUrl, forwarded, context);
   if (result.ok) {
-    return jsonResponse(200, { ok: true, accepted: true }, origin);
+    logEvent(context, 'lead.completed', { correlation_id: correlationId, form, outcome: 'accepted' });
+    return respond(200, { ok: true, accepted: true });
   }
 
   // Upstream failure. Surface a clean error; the frontend keeps its mailto
   // fallback so the lead is never silently lost.
-  return jsonResponse(
+  logEvent(context, 'lead.completed', { correlation_id: correlationId, form, outcome: 'upstream_failed' });
+  return respond(
     502,
     {
       ok: false,
       error: 'upstream_failed',
       message: 'We could not submit your request right now. Please email us directly at contact@ravonics.com.'
-    },
-    origin
+    }
   );
 }
 
@@ -529,13 +558,16 @@ app.http('health', {
   methods: ['GET'],
   authLevel: 'anonymous',
   route: 'health',
-  handler: async function () {
+  handler: async function (request, context) {
+    const correlationId = correlationIdFor(request);
+    logEvent(context, 'health', { correlation_id: correlationId });
     return {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-store',
-        'X-Content-Type-Options': 'nosniff'
+        'X-Content-Type-Options': 'nosniff',
+        'X-Correlation-ID': correlationId
       },
       jsonBody: {
         ok: true,
@@ -553,4 +585,4 @@ app.http('health', {
   }
 });
 
-module.exports = { handleLead, looksLikeSpam, checkRateLimit, verifyTurnstile };
+module.exports = { handleLead, looksLikeSpam, checkRateLimit, verifyTurnstile, correlationIdFor };

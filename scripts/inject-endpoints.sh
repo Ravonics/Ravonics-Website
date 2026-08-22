@@ -19,7 +19,7 @@
 #   Writes the lead-capture PROXY endpoints instead of the raw SAS URLs, so the
 #   SAS never reaches the browser. No Azure call is made; no secret is written.
 #   Requires RAVONICS_PROXY_BASE, e.g.
-#     RAVONICS_PROXY_BASE="https://ravonics-lead-proxy.azurewebsites.net/api"
+#     RAVONICS_PROXY_BASE="https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api"
 #   Each form maps to a path route: <base>/lead/<form>. The forms must also send
 #   a Cloudflare Turnstile token (cf_turnstile_token) + a company_website
 #   honeypot field; that markup is handled separately (see proxy/README.md).
@@ -30,7 +30,7 @@
 #
 # Usage:
 #   ./scripts/inject-endpoints.sh /tmp/ghpages-work
-#   RAVONICS_PROXY_BASE="https://<APP>.azurewebsites.net/api" \
+#   RAVONICS_PROXY_BASE="https://<FRONT-DOOR-API-ENDPOINT>.azurefd.net/api" \
 #     ./scripts/inject-endpoints.sh /tmp/ghpages-work
 #
 # Exit codes:
@@ -46,7 +46,7 @@ set -euo pipefail
 # The lead-capture proxy (ravonics-lead-proxy) keeps Logic App credentials out
 # of the browser. RAVONICS_USE_PROXY is retained only as a fail-closed guard so
 # old callers cannot silently re-enable direct endpoint injection.
-PROXY_BASE="${RAVONICS_PROXY_BASE:-https://ravonics-lead-proxy.azurewebsites.net/api}"
+PROXY_BASE="${RAVONICS_PROXY_BASE:-https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api}"
 
 # ---------------------------------------------------------------------------
 # Arg handling
@@ -85,7 +85,7 @@ fi
 
 if [[ -z "${PROXY_BASE}" ]]; then
   echo "ERROR: RAVONICS_PROXY_BASE is unset." >&2
-  echo "       e.g. RAVONICS_PROXY_BASE=https://ravonics-lead-proxy.azurewebsites.net/api" >&2
+  echo "       e.g. RAVONICS_PROXY_BASE=https://<FRONT-DOOR-API-ENDPOINT>.azurefd.net/api" >&2
   exit 6
 fi
 if [[ "${PROXY_BASE}" != https://* ]]; then

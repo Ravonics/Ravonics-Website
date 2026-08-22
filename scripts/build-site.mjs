@@ -125,7 +125,7 @@ try {
     env: {
       ...process.env,
       RAVONICS_PROXY_BASE:
-        process.env.RAVONICS_PROXY_BASE || 'https://ravonics-lead-proxy.azurewebsites.net/api'
+        process.env.RAVONICS_PROXY_BASE || 'https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api'
     }
   });
   await fs.writeFile(path.join(staging, '.nojekyll'), '');
