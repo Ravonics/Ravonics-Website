@@ -110,6 +110,7 @@
     #content section.bg-color-secondary .subtitle,
     #content section.bg-color-secondary span { color:#1a1a1a; }
     </style>
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -130,16 +131,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -195,17 +196,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -214,7 +215,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -250,7 +251,7 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="de-box rounded-1 p-4 h-100">
-                                <h4 class="mb-3">Entity Identifiers</h4>
+                                <h2 class="mb-3 legacy-h4 h4">Entity Identifiers</h2>
                                 <table style="font-size:14px;line-height:2;width:100%;border-collapse:collapse;">
                                     <tr>
                                         <td style="width:44%;color:#666;padding-right:12px;vertical-align:top;">Legal Name</td>
@@ -290,7 +291,7 @@
 
                         <div class="col-lg-6">
                             <div class="de-box rounded-1 p-4 h-100">
-                                <h4 class="mb-3">Business Status and Set-Asides</h4>
+                                <h2 class="mb-3 legacy-h4 h4">Business Status and Set-Asides</h2>
                                 <table style="font-size:14px;line-height:2;width:100%;border-collapse:collapse;">
                                     <tr>
                                         <td style="width:44%;color:#666;padding-right:12px;vertical-align:top;">Business Size</td>
@@ -338,7 +339,7 @@
 
                     <div class="row g-4">
                         <div class="col-lg-6">
-                            <h5 class="mb-3">Primary and Key NAICS Codes</h5>
+                            <h2 class="mb-3 legacy-h5 h5">Primary and Key NAICS Codes</h2>
                             <ul class="list-unstyled">
                                 <li class="mb-3">
                                     <strong>541512</strong>: Computer Systems Design Services (Primary)<br>
@@ -364,7 +365,7 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <h5 class="mb-3">Additional NAICS</h5>
+                            <h2 class="mb-3 legacy-h5 h5">Additional NAICS</h2>
                             <ul class="list-unstyled mb-4">
                                 <li class="mb-2"><strong>541513</strong>:Computer Facilities Management Services</li>
                                 <li class="mb-2"><strong>541519</strong>:Other Computer Related Services</li>
@@ -372,7 +373,7 @@
                                 <li class="mb-2"><strong>611420</strong>:Computer Training</li>
                             </ul>
 
-                            <h5 class="mb-3">PSC Codes</h5>
+                            <h2 class="mb-3 legacy-h5 h5">PSC Codes</h2>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><strong>AC11</strong>:R&amp;D: Technology (Basic Research)</li>
                                 <li class="mb-2"><strong>AC12</strong>:R&amp;D: Technology (Applied Research)</li>
@@ -404,21 +405,21 @@
                     <div class="row g-4">
                         <div class="col-lg-4">
                             <div class="de-box rounded-1 p-4 h-100">
-                                <h4 class="mb-3">Direct Award</h4>
+                                <h2 class="mb-3 legacy-h4 h4">Direct Award</h2>
                                 <p>Contracting Officers may issue simplified acquisition vehicles, sole-source awards (HUBZone sole-source authority available where thresholds permit), or HUBZone set-aside awards directly to Ravonics LLC (UEI: YCBDVKN1A9G7, CAGE: 20DS8). As an SBA HUBZone certified small business, Ravonics qualifies for the 10% price-evaluation preference in full-and-open competition and for HUBZone set-aside and sole-source awards per FAR 19.13.</p>
                             </div>
                         </div>
 
                         <div class="col-lg-4">
                             <div class="de-box rounded-1 p-4 h-100">
-                                <h4 class="mb-3">Subcontractor / Teaming Partner</h4>
+                                <h2 class="mb-3 legacy-h4 h4">Subcontractor / Teaming Partner</h2>
                                 <p>Ravonics is available as a subcontractor or teaming partner on vehicles held by affiliated companies in our partner ecosystem. Primes with small-business and HUBZone subcontracting goals (FAR 52.219-9) can credit Ravonics work toward those targets. If your program requires a specific vehicle, contact us to discuss a teaming arrangement. See our <a href="../company/partnerships.html">Partnerships page</a> for the ecosystem overview.</p>
                             </div>
                         </div>
 
                         <div class="col-lg-4">
                             <div class="de-box rounded-1 p-4 h-100">
-                                <h4 class="mb-3">Vehicles in Pursuit</h4>
+                                <h2 class="mb-3 legacy-h4 h4">Vehicles in Pursuit</h2>
                                 <p>GSA Multiple Award Schedule (MAS) and relevant IDIQs are on our near-term roadmap. Available now: SBIR/STTR Phase I and II awards through INSTAR Lab (our 501(c)(3) research affiliate), OTA rapid-prototyping agreements, and HUBZone set-aside eligibility across DoW, IC, and federal civilian agency families. Contact us to be notified when new vehicles are in place.</p>
                             </div>
                         </div>
@@ -441,7 +442,7 @@
 
                     <div class="row g-4">
                         <div class="col-lg-6">
-                            <h4 class="mb-3">Founder Career Track Record</h4>
+                            <h2 class="mb-3 legacy-h4 h4">Founder Career Track Record</h2>
                             <p>Sean Hackney, Founder, President and Chief AI Officer, brings 30+ years in computer science and 20+ years in AI/ML. The following highlights reflect his personal career history across prior roles, not Ravonics company performance:</p>
                             <ul>
                                 <li>Co-authored $36M+ in federal prime contract wins as key personnel (2025)</li>
@@ -453,7 +454,7 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <h4 class="mb-3">Partner Ecosystem Maturity</h4>
+                            <h2 class="mb-3 legacy-h4 h4">Partner Ecosystem Maturity</h2>
                             <p>Ravonics is the federal go-to-market and compliance bridge for a group of affiliated companies with mature commercial products. The ecosystem includes secure software supply-chain automation (150+ NIST 800-53 controls, signed artifacts, continuous cATO evidence generation), real-time multi-domain situational awareness platforms, and zero-trust Kubernetes infrastructure, all available to federal programs through Ravonics as the contracting and compliance lead.</p>
                             <p>The INSTAR Lab research affiliate (501(c)(3)) provides applied physics and AI/ML research bench capacity, including SBIR/STTR-eligible work.</p>
 
@@ -487,7 +488,7 @@
                                     <div class="relative mb-4">
                                         <i class="abs fs-28 p-3 bg-color text-light rounded-1 icofont-envelope"></i>
                                         <div class="ms-80px">
-                                            <h4 class="mb-0">General Inquiries</h4>
+                                            <h2 class="mb-0 legacy-h4 h4">General Inquiries</h2>
                                             <!--email_off--><a href="mailto:contact@ravonics.com">contact@ravonics.com</a><!--/email_off-->
                                         </div>
                                     </div>
@@ -495,7 +496,7 @@
                                     <div class="relative mb-4">
                                         <i class="abs fs-28 p-3 bg-color text-light rounded-1 icofont-user"></i>
                                         <div class="ms-80px">
-                                            <h4 class="mb-0">Government Contracts / Capture</h4>
+                                            <h2 class="mb-0 legacy-h4 h4">Government Contracts / Capture</h2>
                                             Sean Hackney, Founder &amp; Chief AI Officer:<!--email_off--><a href="mailto:sean@ravonics.com">sean@ravonics.com</a><!--/email_off-->
                                         </div>
                                     </div>
@@ -503,7 +504,7 @@
                                     <div class="relative mb-4">
                                         <i class="abs fs-28 p-3 bg-color text-light rounded-1 icofont-location-pin"></i>
                                         <div class="ms-80px">
-                                            <h4 class="mb-0">Headquarters</h4>
+                                            <h2 class="mb-0 legacy-h4 h4">Headquarters</h2>
                                             313 Walnut St, Ravenswood, WV 26164
                                         </div>
                                     </div>
@@ -511,7 +512,7 @@
                                     <div class="relative mb-4">
                                         <i class="abs fs-28 p-3 bg-color text-light rounded-1 icofont-phone"></i>
                                         <div class="ms-80px">
-                                            <h4 class="mb-0">Phone</h4>
+                                            <h2 class="mb-0 legacy-h4 h4">Phone</h2>
                                             +1 (304) 927-2600
                                         </div>
                                     </div>
@@ -591,19 +592,19 @@
                 </div>
             </section>
 
-        </div>
+        </main>
         <!-- content close -->
         <!-- footer begin -->
         <footer class="text-light section-dark">
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -621,7 +622,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -639,7 +640,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -683,18 +684,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -710,14 +711,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -899,6 +900,7 @@
 
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

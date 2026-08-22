@@ -18,9 +18,9 @@
  *   6. Exits non-zero on any violation; prints clear PASS/FAIL summary.
  *
  * REQUIREMENTS:
- *   - Node.js ≥18 (ESM)
- *   - Playwright 1.61 globally installed (/usr/lib/node_modules/playwright)
- *   - Chromium & Firefox already in ~/.cache/ms-playwright
+ *   - Node.js ≥24 (ESM)
+ *   - npm install (uses the repository's pinned Playwright)
+ *   - Chromium & Firefox installed with `npx playwright install`
  *   - python3 in PATH
  *
  * OUTPUT:
@@ -28,43 +28,35 @@
  *   Console:      structured PASS/FAIL per check, then overall verdict.
  */
 
-// Use playwright 1.60.0 whose browser revisions (chromium-1223, firefox-1522)
-// match what is already cached in ~/.cache/ms-playwright on this machine.
-import { chromium, firefox } from '/home/mrh/repos/focuschef/Emmy/node_modules/.pnpm/playwright@1.60.0/node_modules/playwright/index.mjs';
+import { chromium, firefox } from '@playwright/test';
 import { spawn } from 'node:child_process';
-import { mkdirSync, existsSync } from 'node:fs';
-import { join, basename, dirname } from 'node:path';
+import { mkdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { collectLiveRoutes } from './site-routes.mjs';
 
 // ── Configuration ──────────────────────────────────────────────────────────────
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, '..');
-const OUT_DIR   = '/tmp/ravonics-qa';
-const PORT      = 8099;
-const BASE_URL  = `http://localhost:${PORT}`;
+const OUT_DIR = '/tmp/ravonics-qa';
+const PORT = 8099;
+const BASE_URL = `http://localhost:${PORT}`;
 
 // Parse optional --pages flag
 const pagesArg = process.argv.find((a, i) => process.argv[i - 1] === '--pages');
-const DEFAULT_PAGES = [
-  'index.html',
-  'capabilities/ai.html',
-  'solutions/jadc2.html',
-  'company/about.html',
-  'insights/testimonials.html',
-  'contact.html',
-];
-const PAGES = pagesArg ? pagesArg.split(',').map(s => s.trim()) : DEFAULT_PAGES;
+const DEFAULT_PAGES = collectLiveRoutes().map((route) => route.source);
+const PAGES = pagesArg ? pagesArg.split(',').map((s) => s.trim()) : DEFAULT_PAGES;
 
 const FIREFOX_CHECK_PAGES = ['index.html', 'capabilities/ai.html'];
 
 const VIEWPORTS = [
   { name: 'desktop', width: 1440, height: 900 },
-  { name: 'mobile',  width: 390,  height: 844 },
+  { name: 'mobile', width: 390, height: 844 }
 ];
 
-const SKEW_THRESHOLD   = 0.02;   // 2% aspect ratio distortion
-const H_SCROLL_TOLERANCE = 8;   // px of horizontal overflow to tolerate
+const SKEW_THRESHOLD = 0.02; // 2% aspect ratio distortion
+const H_SCROLL_TOLERANCE = 8; // px of horizontal overflow to tolerate
 
 // ── Utilities ──────────────────────────────────────────────────────────────────
 
@@ -73,10 +65,18 @@ function pageSlug(pagePath) {
   return pagePath.replace(/\.html$/, '').replace(/\//g, '__');
 }
 
-function log(msg) { console.log(msg); }
-function warn(msg) { console.warn('\x1b[33m' + msg + '\x1b[0m'); }
-function fail(msg) { console.error('\x1b[31m✗ ' + msg + '\x1b[0m'); }
-function pass(msg) { console.log('\x1b[32m✓ ' + msg + '\x1b[0m'); }
+function log(msg) {
+  console.log(msg);
+}
+function warn(msg) {
+  console.warn('\x1b[33m' + msg + '\x1b[0m');
+}
+function fail(msg) {
+  console.error('\x1b[31m✗ ' + msg + '\x1b[0m');
+}
+function pass(msg) {
+  console.log('\x1b[32m✓ ' + msg + '\x1b[0m');
+}
 
 // ── Server management ──────────────────────────────────────────────────────────
 
@@ -84,7 +84,7 @@ function startServer() {
   return new Promise((resolve, reject) => {
     const proc = spawn('python3', ['-m', 'http.server', String(PORT)], {
       cwd: REPO_ROOT,
-      stdio: ['ignore', 'pipe', 'pipe'],
+      stdio: ['ignore', 'pipe', 'pipe']
     });
 
     let ready = false;
@@ -103,69 +103,87 @@ function startServer() {
           log(`Server up at ${BASE_URL} (pid ${proc.pid})`);
           resolve(proc);
         }
-      } catch { /* not up yet */ }
+      } catch {
+        /* not up yet */
+      }
     }, 200);
 
-    proc.on('error', (e) => { clearInterval(poller); clearTimeout(timer); reject(e); });
+    proc.on('error', (e) => {
+      clearInterval(poller);
+      clearTimeout(timer);
+      reject(e);
+    });
     proc.on('exit', (code) => {
-      if (!ready) { clearInterval(poller); clearTimeout(timer); reject(new Error(`Server exited with code ${code}`)); }
+      if (!ready) {
+        clearInterval(poller);
+        clearTimeout(timer);
+        reject(new Error(`Server exited with code ${code}`));
+      }
     });
   });
 }
 
 function stopServer(proc) {
-  try { proc.kill('SIGTERM'); } catch {}
+  try {
+    proc.kill('SIGTERM');
+  } catch {}
 }
 
 // ── Image skew / oversize check ────────────────────────────────────────────────
 
 async function checkImagesOnPage(page, pagePath, viewportWidth) {
-  const violations = await page.evaluate(({ skewThreshold, hScrollTolerance, viewportWidth }) => {
-    const results = { skew: [], broken: [], hScroll: null };
+  const violations = await page.evaluate(
+    ({ skewThreshold, hScrollTolerance, viewportWidth }) => {
+      const results = { skew: [], broken: [], hScroll: null };
 
-    // Horizontal scroll check
-    const scrollW = document.scrollingElement?.scrollWidth ?? document.documentElement.scrollWidth;
-    if (scrollW > viewportWidth + hScrollTolerance) {
-      results.hScroll = { scrollWidth: scrollW, viewportWidth };
-    }
-
-    // Image checks
-    const imgs = Array.from(document.querySelectorAll('img'));
-    for (const img of imgs) {
-      // Skip template/hidden/icon images
-      if (img.offsetParent === null && img.style.display === 'none') continue;
-      const rect = img.getBoundingClientRect();
-
-      // Broken image
-      if (img.naturalWidth === 0 && img.complete) {
-        results.broken.push({ src: img.src || img.getAttribute('src'), rendered: `${Math.round(rect.width)}x${Math.round(rect.height)}` });
-        continue;
+      // Horizontal scroll check
+      const scrollW = document.scrollingElement?.scrollWidth ?? document.documentElement.scrollWidth;
+      if (scrollW > viewportWidth + hScrollTolerance) {
+        results.hScroll = { scrollWidth: scrollW, viewportWidth };
       }
 
-      // Only check images that have loaded and are visible
-      if (img.naturalWidth === 0 || rect.width < 4 || rect.height < 4) continue;
+      // Image checks
+      const imgs = Array.from(document.querySelectorAll('img'));
+      for (const img of imgs) {
+        // Skip template/hidden/icon images
+        if (img.offsetParent === null && img.style.display === 'none') continue;
+        const rect = img.getBoundingClientRect();
 
-      const naturalAspect  = img.naturalWidth  / img.naturalHeight;
-      const displayedAspect = rect.width / rect.height;
-      const delta = Math.abs(displayedAspect - naturalAspect) / naturalAspect;
+        // Broken image
+        if (img.naturalWidth === 0 && img.complete) {
+          results.broken.push({
+            src: img.src || img.getAttribute('src'),
+            rendered: `${Math.round(rect.width)}x${Math.round(rect.height)}`
+          });
+          continue;
+        }
 
-      // Oversize: rendered width wider than viewport
-      const oversize = rect.width > viewportWidth + 4;
+        // Only check images that have loaded and are visible
+        if (img.naturalWidth === 0 || rect.width < 4 || rect.height < 4) continue;
 
-      if (delta > skewThreshold || oversize) {
-        results.skew.push({
-          src: (img.src || img.getAttribute('src') || '').replace(location.origin, ''),
-          displayedW: Math.round(rect.width),
-          displayedH: Math.round(rect.height),
-          naturalW: img.naturalWidth,
-          naturalH: img.naturalHeight,
-          aspectDelta: Math.round(delta * 1000) / 10 + '%',
-          oversize,
-        });
+        const naturalAspect = img.naturalWidth / img.naturalHeight;
+        const displayedAspect = rect.width / rect.height;
+        const delta = Math.abs(displayedAspect - naturalAspect) / naturalAspect;
+
+        // Oversize: rendered width wider than viewport
+        const oversize = rect.width > viewportWidth + 4;
+
+        if (delta > skewThreshold || oversize) {
+          results.skew.push({
+            src: (img.src || img.getAttribute('src') || '').replace(location.origin, ''),
+            displayedW: Math.round(rect.width),
+            displayedH: Math.round(rect.height),
+            naturalW: img.naturalWidth,
+            naturalH: img.naturalHeight,
+            aspectDelta: Math.round(delta * 1000) / 10 + '%',
+            oversize
+          });
+        }
       }
-    }
-    return results;
-  }, { skewThreshold: SKEW_THRESHOLD, hScrollTolerance: H_SCROLL_TOLERANCE, viewportWidth });
+      return results;
+    },
+    { skewThreshold: SKEW_THRESHOLD, hScrollTolerance: H_SCROLL_TOLERANCE, viewportWidth }
+  );
 
   return violations;
 }
@@ -181,7 +199,7 @@ async function runFirefoxConsoleCheck(pages) {
     const url = `${BASE_URL}/${pagePath}`;
     log(`  Firefox → ${url}`);
     const context = await browser.newContext();
-    const page    = await context.newPage();
+    const page = await context.newPage();
 
     const messages = [];
     const failures = [];
@@ -209,15 +227,13 @@ async function runFirefoxConsoleCheck(pages) {
 
     await context.close();
 
-    const glyphWarnings = messages.filter(m =>
-      /glyph bbox was incorrect/i.test(m.text) ||
-      /glyf.*incorrect/i.test(m.text)
+    const glyphWarnings = messages.filter(
+      (m) => /glyph bbox was incorrect/i.test(m.text) || /glyf.*incorrect/i.test(m.text)
     );
-    const fontImageFails = failures.filter(f =>
-      /\.(woff2?|ttf|otf|eot|png|jpg|jpeg|gif|svg|webp)/i.test(f) ||
-      /RESOURCE FAILED/i.test(f)
+    const fontImageFails = failures.filter(
+      (f) => /\.(woff2?|ttf|otf|eot|png|jpg|jpeg|gif|svg|webp)/i.test(f) || /RESOURCE FAILED/i.test(f)
     );
-    const otherErrors = failures.filter(f => !fontImageFails.includes(f));
+    const otherErrors = failures.filter((f) => !fontImageFails.includes(f));
 
     results.push({ pagePath, messages, failures, glyphWarnings, fontImageFails, otherErrors });
   }
@@ -232,11 +248,11 @@ async function main() {
   mkdirSync(OUT_DIR, { recursive: true });
   log(`\nRavonics QA Gate — screenshots → ${OUT_DIR}`);
   log(`Pages: ${PAGES.join(', ')}`);
-  log(`Viewports: ${VIEWPORTS.map(v => v.name).join(', ')}\n`);
+  log(`Viewports: ${VIEWPORTS.map((v) => v.name).join(', ')}\n`);
 
   let server;
   let overallViolations = [];
-  let screenshotPaths   = [];
+  let screenshotPaths = [];
 
   try {
     // Start static server
@@ -248,7 +264,7 @@ async function main() {
 
     for (const pagePath of PAGES) {
       const slug = pageSlug(pagePath);
-      const url  = `${BASE_URL}/${pagePath}`;
+      const url = `${BASE_URL}/${pagePath}`;
 
       for (const vp of VIEWPORTS) {
         const outFile = join(OUT_DIR, `${slug}__${vp.name}.png`);
@@ -256,13 +272,13 @@ async function main() {
 
         const context = await browser.newContext({
           viewport: { width: vp.width, height: vp.height },
-          deviceScaleFactor: 1,
+          deviceScaleFactor: 1
         });
         const page = await context.newPage();
 
         // Capture console errors (not treated as violations but logged)
         const consoleErrors = [];
-        page.on('console', msg => {
+        page.on('console', (msg) => {
           if (msg.type() === 'error') consoleErrors.push(msg.text());
         });
 
@@ -299,7 +315,7 @@ async function main() {
               kind: 'horizontal-scroll',
               page: pagePath,
               viewport: vp.name,
-              detail: `scrollWidth ${violations.hScroll.scrollWidth}px > viewport ${vp.width}px`,
+              detail: `scrollWidth ${violations.hScroll.scrollWidth}px > viewport ${vp.width}px`
             });
           }
 
@@ -310,8 +326,8 @@ async function main() {
               viewport: vp.name,
               src: v.src,
               displayedWxH: `${v.displayedW}x${v.displayedH}`,
-              naturalWxH:   `${v.naturalW}x${v.naturalH}`,
-              aspectDelta:  v.aspectDelta,
+              naturalWxH: `${v.naturalW}x${v.naturalH}`,
+              aspectDelta: v.aspectDelta
             });
           }
 
@@ -320,7 +336,7 @@ async function main() {
               kind: 'broken-image',
               page: pagePath,
               viewport: vp.name,
-              src: b.src,
+              src: b.src
             });
           }
 
@@ -330,7 +346,12 @@ async function main() {
           }
         } catch (e) {
           fail(`    ERROR loading ${url} [${vp.name}]: ${e.message}`);
-          overallViolations.push({ kind: 'load-error', page: pagePath, viewport: vp.name, detail: e.message });
+          overallViolations.push({
+            kind: 'load-error',
+            page: pagePath,
+            viewport: vp.name,
+            detail: e.message
+          });
         }
 
         await context.close();
@@ -351,7 +372,10 @@ async function main() {
       const liveUrl = `https://ravonics.com/${livePages[i]}`;
       const outFile = join(OUT_DIR, `LIVE-before__${liveLabels[i]}__desktop.png`);
       try {
-        const context = await liveBrowser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+        const context = await liveBrowser.newContext({
+          viewport: { width: 1440, height: 900 },
+          deviceScaleFactor: 1
+        });
         const page = await context.newPage();
         await page.goto(liveUrl, { waitUntil: 'networkidle', timeout: 20_000 });
         await page.waitForTimeout(500);
@@ -376,15 +400,16 @@ async function main() {
     } else {
       fail(`Image/scroll checks: ${overallViolations.length} violation(s)`);
       for (const v of overallViolations) {
-        const detail = v.kind === 'skew'
-          ? `${v.src} displayed=${v.displayedWxH} natural=${v.naturalWxH} delta=${v.aspectDelta}`
-          : v.kind === 'oversize'
-          ? `${v.src} displayed=${v.displayedWxH} natural=${v.naturalWxH} (wider than viewport)`
-          : v.kind === 'horizontal-scroll'
-          ? v.detail
-          : v.kind === 'broken-image'
-          ? `404/broken: ${v.src}`
-          : v.detail;
+        const detail =
+          v.kind === 'skew'
+            ? `${v.src} displayed=${v.displayedWxH} natural=${v.naturalWxH} delta=${v.aspectDelta}`
+            : v.kind === 'oversize'
+              ? `${v.src} displayed=${v.displayedWxH} natural=${v.naturalWxH} (wider than viewport)`
+              : v.kind === 'horizontal-scroll'
+                ? v.detail
+                : v.kind === 'broken-image'
+                  ? `404/broken: ${v.src}`
+                  : v.detail;
         fail(`  [${v.kind}] ${v.page} @ ${v.viewport}: ${detail}`);
       }
     }
@@ -417,10 +442,12 @@ async function main() {
 
       // Show all console messages for transparency
       if (r.messages.length > 0) {
-        const warns  = r.messages.filter(m => m.type === 'warning');
-        const errors = r.messages.filter(m => m.type === 'error');
+        const warns = r.messages.filter((m) => m.type === 'warning');
+        const errors = r.messages.filter((m) => m.type === 'error');
         if (warns.length + errors.length > 0) {
-          warn(`  Firefox console: ${errors.length} error(s), ${warns.length} warning(s) (see raw output above for details)`);
+          warn(
+            `  Firefox console: ${errors.length} error(s), ${warns.length} warning(s) (see raw output above for details)`
+          );
         }
       }
     }
@@ -442,7 +469,6 @@ async function main() {
     log('═══════════════════════════════════════════════════════════════\n');
 
     process.exitCode = totalFails > 0 ? 1 : 0;
-
   } finally {
     if (server) {
       stopServer(server);
@@ -451,7 +477,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
+main().catch((e) => {
   fail(`Fatal: ${e.message}`);
   process.exit(1);
 });

@@ -1,9 +1,20 @@
 # Ravonics lead-capture proxy
 
-Thin **Azure Functions** (Node 20+, v4 programming model) proxy that sits in
+Thin **Azure Functions** (Node 24+, v4 programming model) proxy that sits in
 front of the Ravonics D365 **Logic App** intake flows. It exists so the Logic
 App SAS callback URLs (`...&sig=...`) never reach the browser, and so we get
 CAPTCHA, rate limiting, and basic spam filtering on the public forms.
+
+This project deploys on Node.js 24 (`engines.node >=24 <27`). Node.js 26 is
+covered by the repository's compatibility lane, but is not the production
+runtime until Azure Functions lists it as supported and the target hosting
+plan is verified for it. Azure does not expose
+every Node runtime on every Functions hosting plan or region, so the hosting
+plan must be selected separately from the language version. The deployment
+example below uses Flex Consumption, a Node 24-capable path when that runtime
+is offered in the target region. Linux Consumption (Y1) is not a valid
+Node 24 target for this package; do not deploy it with the older Node 20/Y1
+combination.
 
 ```
 browser  ->  this proxy  ->  Logic App (SAS URL, server-side secret)  ->  D365 lead
@@ -68,11 +79,13 @@ their existing `mailto:` fallback.
 | `RATE_LIMIT_MAX`            | `5`                                                          |
 | `RATE_LIMIT_WINDOW_MS`      | `60000`                                                      |
 | `ALLOWED_ORIGINS`           | `https://ravonics.com,https://www.ravonics.com`             |
-| `FUNCTIONS_WORKER_RUNTIME`  | `node`                                                       |
-| `WEBSITE_NODE_DEFAULT_VERSION` | `~20`                                                    |
+| `SERVICE_VERSION`            | deployed release identifier (non-secret)                    |
 
 Never commit a real `local.settings.json`. Use `local.settings.json.example` as
-a template for local runs (`func start`).
+a template for local runs (`func start`). On Flex Consumption, the Node runtime
+is set by `functionAppConfig` at app creation/update time; do not add the legacy
+`FUNCTIONS_WORKER_RUNTIME` or `WEBSITE_NODE_DEFAULT_VERSION` settings to the
+production app.
 
 ## Deploy (zip deploy, no Core Tools required)
 
@@ -88,12 +101,14 @@ az account set --subscription "$SUB"
 # Storage for the function app.
 az storage account create -n "$STG" -g "$RG" -l "$LOC" --sku Standard_LRS
 
-# Linux Consumption (Y1) function app, Node 20.
+# Flex Consumption function app, Node 24 (production-supported runtime).
+# Do not replace --flexconsumption-location with the Linux Consumption (Y1)
+# --consumption-plan-location option: Y1 is not a Node 24 target for this app.
 az functionapp create -n "$APP" -g "$RG" \
   --storage-account "$STG" \
-  --consumption-plan-location "$LOC" \
-  --runtime node --runtime-version 20 \
-  --functions-version 4 --os-type Linux
+  --flexconsumption-location "$LOC" \
+  --runtime node --runtime-version 24 \
+  --functions-version 4
 
 # Secrets + config (replace REDACTED with real values retrieved via listCallbackUrl).
 az functionapp config appsettings set -n "$APP" -g "$RG" --settings \
@@ -106,11 +121,18 @@ az functionapp config appsettings set -n "$APP" -g "$RG" --settings \
   "RATE_LIMIT_WINDOW_MS=60000" \
   "ALLOWED_ORIGINS=https://ravonics.com,https://www.ravonics.com"
 
-# Build the deploy zip (production deps only) and push it.
+# From proxy/, use Node 24.x to build the deploy zip (production deps only) and push it.
+node --version
 npm ci --omit=dev
 zip -r ../ravonics-lead-proxy.zip . -x 'test/*' '*.test.js' 'local.settings.json' '.git*' 'README.md' >/dev/null
 az functionapp deployment source config-zip -n "$APP" -g "$RG" --src ../ravonics-lead-proxy.zip
 ```
+
+If Flex Consumption or Node 24 is unavailable in the target subscription or
+region, choose another Azure Functions plan that explicitly exposes Node 24.
+Do not deploy this proxy on Node 26 until Azure Functions officially supports
+that runtime. Do not fall back to Linux Consumption/Y1 with Node 20 without
+separately revalidating the package runtime requirement and deployment plan.
 
 Retrieve the Logic App callback URLs (these are the secrets) with:
 
@@ -138,7 +160,8 @@ az functionapp config appsettings set -n "$APP" -g "$RG" --settings \
 ## Tests
 
 ```bash
-node --test          # pure-logic unit tests (spam + rate limit), no network
+npm test              # pure-logic and bounded handler tests, no network
+node --test           # direct equivalent
 ```
 
 Live integration test (after deploy): see the "TEST" section of the task report.

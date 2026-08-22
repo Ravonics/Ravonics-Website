@@ -2,11 +2,13 @@
   "IsEncrypted": false,
   "Values": {
     "FUNCTIONS_WORKER_RUNTIME": "node",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "SERVICE_VERSION": "2026.08.22",
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
 
     "_comment_secrets": "The two values below are SECRETS. Never commit a real local.settings.json. In Azure these live in App Settings (see README).",
-    "LOGICAPP_URL_CONSULTATION": "https://prod-XX.eastus.logic.azure.com:443/workflows/.../triggers/manual/paths/invoke?...&sig=REDACTED",
-    "LOGICAPP_URL_CAPABILITY": "https://prod-XX.eastus.logic.azure.com:443/workflows/.../triggers/manual/paths/invoke?...&sig=REDACTED",
+    "LOGICAPP_URL_CONSULTATION": "<secret-from-azure-app-settings>",
+    "LOGICAPP_URL_CAPABILITY": "<secret-from-azure-app-settings>",
 
     "TURNSTILE_SECRET": "0x000000000000000000000000000000000000000000",
     "TURNSTILE_REQUIRED": "true",

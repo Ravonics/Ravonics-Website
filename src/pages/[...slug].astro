@@ -1,0 +1,16 @@
+---
+import fs from 'node:fs/promises';
+import { getLivePages, type PageMetadata } from '../lib/site-pages';
+
+export async function getStaticPaths() {
+  return getLivePages().map((page: PageMetadata) => ({
+    params: { slug: page.route === '/' ? undefined : page.route.slice(1).replace(/\.html$/, '') },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props as { page: PageMetadata };
+const legacyDocument = await fs.readFile(page.source, 'utf8');
+---
+
+<Fragment set:html={legacyDocument} />

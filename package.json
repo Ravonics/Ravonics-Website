@@ -1,0 +1,47 @@
+{
+  "name": "ravonics-website",
+  "version": "2026.08.22",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.19.0",
+  "engines": {
+    "node": ">=24 <27"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "build:astro": "astro build",
+    "check": "astro check && tsc --noEmit",
+    "format:check": "prettier --check \"astro.config.mjs\" \"eslint.config.mjs\" \"scripts/**/*.mjs\" \"src/**/*.astro\" \"src/**/*.ts\" \"tests/**/*.ts\" \"*.{json,mjs,ts}\"",
+    "lint": "eslint astro.config.mjs eslint.config.mjs scripts src tests",
+    "routes:generate": "node scripts/generate-site-index.mjs --write",
+    "routes:check": "node scripts/generate-site-index.mjs --check",
+    "media:check": "node scripts/validate-media-manifest.mjs",
+    "site:check": "node scripts/site-quality.mjs",
+    "proxy:smoke": "node scripts/verify-proxy.mjs",
+    "test": "npm run test:proxy",
+    "test:proxy": "npm --prefix proxy test",
+    "test:browser": "playwright test",
+    "test:all": "npm run check && npm run lint && npm run format:check && npm run routes:check && npm run media:check && npm test && npm run site:check && npm run test:browser"
+  },
+  "dependencies": {
+    "@astrojs/rss": "4.0.19",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "7.2.4",
+    "sharp": "0.35.3",
+    "tailwindcss": "4.3.3",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "eslint": "10.9.0",
+    "globals": "17.11.0",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "0.14.1",
+    "typescript-eslint": "8.67.0",
+    "typescript": "6.0.3",
+    "vite": "8.2.2"
+  }
+}

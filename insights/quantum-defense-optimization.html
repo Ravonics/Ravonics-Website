@@ -79,6 +79,7 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -99,16 +100,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -164,17 +165,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -208,7 +209,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-8">
-                            <div class="blog-read">
+                            <article class="blog-read" aria-label="Article content">
 
                                 <p class="mb-4">
                                     <em>An INSTAR Lab research direction: applying quantum optimization algorithms to the combinatorial scheduling, routing, and tasking problems that classical solvers find intractable at mission scale</em>
@@ -224,56 +225,56 @@
 
                                 <ol class="ol-style-1">
                                   <li>
-                                    <h4>The Defense Optimization Problem Class</h4>
+                                    <h2 class="legacy-h4 h4">The Defense Optimization Problem Class</h2>
                                     <p>
                                       The problems of interest are combinatorial: they involve selecting, ordering, or assigning discrete items under constraints, with an exponentially large solution space. Canonical forms include vehicle routing problems, traveling-salesman variants, quadratic unconstrained binary optimization (QUBO), and constraint-satisfaction problems. Defense instantiations include multi-UAV waypoint planning, ISR sensor retasking, supply route deconfliction, and communications frequency assignment. Each shares the property that classical exact solvers become intractable as instance size grows, making them natural targets for quantum speedup research.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Gate-Model vs. Quantum Annealing Approaches</h4>
+                                    <h2 class="legacy-h4 h4">Gate-Model vs. Quantum Annealing Approaches</h2>
                                     <p>
                                       Two hardware paradigms are relevant. Gate-model quantum computers (IBM, Google, IonQ) execute sequences of quantum logic gates on qubits: general-purpose, but currently limited to shallow circuits by noise. Quantum annealers (D-Wave) are purpose-built for QUBO problems, mapping the cost function directly onto physical qubit couplings and allowing the system to relax toward a minimum-energy configuration. Annealers can handle larger instances today on their native problem class, but gate models promise broader applicability as hardware matures. INSTAR Lab's research evaluates both paradigms against defense-relevant problem encodings.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Quantum Approximate Optimization Algorithm (QAOA)</h4>
+                                    <h2 class="legacy-h4 h4">Quantum Approximate Optimization Algorithm (QAOA)</h2>
                                     <p>
                                       QAOA is the leading candidate gate-model algorithm for combinatorial optimization on near-term hardware. It encodes the optimization objective as a cost Hamiltonian and applies alternating cost and mixer unitaries, parameterized by angles that are classically tuned to steer the quantum state toward good solutions. Depth (number of rounds, denoted p) trades circuit complexity against solution quality; shallow circuits are NISQ-feasible but yield approximate results. Understanding where QAOA outperforms classical approximation algorithms, and for which problem structures, is a key open question in the research community and a focal point for INSTAR Lab's benchmarking work.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Hybrid Classical-Quantum Architectures</h4>
+                                    <h2 class="legacy-h4 h4">Hybrid Classical-Quantum Architectures</h2>
                                     <p>
                                       Full quantum solutions to large defense problems are not feasible on near-term hardware. The practical near-term model is hybrid: classical processors handle problem decomposition, parameter optimization, and result post-processing, while the quantum processor is invoked for the computationally intensive subproblem where quantum advantage is expected to emerge. Variational quantum eigensolvers and quantum-classical feedback loops exemplify this pattern. Designing effective decompositions (knowing which subproblems benefit from quantum treatment and which are better left classical) is itself a research contribution that defense-domain expertise informs directly.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>NISQ Realism and Error Considerations</h4>
+                                    <h2 class="legacy-h4 h4">NISQ Realism and Error Considerations</h2>
                                     <p>
                                       Current quantum hardware is noisy: gate errors, decoherence, and readout errors accumulate with circuit depth, degrading result quality. NISQ-era research must account for this honestly. Error mitigation techniques (zero-noise extrapolation, probabilistic error cancellation, symmetry verification) extend the useful depth of near-term circuits but add classical overhead. Fault-tolerant quantum computing, which would enable deep circuits and strong guarantees, requires logical qubits built from many physical qubits and remains a medium-to-long horizon. INSTAR Lab's research posture acknowledges these constraints and targets problem formulations and circuit depths appropriate to demonstrated hardware capability.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Near-Term vs. Long-Term Research Horizon</h4>
+                                    <h2 class="legacy-h4 h4">Near-Term vs. Long-Term Research Horizon</h2>
                                     <p>
                                       Near-term work focuses on problem encoding, benchmark development, and hybrid architecture design: contributions that accrue regardless of when fault-tolerant hardware arrives and position the team to exploit improved hardware as it becomes available. Medium-term milestones include demonstrating quantum advantage on small, defense-relevant benchmark instances. Long-term, fault-tolerant hardware opens the door to Grover-style unstructured search and quantum speedups on constraint-satisfaction problems at operationally relevant scale. Ravonics and INSTAR Lab are building toward this trajectory through SBIR/STTR research pathways, not claiming current product capability.
                                     </p>
                                   </li>
                                 </ol>
 
-                                <img src="../images/blog/posts/quantum-defense-optimization.avif" class="w-100 rounded-1" alt="Researcher studying quantum circuit diagrams in early-morning laboratory light">
+                                <img src="../images/blog/posts/quantum-defense-optimization.avif" class="w-100 rounded-1" alt="Researcher studying quantum circuit diagrams in early-morning laboratory light" width="1920" height="1080">
 
-                            </div>
+                            </article>
 
                             <div class="spacer-single"></div>
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
-                                <h4>Interested in quantum optimization research for your defense program?</h4>
+                                <h2 class="legacy-h4 h4">Interested in quantum optimization research for your defense program?</h2>
                                 <p>Ravonics and INSTAR Lab are developing quantum optimization research capabilities targeting SBIR/STTR pathways. If you are a program office, national laboratory, or prime contractor exploring quantum computing for scheduling, routing, or sensor tasking problems, we welcome early-stage technical dialogue.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
@@ -283,15 +284,15 @@
 
                         <div class="col-lg-4">
                             <div class="widget widget-post">
-                                <h4>Related Perspectives</h4>
+                                <h2 class="legacy-h4 h4">Related Perspectives</h2>
                                 <ul class="de-bloglist-type-1">
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/swarm-coordination-concepts.avif" alt="Autonomous swarm coordination architecture concepts">
+                                      <img src="../images/blog/posts/swarm-coordination-concepts.avif" alt="Autonomous swarm coordination architecture concepts" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="swarm-coordination-concepts.html">
-                                        <h4>Autonomous Swarm Coordination | Architecture Concepts</h4>
+                                        <h2 class="legacy-h4 h4">Autonomous Swarm Coordination | Architecture Concepts</h2>
                                       </a>
                                       <div class="d-date">Autonomous Systems</div>
                                     </div>
@@ -299,11 +300,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/edge-ai-hardware-evaluation.avif" alt="Tactical edge AI hardware evaluation" loading="lazy">
+                                      <img src="../images/blog/posts/edge-ai-hardware-evaluation.avif" alt="Tactical edge AI hardware evaluation" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="edge-ai-hardware-evaluation.html">
-                                        <h4>Tactical Edge AI Hardware Evaluation</h4>
+                                        <h2 class="legacy-h4 h4">Tactical Edge AI Hardware Evaluation</h2>
                                       </a>
                                       <div class="d-date">Hardware Innovation</div>
                                     </div>
@@ -311,11 +312,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/pqc-federal-architecture.avif" alt="Post-quantum cryptography architecture for federal systems" loading="lazy">
+                                      <img src="../images/blog/posts/pqc-federal-architecture.avif" alt="Post-quantum cryptography architecture for federal systems" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="pqc-federal-architecture.html">
-                                        <h4>Post-Quantum Cryptography Architecture for Federal Systems</h4>
+                                        <h2 class="legacy-h4 h4">Post-Quantum Cryptography Architecture for Federal Systems</h2>
                                       </a>
                                       <div class="d-date">Cryptography Research</div>
                                     </div>
@@ -323,11 +324,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/hyperspectral-sensor-fusion.avif" alt="Hyperspectral imaging and sensor fusion INSTAR Lab research" loading="lazy">
+                                      <img src="../images/blog/posts/hyperspectral-sensor-fusion.avif" alt="Hyperspectral imaging and sensor fusion INSTAR Lab research" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="hyperspectral-sensor-fusion.html">
-                                        <h4>Hyperspectral Imaging &amp; Sensor Fusion | INSTAR Lab Research</h4>
+                                        <h2 class="legacy-h4 h4">Hyperspectral Imaging &amp; Sensor Fusion | INSTAR Lab Research</h2>
                                       </a>
                                       <div class="d-date">Sensor Technology</div>
                                     </div>
@@ -335,11 +336,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/digital-twin-multidomain.avif" alt="Digital twin modeling for multi-domain operations" loading="lazy">
+                                      <img src="../images/blog/posts/digital-twin-multidomain.avif" alt="Digital twin modeling for multi-domain operations" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="digital-twin-multidomain.html">
-                                        <h4>Digital Twin Modeling for Multi-Domain Operations</h4>
+                                        <h2 class="legacy-h4 h4">Digital Twin Modeling for Multi-Domain Operations</h2>
                                       </a>
                                       <div class="d-date">Simulation &amp; Modeling</div>
                                     </div>
@@ -347,11 +348,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/post-quantum-cryptography.avif" alt="Post-quantum cryptography for federal comms" loading="lazy">
+                                      <img src="../images/blog/posts/post-quantum-cryptography.avif" alt="Post-quantum cryptography for federal comms" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="post-quantum-cryptography.html">
-                                        <h4>Post-Quantum Cryptography for Federal Comms</h4>
+                                        <h2 class="legacy-h4 h4">Post-Quantum Cryptography for Federal Comms</h2>
                                       </a>
                                       <div class="d-date">Cryptography</div>
                                     </div>
@@ -361,7 +362,7 @@
                             </div>
 
                             <div class="widget widget_tags">
-                                <h4>Popular Tags</h4>
+                                <h2 class="legacy-h4 h4">Popular Tags</h2>
                                 <ul>
                                     <li><a href="#link">AI & Machine Learning</a></li>
                                     <li><a href="#link">Autonomous Systems</a></li>
@@ -395,7 +396,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
 
         <!-- content close -->
         <!-- footer begin -->
@@ -403,12 +404,12 @@
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -426,7 +427,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -444,7 +445,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -489,18 +490,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -516,14 +517,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -538,6 +539,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

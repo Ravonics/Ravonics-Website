@@ -1,7 +1,7 @@
 # Ravonics LLC — Corporate Website
 
-[![SBA HUBZone Certified](https://img.shields.io/badge/SBA-HUBZone%20Certified-green)]()
-[![SAM.gov](https://img.shields.io/badge/SAM-Active-blue)]()
+[![SBA HUBZone Certified](https://img.shields.io/badge/SBA-HUBZone%20Certified-green)](<>)
+[![SAM.gov](https://img.shields.io/badge/SAM-Active-blue)](<>)
 
 Ravonics is a West Virginia-based SBA HUBZone Certified defense technology company delivering AI/ML, autonomous systems, computer vision, zero-trust architecture, and quantum-ready solutions to federal and Department of War customers.
 
@@ -14,7 +14,7 @@ Ravonics partners with Droid Ops Inc, Dream Limited, Viper Dynamics, and the INS
 ## Tech Stack
 
 - **Hosting:** GitHub Pages (behind Cloudflare for DDoS protection + CDN)
-- **Stack:** Static HTML / CSS / Vanilla JS
+- **Stack:** Astro 7 static build bridge, Tailwind CSS 4 foundation, legacy HTML/CSS/vanilla JS shell
 - **Template:** Designesia (licensed)
 - **Media:** AVIF images, self-hosted cinematic MP4 hero
 - **Forms:** Azure Functions → Logic Apps → Dynamics 365
@@ -23,11 +23,19 @@ Ravonics partners with Droid Ops Inc, Dream Limited, Viper Dynamics, and the INS
 ## Quick Start
 
 ```bash
-# Serve locally
-python3 -m http.server 8000
+# Install dependencies (the proxy has its own lockfile)
+npm ci
+npm ci --prefix proxy
 
-# Run QA gate
-node scripts/qa-screenshots.mjs
+# Build and serve the tested static artifact
+npm run build
+python3 -m http.server 8000 --directory build/site
+
+# Run the complete quality gate
+npm run test:all
+
+# Verify the deployed proxy without submitting a lead
+npm run proxy:smoke
 ```
 
 ## Structure
@@ -45,12 +53,18 @@ node scripts/qa-screenshots.mjs
 ├── js/                     # JavaScript
 ├── proxy/                  # Azure Functions lead-capture proxy source
 ├── scripts/                # QA, build, deploy tooling
-└── src/                    # PDF source HTML
+└── src/                    # Astro routes and migration foundation
 ```
 
 ## Publishing
 
-The live site is published via the `gh-pages` branch. See `public-site-publish.md` for the process.
+The live site is published via the `gh-pages` branch. Build `build/site` first,
+then follow [the scrubbed artifact publish guard](scripts/PUBLISH-GUARD.md).
+
+The site build supports Node 24 and Node 26. Node 24 is the production baseline
+because it is the current LTS and the Azure Functions target supports it. Node
+26 is exercised by CI as a compatibility lane while it remains Current and
+until Azure Functions adds it to the supported runtime list.
 
 ## License
 

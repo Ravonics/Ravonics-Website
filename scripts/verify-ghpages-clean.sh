@@ -56,6 +56,10 @@ FORBIDDEN_FILES=(
 # Forbidden directory trees (any file inside these is forbidden)
 FORBIDDEN_DIRS=(
   ".claude"
+  ".astro"
+  ".vite"
+  "build"
+  "dist"
   "styles"
   "template"
   "scripts"
@@ -180,17 +184,11 @@ grep_tree "old fabricated CAGE: 8R4T5" "8R4T5"
 grep_tree "old fabricated DUNS: 07-845-9321" "07-845-9321"
 
 # 2d. Logic App SAS callback URLs (signed trigger endpoints).
-# These carry a 'sig=' SAS token and must live in EXACTLY ONE deploy-time
-# generated file: js/form-endpoints.js (produced by scripts/inject-endpoints.sh).
-# Finding a signed logic.azure.com URL anywhere else means a callback signature
-# was hardcoded into source -- which is the leak we publish-time injection exists
-# to prevent. Flag every file except the one sanctioned location.
-SAS_ALLOW="${TARGET_DIR}/js/form-endpoints.js"
+# The proxy-only frontend contract means no signed Logic App URL belongs in
+# public output, including the deploy-time generated form-endpoints.js file.
 while IFS= read -r f; do
   [[ -z "${f}" ]] && continue
-  if [[ "${f}" != "${SAS_ALLOW}" ]]; then
-    violation "FORBIDDEN CONTENT (hardcoded Logic App SAS URL outside js/form-endpoints.js): ${f}"
-  fi
+  violation "FORBIDDEN CONTENT (signed Logic App SAS URL in public output): ${f}"
 done < <(grep -r -l -I \
   --include="*.html" --include="*.htm" --include="*.txt" \
   --include="*.xml" --include="*.json" --include="*.csv" \

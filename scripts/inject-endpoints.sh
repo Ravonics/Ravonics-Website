@@ -13,14 +13,9 @@
 #   3. Injects a <script src> include before </head> in the worktree copies of
 #      contact.html, booking.html and company/doing-business.html.
 #
-# MODES
-# -----
-# Direct mode (RAVONICS_USE_PROXY=0, legacy):
-#   Retrieves the Azure Logic App SAS callback URLs at runtime and writes them
-#   into form-endpoints.js. This exposes the SAS sig in client JS (the original,
-#   inherent limitation). Used when no proxy is configured.
-#
-# Proxy mode (default now, since 2026-06-22):
+# MODE
+# ----
+# Proxy mode only:
 #   Writes the lead-capture PROXY endpoints instead of the raw SAS URLs, so the
 #   SAS never reaches the browser. No Azure call is made; no secret is written.
 #   Requires RAVONICS_PROXY_BASE, e.g.
@@ -29,17 +24,18 @@
 #   a Cloudflare Turnstile token (cf_turnstile_token) + a company_website
 #   honeypot field; that markup is handled separately (see proxy/README.md).
 #
-# Secrets (SAS callback URLs) are ONLY ever written into the worktree, and only
-# in direct mode. scripts/ is on the gh-pages publish exclude list, so this
-# script itself never ships.
+# Direct Logic App/SAS endpoint injection is intentionally disabled. The proxy
+# is the only supported endpoint contract, and scripts/ is on the gh-pages
+# publish exclude list, so this script itself never ships.
 #
 # Usage:
-#   ./scripts/inject-endpoints.sh /tmp/ghpages-work                  # proxy (default)
-#   RAVONICS_USE_PROXY=0 ./scripts/inject-endpoints.sh /tmp/ghpages-work  # direct SAS
+#   ./scripts/inject-endpoints.sh /tmp/ghpages-work
+#   RAVONICS_PROXY_BASE="https://<APP>.azurewebsites.net/api" \
+#     ./scripts/inject-endpoints.sh /tmp/ghpages-work
 #
 # Exit codes:
 #   0  — success: form-endpoints.js written and includes injected
-#   1+ — failure: az not logged in, callback URL not retrievable, or bad worktree
+#   1+ — failure: unsupported mode, bad proxy URL, or bad worktree
 
 set -euo pipefail
 
@@ -47,42 +43,10 @@ set -euo pipefail
 # Configuration
 # ---------------------------------------------------------------------------
 
-SUBSCRIPTION="6e60a8fd-9992-4ff7-8a3e-db96b4dfed4f"   # Microsoft Partner Network
-RESOURCE_GROUP="FocusPass"
-API_VERSION="2016-06-01"
-
-# Workflow name -> trigger name. Both flows expose a single "manual" HTTP trigger.
-CONSULTATION_WF="Ravonics_Consultation_Intake"        # contact + booking
-CAPABILITY_WF="Ravonics_CapabilityUpdate_Intake"      # capability_update
-TRIGGER_NAME="manual"
-
-# Proxy mode toggles (see MODES in the header).
-# Default: proxy mode.  The lead-capture proxy (ravonics-lead-proxy) keeps the
-# Logic App SAS out of the browser.  Override with RAVONICS_USE_PROXY=0 to fall
-# back to direct Azure SAS callback URLs (legacy).
-USE_PROXY="${RAVONICS_USE_PROXY:-1}"
+# The lead-capture proxy (ravonics-lead-proxy) keeps Logic App credentials out
+# of the browser. RAVONICS_USE_PROXY is retained only as a fail-closed guard so
+# old callers cannot silently re-enable direct endpoint injection.
 PROXY_BASE="${RAVONICS_PROXY_BASE:-https://ravonics-lead-proxy.azurewebsites.net/api}"
-
-# ---------------------------------------------------------------------------
-# Stale-SAS guard (2026-06-22 rotation)
-# ---------------------------------------------------------------------------
-# The old SAS signatures were burned when an earlier version of
-# form-endpoints.js was committed to a public GitHub mirror.  They were
-# rotated on 2026-06-22 via regenerateAccessKey on both Logic Apps.
-#
-#   Consultation (old sig):
-#     mj6El6caqZ0C0PSYVMswT25WYZ7yVZZNtNLLXC8CVrs
-#   Capability (old sig):
-#     MHS-OOwgWMSCU5JTZHLec2LPfVswzvNUYBvYeRbPSl4
-#   Consultation (new sig, valid as of rotation):
-#     9EHH2cZUoFuL6jFr2sArjUFWLupAT-0Jc1g61bd7Avw
-#   Capability (new sig, valid as of rotation):
-#     PrLRSmmRSL3hnYRVaF1LHScflcQfo6Q8CR6Drfg8UQU
-#
-# Both Logic App access keys (primary) have been regenerated, permanently
-# invalidating all SAS derived from the old keys.  Direct mode retrieves
-# fresh callback URLs on-the-fly via get_callback_url() if new rotation is needed again.  Do NOT revert to the old sig values.
-# ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
 # Arg handling
@@ -112,75 +76,29 @@ for required in "contact.html" "booking.html" "company/doing-business.html"; do
 done
 
 # ---------------------------------------------------------------------------
-# Resolve endpoint URLs (proxy mode vs direct/SAS mode)
+# Resolve proxy endpoint URLs
 # ---------------------------------------------------------------------------
-# Sets CONTACT_URL / BOOKING_URL / CAPABILITY_URL. In direct mode contact and
-# booking share the consultation SAS URL. In proxy mode each maps to a proxy
-# path route.
-
-if [[ "${USE_PROXY}" == "1" ]]; then
-  # ---- Proxy mode: no Azure call, no secret written ----
-  if [[ -z "${PROXY_BASE}" ]]; then
-    echo "ERROR: RAVONICS_USE_PROXY=1 but RAVONICS_PROXY_BASE is unset." >&2
-    echo "       e.g. RAVONICS_PROXY_BASE=https://ravonics-lead-proxy.azurewebsites.net/api" >&2
-    exit 6
-  fi
-  if [[ "${PROXY_BASE}" != https://* ]]; then
-    echo "ERROR: RAVONICS_PROXY_BASE must be an https:// URL (got '${PROXY_BASE}')." >&2
-    exit 6
-  fi
-  # Strip any trailing slash for clean concatenation.
-  PROXY_BASE="${PROXY_BASE%/}"
-
-  CONTACT_URL="${PROXY_BASE}/lead/contact"
-  BOOKING_URL="${PROXY_BASE}/lead/booking"
-  CAPABILITY_URL="${PROXY_BASE}/lead/capability_update"
-  echo "Proxy mode: endpoints point at ${PROXY_BASE}/lead/*" >&2
-
-else
-  # ---- Direct mode (legacy): retrieve the SAS callback URLs from Azure ----
-  if ! command -v az >/dev/null 2>&1; then
-    echo "ERROR: az CLI not found on PATH." >&2
-    exit 3
-  fi
-
-  if ! az account show >/dev/null 2>&1; then
-    echo "ERROR: az is not logged in. Run 'az login' first." >&2
-    exit 3
-  fi
-
-  # Retrieve a Logic App callback URL (fails loudly on any problem).
-  get_callback_url() {
-    local workflow="$1"
-    local url
-    url="$(az rest \
-      --method post \
-      --url "https://management.azure.com/subscriptions/${SUBSCRIPTION}/resourceGroups/${RESOURCE_GROUP}/providers/Microsoft.Logic/workflows/${workflow}/triggers/${TRIGGER_NAME}/listCallbackUrl?api-version=${API_VERSION}" \
-      --query "value" -o tsv 2>/dev/null || true)"
-
-    # Must be a real HTTPS callback URL carrying a signature.
-    if [[ "${url}" != https://*"sig="* ]]; then
-      echo "ERROR: could not retrieve a valid callback URL for ${workflow}." >&2
-      echo "       (az returned: '${url:-<empty>}')" >&2
-      exit 4
-    fi
-
-    printf '%s' "${url}"
-  }
-
-  echo "Retrieving Logic App callback URLs..." >&2
-  CONSULTATION_URL="$(get_callback_url "${CONSULTATION_WF}")"
-  CAPABILITY_URL="$(get_callback_url "${CAPABILITY_WF}")"
-
-  # Defense in depth: refuse to proceed if anything came back empty.
-  if [[ -z "${CONSULTATION_URL}" || -z "${CAPABILITY_URL}" ]]; then
-    echo "ERROR: one or more callback URLs are empty; refusing to write placeholders." >&2
-    exit 4
-  fi
-
-  CONTACT_URL="${CONSULTATION_URL}"
-  BOOKING_URL="${CONSULTATION_URL}"
+if [[ "${RAVONICS_USE_PROXY:-1}" != "1" ]]; then
+  echo "ERROR: only proxy mode is supported; direct endpoint injection is disabled." >&2
+  exit 6
 fi
+
+if [[ -z "${PROXY_BASE}" ]]; then
+  echo "ERROR: RAVONICS_PROXY_BASE is unset." >&2
+  echo "       e.g. RAVONICS_PROXY_BASE=https://ravonics-lead-proxy.azurewebsites.net/api" >&2
+  exit 6
+fi
+if [[ "${PROXY_BASE}" != https://* ]]; then
+  echo "ERROR: RAVONICS_PROXY_BASE must be an https:// URL (got '${PROXY_BASE}')." >&2
+  exit 6
+fi
+# Strip any trailing slash for clean concatenation.
+PROXY_BASE="${PROXY_BASE%/}"
+
+CONTACT_URL="${PROXY_BASE}/lead/contact"
+BOOKING_URL="${PROXY_BASE}/lead/booking"
+CAPABILITY_URL="${PROXY_BASE}/lead/capability_update"
+echo "Proxy mode: endpoints point at ${PROXY_BASE}/lead/*" >&2
 
 # ---------------------------------------------------------------------------
 # Write js/form-endpoints.js into the worktree
@@ -196,10 +114,10 @@ cat > "${ENDPOINTS_FILE}" <<EOF
 /**
  * Ravonics form endpoints (deploy-time generated; NOT in source control).
  *
- * Injected by scripts/inject-endpoints.sh at publish time. In proxy mode these
- * are the lead-capture proxy paths (no SAS in the browser). In direct mode they
- * are the Azure Logic App SAS callback URLs. careers is intentionally absent
- * (no backend) so that form stays on its mailto fallback.
+ * Injected by scripts/inject-endpoints.sh at publish time. These are the
+ * lead-capture proxy paths; Logic App credentials never reach the browser.
+ * careers is intentionally absent (no backend) so that form stays on its
+ * mailto fallback.
  */
 window.RAVONICS_FORM_ENDPOINTS = {
   contact: "${CONTACT_URL}",

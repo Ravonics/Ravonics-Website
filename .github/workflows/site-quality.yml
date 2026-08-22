@@ -1,0 +1,60 @@
+name: Site quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install proxy dependencies
+        run: npm ci --prefix proxy
+
+      - name: Install Chromium for browser checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Run site quality suite
+        run: npm run test:all
+
+  node-26-compatibility:
+    name: Node 26 compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js 26 compatibility lane
+        uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Install proxy dependencies
+        run: npm ci --prefix proxy
+
+      - name: Check and build with Node 26
+        run: npm run check && npm run build && ./scripts/verify-ghpages-clean.sh build/site
+
+      - name: Run proxy tests with Node 26
+        run: npm run test:proxy

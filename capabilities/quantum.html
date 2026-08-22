@@ -79,6 +79,7 @@
     }
     </script>
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -99,16 +100,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -164,17 +165,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -208,16 +209,16 @@
                     <div class="row g-4 gx-5">
                         <div class="col-lg-3">
                             <div class="me-lg-3">
-                                <a href="ai.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Advanced AI</h5></a>
-                                <a href="autonomous-systems.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Autonomous Systems</h5></a>
-                                <a href="robotics.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Autonomy Software</h5></a>
-                                <a href="computer-vision.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Computer Vision</h5></a>
-                                <a href="intelligence.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Intelligence & Decision</h5></a>
-                                <a href="tactical-comms.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Tactical Communications</h5></a>
-                                <a href="quantum.html" class="bg-color text-light d-block p-3 px-4 rounded-10px mb-3 relative"><h5 class="mb-0 fs-16">Quantum Technologies</h5><i class="icofont-long-arrow-right absolute abs-middle fs-24 end-20px"></i></a>
-                                <a href="cryptography.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Cryptography & Blockchain</h5></a>
-                                <a href="computing.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">High-Performance Computing</h5></a>
-                                <a href="integration.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h5 class="mb-0 fs-16">Systems Engineering</h5></a>
+                                <a href="ai.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Advanced AI</h2></a>
+                                <a href="autonomous-systems.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Autonomous Systems</h2></a>
+                                <a href="robotics.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Autonomy Software</h2></a>
+                                <a href="computer-vision.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Computer Vision</h2></a>
+                                <a href="intelligence.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Intelligence & Decision</h2></a>
+                                <a href="tactical-comms.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Tactical Communications</h2></a>
+                                <a href="quantum.html" class="bg-color text-light d-block p-3 px-4 rounded-10px mb-3 relative"><h2 class="mb-0 fs-16 legacy-h5 h5">Quantum Technologies</h2><i class="icofont-long-arrow-right absolute abs-middle fs-24 end-20px"></i></a>
+                                <a href="cryptography.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Cryptography & Blockchain</h2></a>
+                                <a href="computing.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">High-Performance Computing</h2></a>
+                                <a href="integration.html" class="bg-light d-block p-3 px-4 rounded-10px mb-3"><h2 class="mb-0 fs-16 legacy-h5 h5">Systems Engineering</h2></a>
                             </div>
                         </div>
 
@@ -231,7 +232,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="relative">
-                                        <img src="../images/sections/cap-quantum-feature.avif" class="img-fluid rounded-1 wow fadeInUp" alt="Quantum optics bench with beam-splitter cube and photodetectors | Ravonics quantum research">
+                                        <img src="../images/sections/cap-quantum-feature.avif" class="img-fluid rounded-1 wow fadeInUp" alt="Quantum optics bench with beam-splitter cube and photodetectors | Ravonics quantum research" width="1000" height="1000">
                                         <div class="bg-color text-light p-4 abs m-4 bottom-0 rounded-1 sm-hide">
                                             <div class="row g-4 align-items-center">
                                                 <div class="col-lg-12">
@@ -250,9 +251,9 @@
                             <div class="row g-4">
                                 <div class="col-lg-6 wow fadeInUp">
                                     <div class="relative">
-                                        <img src="../images/icons-maroon/keycap/quantum/1.avif" alt="capability icon 1" class="abs w-90px rounded-1">
+                                        <img src="../images/icons-maroon/keycap/quantum/1.avif" alt="capability icon 1" class="abs w-90px rounded-1" width="512" height="512">
                                         <div class="ps-100 ms-4">
-                                            <h4>Quantum Computing & Programming</h4>
+                                            <h2 class="legacy-h4 h4">Quantum Computing & Programming</h2>
                                             <p>Quantum algorithm development for optimization, simulation, and cryptanalysis using gate-based systems and quantum annealing platforms with exponential speedups over classical computing.</p>
                                         </div>
                                     </div>
@@ -260,9 +261,9 @@
 
                                 <div class="col-lg-6 wow fadeInUp">
                                     <div class="relative">
-                                        <img src="../images/icons-maroon/keycap/quantum/2.avif" alt="capability icon 2" class="abs w-90px rounded-1">
+                                        <img src="../images/icons-maroon/keycap/quantum/2.avif" alt="capability icon 2" class="abs w-90px rounded-1" width="512" height="512">
                                         <div class="ps-100 ms-4">
-                                            <h4>Quantum Key Distribution (QKD)</h4>
+                                            <h2 class="legacy-h4 h4">Quantum Key Distribution (QKD)</h2>
                                             <p>Quantum key distribution architectures engineered to protect communications against interception, leveraging photon-based key exchange designed so any eavesdropping attempt is detectable in principle.</p>
                                         </div>
                                     </div>
@@ -270,9 +271,9 @@
 
                                 <div class="col-lg-6 wow fadeInUp">
                                     <div class="relative">
-                                        <img src="../images/icons-maroon/keycap/quantum/3.avif" alt="capability icon 3" class="abs w-90px rounded-1">
+                                        <img src="../images/icons-maroon/keycap/quantum/3.avif" alt="capability icon 3" class="abs w-90px rounded-1" width="512" height="512">
                                         <div class="ps-100 ms-4">
-                                            <h4>Quantum Communications Networks</h4>
+                                            <h2 class="legacy-h4 h4">Quantum Communications Networks</h2>
                                             <p>Quantum repeaters and satellite-based QKD networks enabling ultra-secure tactical and strategic communications across global distances with quantum entanglement.</p>
                                         </div>
                                     </div>
@@ -280,9 +281,9 @@
 
                                 <div class="col-lg-6 wow fadeInUp">
                                     <div class="relative">
-                                        <img src="../images/icons-maroon/keycap/quantum/4.avif" alt="capability icon 4" class="abs w-90px rounded-1">
+                                        <img src="../images/icons-maroon/keycap/quantum/4.avif" alt="capability icon 4" class="abs w-90px rounded-1" width="512" height="512">
                                         <div class="ps-100 ms-4">
-                                            <h4>Quantum Sensing & Metrology</h4>
+                                            <h2 class="legacy-h4 h4">Quantum Sensing & Metrology</h2>
                                             <p>Atomic clocks and quantum sensors delivering unprecedented precision for navigation, timing, and detection, critical for GPS-denied operations and submarine detection.</p>
                                         </div>
                                     </div>
@@ -290,9 +291,9 @@
 
                                 <div class="col-lg-6 wow fadeInUp">
                                     <div class="relative">
-                                        <img src="../images/icons-maroon/keycap/quantum/5.avif" alt="capability icon 5" class="abs w-90px rounded-1">
+                                        <img src="../images/icons-maroon/keycap/quantum/5.avif" alt="capability icon 5" class="abs w-90px rounded-1" width="512" height="512">
                                         <div class="ps-100 ms-4">
-                                            <h4>Quantum Algorithm Development</h4>
+                                            <h2 class="legacy-h4 h4">Quantum Algorithm Development</h2>
                                             <p>Custom quantum circuits and variational algorithms for logistics optimization, molecular simulation, and machine learning acceleration with quantum advantage.</p>
                                         </div>
                                     </div>
@@ -300,9 +301,9 @@
 
                                 <div class="col-lg-6 wow fadeInUp">
                                     <div class="relative">
-                                        <img src="../images/icons-maroon/keycap/quantum/6.avif" alt="capability icon 6" class="abs w-90px rounded-1">
+                                        <img src="../images/icons-maroon/keycap/quantum/6.avif" alt="capability icon 6" class="abs w-90px rounded-1" width="512" height="512">
                                         <div class="ps-100 ms-4">
-                                            <h4>Hybrid Quantum-Classical Systems</h4>
+                                            <h2 class="legacy-h4 h4">Hybrid Quantum-Classical Systems</h2>
                                             <p>Integrated platforms combining quantum processors with classical HPC for near-term quantum advantage in defense applications without requiring fault-tolerant quantum computing.</p>
                                         </div>
                                     </div>
@@ -316,19 +317,19 @@
             </section>
 
 
-        </div>
+        </main>
         <!-- content close -->
         <!-- footer begin -->
         <footer class="text-light section-dark">
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -346,7 +347,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -364,7 +365,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -409,18 +410,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -436,14 +437,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -458,6 +459,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

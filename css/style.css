@@ -13807,3 +13807,26 @@ footer img[src$="up-right-arrow.webp"] {
     transition-duration: 0s !important;
   }
 }
+
+/* Semantic controls retain the purchased template's visual treatment. */
+#menu-btn,
+#btn-extra,
+#btn-close,
+.swiper-button-next,
+.swiper-button-prev,
+.owl-custom-nav .btn-next,
+.owl-custom-nav .btn-prev {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  font: inherit;
+}
+
+#menu-btn,
+#btn-extra,
+#btn-close,
+.owl-custom-nav .btn-next,
+.owl-custom-nav .btn-prev {
+  background: transparent;
+  padding: 0;
+}

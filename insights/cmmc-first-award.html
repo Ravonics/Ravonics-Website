@@ -79,6 +79,7 @@
     <!-- color scheme -->
     <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -99,16 +100,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -164,17 +165,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -208,7 +209,7 @@
                 <div class="container">
                     <div class="row gx-5">
                         <div class="col-lg-8">
-                            <div class="blog-read">
+                            <article class="blog-read" aria-label="Article content">
 
                                 <p class="mb-4">
                                     <em>A Ravonics perspective on what the CMMC 2.0 framework actually requires, written from the same vantage point as every new defense contractor pursuing the pathway for the first time</em>
@@ -224,56 +225,56 @@
 
                                 <ol class="ol-style-1">
                                   <li>
-                                    <h4>Understanding the Three Levels and Which Applies to You</h4>
+                                    <h2 class="legacy-h4 h4">Understanding the Three Levels and Which Applies to You</h2>
                                     <p>
                                       CMMC 2.0 collapsed the original five-level model into three. Level 1 covers 17 basic safeguarding practices from FAR 52.204-21 and applies to contractors handling only FCI (not CUI). Level 2 aligns exactly to the 110 practices in NIST SP 800-171 and applies to contractors handling CUI; most DoW contracts with CUI flow-down will require Level 2. Level 3 adds 24 practices drawn from NIST SP 800-172 for contractors on the highest-priority programs. Determining which level applies starts with whether your work involves CUI and whether any solicitation clause (notably DFARS 252.204-7021) specifies a required level. Assuming Level 1 applies to any program touching DoW data is a risk posture that warrants reassessment.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Self-Assessment vs. C3PAO: Who Assesses You</h4>
+                                    <h2 class="legacy-h4 h4">Self-Assessment vs. C3PAO: Who Assesses You</h2>
                                     <p>
                                       Level 1 and some Level 2 contracts allow annual self-assessment, where a senior company official affirms compliance in the Supplier Performance Risk System (SPRS). Level 2 contracts designated as "critical" by the program office require a triennial third-party assessment by a CMMC Third Party Assessment Organization (C3PAO) certified by the CMMC Accreditation Body (Cyber AB). Level 3 requires a government-led assessment by DCSA. Contractors should identify early whether their target contract vehicle will require a C3PAO assessment, because the scheduling backlog and cost of a third-party assessment are material planning inputs, not last-minute concerns.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>NIST SP 800-171: The 110 Controls Beneath Level 2</h4>
+                                    <h2 class="legacy-h4 h4">NIST SP 800-171: The 110 Controls Beneath Level 2</h2>
                                     <p>
                                       NIST SP 800-171 Revision 2 defines 110 security requirements across 14 domains: access control, awareness and training, audit and accountability, configuration management, identification and authentication, incident response, maintenance, media protection, personnel security, physical protection, risk assessment, security assessment, system and communications protection, and system and information integrity. Revision 3 (published 2024) reorganizes and adds requirements; contractors should monitor which revision their assessment will reference. Each requirement must be implemented, documented, and demonstrable; "we plan to implement" is not compliant unless accompanied by a properly scoped Plan of Action and Milestones.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>SPRS Score, POA&amp;M, and the 110-Point System</h4>
+                                    <h2 class="legacy-h4 h4">SPRS Score, POA&amp;M, and the 110-Point System</h2>
                                     <p>
                                       SPRS (Supplier Performance Risk System) hosts a contractor's self-assessed score against the NIST SP 800-171 DoW Assessment Methodology. A perfect score is 110; each unimplemented practice carries a weighted deduction, with the most critical controls reducing the score the most steeply. A score below 110 must be accompanied by a Plan of Action and Milestones (POA&amp;M) documenting the gap, the remediation approach, and the expected completion date. The SPRS score is visible to contracting officers and is a factor in contract award decisions. Contractors who submit a score without a credible, time-bounded POA&amp;M for each gap are exposed to False Claims Act risk if the score is later found to have been submitted without a good-faith basis.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>CUI Scoping and Enclave Architecture</h4>
+                                    <h2 class="legacy-h4 h4">CUI Scoping and Enclave Architecture</h2>
                                     <p>
                                       One of the most consequential decisions in CMMC preparation is defining the CUI boundary: the scope of systems, people, and processes that touch Controlled Unclassified Information. A broader CUI boundary means more systems in scope for the 110 controls, more devices to harden, more endpoints to monitor, and higher assessment cost. Many contractors reduce this burden through CUI enclave architecture: isolating CUI handling to a defined, hardened environment (dedicated endpoints, segmented network, strict access control) while keeping the broader business environment out of scope. The enclave must be technically enforced and consistently maintained; inspectors assess the actual environment, not the diagram.
                                     </p>
                                   </li>
 
                                   <li>
-                                    <h4>Flow-Down, Subcontractors, and Supply Chain Responsibility</h4>
+                                    <h2 class="legacy-h4 h4">Flow-Down, Subcontractors, and Supply Chain Responsibility</h2>
                                     <p>
                                       CMMC requirements flow down to subcontractors who handle CUI or FCI on the same program. A prime contractor who achieves Level 2 certification cannot satisfy program requirements if a subcontractor handling CUI operates without equivalent controls. The prime is responsible for including DFARS 252.204-7021 in subcontracts and for verifying that subcontractors have the required certification prior to award. Small businesses entering the defense supply chain as subcontractors should not assume CMMC is only the prime's problem; flow-down clauses make it everyone's obligation. Building the assessment and certification timeline into subcontract negotiations, rather than after task order award, avoids the most common schedule surprise.
                                     </p>
                                   </li>
                                 </ol>
 
-                                <img src="../images/blog/posts/cmmc-first-award.avif" class="w-100 rounded-1" alt="Defense contractor reviewing CMMC compliance documentation in early morning at a secure workstation">
+                                <img src="../images/blog/posts/cmmc-first-award.avif" class="w-100 rounded-1" alt="Defense contractor reviewing CMMC compliance documentation in early morning at a secure workstation" width="1920" height="1080">
 
-                            </div>
+                            </article>
 
                             <div class="spacer-single"></div>
 
                             <div id="discuss-cta" class="border-gray rounded-1 p-30">
-                                <h4>Want to discuss CMMC pathway planning for your defense program?</h4>
+                                <h2 class="legacy-h4 h4">Want to discuss CMMC pathway planning for your defense program?</h2>
                                 <p>Ravonics is itself navigating the CMMC 2.0 pathway as a new small business: NIST 800-171 alignment underway, CMMC assessment planned. We work with defense contractors and program teams to translate CMMC requirements into actionable implementation plans, CUI scoping decisions, and SPRS preparation. Whether you are starting your first self-assessment or preparing for a C3PAO engagement, we engage at the technical level.</p>
                                 <a href="../booking.html" class="btn-main fx-slide"><span>Request a Conversation</span></a>
                             </div>
@@ -283,15 +284,15 @@
 
                         <div class="col-lg-4">
                             <div class="widget widget-post">
-                                <h4>Related Perspectives</h4>
+                                <h2 class="legacy-h4 h4">Related Perspectives</h2>
                                 <ul class="de-bloglist-type-1">
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" alt="JADC2 multi-domain integration: why interoperability is the hard problem">
+                                      <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" alt="JADC2 multi-domain integration: why interoperability is the hard problem" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="jadc2-interoperability-perspective.html">
-                                        <h4>JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</h4>
+                                        <h2 class="legacy-h4 h4">JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</h2>
                                       </a>
                                       <div class="d-date">Defense Strategy</div>
                                     </div>
@@ -299,11 +300,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" alt="Zero trust architecture: why mandates stall without architectural foundation" loading="lazy">
+                                      <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" alt="Zero trust architecture: why mandates stall without architectural foundation" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="zero-trust-mandates-perspective.html">
-                                        <h4>Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</h4>
+                                        <h2 class="legacy-h4 h4">Zero Trust Architecture: Why Mandates Stall Without Architectural Foundation</h2>
                                       </a>
                                       <div class="d-date">Cybersecurity Policy</div>
                                     </div>
@@ -311,11 +312,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/ai-ethics-defense.avif" alt="AI ethics in defense: autonomy, accountability, and the human-on-the-loop principle" loading="lazy">
+                                      <img src="../images/blog/posts/ai-ethics-defense.avif" alt="AI ethics in defense: autonomy, accountability, and the human-on-the-loop principle" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="ai-ethics-defense.html">
-                                        <h4>AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle</h4>
+                                        <h2 class="legacy-h4 h4">AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle</h2>
                                       </a>
                                       <div class="d-date">Defense AI Policy</div>
                                     </div>
@@ -323,11 +324,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption: what FedRAMP-aligned architecture actually requires" loading="lazy">
+                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption: what FedRAMP-aligned architecture actually requires" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="federal-cloud-fedramp.html">
-                                        <h4>Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</h4>
+                                        <h2 class="legacy-h4 h4">Federal Cloud Adoption: What FedRAMP-Aligned Architecture Actually Requires</h2>
                                       </a>
                                       <div class="d-date">Cloud Strategy</div>
                                     </div>
@@ -335,11 +336,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat: why federal systems should begin PQC migration now" loading="lazy">
+                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat: why federal systems should begin PQC migration now" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="quantum-threat-pqc-migration.html">
-                                        <h4>The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</h4>
+                                        <h2 class="legacy-h4 h4">The Quantum Threat: Why Federal Systems Should Begin PQC Migration Now</h2>
                                       </a>
                                       <div class="d-date">Emerging Threats</div>
                                     </div>
@@ -347,11 +348,11 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero trust implementation for federal networks" loading="lazy">
+                                      <img src="../images/blog/posts/zero-trust-federal.avif" alt="Zero trust implementation for federal networks" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="zero-trust-federal.html">
-                                        <h4>Zero Trust Implementation for Federal Networks</h4>
+                                        <h2 class="legacy-h4 h4">Zero Trust Implementation for Federal Networks</h2>
                                       </a>
                                       <div class="d-date">Zero Trust Security</div>
                                     </div>
@@ -361,7 +362,7 @@
                             </div>
 
                             <div class="widget widget_tags">
-                                <h4>Popular Tags</h4>
+                                <h2 class="legacy-h4 h4">Popular Tags</h2>
                                 <ul>
                                     <li><a href="#link">AI & Machine Learning</a></li>
                                     <li><a href="#link">Autonomous Systems</a></li>
@@ -395,7 +396,7 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
 
         <!-- content close -->
         <!-- footer begin -->
@@ -403,12 +404,12 @@
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -426,7 +427,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -444,7 +445,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -489,18 +490,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -516,14 +517,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -538,6 +539,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

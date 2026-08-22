@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Ravonics lead-capture proxy (Azure Functions v4, Node 20+).
+ * Ravonics lead-capture proxy (Azure Functions v4, Node 24+).
  *
  * Purpose
  * -------
@@ -34,6 +34,9 @@
  */
 
 const { app } = require('@azure/functions');
+
+const packageVersion = require('../package.json').version;
+const SERVICE_VERSION = process.env.SERVICE_VERSION || packageVersion || 'dev';
 
 // ---------------------------------------------------------------------------
 // Configuration (all from App Settings / environment)
@@ -139,6 +142,8 @@ function clientIp(request) {
 function corsHeaders(origin) {
   const headers = {
     'Content-Type': 'application/json',
+    'Cache-Control': 'no-store',
+    'X-Content-Type-Options': 'nosniff',
     'Vary': 'Origin'
   };
   if (origin && CONFIG.allowedOrigins.indexOf(origin) !== -1) {
@@ -277,9 +282,7 @@ async function forwardToLogicApp(url, payload, context) {
       return { ok: true, status: resp.status };
     }
 
-    let detail = '';
-    try { detail = await resp.text(); } catch (e) { detail = '<unreadable>'; }
-    context.error('Logic App returned ' + resp.status + ': ' + detail.slice(0, 500));
+    context.error('Logic App returned HTTP ' + resp.status + '.');
     return { ok: false, status: resp.status, upstream: true };
   } catch (err) {
     context.error('Logic App forward failed: ' + (err && err.message ? err.message : String(err)));
@@ -452,10 +455,16 @@ app.http('health', {
   handler: async function () {
     return {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store',
+        'X-Content-Type-Options': 'nosniff'
+      },
       jsonBody: {
         ok: true,
         service: 'ravonics-lead-proxy',
+        version: SERVICE_VERSION,
+        runtime: process.versions.node,
         forms_configured: VALID_FORMS.filter(function (f) { return !!CONFIG.urls[f]; }),
         turnstile: CONFIG.turnstileSecret ? 'configured' : 'absent',
         turnstile_required: CONFIG.turnstileRequired

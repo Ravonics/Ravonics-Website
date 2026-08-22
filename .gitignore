@@ -9,3 +9,8 @@ scripts/issue-review-server.py
 # Playwright MCP artifacts
 .playwright-mcp/
 node_modules/
+build/
+.astro/
+coverage/
+playwright-report/
+test-results/

@@ -31,6 +31,8 @@ but must never appear on `gh-pages`:
 | `_preview-*.html` | Color scheme experiments; not production |
 | `*.md` (any Markdown) | Public site ships no Markdown; any .md is an internal leak |
 | `.claude/` directory | AI agent state and settings |
+| `.astro/`, `.vite/` directories | Build caches; internal |
+| `build/`, `dist/` directories | Build output and artifacts; publish only the scrubbed site root |
 | `styles/` directory | Color scheme experiments |
 | `template/` directory | Pristine vendor template; never the live site |
 | `scripts/` directory | This tooling directory; internal only |
@@ -56,21 +58,27 @@ Markdown files are always internal documents.
 
 ## Exact publish sequence
 
-Wire the guard into the standard scrubbed-overlay publish sequence immediately
-before the push step:
+The tested `build/site` artifact is the only source for publication. Do not
+overlay files from `demo` or another source branch: that can silently publish
+stale markup, omit the RSS feed, or bypass the Astro build checks.
 
 ```bash
-# 1. Create an isolated gh-pages worktree (non-destructive)
-git worktree add /tmp/ghpages-publish -B gh-pages github/gh-pages
+# 1. Build and validate the exact artifact that will be published
+npm ci
+npm ci --prefix proxy
+npm run test:all
+./scripts/verify-ghpages-clean.sh build/site
 
-# 2. Overlay ONLY live content from the demo branch
-git -C /tmp/ghpages-publish checkout demo -- \
-  index.html contact.html booking.html \
-  capabilities solutions industries company insights \
-  css js images fonts \
-  CNAME robots.txt sitemap.xml
+# 2. Create an isolated gh-pages worktree (non-destructive to the source tree)
+git fetch github gh-pages
+git worktree add /tmp/ghpages-publish github/gh-pages
 
-# 3. Remove any pre-existing leaked internal files
+# 3. Replace the temporary worktree with the validated artifact
+git -C /tmp/ghpages-publish rm -r -f --ignore-unmatch .
+git -C /tmp/ghpages-publish clean -f -d
+cp -a build/site/. /tmp/ghpages-publish/
+
+# 4. Remove any pre-existing leaked internal files
 #    (enumerate the full exclude list from the memory runbook)
 git -C /tmp/ghpages-publish rm -f --ignore-unmatch \
   CLAUDE.md .copy-rewrite-protocol.md .copy-reframe-kit.md \
@@ -81,11 +89,11 @@ git -C /tmp/ghpages-publish rm -f --ignore-unmatch \
 git -C /tmp/ghpages-publish rm -rf --ignore-unmatch \
   .claude/ styles/ template/ scripts/
 
-# 4. Ensure .nojekyll is present
+# 5. Ensure .nojekyll is present
 touch /tmp/ghpages-publish/.nojekyll
 git -C /tmp/ghpages-publish add .nojekyll
 
-# 5. *** RUN THE SAFETY GUARD — abort if it fails ***
+# 6. *** RUN THE SAFETY GUARD — abort if it fails ***
 /home/mrh/repos/ravonics/Ravonics-Website/scripts/verify-ghpages-clean.sh \
   /tmp/ghpages-publish
 
@@ -96,12 +104,12 @@ git -C /tmp/ghpages-publish add .nojekyll
 #   exit 1
 # fi
 
-# 6. Commit and push ONLY after a clean PASS
+# 7. Commit and push ONLY after a clean PASS
 git -C /tmp/ghpages-publish add -A
 git -C /tmp/ghpages-publish commit -m "chore(gh-pages): publish scrubbed overlay $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 git -C /tmp/ghpages-publish push github gh-pages
 
-# 7. Clean up
+# 8. Clean up
 git worktree remove /tmp/ghpages-publish
 ```
 
@@ -113,10 +121,9 @@ then re-run the guard until it returns PASS.
 
 ## Note on scripts/ exclusion
 
-The `scripts/` directory itself is tooling-only and must be added to the
-gh-pages exclude list. It is listed in the forbidden directories section of
-the guard above. The publish sequence step 3 includes `rm -rf scripts/`.
-Never include `scripts/` in the `git checkout demo --` overlay step.
+The `scripts/` directory itself is tooling-only and must be removed from the
+gh-pages worktree. It is listed in the forbidden directories section of the
+guard above. The publish sequence step 4 includes `rm -rf scripts/`.
 
 ---
 

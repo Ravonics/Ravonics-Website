@@ -81,6 +81,7 @@
     }
     </script>
 
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
 </head>
 
 <body>
@@ -101,16 +102,16 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="../index.html">
-                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo" >
-                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo" >
+                                        <img class="logo-main" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-scroll" src="../images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
+                                        <img class="logo-mobile" src="../images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
                                     </a>
                                 </div>
                                 <!-- logo end -->
                             </div>
-                            <div class="de-flex-col header-col-mid">
+                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
                                 <!-- mainemenu begin -->
-                                <ul id="mainmenu" role="navigation" aria-label="Primary">
+                                <ul id="mainmenu" aria-label="Primary">
                                     <li><a class="menu-item" href="../capabilities/ai.html">Capabilities</a>
                                         <ul>
                                             <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
@@ -166,17 +167,17 @@
                                     <li><a class="menu-item" href="../contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
-                            </div>
+                            </nav>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <a href="javascript:void(0)" id="menu-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false"></a>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
                                 </div>
 
-                                <div id="btn-extra">
+                                <button type="button" id="btn-extra" aria-label="Open information panel">
                                     <span></span>
                                     <span></span>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -185,7 +186,7 @@
         </header>
         <!-- header close -->
         <!-- content begin -->
-        <div class="no-bottom no-top" id="content" role="main">
+        <main class="no-bottom no-top" id="content">
 
             <div id="top"></div>
 
@@ -211,32 +212,32 @@
                     <div class="row g-4 gx-5">
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/1.avif" class="w-70px mb-3 hover-jello infinite" alt="Kubernetes cluster gear emblem">
-                                <h4>Production Kubernetes Clusters</h4>
+                                <img src="../images/icons-maroon/cloud-native/1.avif" class="w-70px mb-3 hover-jello infinite" alt="Kubernetes cluster gear emblem" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Production Kubernetes Clusters</h2>
                                 <p>Hardened multi-cluster Kubernetes deployments with high availability, automated failover, and zero-downtime rolling updates for federal and defense workloads.</p>
                             </a>
                         </div>
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".2s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/2.avif" class="w-70px mb-3 hover-jello infinite" alt="Service mesh network lattice emblem" loading="lazy">
-                                <h4>Service Mesh Deployments</h4>
+                                <img src="../images/icons-maroon/cloud-native/2.avif" class="w-70px mb-3 hover-jello infinite" alt="Service mesh network lattice emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Service Mesh Deployments</h2>
                                 <p>Istio, Linkerd, and Consul service mesh implementations providing mTLS encryption, traffic management, and observability for microservices architectures.</p>
                             </a>
                         </div>
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".4s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/3.avif" class="w-70px mb-3 hover-jello infinite" alt="Container orchestration stacked layers emblem" loading="lazy">
-                                <h4>Container Orchestration at Scale</h4>
+                                <img src="../images/icons-maroon/cloud-native/3.avif" class="w-70px mb-3 hover-jello infinite" alt="Container orchestration stacked layers emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Container Orchestration at Scale</h2>
                                 <p>Advanced scheduling policies, resource quotas, and pod security standards managing thousands of containers across hybrid and multi-cloud environments.</p>
                             </a>
                         </div>
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".6s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/4.avif" class="w-70px mb-3 hover-jello infinite" alt="GitOps infrastructure as code branch emblem" loading="lazy">
-                                <h4>GitOps & Infrastructure-as-Code</h4>
+                                <img src="../images/icons-maroon/cloud-native/4.avif" class="w-70px mb-3 hover-jello infinite" alt="GitOps infrastructure as code branch emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">GitOps & Infrastructure-as-Code</h2>
                                 <p>Declarative infrastructure management with Flux and ArgoCD enabling version-controlled deployments, automated reconciliation, and audit trails.</p>
                             </a>
                         </div>
@@ -244,32 +245,32 @@
                         <!-- New services -->
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/5.avif" class="w-70px mb-3 hover-jello infinite" alt="Tactical edge shield Kubernetes emblem" loading="lazy">
-                                <h4>Tactical Edge Kubernetes</h4>
+                                <img src="../images/icons-maroon/cloud-native/5.avif" class="w-70px mb-3 hover-jello infinite" alt="Tactical edge shield Kubernetes emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Tactical Edge Kubernetes</h2>
                                 <p>Lightweight K3s and MicroK8s deployments optimized for disconnected operations in contested environments with minimal resource footprints.</p>
                             </a>
                         </div>
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".2s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/6.avif" class="w-70px mb-3 hover-jello infinite" alt="Multi-cluster management unified circles emblem" loading="lazy">
-                                <h4>Multi-Cluster Management</h4>
+                                <img src="../images/icons-maroon/cloud-native/6.avif" class="w-70px mb-3 hover-jello infinite" alt="Multi-cluster management unified circles emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Multi-Cluster Management</h2>
                                 <p>Unified control planes managing Kubernetes deployments across on-premises data centers, tactical edge, and accredited government cloud environments.</p>
                             </a>
                         </div>
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".4s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/7.avif" class="w-70px mb-3 hover-jello infinite" alt="Observability eye with signal rings emblem" loading="lazy">
-                                <h4>Observability & Monitoring</h4>
+                                <img src="../images/icons-maroon/cloud-native/7.avif" class="w-70px mb-3 hover-jello infinite" alt="Observability eye with signal rings emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Observability & Monitoring</h2>
                                 <p>Prometheus, Grafana, and distributed tracing stacks providing real-time visibility into containerized applications with automated alerting.</p>
                             </a>
                         </div>
 
                         <div class="col-lg-3 col-md-6 wow fadeInRight" data-wow-delay=".6s">
                             <a href="../capabilities/computing.html" class="d-block hover relative">
-                                <img src="../images/icons-maroon/cloud-native/8.avif" class="w-70px mb-3 hover-jello infinite" alt="Container security padlock cube emblem" loading="lazy">
-                                <h4>Container Security Hardening</h4>
+                                <img src="../images/icons-maroon/cloud-native/8.avif" class="w-70px mb-3 hover-jello infinite" alt="Container security padlock cube emblem" loading="lazy" width="512" height="512">
+                                <h2 class="legacy-h4 h4">Container Security Hardening</h2>
                                 <p>Runtime security with Falco, image scanning, admission controllers, and network policies enforcing zero-trust principles for containerized workloads.</p>
                             </a>
                         </div>
@@ -335,19 +336,19 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </main>
         <!-- content close -->
         <!-- footer begin -->
         <footer class="text-light section-dark">
             <div class="container">
                 <div class="row g-4 justify-content-between">
                     <div class="col-md-6">
-                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
                         <div class="spacer-single"></div>
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Capabilities</h5>
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
                                     <ul>
                                         <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
                                         <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
@@ -365,7 +366,7 @@
 
                             <div class="col-md-6">
                                 <div class="widget">
-                                    <h5>Company</h5>
+                                    <h2 class="legacy-h5 h5">Company</h2>
                                     <ul>
                                         <li><a href="../company/about.html">About</a></li>
                                         <li><a href="../company/team.html">Leadership</a></li>
@@ -383,7 +384,7 @@
                     <div class="col-md-6">
                         <div class="d-flex align-items-center justify-content-between">
                             <h2>Get in Touch</h2>
-                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy">
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
                         </div>
 
                         <div class="widget">
@@ -428,18 +429,18 @@
         </footer>
         <!-- footer close -->
     <!-- overlay content begin -->
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
             <span></span>
             <span></span>
-        </div>
+        </button>
 
         <div id="extra-content">
-            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
 
             <div class="spacer-30-line"></div>
 
-            <h5>Core Capabilities</h5>
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
             <ul class="ul-check">
                 <li>Advanced Artificial Intelligence</li>
                 <li>Autonomous Systems</li>
@@ -455,14 +456,14 @@
 
             <div class="spacer-30-line"></div>
 
-            <h5>Contact Us</h5>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
             <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
             <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
 
             <div class="spacer-30-line"></div>
 
-            <h5>About Us</h5>
+            <h2 class="legacy-h5 h5">About Us</h2>
             <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
 
         </div>
@@ -477,6 +478,7 @@
     <script src="../js/swiper.js" defer></script>
     <script src="../js/custom-swiper-1.js" defer></script>
 
+    <script src="../js/accessibility.js" defer></script>
 </body>
 
 </html>

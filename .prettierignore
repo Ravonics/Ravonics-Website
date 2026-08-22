@@ -1,0 +1,11 @@
+build/
+dist/
+node_modules/
+proxy/node_modules/
+images/
+fonts/
+css/
+js/
+*.html
+*.min.css
+*.min.js
