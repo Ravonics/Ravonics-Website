@@ -7,7 +7,7 @@
  * mailto fallback.
  */
 window.RAVONICS_FORM_ENDPOINTS = {
-  contact: "https://ravonics-lead-proxy.azurewebsites.net/api/lead/contact",
-  booking: "https://ravonics-lead-proxy.azurewebsites.net/api/lead/booking",
-  capability_update: "https://ravonics-lead-proxy.azurewebsites.net/api/lead/capability_update"
+  contact: "https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api/lead/contact",
+  booking: "https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api/lead/booking",
+  capability_update: "https://ravonicsapi-adcah9bdahb4hca0.z02.azurefd.net/api/lead/capability_update"
 };
