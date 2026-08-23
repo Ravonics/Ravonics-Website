@@ -241,7 +241,7 @@ header.autoshow.scrollOn {
 }
 
 header.autoshow.scrollOff {
-  opacity: ;
+  opacity: 0;
   top: -120px;
 }
 
@@ -1057,7 +1057,7 @@ header:not(.header-mobile) #mainmenu>li:hover ul.mega {
   height: 32px;
   padding: 4px;
   text-align: center;
-  cursor: poInter;
+  cursor: pointer;
   color: #fff;
   margin-top: 0px;
   margin-left: 20px;
@@ -2777,7 +2777,7 @@ footer:not(.footer-light) #form_subscribe.form-dark input[type=text] {
   left: 0;
   right: 0;
   bottom: 0;
-  cursor: poInter;
+  cursor: pointer;
   z-index: 101;
 }
 
@@ -3307,7 +3307,7 @@ a.btn-border:hover a {
 
 .d-btn-close {
   color: #ffffff;
-  cursor: poInter;
+  cursor: pointer;
   text-align: center;
   display: block;
   text-align: center;
@@ -4653,7 +4653,7 @@ ol.ol-style-1.c2 li::before{
   color: #35404e;
   width: 100%;
   padding: 15px 0;
-  cursor: poInter;
+  cursor: pointer;
   font-family: var(--body-font);
   width: 100%;
   display: inline-block;
@@ -4778,7 +4778,7 @@ ol.ol-style-1.c2 li::before{
   text-decoration: none;
   color: #646464;
   font-size: 15px;
-  cursor: poInter;
+  cursor: pointer;
 }
 
 .dark-scheme .de_tab .de_nav li span {
@@ -5061,7 +5061,7 @@ ol.ol-style-1.c2 li::before{
   display: block;
   text-decoration: none;
   font-size: 14px;
-  cursor: poInter;
+  cursor: pointer;
   border: none;
 }
 
@@ -5132,7 +5132,7 @@ ol.ol-style-1.c2 li::before{
   display: block;
   text-decoration: none;
   font-size: 14px;
-  cursor: poInter;
+  cursor: pointer;
   border: none;
   padding: 5px 30px 5px 30px;
   min-width: 150px;
@@ -5226,7 +5226,7 @@ ol.ol-style-1.c2 li::before{
   display: inline-block;
   text-decoration: none;
   font-size: 14px;
-  cursor: poInter;
+  cursor: pointer;
   border: none;
   padding: 15px 30px 15px 30px;
   min-width: 150px;
@@ -9608,7 +9608,7 @@ p.slider-teaser{
 #closeCookieConsent {
   float: right;
   display: inline-block;
-  cursor: poInter;
+  cursor: pointer;
   height: 20px;
   width: 20px;
   margin: -15px 0 0 0;
@@ -9626,7 +9626,7 @@ p.slider-teaser{
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   padding: 0 20px;
-  cursor: poInter;
+  cursor: pointer;
 }
 
 #cookieConsent a.cookieConsentOK:hover {
@@ -9915,7 +9915,7 @@ section .color-overlay {
   color: #fff;
   padding: 20px;
   font-size: 24px;
-  cursor: poInter;
+  cursor: pointer;
 }
 
 .nav-exit:before {
@@ -10206,7 +10206,7 @@ section.no-padding {
   background: #fff;
   margin-top: 48%;
   display: none;
-  cursor: poInter;
+  cursor: pointer;
 }
 
 .owl-arrow span {
@@ -10523,7 +10523,7 @@ section.bg-grey {
   height: 40px;
   text-align: center;
   line-height: 30px;
-  cursor: poInter;
+  cursor: pointer;
   padding-top: 3px;
   border: 0;
   text-decoration: none;
@@ -10898,7 +10898,7 @@ border-radius:30px 0 0 30px;
 .owl-slider-nav div {
   position: absolute;
   z-index: 10;
-  cursor: poInter;
+  cursor: pointer;
 }
 
 .owl-slider-nav .next {
@@ -11141,7 +11141,7 @@ border-radius:30px 0 0 30px;
   background-color: #F4F4F4;
   border-radius: 60px;
   position: relative;
-  cursor: poInter;
+  cursor: pointer;
   border: none;
 }
 
@@ -12012,7 +12012,7 @@ margin-bottom: 40px;
 }
 
 .isotope-hidden.isotope-item {
-  poInter-events: none;
+  pointer-events: none;
   z-index: 1;
 }
 
@@ -12123,6 +12123,15 @@ margin-bottom: 40px;
 a,
 img {
   outline: 0;
+}
+
+/* Intrinsic dimensions in content markup reserve the source height unless
+   the rendered box explicitly opts into a different art direction. Keep
+   width utility classes and component-level height rules authoritative while
+   making logos, icons, and other proportional media scale together. */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* overwrite bootstrap */
@@ -12843,7 +12852,7 @@ img {
     right: 0;
     margin-top: 10px;
     z-index: 1000;
-    cursor: poInter;
+    cursor: pointer;
   }
 
   .dark-scheme header.header-mobile #mainmenu>li>span {
@@ -12866,7 +12875,7 @@ img {
     right: 0;
     margin-top: -45px;
     z-index: 1000;
-    cursor: poInter;
+    cursor: pointer;
   }
 
   header.header-mobile #mainmenu>li>ul>li>span.active {
@@ -13907,4 +13916,77 @@ footer img[src$="up-right-arrow.webp"] {
 .owl-custom-nav .btn-prev {
   background: transparent;
   padding: 0;
+}
+
+/* Keep the primary chrome proportionate to the first viewport. The legacy
+   25px menu padding was designed around a much smaller logo and made the
+   navigation dominate the opening when intrinsic image heights were present. */
+@media (min-width: 993px) {
+  header:not(.header-mobile) #mainmenu > li > a {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  header.header-mobile {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  header.header-mobile #logo img {
+    max-width: min(210px, 58vw);
+    height: auto;
+  }
+
+  /* The menu is an overlay, not part of the closed header's focus order. */
+  header.header-mobile #mainmenu {
+    top: 72px;
+    transition: none;
+  }
+
+  header.header-mobile #mainmenu * {
+    transition: none;
+  }
+
+  header.header-mobile:not(.menu-open) #mainmenu {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  header.header-mobile.menu-open #mainmenu {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+}
+
+/* The overview film trigger is a semantic button but should retain the
+   full-bleed media composition of the original link. */
+#content button.d-block.hover {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
+
+#content button.d-block.hover > .relative {
+  display: block;
+}
+
+/* The legacy transition bundle removes outlines from the navigation. Restore
+   a clear keyboard indicator for the actual interactive chrome. */
+header #menu-btn:focus-visible,
+header #btn-extra:focus-visible,
+header #btn-close:focus-visible,
+header #mainmenu a:focus-visible,
+header #mainmenu [role="button"]:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 3px;
 }

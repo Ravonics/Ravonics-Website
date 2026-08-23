@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
     <meta content="Ravonics LLC is a Ravenswood, West Virginia small business delivering AI platforms, post-quantum readiness, JADC2 integration, and autonomous systems for the U.S. Department of War (DoW), the Intelligence Community, and federal agencies. SAM.gov registered; HUBZone certified (SBA)." name="description" >
     <meta content="federal AI contractor, federal AI platform, JADC2 integration, defense technology consulting, DoW contractor, intelligence community solutions, post-quantum cryptography, autonomous systems, NIST 800-171 alignment, HUBZone small business, zero trust architecture, mission AI platforms, tactical edge computing, West Virginia federal contractor, National Capital Region federal market" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -231,18 +231,6 @@
 
     <!-- Preload LCP hero image -->
     <link rel="preload" as="image" type="image/avif" href="images/slider/a1.avif" fetchpriority="high">
-
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
-    <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -352,7 +340,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="mainmenu"></button>
                                 </div>
 
                                 <button type="button" id="btn-extra" aria-label="Open information panel">
@@ -618,15 +606,15 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <a class="d-block hover" href="javascript:void(0)" onclick="playHeroVideo()" aria-label="Play overview video">
-                                <div class="relative overflow-hidden">
-                                    <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                                        <div class="player bg-dark border-0 circle wow fadeInUp"><span></span></div>
-                                    </div>
-                                    <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
+                            <button type="button" class="d-block hover" onclick="playHeroVideo()" aria-label="Play overview video">
+                                <span class="relative overflow-hidden">
+                                    <span class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
+                                        <span class="player bg-dark border-0 circle wow fadeInUp"><span></span></span>
+                                    </span>
+                                    <span class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></span>
                                     <img src="images/background/1.avif" class="w-100 hover-scale-1-1" alt="Ravonics overview video: mission-ready technology for federal operations" style="object-fit:cover;min-height:300px;" loading="lazy" decoding="async" width="1920" height="800">
-                                </div>
-                            </a>
+                                </span>
+                            </button>
                             <div id="hero-video-popup" class="mfp-hide" style="max-width:960px;margin:40px auto;">
                                 <video controls preload="none" playsinline style="width:100%;height:auto;display:block;border-radius:8px;">
                                     <source src="images/ravonics-cinematic-hero.mp4" type="video/mp4">

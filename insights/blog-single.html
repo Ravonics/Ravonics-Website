@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
     <meta content="White paper abstract: real-time AI decision systems for federal missions. Topics include tactical edge deployment, latency optimization, explainable AI for operators, DDIL resilience, security-first ML pipelines, and multi-level data fusion. Full paper forthcoming from Ravonics." name="description" >
     <meta content="real-time AI decision systems, tactical edge deployment, latency optimization, explainable AI, DDIL resilience, adversarial robustness, multi-level data fusion, human-machine teaming, federal AI pipeline, Ravonics white paper" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -55,17 +55,6 @@
       }
     }
     </script>
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
-    <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -173,7 +162,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="mainmenu"></button>
                                 </div>
 
                                 <button type="button" id="btn-extra" aria-label="Open information panel">
@@ -390,18 +379,18 @@
                             <div class="widget widget_tags">
                                 <h2 class="legacy-h4 h4">Popular Tags</h2>
                                 <ul>
-                                    <li><a href="#link">AI & Machine Learning</a></li>
-                                    <li><a href="#link">Autonomous Systems</a></li>
-                                    <li><a href="#link">Cybersecurity</a></li>
-                                    <li><a href="#link">Systems Integration</a></li>
-                                    <li><a href="#link">Emerging Technologies</a></li>
-                                    <li><a href="#link">Real-Time Processing</a></li>
-                                    <li><a href="#link">Mission Critical</a></li>
-                                    <li><a href="#link">Defense Technology</a></li>
-                                    <li><a href="#link">Edge Computing</a></li>
-                                    <li><a href="#link">JADC2</a></li>
-                                    <li><a href="#link">Zero Trust</a></li>
-                                    <li><a href="#link">Post-Quantum Crypto</a></li>
+                                    <li><a href="../capabilities/ai.html">AI & Machine Learning</a></li>
+                                    <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                    <li><a href="../solutions/zero-trust.html">Cybersecurity</a></li>
+                                    <li><a href="../capabilities/integration.html">Systems Integration</a></li>
+                                    <li><a href="../insights/innovation.html">Emerging Technologies</a></li>
+                                    <li><a href="../capabilities/computing.html">Real-Time Processing</a></li>
+                                    <li><a href="../capabilities/integration.html">Mission Critical</a></li>
+                                    <li><a href="../industries/defense.html">Defense Technology</a></li>
+                                    <li><a href="../capabilities/computing.html">Edge Computing</a></li>
+                                    <li><a href="../solutions/jadc2.html">JADC2</a></li>
+                                    <li><a href="../solutions/zero-trust.html">Zero Trust</a></li>
+                                    <li><a href="../capabilities/cryptography.html">Post-Quantum Crypto</a></li>
                                 </ul>
                             </div>
 

@@ -11,37 +11,100 @@
 
      /* predefined vars begin */
      var mobile_menu_show = 0;
+     var mobile_breakpoint = 992;
      var v_count = '0';
      var mb;
      var instances = [];
      var $window = $(window);
-	 var $op_header_autoshow = 0;
+     var $op_header_autoshow = 0;
 	 var grid_size = 10;
+	 var header_sticky_scroll_state = 0;
 
      // scroll magic begin
     var new_scroll_position = 0;
     var last_scroll_position;
-    var header = $("header");
+     var header = $("header");
+
+     function is_mobile_view() {
+         return window.matchMedia("(max-width: " + mobile_breakpoint + "px)").matches;
+     }
+
+     function set_mobile_menu(open, restoreFocus) {
+         var $header = jQuery('header');
+         var $menuButton = jQuery('#menu-btn');
+         var $menu = jQuery('#mainmenu');
+         var mobile = is_mobile_view();
+
+         if (!$header.length) {
+             return;
+         }
+
+         if (open && !mobile) {
+             return;
+         }
+
+         if (!open && !mobile) {
+             $header.removeClass('menu-open').css('height', 'auto');
+             $menu.removeAttr('aria-hidden');
+             jQuery('body').removeClass('mobile-menu-open');
+             $menuButton.removeClass('menu-open').attr({
+                 'aria-expanded': 'false',
+                 'aria-label': 'Open navigation'
+             });
+             mobile_menu_show = 1;
+             return;
+         }
+
+         $header.toggleClass('menu-open', open);
+         $menu.attr('aria-hidden', open ? 'false' : 'true');
+         jQuery('body').toggleClass('mobile-menu-open', open);
+
+         if (open) {
+             $header.css('height', window.innerHeight + 'px');
+             mobile_menu_show = 1;
+             $menuButton.addClass('menu-open').attr({
+                 'aria-expanded': 'true',
+                 'aria-label': 'Close navigation'
+             });
+
+             var firstLink = $menu.find('a[href]').get(0);
+             if (firstLink) {
+                 window.setTimeout(function() {
+                     firstLink.focus();
+                 }, 0);
+             }
+         } else {
+             $header.css('height', 'auto');
+             mobile_menu_show = mobile ? 0 : 1;
+             $menuButton.removeClass('menu-open').attr({
+                 'aria-expanded': 'false',
+                 'aria-label': 'Open navigation'
+             });
+
+             if (restoreFocus && $menuButton.length) {
+                 $menuButton.trigger('focus');
+             }
+         }
+     }
 
      /* predefined vars end */
 	 
      /* --------------------------------------------------
-      * header | sticky
-      * --------------------------------------------------*/
+     * header | sticky
+     * --------------------------------------------------*/
      function header_sticky() {
          jQuery("header").addClass("clone", 1000, "easeOutBounce");
          var $document = $(document);
-         var vscroll = 0;
 		 var header = jQuery("header.autoshow");
-         if ($document.scrollTop() >= 50 && vscroll === 0) {
+         if ($document.scrollTop() >= 50 && header_sticky_scroll_state === 0) {
              header.removeClass("scrollOff");
              header.addClass("scrollOn");
              header.css("height", "auto");
-             vscroll = 1;
-         } else {
+             header_sticky_scroll_state = 1;
+         } else if ($document.scrollTop() < 50 && header_sticky_scroll_state === 1) {
              header.removeClass("scrollOn");
              header.addClass("scrollOff");
-             vscroll = 0;
+             header_sticky_scroll_state = 0;
          }
      }
      /* --------------------------------------------------
@@ -192,21 +255,30 @@
          });
      }
      /* --------------------------------------------------
-      * plugin | enquire.js
-      * --------------------------------------------------*/
+     * plugin | enquire.js
+     * --------------------------------------------------*/
      function init_resize() {
-         enquire.register("screen and (min-width: 993px)", {
+         // Enquire owns subsequent breakpoint transitions. Registering these
+         // callbacks from every raw resize event otherwise leaks handlers.
+         if (init_resize._registered) {
+             return;
+         }
+         init_resize._registered = true;
+
+         enquire.register("screen and (min-width: " + (mobile_breakpoint + 1) + "px)", {
              match: function() {
                  mobile_menu_show = 1;
+                 set_mobile_menu(false, false);
              },
              unmatch: function() {
                  mobile_menu_show = 0;
                  jQuery("#menu-btn").show();
              }
          });
-         enquire.register("screen and (max-width: 993px)", {
+         enquire.register("screen and (max-width: " + mobile_breakpoint + "px)", {
              match: function() {
                  $('header').addClass("header-mobile");
+				 set_mobile_menu(false, false);
 				 var body = jQuery('body');
                  if (body.hasClass('side-content')) {
                      body.removeClass('side-layout');
@@ -214,6 +286,7 @@
              },
              unmatch: function() {
                  $('header').removeClass("header-mobile");
+				 set_mobile_menu(false, false);
 				 var body = jQuery('body');
                  if (body.hasClass('side-content')) {
                      body.addClass('side-layout');
@@ -227,7 +300,7 @@
          header.removeClass('logo-smaller');
          header.removeClass('clone');
 
-         var mx = window.matchMedia("(max-width: 992px)");
+         var mx = window.matchMedia("(max-width: " + mobile_breakpoint + "px)");
 		 var osw = jQuery('.owl-slide-wrapper');
          if (mx.matches) {			 
              osw.find("img").css("height", $(window).innerHeight());
@@ -713,7 +786,7 @@
              $('.show-on-scroll').addClass('hide');
          }
 
-         $('#back-to-top').on('click', function(e) {
+         $('#back-to-top').off('click.ravonicsBackToTop').on('click.ravonicsBackToTop', function(e) {
              e.preventDefault();
              $('html,body').stop(true).animate({
                  scrollTop: 0
@@ -749,10 +822,11 @@
 
          return this.each(function() {
 
-             if (!jQuery('body').hasClass('side-layout')) {
-                 var h = 69;
-             } else {
-                 var h = 0;
+             var $activeHeader = jQuery('header:visible').first();
+             var h = 0;
+             if (!jQuery('body').hasClass('side-layout') && $activeHeader.length &&
+                 ($activeHeader.hasClass('smaller') || $activeHeader.hasClass('header-mobile'))) {
+                 h = $activeHeader.outerHeight() || 0;
              }
 
              var elem = $(this);
@@ -886,7 +960,7 @@
              if (iteration > 2) iteration = 1;
              $(this).data('iteration', iteration);
          });
-         jQuery("#mainmenu > li > ul > li > span").on("click", function() {
+	         jQuery("#mainmenu > li > ul > li > span").on("click", function() {
              var iteration = $(this).data('iteration') || 1;
              switch (iteration) {
 	                 case 1:
@@ -910,10 +984,20 @@
              }
              iteration++;
              if (iteration > 2) iteration = 1;
-             $(this).data('iteration', iteration);
-         });
+	             $(this).data('iteration', iteration);
+	         });
 
-         
+         // The arrows are inserted above after the original template's RTL
+         // bindings run, so bind their keyboard activation here as well.
+         jQuery("#mainmenu > li > span, #mainmenu > li > ul > li > span")
+             .off("keydown.ravonicsMenuArrow")
+             .on("keydown.ravonicsMenuArrow", function(event) {
+                 if (event.key === "Enter" || event.key === " ") {
+                     event.preventDefault();
+                     jQuery(this).trigger("click");
+                 }
+             });
+
      }
      /* --------------------------------------------------
       * show gallery item sequence
@@ -978,8 +1062,7 @@
          var h = parseInt(sh, 10) - parseInt(dh, 10);
 
          function scrolling() {
-             var mq = window.matchMedia("(min-width: 993px)");
-             var ms = window.matchMedia("(min-width: 768px)");
+             var mq = window.matchMedia("(min-width: " + (mobile_breakpoint + 1) + "px)");
              if (mq.matches) {
                  var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                      shrinkOn = 100,
@@ -1023,6 +1106,15 @@
          // --------------------------------------------------
 
          scrolling();
+
+         // init() is also called from the scroll and resize paths in this
+         // legacy bundle. Keep the state calculation above live, but bind
+         // interaction handlers only once so every scroll does not multiply
+         // menu, modal, and form listeners.
+         if (init._bound) {
+             return;
+         }
+         init._bound = true;
          
          jQuery(".filter__r").on("click", function() {
             jQuery('.activity-filter > li').removeClass('active');
@@ -1128,7 +1220,16 @@
             jQuery('.grid-item').each(function () {
                 var this_col = Number(jQuery(this).parent().attr('data-col'));
                 var this_gridspace = Number(jQuery(this).parent().attr('data-gridspace'));
-                var this_ratio = eval($(this).parent().attr('data-ratio'));
+                var ratio_value = String($(this).parent().attr('data-ratio') || '1').trim();
+                var ratio_parts = ratio_value.match(/^(\d+(?:\.\d+)?)(?:\s*\/\s*(\d+(?:\.\d+)?))?$/);
+                var this_ratio = 1;
+                if (ratio_parts) {
+                    var numerator = Number(ratio_parts[1]);
+                    var denominator = ratio_parts[2] ? Number(ratio_parts[2]) : 1;
+                    if (Number.isFinite(numerator) && Number.isFinite(denominator) && denominator > 0) {
+                        this_ratio = numerator / denominator;
+                    }
+                }
                 jQuery(this).parent().css('padding-left', this_gridspace);
                 var w = (($(document).width() - (this_gridspace * this_col + 1)) / this_col) - (this_gridspace / this_col);
                 var gi = $(this);
@@ -1450,44 +1551,30 @@
 	         // --------------------------------------------------
 	         // navigation for mobile
 	         // --------------------------------------------------
-	         jQuery('#menu-btn').attr({
-	             "role": "button",
-	             "aria-label": "Open navigation",
-	             "aria-expanded": "false"
+		         jQuery('#menu-btn').attr({
+		             "role": "button",
+		             "aria-label": "Open navigation",
+		             "aria-expanded": "false",
+		             "aria-controls": "mainmenu"
+		         });
+
+		         jQuery('#menu-btn').off("click.ravonicsMenu").on("click.ravonicsMenu", function() {
+		             set_mobile_menu(!jQuery('header').hasClass('menu-open'), true);
+		         });
+
+	         jQuery("#mainmenu a").off("click.ravonicsMenuLink").on("click.ravonicsMenuLink", function() {
+	            set_mobile_menu(false, false);
 	         });
 
-	         jQuery('#menu-btn').on("click", function() {
-
-            var h = jQuery('header')[0].scrollHeight;
-			
-	             if (mobile_menu_show === 0) {
-	                 jQuery('header').addClass('menu-open');
-	                 jQuery('header').css('height',$(window).innerHeight());
-	                 mobile_menu_show = 1;
-	                 jQuery(this).addClass("menu-open");
-	                 jQuery(this).attr("aria-expanded", "true");
-	                 jQuery(this).attr("aria-label", "Close navigation");
-	             } else {
-	                jQuery('header').removeClass('menu-open');
-	                jQuery('header').css('height','auto');
-	                 mobile_menu_show = 0;
-	                 jQuery(this).removeClass("menu-open");
-	                 jQuery(this).attr("aria-expanded", "false");
-	                 jQuery(this).attr("aria-label", "Open navigation");
+	         jQuery(document).off("keydown.ravonicsMenu").on("keydown.ravonicsMenu", function(event) {
+	             if (event.key === "Escape" && jQuery('header').hasClass('menu-open')) {
+	                 event.preventDefault();
+	                 set_mobile_menu(false, true);
 	             }
-	         })
-
-         jQuery("#mainmenu a").on("click", function() {
-            jQuery('header').removeClass('menu-open');
-	            jQuery('header').css('height','auto');
-	            mobile_menu_show = 0;
-	            jQuery('#menu-btn').removeClass("menu-open");
-	            jQuery('#menu-btn').attr("aria-expanded", "false");
-	            jQuery('#menu-btn').attr("aria-label", "Open navigation");
 	         });
 
          jQuery("a.btn").on("click", function(evn) {
-             if (this.href.indexOf('#') === -1) {
+             if (this.hash && this.pathname === window.location.pathname) {
                  evn.preventDefault();
                  jQuery('html,body').scrollTo(this.hash, this.hash);
              }
@@ -1548,7 +1635,7 @@
           * We target all a tags inside the nav, and apply the scrollto.js to it.
           */
          $("#homepage nav a, .scroll-to").on("click", function(evn) {
-             if (this.href.indexOf('#') === -1) {
+             if (this.hash && this.pathname === window.location.pathname) {
                  evn.preventDefault();
                  jQuery('html,body').scrollTo(this.hash, this.hash);
              }
