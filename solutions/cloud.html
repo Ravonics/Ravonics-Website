@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
     <meta content="Secure cloud infrastructure for federal missions: FedRAMP-aligned architecture, multi-level security, enterprise data lakes, hybrid cloud integration. Container orchestration, secure API gateways, cloud-native development with disaster recovery for DoW and IC." name="description" >
     <meta content="FedRAMP-aligned cloud, federal cloud architecture, multi-level security DoW, hybrid cloud federal, enterprise data lakes defense, container orchestration government, secure API gateways, cloud-native federal development, disaster recovery DoW, secure federal cloud infrastructure" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -29,17 +29,6 @@
     <meta property="twitter:title" content="Federal Cloud Architecture - Multi-Level Security, Hybrid Cloud - Ravonics">
     <meta property="twitter:description" content="Federal cloud: FedRAMP-aligned architecture, multi-level security, hybrid integration. Secure mission infrastructure for DoW/IC.">
     <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
-    <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -175,7 +164,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="mainmenu"></button>
                                 </div>
 
                                 <button type="button" id="btn-extra" aria-label="Open information panel">

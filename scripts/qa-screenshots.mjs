@@ -5,9 +5,10 @@
  *   node scripts/qa-screenshots.mjs [--pages page1.html,page2.html]
  *
  * WHAT IT CHECKS:
- *   1. Spawns a python3 HTTP server at localhost:8099 rooted at the repo.
+ *   1. Spawns a python3 HTTP server at localhost:8099 rooted at the production
+ *      artifact when available (falling back to the repo for ad hoc use).
  *   2. Screenshots a configurable page list at desktop (1440×900) and mobile
- *      (390×844), full-page, using Chromium. Saves PNGs to /tmp/ravonics-qa/.
+ *      (390×844), full-page, using Chromium. Saves PNGs under build/visual-audit/.
  *   3. SKEW/OVERSIZE CHECK: For every visible content <img> with naturalWidth>0,
  *      computes displayed vs natural aspect ratio. Flags >2% distortion OR any
  *      image wider than its viewport (overflow/oversize). Also flags 404 images.
@@ -24,13 +25,13 @@
  *   - python3 in PATH
  *
  * OUTPUT:
- *   Screenshots → /tmp/ravonics-qa/<pagename>__<viewport>.png
+ *   Screenshots → build/visual-audit/<pagename>__<viewport>.png
  *   Console:      structured PASS/FAIL per check, then overall verdict.
  */
 
 import { chromium, firefox } from '@playwright/test';
 import { spawn } from 'node:child_process';
-import { mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { collectLiveRoutes } from './site-routes.mjs';
@@ -39,12 +40,15 @@ import { collectLiveRoutes } from './site-routes.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, '..');
-const OUT_DIR = '/tmp/ravonics-qa';
+const BUILD_ROOT = join(REPO_ROOT, 'build', 'site');
+const SERVER_ROOT = existsSync(BUILD_ROOT) ? BUILD_ROOT : REPO_ROOT;
+const OUT_DIR = process.env.RAVONICS_QA_OUT || join(REPO_ROOT, 'build', 'visual-audit');
 const PORT = 8099;
 const BASE_URL = `http://localhost:${PORT}`;
 
 // Parse optional --pages flag
 const pagesArg = process.argv.find((a, i) => process.argv[i - 1] === '--pages');
+const RUN_LIVE_COMPARISON = process.argv.includes('--live');
 const DEFAULT_PAGES = collectLiveRoutes().map((route) => route.source);
 const PAGES = pagesArg ? pagesArg.split(',').map((s) => s.trim()) : DEFAULT_PAGES;
 
@@ -83,8 +87,10 @@ function pass(msg) {
 function startServer() {
   return new Promise((resolve, reject) => {
     const proc = spawn('python3', ['-m', 'http.server', String(PORT)], {
-      cwd: REPO_ROOT,
-      stdio: ['ignore', 'pipe', 'pipe']
+      cwd: SERVER_ROOT,
+      // The server logs every asset request. Leaving stdout/stderr as unread
+      // pipes eventually fills their buffers and deadlocks an all-route run.
+      stdio: 'ignore'
     });
 
     let ready = false;
@@ -164,11 +170,13 @@ async function checkImagesOnPage(page, pagePath, viewportWidth) {
         const naturalAspect = img.naturalWidth / img.naturalHeight;
         const displayedAspect = rect.width / rect.height;
         const delta = Math.abs(displayedAspect - naturalAspect) / naturalAspect;
+        const objectFit = getComputedStyle(img).objectFit;
+        const intentionallyArtDirected = ['contain', 'cover', 'scale-down'].includes(objectFit);
 
         // Oversize: rendered width wider than viewport
         const oversize = rect.width > viewportWidth + 4;
 
-        if (delta > skewThreshold || oversize) {
+        if ((delta > skewThreshold && !intentionallyArtDirected) || oversize) {
           results.skew.push({
             src: (img.src || img.getAttribute('src') || '').replace(location.origin, ''),
             displayedW: Math.round(rect.width),
@@ -260,9 +268,9 @@ async function main() {
 
     // ── Chromium: screenshot + programmatic checks ────────────────────────────
     log('\n── Chromium screenshot + image checks ─────────────────────────');
-    const browser = await chromium.launch({ headless: true });
+    let browser = await chromium.launch({ headless: true });
 
-    for (const pagePath of PAGES) {
+    for (const [pageIndex, pagePath] of PAGES.entries()) {
       const slug = pageSlug(pagePath);
       const url = `${BASE_URL}/${pagePath}`;
 
@@ -274,7 +282,13 @@ async function main() {
           viewport: { width: vp.width, height: vp.height },
           deviceScaleFactor: 1
         });
+        await context.route(/^https?:\/\//, (route) => {
+          const requestUrl = new URL(route.request().url());
+          const isLocal = requestUrl.origin === BASE_URL;
+          return isLocal ? route.continue() : route.abort();
+        });
         const page = await context.newPage();
+        await page.emulateMedia({ reducedMotion: 'reduce' });
 
         // Capture console errors (not treated as violations but logged)
         const consoleErrors = [];
@@ -283,24 +297,27 @@ async function main() {
         });
 
         try {
-          // Use networkidle for best fidelity; fall back to 'load' if third-party
-          // scripts (e.g. Cloudflare Turnstile, Azure logic apps) keep connections
-          // open and prevent networkidle from firing under localhost.
-          let networkIdleWarn = null;
-          try {
-            await page.goto(url, { waitUntil: 'networkidle', timeout: 30_000 });
-          } catch (idleErr) {
-            if (/timeout/i.test(idleErr.message)) {
-              networkIdleWarn = `networkidle timeout (third-party script) — fell back to load: ${url}`;
-              warn(`    WARN: ${networkIdleWarn}`);
-              // Page is already loaded; just wait for DOM ready
-              await page.waitForLoadState('load', { timeout: 5_000 }).catch(() => {});
-            } else {
-              throw idleErr;
-            }
-          }
+          // Third-party anti-abuse widgets deliberately keep network activity
+          // alive. The load event plus a short settle is deterministic locally.
+          await page.goto(url, { waitUntil: 'commit', timeout: 30_000 });
+          await page.locator('main').waitFor({ state: 'attached', timeout: 10_000 });
           // Let lazy-loaded images settle
           await page.waitForTimeout(800);
+
+          // Exercise reveal-on-scroll sections and lazy media before the
+          // full-page capture. Without this, a screenshot can contain blank
+          // regions that a real visitor would reveal while reading.
+          await page.evaluate(async () => {
+            const delay = (milliseconds) =>
+              new Promise((resolve) => window.setTimeout(resolve, milliseconds));
+            const step = Math.max(Math.floor(window.innerHeight * 0.8), 400);
+            for (let position = 0; position < document.documentElement.scrollHeight; position += step) {
+              window.scrollTo(0, position);
+              await delay(60);
+            }
+            window.scrollTo(0, 0);
+          });
+          await page.waitForTimeout(200);
 
           // Screenshot full page
           await page.screenshot({ path: outFile, fullPage: true });
@@ -356,6 +373,13 @@ async function main() {
 
         await context.close();
       }
+
+      // Full-page screenshots retain renderer state. Recycling periodically
+      // keeps long audits deterministic on constrained CI runners.
+      if ((pageIndex + 1) % 6 === 0 && pageIndex < PAGES.length - 1) {
+        await browser.close();
+        browser = await chromium.launch({ headless: true });
+      }
     }
 
     await browser.close();
@@ -364,30 +388,32 @@ async function main() {
     const firefoxResults = await runFirefoxConsoleCheck(FIREFOX_CHECK_PAGES);
 
     // ── Live site before/after screenshots ───────────────────────────────────
-    log('\n── Live site before/after (https://ravonics.com/) ─────────────');
-    const liveBrowser = await chromium.launch({ headless: true });
-    const livePages = ['', 'capabilities/ai.html'];
-    const liveLabels = ['index', 'capabilities__ai'];
-    for (let i = 0; i < livePages.length; i++) {
-      const liveUrl = `https://ravonics.com/${livePages[i]}`;
-      const outFile = join(OUT_DIR, `LIVE-before__${liveLabels[i]}__desktop.png`);
-      try {
-        const context = await liveBrowser.newContext({
-          viewport: { width: 1440, height: 900 },
-          deviceScaleFactor: 1
-        });
-        const page = await context.newPage();
-        await page.goto(liveUrl, { waitUntil: 'networkidle', timeout: 20_000 });
-        await page.waitForTimeout(500);
-        await page.screenshot({ path: outFile, fullPage: true });
-        await context.close();
-        screenshotPaths.push(outFile);
-        log(`  Live saved → ${outFile}`);
-      } catch (e) {
-        warn(`  Live screenshot skipped (network unavailable or error): ${e.message}`);
+    if (RUN_LIVE_COMPARISON) {
+      log('\n── Optional live-site comparison (https://ravonics.com/) ──────');
+      const liveBrowser = await chromium.launch({ headless: true });
+      const livePages = ['', 'capabilities/ai.html'];
+      const liveLabels = ['index', 'capabilities__ai'];
+      for (let i = 0; i < livePages.length; i++) {
+        const liveUrl = `https://ravonics.com/${livePages[i]}`;
+        const outFile = join(OUT_DIR, `LIVE-before__${liveLabels[i]}__desktop.png`);
+        try {
+          const context = await liveBrowser.newContext({
+            viewport: { width: 1440, height: 900 },
+            deviceScaleFactor: 1
+          });
+          const page = await context.newPage();
+          await page.goto(liveUrl, { waitUntil: 'load', timeout: 20_000 });
+          await page.waitForTimeout(500);
+          await page.screenshot({ path: outFile, fullPage: true });
+          await context.close();
+          screenshotPaths.push(outFile);
+          log(`  Live saved → ${outFile}`);
+        } catch (e) {
+          warn(`  Live screenshot skipped (network unavailable or error): ${e.message}`);
+        }
       }
+      await liveBrowser.close();
     }
-    await liveBrowser.close();
 
     // ── Print summary ─────────────────────────────────────────────────────────
     log('\n═══════════════════════════════════════════════════════════════');

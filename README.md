@@ -14,7 +14,7 @@ Ravonics partners with Droid Ops Inc, Dream Limited, Viper Dynamics, and the INS
 ## Tech Stack
 
 - **Hosting:** GitHub Pages (behind Cloudflare for DDoS protection + CDN)
-- **Stack:** Astro 7 static build bridge, Tailwind CSS 4 foundation, legacy HTML/CSS/vanilla JS shell
+- **Stack:** Astro 7 static build bridge, legacy HTML/CSS/vanilla JS shell
 - **Template:** Designesia (licensed)
 - **Media:** AVIF images, self-hosted cinematic MP4 hero
 - **Forms:** Azure Functions → Logic Apps → Dynamics 365

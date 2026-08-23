@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://ravonics.com',
@@ -10,8 +9,5 @@ export default defineConfig({
     assets: 'assets',
     inlineStylesheets: 'never'
   },
-  compressHTML: false,
-  vite: {
-    plugins: [tailwindcss()]
-  }
+  compressHTML: false
 });

@@ -15,6 +15,20 @@ import sharp from 'sharp';
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 const LIVE_ROOTS = ['', 'capabilities', 'solutions', 'industries', 'company', 'insights'];
 const ROOT_PAGES = new Set(['index.html', 'contact.html', 'booking.html', 'privacy.html', 'terms.html']);
+const INSIGHT_TAG_ROUTES = new Map([
+  ['AI & Machine Learning', '../capabilities/ai.html'],
+  ['Autonomous Systems', '../capabilities/autonomous-systems.html'],
+  ['Cybersecurity', '../solutions/zero-trust.html'],
+  ['Systems Integration', '../capabilities/integration.html'],
+  ['Emerging Technologies', '../insights/innovation.html'],
+  ['Real-Time Processing', '../capabilities/computing.html'],
+  ['Mission Critical', '../capabilities/integration.html'],
+  ['Defense Technology', '../industries/defense.html'],
+  ['Edge Computing', '../capabilities/computing.html'],
+  ['JADC2', '../solutions/jadc2.html'],
+  ['Zero Trust', '../solutions/zero-trust.html'],
+  ['Post-Quantum Crypto', '../capabilities/cryptography.html']
+]);
 const cache = new Map();
 
 async function htmlFiles() {
@@ -62,6 +76,91 @@ function metadataFrom(html, fallbackRoute) {
     html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']*)["']/i)?.[1] ||
     `https://ravonics.com/${fallbackRoute === 'index.html' ? '' : fallbackRoute}`;
   return { title, description, canonical };
+}
+
+function removePlaceholderIntegrations(html) {
+  let output = html;
+
+  // Do not ship unverified Search Console metadata or a fake analytics ID.
+  // Removing the complete block also prevents a useless third-party request.
+  output = output.replace(
+    /^[ \t]*(?:<!-- Google Search Console verification -->[ \t]*\r?\n[ \t]*)?<meta\b[^>]*name=["']google-site-verification["'][^>]*content=["']PLACEHOLDER_VERIFICATION_CODE["'][^>]*>[ \t]*\r?\n?/gim,
+    ''
+  );
+  output = output.replace(
+    /^[ \t]*<!-- Google tag \(gtag\.js\) - Google Analytics 4 -->[ \t]*\r?\n[ \t]*<script\b[^>]*src=["']https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-X{6,}["'][^>]*><\/script>[ \t]*\r?\n[ \t]*<script>[\s\S]*?<\/script>[ \t]*\r?\n?/gim,
+    ''
+  );
+  output = output.replace(/^[ \t]*<link rel="preconnect"/gm, '    <link rel="preconnect"');
+
+  return output;
+}
+
+function hardenContentSecurityPolicy(html) {
+  return html.replace(
+    /(<meta\s+http-equiv=["']Content-Security-Policy["']\s+content=")([^"]*)("[^>]*>)/gi,
+    (_, start, policy, end) => {
+      const directives = [];
+      for (const rawDirective of policy.split(';')) {
+        const directive = rawDirective.trim();
+        if (!directive) continue;
+
+        // A previous malformed pass could leave the default-src source as a
+        // standalone token. Restore the safe default and discard that token.
+        if (directive === "'self'") {
+          if (!directives.some((entry) => /^default-src\b/i.test(entry))) {
+            directives.unshift("default-src 'self'");
+          }
+          continue;
+        }
+
+        const [name, ...sources] = directive.split(/\s+/);
+        if (name.toLowerCase() === 'default-src' && sources.length === 0) {
+          directives.push("default-src 'self'");
+          continue;
+        }
+        const filtered = sources.filter((source) => {
+          if (
+            source === 'https://www.googletagmanager.com' ||
+            source === 'https://www.google-analytics.com'
+          ) {
+            return false;
+          }
+          return name.toLowerCase() !== 'script-src' || source !== "'unsafe-eval'";
+        });
+        directives.push([name, ...filtered].join(' '));
+      }
+
+      if (!directives.some((directive) => /^object-src\b/i.test(directive))) {
+        directives.push("object-src 'none'");
+      }
+      if (!directives.some((directive) => /^form-action\b/i.test(directive))) {
+        directives.push("form-action 'self'");
+      }
+
+      return `${start}${directives.join('; ')}${end}`;
+    }
+  );
+}
+
+function repairInsightTagLinks(html, route) {
+  if (!route.startsWith('insights/')) return html;
+
+  let output = html.replace(/<a\s+href=["']#link["']>([^<]+)<\/a>/gi, (_, label) => {
+    const cleanLabel = label.trim();
+    const target = INSIGHT_TAG_ROUTES.get(cleanLabel);
+    return target ? `<a href="${target}">${label}</a>` : `<span>${label}</span>`;
+  });
+  output = output.replace(/<span>\s*Mission Critical\s*<\/span>/gi, () => {
+    const target = INSIGHT_TAG_ROUTES.get('Mission Critical');
+    return `<a href="${target}">Mission Critical</a>`;
+  });
+
+  if (route === 'insights/innovation.html') {
+    output = output.replace(/<a\s+href=["']#["']>Insights<\/a>/i, '<a href="blog.html">Insights</a>');
+  }
+
+  return output;
 }
 
 async function dimensionsFor(file) {
@@ -114,6 +213,10 @@ async function addImageDimensions(html, sourceFile) {
 function improveStructure(html, route) {
   let output = html;
 
+  output = removePlaceholderIntegrations(output);
+  output = hardenContentSecurityPolicy(output);
+  output = repairInsightTagLinks(output, route);
+
   // Preserve existing styles while giving the content and navigation regions
   // their correct landmark semantics.
   output = output.replace(
@@ -135,6 +238,23 @@ function improveStructure(html, route) {
     '<button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>'
   );
   output = output.replace(
+    /<a\b([^>]*\bhref=["']javascript:void\(0\)["'][^>]*)>([\s\S]*?)<\/a>/gi,
+    (match, attributes, content) => {
+      if (!/\bonclick\s*=\s*["']playHeroVideo\(\)["']/i.test(attributes)) return match;
+      const withoutHref = attributes.replace(/\s+href=["']javascript:void\(0\)["']/i, '');
+      const phrasingContent = content.replace(/<div\b/gi, '<span').replace(/<\/div>/gi, '</span>');
+      return `<button type="button"${withoutHref}>${phrasingContent}</button>`;
+    }
+  );
+  output = output.replace(
+    /(<button\b[^>]*\bonclick=["']playHeroVideo\(\)["'][^>]*>)([\s\S]*?)(<\/button>)/gi,
+    (_, opening, content, closing) =>
+      `${opening}${content.replace(/<div\b/gi, '<span').replace(/<\/div>/gi, '</span>')}${closing}`
+  );
+  output = output.replace(/<button\b([^>]*\bid=["']menu-btn["'][^>]*)>/gi, (match, attributes) =>
+    /\baria-controls\s*=/.test(attributes) ? match : `<button${attributes} aria-controls="mainmenu">`
+  );
+  output = output.replace(
     /<div\s+id=["']btn-extra["']>([\s\S]*?)<\/div>/gi,
     '<button type="button" id="btn-extra" aria-label="Open information panel">$1</button>'
   );
@@ -154,9 +274,24 @@ function improveStructure(html, route) {
     /<a\s+href=["']#["']\s+id=["']back-to-top["'](?![^>]*\baria-label=)([^>]*)>/gi,
     '<a href="#" id="back-to-top" aria-label="Back to top"$1>'
   );
+  if (!/id=["']back-to-top-region["']/i.test(output)) {
+    output = output.replace(
+      /(\s*)<a(\s+href=["']#["']\s+id=["']back-to-top["'][^>]*)><\/a>/gi,
+      '$1<div id="back-to-top-region" role="region" aria-label="Page navigation">\n$1  <a$2></a>\n$1</div>'
+    );
+  }
+  let dedupedBackToTop;
+  do {
+    dedupedBackToTop = output;
+    output = output.replace(
+      /<div id=["']back-to-top-region["']([^>]*)>\s*<div id=["']back-to-top-region["'][^>]*>([\s\S]*?)<\/div>\s*<\/div>/gi,
+      '<div id="back-to-top-region"$1>$2</div>'
+    );
+  } while (output !== dedupedBackToTop);
   output = output.replace(
-    /(\s*)<a(\s+href=["']#["']\s+id=["']back-to-top["'][^>]*)><\/a>/gi,
-    '$1<div id="back-to-top-region" role="region" aria-label="Page navigation">\n$1  <a$2></a>\n$1</div>'
+    /([ \t]*)<div id=["']back-to-top-region["'][^>]*>\s*<a\s+href=["']#["']\s+id=["']back-to-top["'][^>]*><\/a>\s*<\/div>/gi,
+    (_, indent) =>
+      `${indent}<div id="back-to-top-region" role="region" aria-label="Page navigation">\n\n${indent}  <a href="#" id="back-to-top" aria-label="Back to top"></a>\n\n${indent}</div>`
   );
   output = output.replace(
     /<div\s+role=["']dialog["']\s+aria-modal=["']true["']\s+aria-label=["']Additional navigation["']\s+tabindex=["']-1["']\s+aria-hidden=["']true["']\s+id=["']extra-content["']/gi,

@@ -10,7 +10,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com https://www.google-analytics.com; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
     <meta content="Ravonics perspectives on federal technology trends: federal AI policy, CMMC compliance pathways, JADC2 implementation challenges, zero-trust architecture, and quantum threat timelines: honest analysis from a team with deep CS, AI/ML, and federal experience." name="description" >
     <meta content="federal AI policy, CMMC compliance pathway, JADC2 implementation challenges, zero-trust architecture trends, quantum threat timeline, defense technology analysis, federal IT strategy, Ravonics perspectives, Ravonics leadership, small business federal technology" name="keywords">
     <meta content="RAVONICS" name="author">
@@ -47,17 +47,6 @@
       }
     }
     </script>
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="PLACEHOLDER_VERIFICATION_CODE" />
-    <!-- Google tag (gtag.js) - Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -165,7 +154,7 @@
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
                                     <a href="../booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false"></button>
+                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="mainmenu"></button>
                                 </div>
 
                                 <button type="button" id="btn-extra" aria-label="Open information panel">

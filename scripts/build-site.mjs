@@ -31,6 +31,21 @@ function run(command, args, options = {}) {
   if (result.status !== 0) throw new Error(`${command} ${args.join(' ')} exited with ${result.status}`);
 }
 
+function runAstroBuild(outDir) {
+  // npm exec resolves the CLI from this package's lockfile-installed
+  // node_modules and stays offline, so a globally available or registry
+  // version can never be selected accidentally.
+  run(process.platform === 'win32' ? 'npm.cmd' : 'npm', [
+    'exec',
+    '--offline',
+    '--',
+    'astro',
+    'build',
+    '--outDir',
+    outDir
+  ]);
+}
+
 async function listFiles(directory, prefix = '') {
   const entries = await fs.readdir(directory, { withFileTypes: true });
   const files = [];
@@ -101,7 +116,7 @@ try {
   staging = await fs.mkdtemp(path.join(buildRoot, '.site-staging-'));
   // Build into an invocation-specific directory so another build cannot delete
   // the tree currently being served by Playwright or a local preview process.
-  run(process.platform === 'win32' ? 'npx.cmd' : 'npx', ['astro', 'build', '--outDir', staging]);
+  runAstroBuild(staging);
 
   for (const directory of ['css', 'images', 'js']) {
     await fs.cp(path.join(ROOT, directory), path.join(staging, directory), { recursive: true });
