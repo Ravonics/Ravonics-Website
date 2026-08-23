@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://ravonics.com/</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/authors.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/booking.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/briefs/access.html</loc>
   </url>
   <url>
     <loc>https://ravonics.com/capabilities/ai.html</loc>
@@ -55,9 +64,6 @@
     <loc>https://ravonics.com/contact.html</loc>
   </url>
   <url>
-    <loc>https://ravonics.com/</loc>
-  </url>
-  <url>
     <loc>https://ravonics.com/industries/defense.html</loc>
   </url>
   <url>
@@ -68,6 +74,9 @@
   </url>
   <url>
     <loc>https://ravonics.com/industries/research.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights.html</loc>
   </url>
   <url>
     <loc>https://ravonics.com/insights/ai-ethics-defense.html</loc>
@@ -97,6 +106,132 @@
     <loc>https://ravonics.com/insights/federal-cloud-fedramp.html</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/insights/flagships/annotated-mission-system.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/flagships/counterpoint-dossier.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/flagships/federal-decision-systems-index.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/flagships/lab-signal-to-field-confidence.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/flagships/mission-readiness-toolkit.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/flagships/mission-technology-atlas.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/a-map-of-the-federal-mission-architecture-conversation.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/autonomy-levels-and-the-location-of-human-authority.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/cui-boundary-thinking-for-technical-teams.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/decision-support-is-not-automation-by-another-name.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/digital-engineering-before-the-digital-twin.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/evidence-chains-for-technical-claims.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/from-network-perimeter-to-protected-resource.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/how-a-federal-acquisition-pathway-shapes-technical-evidence.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/interoperability-is-a-relationship-between-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/jadc2-vocabulary-the-words-that-change-the-architecture-discussion.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/post-quantum-cryptography-a-field-guide-to-the-nouns.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/responsible-ai-vocabulary-for-acquisition-teams.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/sensor-fusion-is-a-relationship-not-a-bigger-pile-of-data.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/systems-engineering-versus-product-integration.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/the-cryptographic-inventory-as-an-architectural-artifact.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/the-edge-to-cloud-continuum-in-plain-language.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/the-research-to-program-handoff.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/foundations/why-mission-computing-is-an-engineering-discipline-not-a-feature-list.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/a-2030-field-note-written-from-today.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/acquisition-experiments-that-lower-uncertainty.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/adaptive-cyber-defense-with-bounded-autonomy.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/autonomous-team-prototypes-that-preserve-human-authority.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/computing-at-the-edge-as-a-portfolio-decision.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/continuous-authorization-without-continuous-ceremony.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/cross-domain-data-products-with-explicit-release-logic.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/digital-engineering-as-the-next-acquisition-language.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/human-centered-autonomy-beyond-the-interface.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/jadc2-interoperability-and-the-next-interface.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/machine-readable-evidence-for-technical-programs.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/mission-digital-twins-as-shared-decision-spaces.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/open-architecture-as-an-option-on-future-change.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/post-quantum-migration-as-a-horizon-program.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/resilient-communications-in-a-more-contested-environment.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/tactical-edge-ai-after-the-benchmark.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/the-2026-ai-rmf-signal-from-framework-to-operational-profile.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/futures-and-field-notes/the-capability-statement-after-the-brochure-era.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/insights/gallery.html</loc>
   </url>
   <url>
@@ -112,7 +247,223 @@
     <loc>https://ravonics.com/insights/jadc2-interoperability-perspective.html</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/cloud-cost-governance-for-mission-workloads.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/compliance-investment-that-improves-engineering.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/data-as-a-program-asset-not-a-byproduct.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/how-to-speak-honestly-about-technical-uncertainty-in-a-budget-narrative.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/integration-economics-the-hidden-work-behind-a-capability.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/lifecycle-economics-of-a-resilient-system.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/mission-value-metrics-for-ai-enabled-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/public-private-teaming-and-the-cost-of-unclear-ownership.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/small-business-acquisition-readiness.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/supply-chain-due-diligence-for-mission-software.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/sustainment-contracts-as-product-architecture.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/the-budget-narrative-as-an-architecture-test.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/the-cost-of-delay-in-post-quantum-migration.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/the-economics-of-open-standards.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/total-cost-of-ownership-for-edge-ai.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/vendor-lock-in-as-a-decision-surface.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/what-a-procurement-signal-can-and-cannot-tell-you.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/markets-and-economics/workforce-scarcity-and-architecture-choices.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/accessibility-in-mission-tools.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/acquisition-collaboration-without-premature-promises.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/analyst-workload-is-an-architecture-signal.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/clearance-and-export-boundaries-in-technical-communication.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/cognitive-load-as-a-measurable-engineering-concern.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/cross-functional-incident-response-in-a-mission-program.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/documentation-culture-as-a-security-control.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/explainability-that-an-operator-can-use.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/field-maintenance-as-a-first-class-design-input.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/field-ux-when-bandwidth-and-attention-are-scarce.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/how-operators-learn-to-trust-an-ai-system.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/human-machine-teaming-under-time-pressure.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/mission-rehearsal-as-a-design-instrument.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/operator-feedback-loops-that-improve-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/red-teams-that-teach-the-system-something.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/small-business-teaming-as-an-interface-problem.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/the-engineering-review-that-catches-the-expensive-assumption.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/people-and-practice/training-data-stewardship-in-a-mission-program.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/insights/perspectives.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/air-land-maritime-and-space-contexts-are-not-interchangeable.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/base-and-remote-site-architecture-patterns.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/classified-and-unclassified-collaboration-boundaries.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/climate-conditions-and-sensing-quality.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/coalition-interoperability-is-also-a-culture-problem.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/community-impact-around-mission-technology-programs.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/design-language-that-earns-trust-in-technical-interfaces.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/field-conditions-as-a-systems-requirement.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/historical-memory-in-mission-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/language-and-taxonomies-in-multi-organization-programs.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/place-based-procurement-and-the-reality-of-delivery.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/regional-workforce-as-a-mission-system-dependency.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/resilience-in-distributed-and-remote-operations.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/rural-innovation-ecosystems-and-federal-technology-work.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/spectrum-geography-why-the-rf-environment-is-local.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/the-culture-of-federal-operators-and-technical-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/the-lab-to-field-distance-is-an-engineering-variable.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/places-and-culture/why-place-changes-the-meaning-of-mission-technology.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/accessibility-as-a-governance-commitment.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/ai-accountability-with-a-named-decision-owner.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/auditability-that-helps-people-challenge-a-result.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/challenge-and-appeal-paths-for-automated-decisions.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/cui-governance-beyond-the-boundary-diagram.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/data-governance-for-model-and-mission-workflows.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/export-control-awareness-in-public-technical-writing.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/incident-disclosure-without-operational-oversharing.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/model-cards-as-a-decision-boundary.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/pqc-mandates-and-the-difference-between-direction-and-implementation.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/privacy-as-architecture-in-mission-data-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/procurement-ethics-for-emerging-technology.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/responsible-autonomy-and-the-right-to-intervene.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/supply-chain-assurance-as-shared-governance.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/testing-and-authorization-as-a-continuous-relationship.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/where-human-judgment-belongs-in-an-ai-workflow.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/why-standards-matter-when-systems-cross-organizations.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/policy-ethics-and-governance/zero-trust-policy-as-a-set-of-target-outcomes.html</loc>
   </url>
   <url>
     <loc>https://ravonics.com/insights/post-quantum-cryptography.html</loc>
@@ -127,7 +478,115 @@
     <loc>https://ravonics.com/insights/quantum-threat-pqc-migration.html</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/insights/science-and-technology/a-tactical-edge-hardware-evaluation-that-survives-procurement.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/adversarial-machine-learning-as-an-evaluation-discipline.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/digital-twins-as-hypothesis-engines.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/evaluating-ai-under-distribution-shift.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/federated-learning-when-data-cannot-move.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/formal-methods-where-failure-cost-is-high.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/graph-fusion-for-multi-source-decision-support.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/hyperspectral-sensing-from-cube-to-decision.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/inference-latency-is-a-systems-property.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/model-drift-as-a-change-management-problem.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/pqc-performance-is-a-migration-variable.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/quantization-tradeoffs-at-the-tactical-edge.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/quantum-sensing-where-the-promise-meets-the-interface.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/reproducibility-in-mission-technology-experiments.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/simulation-validation-before-field-confidence.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/swarm-coordination-under-incomplete-information.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/synthetic-data-with-a-provenance-trail.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/science-and-technology/uncertainty-that-can-change-a-decision.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/insights/swarm-coordination-concepts.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/a-model-deployment-pipeline-with-a-real-rollback-path.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/api-gateways-and-the-limits-of-a-front-door.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/authorization-boundaries-as-design-artifacts.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/container-supply-chain-evidence-that-a-program-can-inspect.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/control-plane-and-data-plane-in-multi-domain-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/cross-domain-constraints-before-interface-design.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/data-retention-that-serves-both-mission-and-accountability.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/designing-an-edge-to-cloud-data-pipeline.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/failover-that-preserves-meaning-not-just-uptime.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/identity-tier-policy-in-a-cloud-native-mission-stack.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/latency-budgets-for-real-time-decision-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/mission-network-segmentation-with-an-explicit-purpose.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/observability-for-systems-whose-outcomes-matter.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/resilient-tactical-communications-under-degraded-connectivity.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/service-mesh-as-policy-plumbing-not-magic-security.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/the-integration-test-environment-as-a-product.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/time-synchronization-as-a-fusion-dependency.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/insights/systems/what-useful-event-logging-actually-looks-like.html</loc>
   </url>
   <url>
     <loc>https://ravonics.com/insights/tactical-edge-ai.html</loc>
@@ -142,7 +601,40 @@
     <loc>https://ravonics.com/insights/zero-trust-mandates-perspective.html</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/methodology.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/acquisition-evidence-for-mission-technology.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/ai-risk-in-mission-decision-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/digital-engineering-and-mission-twins.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/jadc2-interoperability-by-design.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/post-quantum-migration-field-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/responsible-autonomy-and-human-authority.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/tactical-edge-ai-evaluation.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/reports/zero-trust-and-cui-boundaries.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/sitemap.html</loc>
   </url>
   <url>
     <loc>https://ravonics.com/solutions/ai-platforms.html</loc>
@@ -167,5 +659,32 @@
   </url>
   <url>
     <loc>https://ravonics.com/terms.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/foundations.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/futures-and-field-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/markets-and-economics.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/people-and-practice.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/places-and-culture.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/policy-ethics-and-governance.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/science-and-technology.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/topics/systems.html</loc>
   </url>
 </urlset>

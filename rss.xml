@@ -60,6 +60,258 @@
       <description>What FedRAMP-aligned architecture actually requires: authorization boundary definition, control inheritance, impact level selection, and continuous monitoring: a design-first perspective from Ravonics. Note: Ravonics holds no FedRAMP authorization.</description>
     </item>
     <item>
+      <title>The Annotated Mission System | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/flagships/annotated-mission-system.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/flagships/annotated-mission-system.html</guid>
+      <description>A system becomes inspectable when data, authority, timing, failure, and evidence are visible on one route.</description>
+    </item>
+    <item>
+      <title>The Counterpoint Dossier | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/flagships/counterpoint-dossier.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/flagships/counterpoint-dossier.html</guid>
+      <description>A credible technical position makes tradeoffs and disconfirming evidence visible instead of hiding behind certainty.</description>
+    </item>
+    <item>
+      <title>The Federal Decision Systems Index | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/flagships/federal-decision-systems-index.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/flagships/federal-decision-systems-index.html</guid>
+      <description>Comparison is useful only when units, conditions, uncertainty, authority, and evidence are held in view.</description>
+    </item>
+    <item>
+      <title>From Lab Signal to Field Confidence | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/flagships/lab-signal-to-field-confidence.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/flagships/lab-signal-to-field-confidence.html</guid>
+      <description>Field confidence is earned through explicit assumptions, independent tests, maintainability evidence, and bounded claims.</description>
+    </item>
+    <item>
+      <title>The Mission Readiness Toolkit | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/flagships/mission-readiness-toolkit.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/flagships/mission-readiness-toolkit.html</guid>
+      <description>Readiness improves when a team can name its reader, evidence, owner, test, fallback, and next decision.</description>
+    </item>
+    <item>
+      <title>The Mission Technology Atlas | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/flagships/mission-technology-atlas.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/flagships/mission-technology-atlas.html</guid>
+      <description>Mission technology is best understood as a connected system of evidence, people, interfaces, controls, and outcomes.</description>
+    </item>
+    <item>
+      <title>A map of the federal mission architecture conversation | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/a-map-of-the-federal-mission-architecture-conversation.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/a-map-of-the-federal-mission-architecture-conversation.html</guid>
+      <description>Mission architecture is easiest to navigate when capabilities, operating contexts, controls, and outcomes are shown as connected layers.</description>
+    </item>
+    <item>
+      <title>Autonomy levels and the location of human authority | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/autonomy-levels-and-the-location-of-human-authority.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/autonomy-levels-and-the-location-of-human-authority.html</guid>
+      <description>Autonomy should be described by delegated decisions, safeguards, reversibility, and human authority, not only by platform behavior.</description>
+    </item>
+    <item>
+      <title>CUI boundary thinking for technical teams | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/cui-boundary-thinking-for-technical-teams.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/cui-boundary-thinking-for-technical-teams.html</guid>
+      <description>CUI protection begins with system and information boundaries; control selection without boundary clarity creates both gaps and waste.</description>
+    </item>
+    <item>
+      <title>Decision support is not automation by another name | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/decision-support-is-not-automation-by-another-name.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/decision-support-is-not-automation-by-another-name.html</guid>
+      <description>Decision support can improve judgment without taking authority; the boundary must be designed and tested, not assumed from the interface.</description>
+    </item>
+    <item>
+      <title>Digital engineering before the digital twin | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/digital-engineering-before-the-digital-twin.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/digital-engineering-before-the-digital-twin.html</guid>
+      <description>A digital twin starts with traceable models, identifiers, and decisions; a visualization alone cannot make a system digitally engineered.</description>
+    </item>
+    <item>
+      <title>Evidence chains for technical claims | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/evidence-chains-for-technical-claims.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/evidence-chains-for-technical-claims.html</guid>
+      <description>A claim is stronger when a reader can trace it from source to method to limitation to decision implication.</description>
+    </item>
+    <item>
+      <title>From network perimeter to protected resource | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/from-network-perimeter-to-protected-resource.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/from-network-perimeter-to-protected-resource.html</guid>
+      <description>The most consequential zero-trust shift is moving protection from a trusted location to an explicitly evaluated resource and session.</description>
+    </item>
+    <item>
+      <title>How a federal acquisition pathway shapes technical evidence | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/how-a-federal-acquisition-pathway-shapes-technical-evidence.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/how-a-federal-acquisition-pathway-shapes-technical-evidence.html</guid>
+      <description>A technical claim becomes useful to acquisition when its scope, assumptions, test method, and ownership are explicit.</description>
+    </item>
+    <item>
+      <title>Interoperability is a relationship between systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/interoperability-is-a-relationship-between-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/interoperability-is-a-relationship-between-systems.html</guid>
+      <description>Interoperability is not a product property alone; it is a maintained relationship across data, timing, authority, and operational semantics.</description>
+    </item>
+    <item>
+      <title>JADC2 vocabulary: the words that change the architecture discussion | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/jadc2-vocabulary-the-words-that-change-the-architecture-discussion.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/jadc2-vocabulary-the-words-that-change-the-architecture-discussion.html</guid>
+      <description>JADC2 terms become useful only when each term is attached to a data relationship, authority boundary, or operational decision.</description>
+    </item>
+    <item>
+      <title>Post-quantum cryptography: a field guide to the nouns | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/post-quantum-cryptography-a-field-guide-to-the-nouns.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/post-quantum-cryptography-a-field-guide-to-the-nouns.html</guid>
+      <description>KEMs, signatures, inventories, and crypto-agility describe different migration jobs and should not be collapsed into a single PQC checklist.</description>
+    </item>
+    <item>
+      <title>Responsible AI vocabulary for acquisition teams | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/responsible-ai-vocabulary-for-acquisition-teams.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/responsible-ai-vocabulary-for-acquisition-teams.html</guid>
+      <description>Responsible AI language is useful when it names lifecycle evidence, affected people, and decision authority instead of offering a values-only statement.</description>
+    </item>
+    <item>
+      <title>Sensor fusion is a relationship, not a bigger pile of data | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/sensor-fusion-is-a-relationship-not-a-bigger-pile-of-data.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/sensor-fusion-is-a-relationship-not-a-bigger-pile-of-data.html</guid>
+      <description>Fusion earns its complexity when observations become a more inspectable decision basis with provenance and uncertainty preserved.</description>
+    </item>
+    <item>
+      <title>Systems engineering versus product integration | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/systems-engineering-versus-product-integration.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/systems-engineering-versus-product-integration.html</guid>
+      <description>Integration is a systems engineering problem when interfaces, hazards, authority, and lifecycle behavior matter beyond a one-time connection.</description>
+    </item>
+    <item>
+      <title>The cryptographic inventory as an architectural artifact | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/the-cryptographic-inventory-as-an-architectural-artifact.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/the-cryptographic-inventory-as-an-architectural-artifact.html</guid>
+      <description>A useful cryptographic inventory connects algorithms and keys to owners, protocols, data lifetimes, and replacement paths.</description>
+    </item>
+    <item>
+      <title>The edge-to-cloud continuum in plain language | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/the-edge-to-cloud-continuum-in-plain-language.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/the-edge-to-cloud-continuum-in-plain-language.html</guid>
+      <description>Edge and cloud are ends of a placement continuum whose useful boundary is latency, connectivity, control, and data sensitivity.</description>
+    </item>
+    <item>
+      <title>The research-to-program handoff | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/the-research-to-program-handoff.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/the-research-to-program-handoff.html</guid>
+      <description>Research becomes program value when uncertainty, interfaces, test evidence, and sustainment assumptions travel with the prototype.</description>
+    </item>
+    <item>
+      <title>Why mission computing is an engineering discipline, not a feature list | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/foundations/why-mission-computing-is-an-engineering-discipline-not-a-feature-list.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/foundations/why-mission-computing-is-an-engineering-discipline-not-a-feature-list.html</guid>
+      <description>Mission computing is defined by operating constraints, evidence, and handoff quality rather than by the novelty of an individual component.</description>
+    </item>
+    <item>
+      <title>A 2030 field note written from today | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/a-2030-field-note-written-from-today.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/a-2030-field-note-written-from-today.html</guid>
+      <description>Useful foresight names the assumptions, signals, failure modes, and decisions that would make a scenario more or less likely.</description>
+    </item>
+    <item>
+      <title>Acquisition experiments that lower uncertainty | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/acquisition-experiments-that-lower-uncertainty.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/acquisition-experiments-that-lower-uncertainty.html</guid>
+      <description>A good acquisition experiment retires a named uncertainty and produces evidence that changes the next decision.</description>
+    </item>
+    <item>
+      <title>Adaptive cyber defense with bounded autonomy | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/adaptive-cyber-defense-with-bounded-autonomy.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/adaptive-cyber-defense-with-bounded-autonomy.html</guid>
+      <description>Adaptive defense should change posture within explicit policy, evidence, and rollback boundaries.</description>
+    </item>
+    <item>
+      <title>Autonomous team prototypes that preserve human authority | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/autonomous-team-prototypes-that-preserve-human-authority.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/autonomous-team-prototypes-that-preserve-human-authority.html</guid>
+      <description>A useful autonomous-team prototype makes delegation, coordination, uncertainty, intervention, and recovery inspectable.</description>
+    </item>
+    <item>
+      <title>Computing at the edge as a portfolio decision | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/computing-at-the-edge-as-a-portfolio-decision.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/computing-at-the-edge-as-a-portfolio-decision.html</guid>
+      <description>Edge compute portfolios should balance local response, central learning, security, power, and sustainment over time.</description>
+    </item>
+    <item>
+      <title>Continuous authorization without continuous ceremony | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/continuous-authorization-without-continuous-ceremony.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/continuous-authorization-without-continuous-ceremony.html</guid>
+      <description>Continuous authorization should automate evidence collection and change detection while preserving accountable risk decisions.</description>
+    </item>
+    <item>
+      <title>Cross-domain data products with explicit release logic | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/cross-domain-data-products-with-explicit-release-logic.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/cross-domain-data-products-with-explicit-release-logic.html</guid>
+      <description>Cross-domain data products need release logic, provenance, downgrade behavior, and an owner for every transformation.</description>
+    </item>
+    <item>
+      <title>Digital engineering as the next acquisition language | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/digital-engineering-as-the-next-acquisition-language.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/digital-engineering-as-the-next-acquisition-language.html</guid>
+      <description>Digital engineering becomes consequential when models and evidence travel across design, test, delivery, and sustainment.</description>
+    </item>
+    <item>
+      <title>Human-centered autonomy beyond the interface | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/human-centered-autonomy-beyond-the-interface.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/human-centered-autonomy-beyond-the-interface.html</guid>
+      <description>Human-centered autonomy is about authority, workload, mental models, and recovery across the whole operating system.</description>
+    </item>
+    <item>
+      <title>JADC2 interoperability and the next interface | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/jadc2-interoperability-and-the-next-interface.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/jadc2-interoperability-and-the-next-interface.html</guid>
+      <description>Future interoperability work should test semantics, timing, trust, and decision authority at a bounded interface.</description>
+    </item>
+    <item>
+      <title>Machine-readable evidence for technical programs | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/machine-readable-evidence-for-technical-programs.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/machine-readable-evidence-for-technical-programs.html</guid>
+      <description>Machine-readable evidence can reduce translation cost when claims, sources, visuals, routes, and acceptance gates share stable identifiers.</description>
+    </item>
+    <item>
+      <title>Mission digital twins as shared decision spaces | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/mission-digital-twins-as-shared-decision-spaces.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/mission-digital-twins-as-shared-decision-spaces.html</guid>
+      <description>A mission twin can become a shared decision space when models, live state, uncertainty, and user questions remain connected.</description>
+    </item>
+    <item>
+      <title>Open architecture as an option on future change | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/open-architecture-as-an-option-on-future-change.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/open-architecture-as-an-option-on-future-change.html</guid>
+      <description>Open architecture creates future option value only when interfaces, conformance, ownership, and test evidence are real.</description>
+    </item>
+    <item>
+      <title>Post-quantum migration as a horizon program | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/post-quantum-migration-as-a-horizon-program.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/post-quantum-migration-as-a-horizon-program.html</guid>
+      <description>PQC migration is a horizon program because inventory, dependencies, validation, and replacement timing unfold across many systems.</description>
+    </item>
+    <item>
+      <title>Resilient communications in a more contested environment | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/resilient-communications-in-a-more-contested-environment.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/resilient-communications-in-a-more-contested-environment.html</guid>
+      <description>Future communications resilience will combine multiple paths, degraded-mode behavior, policy agility, and better observability.</description>
+    </item>
+    <item>
+      <title>Tactical edge AI after the benchmark | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/tactical-edge-ai-after-the-benchmark.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/tactical-edge-ai-after-the-benchmark.html</guid>
+      <description>The next edge AI advantage comes from dependable behavior under power, bandwidth, thermal, and maintenance constraints.</description>
+    </item>
+    <item>
+      <title>The 2026 AI RMF signal: from framework to operational profile | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/the-2026-ai-rmf-signal-from-framework-to-operational-profile.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/the-2026-ai-rmf-signal-from-framework-to-operational-profile.html</guid>
+      <description>The important signal is not a new slogan but the move toward profiles, evaluation practices, and context-specific implementation.</description>
+    </item>
+    <item>
+      <title>The capability statement after the brochure era | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/futures-and-field-notes/the-capability-statement-after-the-brochure-era.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/futures-and-field-notes/the-capability-statement-after-the-brochure-era.html</guid>
+      <description>A strong capability statement is a compact evidence map connecting people, methods, boundaries, and next actions.</description>
+    </item>
+    <item>
       <title>Capability Areas &amp; Technology Focus | Defense AI, Autonomy, Cryptography, Zero Trust | Ravonics</title>
       <link>https://ravonics.com/insights/gallery.html</link>
       <guid isPermaLink="true">https://ravonics.com/insights/gallery.html</guid>
@@ -90,10 +342,442 @@
       <description>Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.</description>
     </item>
     <item>
+      <title>Cloud cost governance for mission workloads | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/cloud-cost-governance-for-mission-workloads.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/cloud-cost-governance-for-mission-workloads.html</guid>
+      <description>Cloud cost governance should connect resource usage to workload purpose, timing, data movement, and decision value.</description>
+    </item>
+    <item>
+      <title>Compliance investment that improves engineering | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/compliance-investment-that-improves-engineering.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/compliance-investment-that-improves-engineering.html</guid>
+      <description>Compliance investment creates value when it produces repeatable evidence and clearer operational behavior.</description>
+    </item>
+    <item>
+      <title>Data as a program asset, not a byproduct | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/data-as-a-program-asset-not-a-byproduct.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/data-as-a-program-asset-not-a-byproduct.html</guid>
+      <description>Data creates durable program value when provenance, access, quality, stewardship, and reuse are planned.</description>
+    </item>
+    <item>
+      <title>How to speak honestly about technical uncertainty in a budget narrative | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/how-to-speak-honestly-about-technical-uncertainty-in-a-budget-narrative.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/how-to-speak-honestly-about-technical-uncertainty-in-a-budget-narrative.html</guid>
+      <description>A useful budget narrative distinguishes known cost, bounded uncertainty, decision gates, and the cost of waiting.</description>
+    </item>
+    <item>
+      <title>Integration economics: the hidden work behind a capability | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/integration-economics-the-hidden-work-behind-a-capability.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/integration-economics-the-hidden-work-behind-a-capability.html</guid>
+      <description>Integration cost is driven by semantics, test environments, security boundaries, and sustainment, not just connector count.</description>
+    </item>
+    <item>
+      <title>Lifecycle economics of a resilient system | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/lifecycle-economics-of-a-resilient-system.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/lifecycle-economics-of-a-resilient-system.html</guid>
+      <description>Resilience cost is better understood across prevention, absorption, recovery, and learning than as one premium line item.</description>
+    </item>
+    <item>
+      <title>Mission value metrics for AI-enabled systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/mission-value-metrics-for-ai-enabled-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/mission-value-metrics-for-ai-enabled-systems.html</guid>
+      <description>Mission value metrics should connect system behavior to decision time, workload, confidence, risk, or recoverability with clear boundaries.</description>
+    </item>
+    <item>
+      <title>Public-private teaming and the cost of unclear ownership | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/public-private-teaming-and-the-cost-of-unclear-ownership.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/public-private-teaming-and-the-cost-of-unclear-ownership.html</guid>
+      <description>Team economics deteriorate when decision rights, interface ownership, data rights, and sustainment responsibility remain implicit.</description>
+    </item>
+    <item>
+      <title>Small-business acquisition readiness | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/small-business-acquisition-readiness.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/small-business-acquisition-readiness.html</guid>
+      <description>Acquisition readiness comes from precise scope, evidence, boundaries, and honest maturity statements.</description>
+    </item>
+    <item>
+      <title>Supply-chain due diligence for mission software | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/supply-chain-due-diligence-for-mission-software.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/supply-chain-due-diligence-for-mission-software.html</guid>
+      <description>Due diligence should examine provenance, dependencies, build practices, vulnerability response, and replacement options.</description>
+    </item>
+    <item>
+      <title>Sustainment contracts as product architecture | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/sustainment-contracts-as-product-architecture.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/sustainment-contracts-as-product-architecture.html</guid>
+      <description>Sustainment depends on observability, documentation, interface ownership, and change paths that should be designed before award.</description>
+    </item>
+    <item>
+      <title>The budget narrative as an architecture test | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/the-budget-narrative-as-an-architecture-test.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/the-budget-narrative-as-an-architecture-test.html</guid>
+      <description>If a system cannot be explained in terms of users, evidence, interfaces, and lifecycle choices, its budget story is probably hiding an architecture gap.</description>
+    </item>
+    <item>
+      <title>The cost of delay in post-quantum migration | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/the-cost-of-delay-in-post-quantum-migration.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/the-cost-of-delay-in-post-quantum-migration.html</guid>
+      <description>PQC migration delay compounds through inventory debt, procurement cycles, test windows, and long-lived data exposure.</description>
+    </item>
+    <item>
+      <title>The economics of open standards | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/the-economics-of-open-standards.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/the-economics-of-open-standards.html</guid>
+      <description>Open standards create option value when they reduce integration friction, improve competition, or preserve future choices.</description>
+    </item>
+    <item>
+      <title>Total cost of ownership for edge AI | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/total-cost-of-ownership-for-edge-ai.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/total-cost-of-ownership-for-edge-ai.html</guid>
+      <description>Edge AI economics depend on power, transport, maintenance, model refresh, training, and failure recovery over the system life.</description>
+    </item>
+    <item>
+      <title>Vendor lock-in as a decision surface | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/vendor-lock-in-as-a-decision-surface.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/vendor-lock-in-as-a-decision-surface.html</guid>
+      <description>Lock-in is a collection of dependencies across data, identity, operations, skills, interfaces, and exit cost.</description>
+    </item>
+    <item>
+      <title>What a procurement signal can and cannot tell you | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/what-a-procurement-signal-can-and-cannot-tell-you.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/what-a-procurement-signal-can-and-cannot-tell-you.html</guid>
+      <description>A procurement signal is a bounded clue about a problem, not proof of a requirement, award, budget, or access path.</description>
+    </item>
+    <item>
+      <title>Workforce scarcity and architecture choices | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/markets-and-economics/workforce-scarcity-and-architecture-choices.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/markets-and-economics/workforce-scarcity-and-architecture-choices.html</guid>
+      <description>Architecture that depends on rare operational knowledge creates sustainment risk even when its initial performance is strong.</description>
+    </item>
+    <item>
+      <title>Accessibility in mission tools | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/accessibility-in-mission-tools.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/accessibility-in-mission-tools.html</guid>
+      <description>Accessible mission tools reduce ambiguity and expand reliable participation in high-consequence workflows.</description>
+    </item>
+    <item>
+      <title>Acquisition collaboration without premature promises | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/acquisition-collaboration-without-premature-promises.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/acquisition-collaboration-without-premature-promises.html</guid>
+      <description>Early collaboration should clarify problems, evidence, constraints, and next steps without implying an award or mission access that does not exist.</description>
+    </item>
+    <item>
+      <title>Analyst workload is an architecture signal | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/analyst-workload-is-an-architecture-signal.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/analyst-workload-is-an-architecture-signal.html</guid>
+      <description>When analyst workload rises, the root cause may be data quality, workflow friction, or weak prioritization rather than insufficient automation.</description>
+    </item>
+    <item>
+      <title>Clearance and export boundaries in technical communication | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/clearance-and-export-boundaries-in-technical-communication.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/clearance-and-export-boundaries-in-technical-communication.html</guid>
+      <description>Public technical communication needs a deliberate boundary between general architecture insight and sensitive operational detail.</description>
+    </item>
+    <item>
+      <title>Cognitive load as a measurable engineering concern | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/cognitive-load-as-a-measurable-engineering-concern.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/cognitive-load-as-a-measurable-engineering-concern.html</guid>
+      <description>Cognitive load can be reduced by improving signal-to-noise, sequence, defaults, recoverability, and shared vocabulary.</description>
+    </item>
+    <item>
+      <title>Cross-functional incident response in a mission program | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/cross-functional-incident-response-in-a-mission-program.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/cross-functional-incident-response-in-a-mission-program.html</guid>
+      <description>Incident response needs engineering, operations, security, communications, and decision owners to share one timeline and one definition of recovery.</description>
+    </item>
+    <item>
+      <title>Documentation culture as a security control | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/documentation-culture-as-a-security-control.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/documentation-culture-as-a-security-control.html</guid>
+      <description>Documentation reduces operational ambiguity when it captures decisions, assumptions, ownership, and change history where people work.</description>
+    </item>
+    <item>
+      <title>Explainability that an operator can use | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/explainability-that-an-operator-can-use.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/explainability-that-an-operator-can-use.html</guid>
+      <description>An explanation is useful when it helps a person validate, challenge, or appropriately limit a system output.</description>
+    </item>
+    <item>
+      <title>Field maintenance as a first-class design input | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/field-maintenance-as-a-first-class-design-input.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/field-maintenance-as-a-first-class-design-input.html</guid>
+      <description>A field system is shaped by access, tools, spares, training, and diagnostic clarity as much as by its nominal performance.</description>
+    </item>
+    <item>
+      <title>Field UX when bandwidth and attention are scarce | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/field-ux-when-bandwidth-and-attention-are-scarce.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/field-ux-when-bandwidth-and-attention-are-scarce.html</guid>
+      <description>Field UX prioritizes legibility, recoverability, offline continuity, and progressive disclosure over decorative density.</description>
+    </item>
+    <item>
+      <title>How operators learn to trust an AI system | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/how-operators-learn-to-trust-an-ai-system.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/how-operators-learn-to-trust-an-ai-system.html</guid>
+      <description>Operational trust grows from predictable behavior, clear uncertainty, visible provenance, and the ability to override or recover.</description>
+    </item>
+    <item>
+      <title>Human-machine teaming under time pressure | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/human-machine-teaming-under-time-pressure.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/human-machine-teaming-under-time-pressure.html</guid>
+      <description>Human-machine teaming works when authority, timing, attention, and failure recovery are explicit.</description>
+    </item>
+    <item>
+      <title>Mission rehearsal as a design instrument | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/mission-rehearsal-as-a-design-instrument.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/mission-rehearsal-as-a-design-instrument.html</guid>
+      <description>Rehearsal is more valuable when it tests decisions, interfaces, degraded modes, and recovery rather than only demonstrating a happy path.</description>
+    </item>
+    <item>
+      <title>Operator feedback loops that improve systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/operator-feedback-loops-that-improve-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/operator-feedback-loops-that-improve-systems.html</guid>
+      <description>Feedback becomes engineering evidence when it is captured in context, triaged, tied to outcomes, and closed with a visible decision.</description>
+    </item>
+    <item>
+      <title>Red teams that teach the system something | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/red-teams-that-teach-the-system-something.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/red-teams-that-teach-the-system-something.html</guid>
+      <description>A red-team exercise produces value when its findings map to owners, mitigations, retests, and decision thresholds.</description>
+    </item>
+    <item>
+      <title>Small-business teaming as an interface problem | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/small-business-teaming-as-an-interface-problem.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/small-business-teaming-as-an-interface-problem.html</guid>
+      <description>A teaming relationship becomes durable when ownership, interfaces, evidence, security, and sustainment are explicit.</description>
+    </item>
+    <item>
+      <title>The engineering review that catches the expensive assumption | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/the-engineering-review-that-catches-the-expensive-assumption.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/the-engineering-review-that-catches-the-expensive-assumption.html</guid>
+      <description>The best review questions test assumptions about users, data, authority, failure, and evidence before implementation hardens them.</description>
+    </item>
+    <item>
+      <title>Training data stewardship in a mission program | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/people-and-practice/training-data-stewardship-in-a-mission-program.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/people-and-practice/training-data-stewardship-in-a-mission-program.html</guid>
+      <description>Training data stewardship is a cross-functional practice involving provenance, labeling decisions, drift, access, and retirement.</description>
+    </item>
+    <item>
       <title>Industry Perspectives - Federal AI Policy, Defense Tech Trends, Compliance Landscape | Ravonics</title>
       <link>https://ravonics.com/insights/perspectives.html</link>
       <guid isPermaLink="true">https://ravonics.com/insights/perspectives.html</guid>
       <description>Ravonics perspectives on federal technology trends: federal AI policy, CMMC compliance pathways, JADC2 implementation challenges, zero-trust architecture, and quantum threat timelines: honest analysis from a team with deep CS, AI/ML, and federal experience.</description>
+    </item>
+    <item>
+      <title>Air, land, maritime, and space contexts are not interchangeable | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/air-land-maritime-and-space-contexts-are-not-interchangeable.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/air-land-maritime-and-space-contexts-are-not-interchangeable.html</guid>
+      <description>Each domain changes timing, sensing, mobility, maintenance, and authority assumptions that an integrated system must respect.</description>
+    </item>
+    <item>
+      <title>Base and remote-site architecture patterns | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/base-and-remote-site-architecture-patterns.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/base-and-remote-site-architecture-patterns.html</guid>
+      <description>Site architecture should express local autonomy, secure connectivity, sustainment, and recovery paths.</description>
+    </item>
+    <item>
+      <title>Classified and unclassified collaboration boundaries | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/classified-and-unclassified-collaboration-boundaries.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/classified-and-unclassified-collaboration-boundaries.html</guid>
+      <description>Useful collaboration preserves the difference between what can be shared, what can be generalized, and what must remain controlled.</description>
+    </item>
+    <item>
+      <title>Climate conditions and sensing quality | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/climate-conditions-and-sensing-quality.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/climate-conditions-and-sensing-quality.html</guid>
+      <description>Climate affects sensor calibration, visibility, power, communications, and operator interpretation.</description>
+    </item>
+    <item>
+      <title>Coalition interoperability is also a culture problem | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/coalition-interoperability-is-also-a-culture-problem.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/coalition-interoperability-is-also-a-culture-problem.html</guid>
+      <description>Coalition interoperability requires shared semantics, trust boundaries, decision rights, and ways to handle disagreement.</description>
+    </item>
+    <item>
+      <title>Community impact around mission technology programs | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/community-impact-around-mission-technology-programs.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/community-impact-around-mission-technology-programs.html</guid>
+      <description>Mission technology programs operate within communities that supply workforce, infrastructure, trust, and accountability.</description>
+    </item>
+    <item>
+      <title>Design language that earns trust in technical interfaces | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/design-language-that-earns-trust-in-technical-interfaces.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/design-language-that-earns-trust-in-technical-interfaces.html</guid>
+      <description>Trustworthy visual language makes evidence, uncertainty, authority, and next actions legible without pretending certainty.</description>
+    </item>
+    <item>
+      <title>Field conditions as a systems requirement | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/field-conditions-as-a-systems-requirement.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/field-conditions-as-a-systems-requirement.html</guid>
+      <description>Temperature, dust, power, bandwidth, light, noise, and maintenance access can change what a system means in use.</description>
+    </item>
+    <item>
+      <title>Historical memory in mission systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/historical-memory-in-mission-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/historical-memory-in-mission-systems.html</guid>
+      <description>Legacy choices persist through data models, procedures, interfaces, and trust assumptions; understanding that history improves modernization.</description>
+    </item>
+    <item>
+      <title>Language and taxonomies in multi-organization programs | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/language-and-taxonomies-in-multi-organization-programs.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/language-and-taxonomies-in-multi-organization-programs.html</guid>
+      <description>Shared taxonomies are infrastructure when they align data, roles, decisions, and handoffs across organizations.</description>
+    </item>
+    <item>
+      <title>Place-based procurement and the reality of delivery | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/place-based-procurement-and-the-reality-of-delivery.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/place-based-procurement-and-the-reality-of-delivery.html</guid>
+      <description>Procurement plans are stronger when delivery sites, access, local support, and acceptance conditions are explicit.</description>
+    </item>
+    <item>
+      <title>Regional workforce as a mission-system dependency | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/regional-workforce-as-a-mission-system-dependency.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/regional-workforce-as-a-mission-system-dependency.html</guid>
+      <description>A system&apos;s maintainability depends partly on where the skills, training paths, and support relationships live.</description>
+    </item>
+    <item>
+      <title>Resilience in distributed and remote operations | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/resilience-in-distributed-and-remote-operations.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/resilience-in-distributed-and-remote-operations.html</guid>
+      <description>Remote resilience combines local autonomy, graceful degradation, maintainability, and a credible path to coordination.</description>
+    </item>
+    <item>
+      <title>Rural innovation ecosystems and federal technology work | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/rural-innovation-ecosystems-and-federal-technology-work.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/rural-innovation-ecosystems-and-federal-technology-work.html</guid>
+      <description>Regional ecosystems can create distinctive strengths in research, manufacturing, and workforce when collaboration paths are designed.</description>
+    </item>
+    <item>
+      <title>Spectrum geography: why the RF environment is local | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/spectrum-geography-why-the-rf-environment-is-local.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/spectrum-geography-why-the-rf-environment-is-local.html</guid>
+      <description>Spectrum behavior is shaped by terrain, emitters, weather, policy, and platform geometry.</description>
+    </item>
+    <item>
+      <title>The culture of federal operators and technical systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/the-culture-of-federal-operators-and-technical-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/the-culture-of-federal-operators-and-technical-systems.html</guid>
+      <description>Institutional habits, incentives, vocabulary, and trust histories shape whether a system is adopted and used correctly.</description>
+    </item>
+    <item>
+      <title>The lab-to-field distance is an engineering variable | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/the-lab-to-field-distance-is-an-engineering-variable.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/the-lab-to-field-distance-is-an-engineering-variable.html</guid>
+      <description>Field transition exposes assumptions about users, maintenance, data, timing, and recovery that lab testing can hide.</description>
+    </item>
+    <item>
+      <title>Why place changes the meaning of mission technology | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/places-and-culture/why-place-changes-the-meaning-of-mission-technology.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/places-and-culture/why-place-changes-the-meaning-of-mission-technology.html</guid>
+      <description>A system is interpreted through place, access, climate, culture, infrastructure, and institutional memory.</description>
+    </item>
+    <item>
+      <title>Accessibility as a governance commitment | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/accessibility-as-a-governance-commitment.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/accessibility-as-a-governance-commitment.html</guid>
+      <description>Accessibility becomes durable when it is specified, tested, owned, and revisited alongside other quality attributes.</description>
+    </item>
+    <item>
+      <title>AI accountability with a named decision owner | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/ai-accountability-with-a-named-decision-owner.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/ai-accountability-with-a-named-decision-owner.html</guid>
+      <description>AI accountability becomes real when decisions, evidence, owners, and escalation paths are named.</description>
+    </item>
+    <item>
+      <title>Auditability that helps people challenge a result | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/auditability-that-helps-people-challenge-a-result.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/auditability-that-helps-people-challenge-a-result.html</guid>
+      <description>Auditability is more than logging; it preserves enough context to reconstruct a decision and contest it responsibly.</description>
+    </item>
+    <item>
+      <title>Challenge and appeal paths for automated decisions | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/challenge-and-appeal-paths-for-automated-decisions.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/challenge-and-appeal-paths-for-automated-decisions.html</guid>
+      <description>A challenge path needs notice, intelligible reason, responsible owner, timely review, and a way to correct the underlying system.</description>
+    </item>
+    <item>
+      <title>CUI governance beyond the boundary diagram | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/cui-governance-beyond-the-boundary-diagram.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/cui-governance-beyond-the-boundary-diagram.html</guid>
+      <description>CUI governance includes roles, handling, evidence, training, incident response, and change management around the boundary.</description>
+    </item>
+    <item>
+      <title>Data governance for model and mission workflows | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/data-governance-for-model-and-mission-workflows.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/data-governance-for-model-and-mission-workflows.html</guid>
+      <description>Data governance should clarify purpose, provenance, quality, access, retention, correction, and accountability.</description>
+    </item>
+    <item>
+      <title>Export-control awareness in public technical writing | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/export-control-awareness-in-public-technical-writing.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/export-control-awareness-in-public-technical-writing.html</guid>
+      <description>Public technical writing should state general principles while avoiding details that reveal controlled capability, access, or mission information.</description>
+    </item>
+    <item>
+      <title>Incident disclosure without operational oversharing | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/incident-disclosure-without-operational-oversharing.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/incident-disclosure-without-operational-oversharing.html</guid>
+      <description>Useful disclosure states impact, containment, user action, and learning while protecting sensitive details.</description>
+    </item>
+    <item>
+      <title>Model cards as a decision boundary | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/model-cards-as-a-decision-boundary.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/model-cards-as-a-decision-boundary.html</guid>
+      <description>A model card is valuable when it describes intended use, limits, evaluation conditions, and risk signals that change deployment decisions.</description>
+    </item>
+    <item>
+      <title>PQC mandates and the difference between direction and implementation | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/pqc-mandates-and-the-difference-between-direction-and-implementation.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/pqc-mandates-and-the-difference-between-direction-and-implementation.html</guid>
+      <description>A mandate establishes direction, but implementation still requires inventory, sequencing, testing, procurement, and exception governance.</description>
+    </item>
+    <item>
+      <title>Privacy as architecture in mission data systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/privacy-as-architecture-in-mission-data-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/privacy-as-architecture-in-mission-data-systems.html</guid>
+      <description>Privacy is shaped by collection, purpose, access, retention, linkage, and deletion decisions.</description>
+    </item>
+    <item>
+      <title>Procurement ethics for emerging technology | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/procurement-ethics-for-emerging-technology.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/procurement-ethics-for-emerging-technology.html</guid>
+      <description>Ethical procurement protects public value by making evidence, limits, affected parties, and challenge paths visible before commitment.</description>
+    </item>
+    <item>
+      <title>Responsible autonomy and the right to intervene | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/responsible-autonomy-and-the-right-to-intervene.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/responsible-autonomy-and-the-right-to-intervene.html</guid>
+      <description>Responsible autonomy requires defined intervention authority, observable state, bounded action, and recovery when the human cannot respond.</description>
+    </item>
+    <item>
+      <title>Supply-chain assurance as shared governance | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/supply-chain-assurance-as-shared-governance.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/supply-chain-assurance-as-shared-governance.html</guid>
+      <description>Supply-chain assurance is distributed across acquisition, engineering, vendors, operators, and incident response.</description>
+    </item>
+    <item>
+      <title>Testing and authorization as a continuous relationship | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/testing-and-authorization-as-a-continuous-relationship.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/testing-and-authorization-as-a-continuous-relationship.html</guid>
+      <description>Authorization evidence must reflect system change, operating context, control performance, and residual risk over time.</description>
+    </item>
+    <item>
+      <title>Where human judgment belongs in an AI workflow | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/where-human-judgment-belongs-in-an-ai-workflow.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/where-human-judgment-belongs-in-an-ai-workflow.html</guid>
+      <description>Human judgment should sit at decisions where context, uncertainty, harm, or reversibility require authority beyond the model.</description>
+    </item>
+    <item>
+      <title>Why standards matter when systems cross organizations | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/why-standards-matter-when-systems-cross-organizations.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/why-standards-matter-when-systems-cross-organizations.html</guid>
+      <description>Standards create shared expectations that reduce translation cost and make evidence portable across organizations.</description>
+    </item>
+    <item>
+      <title>Zero-trust policy as a set of target outcomes | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/policy-ethics-and-governance/zero-trust-policy-as-a-set-of-target-outcomes.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/policy-ethics-and-governance/zero-trust-policy-as-a-set-of-target-outcomes.html</guid>
+      <description>A zero-trust policy becomes useful when it maps target outcomes to identity, device, network, application, data, and visibility changes.</description>
     </item>
     <item>
       <title>Post-Quantum Cryptography: Preparing Federal Communications | Ravonics</title>
@@ -120,10 +804,226 @@
       <description>The harvest-now-decrypt-later threat, CRQC timeline uncertainty, NIST FIPS 203/204/205, NSA CNSA 2.0 transition timelines, and OMB/NSM-10 guidance: why federal agencies must begin post-quantum cryptography migration now, not after a quantum computer arrives.</description>
     </item>
     <item>
+      <title>A tactical edge hardware evaluation that survives procurement | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/a-tactical-edge-hardware-evaluation-that-survives-procurement.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/a-tactical-edge-hardware-evaluation-that-survives-procurement.html</guid>
+      <description>Hardware evaluation should combine workload, power, thermal, connectivity, security, maintainability, and evidence repeatability.</description>
+    </item>
+    <item>
+      <title>Adversarial machine learning as an evaluation discipline | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/adversarial-machine-learning-as-an-evaluation-discipline.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/adversarial-machine-learning-as-an-evaluation-discipline.html</guid>
+      <description>Adversarial evaluation is useful when threat assumptions, attack surfaces, success criteria, and mitigations are explicit.</description>
+    </item>
+    <item>
+      <title>Digital twins as hypothesis engines | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/digital-twins-as-hypothesis-engines.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/digital-twins-as-hypothesis-engines.html</guid>
+      <description>A digital twin is valuable when its assumptions, update cadence, validation evidence, and decision use are explicit.</description>
+    </item>
+    <item>
+      <title>Evaluating AI under distribution shift | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/evaluating-ai-under-distribution-shift.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/evaluating-ai-under-distribution-shift.html</guid>
+      <description>Distribution shift testing should expose the environmental, temporal, sensor, and workflow changes that can alter model behavior.</description>
+    </item>
+    <item>
+      <title>Federated learning when data cannot move | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/federated-learning-when-data-cannot-move.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/federated-learning-when-data-cannot-move.html</guid>
+      <description>Federated learning trades centralized data access for coordination, update security, heterogeneity management, and harder evaluation.</description>
+    </item>
+    <item>
+      <title>Formal methods where failure cost is high | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/formal-methods-where-failure-cost-is-high.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/formal-methods-where-failure-cost-is-high.html</guid>
+      <description>Formal methods are most useful when the property, boundary, and failure consequence are precise enough to prove or bound.</description>
+    </item>
+    <item>
+      <title>Graph fusion for multi-source decision support | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/graph-fusion-for-multi-source-decision-support.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/graph-fusion-for-multi-source-decision-support.html</guid>
+      <description>Graph structures help when relationships, provenance, and change matter to the question being asked.</description>
+    </item>
+    <item>
+      <title>Hyperspectral sensing from cube to decision | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/hyperspectral-sensing-from-cube-to-decision.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/hyperspectral-sensing-from-cube-to-decision.html</guid>
+      <description>Hyperspectral systems create value when calibration, dimensionality reduction, context, and uncertainty remain visible through the decision path.</description>
+    </item>
+    <item>
+      <title>Inference latency is a systems property | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/inference-latency-is-a-systems-property.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/inference-latency-is-a-systems-property.html</guid>
+      <description>Inference latency matters only in relation to data movement, preprocessing, human review, action, and recovery.</description>
+    </item>
+    <item>
+      <title>Model drift as a change-management problem | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/model-drift-as-a-change-management-problem.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/model-drift-as-a-change-management-problem.html</guid>
+      <description>Drift management requires monitored signals, decision thresholds, ownership, retraining criteria, and rollback.</description>
+    </item>
+    <item>
+      <title>PQC performance is a migration variable | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/pqc-performance-is-a-migration-variable.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/pqc-performance-is-a-migration-variable.html</guid>
+      <description>PQC performance should be measured in protocol context, including key sizes, handshake behavior, memory, latency, and interoperability.</description>
+    </item>
+    <item>
+      <title>Quantization tradeoffs at the tactical edge | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/quantization-tradeoffs-at-the-tactical-edge.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/quantization-tradeoffs-at-the-tactical-edge.html</guid>
+      <description>Quantization trades compute and memory efficiency against accuracy, calibration, and behavior on the cases that matter.</description>
+    </item>
+    <item>
+      <title>Quantum sensing: where the promise meets the interface | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/quantum-sensing-where-the-promise-meets-the-interface.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/quantum-sensing-where-the-promise-meets-the-interface.html</guid>
+      <description>Quantum sensing claims must be tied to a measurable advantage, operating condition, calibration story, and integration path.</description>
+    </item>
+    <item>
+      <title>Reproducibility in mission technology experiments | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/reproducibility-in-mission-technology-experiments.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/reproducibility-in-mission-technology-experiments.html</guid>
+      <description>Reproducibility requires versioned inputs, environments, methods, metrics, and a clear account of what was not reproduced.</description>
+    </item>
+    <item>
+      <title>Simulation validation before field confidence | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/simulation-validation-before-field-confidence.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/simulation-validation-before-field-confidence.html</guid>
+      <description>Simulation becomes credible when models are calibrated, validation cases are independent, and limitations are carried into decisions.</description>
+    </item>
+    <item>
+      <title>Swarm coordination under incomplete information | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/swarm-coordination-under-incomplete-information.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/swarm-coordination-under-incomplete-information.html</guid>
+      <description>Distributed coordination depends on communication limits, local information, conflict resolution, and safety constraints.</description>
+    </item>
+    <item>
+      <title>Synthetic data with a provenance trail | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/synthetic-data-with-a-provenance-trail.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/synthetic-data-with-a-provenance-trail.html</guid>
+      <description>Synthetic data should be evaluated for coverage, artifacts, privacy, and transfer to the real operating distribution.</description>
+    </item>
+    <item>
+      <title>Uncertainty that can change a decision | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/science-and-technology/uncertainty-that-can-change-a-decision.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/science-and-technology/uncertainty-that-can-change-a-decision.html</guid>
+      <description>Uncertainty is useful when it changes review, routing, abstention, or collection behavior.</description>
+    </item>
+    <item>
       <title>Autonomous Swarm Coordination | Architecture Concepts | Ravonics</title>
       <link>https://ravonics.com/insights/swarm-coordination-concepts.html</link>
       <guid isPermaLink="true">https://ravonics.com/insights/swarm-coordination-concepts.html</guid>
       <description>Architectural concepts for AI-driven multi-platform swarm coordination in GPS-denied environments: decentralized control, consensus protocols, resilient PNT, comms-degraded behavior, and inter-platform deconfliction.</description>
+    </item>
+    <item>
+      <title>A model deployment pipeline with a real rollback path | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/a-model-deployment-pipeline-with-a-real-rollback-path.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/a-model-deployment-pipeline-with-a-real-rollback-path.html</guid>
+      <description>A model release is mission-ready only when data, evaluation, approval, deployment, monitoring, and rollback remain connected.</description>
+    </item>
+    <item>
+      <title>API gateways and the limits of a front door | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/api-gateways-and-the-limits-of-a-front-door.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/api-gateways-and-the-limits-of-a-front-door.html</guid>
+      <description>A gateway can centralize ingress policy, but resource authorization and downstream identity remain distributed responsibilities.</description>
+    </item>
+    <item>
+      <title>Authorization boundaries as design artifacts | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/authorization-boundaries-as-design-artifacts.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/authorization-boundaries-as-design-artifacts.html</guid>
+      <description>An authorization boundary communicates ownership, evidence, assumptions, and residual risk across a system lifecycle.</description>
+    </item>
+    <item>
+      <title>Container supply-chain evidence that a program can inspect | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/container-supply-chain-evidence-that-a-program-can-inspect.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/container-supply-chain-evidence-that-a-program-can-inspect.html</guid>
+      <description>Container security depends on provenance, build controls, runtime policy, and response paths working as one chain.</description>
+    </item>
+    <item>
+      <title>Control plane and data plane in multi-domain systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/control-plane-and-data-plane-in-multi-domain-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/control-plane-and-data-plane-in-multi-domain-systems.html</guid>
+      <description>Naming the control and data planes exposes different latency, trust, availability, and test obligations.</description>
+    </item>
+    <item>
+      <title>Cross-domain constraints before interface design | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/cross-domain-constraints-before-interface-design.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/cross-domain-constraints-before-interface-design.html</guid>
+      <description>Cross-domain interfaces succeed when data release, authority, timing, and failure behavior are designed together.</description>
+    </item>
+    <item>
+      <title>Data retention that serves both mission and accountability | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/data-retention-that-serves-both-mission-and-accountability.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/data-retention-that-serves-both-mission-and-accountability.html</guid>
+      <description>Retention is a design decision about future decisions, privacy, storage cost, and reconstructability.</description>
+    </item>
+    <item>
+      <title>Designing an edge-to-cloud data pipeline | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/designing-an-edge-to-cloud-data-pipeline.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/designing-an-edge-to-cloud-data-pipeline.html</guid>
+      <description>Data pipelines should place filtering, inference, retention, and synchronization according to mission value and connectivity rather than platform fashion.</description>
+    </item>
+    <item>
+      <title>Failover that preserves meaning, not just uptime | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/failover-that-preserves-meaning-not-just-uptime.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/failover-that-preserves-meaning-not-just-uptime.html</guid>
+      <description>A failover path is credible only if the alternate system preserves the decisions, data meaning, and authority rules that users depend on.</description>
+    </item>
+    <item>
+      <title>Identity-tier policy in a cloud-native mission stack | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/identity-tier-policy-in-a-cloud-native-mission-stack.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/identity-tier-policy-in-a-cloud-native-mission-stack.html</guid>
+      <description>Identity-tier policy must travel with workloads and services rather than relying on network location as a proxy for trust.</description>
+    </item>
+    <item>
+      <title>Latency budgets for real-time decision systems | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/latency-budgets-for-real-time-decision-systems.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/latency-budgets-for-real-time-decision-systems.html</guid>
+      <description>Latency should be budgeted across sensing, transport, transformation, inference, human review, and action rather than reported as one headline number.</description>
+    </item>
+    <item>
+      <title>Mission network segmentation with an explicit purpose | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/mission-network-segmentation-with-an-explicit-purpose.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/mission-network-segmentation-with-an-explicit-purpose.html</guid>
+      <description>Segmentation earns its complexity when it reduces a defined blast radius or preserves a defined mission path.</description>
+    </item>
+    <item>
+      <title>Observability for systems whose outcomes matter | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/observability-for-systems-whose-outcomes-matter.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/observability-for-systems-whose-outcomes-matter.html</guid>
+      <description>Observability should connect technical signals to user-visible outcomes and decision quality.</description>
+    </item>
+    <item>
+      <title>Resilient tactical communications under degraded connectivity | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/resilient-tactical-communications-under-degraded-connectivity.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/resilient-tactical-communications-under-degraded-connectivity.html</guid>
+      <description>Tactical communications resilience is an explicit trade between throughput, timeliness, survivability, and recoverability.</description>
+    </item>
+    <item>
+      <title>Service mesh as policy plumbing, not magic security | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/service-mesh-as-policy-plumbing-not-magic-security.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/service-mesh-as-policy-plumbing-not-magic-security.html</guid>
+      <description>A service mesh can enforce useful service-to-service policy, but it cannot replace identity governance, data classification, or application authorization.</description>
+    </item>
+    <item>
+      <title>The integration test environment as a product | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/the-integration-test-environment-as-a-product.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/the-integration-test-environment-as-a-product.html</guid>
+      <description>A trustworthy integration environment makes interfaces, data conditions, failures, and evidence repeatable.</description>
+    </item>
+    <item>
+      <title>Time synchronization as a fusion dependency | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/time-synchronization-as-a-fusion-dependency.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/time-synchronization-as-a-fusion-dependency.html</guid>
+      <description>When observations are combined, timing quality becomes an input to confidence, correlation, and incident reconstruction.</description>
+    </item>
+    <item>
+      <title>What useful event logging actually looks like | Ravonics Insights</title>
+      <link>https://ravonics.com/insights/systems/what-useful-event-logging-actually-looks-like.html</link>
+      <guid isPermaLink="true">https://ravonics.com/insights/systems/what-useful-event-logging-actually-looks-like.html</guid>
+      <description>Logging is operationally valuable when events answer who, what, when, where, and outcome questions at the right granularity.</description>
     </item>
     <item>
       <title>Neural Network Optimization for Tactical Edge AI | Ravonics</title>
