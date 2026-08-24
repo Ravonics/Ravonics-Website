@@ -662,3 +662,394 @@ html:has(.rv-site-header) body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* -------------------------------------------------------------------------
+   Designesia theme bridge
+
+   The original Ravonics shell is a light, rounded canvas with the header
+   floating over the hero image. The navigation keeps the modern details/
+   keyboard contract above, but its surface belongs to that original system.
+   ------------------------------------------------------------------------- */
+.rv-site-header {
+  --rv-header-bg: transparent;
+  --rv-header-bg-scrolled: rgba(16, 16, 16, 0.96);
+  --rv-header-line: rgba(255, 255, 255, 0.28);
+  --rv-header-ink: #fff;
+  --rv-header-muted: rgba(255, 255, 255, 0.88);
+  --rv-header-accent: #d98f4e;
+  --rv-header-blue: #f1b278;
+  --rv-header-panel: #1c1718;
+  --rv-header-panel-deep: #141112;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  min-height: 90px;
+  background: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.rv-site-header.is-scrolled,
+.rv-site-header.smaller.is-scrolled {
+  position: fixed !important;
+  min-height: 76px;
+  background: var(--rv-header-bg-scrolled) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.rv-site-header.is-scrolled .rv-header-shell {
+  min-height: 76px;
+  padding-top: 0;
+}
+
+.rv-site-header.is-scrolled .rv-nav-link {
+  min-height: 76px;
+}
+
+@media (min-width: 900px) {
+  /* Give the floating header a calm, opaque band while a mega menu is open so
+     hero typography cannot show through the navigation row at tablet widths. */
+  .rv-site-header:has(.rv-mega[open]) {
+    background: rgba(16, 16, 16, 0.94) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.14) !important;
+  }
+}
+
+.rv-header-shell {
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  width: min(1280px, calc(100% - 5rem));
+  min-height: 90px;
+  gap: 0.7rem;
+  padding-top: 32px;
+}
+
+.rv-brand {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.rv-brand img {
+  width: 210px;
+  max-width: 22vw;
+}
+
+.rv-primary-navigation {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.rv-nav-link {
+  min-height: 90px;
+  padding-inline: 0.52rem !important;
+  color: var(--rv-header-muted) !important;
+  font-size: 0.79rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+.rv-nav-link::after {
+  right: 0.52rem;
+  left: 0.52rem;
+  background: var(--primary-color, #93242a);
+}
+
+.rv-header-cta {
+  grid-column: 3;
+  grid-row: 1;
+  min-height: 2.7rem;
+  padding-inline: 1.2rem !important;
+  color: #fff !important;
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.62) !important;
+  font-size: 0.86rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.rv-header-cta:hover,
+.rv-header-cta:focus-visible {
+  color: #fff !important;
+  background: var(--primary-color, #93242a) !important;
+  border-color: var(--primary-color, #93242a) !important;
+}
+
+.rv-menu-toggle {
+  grid-column: 4;
+  grid-row: 1;
+  display: inline-flex;
+  min-width: 2rem;
+  width: 2rem;
+  min-height: 2.7rem;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+}
+
+.rv-menu-toggle-label {
+  display: none;
+}
+
+.rv-menu-toggle-icon {
+  width: 1.55rem;
+  gap: 5px;
+}
+
+.rv-menu-toggle-icon span {
+  height: 2px;
+}
+
+.rv-site-header.is-open .rv-menu-toggle-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.rv-site-header.is-open .rv-menu-toggle-icon span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.rv-site-header.is-open .rv-menu-toggle-icon span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.rv-mega-panel {
+  max-height: min(38rem, calc(100dvh - 76px));
+  background:
+    linear-gradient(135deg, rgba(147, 36, 42, 0.18), transparent 38%),
+    linear-gradient(135deg, var(--rv-header-panel), var(--rv-header-panel-deep));
+  border-top-color: var(--primary-color, #93242a);
+  border-bottom-color: rgba(217, 143, 78, 0.34);
+  box-shadow: 0 1.8rem 3.8rem rgba(0, 0, 0, 0.34);
+}
+
+.rv-mega-panel-inner {
+  width: min(1280px, calc(100% - 5rem));
+  padding-block: 1.8rem 2rem;
+}
+
+.rv-mega-eyebrow,
+.rv-mega-link-meta {
+  color: #efb27b;
+}
+
+.rv-mega-intro h2,
+.rv-mega-group h3,
+.rv-mega-link:hover,
+.rv-mega-link:focus-visible {
+  color: #fff !important;
+}
+
+.rv-mega-intro > p:not(.rv-mega-eyebrow),
+.rv-mega-link,
+.rv-mega-bottom a {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.rv-mega-feature {
+  color: #fff !important;
+  background: var(--primary-color, #93242a) !important;
+  border-color: var(--primary-color, #93242a) !important;
+  border-radius: 4px !important;
+  text-transform: none !important;
+}
+
+.rv-mega-feature:hover,
+.rv-mega-feature:focus-visible {
+  color: #fff !important;
+  background: #b43a41 !important;
+  border-color: #b43a41 !important;
+}
+
+.rv-mega-group {
+  border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+.rv-mega-link {
+  border-radius: 4px !important;
+}
+
+.rv-mega-link:hover,
+.rv-mega-link:focus-visible {
+  background: rgba(147, 36, 42, 0.35) !important;
+  border-color: rgba(217, 143, 78, 0.38) !important;
+}
+
+.rv-mega-link--featured {
+  color: #f4b57e !important;
+}
+
+.rv-mega-bottom {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+.rv-mega-stats > div {
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.65rem 0.7rem;
+  background: rgba(0, 0, 0, 0.22);
+  border-left: 2px solid rgba(217, 143, 78, 0.72);
+}
+
+@media (min-width: 900px) and (max-width: 1180px) {
+  .rv-header-shell,
+  .rv-mega-panel-inner {
+    width: min(1040px, calc(100% - 2.5rem));
+  }
+
+  .rv-brand img {
+    width: 178px;
+  }
+
+  .rv-nav-link {
+    padding-inline: 0.38rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .rv-header-cta {
+    padding-inline: 0.7rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 899px) {
+  .rv-site-header,
+  .rv-site-header.is-scrolled {
+    position: fixed !important;
+    min-height: 68px;
+    background: rgba(16, 16, 16, 0.97) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  .rv-site-header.header-mobile,
+  .rv-site-header.header-mobile.is-scrolled {
+    position: sticky !important;
+    top: 0 !important;
+  }
+
+  .rv-header-shell {
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: 100%;
+    min-height: 68px;
+    padding: 0 1.25rem;
+  }
+
+  .rv-brand img {
+    width: 240px;
+    max-width: 68vw;
+  }
+
+  .rv-menu-toggle {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 2.75rem;
+  }
+
+  .rv-primary-navigation {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: calc(100% + 2.5rem);
+    margin-inline: -1.25rem;
+    padding: 0.6rem 1.25rem 1rem;
+    background: rgba(16, 16, 16, 0.985);
+  }
+
+  .rv-nav-link {
+    min-height: 3rem;
+    padding-inline: 0 !important;
+    font-size: 0.78rem !important;
+  }
+
+  .rv-nav-link::after {
+    right: 0;
+    left: 0;
+  }
+
+  .rv-mega-panel {
+    max-height: none;
+    overflow: visible;
+    background: linear-gradient(135deg, rgba(147, 36, 42, 0.28), rgba(16, 16, 16, 0.98));
+    border-color: rgba(217, 143, 78, 0.34);
+    border-radius: 4px;
+  }
+
+  .rv-mega-panel-inner {
+    width: 100%;
+    padding: 1rem 0.85rem 1.1rem;
+  }
+
+  .rv-mega-intro h2 {
+    font-size: 1.45rem;
+  }
+
+  .rv-mega-group {
+    border-top-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .rv-mega-link:hover,
+  .rv-mega-link:focus-visible {
+    background: rgba(147, 36, 42, 0.4) !important;
+  }
+
+  .rv-site-header.is-scrolled .rv-header-shell {
+    min-height: 68px;
+    padding-top: 0;
+  }
+
+  .rv-site-header.is-scrolled .rv-nav-link {
+    min-height: 3rem;
+  }
+}
+
+/* Legacy pages keep their original reveal choreography, but content must
+   remain readable even when an enhancement script is unavailable. */
+#de-loader {
+  display: none;
+}
+
+.wow {
+  visibility: visible !important;
+}
+
+.split .char {
+  opacity: 1;
+}
+
+/* The homepage's second slider title carries a legacy inline desktop size.
+   Keep the original composition while allowing the current copy to wrap
+   inside the mobile rounded canvas. */
+@media only screen and (max-width: 767px) {
+  body[data-rv-legacy-shell] #content {
+    margin-top: 0 !important;
+  }
+
+  body[data-rv-legacy-shell] #subheader.sm-mt-90 {
+    margin-top: 20px !important;
+  }
+
+  #content .sw-text-wrapper h1,
+  #content .sw-text-wrapper h2 {
+    max-width: 100%;
+    overflow-wrap: normal;
+    font-size: clamp(2.15rem, 10.5vw, 3.8rem) !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.1 !important;
+  }
+
+  #content .sw-text-wrapper p {
+    max-width: 32ch;
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  #content .sw-text-wrapper > div.animated {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}

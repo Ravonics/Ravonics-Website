@@ -1,49 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" data-astro-cid-srbwn3qu>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+<html lang="en">
+
+<head>
     <title>JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics</title>
-    <meta name="description" content="Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
-    <meta name="author" content="Ravonics LLC">
-    <meta property="og:site_name" content="Ravonics">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics">
-    <meta property="og:description" content="Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
-    <meta property="og:url" content="https://ravonics.com/insights/jadc2-interoperability-perspective.html">
-    <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics">
-    <meta name="twitter:description" content="Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
-    <meta name="twitter:image" content="https://ravonics.com/images/og-image.avif">
-    <link rel="canonical" href="https://ravonics.com/insights/jadc2-interoperability-perspective.html">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="preload" href="/css/bootstrap.min.css" as="style">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/plugins.css">
-    <link rel="stylesheet" href="/css/coloring.css">
-    <link rel="stylesheet" href="/css/swiper.css">
-    <link id="colors" href="/css/colors/scheme-01.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/site-header.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; form-action 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.logic.azure.com https://static.cloudflareinsights.com; base-uri 'self'">
+    <meta content="Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls." name="description" >
+    <meta content="JADC2, joint all-domain command and control, multi-domain operations, interoperability, data fabric, common data models, defense strategy, C2 integration, Ravonics" name="keywords">
+    <meta content="RAVONICS" name="author">
+    <link rel="canonical" href="https://ravonics.com/insights/jadc2-interoperability-perspective.html" >
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
-<meta property="og:url" content="https://ravonics.com/insights/jadc2-interoperability-perspective.html">
-<meta property="og:title" content="JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics">
-<meta property="og:description" content="The real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos. A Ravonics industry perspective on the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
-<meta property="og:image" content="https://ravonics.com/images/og-image.avif">
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ravonics.com/insights/jadc2-interoperability-perspective.html">
-<meta property="twitter:title" content="JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics">
-<meta property="twitter:description" content="The real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos. A Ravonics industry perspective on the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
-<meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
-<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-<link rel="shortcut icon" href="../images/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics","description":"Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.","url":"https://ravonics.com/insights/jadc2-interoperability-perspective.html","isPartOf":{"@type":"WebSite","name":"Ravonics","url":"https://ravonics.com"}}</script><script type="application/ld+json">
+    <meta property="og:url" content="https://ravonics.com/insights/jadc2-interoperability-perspective.html">
+    <meta property="og:title" content="JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics">
+    <meta property="og:description" content="The real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos. A Ravonics industry perspective on the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
+    <meta property="og:image" content="https://ravonics.com/images/og-image.avif">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ravonics.com/insights/jadc2-interoperability-perspective.html">
+    <meta property="twitter:title" content="JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics">
+    <meta property="twitter:description" content="The real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos. A Ravonics industry perspective on the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.">
+    <meta property="twitter:image" content="https://ravonics.com/images/twitter-image.avif">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
@@ -67,20 +55,45 @@
       }
     }
     </script>
-  <link rel="stylesheet" href="/assets/MagazineLayout.qLp5bkHM.css"></head>
-  <body data-astro-cid-srbwn3qu>
-    <a class="skip-link" href="#content" data-astro-cid-srbwn3qu>Skip to content</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <div class="magazine-shell" data-astro-cid-srbwn3qu>
-      <header class="rv-site-header" data-site-header>
+    <!-- CSS Files
+    ================================================== -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="../css/plugins.css" rel="stylesheet" type="text/css" >
+    <link href="../css/swiper.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <link href="../css/coloring.css" rel="stylesheet" type="text/css" >
+    <!-- color scheme -->
+    <link id="colors" href="../css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="Ravonics Insights">
+    <link rel="stylesheet" href="/css/site-header.css">
+  </head>
+
+<body data-rv-legacy-shell>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <div id="wrapper">
+        <div id="back-to-top-region" role="region" aria-label="Page navigation">
+
+          <a href="#" id="back-to-top" aria-label="Back to top"></a>
+
+        </div>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="rv-site-header" data-site-header>
   <div class="rv-header-shell">
     <a class="rv-brand" href="/" aria-label="Ravonics home">
       <img src="/images/logo/logo-white.svg" alt="Ravonics" width="1829" height="296">
     </a>
 
     <button class="rv-menu-toggle" type="button" aria-controls="rv-primary-navigation" aria-expanded="false" aria-label="Open navigation">
-      <span class="rv-menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
-      <span>Menu</span>
+      <span class="rv-menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="rv-menu-toggle-label">Menu</span>
     </button>
 
     <nav id="rv-primary-navigation" class="rv-primary-navigation" aria-label="Primary navigation">
@@ -102,52 +115,28 @@
                   <section class="rv-mega-group" aria-labelledby="rv-cap-intelligence">
                     <h3 id="rv-cap-intelligence">Intelligence &amp; autonomy</h3>
                     <ul>
-                      <li>
-                        <a class="rv-mega-link rv-mega-link--featured" href="/capabilities/ai.html"><span class="rv-mega-link-meta">Core capability</span><span>Advanced Artificial Intelligence</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/autonomous-systems.html"><span class="rv-mega-link-meta">Autonomy</span><span>Autonomous Systems</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/robotics.html"><span class="rv-mega-link-meta">Software</span><span>Autonomy Software</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/computer-vision.html"><span class="rv-mega-link-meta">Sensing</span><span>Computer Vision &amp; Sensor Fusion</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/intelligence.html"><span class="rv-mega-link-meta">Decisions</span><span>Intelligence &amp; Decision Systems</span></a>
-                      </li>
+                      <li><a class="rv-mega-link rv-mega-link--featured" href="/capabilities/ai.html"><span class="rv-mega-link-meta">Core capability</span><span>Advanced Artificial Intelligence</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/autonomous-systems.html"><span class="rv-mega-link-meta">Autonomy</span><span>Autonomous Systems</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/robotics.html"><span class="rv-mega-link-meta">Software</span><span>Autonomy Software</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/computer-vision.html"><span class="rv-mega-link-meta">Sensing</span><span>Computer Vision &amp; Sensor Fusion</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/intelligence.html"><span class="rv-mega-link-meta">Decisions</span><span>Intelligence &amp; Decision Systems</span></a></li>
                     </ul>
                   </section>
                   <section class="rv-mega-group" aria-labelledby="rv-cap-secure">
                     <h3 id="rv-cap-secure">Secure compute &amp; comms</h3>
                     <ul>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/tactical-comms.html"><span class="rv-mega-link-meta">Networks</span><span>Tactical Communications</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/quantum.html"><span class="rv-mega-link-meta">Quantum</span><span>Quantum Technologies</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/cryptography.html"><span class="rv-mega-link-meta">Security</span><span>Advanced Cryptography &amp; Blockchain</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/computing.html"><span class="rv-mega-link-meta">Compute</span><span>High-Performance Computing</span></a>
-                      </li>
+                      <li><a class="rv-mega-link" href="/capabilities/tactical-comms.html"><span class="rv-mega-link-meta">Networks</span><span>Tactical Communications</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/quantum.html"><span class="rv-mega-link-meta">Quantum</span><span>Quantum Technologies</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/cryptography.html"><span class="rv-mega-link-meta">Security</span><span>Advanced Cryptography &amp; Blockchain</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/computing.html"><span class="rv-mega-link-meta">Compute</span><span>High-Performance Computing</span></a></li>
                     </ul>
                   </section>
                   <section class="rv-mega-group" aria-labelledby="rv-cap-delivery">
                     <h3 id="rv-cap-delivery">Integration &amp; delivery</h3>
                     <ul>
-                      <li>
-                        <a class="rv-mega-link" href="/capabilities/integration.html"><span class="rv-mega-link-meta">Systems</span><span>Systems Engineering &amp; Integration</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/solutions/jadc2.html"><span class="rv-mega-link-meta">Architecture</span><span>JADC2-compatible architecture</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/booking.html"><span class="rv-mega-link-meta">Engage</span><span>Submit an RFP / RFI</span></a>
-                      </li>
+                      <li><a class="rv-mega-link" href="/capabilities/integration.html"><span class="rv-mega-link-meta">Systems</span><span>Systems Engineering &amp; Integration</span></a></li>
+                      <li><a class="rv-mega-link" href="/solutions/jadc2.html"><span class="rv-mega-link-meta">Architecture</span><span>JADC2-compatible architecture</span></a></li>
+                      <li><a class="rv-mega-link" href="/booking.html"><span class="rv-mega-link-meta">Engage</span><span>Submit an RFP / RFI</span></a></li>
                     </ul>
                   </section>
                 </div>
@@ -155,18 +144,12 @@
             </div>
           </details>
         </li>
-        <li class="rv-nav-item">
-          <a class="rv-nav-link" href="/solutions/ai-platforms.html">Solutions</a>
-        </li>
-        <li class="rv-nav-item">
-          <a class="rv-nav-link" href="/industries/defense.html">Industries</a>
-        </li>
-        <li class="rv-nav-item">
-          <a class="rv-nav-link" href="/company/about.html">Company</a>
-        </li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/solutions/ai-platforms.html">Solutions</a></li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/industries/defense.html">Industries</a></li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/company/about.html">Company</a></li>
         <li class="rv-nav-item">
           <details class="rv-mega" data-mega-menu="publication">
-            <summary class="rv-nav-link rv-nav-link--trigger" aria-controls="rv-mega-publication" aria-expanded="false">
+            <summary class="rv-nav-link rv-nav-link--trigger is-current" aria-controls="rv-mega-publication" aria-expanded="false">
               Insights <span class="rv-chevron" aria-hidden="true"></span>
             </summary>
             <div id="rv-mega-publication" class="rv-mega-panel" role="region" aria-label="Insights mega menu">
@@ -174,135 +157,65 @@
                 <div class="rv-mega-intro">
                   <p class="rv-mega-eyebrow">Ravonics technical publication</p>
                   <h2>Evidence for the next mission decision.</h2>
-                  <p>
-                    Follow a system question, browse a desk, or take a complete research edition with you.
-                  </p>
+                  <p>Follow a system question, browse a desk, or take a complete research edition with you.</p>
                   <a class="rv-mega-feature" href="/insights.html">Open the publication index <span aria-hidden="true">↗</span></a>
                 </div>
                 <div class="rv-mega-groups">
                   <section class="rv-mega-group" aria-labelledby="rv-insights-library">
                     <h3 id="rv-insights-library">Library</h3>
                     <ul>
-                      <li>
-                        <a class="rv-mega-link rv-mega-link--featured" href="/insights.html"><span class="rv-mega-link-meta">Start here</span><span>Publication index</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/topics.html"><span class="rv-mega-link-meta">Eight desks</span><span>Topic map</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/reports.html"><span class="rv-mega-link-meta">Eight editions</span><span>Research reports</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/briefs/access.html"><span class="rv-mega-link-meta">Download</span><span>Brief access</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/sitemap.html"><span class="rv-mega-link-meta">Every route</span><span>Visual sitemap</span></a>
-                      </li>
+                      <li><a class="rv-mega-link rv-mega-link--featured" href="/insights.html"><span class="rv-mega-link-meta">Start here</span><span>Publication index</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics.html"><span class="rv-mega-link-meta">Eight desks</span><span>Topic map</span></a></li>
+                      <li><a class="rv-mega-link" href="/reports.html"><span class="rv-mega-link-meta">Eight editions</span><span>Research reports</span></a></li>
+                      <li><a class="rv-mega-link" href="/briefs/access.html"><span class="rv-mega-link-meta">Download</span><span>Brief access</span></a></li>
+                      <li><a class="rv-mega-link" href="/sitemap.html"><span class="rv-mega-link-meta">Every route</span><span>Visual sitemap</span></a></li>
                     </ul>
                   </section>
                   <section class="rv-mega-group" aria-labelledby="rv-insights-desks">
                     <h3 id="rv-insights-desks">Desk hubs</h3>
                     <ul>
-                      <li>
-                        <a class="rv-mega-link" href="/topics/foundations.html"><span class="rv-mega-link-meta">Foundations</span><span>Definitions &amp; history</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/topics/systems.html"><span class="rv-mega-link-meta">Systems</span><span>Infrastructure &amp; flows</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/topics/science-and-technology.html"><span class="rv-mega-link-meta">Science</span><span>Mechanisms &amp; evaluation</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/topics/policy-ethics-and-governance.html"><span class="rv-mega-link-meta">Governance</span><span>Policy, ethics &amp; accountability</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/topics/futures-and-field-notes.html"><span class="rv-mega-link-meta">Futures</span><span>Signals &amp; field notes</span></a>
-                      </li>
+                      <li><a class="rv-mega-link" href="/topics/foundations.html"><span class="rv-mega-link-meta">Foundations</span><span>Definitions &amp; history</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/systems.html"><span class="rv-mega-link-meta">Systems</span><span>Infrastructure &amp; flows</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/science-and-technology.html"><span class="rv-mega-link-meta">Science</span><span>Mechanisms &amp; evaluation</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/policy-ethics-and-governance.html"><span class="rv-mega-link-meta">Governance</span><span>Policy, ethics &amp; accountability</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/futures-and-field-notes.html"><span class="rv-mega-link-meta">Futures</span><span>Signals &amp; field notes</span></a></li>
                     </ul>
                   </section>
                   <section class="rv-mega-group" aria-labelledby="rv-insights-featured">
                     <h3 id="rv-insights-featured">Flagship field notes</h3>
                     <ul>
-                      <li>
-                        <a class="rv-mega-link" href="/insights/flagships/mission-technology-atlas.html"><span class="rv-mega-link-meta">Atlas</span><span>The Mission Technology Atlas</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/insights/flagships/annotated-mission-system.html"><span class="rv-mega-link-meta">Systems</span><span>The Annotated Mission System</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/insights/flagships/lab-signal-to-field-confidence.html"><span class="rv-mega-link-meta">Evidence</span><span>From Lab Signal to Field Confidence</span></a>
-                      </li>
-                      <li>
-                        <a class="rv-mega-link" href="/insights/flagships/mission-readiness-toolkit.html"><span class="rv-mega-link-meta">Toolkit</span><span>The Mission Readiness Toolkit</span></a>
-                      </li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/mission-technology-atlas.html"><span class="rv-mega-link-meta">Atlas</span><span>The Mission Technology Atlas</span></a></li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/annotated-mission-system.html"><span class="rv-mega-link-meta">Systems</span><span>The Annotated Mission System</span></a></li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/lab-signal-to-field-confidence.html"><span class="rv-mega-link-meta">Evidence</span><span>From Lab Signal to Field Confidence</span></a></li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/mission-readiness-toolkit.html"><span class="rv-mega-link-meta">Toolkit</span><span>The Mission Readiness Toolkit</span></a></li>
                     </ul>
                   </section>
                 </div>
-                <div class="rv-mega-stats" aria-label="Publication scope">
-                  <div><strong>150</strong><span>articles</span></div>
-                  <div><strong>8</strong><span>desks</span></div>
-                  <div><strong>8</strong><span>reports</span></div>
-                  <div><strong>229</strong><span>routes</span></div>
-                </div>
-                <div class="rv-mega-bottom" aria-label="Publication trust links">
-                  <a href="/authors.html">Authors &amp; reviewers</a>
-                  <a href="/methodology.html">Methodology</a>
-                  <a href="/insights/blog.html">Technical publications</a>
-                </div>
+                <div class="rv-mega-stats" aria-label="Publication scope"><div><strong>150</strong><span>articles</span></div><div><strong>8</strong><span>desks</span></div><div><strong>8</strong><span>reports</span></div><div><strong>229</strong><span>routes</span></div></div>
+                <div class="rv-mega-bottom" aria-label="Publication trust links"><a href="/authors.html">Authors &amp; reviewers</a><a href="/methodology.html">Methodology</a><a href="/insights/blog.html">Technical publications</a></div>
               </div>
             </div>
           </details>
         </li>
-        <li class="rv-nav-item">
-          <a class="rv-nav-link" href="/contact.html">Contact</a>
-        </li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/contact.html">Contact</a></li>
       </ul>
-      <div class="rv-mobile-actions">
-        <a href="/booking.html">Submit an RFP / RFI</a>
-      </div>
+      <div class="rv-mobile-actions"><a href="/booking.html">Submit an RFP / RFI</a></div>
     </nav>
 
     <a class="rv-header-cta" href="/booking.html">Submit RFP / RFI</a>
   </div>
 </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <main class="no-bottom no-top" id="content">
 
-<script src="/js/site-header.js" defer></script>
-
-      <main id="content" tabindex="-1" class="shell-main" data-astro-cid-srbwn3qu>
-        <section class="hero" aria-label="Route hero" data-astro-cid-srbwn3qu>
-          <p class="hero-kicker" data-astro-cid-srbwn3qu>Surface practical implementation lessons and tradeoffs.</p>
-          <h1 class="hero-title" data-astro-cid-srbwn3qu>JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem | Ravonics</h1>
-          <p class="hero-summary" data-astro-cid-srbwn3qu>Why the real JADC2 challenge is not bandwidth but semantic interoperability across service and domain data silos, and the strategic choices that determine whether multi-domain C2 integration succeeds or stalls.</p>
-          <div class="hero-actions" data-astro-cid-srbwn3qu>
-            <a class="cta" href="/insights/blog.html" data-astro-cid-srbwn3qu>Read related work</a>
-            <a class="cta cta-secondary" href="/contact.html" data-astro-cid-srbwn3qu>Engage with team</a>
-          </div>
-
-          <div class="hero-canvas" role="img" aria-label="Dynamic publication surface visualizing route intelligence" data-astro-cid-srbwn3qu>
-            <canvas id="magazine-surface" data-route="/insights/jadc2-interoperability-perspective.html" data-kind="insight" data-media-count="7" data-has-interaction="false" data-webgl="operational-flow" aria-label="Dynamic surface for /insights/jadc2-interoperability-perspective.html" data-astro-cid-srbwn3qu></canvas>
-            <noscript>
-              <div data-astro-cid-srbwn3qu>
-                <p data-astro-cid-srbwn3qu>
-                  Dynamic scene available with JavaScript. This route includes 7 media asset
-                   references.
-                </p>
-                <img src="https://ravonics.com/images/og-image.avif" alt="Route hero image" width="1200" height="630" sizes="(max-width: 700px) calc(100vw - 2rem), 860px" style="max-width:100%;height:auto;border-radius:8px;" data-astro-cid-srbwn3qu>
-              </div>
-            </noscript>
-          </div>
-        </section>
-
-        <div class="workspace" data-astro-cid-srbwn3qu>
-          <section class="content-slot" aria-label="Route content" data-astro-cid-srbwn3qu>
-            
-      <div id="route-shell-insights-jadc2-interoperability-perspective">
-        <div id="top"></div>
+            <div id="top"></div>
 
             <section id="subheader" class="text-light sm-mt-90 relative rounded-1 overflow-hidden m-3" data-bgimage="url(../images/blog/posts/jadc2-interoperability-perspective.avif) center">
                 <div class="container relative z-2">
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-12">
-                            
+                            <h1 class="split">JADC2 Multi-Domain Integration: Why Interoperability Is the Hard Problem</h1>
                             <ul class="crumb wow fadeInUp">
                                 <li><a href="../index.html">Insights</a></li>
                                 <li><a href="perspectives.html">Industry Perspectives</a></li>
@@ -377,7 +290,7 @@
                                   </li>
                                 </ol>
 
-                                <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" class="w-100 rounded-1" alt="Defense strategists analyzing multi-domain C2 integration architecture in early-morning operations center light" width="1920" height="1080" data-media-id="media-ae3b90dd-001" loading="lazy" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                <img src="../images/blog/posts/jadc2-interoperability-perspective.avif" class="w-100 rounded-1" alt="Defense strategists analyzing multi-domain C2 integration architecture in early-morning operations center light" width="1920" height="1080">
 
                             </article>
 
@@ -398,7 +311,7 @@
                                 <ul class="de-bloglist-type-1">
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" alt="Zero trust mandates and architectural foundation for federal programs" width="1920" height="1080" data-media-id="media-ae3b90dd-002" loading="lazy" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                      <img src="../images/blog/posts/zero-trust-mandates-perspective.avif" alt="Zero trust mandates and architectural foundation for federal programs" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="zero-trust-mandates-perspective.html">
@@ -410,7 +323,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/ai-ethics-defense.avif" alt="AI ethics in defense: autonomy and human-on-the-loop accountability" loading="lazy" width="1920" height="1080" data-media-id="media-ae3b90dd-003" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                      <img src="../images/blog/posts/ai-ethics-defense.avif" alt="AI ethics in defense: autonomy and human-on-the-loop accountability" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="ai-ethics-defense.html">
@@ -422,7 +335,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption and FedRAMP-aligned architecture requirements" loading="lazy" width="1920" height="1080" data-media-id="media-ae3b90dd-004" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                      <img src="../images/blog/posts/federal-cloud-fedramp.avif" alt="Federal cloud adoption and FedRAMP-aligned architecture requirements" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="federal-cloud-fedramp.html">
@@ -434,7 +347,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat and why federal systems should begin PQC migration now" loading="lazy" width="1920" height="1080" data-media-id="media-ae3b90dd-005" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                      <img src="../images/blog/posts/quantum-threat-pqc-migration.avif" alt="The quantum threat and why federal systems should begin PQC migration now" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="quantum-threat-pqc-migration.html">
@@ -446,7 +359,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/cmmc-first-award.avif" alt="CMMC 2.0 requirements for defense contractors before first award" loading="lazy" width="1920" height="1080" data-media-id="media-ae3b90dd-006" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                      <img src="../images/blog/posts/cmmc-first-award.avif" alt="CMMC 2.0 requirements for defense contractors before first award" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="cmmc-first-award.html">
@@ -458,7 +371,7 @@
 
                                   <li>
                                     <div class="d-image">
-                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 integration: multi-domain C2 technical implementation patterns" loading="lazy" width="1920" height="1080" data-media-id="media-ae3b90dd-007" decoding="async" sizes="(max-width: 700px) calc(100vw - 2rem), 860px">
+                                      <img src="../images/blog/posts/jadc2-integration.avif" alt="JADC2 integration: multi-domain C2 technical implementation patterns" loading="lazy" width="1920" height="1080">
                                     </div>
                                     <div class="d-content">
                                       <a href="jadc2-integration.html">
@@ -506,57 +419,151 @@
                     </div>
                 </div>
             </section>
-      </div>
-    
-          </section>
+        </main>
 
-          <aside class="rail" aria-label="Related routes and actions" data-astro-cid-srbwn3qu>
-            <h2 class="rail-title" data-astro-cid-srbwn3qu>Contextual routes</h2>
-            <ul class="rail-list" data-astro-cid-srbwn3qu>
-              <li data-astro-cid-srbwn3qu>
-                    <a href="/company/about.html" data-astro-cid-srbwn3qu>About Ravonics - Federal Defense Technology Contractor | Founded 2026, Ravenswood WV</a>
-                  </li><li data-astro-cid-srbwn3qu>
-                    <a href="/company/careers.html" data-astro-cid-srbwn3qu>Federal Technology Careers - Join Ravonics | AI, Autonomous Systems, Cybersecurity Roles</a>
-                  </li><li data-astro-cid-srbwn3qu>
-                    <a href="/company/certifications.html" data-astro-cid-srbwn3qu>Security &amp; Compliance Roadmap - NIST 800-171, CMMC Planned, HUBZone Certified | Ravonics</a>
-                  </li><li data-astro-cid-srbwn3qu>
-                    <a href="/company/doing-business.html" data-astro-cid-srbwn3qu>How to Do Business With Ravonics - Acquisition Data, NAICS, Contract Vehicles | Ravonics</a>
-                  </li><li data-astro-cid-srbwn3qu>
-                    <a href="/company/partnerships.html" data-astro-cid-srbwn3qu>Partner Ecosystem - Ravonics | Dream Limited, Droid Ops, Viper Dynamics, INSTAR Lab</a>
-                  </li><li data-astro-cid-srbwn3qu>
-                    <a href="/company/team.html" data-astro-cid-srbwn3qu>Leadership &amp; Research Team - Ravonics | Deep Bench, INSTAR Lab &amp; Senior Advisors</a>
-                  </li><li data-astro-cid-srbwn3qu>
-                    <a href="/insights/ai-ethics-defense.html" data-astro-cid-srbwn3qu>AI Ethics in Defense: Autonomy, Accountability, and the Human-on-the-Loop Principle | Ravonics</a>
-                  </li>
+        <!-- content close -->
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-md-6">
+                        <img src="../images/logo/logo-white.svg" class="w-170px mb-2" alt="Ravonics Defense Technology Logo" width="1829" height="296">
+                        <div class="spacer-single"></div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h2 class="legacy-h5 h5">Capabilities</h2>
+                                    <ul>
+                                        <li><a href="../capabilities/ai.html">Advanced Artificial Intelligence</a></li>
+                                        <li><a href="../capabilities/autonomous-systems.html">Autonomous Systems</a></li>
+                                        <li><a href="../capabilities/robotics.html">Autonomy Software</a></li>
+                                        <li><a href="../capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
+                                        <li><a href="../capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
+                                        <li><a href="../capabilities/tactical-comms.html">Tactical Communications</a></li>
+                                        <li><a href="../capabilities/quantum.html">Quantum Technologies</a></li>
+                                        <li><a href="../capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
+                                        <li><a href="../capabilities/computing.html">High-Performance Computing</a></li>
+                                        <li><a href="../capabilities/integration.html">Systems Engineering & Integration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="widget">
+                                    <h2 class="legacy-h5 h5">Company</h2>
+                                    <ul>
+                                        <li><a href="../company/about.html">About</a></li>
+                                        <li><a href="../company/team.html">Leadership</a></li>
+                                        <li><a href="../company/certifications.html">Certifications</a></li>
+                                        <li><a href="../company/careers.html">Careers</a></li>
+                                        <li><a href="../contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h2>Get in Touch</h2>
+                            <img src="../images/ui/up-right-arrow.webp" class="w-60px op-5" alt="Arrow icon" loading="lazy" width="512" height="512">
+                        </div>
+
+                        <div class="widget">
+                            <div class="op-5 fs-15">Email</div>
+                            <h3><!--email_off-->contact@ravonics.com<!--/email_off--></h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Phone</div>
+                            <h3>+1 (304) 927-2600</h3>
+
+                            <div class="spacer-20"></div>
+
+                            <div class="op-5 fs-15">Headquarters</div>
+                            <h3>313 Walnut St</h3>
+                            <h3>Ravenswood, WV 26164</h3>
+
+                            <div class="spacer-20"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+            Copyright 2026 Ravonics - Advanced Technology Consulting | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Use</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 text-center">
+                            <div class="op-6 fs-12">
+                                SAM.gov UEI: YCBDVKN1A9G7 | CAGE Code: 20DS8 | NAICS: 541512, 541330, 541715, 518210, 541511, 541513, 541519, 541690, 611420<br>
+                                NIST 800-171 alignment in progress | CMMC assessment planned | SBA HUBZone Certified | Small Business<br>
+                                <span class="op-4 fs-11">(SAM.gov registered; HUBZone certified)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- overlay content begin -->
+    <div role="dialog" aria-modal="true" aria-label="Additional navigation" tabindex="-1" aria-hidden="true" inert id="extra-wrap" class="text-light">
+        <button type="button" id="btn-close" aria-label="Close information panel">
+            <span></span>
+            <span></span>
+        </button>
+
+        <div id="extra-content">
+            <img src="../images/logo/logo-white.svg" class="w-200px" alt="Ravonics Defense Technology Logo" width="1829" height="296">
+
+            <div class="spacer-30-line"></div>
+
+            <h2 class="legacy-h5 h5">Core Capabilities</h2>
+            <ul class="ul-check">
+                <li>Advanced Artificial Intelligence</li>
+                <li>Autonomous Systems</li>
+                <li>Autonomy Software</li>
+                <li>Computer Vision & Sensor Fusion</li>
+                <li>Intelligence & Decision Systems</li>
+                <li>Tactical Communications</li>
+                <li>Quantum Technologies</li>
+                <li>Advanced Cryptography & Blockchain</li>
+                <li>High-Performance Computing</li>
+                <li>Systems Engineering & Integration</li>
             </ul>
 
-            <div style="margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid var(--line);" data-astro-cid-srbwn3qu>
-              <h2 class="rail-title" data-astro-cid-srbwn3qu>Trust signals</h2>
-              <p style="color: var(--ink-soft); font-size: 0.85rem; margin: 0.4rem 0;" data-astro-cid-srbwn3qu>
-                Publication shell with route metadata, source-backed extraction, and interactive proof points.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </main>
+            <div class="spacer-30-line"></div>
 
-      <footer class="shell-footer" data-astro-cid-srbwn3qu>
-        <div class="shell-footer-inner" data-astro-cid-srbwn3qu>
-          <span data-astro-cid-srbwn3qu>© 2026 Ravonics LLC. Publication system generated route /insights/jadc2-interoperability-perspective.html.</span>
-          <span data-astro-cid-srbwn3qu>
-            <a href="/privacy.html" data-astro-cid-srbwn3qu>Privacy</a> ·
-            <a href="/terms.html" data-astro-cid-srbwn3qu>Terms</a> ·
-            <a href="/insights/blog.html" data-astro-cid-srbwn3qu>Insights</a> ·
-            <a href="/contact.html" data-astro-cid-srbwn3qu>Contact</a>
-          </span>
+            <h2 class="legacy-h5 h5">Contact Us</h2>
+            <div><i class="icofont-phone me-2 op-5"></i>+1 (304) 927-2600</div>
+            <div><i class="icofont-location-pin me-2 op-5"></i>Ravenswood, WV</div>
+            <div><i class="icofont-envelope me-2 op-5"></i><!--email_off-->contact@ravonics.com<!--/email_off--></div>
+
+            <div class="spacer-30-line"></div>
+
+            <h2 class="legacy-h5 h5">About Us</h2>
+            <p>Headquartered in Ravenswood, West Virginia, Ravonics is a new small business delivering AI platforms, autonomous systems, and secure communications for federal defense and intelligence missions. Our leadership bench brings decades of combined experience in computer science, AI/ML, and federal systems, backed by the INSTAR Lab research bench.</p>
+
         </div>
-      </footer>
     </div>
+    <!-- overlay content end -->    </div>
 
-    <script src="/js/magazine-ux.js" defer></script><script src="../js/plugins.js" defer></script>
-<script src="../js/designesia.js" defer></script>
-<script src="../js/swiper.js" defer></script>
-<script src="../js/custom-swiper-1.js" defer></script>
-<script src="../js/accessibility.js" defer></script>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="../js/plugins.js" defer></script>
+    <script src="../js/designesia.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+    <script src="../js/custom-swiper-1.js" defer></script>
+
+    <script src="../js/accessibility.js" defer></script>
+    <script src="/js/site-header.js" defer></script>
   </body>
+
 </html>

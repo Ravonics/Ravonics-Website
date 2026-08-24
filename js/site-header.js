@@ -89,7 +89,19 @@
     });
 
     toggle.addEventListener('click', function () {
-      if (!isMobile()) return;
+      if (!isMobile()) {
+        var openMenu = menus.find(function (menu) { return menu.open; });
+        if (openMenu) {
+          closeMenu(openMenu, false);
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open navigation');
+        } else if (menus[0]) {
+          menus[0].open = true;
+          toggle.setAttribute('aria-expanded', 'true');
+          toggle.setAttribute('aria-label', 'Close navigation');
+        }
+        return;
+      }
       setMobileOpen(!root.classList.contains('is-open'), false);
     });
 

@@ -13893,29 +13893,6 @@ footer img[src$="up-right-arrow.webp"] {
   .isotope .isotope-item {
     transition-duration: 0s !important;
   }
-
-  .wow,
-  .split .char {
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
-
-/* Reveal effects enhance the page after load; they must never gate content.
-   WOW can still apply its keyframes, while failed or disabled JavaScript leaves
-   the complete editorial composition readable. */
-#de-loader {
-  display: none;
-}
-
-.wow {
-  visibility: visible !important;
-}
-
-.split .char {
-  opacity: 1;
 }
 
 /* Semantic controls retain the purchased template's visual treatment. */
