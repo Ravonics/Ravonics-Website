@@ -242,6 +242,7 @@
     <link href="css/swiper-custom-1.css" rel="stylesheet" type="text/css" >
     <link href="css/style.css" rel="stylesheet" type="text/css" >
     <link href="css/coloring.css" rel="stylesheet" type="text/css" >
+    <link href="css/site-header.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
 
@@ -262,170 +263,128 @@
         <!-- page preloader close -->
 
         <!-- header begin -->
-        <header class="header-static transparent mt-lg-4 pt-lg-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="de-flex sm-pt10">
-                            <div class="de-flex-col">
-                                <!-- logo begin -->
-                                <div id="logo">
-                                    <a href="index.html">
-                                        <img class="logo-main" src="images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
-                                        <img class="logo-scroll" src="images/logo/logo.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
-                                        <img class="logo-mobile" src="images/logo/logo-white.svg" alt="Ravonics Defense Technology Logo"  width="1829" height="296">
-                                    </a>
+        <header class="rv-site-header" data-site-header>
+            <div class="rv-header-shell">
+                <a class="rv-brand" href="/" aria-label="Ravonics home">
+                    <img src="images/logo/logo-white.svg" alt="Ravonics" width="1829" height="296">
+                </a>
+                <button class="rv-menu-toggle" type="button" aria-controls="rv-primary-navigation" aria-expanded="false" aria-label="Open navigation">
+                    <span class="rv-menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+                    <span>Menu</span>
+                </button>
+                <nav id="rv-primary-navigation" class="rv-primary-navigation" aria-label="Primary navigation">
+                    <ul class="rv-primary-list">
+                        <li class="rv-nav-item">
+                            <details class="rv-mega" data-mega-menu="mission">
+                                <summary class="rv-nav-link rv-nav-link--trigger" aria-controls="rv-mega-mission" aria-expanded="false">Capabilities <span class="rv-chevron" aria-hidden="true"></span></summary>
+                                <div id="rv-mega-mission" class="rv-mega-panel" role="region" aria-label="Capabilities mega menu">
+                                    <div class="rv-mega-panel-inner">
+                                        <div class="rv-mega-intro">
+                                            <p class="rv-mega-eyebrow">Mission systems</p>
+                                            <h2>Engineering depth for the hard parts of the mission.</h2>
+                                            <p>Ten capability domains connect applied research to deployable, compliant systems.</p>
+                                            <a class="rv-mega-feature" href="/sitemap.html">View the full capability map <span aria-hidden="true">↗</span></a>
+                                        </div>
+                                        <div class="rv-mega-groups">
+                                            <section class="rv-mega-group" aria-labelledby="rv-home-cap-intelligence">
+                                                <h3 id="rv-home-cap-intelligence">Intelligence &amp; autonomy</h3>
+                                                <ul>
+                                                    <li><a class="rv-mega-link rv-mega-link--featured" href="/capabilities/ai.html"><span class="rv-mega-link-meta">Core capability</span><span>Advanced Artificial Intelligence</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/autonomous-systems.html"><span class="rv-mega-link-meta">Autonomy</span><span>Autonomous Systems</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/robotics.html"><span class="rv-mega-link-meta">Software</span><span>Autonomy Software</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/computer-vision.html"><span class="rv-mega-link-meta">Sensing</span><span>Computer Vision &amp; Sensor Fusion</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/intelligence.html"><span class="rv-mega-link-meta">Decisions</span><span>Intelligence &amp; Decision Systems</span></a></li>
+                                                </ul>
+                                            </section>
+                                            <section class="rv-mega-group" aria-labelledby="rv-home-cap-secure">
+                                                <h3 id="rv-home-cap-secure">Secure compute &amp; comms</h3>
+                                                <ul>
+                                                    <li><a class="rv-mega-link" href="/capabilities/tactical-comms.html"><span class="rv-mega-link-meta">Networks</span><span>Tactical Communications</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/quantum.html"><span class="rv-mega-link-meta">Quantum</span><span>Quantum Technologies</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/cryptography.html"><span class="rv-mega-link-meta">Security</span><span>Advanced Cryptography &amp; Blockchain</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/capabilities/computing.html"><span class="rv-mega-link-meta">Compute</span><span>High-Performance Computing</span></a></li>
+                                                </ul>
+                                            </section>
+                                            <section class="rv-mega-group" aria-labelledby="rv-home-cap-delivery">
+                                                <h3 id="rv-home-cap-delivery">Integration &amp; delivery</h3>
+                                                <ul>
+                                                    <li><a class="rv-mega-link" href="/capabilities/integration.html"><span class="rv-mega-link-meta">Systems</span><span>Systems Engineering &amp; Integration</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/solutions/jadc2.html"><span class="rv-mega-link-meta">Architecture</span><span>JADC2-compatible architecture</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/booking.html"><span class="rv-mega-link-meta">Engage</span><span>Submit an RFP / RFI</span></a></li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- logo end -->
-                            </div>
-                            <nav class="de-flex-col header-col-mid" aria-label="Primary navigation">
-                                <!-- mainemenu begin -->
-                                <ul id="mainmenu" aria-label="Primary">
-                                    <li class="site-mega-parent">
-                                        <details class="site-mega-details" data-mega-menu="mission">
-                                            <summary class="menu-item" aria-controls="site-mega-mission">Capabilities</summary>
-                                            <div class="site-mega-panel" id="site-mega-mission" role="region" aria-label="Mission systems capabilities">
-                                                <div class="site-mega-intro">
-                                                    <span class="site-mega-eyebrow">Mission systems</span>
-                                                    <h2>Engineering depth for the hard parts of the mission.</h2>
-                                                    <p>Ten capability domains connect applied research to deployable, compliant systems.</p>
-                                                    <a class="site-mega-feature" href="/sitemap.html">View the full capability map <span aria-hidden="true">↗</span></a>
-                                                </div>
-                                                <div class="site-mega-columns">
-                                                    <section class="site-mega-column" aria-labelledby="site-mega-intelligence">
-                                                        <h3 id="site-mega-intelligence">Intelligence & autonomy</h3>
-                                                        <ul>
-                                                            <li><a href="/capabilities/ai.html">Advanced Artificial Intelligence</a></li>
-                                                            <li><a href="/capabilities/autonomous-systems.html">Autonomous Systems</a></li>
-                                                            <li><a href="/capabilities/robotics.html">Autonomy Software</a></li>
-                                                            <li><a href="/capabilities/computer-vision.html">Computer Vision & Sensor Fusion</a></li>
-                                                            <li><a href="/capabilities/intelligence.html">Intelligence & Decision Systems</a></li>
-                                                        </ul>
-                                                    </section>
-                                                    <section class="site-mega-column" aria-labelledby="site-mega-secure">
-                                                        <h3 id="site-mega-secure">Secure compute & comms</h3>
-                                                        <ul>
-                                                            <li><a href="/capabilities/tactical-comms.html">Tactical Communications</a></li>
-                                                            <li><a href="/capabilities/quantum.html">Quantum Technologies</a></li>
-                                                            <li><a href="/capabilities/cryptography.html">Advanced Cryptography & Blockchain</a></li>
-                                                            <li><a href="/capabilities/computing.html">High-Performance Computing</a></li>
-                                                        </ul>
-                                                    </section>
-                                                    <section class="site-mega-column site-mega-column-action" aria-labelledby="site-mega-integration">
-                                                        <h3 id="site-mega-integration">Integration & delivery</h3>
-                                                        <ul>
-                                                            <li><a href="/capabilities/integration.html">Systems Engineering & Integration</a></li>
-                                                            <li><a href="/solutions/jadc2.html">JADC2-compatible architecture</a></li>
-                                                            <li><a href="/booking.html">Submit an RFP / RFI</a></li>
-                                                        </ul>
-                                                    </section>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </li>
-                                    <li><a class="menu-item" href="solutions/ai-platforms.html">Solutions</a>
-                                        <ul>
-                                            <li><a href="solutions/ai-platforms.html">Mission-Ready AI Platforms</a></li>
-                                            <li><a href="solutions/cloud.html">Enterprise Cloud & Data Architecture</a></li>
-                                            <li><a href="solutions/cloud-native.html">Cloud-Native Infrastructure</a></li>
-                                            <li><a href="solutions/zero-trust.html">Zero Trust Security Framework</a></li>
-                                            <li><a href="solutions/jadc2.html">JADC2-Compatible Integration</a></li>
-                                            <li><a href="solutions/digital-transformation.html">Digital Transformation Services</a></li>
-                                            <li><a href="solutions/hud-systems.html">Advanced Visualization & HUD</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="industries/defense.html">Industries</a>
-                                        <ul>
-                                            <li><a href="industries/defense.html">Defense & DoW</a></li>
-                                            <li><a href="industries/intelligence.html">Intelligence Community</a></li>
-                                            <li><a href="industries/federal.html">Federal Civilian Agencies</a></li>
-                                            <li><a href="industries/research.html">Research & Innovation Partners</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="menu-item" href="company/about.html">Company</a>
-                                        <ul>
-                                            <li><a href="company/about.html">About Ravonics</a></li>
-                                            <li><a href="company/team.html">Leadership & Expertise</a></li>
-                                            <li><a href="company/certifications.html">Security Clearances & Compliance</a></li>
-                                            <li><a href="company/partnerships.html">Partnerships & Alliances</a></li>
-                                            <li><a href="company/doing-business.html">Doing Business</a></li>
-                                            <li><a href="company/careers.html">Careers</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="site-mega-parent">
-                                        <details class="site-mega-details" data-mega-menu="publication">
-                                            <summary class="menu-item" aria-controls="site-mega-publication">Insights</summary>
-                                            <div class="site-mega-panel site-mega-panel-publication" id="site-mega-publication" role="region" aria-label="Ravonics publication navigation">
-                                                <div class="site-mega-intro">
-                                                    <span class="site-mega-eyebrow">Ravonics Technical Publication</span>
-                                                    <h2>150 articles. Eight desks. Evidence for the next decision.</h2>
-                                                    <p>Start with a desk, follow a system question, or take a full research edition with you.</p>
-                                                    <a class="site-mega-feature" href="/insights.html">Open the publication index <span aria-hidden="true">↗</span></a>
-                                                </div>
-                                                <div class="site-mega-columns site-mega-columns-publication">
-                                                    <section class="site-mega-column" aria-labelledby="site-mega-library">
-                                                        <h3 id="site-mega-library">Library</h3>
-                                                        <ul>
-                                                            <li><a href="/topics.html">Topic map · eight desks</a></li>
-                                                            <li><a href="/reports.html">Research reports · eight editions</a></li>
-                                                            <li><a href="/briefs/access.html">Brief access</a></li>
-                                                            <li><a href="/authors.html">Authors & reviewers</a></li>
-                                                            <li><a href="/methodology.html">Editorial methodology</a></li>
-                                                            <li><a href="/sitemap.html">Visual sitemap · all routes</a></li>
-                                                        </ul>
-                                                    </section>
-                                                    <section class="site-mega-column" aria-labelledby="site-mega-desks">
-                                                        <h3 id="site-mega-desks">Desk hubs</h3>
-                                                        <ul>
-                                                            <li><a href="/topics/foundations.html">Foundations & history</a></li>
-                                                            <li><a href="/topics/systems.html">Systems & infrastructure</a></li>
-                                                            <li><a href="/topics/science-and-technology.html">Science & technology</a></li>
-                                                            <li><a href="/topics/policy-ethics-and-governance.html">Policy, ethics & governance</a></li>
-                                                            <li><a href="/topics/futures-and-field-notes.html">Futures & field notes</a></li>
-                                                            <li><a href="/topics/people-and-practice.html">People & practice</a></li>
-                                                            <li><a href="/topics/markets-and-economics.html">Markets & economics</a></li>
-                                                            <li><a href="/topics/places-and-culture.html">Places & culture</a></li>
-                                                        </ul>
-                                                    </section>
-                                                    <section class="site-mega-column site-mega-column-featured" aria-labelledby="site-mega-featured">
-                                                        <h3 id="site-mega-featured">Featured field notes</h3>
-                                                        <ul>
-                                                            <li><a href="/insights/flagships/mission-technology-atlas.html">The Mission Technology Atlas</a></li>
-                                                            <li><a href="/insights/flagships/annotated-mission-system.html">The Annotated Mission System</a></li>
-                                                            <li><a href="/insights/flagships/lab-signal-to-field-confidence.html">From Lab Signal to Field Confidence</a></li>
-                                                            <li><a href="/insights/flagships/federal-decision-systems-index.html">The Federal Decision Systems Index</a></li>
-                                                            <li><a href="/insights/flagships/mission-readiness-toolkit.html">The Mission Readiness Toolkit</a></li>
-                                                        </ul>
-                                                    </section>
-                                                </div>
-                                                <div class="site-mega-footer-links" aria-label="Established insight routes">
-                                                    <a href="/insights/blog.html">Technical publications</a>
-                                                    <a href="/insights/gallery.html">Technology focus areas</a>
-                                                    <a href="/insights/innovation.html">Research directions</a>
-                                                    <a href="/insights/perspectives.html">Industry perspectives</a>
-                                                    <a href="/insights/testimonials.html">References & validation</a>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </li>
-                                    <li><a class="menu-item" href="contact.html">Contact</a></li>
-                                </ul>
-                                <!-- mainmenu end -->
-                            </nav>
-                            <div class="de-flex-col">
-                                <div class="menu_side_area">
-                                    <a href="booking.html" class="btn-main btn-line fx-slide"><span>Submit RFP / RFI</span></a>
-                                    <button type="button" id="menu-btn" aria-label="Open navigation" aria-expanded="false" aria-controls="mainmenu"></button>
+                            </details>
+                        </li>
+                        <li class="rv-nav-item"><a class="rv-nav-link" href="/solutions/ai-platforms.html">Solutions</a></li>
+                        <li class="rv-nav-item"><a class="rv-nav-link" href="/industries/defense.html">Industries</a></li>
+                        <li class="rv-nav-item"><a class="rv-nav-link" href="/company/about.html">Company</a></li>
+                        <li class="rv-nav-item">
+                            <details class="rv-mega" data-mega-menu="publication">
+                                <summary class="rv-nav-link rv-nav-link--trigger" aria-controls="rv-mega-publication" aria-expanded="false">Insights <span class="rv-chevron" aria-hidden="true"></span></summary>
+                                <div id="rv-mega-publication" class="rv-mega-panel" role="region" aria-label="Insights mega menu">
+                                    <div class="rv-mega-panel-inner">
+                                        <div class="rv-mega-intro">
+                                            <p class="rv-mega-eyebrow">Ravonics technical publication</p>
+                                            <h2>Evidence for the next mission decision.</h2>
+                                            <p>Follow a system question, browse a desk, or take a complete research edition with you.</p>
+                                            <a class="rv-mega-feature" href="/insights.html">Open the publication index <span aria-hidden="true">↗</span></a>
+                                        </div>
+                                        <div class="rv-mega-groups">
+                                            <section class="rv-mega-group" aria-labelledby="rv-home-insights-library">
+                                                <h3 id="rv-home-insights-library">Library</h3>
+                                                <ul>
+                                                    <li><a class="rv-mega-link rv-mega-link--featured" href="/insights.html"><span class="rv-mega-link-meta">Start here</span><span>Publication index</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/topics.html"><span class="rv-mega-link-meta">Eight desks</span><span>Topic map</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/reports.html"><span class="rv-mega-link-meta">Eight editions</span><span>Research reports</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/briefs/access.html"><span class="rv-mega-link-meta">Download</span><span>Brief access</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/sitemap.html"><span class="rv-mega-link-meta">Every route</span><span>Visual sitemap</span></a></li>
+                                                </ul>
+                                            </section>
+                                            <section class="rv-mega-group" aria-labelledby="rv-home-insights-desks">
+                                                <h3 id="rv-home-insights-desks">Desk hubs</h3>
+                                                <ul>
+                                                    <li><a class="rv-mega-link" href="/topics/foundations.html"><span class="rv-mega-link-meta">Foundations</span><span>Definitions &amp; history</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/topics/systems.html"><span class="rv-mega-link-meta">Systems</span><span>Infrastructure &amp; flows</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/topics/science-and-technology.html"><span class="rv-mega-link-meta">Science</span><span>Mechanisms &amp; evaluation</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/topics/policy-ethics-and-governance.html"><span class="rv-mega-link-meta">Governance</span><span>Policy, ethics &amp; accountability</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/topics/futures-and-field-notes.html"><span class="rv-mega-link-meta">Futures</span><span>Signals &amp; field notes</span></a></li>
+                                                </ul>
+                                            </section>
+                                            <section class="rv-mega-group" aria-labelledby="rv-home-insights-featured">
+                                                <h3 id="rv-home-insights-featured">Flagship field notes</h3>
+                                                <ul>
+                                                    <li><a class="rv-mega-link" href="/insights/flagships/mission-technology-atlas.html"><span class="rv-mega-link-meta">Atlas</span><span>The Mission Technology Atlas</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/insights/flagships/annotated-mission-system.html"><span class="rv-mega-link-meta">Systems</span><span>The Annotated Mission System</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/insights/flagships/lab-signal-to-field-confidence.html"><span class="rv-mega-link-meta">Evidence</span><span>From Lab Signal to Field Confidence</span></a></li>
+                                                    <li><a class="rv-mega-link" href="/insights/flagships/mission-readiness-toolkit.html"><span class="rv-mega-link-meta">Toolkit</span><span>The Mission Readiness Toolkit</span></a></li>
+                                                </ul>
+                                            </section>
+                                        </div>
+                                        <div class="rv-mega-stats" aria-label="Publication scope">
+                                            <div><strong>150</strong><span>articles</span></div>
+                                            <div><strong>8</strong><span>desks</span></div>
+                                            <div><strong>8</strong><span>reports</span></div>
+                                            <div><strong>229</strong><span>routes</span></div>
+                                        </div>
+                                        <div class="rv-mega-bottom" aria-label="Publication trust links">
+                                            <a href="/authors.html">Authors &amp; reviewers</a>
+                                            <a href="/methodology.html">Methodology</a>
+                                            <a href="/insights/blog.html">Technical publications</a>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <button type="button" id="btn-extra" aria-label="Open information panel">
-                                    <span></span>
-                                    <span></span>
-                                </button>
-                            </div>
-                        </div>
+                            </details>
+                        </li>
+                        <li class="rv-nav-item"><a class="rv-nav-link" href="/contact.html">Contact</a></li>
+                    </ul>
+                    <div class="rv-mobile-actions">
+                        <a href="/booking.html">Submit an RFP / RFI</a>
                     </div>
-                </div>
+                </nav>
+                <a class="rv-header-cta" href="/booking.html">Submit RFP / RFI</a>
             </div>
         </header>
         <!-- header close -->
@@ -1279,6 +1238,7 @@
     <script src="js/swiper.js" defer></script>
     <script src="js/custom-swiper-1.js" defer></script>
     <script src="js/custom-marquee.js" defer></script>
+    <script src="js/site-header.js" defer></script>
 
 
     <script src="js/accessibility.js" defer></script>

@@ -41,58 +41,8 @@
     }
   }
 
-  function initMegaMenus() {
-    var menus = Array.prototype.slice.call(document.querySelectorAll('details[data-mega-menu]'));
-    if (!menus.length || menus[0].getAttribute('data-mega-initialized') === 'true') return;
-    menus[0].setAttribute('data-mega-initialized', 'true');
-
-    function sync(menu) {
-      var summary = menu.querySelector('summary');
-      if (summary) summary.setAttribute('aria-expanded', menu.open ? 'true' : 'false');
-    }
-
-    function close(menu, restoreFocus) {
-      if (!menu.open) return;
-      menu.removeAttribute('open');
-      sync(menu);
-      if (restoreFocus) {
-        var summary = menu.querySelector('summary');
-        if (summary && typeof summary.focus === 'function') summary.focus();
-      }
-    }
-
-    menus.forEach(function (menu) {
-      sync(menu);
-      menu.addEventListener('toggle', function () {
-        if (menu.open) {
-          menus.forEach(function (other) {
-            if (other !== menu) close(other, false);
-          });
-        }
-        sync(menu);
-      });
-    });
-
-    document.addEventListener('click', function (event) {
-      var target = event.target;
-      if (target && target.closest && target.closest('details[data-mega-menu]')) return;
-      menus.forEach(function (menu) {
-        close(menu, false);
-      });
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key !== 'Escape') return;
-      var open = menus.filter(function (menu) { return menu.open; });
-      if (!open.length) return;
-      event.preventDefault();
-      close(open[0], true);
-    });
-  }
-
   function init() {
     labelCarouselDots(document);
-    initMegaMenus();
 
     var observer = new MutationObserver(function () {
       labelCarouselDots(document);
