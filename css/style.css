@@ -13980,6 +13980,64 @@ footer img[src$="up-right-arrow.webp"] {
   display: block;
 }
 
+/* Make the homepage film cue visible at rest. The legacy WOW animation leaves
+   this below-the-fold trigger hidden until its observer fires, which made the
+   poster read like a static image. Keep the play affordance and a concise
+   subject cue visible without changing the media or popup behavior. */
+#content button.d-block.hover > .relative > .absolute.start-0.w-100.abs-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+#content button.d-block.hover > .relative > .absolute.start-0.w-100.abs-middle::after {
+  content: "Mission-critical technology in action · 0:44";
+  display: block;
+  max-width: min(90%, 42rem);
+  color: #fff;
+  font-size: clamp(12px, 1.05vw, 16px);
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .8);
+  text-transform: uppercase;
+}
+
+#content button.d-block.hover .player {
+  visibility: visible !important;
+  width: clamp(76px, 7vw, 96px);
+  height: clamp(76px, 7vw, 96px);
+  background: rgba(20, 27, 35, .86) !important;
+  border: 2px solid rgba(255, 255, 255, .9) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  animation: none !important;
+}
+
+#content button.d-block.hover .player span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, -50%);
+}
+
+#content button.d-block.hover:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 5px;
+}
+
+@media (max-width: 575px) {
+  #content button.d-block.hover > .relative > .absolute.start-0.w-100.abs-middle {
+    gap: 10px;
+  }
+
+  #content button.d-block.hover > .relative > .absolute.start-0.w-100.abs-middle::after {
+    max-width: 82%;
+    font-size: 11px;
+    letter-spacing: .06em;
+  }
+}
+
 /* The legacy transition bundle removes outlines from the navigation. Restore
    a clear keyboard indicator for the actual interactive chrome. */
 header #menu-btn:focus-visible,
