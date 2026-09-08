@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://ravonics.com/sitemap/">
+  <title>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Visual Sitemap</title>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <style>
+    :root { color-scheme: light; --ink:#17212b; --muted:#66717d; --line:#cbd1d8; --paper:#fff; --accent:#9d3026; --left-width:80%; --right-width:20%; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; overflow:hidden; background:#eef1f4; color:var(--ink); font:14px/1.45 system-ui,sans-serif; }
+    .app-shell { display:grid; grid-template-columns:var(--left-width) 6px var(--right-width); width:100%; height:100vh; overflow:hidden; }
+    .content { min-width:0; height:100vh; overflow-y:auto; }
+    header { padding:24px clamp(20px,4vw,54px) 20px; background:var(--paper); border-bottom:1px solid var(--line); }
+    h1 { margin:0 0 5px; font:500 clamp(27px,3.2vw,40px)/1.1 Georgia,serif; }
+    .meta { margin:0; color:var(--muted); }
+    .summary { display:flex; flex-wrap:wrap; gap:7px 20px; margin-top:12px; font-weight:650; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:flex-end; margin-top:14px; padding:12px 14px; background:#f8f9fa; border:1px solid var(--line); border-radius:8px; }
+    .toolbar .field { display:flex; flex-direction:column; gap:4px; font-size:12px; font-weight:650; }
+    .toolbar .field label { font-size:12px; font-weight:700; }
+    .toolbar input[type="search"] { min-width:min(260px,60vw); padding:7px 10px; border:1px solid var(--line); border-radius:6px; font:inherit; font-weight:400; background:var(--paper); color:var(--ink); }
+    .toolbar select { padding:7px 10px; border:1px solid var(--line); border-radius:6px; font:inherit; font-weight:400; background:var(--paper); color:var(--ink); }
+    .toolbar :focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
+    .slider-row { display:flex; align-items:center; gap:8px; font-weight:400; }
+    .slider-row input[type="range"] { width:130px; accent-color:var(--accent); }
+    .slider-row output { min-width:74px; font-variant-numeric:tabular-nums; }
+    .result-count { margin:0; font-size:12px; font-weight:400; color:var(--muted); }
+    .help-button { padding:7px 12px; border:1px solid var(--line); border-radius:6px; background:var(--paper); color:var(--ink); font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
+    .help-button:hover { border-color:var(--accent); color:var(--accent); }
+    .help-panel { flex:1 1 100%; margin:0; padding:10px 12px; border-left:3px solid var(--accent); background:var(--paper); font-size:12px; font-weight:400; }
+    .help-panel kbd { padding:1px 6px; border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; background:#f8f9fa; font-family:inherit; font-size:11px; }
+    .directory-wrap { max-height:25vh; overflow-y:auto; padding:18px clamp(20px,4vw,54px); background:#f8f9fa; border-bottom:1px solid var(--line); }
+    .directory-wrap h2 { margin:0 0 9px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .directory { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:3px 18px; margin:0; padding:0; list-style:none; }
+    .directory a { display:flex; gap:7px; color:var(--ink); text-decoration:none; }
+    .directory a:hover { color:var(--accent); text-decoration:underline; }
+    .directory span { color:var(--accent); font-variant-numeric:tabular-nums; font-weight:800; }
+    .dir-head { grid-column:1/-1; margin-top:8px; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); list-style:none; }
+    .dir-head:first-child { margin-top:0; }
+    main { min-width:0; padding:18px 10px 50px clamp(20px,4vw,54px); }
+    .grid { display:grid; grid-template-columns:repeat(var(--cols,16),minmax(0,1fr)); align-items:start; gap:5px; }
+    .section-head { grid-column:1/-1; margin:14px 0 2px; font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+    .card { position:relative; min-width:0; overflow:hidden; background:var(--paper); border:1px solid var(--line); border-radius:3px; scroll-margin-top:12px; cursor:zoom-in; }
+    .card:hover,.card:focus-visible { border-color:var(--accent); outline:2px solid var(--accent); outline-offset:1px; }
+    .card.is-selected { outline:3px solid var(--accent); outline-offset:-3px; }
+    .card img { display:block; width:100%; height:auto; }
+    .number { position:absolute; z-index:1; top:2px; left:2px; min-width:19px; padding:2px 3px; border:1px solid #fff; border-radius:2px; background:var(--accent); color:#fff; box-shadow:0 1px 3px #0006; font-size:8px; font-weight:800; line-height:1; text-align:center; }
+    .error { min-height:100px; display:grid; place-content:center; padding:8px; color:#9b1c1c; text-align:center; font-size:10px; }
+    .no-results { padding:40px 20px; color:var(--muted); text-align:center; }
+    .preview-shell { min-width:0; height:100vh; padding:12px; border-left:1px solid var(--line); background:#dfe3e7; }
+    .preview { display:flex; flex-direction:column; height:100%; overflow:hidden; background:var(--paper); border:1px solid var(--line); border-radius:8px; box-shadow:0 3px 14px #1c273118; }
+    .preview-header { flex:0 0 auto; padding:12px 13px; border-bottom:1px solid var(--line); }
+    .preview-kicker { margin:0 0 3px; color:var(--accent); font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .preview-name { margin:0; font-size:14px; overflow-wrap:anywhere; }
+    .preview-name a,
+    .preview-title a { color:inherit; text-decoration:none; }
+    .preview-name a:hover,
+    .preview-title a:hover { text-decoration:underline; color:var(--accent,#9d3026); }
+    .preview-title { margin:3px 0 0; color:var(--muted); font-size:11px; }
+    .preview-help { margin:8px 0 0; color:var(--muted); font-size:10px; }
+    .preview-actions { margin:10px 0 0; }
+    .fs-button { padding:7px 12px; border:1px solid var(--line); border-radius:6px; background:var(--paper); color:var(--ink); font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
+    .fs-button:hover:not(:disabled) { border-color:var(--accent); color:var(--accent); }
+    .fs-button:disabled { opacity:.45; cursor:default; }
+    dialog.lightbox { padding:0; border:0; background:transparent; max-width:min(1400px,96vw); max-height:94vh; }
+    dialog.lightbox::backdrop { background:rgba(10,15,20,.84); }
+    .lightbox-frame { display:flex; flex-direction:column; max-height:94vh; overflow:hidden; background:var(--paper); border-radius:8px; }
+    .lightbox-scroll { overflow:auto; background:#1c2731; }
+    .lightbox-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; }
+    .lightbox-image { display:block; width:100%; height:auto; touch-action:pan-y; }
+    .lightbox-bar { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; justify-content:space-between; padding:10px 14px; border-top:1px solid var(--line); }
+    .lightbox-caption { margin:0; font-size:13px; font-weight:650; }
+    .lightbox-buttons { display:flex; gap:8px; }
+    .lightbox-buttons button { padding:7px 12px; border:1px solid var(--line); border-radius:6px; background:var(--paper); color:var(--ink); font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
+    .lightbox-buttons button:hover { border-color:var(--accent); color:var(--accent); }
+    .preview-scroll { flex:1 1 auto; min-height:0; overflow:auto; background:#dfe3e7; }
+    .preview-link { display:block; min-height:100%; }
+    .preview-image { display:block; width:100%; height:auto; }
+    .splitter { width:6px; cursor:col-resize; background:var(--line,#d8dde3); transition:background .15s; position:relative; z-index:10; height:100vh; }
+    .splitter:hover, .splitter.active { background:var(--accent,#9d3026); }
+    .loading { padding:40px; color:var(--muted); }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+    @media(max-width:1400px){.grid{grid-template-columns:repeat(var(--cols,12),minmax(0,1fr))}}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(var(--cols,8),minmax(0,1fr))}}
+    @media(max-width:680px){body{overflow:auto}.app-shell{display:block;height:auto;overflow:visible}.content{height:auto;overflow:visible}main{padding-right:20px}.grid{grid-template-columns:repeat(var(--cols,5),minmax(0,1fr))}.splitter{display:none}.preview-shell{height:70vh;padding:0 20px 24px;border-left:0}}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="content">
+      <header>
+        <h1>Ravonics - AI, Quantum-Readiness &amp; JADC2 Solutions for Federal Missions Visual Sitemap</h1>
+        <p class="meta" id="meta">Loading latest capture metadata…</p>
+        <div class="summary" id="summary"></div>
+        <div class="toolbar" role="search">
+          <div class="field">
+            <label for="gallery-search">Search pages</label>
+            <input type="search" id="gallery-search" placeholder="Filter by file, title, or URL" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="gallery-sort">Sort pages</label>
+            <select id="gallery-sort">
+              <option value="number">Page number</option>
+              <option value="alpha">File name (A to Z)</option>
+              <option value="section">Section, then file</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="thumb-size">Thumbnail size</label>
+            <div class="slider-row">
+              <input type="range" id="thumb-size" min="2" max="16" step="1" value="16">
+              <output id="thumb-size-value" for="thumb-size">16 per row</output>
+            </div>
+          </div>
+          <div class="field">
+            <button class="help-button" id="keys-help" aria-expanded="false" aria-controls="keys-panel">Keyboard shortcuts (?)</button>
+          </div>
+          <p class="result-count" id="result-count" role="status"></p>
+          <div class="help-panel" id="keys-panel" hidden>
+            <span><kbd>Left</kbd>/<kbd>Right</kbd> move between cards, <kbd>Up</kbd>/<kbd>Down</kbd> move by row, <kbd>J</kbd>/<kbd>K</kbd> next/previous card, <kbd>Enter</kbd> opens the page, <kbd>F</kbd> fullscreen preview, <kbd>/</kbd> focuses search, <kbd>Esc</kbd> clears search, <kbd>?</kbd> toggles this panel.</span>
+          </div>
+        </div>
+        <p>Prefer a static overview? Open the <a href="grid.html">grid view</a>. See also the <a href="/sitemap.html">route-graph sitemap</a>.</p>
+      </header>
+      <nav class="directory-wrap" aria-label="Page directory">
+        <h2>Numbered page directory</h2>
+        <ol class="directory" id="directory"></ol>
+      </nav>
+      <main>
+        <div class="grid" id="grid"><p class="loading">Loading latest sitemap…</p></div>
+        <p class="no-results" id="no-results" hidden>No pages match this filter. Clear the search to see every page.</p>
+      </main>
+    </div>
+    <div role="region" aria-label="Preview pane resize control"><div class="splitter" role="separator" tabindex="0" aria-label="Resize preview pane" aria-valuemin="10" aria-valuemax="50" aria-valuenow="20"></div></div>
+    <aside class="preview-shell" aria-label="Page preview">
+      <div class="preview">
+        <div class="preview-header">
+          <p class="preview-kicker" id="preview-number">Page preview</p>
+          <h2 class="preview-name" id="preview-name">Select a page</h2>
+          <p class="preview-title" id="preview-title"></p>
+          <p class="preview-help">Click or focus a thumbnail. Click the large preview to open the full capture.</p>
+          <p class="preview-actions"><button class="fs-button" id="fs-open" type="button">View fullscreen</button></p>
+        </div>
+        <div class="preview-scroll"><a class="preview-link" id="preview-link" target="_blank" rel="noopener"><img class="preview-image" id="preview-image" alt=""></a></div>
+      </div>
+    </aside>
+  </div>
+  <p class="sr-only" role="status" id="sr-status"></p>
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+    <div class="lightbox-frame">
+      <div class="lightbox-scroll" tabindex="0" role="region" aria-label="Fullscreen page capture, scrollable"><img class="lightbox-image" id="lightbox-image" alt=""></div>
+      <div class="lightbox-bar">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <div class="lightbox-buttons">
+          <button id="lightbox-prev" type="button">Previous</button>
+          <button id="lightbox-next" type="button">Next</button>
+          <button id="lightbox-close" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <script>
+    const directory = document.querySelector("#directory");
+    const grid = document.querySelector("#grid");
+    const metaLine = document.querySelector("#meta");
+    const summary = document.querySelector("#summary");
+    const previewNumber = document.querySelector("#preview-number");
+    const previewName = document.querySelector("#preview-name");
+    const previewTitle = document.querySelector("#preview-title");
+    const previewLink = document.querySelector("#preview-link");
+    const previewImage = document.querySelector("#preview-image");
+    const searchInput = document.querySelector("#gallery-search");
+    const resultCount = document.querySelector("#result-count");
+    const sortSelect = document.querySelector("#gallery-sort");
+    const sizeSlider = document.querySelector("#thumb-size");
+    const sizeOutput = document.querySelector("#thumb-size-value");
+    const helpButton = document.querySelector("#keys-help");
+    const helpPanel = document.querySelector("#keys-panel");
+    const noResults = document.querySelector("#no-results");
+    const srStatus = document.querySelector("#sr-status");
+    const fsOpen = document.querySelector("#fs-open");
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxImage = document.querySelector("#lightbox-image");
+    const lightboxCaption = document.querySelector("#lightbox-caption");
+    const lightboxPrev = document.querySelector("#lightbox-prev");
+    const lightboxNext = document.querySelector("#lightbox-next");
+    const lightboxClose = document.querySelector("#lightbox-close");
+
+    const COLS_KEY = "sitemap-cols";
+    let allEntries = [];
+    let selectedFile = null;
+    let selectedEntry = null;
+    let lightboxFile = null;
+
+    function numberFor(entry, count) {
+      return String(entry.number).padStart(String(count).length, "0");
+    }
+
+    function sectionOf(entry) {
+      const slash = entry.file.indexOf("/");
+      return slash === -1 ? "Top level" : entry.file.slice(0, slash);
+    }
+
+    function sortedEntries() {
+      const mode = sortSelect.value;
+      const copy = [...allEntries];
+      if (mode === "alpha") copy.sort((a, b) => a.file.localeCompare(b.file));
+      else if (mode === "section") {
+        copy.sort((a, b) => sectionOf(a).localeCompare(sectionOf(b)) || a.file.localeCompare(b.file));
+      } else copy.sort((a, b) => a.number - b.number);
+      return copy;
+    }
+
+    function entryForHash() {
+      const match = location.hash.match(/^#page-(\d+)$/);
+      if (!match) return null;
+      return allEntries.find((entry) => numberFor(entry, allEntries.length) === match[1]) || null;
+    }
+
+    function select(entry, count, card, options = {}) {
+      const { writeHash = true, announce = true } = options;
+      document.querySelectorAll(".card.is-selected").forEach((item) => item.classList.remove("is-selected"));
+      card?.classList.add("is-selected");
+      selectedFile = entry.file;
+      selectedEntry = entry;
+      const number = numberFor(entry, count);
+      previewNumber.textContent = `Page ${number}`;
+      previewName.innerHTML = '';
+      const nameLink = document.createElement('a');
+      nameLink.href = entry.url;
+      nameLink.textContent = entry.file;
+      nameLink.target = '_blank';
+      nameLink.rel = 'noopener';
+      previewName.appendChild(nameLink);
+      previewTitle.innerHTML = '';
+      const titleLink = document.createElement('a');
+      titleLink.href = entry.url;
+      titleLink.textContent = entry.title || 'Untitled';
+      titleLink.target = '_blank';
+      titleLink.rel = 'noopener';
+      previewTitle.appendChild(titleLink);
+      previewLink.href = entry.image || entry.url;
+      previewImage.src = entry.image || "";
+      previewImage.alt = `Full-page capture of ${entry.file}`;
+      fsOpen.disabled = !entry.image;
+      if (writeHash) history.replaceState(null, "", `#page-${number}`);
+      if (announce) srStatus.textContent = `Page ${number}: ${entry.file}`;
+    }
+
+    function selectByFile(file, scroll) {
+      const card = grid.querySelector(`.card[data-file="${CSS.escape(file)}"]`);
+      const entry = allEntries.find((item) => item.file === file);
+      if (!card || !entry) return;
+      card.hidden = false;
+      select(entry, allEntries.length, card);
+      if (scroll) card.scrollIntoView({ block: "nearest" });
+    }
+
+    function matchesQuery(entry, query) {
+      if (!query) return true;
+      const haystack = `${entry.file} ${entry.title || ""} ${entry.url || ""}`.toLowerCase();
+      return query.toLowerCase().split(/\s+/).filter(Boolean).every((word) => haystack.includes(word));
+    }
+
+    function applyFilter() {
+      const query = searchInput.value.trim();
+      let visible = 0;
+      grid.querySelectorAll(".card").forEach((card) => {
+        const entry = allEntries.find((item) => item.file === card.dataset.file);
+        const show = entry ? matchesQuery(entry, query) : true;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      directory.querySelectorAll("li[data-file]").forEach((item) => {
+        const entry = allEntries.find((itemEntry) => itemEntry.file === item.dataset.file);
+        item.hidden = entry ? !matchesQuery(entry, query) : false;
+      });
+      directory.querySelectorAll(".dir-head").forEach((head) => {
+        let sibling = head.nextElementSibling;
+        let anyVisible = false;
+        while (sibling && !sibling.classList.contains("dir-head")) {
+          if (!sibling.hidden) { anyVisible = true; break; }
+          sibling = sibling.nextElementSibling;
+        }
+        head.hidden = !anyVisible;
+      });
+      grid.querySelectorAll(".section-head").forEach((head) => {
+        let sibling = head.nextElementSibling;
+        let anyVisible = false;
+        while (sibling && !sibling.classList.contains("section-head")) {
+          if (sibling.classList.contains("card") && !sibling.hidden) { anyVisible = true; break; }
+          sibling = sibling.nextElementSibling;
+        }
+        head.hidden = !anyVisible;
+      });
+      resultCount.textContent = query ? `${visible} of ${allEntries.length} pages` : "";
+      noResults.hidden = visible !== 0;
+      if (selectedFile) {
+        const selectedCard = grid.querySelector(`.card[data-file="${CSS.escape(selectedFile)}"]`);
+        if (selectedCard && selectedCard.hidden) {
+          document.querySelectorAll(".card.is-selected").forEach((item) => item.classList.remove("is-selected"));
+        }
+      }
+    }
+
+    function buildCard(entry, count) {
+      const number = numberFor(entry, count);
+      const card = document.createElement("article");
+      card.className = "card";
+      card.id = `page-${number}`;
+      card.tabIndex = 0;
+      card.dataset.file = entry.file;
+      card.setAttribute("aria-label", `${number}: ${entry.file}`);
+      const badge = document.createElement("span");
+      badge.className = "number";
+      badge.textContent = number;
+      card.append(badge);
+      if (entry.ok) {
+        const image = document.createElement("img");
+        image.src = entry.image;
+        image.loading = "lazy";
+        image.alt = `Screenshot of ${entry.file}`;
+        card.append(image);
+      } else {
+        const error = document.createElement("div");
+        error.className = "error";
+        error.textContent = "Capture failed";
+        card.append(error);
+      }
+      ["click", "focus"].forEach((eventName) => card.addEventListener(eventName, () => select(entry, count, card)));
+      return card;
+    }
+
+    function buildDirectoryItem(entry, count) {
+      const number = numberFor(entry, count);
+      const item = document.createElement("li");
+      item.dataset.file = entry.file;
+      const anchor = document.createElement("a");
+      anchor.href = `#page-${number}`;
+      const numberLabel = document.createElement("span");
+      numberLabel.textContent = number;
+      anchor.append(numberLabel, document.createTextNode(entry.file));
+      item.append(anchor);
+      return item;
+    }
+
+    function render() {
+      const entries = sortedEntries();
+      const count = allEntries.length;
+      const grouped = sortSelect.value === "section";
+      directory.replaceChildren();
+      grid.replaceChildren();
+      let lastSection = null;
+      entries.forEach((entry) => {
+        if (grouped) {
+          const section = sectionOf(entry);
+          if (section !== lastSection) {
+            lastSection = section;
+            const dirHead = document.createElement("li");
+            dirHead.className = "dir-head";
+            dirHead.textContent = section;
+            directory.append(dirHead);
+            const gridHead = document.createElement("h3");
+            gridHead.className = "section-head";
+            gridHead.textContent = section;
+            grid.append(gridHead);
+          }
+        }
+        directory.append(buildDirectoryItem(entry, count));
+        grid.append(buildCard(entry, count));
+      });
+      applyFilter();
+      if (selectedFile && grid.querySelector(`.card[data-file="${CSS.escape(selectedFile)}"]`)) {
+        selectByFile(selectedFile, false);
+      }
+    }
+
+    function visibleCards() {
+      return [...grid.querySelectorAll(".card")].filter((card) => !card.hidden);
+    }
+
+    function currentCols() {
+      const fromSlider = Number.parseInt(sizeSlider.value, 10);
+      if (Number.isFinite(fromSlider) && fromSlider > 0) return fromSlider;
+      const columns = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+      return columns > 0 ? columns : 1;
+    }
+
+    function entryForCard(card) {
+      return allEntries.find((item) => item.file === card.dataset.file) || null;
+    }
+
+    grid.addEventListener("keydown", (event) => {
+      const card = event.target.closest(".card");
+      if (!card) return;
+      const cards = visibleCards();
+      const index = cards.indexOf(card);
+      const cols = currentCols();
+      let next = null;
+      if (event.key === "ArrowRight") next = index + 1;
+      else if (event.key === "ArrowLeft") next = index - 1;
+      else if (event.key === "ArrowDown") next = index + cols;
+      else if (event.key === "ArrowUp") next = index - cols;
+      else if (event.key === "j" || event.key === "J") next = index + 1;
+      else if (event.key === "k" || event.key === "K") next = index - 1;
+      else if (event.key === "Enter") {
+        const entry = entryForCard(card);
+        if (entry) window.open(entry.url, "_blank", "noopener");
+        return;
+      } else if (event.key === "f" || event.key === "F") {
+        const entry = entryForCard(card);
+        if (entry && entry.image) openLightbox(entry);
+        return;
+      } else return;
+      event.preventDefault();
+      if (index === -1) return;
+      next = Math.max(0, Math.min(cards.length - 1, next));
+      cards[next].focus();
+    });
+
+    function setHelp(open) {
+      helpPanel.hidden = !open;
+      helpButton.setAttribute("aria-expanded", String(open));
+    }
+
+    helpButton.addEventListener("click", () => setHelp(helpPanel.hidden));
+
+    searchInput.addEventListener("input", applyFilter);
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        searchInput.value = "";
+        applyFilter();
+      }
+    });
+
+    sortSelect.addEventListener("change", render);
+
+    function applyCols(value, persist) {
+      grid.style.setProperty("--cols", String(value));
+      sizeSlider.value = String(value);
+      sizeOutput.textContent = `${value} per row`;
+      if (persist) {
+        try { localStorage.setItem(COLS_KEY, String(value)); } catch { /* private mode: keep session default */ }
+      }
+    }
+
+    sizeSlider.addEventListener("input", () => applyCols(Number(sizeSlider.value), true));
+
+    document.addEventListener("keydown", (event) => {
+      if (lightbox.open) return;
+      const inField = event.target.closest("input, select, textarea");
+      if (event.key === "?" && !inField) {
+        event.preventDefault();
+        setHelp(helpPanel.hidden);
+      } else if (event.key === "/" && !inField) {
+        event.preventDefault();
+        searchInput.focus();
+      } else if (event.key === "Escape" && !helpPanel.hidden && !inField) {
+        setHelp(false);
+        helpButton.focus();
+      }
+    });
+
+    window.addEventListener("hashchange", () => {
+      const entry = entryForHash();
+      if (entry && entry.file !== selectedFile) selectByFile(entry.file, true);
+    });
+
+    // Fullscreen lightbox preview (native <dialog>: modal focus trap plus Esc).
+    function lightboxOrder() {
+      return visibleCards()
+        .map((card) => allEntries.find((item) => item.file === card.dataset.file) || null)
+        .filter((entry) => entry && entry.image);
+    }
+
+    function showLightbox(entry) {
+      const number = numberFor(entry, allEntries.length);
+      lightboxFile = entry.file;
+      lightboxCaption.textContent = `Page ${number}: ${entry.file}`;
+      lightboxImage.src = entry.image;
+      lightboxImage.alt = `Full-page capture of ${entry.file}`;
+    }
+
+    function openLightbox(entry) {
+      if (!entry || !entry.image) return;
+      showLightbox(entry);
+      if (!lightbox.open) lightbox.showModal();
+    }
+
+    function stepLightbox(delta) {
+      const order = lightboxOrder();
+      if (!order.length) return;
+      const index = order.findIndex((entry) => entry.file === lightboxFile);
+      const next = order[(index + delta + order.length) % order.length];
+      showLightbox(next);
+    }
+
+    fsOpen.addEventListener("click", () => { if (selectedEntry) openLightbox(selectedEntry); });
+    lightboxPrev.addEventListener("click", () => stepLightbox(-1));
+    lightboxNext.addEventListener("click", () => stepLightbox(1));
+    lightboxClose.addEventListener("click", () => lightbox.close());
+
+    lightbox.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") { event.preventDefault(); stepLightbox(-1); }
+      else if (event.key === "ArrowRight") { event.preventDefault(); stepLightbox(1); }
+    });
+
+    let touchStartX = null;
+    lightboxImage.addEventListener("touchstart", (event) => {
+      touchStartX = event.touches[0].clientX;
+    }, { passive: true });
+    lightboxImage.addEventListener("touchend", (event) => {
+      if (touchStartX === null) return;
+      const delta = event.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (delta > 40) stepLightbox(-1);
+      else if (delta < -40) stepLightbox(1);
+    }, { passive: true });
+
+    Promise.all([
+      fetch("manifest.json", { cache: "no-store" }).then((response) => response.json()),
+      fetch("meta.json", { cache: "no-store" }).then((response) => response.json())
+    ]).then(([entries, metadata]) => {
+      allEntries = entries;
+      const captured = entries.filter((entry) => entry.ok).length;
+      const redirects = entries.filter((entry) => entry.redirect).length;
+      metaLine.textContent = `Generated ${new Date(metadata.generatedAt).toLocaleString()} from ${metadata.base}`;
+      summary.replaceChildren(...[
+        `${entries.length} numbered pages`,
+        `${captured} screenshots captured`,
+        `${redirects} legacy redirects`
+      ].map((text) => Object.assign(document.createElement("span"), { textContent: text })));
+
+      let storedCols = null;
+      try { storedCols = Number.parseInt(localStorage.getItem(COLS_KEY), 10); } catch { /* private mode */ }
+      if (Number.isFinite(storedCols) && storedCols >= 2 && storedCols <= 16) applyCols(storedCols, false);
+      else applyCols(16, false);
+
+      render();
+      const deepLinked = entryForHash();
+      if (deepLinked) selectByFile(deepLinked.file, true);
+      else if (entries.length) select(entries[0], entries.length, grid.querySelector(".card"));
+    }).catch((error) => {
+      const message = document.createElement("p");
+      message.className = "loading";
+      message.textContent = `Could not load the latest sitemap: ${error.message}`;
+      grid.replaceChildren(message);
+    });
+
+    // Draggable splitter
+    const splitter = document.querySelector('.splitter');
+    let isResizing = false;
+
+    splitter.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      splitter.classList.add('active');
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+    });
+
+    function applyRightWidth(rightWidth, totalWidth) {
+      const leftWidth = totalWidth - rightWidth - 6;
+      document.documentElement.style.setProperty('--left-width', leftWidth / totalWidth * 100 + '%');
+      document.documentElement.style.setProperty('--right-width', rightWidth / totalWidth * 100 + '%');
+      splitter.setAttribute('aria-valuenow', String(Math.round(rightWidth / totalWidth * 100)));
+    }
+
+    function rightWidthForClientX(clientX) {
+      const rect = document.body.getBoundingClientRect();
+      const totalWidth = rect.width;
+
+      // Left panel gets at least 50%, right panel at most 50% but at least 260px
+      const maxRightWidth = Math.max(260, totalWidth * 0.5);
+      return {
+        rightWidth: Math.max(260, Math.min(maxRightWidth, totalWidth - (clientX - rect.left))),
+        totalWidth
+      };
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      const { rightWidth, totalWidth } = rightWidthForClientX(e.clientX);
+      applyRightWidth(rightWidth, totalWidth);
+    });
+
+    // Keyboard operation for the splitter (matching the aria-valuemin/max range)
+    splitter.addEventListener('keydown', (e) => {
+      const step = 2;
+      const current = Number(splitter.getAttribute('aria-valuenow')) || 20;
+      let next = null;
+      if (e.key === 'ArrowLeft') next = current + step;
+      else if (e.key === 'ArrowRight') next = current - step;
+      else if (e.key === 'Home') next = 50;
+      else if (e.key === 'End') next = 10;
+      if (next === null) return;
+      e.preventDefault();
+      next = Math.max(10, Math.min(50, next));
+      const totalWidth = document.body.getBoundingClientRect().width;
+      applyRightWidth((next / 100) * totalWidth, totalWidth);
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isResizing) {
+        isResizing = false;
+        splitter.classList.remove('active');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+      }
+    });
+  </script>
+</body>
+</html>

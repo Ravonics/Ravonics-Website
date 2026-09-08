@@ -637,6 +637,12 @@
     <loc>https://ravonics.com/sitemap.html</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/sitemap/</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/sitemap/grid.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/solutions/ai-platforms.html</loc>
   </url>
   <url>
@@ -686,11 +692,5 @@
   </url>
   <url>
     <loc>https://ravonics.com/topics/systems.html</loc>
-  </url>
-  <url>
-    <loc>https://ravonics.com/visual-sitemap/</loc>
-  </url>
-  <url>
-    <loc>https://ravonics.com/visual-sitemap/grid.html</loc>
   </url>
 </urlset>
