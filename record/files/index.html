@@ -916,7 +916,7 @@
     // Wave 1 shared zero-dep primitives for the command-center tabs. Later
     // per-tab waves reuse these; keep the signatures stable.
     //
-    // 1. viewSwap(fn) — run a DOM swap inside
+    // 1. viewSwap(fn) - run a DOM swap inside
     //    document.startViewTransition() when available AND motion is allowed,
     //    else run fn directly. The swap callback executes synchronously in
     //    both branches, so sr-status announcements set inside fn fire in the
@@ -940,7 +940,7 @@
       return undefined;
     }
 
-    // 2. hintPopover(anchor, text) — attach a native popover="hint" tooltip.
+    // 2. hintPopover(anchor, text) - attach a native popover="hint" tooltip.
     //    Attach to factual data rows when a short definition improves review.
     //      hintPopover(nodeEl, "Why this matters: ...");
     //    Focus shows / blur hides (parity with hover in / hover out), Esc and
@@ -1009,7 +1009,7 @@
       if (tip && tip.matches(":popover-open")) tip.hidePopover();
     }
 
-    // 3. downloadFile(name, text, mime) + copyText(text) — zero-dep export
+    // 3. downloadFile(name, text, mime) + copyText(text) - zero-dep export
     //    helpers. downloadFile() saves text via Blob + object URL (revoked a
     //    tick after the click so the download can start). copyText() tries
     //    the async clipboard API, then falls back to a temporary textarea +
@@ -4237,7 +4237,7 @@
     }
 
     // Palette live preview: the highlighted row paints a transient preview
-    // (number, names, thumbnail) without committing the selection — commit
+    // (number, names, thumbnail) without committing the selection - commit
     // stays Enter/click via selectByFile. Debounced so arrow-key travel fires
     // one paint, thumbnails only so highlight travel never starts a full-jpg
     // fetch storm, and the reduced-motion-gated crossfade is reused. Closing

@@ -6513,7 +6513,7 @@
         "h2Count": 21,
         "h2Texts": [
           "Authorization Boundary Definition",
-          "Impact Level Selection (Low / Moderate / High, IL2–IL6)",
+          "Impact Level Selection (Low / Moderate / High, IL2-IL6)",
           "Control Inheritance and the Shared Responsibility Model",
           "Continuous Monitoring (ConMon) Architecture",
           "Identity, Access, and PIV/CAC Integration",
