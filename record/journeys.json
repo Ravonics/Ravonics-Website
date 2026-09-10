@@ -1,0 +1,193 @@
+{
+  "personas": [
+    {
+      "goal": "Compare options and open an intake request.",
+      "id": "buyer",
+      "journeys": [
+        {
+          "id": "buyer-1",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The JADC2 integration article lays out the delivery approach.",
+            "The JADC2 solution page states scope for a fit check.",
+            "The RFP intake converts the evaluation into a request."
+          ],
+          "steps": [
+            "index.html",
+            "insights/jadc2-integration.html",
+            "solutions/jadc2.html",
+            "booking.html"
+          ],
+          "terminal": true,
+          "terminalNote": "The RFP intake conversion.",
+          "title": "JADC2 evaluation path"
+        },
+        {
+          "id": "buyer-2",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The doing business page covers process and credentials.",
+            "The RFP intake converts the evaluation into a request. A contact page variant of this route also verifies over body links."
+          ],
+          "steps": [
+            "index.html",
+            "company/doing-business.html",
+            "booking.html"
+          ],
+          "terminal": true,
+          "terminalNote": "The RFP intake conversion.",
+          "title": "Doing business path"
+        }
+      ],
+      "label": "Buyer"
+    },
+    {
+      "goal": "Assess collaboration fit and make contact.",
+      "id": "partner",
+      "journeys": [
+        {
+          "id": "partner-1",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The doing business page covers process and credentials.",
+            "The partnerships page describes how collaboration works.",
+            "The RFP intake converts interest into a proposal."
+          ],
+          "steps": [
+            "index.html",
+            "company/doing-business.html",
+            "company/partnerships.html",
+            "booking.html"
+          ],
+          "terminal": true,
+          "terminalNote": "The RFP intake conversion.",
+          "title": "Partnership path"
+        },
+        {
+          "id": "partner-2",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The AI capabilities page ends the verified trail. The study found no onward body copy step from here toward booking, so the journey closes with no conversion."
+          ],
+          "steps": [
+            "index.html",
+            "capabilities/ai.html"
+          ],
+          "terminal": false,
+          "terminalNote": "No verified onward step toward booking, so no conversion.",
+          "title": "AI page end of trail"
+        }
+      ],
+      "label": "Partner"
+    },
+    {
+      "goal": "Follow a technical thread across insights.",
+      "id": "researcher",
+      "journeys": [
+        {
+          "id": "researcher-1",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The post quantum article opens the technical thread.",
+            "The innovation page continues the research direction.",
+            "The RFP intake converts research interest into a discussion."
+          ],
+          "steps": [
+            "index.html",
+            "insights/post-quantum-cryptography.html",
+            "insights/innovation.html",
+            "booking.html"
+          ],
+          "terminal": true,
+          "terminalNote": "The RFP intake conversion.",
+          "title": "Post quantum thread"
+        }
+      ],
+      "label": "Researcher"
+    },
+    {
+      "goal": "Find a role and a way to apply.",
+      "id": "jobseeker",
+      "journeys": [
+        {
+          "id": "jobseeker-1",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The careers page opens through site navigation only.",
+            "Body copy from careers leads back home and nowhere else.",
+            "The team page opens through site navigation only, and the trail ends with no application step."
+          ],
+          "steps": [
+            "index.html",
+            "company/careers.html",
+            "index.html",
+            "company/team.html"
+          ],
+          "terminal": false,
+          "terminalNote": "No application or contact step follows, so no conversion.",
+          "title": "Careers to team"
+        },
+        {
+          "id": "jobseeker-2",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The team page opens through site navigation only.",
+            "The body link reaches the RFP intake, which serves buyers rather than applicants."
+          ],
+          "steps": [
+            "index.html",
+            "company/team.html",
+            "booking.html"
+          ],
+          "terminal": true,
+          "terminalNote": "The RFP intake serves buyers rather than applicants, so this conversion is a mismatch.",
+          "title": "Team to intake mismatch"
+        }
+      ],
+      "label": "Job seeker"
+    },
+    {
+      "goal": "Cross check claims before engaging.",
+      "id": "validator",
+      "journeys": [
+        {
+          "id": "validator-1",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The blog index surveys recent coverage.",
+            "The JADC2 integration article gives one claim set in depth.",
+            "The return to the blog index invites corroborating reads.",
+            "The RFP intake converts established trust into a request."
+          ],
+          "steps": [
+            "index.html",
+            "insights/blog.html",
+            "insights/jadc2-integration.html",
+            "insights/blog.html",
+            "booking.html"
+          ],
+          "terminal": true,
+          "terminalNote": "The RFP intake conversion.",
+          "title": "Blog trust loop"
+        },
+        {
+          "id": "validator-2",
+          "rationale": [
+            "Home introduces the mission scope that frames the visit.",
+            "The certifications page opens through site navigation only.",
+            "Body copy from certifications leads back home and nowhere else, ending the trail with no intake step."
+          ],
+          "steps": [
+            "index.html",
+            "company/certifications.html",
+            "index.html"
+          ],
+          "terminal": false,
+          "terminalNote": "No intake step follows, so no conversion.",
+          "title": "Certifications dead end"
+        }
+      ],
+      "label": "Validator"
+    }
+  ]
+}
