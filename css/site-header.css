@@ -1053,3 +1053,34 @@ html:has(.rv-site-header) body {
     pointer-events: none;
   }
 }
+
+/* -------------------------------------------------------------------------
+   First-paint geometry
+
+   The rules above only reach their final mobile/tablet state after the
+   deferred scripts run (designesia.js adds .header-mobile at <= 992px,
+   site-header.js sets html[data-rv-js]). Painting before that showed the
+   expanded 447px menu in a fixed header and then collapsed it, shifting the
+   whole page (CLS ~0.1). Mirror the final state in plain CSS so the first
+   frame already has it. Specificity is intentionally low (a single class) so
+   every .is-scrolled / .header-mobile / .is-open rule still wins afterwards.
+   ------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .rv-site-header {
+    position: sticky !important;
+    top: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 899px) and (scripting: enabled) {
+  .rv-primary-navigation {
+    display: none;
+  }
+
+  .rv-site-header.is-open .rv-primary-navigation {
+    display: block;
+  }
+}

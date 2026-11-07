@@ -1,0 +1,33 @@
+/*
+ * IcoFont 1.0.1 (https://icofont.com), subset to the six glyphs the site uses:
+ * quote-left, phone, location-pin, envelope, long-arrow-right, user.
+ * The full 526 KB font stays in ./fonts/icofont.woff2 and ./icofont.min.css;
+ * to use another glyph, re-subset it (pyftsubset --unicodes=...) and add its
+ * rule from icofont.min.css here.
+ */
+@font-face {
+  font-family: IcoFont;
+  font-weight: 400;
+  font-style: normal;
+  src: url(fonts/icofont-subset.woff2) format("woff2");
+}
+[class*=" icofont-"], [class^=icofont-] {
+  font-family: IcoFont !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  line-height: 1;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+.icofont-long-arrow-right:before { content: "\ea94"; }
+.icofont-user:before { content: "\ed05"; }
+.icofont-envelope:before { content: "\ef14"; }
+.icofont-location-pin:before { content: "\ef79"; }
+.icofont-phone:before { content: "\efbb"; }
+.icofont-quote-left:before { content: "\efcd"; }
