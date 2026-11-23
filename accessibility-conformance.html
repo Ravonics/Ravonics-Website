@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-srbwn3qu>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Accessibility conformance report (draft)</title>
+    <meta name="description" content="Draft Section 508 / WCAG 2.1 AA accessibility conformance report (VPAT 2.x format) for the ravonics.com public website.">
+    <meta name="author" content="Ravonics LLC">
+    <meta property="og:site_name" content="Ravonics">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Accessibility conformance report (draft)">
+    <meta property="og:description" content="Draft Section 508 / WCAG 2.1 AA accessibility conformance report (VPAT 2.x format) for the ravonics.com public website.">
+    <meta property="og:url" content="https://ravonics.com/accessibility-conformance.html">
+    <meta property="og:image" content="/images/og-image.avif">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Accessibility conformance report (draft)">
+    <meta name="twitter:description" content="Draft Section 508 / WCAG 2.1 AA accessibility conformance report (VPAT 2.x format) for the ravonics.com public website.">
+    <meta name="twitter:image" content="/images/og-image.avif">
+    <link rel="canonical" href="https://ravonics.com/accessibility-conformance.html">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="preload" href="/css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/plugins.css">
+    <link rel="stylesheet" href="/css/coloring.css">
+    <link rel="stylesheet" href="/css/swiper.css">
+    <link id="colors" href="/css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/site-header.css">
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Accessibility conformance report (draft)","description":"Draft Section 508 / WCAG 2.1 AA accessibility conformance report (VPAT 2.x format) for the ravonics.com public website.","url":"https://ravonics.com/accessibility-conformance.html","isPartOf":{"@type":"WebSite","name":"Ravonics","url":"https://ravonics.com"}}</script>
+  <link rel="stylesheet" href="/assets/MagazineLayout.Bb5nwBs_.css"></head>
+  <body data-astro-cid-srbwn3qu>
+    <a class="skip-link" href="#content" data-astro-cid-srbwn3qu>Skip to content</a>
+
+    <div class="magazine-shell" data-astro-cid-srbwn3qu>
+      <header class="rv-site-header" data-site-header>
+  <div class="rv-header-shell">
+    <a class="rv-brand" href="/" aria-label="Ravonics home">
+      <img src="/images/logo/logo-white.svg" alt="Ravonics" width="1829" height="296">
+    </a>
+
+    <button class="rv-menu-toggle" type="button" aria-controls="rv-primary-navigation" aria-expanded="false" aria-label="Open navigation">
+      <span class="rv-menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="rv-menu-toggle-label">Menu</span>
+    </button>
+
+    <nav id="rv-primary-navigation" class="rv-primary-navigation" aria-label="Primary navigation">
+      <ul class="rv-primary-list">
+        <li class="rv-nav-item">
+          <details class="rv-mega" data-mega-menu="mission">
+            <summary class="rv-nav-link rv-nav-link--trigger" aria-controls="rv-mega-mission" aria-expanded="false">
+              Capabilities <span class="rv-chevron" aria-hidden="true"></span>
+            </summary>
+            <div id="rv-mega-mission" class="rv-mega-panel" role="region" aria-label="Capabilities mega menu">
+              <div class="rv-mega-panel-inner">
+                <div class="rv-mega-intro">
+                  <p class="rv-mega-eyebrow">Mission systems</p>
+                  <h2>Engineering depth for the hard parts of the mission.</h2>
+                  <p>Ten capability domains connect applied research to deployable, compliant systems.</p>
+                  <a class="rv-mega-feature" href="/sitemap.html">View the full capability map <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="rv-mega-groups">
+                  <section class="rv-mega-group" aria-labelledby="rv-cap-intelligence">
+                    <h3 id="rv-cap-intelligence">Intelligence &amp; autonomy</h3>
+                    <ul>
+                      <li><a class="rv-mega-link rv-mega-link--featured" href="/capabilities/ai.html"><span class="rv-mega-link-meta">Core capability</span><span>Advanced Artificial Intelligence</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/autonomous-systems.html"><span class="rv-mega-link-meta">Autonomy</span><span>Autonomous Systems</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/robotics.html"><span class="rv-mega-link-meta">Software</span><span>Autonomy Software</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/computer-vision.html"><span class="rv-mega-link-meta">Sensing</span><span>Computer Vision &amp; Sensor Fusion</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/intelligence.html"><span class="rv-mega-link-meta">Decisions</span><span>Intelligence &amp; Decision Systems</span></a></li>
+                    </ul>
+                  </section>
+                  <section class="rv-mega-group" aria-labelledby="rv-cap-secure">
+                    <h3 id="rv-cap-secure">Secure compute &amp; comms</h3>
+                    <ul>
+                      <li><a class="rv-mega-link" href="/capabilities/tactical-comms.html"><span class="rv-mega-link-meta">Networks</span><span>Tactical Communications</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/quantum.html"><span class="rv-mega-link-meta">Quantum</span><span>Quantum Technologies</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/cryptography.html"><span class="rv-mega-link-meta">Security</span><span>Advanced Cryptography &amp; Blockchain</span></a></li>
+                      <li><a class="rv-mega-link" href="/capabilities/computing.html"><span class="rv-mega-link-meta">Compute</span><span>High-Performance Computing</span></a></li>
+                    </ul>
+                  </section>
+                  <section class="rv-mega-group" aria-labelledby="rv-cap-delivery">
+                    <h3 id="rv-cap-delivery">Integration &amp; delivery</h3>
+                    <ul>
+                      <li><a class="rv-mega-link" href="/capabilities/integration.html"><span class="rv-mega-link-meta">Systems</span><span>Systems Engineering &amp; Integration</span></a></li>
+                      <li><a class="rv-mega-link" href="/solutions/jadc2.html"><span class="rv-mega-link-meta">Architecture</span><span>JADC2-compatible architecture</span></a></li>
+                      <li><a class="rv-mega-link" href="/booking.html"><span class="rv-mega-link-meta">Engage</span><span>Submit an RFP / RFI</span></a></li>
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/solutions/ai-platforms.html">Solutions</a></li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/industries/defense.html">Industries</a></li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/company/about.html">Company</a></li>
+        <li class="rv-nav-item">
+          <details class="rv-mega" data-mega-menu="publication">
+            <summary class="rv-nav-link rv-nav-link--trigger" aria-controls="rv-mega-publication" aria-expanded="false">
+              Insights <span class="rv-chevron" aria-hidden="true"></span>
+            </summary>
+            <div id="rv-mega-publication" class="rv-mega-panel" role="region" aria-label="Insights mega menu">
+              <div class="rv-mega-panel-inner">
+                <div class="rv-mega-intro">
+                  <p class="rv-mega-eyebrow">Ravonics technical publication</p>
+                  <h2>Evidence for the next mission decision.</h2>
+                  <p>Follow a system question, browse a desk, or take a complete research edition with you.</p>
+                  <a class="rv-mega-feature" href="/insights.html">Open the publication index <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="rv-mega-groups">
+                  <section class="rv-mega-group" aria-labelledby="rv-insights-library">
+                    <h3 id="rv-insights-library">Library</h3>
+                    <ul>
+                      <li><a class="rv-mega-link rv-mega-link--featured" href="/insights.html"><span class="rv-mega-link-meta">Start here</span><span>Publication index</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics.html"><span class="rv-mega-link-meta">Eight desks</span><span>Topic map</span></a></li>
+                      <li><a class="rv-mega-link" href="/reports.html"><span class="rv-mega-link-meta">Eight editions</span><span>Research reports</span></a></li>
+                      <li><a class="rv-mega-link" href="/briefs/access.html"><span class="rv-mega-link-meta">Download</span><span>Brief access</span></a></li>
+                      <li><a class="rv-mega-link" href="/sitemap.html"><span class="rv-mega-link-meta">Every route</span><span>Visual sitemap</span></a></li>
+                    </ul>
+                  </section>
+                  <section class="rv-mega-group" aria-labelledby="rv-insights-desks">
+                    <h3 id="rv-insights-desks">Desk hubs</h3>
+                    <ul>
+                      <li><a class="rv-mega-link" href="/topics/foundations.html"><span class="rv-mega-link-meta">Foundations</span><span>Definitions &amp; history</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/systems.html"><span class="rv-mega-link-meta">Systems</span><span>Infrastructure &amp; flows</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/science-and-technology.html"><span class="rv-mega-link-meta">Science</span><span>Mechanisms &amp; evaluation</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/policy-ethics-and-governance.html"><span class="rv-mega-link-meta">Governance</span><span>Policy, ethics &amp; accountability</span></a></li>
+                      <li><a class="rv-mega-link" href="/topics/futures-and-field-notes.html"><span class="rv-mega-link-meta">Futures</span><span>Signals &amp; field notes</span></a></li>
+                    </ul>
+                  </section>
+                  <section class="rv-mega-group" aria-labelledby="rv-insights-featured">
+                    <h3 id="rv-insights-featured">Flagship field notes</h3>
+                    <ul>
+                      <li><a class="rv-mega-link" href="/insights/flagships/mission-technology-atlas.html"><span class="rv-mega-link-meta">Atlas</span><span>The Mission Technology Atlas</span></a></li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/annotated-mission-system.html"><span class="rv-mega-link-meta">Systems</span><span>The Annotated Mission System</span></a></li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/lab-signal-to-field-confidence.html"><span class="rv-mega-link-meta">Evidence</span><span>From Lab Signal to Field Confidence</span></a></li>
+                      <li><a class="rv-mega-link" href="/insights/flagships/mission-readiness-toolkit.html"><span class="rv-mega-link-meta">Toolkit</span><span>The Mission Readiness Toolkit</span></a></li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="rv-mega-stats" aria-label="Publication scope"><div><strong>150</strong><span>articles</span></div><div><strong>8</strong><span>desks</span></div><div><strong>8</strong><span>reports</span></div><div><strong>229</strong><span>routes</span></div></div>
+                <div class="rv-mega-bottom" aria-label="Publication trust links"><a href="/authors.html">Authors &amp; reviewers</a><a href="/methodology.html">Methodology</a><a href="/trust.html">Trust center</a><a href="/insights/blog.html">Technical publications</a></div>
+              </div>
+            </div>
+          </details>
+        </li>
+        <li class="rv-nav-item"><a class="rv-nav-link" href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="rv-mobile-actions"><a href="/booking.html">Submit an RFP / RFI</a></div>
+    </nav>
+
+    <a class="rv-header-cta" href="/booking.html">Submit RFP / RFI</a>
+  </div>
+</header>
+
+<script src="/js/site-header.js" defer></script>
+
+      <main id="content" tabindex="-1" class="shell-main" data-astro-cid-srbwn3qu>
+        <section class="hero" aria-label="Route hero" style="--hero-image: url(&quot;/images/og-image.avif&quot;);" data-astro-cid-srbwn3qu>
+          <p class="hero-kicker" data-astro-cid-srbwn3qu>See how ravonics.com conforms to WCAG 2.1 AA and Section 508, and on what evidence.</p>
+          <h1 class="hero-title" data-astro-cid-srbwn3qu>Accessibility conformance report (draft)</h1>
+          <p class="hero-summary" data-astro-cid-srbwn3qu>Draft Section 508 / WCAG 2.1 AA accessibility conformance report (VPAT 2.x format) for the ravonics.com public website.</p>
+          <div class="hero-actions" data-astro-cid-srbwn3qu>
+            <a class="cta" href="/insights/blog.html" data-astro-cid-srbwn3qu>Read related work</a>
+            <a class="cta cta-secondary" href="/privacy.html" data-astro-cid-srbwn3qu>Engage with team</a>
+          </div>
+
+          <div class="hero-canvas" role="img" aria-label="Dynamic publication surface visualizing route intelligence" data-astro-cid-srbwn3qu>
+            <canvas id="magazine-surface" data-route="/accessibility-conformance.html" data-kind="legal" data-media-count="0" data-has-interaction="false" data-webgl="operational-flow" aria-label="Dynamic surface for /accessibility-conformance.html" data-astro-cid-srbwn3qu></canvas>
+            <noscript>
+              <div data-astro-cid-srbwn3qu>
+                <p data-astro-cid-srbwn3qu>
+                  Dynamic scene available with JavaScript. This route includes 0 media asset
+                   references.
+                </p>
+                <img src="/images/og-image.avif" alt="Route hero image" width="1200" height="630" sizes="(max-width: 700px) calc(100vw - 2rem), 860px" style="max-width:100%;height:auto;border-radius:8px;" data-astro-cid-srbwn3qu>
+              </div>
+            </noscript>
+          </div>
+        </section>
+
+        <div class="workspace" data-astro-cid-srbwn3qu>
+          <section class="content-slot" aria-label="Route content" data-astro-cid-srbwn3qu>
+            
+  <article class="publication-utility">
+    <p class="editorial-kicker">VPAT 2.x · WCAG 2.1 edition · Draft</p>
+    <h2>Report scope</h2>
+    <ul>
+      <li>Product: the ravonics.com public website (all published routes).</li><li>
+        Standards: WCAG 2.1 Level A and AA, which Section 508 (36 CFR 1194) incorporates for web content.
+      </li><li>
+        Evaluated: 2026-11-22. Contact: <a href="mailto:contact@ravonics.com">contact@ravonics.com</a>.
+      </li>
+    </ul>
+    <h2>Evaluation methods</h2>
+    <p>
+      Every change to the site runs a route contract in continuous integration: each published route is loaded
+      in Chromium and checked with axe-core for WCAG A and AA rules, a single main landmark and h1, a page
+      title, broken images and horizontal overflow. Criteria marked Not Evaluated still need a manual review
+      with keyboard and screen-reader testing. This report is a draft until that review is complete; it will
+      not claim more than the evidence shows.
+    </p>
+    <p>
+      Summary: 12 Supports · 33 Not Evaluated · 4 Not Applicable · 1 Partially Supports across 50 Level A and AA success criteria.
+    </p>
+    <h2>WCAG 2.1 Level A and AA</h2>
+    <table>
+      <caption>Conformance by success criterion</caption>
+      <thead>
+        <tr><th scope="col">Criterion</th><th scope="col">Level</th><th scope="col">Conformance</th><th scope="col">Remarks</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+              <th scope="row">
+                1.1.1 Non-text Content
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe image-alt, input-image-alt, svg-img-alt and role-img-alt pass on every published route. Manual review of alternative-text quality pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.2.1 Audio-only and Video-only (Prerecorded)
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>The home page overview video has an audio track; whether it needs a transcript is pending manual review.</td>
+            </tr><tr>
+              <th scope="row">
+                1.2.2 Captions (Prerecorded)
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>The home page overview video ships an English captions track (WebVTT). Caption accuracy review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.2.3 Audio Description or Media Alternative (Prerecorded)
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Home page overview video: manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.2.4 Captions (Live)
+              </th>
+              <td>AA</td>
+              <td>Not Applicable</td>
+              <td>The site has no live audio or video.</td>
+            </tr><tr>
+              <th scope="row">
+                1.2.5 Audio Description (Prerecorded)
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Home page overview video: manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.3.1 Info and Relationships
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe list, listitem, definition-list, heading-order, label and table rules pass on every route; each route has one main landmark and one h1. Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.3.2 Meaningful Sequence
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.3.3 Sensory Characteristics
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.3.4 Orientation
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>No orientation lock is set in site CSS; manual verification pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.3.5 Identify Input Purpose
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Automated: axe autocomplete-valid passes. Manual review of autocomplete coverage on the contact and RFP forms pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.1 Use of Color
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Automated: axe link-in-text-block passes. Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.2 Audio Control
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>The only media (home page overview video) never autoplays and has native player controls.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.3 Contrast (Minimum)
+              </th>
+              <td>AA</td>
+              <td>Partially Supports</td>
+              <td>Automated: axe color-contrast passes on every route except /company/about.html (fact labels) and the eight /reports/ pages (report cover and page numbers). A fix is in design review on issue #14.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.4 Resize Text
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.5 Images of Text
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.10 Reflow
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Automated: every route is checked for horizontal overflow at desktop width. 320-pixel reflow review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.11 Non-text Contrast
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.12 Text Spacing
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                1.4.13 Content on Hover or Focus
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>The navigation mega menus open on click or keyboard; manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.1.1 Keyboard
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Automated: the publication mega menu is tested for keyboard operation. Full keyboard review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.1.2 No Keyboard Trap
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending, including the video dialog.</td>
+            </tr><tr>
+              <th scope="row">
+                2.1.4 Character Key Shortcuts
+              </th>
+              <td>A</td>
+              <td>Not Applicable</td>
+              <td>The site defines no single-character keyboard shortcuts.</td>
+            </tr><tr>
+              <th scope="row">
+                2.2.1 Timing Adjustable
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending, including the home page carousel.</td>
+            </tr><tr>
+              <th scope="row">
+                2.2.2 Pause, Stop, Hide
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending, including the home page carousel and animations; the site honors reduced-motion preferences.</td>
+            </tr><tr>
+              <th scope="row">
+                2.3.1 Three Flashes or Below Threshold
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.1 Bypass Blocks
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe bypass and region rules pass; every route has exactly one main landmark.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.2 Page Titled
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe document-title passes and the route contract requires a non-empty title on every route.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.3 Focus Order
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.4 Link Purpose (In Context)
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe link-name passes on every route. Manual review of link text pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.5 Multiple Ways
+              </th>
+              <td>AA</td>
+              <td>Supports</td>
+              <td>Every page is reachable from the primary navigation, the visual sitemap (/sitemap.html) and the XML sitemap.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.6 Headings and Labels
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.4.7 Focus Visible
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.5.1 Pointer Gestures
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.5.2 Pointer Cancellation
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.5.3 Label in Name
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Automated: axe label-content-name-mismatch passes. Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                2.5.4 Motion Actuation
+              </th>
+              <td>A</td>
+              <td>Not Applicable</td>
+              <td>No function is operated by device motion.</td>
+            </tr><tr>
+              <th scope="row">
+                3.1.1 Language of Page
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe html-has-lang and html-lang-valid pass on every route (lang=&quot;en&quot;).</td>
+            </tr><tr>
+              <th scope="row">
+                3.1.2 Language of Parts
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.2.1 On Focus
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.2.2 On Input
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.2.3 Consistent Navigation
+              </th>
+              <td>AA</td>
+              <td>Supports</td>
+              <td>One shared site header and navigation is rendered on every route from a single source.</td>
+            </tr><tr>
+              <th scope="row">
+                3.2.4 Consistent Identification
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.3.1 Error Identification
+              </th>
+              <td>A</td>
+              <td>Not Evaluated</td>
+              <td>Contact and RFP form error messages: manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.3.2 Labels or Instructions
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe label and select-name rules pass on the contact and RFP forms. Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.3.3 Error Suggestion
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Manual review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                3.3.4 Error Prevention (Legal, Financial, Data)
+              </th>
+              <td>AA</td>
+              <td>Not Applicable</td>
+              <td>The forms create no legal commitment or financial transaction and change no stored user data.</td>
+            </tr><tr>
+              <th scope="row">
+                4.1.1 Parsing
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>WCAG 2.2 removed this criterion and treats it as always satisfied for WCAG 2.1 conformance.</td>
+            </tr><tr>
+              <th scope="row">
+                4.1.2 Name, Role, Value
+              </th>
+              <td>A</td>
+              <td>Supports</td>
+              <td>Automated: axe aria-*, button-name and nested-interactive rules pass on every route. Manual screen-reader review pending.</td>
+            </tr><tr>
+              <th scope="row">
+                4.1.3 Status Messages
+              </th>
+              <td>AA</td>
+              <td>Not Evaluated</td>
+              <td>Form submission status messages: manual review pending.</td>
+            </tr>
+      </tbody>
+    </table>
+    <h2>Report a barrier</h2>
+    <p>
+      If something on this site is hard to use with your assistive technology, email
+      <a href="mailto:contact@ravonics.com">contact@ravonics.com</a> with the page and what happened, and we will
+      provide the information in another format while we fix it.
+    </p>
+  </article>
+
+          </section>
+
+          <aside class="rail" aria-label="Related routes and actions" data-astro-cid-srbwn3qu>
+            <h2 class="rail-title" data-astro-cid-srbwn3qu>Contextual routes</h2>
+            <ul class="rail-list" data-astro-cid-srbwn3qu>
+              <li data-astro-cid-srbwn3qu>
+                    <a href="/trust.html" data-astro-cid-srbwn3qu>Trust center</a>
+                  </li><li data-astro-cid-srbwn3qu>
+                    <a href="/security-policy.html" data-astro-cid-srbwn3qu>Vulnerability disclosure</a>
+                  </li><li data-astro-cid-srbwn3qu>
+                    <a href="/accessibility-conformance.html" data-astro-cid-srbwn3qu>Accessibility conformance</a>
+                  </li><li data-astro-cid-srbwn3qu>
+                    <a href="/privacy.html" data-astro-cid-srbwn3qu>Privacy</a>
+                  </li>
+            </ul>
+
+            <div style="margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid var(--line);" data-astro-cid-srbwn3qu>
+              <h2 class="rail-title" data-astro-cid-srbwn3qu>Trust signals</h2>
+              <p style="color: var(--ink-soft); font-size: 0.85rem; margin: 0.4rem 0;" data-astro-cid-srbwn3qu>
+                Publication shell with route metadata, source-backed extraction, and interactive proof points.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="shell-footer" data-astro-cid-srbwn3qu>
+        <div class="shell-footer-inner" data-astro-cid-srbwn3qu>
+          <span data-astro-cid-srbwn3qu>© 2026 Ravonics LLC. Publication system generated route /accessibility-conformance.html.</span>
+          <span data-astro-cid-srbwn3qu>
+            <a href="/privacy.html" data-astro-cid-srbwn3qu>Privacy</a> ·
+            <a href="/terms.html" data-astro-cid-srbwn3qu>Terms</a> ·
+            <a href="/trust.html" data-astro-cid-srbwn3qu>Trust</a> ·
+            <a href="/security-policy.html" data-astro-cid-srbwn3qu>Security</a> ·
+            <a href="/accessibility-conformance.html" data-astro-cid-srbwn3qu>Accessibility</a> ·
+            <a href="/sitemap.xml" data-astro-cid-srbwn3qu>Sitemap</a> ·
+            <a href="/sitemap/" data-astro-cid-srbwn3qu>Visual Sitemap</a> ·
+            <a href="/insights/blog.html" data-astro-cid-srbwn3qu>Insights</a> ·
+            <a href="/contact.html" data-astro-cid-srbwn3qu>Contact</a>
+          </span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/js/magazine-ux.js" defer></script>
+  </body>
+</html>

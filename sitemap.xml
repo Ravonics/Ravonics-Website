@@ -4,6 +4,9 @@
     <loc>https://ravonics.com/</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/accessibility-conformance.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/authors.html</loc>
   </url>
   <url>
@@ -670,6 +673,9 @@
     <loc>https://ravonics.com/reports/zero-trust-and-cui-boundaries.html</loc>
   </url>
   <url>
+    <loc>https://ravonics.com/security-policy.html</loc>
+  </url>
+  <url>
     <loc>https://ravonics.com/solutions/ai-platforms.html</loc>
   </url>
   <url>
@@ -719,5 +725,8 @@
   </url>
   <url>
     <loc>https://ravonics.com/topics/systems.html</loc>
+  </url>
+  <url>
+    <loc>https://ravonics.com/trust.html</loc>
   </url>
 </urlset>
