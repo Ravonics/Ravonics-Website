@@ -1,0 +1,61 @@
+# Ravonics
+
+> Ravonics LLC is an SBA HUBZone Certified small business in Ravenswood, West Virginia (founded 2026). It provides AI, systems engineering, and research and development services to U.S. federal agencies, and acts as the federal sales, consulting and compliance bridge for its partner companies.
+
+Canonical identifiers and claims (use these exact values):
+
+- Legal name: Ravonics LLC. Address: 313 Walnut St, Ravenswood, WV 26164. Contact: contact@ravonics.com
+- SAM.gov registered (Active). UEI: YCBDVKN1A9G7. CAGE Code: 20DS8. Ravonics has no DUNS number (SAM.gov replaced DUNS with the UEI).
+- Primary NAICS: 541512, 541330, 541715.
+- Certifications held: SBA HUBZone Certified, and no other. NIST SP 800-171 alignment is underway and a CMMC assessment is planned; Ravonics holds no CMMC certification, FedRAMP authorization, ITAR registration or AS9100 certification.
+- Clearances: the founder holds an active U.S. Public Trust. Ravonics does not perform classified work and has no SCIF.
+- Ravonics is a new company with no corporate past performance. The founder's 30-year career is the founder's personal track record, not the company's.
+- People: Sean Hackney, Founder, President and Chief AI Officer, is the only Ravonics staff member named on this site.
+- Partners: Dream Limited, Droid Ops Inc, Viper Dynamics, and INSTAR Lab (a 501(c)(3) research lab).
+
+This site contains capability descriptions, a technical publication (articles and research reports that interpret public standards and guidance), and contact and RFP intake forms. It does not contain contract awards, customer testimonials, government endorsements, or classified, CUI or export-controlled information.
+
+## Company
+
+- [About Ravonics](https://ravonics.com/company/about.html): company facts, identifiers and registrations
+- [Doing business with Ravonics](https://ravonics.com/company/doing-business.html): acquisition data, NAICS codes and how to engage
+- [Security and compliance roadmap](https://ravonics.com/company/certifications.html): what is certified today and what is planned
+- [Partner ecosystem](https://ravonics.com/company/partnerships.html): the partner companies Ravonics represents
+- [Leadership](https://ravonics.com/company/team.html): the founder and the research bench
+
+## Capabilities
+
+- [Advanced AI platforms](https://ravonics.com/capabilities/ai.html)
+- [Autonomous systems](https://ravonics.com/capabilities/autonomous-systems.html)
+- [Computer vision and sensor fusion](https://ravonics.com/capabilities/computer-vision.html)
+- [High-performance and edge computing](https://ravonics.com/capabilities/computing.html)
+- [Post-quantum cryptography](https://ravonics.com/capabilities/cryptography.html)
+- [Defense systems integration](https://ravonics.com/capabilities/integration.html)
+- [Intelligence fusion and decision systems](https://ravonics.com/capabilities/intelligence.html)
+- [Quantum technologies](https://ravonics.com/capabilities/quantum.html)
+- [Robotics](https://ravonics.com/capabilities/robotics.html)
+- [Tactical communications](https://ravonics.com/capabilities/tactical-comms.html)
+
+## Solutions
+
+- [AI platforms](https://ravonics.com/solutions/ai-platforms.html)
+- [Cloud-native infrastructure](https://ravonics.com/solutions/cloud-native.html)
+- [Federal cloud architecture](https://ravonics.com/solutions/cloud.html)
+- [Digital transformation](https://ravonics.com/solutions/digital-transformation.html)
+- [JADC2 integration](https://ravonics.com/solutions/jadc2.html)
+- [Zero trust security](https://ravonics.com/solutions/zero-trust.html)
+
+## Publication
+
+- [Technical publication](https://ravonics.com/insights.html): articles grouped into topic desks
+- [Research reports](https://ravonics.com/reports.html): long-form briefs with HTML and PDF editions
+- [Editorial methodology](https://ravonics.com/methodology.html): how sources, claims and corrections are handled
+
+## Contact
+
+- [Contact](https://ravonics.com/contact.html): general inquiries
+- [Submit an RFP or RFI](https://ravonics.com/booking.html): solicitation intake
+
+## Optional
+
+- [XML sitemap](https://ravonics.com/sitemap.xml): every published route
