@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "siteVersion": "2026.08.22",
-  "sourceCommit": "30659f59e3e2407aa29be634c93dab652fa4fd1c",
-  "artifactSha256": "bcd39dc6f3b7e45de562b5176e99b14082e7d3271dd9d664ed0c579897be2124"
+  "sourceCommit": "8f15647cb07c9fc3cb12ce65e44fc60edd3d464a",
+  "artifactSha256": "57921f6ca9d941965af13b5c689439cf34e9f559e9f9091c0a8fdc145f8a068f",
+  "conciergeCorpusSha256": "374794a0c34c91cbb6cd88776519d40c74f492090e0748ba67e24db33b1c95aa"
 }
